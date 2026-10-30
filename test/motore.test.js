@@ -65,6 +65,8 @@ test('stesso giorno, stesse domande; giorni diversi possono cambiare', () => {
   const pool = Array.from({ length: 12 }, (_, i) => ({ id: `q${i}`, risposte: ['a', 'b', 'c', 'd'] }));
   const ids = (d) => domandeDelGiorno(d, pool).map((q) => q.id).join();
   assert.equal(ids('2026-11-01'), ids('2026-11-01'));
+  assert.equal(domandeDelGiorno('2026-11-01', pool).length, 5);
+  assert.throws(() => domandeDelGiorno('2026-11-01', pool.slice(0, 4)), /almeno 5/);
   const giorni = new Set(['2026-11-01', '2026-11-02', '2026-11-03', '2026-11-04'].map(ids));
   assert.ok(giorni.size > 1);
 });

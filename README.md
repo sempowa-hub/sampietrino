@@ -6,12 +6,12 @@ Stato: **prototipo, non ancora giocabile**. Il motore delle regole c'è ed è te
 
 ## Regole
 
-- Ogni giorno 3 domande, uguali per tutti. Esempio: "Una zona dove passa la Metro C".
+- Ogni giorno 5 domande, uguali per tutti. Esempio: "Una zona dove passa la Metro C".
 - Per ogni domanda puoi mettere fino a 3 pin, uno alla volta, su zone diverse.
 - Ogni pin giusto vale da 1 a 10 sampietrini. Più la zona è nota rispetto alle altre risposte giuste, meno vale: la più nota vale 1, la meno nota 10.
 - Un pin sbagliato è una **buca**: perdi tutto quello che avevi messo da parte su quella domanda.
 - Dopo ogni pin giusto scegli: ti fermi e metti in banca, oppure rischi un altro pin.
-- Massimo 30 sampietrini a domanda, 90 al giorno.
+- Massimo 30 sampietrini a domanda, 150 al giorno.
 
 Il cuore del gioco è la scelta dopo ogni pin: fermarsi o rischiare. Tre zone note e sicure valgono poco; una zona di cui non sei sicuro può valere 10, o farti perdere tutto.
 

@@ -2,7 +2,7 @@
 // Una domanda ha un insieme di zone giuste; ogni zona ha una notorieta (0-100).
 
 export const PIN_PER_DOMANDA = 3;
-export const DOMANDE_AL_GIORNO = 3;
+export const DOMANDE_AL_GIORNO = 5;
 export const MIN_RISPOSTE = 4;
 export const MAX_RISPOSTE = 25;
 
