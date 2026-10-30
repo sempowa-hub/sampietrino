@@ -1,5 +1,5 @@
 {
- "nota": "BOZZA. Notorieta: stima a occhio (0-100), da tarare con un sondaggio tra amici e poi coi pin veri. Confini: ancora vuoti, vanno costruiti dai dati OpenStreetMap. Finche confini e null la zona non e giocabile.",
+ "nota": "BOZZA SUPERATA. Questo elenco a occhio va sostituito con la mappa ufficiale dei quartieri approvata il 1 ottobre 2026 (334 quartieri, 22 rioni, 101 zone funzionali): vedi docs/roma.md. Notorieta: stima a occhio (0-100), da tarare. Confini: vuoti, finche e null la zona non e giocabile.",
  "zone": [
   {
    "id": "trastevere",
