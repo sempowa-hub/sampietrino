@@ -1,0 +1,11 @@
+{
+  "name": "sampietrino",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Gioco quotidiano sui quartieri di Roma: vale di piu la risposta giusta che pochi danno.",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "controlla": "node strumenti/controlla_zone.js"
+  }
+}
