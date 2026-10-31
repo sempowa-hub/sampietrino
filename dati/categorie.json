@@ -1,5 +1,5 @@
 {
- "nota": "Una riga per domanda. metro: linee della metropolitana. osm: filtro Overpass, le zone giuste contengono almeno un luogo e la fascia viene dalla notorieta della zona. elenco: luoghi per nome, ciascuno con la sua fascia decisa a mano (0 Scontata, 1 Nota, 2 Da romano, 3 Da tassinaro, 4 Da sampietrino); la zona prende la fascia del suo luogo piu scontato. verificata false: non ancora controllata contro i dati veri.",
+ "nota": "Una riga per domanda. metro: linee della metropolitana. osm: filtro Overpass, le zone giuste contengono almeno un luogo e la fascia viene dalla notorieta della zona. elenco: luoghi per nome, ciascuno con la sua fascia decisa a mano (0 Scontata, 1 Nota, 2 Da romano, 3 Da tassinaro, 4 Da sampietrino); la zona prende la fascia del suo luogo piu scontato. Tra omonimi (fermate, locali, un'altra fontana con lo stesso nome) lo script scarta il rumore e cio che sta fuori dal GRA, poi tiene i tag di preferisci; se restano piu luoghi si ferma su quella voce: aggiungi vicino [lat, lon] oppure osm col filtro esatto. verificata false: non ancora controllata contro i dati veri.",
  "categorie": [
   {"id": "metro-a", "tipo": "metro", "testo": "Una zona con una fermata della Metro A", "metro": ["A"], "verificata": false},
   {"id": "metro-b", "tipo": "metro", "testo": "Una zona con una fermata della Metro B (B1 compresa)", "metro": ["B", "B1"], "verificata": false},
@@ -7,23 +7,23 @@
   {"id": "trapizzino", "tipo": "trapizzino", "testo": "Una zona con un Trapizzino", "osm": "nwr[\"name\"~\"trapizzino\",i]", "verificata": false},
   {"id": "tevere", "tipo": "acqua", "testo": "Una zona dove passa il Tevere", "osm": "way[\"waterway\"=\"river\"][\"name\"~\"^(Tevere|Fiume Tevere)$\"]", "verificata": false},
 
-  {"id": "fontane", "tipo": "fontane", "testo": "Una zona con una fontana famosa", "verificata": false, "elenco": [
+  {"id": "fontane", "tipo": "fontane", "testo": "Una zona con una fontana famosa", "verificata": false, "preferisci": {"amenity": "fountain"}, "elenco": [
    {"nome": "Fontana di Trevi", "fascia": 0},
    {"nome": "Fontana dei Quattro Fiumi", "fascia": 1},
    {"nome": "Fontana della Barcaccia", "fascia": 1},
    {"nome": "Fontana del Tritone", "fascia": 2},
    {"nome": "Fontana delle Naiadi", "fascia": 2},
-   {"nome": "Fontana delle Tartarughe", "fascia": 3},
+   {"nome": "Fontana delle Tartarughe", "fascia": 3, "vicino": [41.8938, 12.4776]},
    {"nome": "Fontana dell'Acqua Paola", "fascia": 3},
    {"nome": "Fontana delle Api", "fascia": 3},
    {"nome": "Fontana della Botte", "fascia": 4},
-   {"nome": "Fontana delle Anfore", "fascia": 4},
-   {"nome": "Fontana del Mosè", "fascia": 4},
+   {"nome": "Fontana delle Anfore", "fascia": 4, "vicino": [41.8796, 12.4771]},
+   {"nome": "Fontana del Mosè", "fascia": 4, "osm": "nwr[\"name\"=\"Fontana dell'Acqua Felice\"]"},
    {"nome": "Fontana della Terrina", "fascia": 4},
    {"nome": "Fontana del Facchino", "fascia": 4}
   ]},
 
-  {"id": "ville", "tipo": "verde", "testo": "Una zona con una villa storica (il parco)", "verificata": false, "elenco": [
+  {"id": "ville", "tipo": "verde", "testo": "Una zona con una villa storica (il parco)", "verificata": false, "preferisci": {"leisure": "park"}, "elenco": [
    {"nome": "Villa Borghese", "fascia": 0},
    {"nome": "Villa Doria Pamphilj", "fascia": 0},
    {"nome": "Villa Ada", "fascia": 1},
@@ -36,7 +36,7 @@
    {"nome": "Villa Carpegna", "fascia": 4},
    {"nome": "Villa Chigi", "fascia": 4},
    {"nome": "Villa Leopardi", "fascia": 4},
-   {"nome": "Villa Fiorelli", "fascia": 4},
+   {"nome": "Villa Fiorelli", "fascia": 4, "osm": "way[\"name\"=\"Parco di Villa Fiorelli\"]"},
    {"nome": "Villa Paganini", "fascia": 4}
   ]},
 
@@ -49,8 +49,8 @@
    {"nome": "Piazza della Madonna dei Monti", "fascia": 2},
    {"nome": "Piazzale di Ponte Milvio", "fascia": 2},
    {"nome": "Via del Governo Vecchio", "fascia": 3},
-   {"nome": "Via Libetta", "fascia": 3},
-   {"nome": "Piazza dei Mirti", "fascia": 4},
+   {"nome": "Via Libetta", "fascia": 3, "osm": "way[\"name\"=\"Via Giuseppe Libetta\"]"},
+   {"nome": "Piazza dei Mirti", "fascia": 4, "vicino": [41.8812, 12.5666]},
    {"nome": "Piazza Bologna", "fascia": 4}
   ]},
 

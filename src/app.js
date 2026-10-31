@@ -41,9 +41,8 @@ async function avvia() {
   $('attribuzione').textContent = dati.attribuzione;
   mappa = creaMappa($('tela'), dati, { onTocca: tocca });
   $('tela').mappa = mappa; // maniglia per le prove nel browser
-  if (corrente >= domande.length) mostraFine();
-  else mostraDomanda();
-  // Copertina solo a giornata non ancora iniziata.
+  // Copertina solo a giornata non ancora iniziata. Si apre prima di mostrare la domanda:
+  // a copertina aperta l'orologio aspetta DAJE!, altrimenti la tappa 1 perde secondi.
   if (corrente === 0 && !stati[0].pin) {
     $('scala').replaceChildren(...[...SCALA].reverse().map((f) => {
       const li = document.createElement('li');
@@ -53,6 +52,8 @@ async function avvia() {
     $('copertina-data').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long' }).format(new Date());
     $('copertina').showModal();
   }
+  if (corrente >= domande.length) mostraFine();
+  else mostraDomanda();
 }
 
 const nomeZona = (id) => (id ? zonePerId[id].nome : 'tempo scaduto');
