@@ -99,6 +99,25 @@
   </aside>
 </main>
 
+<div class="splash" id="splash" role="dialog" aria-modal="true" aria-labelledby="splash-titolo" hidden>
+  <div class="splash-fondo" aria-hidden="true"><canvas id="splash-mappa"></canvas></div>
+  <p class="splash-banda" id="splash-banda"></p>
+  <div class="splash-logo">
+    <img class="faccia splash-mino" src="img/mino-occhiolino.png" alt="" width="56" height="56">
+    <h2 id="splash-titolo">Sampietrino</h2>
+    <p class="splash-sotto" id="splash-sotto"></p>
+  </div>
+  <div class="splash-piede">
+    <button class="splash-entra" id="splash-entra" data-apri="account" hidden>Entra per salvarla <span aria-hidden="true">▸</span></button>
+    <p class="splash-serie" id="splash-serie"></p>
+    <button class="primario splash-daje" id="splash-daje">Daje, si parte!</button>
+    <div class="splash-tessere">
+      <button class="tessera t-archivio" data-apri="diario-bordo"><span class="t-data"><small id="splash-mese"></small><b id="splash-giorno"></b></span><span class="t-nome">Archivio</span></button>
+      <button class="tessera t-passaporto" data-apri="passaporto"><span class="t-icona" data-icona="passaporto"></span><span class="t-nome">Passaporto<small id="splash-pass"></small></span></button>
+    </div>
+  </div>
+</div>
+
 <dialog id="copertina" class="copertina">
   <img class="faccia copertina-faccia" src="img/mino-occhiolino.png" alt="Mino" width="56" height="56">
   <p class="etichetta">Diario di bordo · <span id="copertina-data"></span></p>

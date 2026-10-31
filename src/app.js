@@ -6,7 +6,8 @@ import {
 import { creaMappa, COLORI_FASCE } from './mappa.js';
 import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
-import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite } from './storico.js';
+import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite, PRIMO_GIORNO, gradoDi } from './storico.js';
+import { disegnaMiniMappa } from './minimappa.js';
 import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, aggiornaNomeInClassifica, classifica } from './conto.js';
 import { aggiornaSouvenir } from './souvenir.js';
 import { creaTaccuino } from './taccuino.js';
@@ -82,6 +83,7 @@ async function avvia() {
   const st = leggi();
   if (aggiornaSouvenir(st, contesto(st, dati.zone), oggi).length) scrivi(st);
   taccuino = creaTaccuino({ dati, colori: COLORI_FASCE, suoni, gioca: (d) => apriGiorno(d, true), regole: apriCopertina, giorno: () => giorno, dopoLogin: sincronizzaConto });
+  mostraSplash();
   apriGiorno(oggi, false);
   // L'account arriva dopo, senza fermare il gioco: anonimo per tutti, con Google le partite si sincronizzano.
   avviaConto().then(sincronizzaConto);
@@ -169,10 +171,69 @@ function apriGiorno(data, anima) {
   $('totale').textContent = totale(stati);
   // Copertina solo a giornata non ancora iniziata. Si apre prima di mostrare la domanda:
   // a copertina aperta l'orologio aspetta DAJE!, altrimenti la tappa 1 perde secondi.
-  if (corrente === 0 && !stati[0].pin) apriCopertina();
+  if (corrente === 0 && !stati[0].pin && !splashAperto()) apriCopertina();
   if (corrente >= domande.length) mostraFine(anima);
   else if (stati[corrente].pin) mostraEsito(false);
   else mostraTappa(anima);
+}
+
+// --- Splash d'apertura, come la prima pagina di un diario: Roma che scorre dietro, il numero del giorno,
+// la serie, un tasto solo per partire. Il gioco (e l'orologio) parte solo da qui. ---
+
+const splashAperto = () => !$('splash').hidden;
+
+function mostraSplash() {
+  const s = leggi();
+  const g = s.giorni[oggi];
+  const p = partita(oggi);
+  const fatte = p?.stati?.filter((x) => x.pin).length ?? 0;
+  const n = Math.round((Date.parse(`${oggi}T12:00:00Z`) - Date.parse(`${PRIMO_GIORNO}T12:00:00Z`)) / 864e5) + 1;
+  $('splash-banda').textContent = `Diario di bordo n° ${n} · ${dataIt(oggi, { day: 'numeric', month: 'long', year: 'numeric' })}`;
+  $('splash-sotto').textContent = g?.finita ? `Oggi: ${g.tot} sampietrini · ${gradoDi(g.tot).nome}` : 'Oggi: 5 tappe dentro il Raccordo';
+  $('splash-daje').textContent = g?.finita ? 'Guarda il diario di oggi' : fatte ? `Continua: tappa ${Math.min(fatte + 1, 5)} di 5` : 'Daje, si parte!';
+  const serieN = serie(s.giorni);
+  const mezzanotte = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
+  const minuti = 24 * 60 - (mezzanotte.getHours() * 60 + mezzanotte.getMinutes());
+  const prossima = `prossima tra ${Math.floor(minuti / 60)} h ${minuti % 60} min`;
+  $('splash-serie').innerHTML = serieN
+    ? `<svg viewBox="0 0 8 10" width="12" height="15" shape-rendering="crispEdges" aria-hidden="true"><path fill="#e8b33a" d="M3 0h1v1h1v2h1v1h1v4H6v1H5v1H3V9H2V8H1V4h1V3h1z"/><path fill="#c43a28" d="M3 5h2v1h1v2H5v1H3V8H2V6h1z"/></svg> Serie: ${serieN} ${serieN === 1 ? 'giorno' : 'giorni'} · ${prossima}`
+    : g?.finita ? `Partita di oggi finita · ${prossima}` : 'Cinque tappe nuove ogni giorno, a mezzanotte';
+  $('splash-mese').textContent = dataIt(oggi, { month: 'short' }).replace('.', '');
+  $('splash-giorno').textContent = Number(oggi.slice(8));
+  $('splash-pass').textContent = ` ${Object.keys(s.timbri).filter((id) => zonePerId[id]).length} di ${dati.zone.length}`;
+  const u = utente();
+  $('splash-entra').hidden = !!(u && !u.anonimo);
+  quandoCambia((x) => { $('splash-entra').hidden = !!(x && !x.anonimo); });
+  disegnaFondoSplash(s);
+  $('splash').hidden = false;
+  document.body.classList.add('con-splash');
+}
+
+// Roma intera dietro lo splash, con le zone del passaporto nei colori delle fasce; scorre piano (CSS).
+function disegnaFondoSplash(s) {
+  const cv = $('splash-mappa');
+  const lato = Math.max(innerWidth, innerHeight) * 1.5;
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  cv.width = Math.round(lato * dpr);
+  cv.height = Math.round(lato * dpr);
+  cv.style.width = cv.style.height = `${lato}px`;
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#c4c4aa';
+  ctx.fillRect(0, 0, cv.width, cv.height);
+  const colori = Object.fromEntries(Object.entries(s.timbri).filter(([id]) => zonePerId[id]).map(([id, l]) => [id, COLORI_FASCE[l]]));
+  disegnaMiniMappa(ctx, dati, { x: cv.width * 0.04, y: cv.height * 0.04, w: cv.width * 0.92, h: cv.height * 0.92, colori, filo: dpr, contorno: false });
+}
+
+function chiudiSplash() {
+  const sp = $('splash');
+  sp.classList.add('esce');
+  document.body.classList.remove('con-splash');
+  setTimeout(() => { sp.hidden = true; sp.classList.remove('esce'); }, dopo(420));
+  const s = stati[corrente];
+  if (corrente >= domande.length) return; // partita finita: c'e gia il diario
+  if (s && !s.pin && corrente === 0 && !Object.keys(leggi().giorni).length) { apriCopertina(); return; } // prima volta: le regole
+  sblocca().then(() => suoni.daje());
+  if (s && !s.pin) avviaOrologio();
 }
 
 function apriCopertina() {
@@ -234,7 +295,7 @@ function mostraTappa(anima = true) {
   // A tappa aperta la mappa parte intera: inquadrare il bersaglio rivelerebbe dove sta.
   mappa.imposta({ stato: () => 'normale', scegli: true });
   mappa.inquadra({}, anima);
-  if (!$('copertina').open) avviaOrologio();
+  if (!$('copertina').open && !splashAperto()) avviaOrologio();
 }
 
 function aggiornaBiglietto() {
@@ -683,6 +744,7 @@ const facciaFine = (tot) => (tot >= 32 ? 'stupore' : tot >= 24 ? 'risata' : tot 
 
 document.addEventListener('keydown', (e) => {
   if (document.querySelector('dialog[open]')) return;
+  if (splashAperto()) { if (e.key === 'Enter') { e.preventDefault(); chiudiSplash(); } return; }
   if (e.key === 'Enter') {
     if (!$('pagina-esito').hidden) { e.preventDefault(); avanti(); }
     else if (!$('pagina-tappa').hidden && !$('pianta').disabled) { e.preventDefault(); pianta(); }
@@ -706,6 +768,7 @@ new ResizeObserver(() => {
 
 $('piu').addEventListener('click', () => mappa.zoom(1 / 1.5));
 $('meno').addEventListener('click', () => mappa.zoom(1.5));
+$('splash-daje').addEventListener('click', chiudiSplash);
 $('daje').addEventListener('click', () => {
   sblocca().then(() => suoni.daje());
   const c = $('copertina');

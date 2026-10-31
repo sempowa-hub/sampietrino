@@ -779,3 +779,85 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
   .scorciatoie .secondario { font-size: 11px; letter-spacing: 0; }
   .scorciatoie [data-icona] { width: 28px; height: 28px; }
 }
+
+/* Splash d'apertura: Roma che scorre dietro, la testata del diario, la scheda per partire. */
+body.con-splash { overflow: hidden; }
+.splash {
+  position: fixed; inset: 0; z-index: 40; display: grid; grid-template-rows: auto auto 1fr auto; justify-items: center;
+  background: #c4c4aa; overflow: hidden; padding-bottom: env(safe-area-inset-bottom);
+}
+.splash[hidden] { display: none; }
+.splash.esce { animation: splash-via 420ms var(--esce) forwards; }
+.splash-fondo { position: absolute; inset: 0; overflow: hidden; }
+.splash-fondo canvas { position: absolute; top: 0; left: 0; animation: deriva 80s ease-in-out infinite alternate; will-change: transform; }
+.splash-fondo::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(42, 31, 22, 0.28) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' shape-rendering='crispEdges'%3E%3Crect x='3' y='5' width='1' height='1' fill='%23a48d66' opacity='.5'/%3E%3Crect x='17' y='11' width='1' height='1' fill='%23a48d66' opacity='.4'/%3E%3Crect x='9' y='19' width='1' height='1' fill='%23a48d66' opacity='.5'/%3E%3C/svg%3E");
+}
+.splash-banda {
+  position: relative; width: 100%; margin: 0; padding: calc(9px + env(safe-area-inset-top)) 16px 9px; text-align: center;
+  background: var(--carta); border-bottom: 1px solid var(--inchiostro);
+  font-weight: 650; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; animation: banda 520ms var(--esce) both;
+}
+.splash-logo {
+  position: relative; margin: 22px 16px 0; max-width: calc(100% - 32px); box-sizing: border-box; padding: 16px clamp(22px, 6vw, 46px) 12px; text-align: center; background: var(--carta);
+  box-shadow: 0 0 0 1px var(--inchiostro), 0 0 0 4px var(--carta), 0 0 0 5px var(--inchiostro), 6px 8px 0 5px rgba(42, 31, 22, 0.35);
+  animation: posa 640ms var(--esce) 120ms both;
+}
+.splash-logo h2 {
+  margin: 0; font-family: var(--font-titolo); font-weight: 400; font-size: clamp(26px, 8vw, 74px); line-height: 1; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--inchiostro); text-shadow: 3px 3px 0 var(--rosso);
+}
+.splash-sotto {
+  display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0 0;
+  font-weight: 650; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rosso);
+}
+.splash-sotto::before, .splash-sotto::after { content: ''; width: clamp(18px, 6vw, 60px); height: 5px; border-top: 1px solid var(--rosso); border-bottom: 1px solid var(--rosso); }
+.splash-mino { position: absolute; left: -52px; top: -30px; width: 104px; height: 104px; filter: drop-shadow(0 4px 0 rgba(42, 31, 22, 0.25)); animation: dondola 1.6s steps(2) infinite; }
+.splash-piede {
+  position: relative; grid-row: 4; width: min(580px, calc(100% - 32px)); margin: 0 0 max(18px, env(safe-area-inset-bottom)); padding: 14px 16px 16px;
+  display: flex; flex-direction: column; gap: 10px; text-align: center; background: var(--carta);
+  box-shadow: 0 0 0 1px var(--inchiostro), 0 0 0 4px var(--carta), 0 0 0 5px var(--inchiostro), 6px 8px 0 5px rgba(42, 31, 22, 0.35);
+  animation: entra 560ms var(--esce) 260ms both;
+}
+.splash-entra { align-self: center; border: none; background: none; padding: 2px 0; font-family: var(--font-titolo); font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; }
+.splash-entra:hover { color: var(--rosso); }
+.splash-entra[hidden] { display: none; }
+.splash-serie { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; font-weight: 650; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rosso); }
+.splash-daje {
+  min-height: 66px; font-size: clamp(18px, 4.6vw, 24px); letter-spacing: 0.16em; background: var(--inchiostro); color: var(--scheda);
+  box-shadow: inset 0 0 0 3px var(--inchiostro), inset 0 0 0 4px var(--carta-2), 0 0 0 1px var(--inchiostro), 0 4px 0 1px rgba(42, 31, 22, 0.5);
+}
+.splash-daje:hover:not(:disabled) { background: #3b2b1f; }
+.splash-tessere { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+.tessera {
+  position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 64px; min-width: 0; padding: 8px 10px; border: none;
+  font-family: var(--font-titolo); font-size: clamp(15px, 3.8vw, 19px); text-transform: uppercase; letter-spacing: 0.04em; color: var(--inchiostro);
+  transition: transform 200ms var(--esce), box-shadow 200ms var(--esce);
+}
+.tessera:hover { transform: translateY(-3px); }
+.t-archivio { background: linear-gradient(160deg, #a9c2c6 0 38%, #e9dab2 38% 70%, #a9c2c6 70%); box-shadow: 0 0 0 1px var(--inchiostro), 0 4px 0 1px var(--inchiostro); }
+.t-data { display: flex; flex-direction: column; align-items: center; padding: 3px 8px 2px; background: var(--scheda); box-shadow: 0 0 0 1px var(--inchiostro); transform: rotate(-4deg); line-height: 1; }
+.t-data small { font-family: var(--font-testo); font-size: 10px; font-weight: 650; color: var(--rosso); letter-spacing: 0.08em; }
+.t-data b { font-weight: 400; font-size: 22px; }
+.t-archivio .t-nome { padding: 4px 10px; background: var(--scheda); box-shadow: 0 0 0 1px var(--inchiostro); transform: rotate(-2deg); }
+.t-passaporto { background: var(--scheda); box-shadow: 0 0 0 1px var(--inchiostro), 0 4px 0 1px var(--rosso); }
+.t-icona { width: 38px; height: 38px; flex: none; }
+.t-passaporto .t-nome { display: flex; flex-direction: column; align-items: flex-start; }
+.t-passaporto small { font-family: var(--font-testo); font-size: 12px; font-weight: 650; letter-spacing: 0.04em; color: var(--inchiostro-2); text-transform: none; }
+@keyframes deriva { from { transform: translate(-6%, -8%); } to { transform: translate(-30%, -24%); } }
+@keyframes banda { from { transform: translateY(-100%); } }
+@keyframes splash-via { to { opacity: 0; transform: scale(1.03); } }
+@media (max-width: 520px) {
+  .splash-mino { width: 64px; height: 64px; left: -14px; top: -40px; }
+  .splash-logo { margin-top: 42px; padding: 14px 16px 10px; }
+  .splash-sotto { font-size: 11px; gap: 6px; }
+  .splash-piede { padding: 12px; gap: 8px; }
+  .tessera { min-height: 56px; gap: 6px; padding: 6px; font-size: 13px; }
+  .t-icona { width: 26px; height: 26px; }
+  .t-data b { font-size: 18px; }
+  .t-archivio .t-nome { padding: 3px 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .splash-fondo canvas { animation: none; transform: translate(-18%, -16%); } }
