@@ -114,3 +114,12 @@ test('ogni giorno due domande a mano, le altre generate', () => {
     assert.equal(new Set(scelte.map((q) => q.tipo)).size, 5);
   }
 });
+
+test('dal 1 novembre il calendario decide le 5 domande del giorno', () => {
+  const c = { a: 0, b: 1, c: 2, d: 3, e: 4 };
+  const pool = Array.from({ length: 12 }, (_, i) => ({ id: `q${i}`, tipo: `t${i}`, generata: true, catalogo: c }));
+  const calendario = { '2026-11-01': ['q3', 'q1', 'q4', 'q1x', 'q5'], '2026-11-02': ['q0', 'q2', 'q6', 'q7', 'q8'] };
+  assert.deepEqual(domandeDelGiorno('2026-11-02', pool, calendario).map((q) => q.id), ['q0', 'q2', 'q6', 'q7', 'q8']);
+  // Una domanda del calendario non c'e piu: si torna alla scelta per hash, sempre 5 domande.
+  assert.equal(domandeDelGiorno('2026-11-01', pool, calendario).length, 5);
+});

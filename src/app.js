@@ -149,7 +149,7 @@ function apriGiorno(data, anima) {
   giorno = data;
   aperta = -1;
   selezionata = null;
-  domande = domandeDelGiorno(giorno, dati.domande);
+  domande = domandeDelGiorno(giorno, dati.domande, dati.calendario);
   // Partita gia iniziata: tiene le sue domande anche se nel frattempo ne sono arrivate di nuove.
   try {
     const salvata = JSON.parse(localStorage.getItem(chiave()));

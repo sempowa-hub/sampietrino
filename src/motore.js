@@ -96,8 +96,15 @@ function mescola(lista, caso) {
   return mazzo;
 }
 
-export function domandeDelGiorno(dataISO, pool) {
+// calendario: {data: [id, ...]} da strumenti/calendario.py. Dal 1 novembre ogni giorno ha le sue 5 domande fisse,
+// mai ripetute; oltre la fine del calendario si torna alla scelta per hash (con ripetizioni).
+export function domandeDelGiorno(dataISO, pool, calendario = null) {
   const vecchio = dataISO < DATA_NUOVE;
+  const fissi = !vecchio && calendario?.[dataISO];
+  if (fissi) {
+    const perId = Object.fromEntries(pool.map((d) => [d.id, d]));
+    if (fissi.every((id) => perId[id])) return fissi.map((id) => perId[id]);
+  }
   // Le domande "proposta" (generate, non ancora approvate da Simone e Themino) non escono mai.
   const valide = giocabili(pool.filter((d) => !d.proposta && (vecchio ? !d.generata : !d.riserva)));
   if (valide.length < DOMANDE_AL_GIORNO) {

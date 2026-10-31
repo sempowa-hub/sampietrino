@@ -1,0 +1,186 @@
+{
+ "nota": "Generato da strumenti/calendario.py: 5 domande al giorno, mai ripetute.",
+ "giorni": {
+  "2026-11-01": [
+   "fontane",
+   "gen-nomi-una-circonvallazione",
+   "gen-stili-una-chiesa-paleocristiana",
+   "gen-architetti-raffaello-sanzio",
+   "gen-tipi-galleria"
+  ],
+  "2026-11-02": [
+   "trapizzino",
+   "gen-epoche-costruito-per-le-olimpiadi-del-1960",
+   "gen-dediche-a-gesu",
+   "gen-tipi-giardino",
+   "gen-nomi-una-strada-che-porta-una-data"
+  ],
+  "2026-11-03": [
+   "metro-c",
+   "gen-artisti-opera-affresco",
+   "gen-tipi-acquedotto",
+   "gen-locali-una-cornetteria",
+   "gen-architetti-giuseppe-valadier"
+  ],
+  "2026-11-04": [
+   "novecento",
+   "gen-nomi-una-strada-col-nome-di-un-acqua-una-sorgente",
+   "gen-committenti-proprieta-santa-sede",
+   "gen-tipi-stadio",
+   "gen-stili-un-edificio-liberty"
+  ],
+  "2026-11-05": [
+   "stazione-fs",
+   "gen-locali-un-locale-della-sora-o-del-sor",
+   "gen-artisti-raffaello-sanzio",
+   "gen-tipi-circo",
+   "gen-epoche-costruito-per-i-mondiali-del-1990"
+  ],
+  "2026-11-06": [
+   "ossa",
+   "gen-nomi-una-strada-col-nome-di-un-campo",
+   "gen-tipi-battaglia",
+   "gen-architetti-bramante",
+   "gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora"
+  ],
+  "2026-11-07": [
+   "ville-themino",
+   "gen-artisti-opera-dipinto",
+   "gen-tipi-impianto-di-calcio",
+   "gen-epoche-palazzo-del-settecento",
+   "gen-nomi-una-passeggiata"
+  ],
+  "2026-11-08": [
+   "misteri",
+   "gen-locali-un-forno",
+   "gen-tipi-cimitero",
+   "gen-architetti-domenico-fontana",
+   "gen-nomi-una-strada-col-nome-di-una-torre"
+  ],
+  "2026-11-09": [
+   "street-art",
+   "gen-epoche-palazzo-moderno-dopo-la-guerra",
+   "gen-tipi-rovine",
+   "gen-locali-una-friggitoria-o-un-posto-di-suppli",
+   "gen-nomi-una-strada-col-nome-di-un-albero"
+  ],
+  "2026-11-10": [
+   "cupola",
+   "gen-architetti-michelangelo-buonarroti",
+   "gen-tipi-ponte",
+   "gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino",
+   "gen-nomi-una-strada-col-nome-di-una-porta"
+  ],
+  "2026-11-11": [
+   "metro-b",
+   "gen-tipi-torre",
+   "gen-epoche-palazzo-dell-ottocento",
+   "gen-locali-un-chiosco-o-una-grattachecca",
+   "gen-nomi-una-strada-col-nome-di-un-antico-mestiere"
+  ],
+  "2026-11-12": [
+   "estero",
+   "gen-tipi-catacombe",
+   "gen-artisti-opera-scultura",
+   "gen-stili-un-edificio-neogotico",
+   "gen-nomi-una-strada-che-sa-di-mare"
+  ],
+  "2026-11-13": [
+   "metro-a",
+   "gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione",
+   "gen-epoche-palazzo-medievale",
+   "gen-tipi-parco-archeologico",
+   "gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale"
+  ],
+  "2026-11-14": [
+   "orologi",
+   "gen-dediche-alla-madonna",
+   "gen-architetti-carlo-maderno",
+   "gen-tipi-museo-storico",
+   "gen-nomi-una-strada-col-nome-di-un-ponte"
+  ],
+  "2026-11-15": [
+   "movida",
+   "gen-tipi-arco-trionfale",
+   "gen-epoche-palazzo-del-primo-novecento",
+   "gen-nomi-una-strada-che-e-una-scalinata",
+   "gen-sepolture-papa"
+  ],
+  "2026-11-16": [
+   "tevere",
+   "gen-architetti-giacomo-della-porta",
+   "gen-tipi-monumento",
+   "gen-nomi-una-strada-che-si-chiama-salita",
+   "gen-epoche-chiesa-del-quattrocento"
+  ],
+  "2026-11-17": [
+   "cinema",
+   "gen-tipi-villa-romana",
+   "gen-committenti-un-papa",
+   "gen-nomi-una-strada-con-un-numero-nel-nome",
+   "gen-tipi-colle"
+  ],
+  "2026-11-18": [
+   "caravaggio",
+   "gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille",
+   "gen-stili-un-edificio-neoclassico",
+   "gen-tipi-tomba",
+   "gen-tipi-collina"
+  ],
+  "2026-11-19": [
+   "illusioni",
+   "gen-tipi-villa",
+   "gen-epoche-antica-roma",
+   "gen-tipi-santuario",
+   "gen-tipi-museo-d-arte"
+  ],
+  "2026-11-20": [
+   "scalinate",
+   "gen-stili-un-edificio-romanico",
+   "gen-epoche-chiesa-dell-ottocento",
+   "gen-tipi-piazza",
+   "gen-tipi-casa-museo"
+  ],
+  "2026-11-21": [
+   "belvedere-themino",
+   "gen-tipi-obelisco",
+   "gen-tipi-fontana",
+   "gen-epoche-palazzo-del-seicento",
+   "gen-tipi-basilica"
+  ],
+  "2026-11-22": [
+   "borromini",
+   "gen-stili-un-edificio-barocco",
+   "gen-tipi-terme",
+   "gen-epoche-chiesa-del-settecento",
+   "gen-tipi-porta-cittadina"
+  ],
+  "2026-11-23": [
+   "ville",
+   "gen-tipi-museo",
+   "gen-epoche-chiesa-medievale",
+   "gen-tipi-chiesa",
+   "gen-stili-un-edificio-del-rinascimento"
+  ],
+  "2026-11-24": [
+   "roma-sotto",
+   "gen-tipi-scultura",
+   "gen-epoche-palazzo-del-cinquecento",
+   "gen-tipi-sito-archeologico",
+   "gen-tipi-chiesa-nazionale"
+  ],
+  "2026-11-25": [
+   "bernini",
+   "gen-tipi-palazzo",
+   "gen-epoche-chiesa-del-seicento",
+   "gen-tipi-tempio-romano",
+   "gen-tipi-edificio"
+  ]
+ },
+ "avanzano": [
+  "gen-tipi-tempio",
+  "gen-tipi-edificio-romano",
+  "gen-tipi-museo-archeologico",
+  "gen-epoche-chiesa-del-cinquecento"
+ ]
+}
