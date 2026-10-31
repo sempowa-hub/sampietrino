@@ -527,13 +527,25 @@ function apriTappa(i, anima = true) {
     div.style.animationDelay = `${(SCALA.length - 1 - liv) * 60}ms`;
     div.innerHTML = `<h3><i></i>${SCALA[liv].nome}<b>+${SCALA[liv].punti}</b></h3><p></p>`;
     const p = div.querySelector('p');
+    // Compatte: solo i nomi delle zone. Toccando una zona si aprono i luoghi che la rendono giusta.
     ids.forEach((id, k) => {
-      const span = document.createElement('span');
-      span.textContent = zonePerId[id].nome;
-      if (id === tua) span.className = 'tua';
-      p.append(span);
       const luoghi = perche(d, id);
-      if (luoghi) { const l = document.createElement('span'); l.className = 'luoghi'; l.textContent = ` (${luoghi})`; p.append(l); }
+      const zona = document.createElement(luoghi ? 'button' : 'span');
+      zona.className = `zona-ris${id === tua ? ' tua' : ''}`;
+      zona.textContent = zonePerId[id].nome;
+      p.append(zona);
+      if (luoghi) {
+        const l = document.createElement('span');
+        l.className = 'luoghi';
+        l.textContent = ` (${luoghi})`;
+        l.hidden = true;
+        zona.setAttribute('aria-expanded', 'false');
+        zona.addEventListener('click', () => {
+          l.hidden = !l.hidden;
+          zona.setAttribute('aria-expanded', String(!l.hidden));
+        });
+        p.append(l);
+      }
       if (k < ids.length - 1) p.append(' · ');
     });
     blocchi.push(div);
@@ -631,7 +643,18 @@ $('pianta').addEventListener('click', pianta);
 $('avanti').addEventListener('click', avanti);
 // Storia da condividere: il diario di oggi in formato storia Instagram. Sul telefono si apre la condivisione,
 // sul computer si scarica il PNG.
-const TESTO_FASCE = ['#5f5a50', '#33602a', '#255a86', '#9c3a17', '#835d00'];
+// La chicca della storia: una tappa di oggi a caso. Se ha il suo "Mino dice" si usa quello, altrimenti
+// la risposta Da Mino di quella domanda col luogo che la rende giusta. Ogni storia esce diversa.
+function chiccaDelGiorno() {
+  const s = stati[Math.floor(Math.random() * stati.length)];
+  const d = s.domanda;
+  if (d.contesto) return d.contesto;
+  const rare = Object.keys(d.catalogo).filter((id) => d.catalogo[id] === SCALA.length - 1);
+  const id = rare[Math.floor(Math.random() * rare.length)];
+  if (!id) return '';
+  const luoghi = perche(d, id);
+  return `${d.testo}: la risposta da Mino era ${zonePerId[id].nome}${luoghi ? ` (${luoghi.replace(/ · /g, ', ')})` : ''}. Questa la sanno in pochi.`;
+}
 $('condividi').addEventListener('click', async () => {
   const b = $('condividi');
   b.disabled = true;
@@ -639,14 +662,10 @@ $('condividi').addEventListener('click', async () => {
   try {
     const tot = totale(stati);
     const blob = await creaStoria({
-      dati, totale: tot, massimo: MASSIMO_AL_GIORNO, frase: $('fine-frase').textContent, faccia: facciaFine(tot),
+      totale: tot, massimo: MASSIMO_AL_GIORNO, faccia: facciaFine(tot), colori: COLORI_FASCE, chicca: chiccaDelGiorno(),
       data: new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()),
-      righe: stati.map((s, i) => {
-        const liv = s.pin?.fascia ? livelloDi(s.pin.fascia) : null;
-        return { n: i + 1, zona: s.pin?.zona ? nomeZona(s.pin.zona) : 'Tempo scaduto', fascia: s.pin?.fascia ?? (s.pin?.zona ? 'Buca' : 'Capolinea'),
-          punti: s.pin?.punti ?? 0, coloreTesto: liv === null ? '#c43a28' : TESTO_FASCE[liv] };
-      }),
-      colori: Object.fromEntries(stati.filter((s) => s.pin?.zona).map((s) => [s.pin.zona, s.pin.fascia ? COLORI_FASCE[livelloDi(s.pin.fascia)] : '#d98a78'])),
+      tappe: stati.map((s) => ({ livello: s.pin?.fascia ? livelloDi(s.pin.fascia) : null, punti: s.pin?.punti ?? 0 })),
+      serie: serie(), timbrati: Object.keys(leggiStorico().timbri).filter((id) => zonePerId[id]).length,
     });
     const nome = `sampietrino-${oggi}.png`;
     const file = new File([blob], nome, { type: 'image/png' });

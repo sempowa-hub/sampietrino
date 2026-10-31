@@ -288,7 +288,13 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 .risposte .fascia h3 b { margin-left: auto; }
 .risposte .fascia p { margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4; }
 .risposte .tua { color: var(--rosso); text-decoration: underline; text-underline-offset: 3px; }
-.risposte .luoghi { color: var(--inchiostro-2); font-weight: 400; }
+.risposte .luoghi { color: var(--inchiostro-2); font-weight: 400; animation: entra 220ms var(--esce); }
+.risposte .luoghi[hidden] { display: none; }
+.risposte .zona-ris { font: inherit; font-weight: 500; color: inherit; background: none; border: none; padding: 0; cursor: pointer;
+  text-decoration: underline dotted var(--matita); text-underline-offset: 4px; }
+.risposte span.zona-ris { text-decoration: none; cursor: default; }
+.risposte .zona-ris[aria-expanded='true'] { text-decoration-style: solid; }
+.risposte .zona-ris.tua { color: var(--rosso); text-decoration: underline; text-decoration-color: var(--rosso); }
 .nota { margin: 10px 0 0; text-align: center; font-size: 14px; color: var(--inchiostro-2); }
 
 /* Nuovo timbro sul cartellino. */
