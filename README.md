@@ -48,7 +48,7 @@ Le domande geometriche (confinanti, municipi, Raccordo, Vaticano) sono **di rise
 - **Punti relativi alla domanda.** Una zona vale tanto o poco a seconda delle altre risposte giuste: non esiste una zona che vince sempre.
 - **Domande calcolate dalla geometria, mai scritte a mano.** Una domanda con una risposta sbagliata uccide il gioco.
 - **Varietà**: al massimo 3 domande dello stesso tipo al giorno.
-- **Grafica**: diario di bordo romano. Carta con grana, rosso pompeiano, cornici a doppio filetto (dalla Pianta di Roma del Nolli, 1748). Titoli, numeri e bottoni in Silkscreen (carattere pixel scelto perché il 5 non si confonde con la S), domande e testi in Jersey 10, un pixel con le minuscole e cifre chiare. Le domande sono tappe, i pin sono biglietti timbrati, le zone fuori gioco hanno il verde del Tevere. Copertina del giorno con un bottone grosso: DAJE!. Font nel repo (licenza OFL, `font/`), nessuna richiesta esterna.
+- **Grafica**: pixel art a 16 bit. La mappa è disegnata su un canvas a pixel (`src/mappa-pixel.js`), una cella ogni 80 metri: ogni zona è un prato, i confini tra zone stradine color sabbia, i confini dei municipi strade grandi, fuori dal Comune il mare con spiaggia e acqua bassa. Alberi e casette coi tetti arancioni sono decisi da un hash della cella, quindi la mappa è identica per tutti. Cartelli neri con testo bianco, bottoni arancio come i tetti, bordi squadrati. Caratteri Silkscreen (titoli, numeri, bottoni: il 5 non si confonde con la S) e Jersey 10 (testo). Font nel repo (licenza OFL, `font/`), nessuna richiesta esterna.
 - **Giocabile solo con 4-25 risposte giuste.** Meno è indovinello, più è lotteria.
 
 ## Dati
@@ -91,7 +91,8 @@ npm run costruisci  # rigenera dati/gioco.json e dati/catalogo.csv dalle fonti
 ```
 index.html                 la pagina
 src/motore.js              regole pure: scala, fasce, un pin a tappa, domande del giorno
-src/app.js                 mappa SVG, zoom, interfaccia
+src/app.js                 interfaccia: tappe, biglietto, catalogo, riepilogo
+src/mappa-pixel.js         mappa in pixel art su canvas: griglia, zoom, tocchi
 src/stile.css              grafica
 test/motore.test.js        test delle regole (dati finti, solo per le regole)
 dati/                      fonti, notorietà, dati generati
