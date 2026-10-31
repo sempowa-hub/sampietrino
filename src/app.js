@@ -194,6 +194,7 @@ function mostraFine() {
   $('testo').textContent = `${tot} sampietrini oggi`;
   selezionata = null;
   corrente = domande.length;
+  inquadra({}, false);
   ridisegna();
   $('fine').showModal();
 }

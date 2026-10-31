@@ -28,6 +28,7 @@ Nessuna dipendenza da installare per giocare: HTML, CSS e JavaScript puri.
 - **Punti relativi alla domanda.** Una zona vale tanto o poco a seconda delle altre risposte giuste: non esiste una zona che vince sempre.
 - **Domande calcolate dalla geometria, mai scritte a mano.** Una domanda con una risposta sbagliata uccide il gioco.
 - **Varietà**: al massimo 3 domande dello stesso tipo al giorno.
+- **Grafica**: riferimento alla Pianta di Roma di Giovanni Battista Nolli (1748), incisione su rame. Carta, inchiostro seppia, rosso da rubrica, cornice a doppio filetto, caratteri IM Fell English ed EB Garamond (licenza OFL, in `font/`, nessuna richiesta esterna).
 - **Giocabile solo con 4-25 risposte giuste.** Meno è indovinello, più è lotteria.
 
 ## Dati
