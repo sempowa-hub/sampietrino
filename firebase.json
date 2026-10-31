@@ -21,7 +21,9 @@
       "firestore.rules",
       "firestore.indexes.json",
       "dati/domande-generate.json",
-      "dati/domande-scartate.json"
+      "dati/domande-scartate.json",
+      "dati/domande-proposte.json",
+      "dati/domande-approvate.json"
     ],
     "headers": [
       {

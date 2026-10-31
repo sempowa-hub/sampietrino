@@ -196,7 +196,8 @@ disegna();
 def main():
     g = json.loads((RADICE / 'dati' / 'gioco.json').read_text())
     zn = {z['id']: z['nome'] for z in g['zone']}
-    gen = [d for d in g['domande'] if d.get('generata')]
+    proposte = RADICE / 'dati' / 'domande-proposte.json'
+    gen = [d for d in g['domande'] if d.get('generata')] + (json.loads(proposte.read_text()) if proposte.exists() else [])
     dati = {'famiglie': NOMI_FAMIGLIE, 'domande': [{
         'id': d['id'], 'testo': d['testo'], 'famiglia': d['famiglia'],
         'zone': sorted(([zn[z], l, ', '.join(d.get('perche', {}).get(z, []))] for z, l in d['catalogo'].items()), key=lambda x: (-x[1], x[0])),

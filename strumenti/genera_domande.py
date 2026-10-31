@@ -377,10 +377,10 @@ TROPPO_SPECIFICI = ['mitreo', 'ipogeo', 'colombario', 'ninfeo', 'cisterna', 'nec
                     'brutalista', 'postmoderno', 'neoromanica', 'fondo edifici', 'di proprietà', 'bene dello stato', 'bene di roma capitale',
                     'cappella', 'convento', 'monastero', 'casa storica', 'assedio', 'mausoleo', 'santissimo sacramento', 'addolorata', 'madonna del carmine',
                     'san silvestro', 'palazzo delle poste', 'scuola storica', 'liceo storico', 'biblioteca', 'caserma', 'accademia', 'impianto sportivo']
-ARCHITETTI_FAMOSI = ['Michelangelo', 'Bramante', 'Raffaello', 'Maderno', 'Della Porta', 'Domenico Fontana', 'Valadier', 'Piacentini', 'Sangallo',
-                     'Vignola', 'Pietro da Cortona', 'Nervi', 'Libera', 'Fuksas', 'Hadid', 'Renzo Piano', 'Meier', 'Moretti', 'Apollodoro']
+ARCHITETTI_FAMOSI = ['Michelangelo', 'Bramante', 'Raffaello', 'Maderno', 'Della Porta', 'Domenico Fontana', 'Valadier', 'Pietro da Cortona',
+                     'Nervi', 'Fuksas', 'Hadid', 'Renzo Piano', 'Meier', 'Apollodoro']
 ARTISTI_FAMOSI = ['Raffaello', 'Michelangelo']  # gli altri (Rubens, Reni...) sono troppo specifici per una zona
-SEPOLTI_OK = ['un papa', 'un poeta', 'un pittore', 'un re o una regina', 'un imperatore', 'un santo']
+SEPOLTI_OK = ['un papa']
 CINEMA_FAMOSI = ['Alberto Sordi', 'Anna Magnani', 'Carlo Verdone', 'Gigi Proietti', 'Nino Manfredi', 'Marcello Mastroianni', 'Vittorio Gassman', 'Totò',
                  'Sophia Loren', 'Monica Vitti', 'Aldo Fabrizi', 'Claudia Cardinale', 'Audrey Hepburn', 'Gregory Peck', 'Toni Servillo', 'Elio Germano',
                  'Federico Fellini', 'Pier Paolo Pasolini', 'Paolo Sorrentino', 'Nanni Moretti', 'Roberto Rossellini', 'Vittorio De Sica', 'Mario Monicelli',
@@ -520,6 +520,24 @@ def main():
         if palazzo:
             pa = [el(x['nome'], x['sl'], geo(x)) for x in dentro if any(ha(t, ('palazzo', 'villa', 'edificio')) for t in parti(x.get('tipi')))]
             aggiungi('epoche', 'palazzo', f'Una zona con un palazzo {palazzo}', f'nessun palazzo {palazzo}', pa, f'palazzo {palazzo}')
+    for cerca, chi, femm in [(('fontana',), 'fontana', True), (('villa',), 'villa', True), (('torre',), 'torre', True), (('ponte',), 'ponte', False),
+                             (('monumento', 'statua'), 'monumento', False), (('piazza',), 'piazza', True)]:
+        for da, a, chiesa, palazzo in EPOCHE:
+            testo_ep = (chiesa if femm else palazzo) or chiesa
+            if not testo_ep:
+                continue
+            els = [el(x['nome'], x['sl'], geo(x)) for x in luoghi if x.get('inizio') is not None and da <= x['inizio'] <= a
+                   and any(ha(t, cerca) for t in parti(x.get('tipi')))]
+            articolo = 'una' if femm else 'un'
+            aggiungi('epoche', slug(chi), f'Una zona con {articolo} {chi} {testo_ep}', f'nessun{"a" if femm else ""} {chi} {testo_ep}', els, f'{chi} {testo_ep}')
+    for parole, agg_m, agg_f in [(('barocc',), 'barocco', 'barocca'), (('rinasciment',), 'rinascimentale', 'rinascimentale'), (('architettura romanica',), 'romanico', 'romanica'),
+                                 (('neoclassic',), 'neoclassico', 'neoclassica'), (('neogotic',), 'neogotico', 'neogotica'), (('art nouveau', 'liberty'), 'liberty', 'liberty'),
+                                 (('razionalismo', 'movimento moderno'), 'razionalista', 'razionalista')]:
+        for cerca, chi, femm in [(('chiesa', 'basilica'), 'chiesa', True), (('palazzo',), 'palazzo', False), (('villa', 'villino'), 'villa', True), (('fontana',), 'fontana', True)]:
+            els = [el(x['nome'], x['sl'], geo(x)) for x in luoghi if any(ha(t, cerca) for t in parti(x.get('tipi'))) and any(ha(st, parole) for st in parti(x.get('stili')))
+                   and not any(n in st for st in parti(x.get('stili')) for n in ('neorinasc', 'neobarocc', 'neoromanic'))]
+            agg = agg_f if femm else agg_m
+            aggiungi('stili', slug(chi), f"Una zona con {'una' if femm else 'un'} {chi} {agg}", f"nessun{'a' if femm else ''} {chi} {agg}", els, f'{chi} {agg}')
     antichi = [el(x['nome'], x['sl'], geo(x)) for x in luoghi if x.get('inizio') is not None and x['inizio'] < 476]
     aggiungi('epoche', 'antico', "Una zona con un monumento dell'antica Roma (prima del 476)", "nessun monumento dell'antica Roma", antichi, 'antica roma')
     for da, a, testo in [(1922, 1943, 'costruito durante il fascismo'), (1960, 1960, 'costruito per le Olimpiadi del 1960'), (1990, 1990, 'costruito per i Mondiali del 1990')]:
@@ -715,11 +733,23 @@ def main():
 
     # Criteri di Simone (31/10/2026): niente termini da specialisti, niente catene o cucine generiche,
     # nomi propri (architetti, artisti, attori, registi, papi) solo se famosi.
+    f_appr = RADICE / 'dati' / 'domande-approvate.json'
+    approvate = set(json.loads(f_appr.read_text())['ids']) if f_appr.exists() else set()
     tenute = []
     for d in domande:
+        if d['famiglia'] == 'nomi' and d['id'] not in approvate:
+            continue  # "basta strade": restano solo quelle gia approvate
         chiave = d['id'].split('-', 2)[-1]
         f = d['famiglia']
-        if f in ('cucine', 'marchi'):
+        if f in ('cucine', 'marchi', 'strade', 'set'):
+            continue  # bocciate nella revisione del 31/10 (e "basta strade")
+        if f == 'linee' and d['tipo'] == 'linee-consolare':
+            continue
+        if f == 'dediche' and not any(t in d['testo'] for t in ('alla Madonna', 'a Gesù')):
+            continue
+        if f == 'nomi' and d['tipo'] == 'nomi-santo':
+            continue
+        if f == 'luoghi' and d['tipo'] == 'luoghi-forte':
             continue
         if any(t in d['testo'].lower() for t in TROPPO_SPECIFICI):
             continue

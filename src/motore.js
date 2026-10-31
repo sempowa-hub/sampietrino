@@ -98,7 +98,8 @@ function mescola(lista, caso) {
 
 export function domandeDelGiorno(dataISO, pool) {
   const vecchio = dataISO < DATA_NUOVE;
-  const valide = giocabili(pool.filter((d) => (vecchio ? !d.generata : !d.riserva)));
+  // Le domande "proposta" (generate, non ancora approvate da Simone e Themino) non escono mai.
+  const valide = giocabili(pool.filter((d) => !d.proposta && (vecchio ? !d.generata : !d.riserva)));
   if (valide.length < DOMANDE_AL_GIORNO) {
     throw new Error(`servono almeno ${DOMANDE_AL_GIORNO} domande giocabili, ce ne sono ${valide.length} su ${pool.length}`);
   }

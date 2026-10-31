@@ -366,6 +366,11 @@ def main():
         f_scart = RADICE / 'dati' / 'domande-scartate.json'
         scartate = set(json.loads(f_scart.read_text())['ids']) if f_scart.exists() else set()
         gen = [x for x in gen if x['id'] not in scartate]
+        # In gioco solo le approvate (voto Si). Le altre restano proposte, nella pagina di revisione.
+        f_appr = RADICE / 'dati' / 'domande-approvate.json'
+        approvate = set(json.loads(f_appr.read_text())['ids']) if f_appr.exists() else None
+        # Le approvate per prime: tra due domande con le stesse zone resta quella gia approvata.
+        gen.sort(key=lambda x: approvate is not None and x['id'] not in approvate)
         firme = set()
         testi = {d['testo'].lower() for d in domande if not d.get('riserva')}
         for g in gen:
@@ -410,6 +415,7 @@ def main():
             k = len(ordine)
             domande.append({
                 'id': g['id'], 'tipo': g['tipo'], 'testo': testo, 'famiglia': g['famiglia'], 'generata': True,
+                **({} if approvate is None or g['id'] in approvate else {'proposta': True}),
                 'fasce_a_mano': {ids[n]: min(4, i * 5 // k) for i, n in enumerate(ordine)},
                 'perche': {ids[n]: v[:3] + (['...'] if len(v) > 3 else []) for n, v in perche.items()},
                 '_luoghi': punti[:400],
@@ -494,12 +500,14 @@ def main():
                        round((maxy - zone[n].representative_point().y) / 1000, 2)],
             'vicini': sorted(ids[v] for v in vicini[n]),
         } for n in nomi],
-        'domande': giocabili,
+        'domande': [d for d in giocabili if not d.get('proposta')],
         'avvisi': avvisi,
         'confini': percorso_linee(linemerge(rete_zone).simplify(8), origine),
         'confini_municipi': percorso_linee(linemerge(rete_mun).simplify(8), origine),
         'tevere': percorso_linee(unary_union(tevere_linee).intersection(gra.buffer(2000)).simplify(8), origine) if tevere_linee else None,
     }
+    # Le proposte (generate, da approvare) vanno in un file a parte per la pagina di revisione, non nel gioco.
+    (RADICE / 'dati' / 'domande-proposte.json').write_text(json.dumps([d for d in giocabili if d.get('proposta')], ensure_ascii=False, separators=(',', ':')))
     USCITA.write_text(json.dumps(dati, ensure_ascii=False, separators=(',', ':')))
 
     coperta = unary_union(list(zone.values())).area / gra.area
