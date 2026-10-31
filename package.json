@@ -6,6 +6,7 @@
   "description": "Gioco quotidiano sui quartieri di Roma: vale di piu la risposta giusta che pochi danno.",
   "scripts": {
     "test": "node --test test/*.test.js",
-    "controlla": "node strumenti/controlla_zone.js"
+    "gioca": "node strumenti/servi.js",
+    "costruisci": "python3 strumenti/costruisci.py"
   }
 }

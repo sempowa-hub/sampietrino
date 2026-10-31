@@ -5,6 +5,7 @@ export const PIN_PER_DOMANDA = 3;
 export const DOMANDE_AL_GIORNO = 5;
 export const MIN_RISPOSTE = 4;
 export const MAX_RISPOSTE = 25;
+export const MAX_PER_TIPO = 3;
 
 // Punti di una zona giusta: relativi alle altre risposte della stessa domanda.
 // La piu nota vale 1, la meno nota 10. A parita di notorieta, rango medio.
@@ -86,5 +87,19 @@ export function domandeDelGiorno(dataISO, pool) {
     const j = Math.floor(caso() * (i + 1));
     [mazzo[i], mazzo[j]] = [mazzo[j], mazzo[i]];
   }
-  return mazzo.slice(0, DOMANDE_AL_GIORNO);
+  // Varieta: al massimo MAX_PER_TIPO domande dello stesso tipo, poi si riempie col resto.
+  const scelte = [];
+  const perTipo = {};
+  for (const d of mazzo) {
+    if (scelte.length === DOMANDE_AL_GIORNO) break;
+    const t = d.tipo ?? 'senza-tipo';
+    if ((perTipo[t] ?? 0) >= MAX_PER_TIPO) continue;
+    perTipo[t] = (perTipo[t] ?? 0) + 1;
+    scelte.push(d);
+  }
+  for (const d of mazzo) {
+    if (scelte.length === DOMANDE_AL_GIORNO) break;
+    if (!scelte.includes(d)) scelte.push(d);
+  }
+  return scelte;
 }

@@ -1,0 +1,147 @@
+:root {
+  --travertino: #efe7da;
+  --travertino-scuro: #e2d7c5;
+  --pietra: #6f6a64;
+  --basalto: #3a3632;
+  --inchiostro: #241f1b;
+  --pompeiano: #a8322d;
+  --ocra: #c98a2b;
+  --edera: #4f6b3a;
+  --zona: #f7f2ea;
+  --linea: #b9ad9b;
+  --font-titolo: 'Fraunces', Georgia, serif;
+  --font-testo: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; }
+
+body {
+  background: var(--travertino);
+  color: var(--inchiostro);
+  font-family: var(--font-testo);
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+}
+
+.testata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0 8px;
+  border-bottom: 2px solid var(--basalto);
+}
+h1 {
+  font-family: var(--font-titolo);
+  font-weight: 800;
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.data { margin: 2px 0 0; color: var(--pietra); font-size: 13px; }
+.cassa {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--font-titolo);
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+}
+.cassa small { font-family: var(--font-testo); font-weight: 400; font-size: 11px; color: var(--pietra); }
+
+main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+
+.domanda { padding: 12px 0 8px; }
+.numero { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--pompeiano); font-weight: 600; }
+.domanda h2 { font-family: var(--font-titolo); font-weight: 600; font-size: 22px; margin: 4px 0 8px; line-height: 1.2; }
+
+.pin { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; min-height: 30px; flex-wrap: wrap; }
+.pin li {
+  background: var(--basalto);
+  color: var(--travertino);
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 13px;
+  animation: entra 0.25s ease-out;
+}
+.pin li b { color: var(--ocra); margin-left: 6px; }
+.pin li.vuoto { background: transparent; border: 1.5px dashed var(--linea); color: var(--pietra); }
+.pin li.buca { background: var(--pompeiano); }
+.pin li.buca b { color: var(--travertino); }
+
+.mappa {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  background: var(--travertino-scuro);
+  border-radius: 10px;
+  overflow: hidden;
+  touch-action: none;
+}
+.mappa svg { width: 100%; height: 100%; display: block; cursor: grab; }
+.mappa svg.trascino { cursor: grabbing; }
+
+.comune { fill: url(#fuori); stroke: var(--basalto); stroke-width: 2px; vector-effect: non-scaling-stroke; }
+.zona { fill: var(--zona); stroke: var(--linea); stroke-width: 1px; vector-effect: non-scaling-stroke; transition: fill 0.2s; cursor: pointer; }
+.zona:hover { fill: #fffaf2; }
+.zona.scelta { fill: var(--ocra); }
+.zona.giusta { fill: #c9d6b5; }
+.zona.sbagliata { fill: #e6a49c; }
+.zona.soluzione { fill: #e9dfb8; }
+.zona.bersaglio { fill: var(--basalto); }
+.municipio { fill: none; stroke: var(--pietra); stroke-width: 1.5px; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke; pointer-events: none; }
+.municipio.acceso { fill: rgba(201, 138, 43, 0.12); stroke: var(--ocra); stroke-width: 3px; stroke-dasharray: none; }
+.etichetta { font-family: var(--font-testo); font-weight: 600; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--travertino); stroke-linejoin: round; fill: var(--inchiostro); }
+.etichetta.bersaglio { fill: var(--travertino); stroke: var(--basalto); }
+
+.zoom { position: absolute; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.zoom button {
+  width: 36px; height: 36px; border-radius: 8px; border: none;
+  background: var(--travertino); color: var(--inchiostro);
+  font-size: 20px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.attribuzione { position: absolute; left: 8px; bottom: 4px; margin: 0; font-size: 10px; color: var(--pietra); }
+
+.azioni { padding: 10px 0 14px; }
+.scelta { margin: 0 0 8px; text-align: center; font-size: 15px; min-height: 20px; }
+.bottoni { display: flex; gap: 8px; }
+button { font-family: var(--font-testo); font-size: 16px; font-weight: 600; }
+.primario, .secondario {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid var(--basalto);
+  transition: opacity 0.2s, transform 0.1s;
+}
+.primario { background: var(--basalto); color: var(--travertino); }
+.secondario { background: transparent; color: var(--basalto); }
+.primario:active, .secondario:active { transform: scale(0.98); }
+button:disabled { opacity: 0.35; }
+
+dialog {
+  border: none;
+  border-radius: 14px;
+  background: var(--travertino);
+  color: var(--inchiostro);
+  padding: 22px;
+  width: min(92vw, 420px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+dialog::backdrop { background: rgba(36, 31, 27, 0.45); }
+dialog h2 { font-family: var(--font-titolo); margin: 0 0 6px; font-size: 26px; }
+dialog .primario { width: 100%; margin-top: 12px; }
+.soluzioni { list-style: none; padding: 0; margin: 10px 0 0; max-height: 40vh; overflow: auto; columns: 2; font-size: 14px; }
+.soluzioni li { padding: 2px 0; break-inside: avoid; }
+.soluzioni b { color: var(--ocra); }
+.soluzioni .tua { font-weight: 600; }
+.grande { font-family: var(--font-titolo); font-size: 44px; font-weight: 800; margin: 4px 0; }
+.grande small { font-family: var(--font-testo); font-size: 14px; font-weight: 400; color: var(--pietra); }
+pre { background: var(--travertino-scuro); padding: 10px; border-radius: 8px; font-size: 15px; white-space: pre-wrap; }
+.nota { color: var(--pietra); font-size: 13px; text-align: center; margin-bottom: 0; }
+
+@keyframes entra { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }

@@ -71,6 +71,20 @@ test('stesso giorno, stesse domande; giorni diversi possono cambiare', () => {
   assert.ok(giorni.size > 1);
 });
 
+test('al massimo 3 domande dello stesso tipo, se ci sono alternative', () => {
+  const r = ['a', 'b', 'c', 'd'];
+  const pool = [
+    ...Array.from({ length: 20 }, (_, i) => ({ id: `c${i}`, tipo: 'confina', risposte: r })),
+    { id: 'm1', tipo: 'municipio', risposte: r },
+    { id: 'm2', tipo: 'municipio', risposte: r },
+  ];
+  for (const giorno of ['2026-11-01', '2026-11-02', '2026-11-03']) {
+    const tipi = domandeDelGiorno(giorno, pool).map((q) => q.tipo);
+    assert.equal(tipi.length, 5);
+    assert.equal(tipi.filter((t) => t === 'confina').length, 3);
+  }
+});
+
 test('pool troppo povero fa errore e dice quanto ha guardato', () => {
   const pool = [{ id: 'x', risposte: ['a'] }, { id: 'y', risposte: ['a', 'b', 'c', 'd'] }];
   assert.equal(giocabili(pool).length, 1);

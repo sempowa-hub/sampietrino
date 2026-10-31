@@ -1,0 +1,29 @@
+{
+ "nota": "Stima a occhio, 0-100: quanto un romano medio nomina spontaneamente la zona. Da tarare con un sondaggio e poi coi pin veri.",
+ "valori": {
+  "Acilia Nord": 40, "Acilia Sud": 35, "Acqua Vergine": 10, "Aeroporto di Ciampino": 50,
+  "Alessandrino": 35, "Appio Claudio": 30, "Appio-Latino": 55, "Appio-Pignatelli": 20,
+  "Ardeatino": 40, "Aurelio": 60, "Borgo": 60, "Campitelli": 30, "Campo Marzio": 60,
+  "Capannelle": 35, "Casal Boccone": 15, "Casal Morena": 25, "Casalotti": 30,
+  "Castel Giubileo": 25, "Castel Porziano": 30, "Castel di Guido": 15, "Castel di Leva": 15,
+  "Castro Pretorio": 45, "Cecchignola": 40, "Celio": 50, "Cesano": 25, "Collatino": 30,
+  "Colonna": 35, "Della Vittoria": 45, "Don Bosco": 35, "E.U.R.": 95, "Esquilino": 80,
+  "Flaminio": 75, "Fonte Ostiense": 10, "Gianicolense": 40, "Giuliano-Dalmata": 25,
+  "Grottarossa": 20, "Isola Farnese": 15, "La Giustiniana": 30, "La Pisana": 30,
+  "La Storta": 30, "Labaro": 30, "Ludovisi": 40, "Lunghezza": 30, "Magliana Vecchia": 45,
+  "Marcigliana": 15, "Mezzocammino": 15, "Monte Sacro": 65, "Monte Sacro Alto": 25,
+  "Monti": 88, "Nomentano": 55, "Ostia Antica": 60, "Ostiense": 75, "Ottavia": 25,
+  "Parioli": 90, "Parione": 25, "Pietralata": 45, "Pigna": 20, "Pinciano": 35, "Ponte": 30,
+  "Ponte Galeria": 30, "Ponte Mammolo": 40, "Portuense": 45, "Prati": 92,
+  "Prenestino-Centocelle": 55, "Prenestino-Labicano": 45, "Prima Porta": 45,
+  "Primavalle": 55, "Regola": 25, "Ripa": 20, "Salario": 45, "Sallustiano": 20,
+  "San Basilio": 45, "San Saba": 30, "Sant'Angelo": 30, "Sant'Eustachio": 20,
+  "Santa Maria di Galeria": 15, "Settecamini": 30, "Testaccio": 92, "Tiburtino": 50,
+  "Tomba di Nerone": 20, "Tor Cervara": 15, "Tor San Giovanni": 15, "Tor Sapienza": 35,
+  "Tor de' Cenci": 20, "Tor di Quinto": 35, "Tor di Valle": 30,
+  "Torraccia di San Basilio": 10, "Torre Angela": 35, "Torre Gaia": 20, "Torre Maura": 35,
+  "Torre Spaccata": 30, "Torrenova": 25, "Torricola": 10, "Torrino": 35, "Trastevere": 98,
+  "Trevi": 60, "Trieste": 70, "Trionfale": 50, "Tuscolano": 60, "Val Melaina": 30,
+  "Vallerano": 15
+ }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sampietrino</title>
+<meta name="description" content="Gioco quotidiano sui quartieri di Roma: vale di più la risposta giusta che pochi darebbero.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="src/stile.css">
+</head>
+<body>
+<header class="testata">
+  <div>
+    <h1>Sampietrino</h1>
+    <p class="data" id="data"></p>
+  </div>
+  <div class="cassa" aria-live="polite"><span id="totale">0</span><small>sampietrini</small></div>
+</header>
+
+<main>
+  <section class="domanda" id="domanda">
+    <p class="numero" id="numero"></p>
+    <h2 id="testo">Caricamento…</h2>
+    <ol class="pin" id="pin"></ol>
+  </section>
+
+  <section class="mappa" id="mappa">
+    <svg id="svg" role="img" aria-label="Mappa delle zone di Roma"></svg>
+    <div class="zoom">
+      <button id="piu" aria-label="Ingrandisci">+</button>
+      <button id="meno" aria-label="Rimpicciolisci">−</button>
+    </div>
+    <p class="attribuzione" id="attribuzione"></p>
+  </section>
+
+  <section class="azioni">
+    <p class="scelta" id="scelta">Tocca una zona sulla mappa</p>
+    <div class="bottoni">
+      <button class="secondario" id="fermati" disabled>Mi fermo</button>
+      <button class="primario" id="pianta" disabled>Metti il pin</button>
+    </div>
+  </section>
+</main>
+
+<dialog id="esito">
+  <h2 id="esito-titolo"></h2>
+  <p id="esito-testo"></p>
+  <ul class="soluzioni" id="soluzioni"></ul>
+  <button class="primario" id="avanti">Avanti</button>
+</dialog>
+
+<dialog id="fine">
+  <h2>Giro finito</h2>
+  <p class="grande"><span id="fine-totale"></span> <small>sampietrini su 150</small></p>
+  <pre id="condividi"></pre>
+  <button class="primario" id="copia">Copia il risultato</button>
+  <p class="nota">Domani nuove domande.</p>
+</dialog>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
