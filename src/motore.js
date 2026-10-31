@@ -3,7 +3,7 @@
 
 export const DOMANDE_AL_GIORNO = 5;
 export const MIN_RISPOSTE = 4;
-export const MAX_RISPOSTE = 25;
+export const MAX_RISPOSTE = 40;
 export const MAX_PER_TIPO = 1;
 
 // La scala: dalla risposta che dicono tutti a quella che conosce solo chi vive per strada.

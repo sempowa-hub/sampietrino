@@ -32,7 +32,8 @@ def base():
                 g[p] = c
 
     # Spalle e maglietta color pietra, con la stampa nera sul petto.
-    spalle = {(x, y) for y in range(45, L) for x in range(L) if abs(x - CX) <= 15 + (y - 45) * 1.6}
+    # Spalle strette e fianchi quasi dritti: un trapezio largo in basso lo faceva sembrare in sovrappeso.
+    spalle = {(x, y) for y in range(44, L) for x in range(L) if abs(x - CX) <= min(13 + (y - 44) * 1.4, 17 + (y - 47) * 0.25)}
     metti(spalle, 'L')
     metti({(x, y) for x, y in spalle if x > CX + 6}, 'l')
     metti({(x, y) for x in range(CX + 7, CX + 10) for y in range(49, L) if (x + y) % 3}, 'X')
@@ -176,25 +177,43 @@ def stupore():
         g[(x, y)] = 'M'
     for x in range(CX - 2, CX + 2):
         g[(x, 28)] = 'K'
-    # Mani in testa: due mani sulla calotta, braccia aperte verso i bordi.
+    # Mani in testa con le braccia alzate e strette: dalla spalla il braccio sale fino al gomito, poco sopra
+    # le orecchie, poi l'avambraccio piega verso la mano sulla calotta. Sottili, cosi il busto non si allarga.
+    sotto = dict(g)  # la faccia prima delle braccia, per il filo d'inchiostro dove si toccano
+    tutte = set()
     for lato in (-1, 1):
-        mano = ellisse(CX + lato * 10, 9, 5, 3.6)
-        for p in mano:
+        # Il braccio parte dal bordo esterno della spalla e sale quasi dritto: in linea col busto, che cosi non sporge.
+        spalla, gomito, mano = (CX + lato * 16, 47), (CX + lato * 19, 16), (CX + lato * 10, 9)
+        braccio = segmento(spalla, gomito, 2.6)
+        avambraccio = segmento(gomito, mano, 2.4)
+        for p in braccio | avambraccio:
             g[p] = 'F' if lato < 0 else 'f'
-        for i in range(3):
-            g[(CX + lato * (7 + i * 2), 6)] = 'f'
-        gomito = (CX + lato * 23, 15)
-        avambraccio = {(x, y) for x in range(L) for y in range(L)
-                       if min(abs(x - CX - lato * 13), abs(x - gomito[0])) <= abs(gomito[0] - CX - lato * 13)
-                       and lato * (x - CX) >= 12 and lato * (x - CX) <= 25 and abs(y - (9 + (lato * (x - CX) - 13) * 0.55)) <= 2.6}
-        braccio = {(x, y) for y in range(15, 46) for x in range(L) if abs(x - (gomito[0] - lato * (y - 15) * 0.22)) <= 3.2}
-        for p in avambraccio | braccio:
+        for x, y in braccio:
+            if y >= 37:  # manica corta della maglietta, attaccata alla spalla
+                g[(x, y)] = 'L' if lato < 0 else 'l'
+            elif y == 36:
+                g[(x, y)] = 'K'
+        for p in ellisse(mano[0], mano[1], 3.6, 2.8):  # la mano aperta sulla testa
             g[p] = 'F' if lato < 0 else 'f'
-        for p in braccio:  # ombra interna del braccio
-            if lato * (p[0] - (gomito[0] - lato * (p[1] - 15) * 0.22)) < -1:
-                g[p] = 'f'
+        tutte |= braccio | avambraccio | ellisse(mano[0], mano[1], 3.6, 2.8)
+    for x, y in tutte:  # bordo delle braccia sopra faccia e berretto
+        if any((x + dx, y + dy) not in tutte and (x + dx, y + dy) in sotto for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+            if g[(x, y)] in ('F', 'f'):
+                g[(x, y)] = 'K'
     return g
 
+
+def segmento(a, b, r):
+    """Pixel entro r dal segmento a-b: un braccio."""
+    (ax, ay), (bx, by) = a, b
+    vx, vy = bx - ax, by - ay
+    out = set()
+    for x in range(L):
+        for y in range(L):
+            t = max(0, min(1, ((x - ax) * vx + (y - ay) * vy) / (vx * vx + vy * vy)))
+            if (x - ax - t * vx) ** 2 + (y - ay - t * vy) ** 2 <= r * r:
+                out.add((x, y))
+    return out
 
 def occhio_chiuso(g, ox, felice=True):
     """Mezzaluna: all'insu se felice (risata, occhiolino), dritta se no."""

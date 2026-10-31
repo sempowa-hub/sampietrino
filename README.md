@@ -83,13 +83,13 @@ Confini © OpenStreetMap contributors, licenza ODbL: l'attribuzione resta visibi
 
 Tipi di domanda: "confina con X" (almeno 100 m di confine in comune), "una zona del Municipio N" (più di metà della zona nel municipio), "arriva fino al Raccordo", "confina col Vaticano".
 
-Zone a cavallo del GRA: decide la quota, almeno il 50% dell'area dentro. Lo script stampa ogni volta l'elenco delle zone a cavallo con la loro quota, così si controlla a occhio.
+Zone a cavallo del GRA: decide la quota, almeno il 40% dell'area dentro (così entra il Parco dell'Appia Antica, che sta dentro al 48%). Lo script stampa ogni volta l'elenco delle zone a cavallo con la loro quota, così si controlla a occhio.
 
 ## Cosa manca, in ordine
 
 0. **Verificare le categorie**: GRA (341 km²) e luoghi sono scaricati, fontane, ville e movida controllate a mano sul catalogo. Le altre hanno ancora `verificata: false` (per esempio: i Trapizzino trovati sono tutte le sedi? Ne risultano 6). Per riscaricare: `python3 strumenti/scarica_gra.py`, `python3 strumenti/scarica_luoghi.py`, poi `npm run costruisci`; Overpass risponde spesso 502, lo script riprova da solo.
-1. **La mappa ufficiale del 2026** (334 quartieri, 22 rioni, 101 zone funzionali, delibera del 1° ottobre 2026): ha i nomi che usa la gente (Pigneto, Garbatella, San Lorenzo), che oggi mancano. Vedi `docs/roma.md`.
-2. **Buchi nella copertura**: le zone coprono l'87,4% del Comune; dentro il GRA circa il 93% (misura con un anello di prova, da rifare col GRA vero). Sulla mappa i buchi sono tratteggiati e non si giocano.
+1. ~~La mappa ufficiale del 2026~~: fatto. Le zone sono le località ufficiali di Roma Capitale (rioni, quartieri, zone funzionali): 262 dentro il Raccordo, coi nomi che usa la gente. Script: `strumenti/scarica_quartieri.py`.
+2. **Copertura**: con la mappa 2026 le zone coprono il 99,7% dell'area dentro il Raccordo (il buco è il Vaticano).
 3. **Più categorie**: un gioco quotidiano con 5 tappe consuma il mazzo in fretta. Servono decine di categorie in `dati/categorie.json`.
 4. **Notorietà vera**: sondaggio tra amici, poi i pin dei giocatori.
 

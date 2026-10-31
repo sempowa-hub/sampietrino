@@ -1,7 +1,8 @@
 """Costruisce dati/gioco.json dalle fonti geografiche.
 
-Zone: i poligoni di dati/fonti/quartieri-osm.geojson, uniti per nome, solo quelle
-che stanno almeno per meta dentro il Grande Raccordo Anulare (dati/fonti/gra-osm.geojson,
+Zone: le localita della mappa ufficiale 2026 (dati/fonti/localita-2026.geojson, da strumenti/scarica_quartieri.py:
+rioni, quartieri e zone funzionali coi nomi che usa la gente), unite per nome, solo quelle
+che stanno almeno per il 40% dentro il Grande Raccordo Anulare (cosi entra il Parco dell'Appia Antica, al 48%) (dati/fonti/gra-osm.geojson,
 da strumenti/scarica_gra.py). Il gioco e la Roma dentro il Raccordo.
 Domande: calcolate dalla geometria, mai scritte a mano.
   - Categorie (dati/categorie.json): "Una zona con una fermata della Metro A", "con un
@@ -41,8 +42,8 @@ RADICE = Path(__file__).resolve().parent.parent
 FONTI = RADICE / 'dati' / 'fonti'
 USCITA = RADICE / 'dati' / 'gioco.json'
 CONFINE_MINIMO_M = 100
-QUOTA_DENTRO_GRA = 0.5
-MIN_RISPOSTE, MAX_RISPOSTE = 4, 25
+QUOTA_DENTRO_GRA = 0.4
+MIN_RISPOSTE, MAX_RISPOSTE = 4, 40
 FASCE = ['Da cartolina', 'Ce sta', 'Da romano de Roma', 'Chicca', 'Da Mino']
 PUNTI = [1, 2, 3, 5, 8]
 CATALOGO_CSV = RADICE / 'dati' / 'catalogo.csv'
@@ -116,8 +117,8 @@ def main():
     notorieta = json.loads((RADICE / 'dati' / 'notorieta.json').read_text())['valori']
 
     per_nome = defaultdict(list)
-    for f in carica('quartieri-osm.geojson'):
-        per_nome[f['properties']['name']].append(in_metri(shape(f['geometry'])).buffer(0))
+    for f in carica('localita-2026.geojson'):
+        per_nome[f['properties']['nome']].append(in_metri(shape(f['geometry'])).buffer(0))
     zone = {n: unary_union(g) for n, g in per_nome.items()}
 
     mancanti = sorted(n for n in zone if n not in notorieta)
@@ -355,8 +356,8 @@ def main():
     for d in domande:
         d.pop('_luoghi', None)
     dati = {
-        'nota': 'Generato da strumenti/costruisci.py. Non modificare a mano. Confini: OpenStreetMap (ODbL), vecchia suddivisione toponomastica. Solo dentro il GRA.',
-        'attribuzione': 'Confini © OpenStreetMap contributors',
+        'nota': 'Generato da strumenti/costruisci.py. Non modificare a mano. Zone: mappa ufficiale dei quartieri di Roma Capitale (2026). Luoghi: OpenStreetMap (ODbL). Solo dentro il GRA.',
+        'attribuzione': 'Quartieri © Roma Capitale · Luoghi © OpenStreetMap contributors',
         'dimensioni': [round((maxx - minx) / 1000, 2), round((maxy - miny) / 1000, 2)],
         'comune': percorso_svg(semplifica(gra), origine),
         'municipi': [{'num': k, 'nome': f'Municipio {ROMANI[k]}', 'd': percorso_svg(semplifica(m), origine)}
