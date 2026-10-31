@@ -19,6 +19,8 @@ RADICE = Path(__file__).resolve().parent.parent
 GIOCO = RADICE / 'dati' / 'gioco.json'
 CALENDARIO = RADICE / 'dati' / 'calendario.json'
 INIZIO = date(2026, 11, 1)
+# Il primo giorno di Sampietrino (31/10/2026) ha le sue 5 domande, scelte col sistema di prima: contano come gia usate.
+FISSI = {'2026-10-31': ['movida', 'metro-a', 'belvedere-themino', 'estero', 'scalinate']}
 AL_GIORNO = 5
 # Temi: due domande dello stesso tema nello stesso giorno si somigliano anche se le parole sono diverse.
 TEMI = {
@@ -98,6 +100,7 @@ def main():
     # Fermi: i giorni fino a domani (ora di Roma). Gli altri si rifanno con le domande non ancora usate.
     domani = (datetime.now(ZoneInfo('Europe/Rome')) + timedelta(days=1)).date()
     fermi = {k: v for k, v in vecchio.items() if date.fromisoformat(k) <= domani and all(i in per_id for i in v)}
+    fermi.update(FISSI)
     usate = {i for v in fermi.values() for i in v}
     libere = [d for d in pool if d['id'] not in usate]
     ultimo = max((date.fromisoformat(k) for k in fermi), default=INIZIO - timedelta(days=1))

@@ -5,7 +5,7 @@ import { SCALA } from './motore.js';
 import { pixel } from './pixel.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { SOUVENIR, GRUPPI } from './souvenir.js';
-import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO } from './storico.js';
+import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO, PRIMO_GIORNO } from './storico.js';
 import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica } from './conto.js';
 
 const $ = (id) => document.getElementById(id);
@@ -238,7 +238,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   let mese = oggi.slice(0, 7), scelto = null;
   const primoGiorno = () => {
     const giocati = Object.keys(leggi().giorni).sort();
-    const finestra = sposta(oggi, -GIORNI_INDIETRO);
+    const finestra = [sposta(oggi, -GIORNI_INDIETRO), PRIMO_GIORNO].sort()[1];
     return giocati[0] && giocati[0] < finestra ? giocati[0] : finestra;
   };
 
@@ -369,7 +369,8 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     } else if (fatte) {
       testo = 'Partita lasciata a metà: il giorno ormai è chiuso.';
     } else {
-      testo = d > oggi ? 'Questo giorno deve ancora arrivare.' : 'Giorno chiuso: si giocano solo oggi e i 7 giorni prima.';
+      testo = d > oggi ? 'Questo giorno deve ancora arrivare.' : d < PRIMO_GIORNO ? `Sampietrino è nato il ${dataIt(PRIMO_GIORNO, { day: 'numeric', month: 'long', year: 'numeric' })}.`
+        : 'Giorno chiuso: si giocano solo oggi e i 7 giorni prima.';
     }
     if (testo) box.append(el('p', 'cs-testo', testo));
     if (azione) {

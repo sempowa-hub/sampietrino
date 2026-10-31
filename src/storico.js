@@ -4,10 +4,11 @@ import { SCALA, MASSIMO_AL_GIORNO } from './motore.js';
 
 export const oggi = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date());
 export const GIORNI_INDIETRO = 7; // oggi piu i 7 giorni prima si possono giocare dal diario
+export const PRIMO_GIORNO = '2026-10-31'; // il primo giorno di Sampietrino: l'archivio non va piu indietro
 
 // Date come stringhe AAAA-MM-GG, spostate a mezzogiorno UTC: niente sorprese con l'ora legale.
 export const sposta = (data, n) => new Date(Date.parse(`${data}T12:00:00Z`) + n * 864e5).toISOString().slice(0, 10);
-export const giocabile = (data) => data <= oggi && data >= sposta(oggi, -GIORNI_INDIETRO);
+export const giocabile = (data) => data <= oggi && data >= PRIMO_GIORNO && data >= sposta(oggi, -GIORNI_INDIETRO);
 export const dataIt = (data, opzioni) => new Intl.DateTimeFormat('it-IT', { timeZone: 'UTC', ...opzioni }).format(new Date(`${data}T12:00:00Z`));
 
 // I gradi della giornata, dal totale: stessi nomi e colori della storia da condividere.
