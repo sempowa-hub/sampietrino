@@ -12,7 +12,8 @@ service cloud.firestore {
     function vicino(data) {
       return data in [giorno(request.time), giorno(request.time - duration.value(1, 'd')), giorno(request.time + duration.value(1, 'd'))];
     }
-    function punti(l) { return l == 4 ? 8 : l == 3 ? 5 : l == 2 ? 3 : l == 1 ? 2 : l == 0 ? 1 : 0; }
+    // Punti per fascia: buca (-1) 0, Da cartolina 1, Ce sta 2, Da romano 3, Chicca 5, Da Mino 8.
+    function punti(l) { return [0, 1, 2, 3, 5, 8][l + 1]; }
     function livello(l) { return l == null || (l is int && l >= -1 && l <= 4); }
     function nomeOk(d) { return d.nome is string && d.nome.size() <= 20 && d.foto is string && d.foto.size() <= 500 && d.pubblico is bool; }
 

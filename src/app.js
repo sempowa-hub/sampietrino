@@ -130,7 +130,9 @@ async function pubblicaOggi() {
     if (giorno !== oggi || $('pagina-diario').hidden) return;
     const c = await classifica(oggi, 1);
     if (!c?.mio || giorno !== oggi) return;
-    $('meglio').innerHTML = c.percento != null ? `Meglio del <b>${c.percento}%</b> di chi ha giocato oggi · ${c.posizione}° su ${c.totale}` : `Tra i primi a giocare oggi · ${c.posizione}° su ${c.totale}`;
+    $('meglio').innerHTML = c.percento == null ? `Tra i primi a giocare oggi · ${c.posizione}° su ${c.totale}`
+      : c.percento === 0 ? `<b>${c.posizione}°</b> su ${c.totale} oggi · domani se riparte`
+        : `Meglio del <b>${c.percento}%</b> di chi ha giocato oggi · ${c.posizione}° su ${c.totale}`;
     $('meglio').hidden = false;
   } catch (e) { console.warn('Classifica non raggiunta:', e?.code || e?.message); }
 }
