@@ -975,19 +975,15 @@ fontane,Una zona con una fontana famosa,si,Testaccio,Da Mino,8,Fontana delle Anf
 ville,Una zona con una villa storica (il parco),si,Villa Borghese,Da cartolina,1,Villa Borghese
 ville,Una zona con una villa storica (il parco),si,Villa Pamphili,Da cartolina,1,Villa Doria Pamphilj
 ville,Una zona con una villa storica (il parco),si,Nomentano,Ce sta,2,Villa Torlonia / Villa Leopardi
-ville,Una zona con una villa storica (il parco),si,Parioli,Ce sta,2,Villa Ada / Villa Glori
-ville,Una zona con una villa storica (il parco),si,Pinciano,Ce sta,2,Villa Ada
-ville,Una zona con una villa storica (il parco),si,Tor di Quinto,Ce sta,2,Villa Ada / Villa Glori
-ville,Una zona con una villa storica (il parco),si,Trieste,Ce sta,2,Villa Ada / Villa Torlonia / Villa Paganini
-ville,Una zona con una villa storica (il parco),si,Vescovio,Ce sta,2,Villa Ada / Villa Chigi
 ville,Una zona con una villa storica (il parco),si,Villa Ada,Ce sta,2,Villa Ada
 ville,Una zona con una villa storica (il parco),si,Celio,Da romano de Roma,3,Villa Celimontana
-ville,Una zona con una villa storica (il parco),si,Monteverde,Chicca,5,Villa Sciarra
 ville,Una zona con una villa storica (il parco),si,Trastevere,Chicca,5,Villa Sciarra
 ville,Una zona con una villa storica (il parco),si,Villaggio Olimpico,Chicca,5,Villa Glori
 ville,Una zona con una villa storica (il parco),si,Alberone,Da Mino,8,Villa Lazzaroni
 ville,Una zona con una villa storica (il parco),si,Aurelio,Da Mino,8,Villa Carpegna
 ville,Una zona con una villa storica (il parco),si,San Giovanni,Da Mino,8,Villa Fiorelli
+ville,Una zona con una villa storica (il parco),si,Trieste,Da Mino,8,Villa Paganini
+ville,Una zona con una villa storica (il parco),si,Vescovio,Da Mino,8,Villa Chigi
 ville,Una zona con una villa storica (il parco),si,Villa Gordiani,Da Mino,8,Villa Gordiani
 movida,Una zona famosa per la movida,si,Trastevere,Da cartolina,1,Piazza Trilussa
 movida,Una zona famosa per la movida,si,Parione,Ce sta,2,Campo de' Fiori / Via del Governo Vecchio
@@ -1484,15 +1480,43 @@ orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Castro Pretorio,Ce
 orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Campo Marzio,Da romano de Roma,3,Orologio ad acqua del Pincio / Meridiana nel chiostro di Trinità dei Monti
 orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Della Vittoria,Chicca,5,Torre del Primo Meridiano d'Italia
 orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Pigna,Da Mino,8,Orologio di via del Gesù
-ville-themino,Una zona con una villa o un parco,si,Villa Borghese,Da cartolina,1,Villa Borghese
-ville-themino,Una zona con una villa o un parco,si,Villa Pamphili,Da cartolina,1,Villa Doria Pamphilj
-ville-themino,Una zona con una villa o un parco,si,Eur,Ce sta,2,Laghetto dell'Eur
-ville-themino,Una zona con una villa o un parco,si,Nomentano,Ce sta,2,Villa Torlonia
-ville-themino,Una zona con una villa o un parco,si,Parco degli Acquedotti,Ce sta,2,Parco degli Acquedotti
-ville-themino,Una zona con una villa o un parco,si,Villa Ada,Ce sta,2,Villa Ada
-ville-themino,Una zona con una villa o un parco,si,Caffarella,Da romano de Roma,3,Parco della Caffarella
-ville-themino,Una zona con una villa o un parco,si,Celio,Da romano de Roma,3,Villa Celimontana
-ville-themino,Una zona con una villa o un parco,si,Monti,Da romano de Roma,3,Parco del Colle Oppio
-ville-themino,Una zona con una villa o un parco,si,Trastevere,Da romano de Roma,3,Orto Botanico
-ville-themino,Una zona con una villa o un parco,si,Della Vittoria,Chicca,5,Riserva di Monte Mario
-ville-themino,Una zona con una villa o un parco,si,Tor di Quinto,Da Mino,8,Parco di Tor di Quinto (laghetto a forma di cuore)
+ville-themino,Una zona con un grande parco,si,Villa Borghese,Da cartolina,1,Villa Borghese
+ville-themino,Una zona con un grande parco,si,Villa Pamphili,Da cartolina,1,Villa Doria Pamphilj
+ville-themino,Una zona con un grande parco,si,Appia Antica,Ce sta,2,Parco Naturale Regionale Appia Antica / Parco della Caffarella / Villa dei Quintili
+ville-themino,Una zona con un grande parco,si,Caffarella,Ce sta,2,Parco Naturale Regionale Appia Antica / Parco della Caffarella
+ville-themino,Una zona con un grande parco,si,Eur,Ce sta,2,Parco Centrale del Lago
+ville-themino,Una zona con un grande parco,si,Parco degli Acquedotti,Ce sta,2,Parco Naturale Regionale Appia Antica / Parco degli Acquedotti
+ville-themino,Una zona con un grande parco,si,Tor Marancia,Ce sta,2,Parco Naturale Regionale Appia Antica / Tenuta di Tor Marancia
+ville-themino,Una zona con un grande parco,si,Villa Ada,Ce sta,2,Villa Ada
+ville-themino,Una zona con un grande parco,si,Balduina,Da romano de Roma,3,Parco Regionale Urbano del Pineto
+ville-themino,Una zona con un grande parco,si,Camilluccia,Da romano de Roma,3,Riserva Naturale di Monte Mario
+ville-themino,Una zona con un grande parco,si,Conca d'Oro,Da romano de Roma,3,Parco Valle dell'Aniene
+ville-themino,Una zona con un grande parco,si,Della Vittoria,Da romano de Roma,3,Riserva Naturale di Monte Mario
+ville-themino,Una zona con un grande parco,si,Monte Mario,Da romano de Roma,3,Riserva Naturale dell'Insugherata
+ville-themino,Una zona con un grande parco,si,Pietralata,Da romano de Roma,3,Parco Valle dell'Aniene
+ville-themino,Una zona con un grande parco,si,Ponte Mammolo,Da romano de Roma,3,Parco Valle dell'Aniene
+ville-themino,Una zona con un grande parco,si,Quadraro,Da romano de Roma,3,Parco di Centocelle
+ville-themino,Una zona con un grande parco,si,San Godenzo,Da romano de Roma,3,Riserva Naturale dell'Insugherata
+ville-themino,Una zona con un grande parco,si,Villa Gordiani,Da romano de Roma,3,Villa Gordiani
+ville-themino,Una zona con un grande parco,si,Villaggio Olimpico,Da romano de Roma,3,Villa Glori
+ville-themino,Una zona con un grande parco,si,Bravetta,Chicca,5,Riserva Naturale Valle dei Casali
+ville-themino,Una zona con un grande parco,si,Casetta Mattei,Chicca,5,Riserva Naturale Valle dei Casali
+ville-themino,Una zona con un grande parco,si,Cinecittà,Chicca,5,Pratone di Torre Spaccata
+ville-themino,Una zona con un grande parco,si,Laurentino Fonte Ostiense,Chicca,5,Riserva Naturale del Laurentino - Acqua Acetosa
+ville-themino,Una zona con un grande parco,si,Montespaccato,Chicca,5,Riserva Naturale dell'Acquafredda
+ville-themino,Una zona con un grande parco,si,Nuovo Salario,Chicca,5,Parco delle Sabine
+ville-themino,Una zona con un grande parco,si,Palmarola,Chicca,5,Parco Agricolo di Casal del Marmo / Comprensorio Santa Maria della Pietà
+ville-themino,Una zona con un grande parco,si,Pisana Brava,Chicca,5,Riserva Naturale della Tenuta dei Massimi
+ville-themino,Una zona con un grande parco,si,Porta di Roma,Chicca,5,Parco delle Sabine
+ville-themino,Una zona con un grande parco,si,Rebibbia,Chicca,5,Parco regionale urbano di Aguzzano
+ville-themino,Una zona con un grande parco,si,Talenti,Chicca,5,Parco Talenti
+ville-themino,Una zona con un grande parco,si,Tenuta dei Massimi,Chicca,5,Riserva Naturale della Tenuta dei Massimi
+ville-themino,Una zona con un grande parco,si,Tiburtino III,Chicca,5,Parco della Serenissima
+ville-themino,Una zona con un grande parco,si,Trullo,Chicca,5,Riserva Naturale Valle dei Casali
+ville-themino,Una zona con un grande parco,si,Vignaccia - Quaroni,Chicca,5,Riserva Naturale della Tenuta dei Massimi
+ville-themino,Una zona con un grande parco,si,Villa Troili,Chicca,5,Riserva Naturale della Tenuta dei Massimi
+ville-themino,Una zona con un grande parco,si,Grottarossa,Da Mino,8,Parco regionale di Veio / Parco Volusia
+ville-themino,Una zona con un grande parco,si,Grottarossa Valle Vescovo,Da Mino,8,Parco regionale di Veio
+ville-themino,Una zona con un grande parco,si,Quarticciolo,Da Mino,8,Parco Giovanni Palatucci
+ville-themino,Una zona con un grande parco,si,Torrino,Da Mino,8,Parco del Castellaccio
+ville-themino,Una zona con un grande parco,si,Vigna Clara,Da Mino,8,Parco regionale di Veio

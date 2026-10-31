@@ -385,7 +385,7 @@ const MANCA = {
   bernini: 'nessuna delle opere di Bernini in gara', borromini: 'nessuna delle opere di Borromini in gara', caravaggio: 'nessun Caravaggio',
   'roma-sotto': 'nessuno dei pezzi di Roma antica in gara', 'street-art': 'nessuno dei murales in gara', novecento: 'nessuno dei gioielli del Novecento in gara',
   estero: 'nessuno dei pezzetti di estero in gara', scalinate: 'nessuna delle scalinate in gara', orologi: 'nessuno degli orologi strani in gara',
-  'ville-themino': 'nessuna delle ville e dei parchi in gara',
+  'ville-themino': 'nessun parco sopra i 15 ettari',
 };
 const PERCHE_FASCIA = [
   'È la prima che viene in mente a tutti: per questo vale poco.',

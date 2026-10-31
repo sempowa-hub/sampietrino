@@ -166,8 +166,8 @@ def main():
         dentro = lambda forma: True
     feature, vuote = [], []
     for c in categorie:
-        if 'punti' in c:
-            continue  # coordinate gia scritte nella categoria, niente da scaricare
+        if 'punti' in c or ('aree' in c and 'elenco' not in c):
+            continue  # coordinate gia scritte nella categoria, o aree da strumenti/scarica_parchi.py
         mancanti = []
         if 'metro' in c:
             trovati = fermate_metro(c['metro'])

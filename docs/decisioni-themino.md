@@ -21,3 +21,9 @@ Prese da Simone e Themino insieme, sulle domande di `docs/domande-themino.md`.
 | Righe di contesto | Themino ne rivede 4-5, le altre si allineano a quelle. |
 | Condivisione e classifica | Sì alla card del risultato e alla classifica tra follower, con login. |
 | Faccia | La faccia di Themino a pixel, con espressioni, dentro il gioco. |
+
+## Ville e parchi (31 ottobre 2026)
+- **Villa** (domanda "Una zona con una villa storica (il parco)"): residenza nobiliare col suo parco, con "Villa" nel nome. Le 14 di sempre, da Borghese a Paganini. Vale la zona dove sta il cuore della villa, cioè quella con la parte più grande del parco; una seconda zona solo se ne ha almeno il 40%. Villa Ada vale solo per Villa Ada, non per Parioli o Trieste che il recinto sfiora.
+- **Grande parco** (domanda "Una zona con un grande parco", ex "una villa o un parco"): parco pubblico, riserva naturale o villa con un nome, sopra i 15 ettari dentro il Raccordo, da OpenStreetMap. Vale la zona con la parte più grande del parco, più ogni zona che ne contiene almeno 50 ettari. I giardinetti di quartiere non contano. Fuori: Parco archeologico del Colosseo, Riserva del Litorale.
+- Fasce dei parchi in `dati/categorie.json` (ville-themino, aree.fasce); quelli non elencati sono Chicca. Da rivedere con Themino nel catalogo.
+- Aree vere da `strumenti/scarica_parchi.py` (dati/fonti/parchi-osm.geojson), regola "cuore" in `strumenti/costruisci.py`.

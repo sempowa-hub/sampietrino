@@ -35,7 +35,7 @@ from pathlib import Path
 
 from pyproj import Transformer
 from shapely import transform as trasforma
-from shapely.geometry import Point, shape, mapping
+from shapely.geometry import Polygon, Point, shape, mapping
 from shapely.ops import linemerge, unary_union
 
 RADICE = Path(__file__).resolve().parent.parent
@@ -244,7 +244,59 @@ def main():
                         perche[ids[n]].append(etichetta)
         return fasce, dict(perche)
 
+    # Parchi e ville come aree vere (strumenti/scarica_parchi.py). Regola "cuore": una zona vale se e quella
+    # con la parte piu grande dell'area, o se ne ha almeno la quota indicata, o almeno tot ettari.
+    # Cosi Villa Ada vale per Villa Ada e non per i quartieri che il suo recinto sfiora.
+    parchi_file = FONTI / 'parchi-osm.geojson'
+    parchi = [(f['properties'], in_metri(shape(f['geometry'])).buffer(0)) for f in (carica('parchi-osm.geojson') if parchi_file.exists() else [])]
+    luoghi_osm = defaultdict(list)
+    for f in (carica('luoghi-osm.geojson') if luoghi_file.exists() else []):
+        luoghi_osm[(f['properties']['categoria'], f['properties'].get('etichetta') or f['properties'].get('nome', ''))].append(shape(f['geometry']))
+
+    def zone_del_cuore(g, regola):
+        pezzi = [(zone[n].intersection(g).area, n) for n in nomi if zone[n].intersects(g)]
+        pezzi = [(a, n) for a, n in pezzi if a > 0]
+        if not pezzi:
+            return []
+        tot = sum(a for a, _ in pezzi)
+        prima = max(pezzi)[1]
+        return [n for a, n in pezzi if n == prima or a / tot >= regola.get('quota', 2) or a / 1e4 >= regola.get('ettari', 1e9)]
+
     for c in categorie:
+        if 'aree' in c:
+            r = c['aree']
+            if not parchi:
+                errore(f'categoria {c["id"]}: manca dati/fonti/parchi-osm.geojson. Lancia strumenti/scarica_parchi.py')
+            scelti = []  # (geometria, fascia, nome)
+            if 'elenco' in c:
+                for x in c['elenco']:
+                    cerca = x.get('osm_nome', x['nome']).lower()
+                    trovati = [g for pr, g in parchi if pr['nome'].lower() == cerca or pr['nome'].lower() == f'parco di {cerca}']
+                    if not trovati:
+                        # Non e tra le aree (in OSM manca il tag leisure=park): il suo recinto da luoghi-osm, chiuso.
+                        trovati = [in_metri(Polygon(l.coords)).buffer(0) for l in luoghi_osm.get((c['id'], x['nome']), [])
+                                   if l.geom_type == 'LineString' and l.coords[0] == l.coords[-1]]
+                    if not trovati:
+                        resoconto.append(f'  ATTENZIONE {c["id"]}: {x["nome"]} non trovata tra i parchi')
+                        continue
+                    scelti.append((unary_union(trovati), x['fascia'], x['nome']))
+            else:
+                escludi = set(r.get('escludi', []))
+                for pr, g in parchi:
+                    if pr['ettari'] < r.get('minimo_ha', 0) or pr['nome'] in escludi:
+                        continue
+                    scelti.append((g, r.get('fasce', {}).get(pr['nome'], r.get('fascia_base', 3)), pr['nome']))
+            fasce, perche = {}, defaultdict(list)
+            for g, fascia_luogo, nome in scelti:
+                for n in zone_del_cuore(g, r.get('regola', {})):
+                    fasce[ids[n]] = min(fasce.get(ids[n], 4), int(fascia_luogo))
+                    if nome not in perche[ids[n]]:
+                        perche[ids[n]].append(nome)
+            resoconto.append(f'  {c["id"]}: {len(scelti)} aree, {len(fasce)} zone giuste')
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': dict(perche),
+                            '_luoghi': [(nome, g.representative_point()) for g, _, nome in scelti],
+                            **({'contesto': c['contesto']} if c.get('contesto') else {})})
+            continue
         if 'punti' in c:
             # Luoghi con le coordinate scritte nella categoria (la guida di Themino): niente OpenStreetMap.
             # Un luogo vale per la zona in cui cade; sui confini veri (un ponte, un incrocio tra due rioni)
