@@ -36,10 +36,12 @@
       <div class="marchio">
         <h1>Sampietrino</h1>
         <p class="data" id="data"></p>
+        <button class="arretrato" id="vai-oggi" hidden>Giorno arretrato · torna a oggi</button>
       </div>
       <div class="cassa" aria-live="polite"><span id="totale">0</span><small>sampietrini</small></div>
-      <button class="suono" id="apri-passaporto" aria-label="Passaporto dei quartieri">
-        <svg viewBox="0 0 16 16" width="20" height="20" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v14H3zM4 2v12h8V2zM6 5h4v1H6zM5 6h1v3H5zM10 6h1v3h-1zM6 9h4v1H6zM6 11h4v1H6z"/></svg>
+      <button class="suono" id="apri-taccuino" data-apri="taccuino" aria-label="Taccuino: diario di bordo, passaporto, souvenir">
+        <svg viewBox="0 0 16 16" width="20" height="20" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v14H3zM5 2v12h7V2zM2 3h2v1H2zM2 6h2v1H2zM2 9h2v1H2zM2 12h2v1H2zM7 4h4v1H7zM7 6h4v1H7zM7 8h3v1H7z"/></svg>
+        <i class="segno" id="segno-taccuino" hidden></i>
       </button>
       <button class="suono" id="suono" aria-label="Suoni" aria-pressed="true">
         <svg viewBox="0 0 16 16" width="20" height="20" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 6h3l4-3v10l-4-3H2z"/><path class="onde" fill="currentColor" d="M11 6h1v4h-1zM13 4h1v8h-1z"/><path class="croce" fill="currentColor" d="M10 5h1v1h-1zM14 5h1v1h-1zM11 6h1v1h-1zM13 6h1v1h-1zM12 7h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1z"/></svg>
@@ -76,7 +78,7 @@
     </section>
 
     <section class="pagina diario" id="pagina-diario" hidden>
-      <p class="numero">Diario di oggi</p>
+      <p class="numero" id="diario-titolo">Diario di oggi</p>
       <div class="fine-testa"><img class="faccia fine-faccia" id="fine-faccia" src="img/mino-sorriso.png" alt="" width="56" height="56">
       <p class="grande"><span id="fine-totale">0</span><small id="fine-massimo"></small></p></div>
       <p class="fine-frase" id="fine-frase"></p>
@@ -84,7 +86,13 @@
       <ol class="righe" id="righe"></ol>
       <div class="risposte" id="risposte" aria-live="polite"></div>
       <button class="primario" id="condividi">Condividi nella storia</button>
-      <p class="nota">Domani nuove tappe<span id="prossima"></span></p>
+      <div class="scorciatoie">
+        <button class="secondario" data-apri="diario-bordo"><span data-icona="diario"></span>Diario</button>
+        <button class="secondario" data-apri="passaporto"><span data-icona="passaporto"></span>Passaporto</button>
+        <button class="secondario" data-apri="souvenir"><span data-icona="scatola"></span>Souvenir</button>
+      </div>
+      <p class="nota" id="nota-domani">Domani nuove tappe<span id="prossima"></span></p>
+      <button class="secondario largo" id="torna-oggi" hidden>Torna alla partita di oggi</button>
     </section>
   </aside>
 </main>
@@ -92,6 +100,7 @@
 <dialog id="copertina" class="copertina">
   <img class="faccia copertina-faccia" src="img/mino-occhiolino.png" alt="Mino" width="56" height="56">
   <p class="etichetta">Diario di bordo · <span id="copertina-data"></span></p>
+  <p class="copertina-arretrato" id="copertina-arretrato" hidden>Giorno arretrato: si gioca uguale, ma non conta per la serie.</p>
   <h2 class="titolo">Sampietrino</h2>
   <p class="motto">Cinque tappe dentro il Raccordo. Un biglietto a tappa: la zona giusta che nessuno nomina vale 8.</p>
   <ul class="regole">
@@ -103,14 +112,84 @@
   <button class="primario daje" id="daje">DAJE!</button>
 </dialog>
 
-<dialog id="passaporto" class="passaporto">
-  <p class="etichetta">Passaporto dei quartieri</p>
-  <p class="pass-conto"><b id="pass-numero">0</b> <span id="pass-totale"></span></p>
+<dialog id="taccuino" class="taccuino">
+  <p class="etichetta">Taccuino di bordo</p>
+  <h2 class="titolo">Sampietrino</h2>
+  <div class="scrivania">
+    <button class="oggetto o-diario" data-apri="diario-bordo"><span class="o-icona" data-icona="diario"></span><b>Diario di bordo</b><small id="t-diario"></small></button>
+    <button class="oggetto o-passaporto" data-apri="passaporto"><span class="o-icona" data-icona="passaporto"></span><b>Passaporto</b><small id="t-passaporto"></small><i class="bollo" id="t-pass-nuovi" hidden></i></button>
+    <button class="oggetto o-souvenir" data-apri="souvenir"><span class="o-icona" data-icona="scatola"></span><b>Souvenir</b><small id="t-souvenir"></small><i class="bollo" id="t-souv-nuovi" hidden></i></button>
+    <button class="oggetto o-regole" data-apri="regole"><span class="o-icona" data-icona="biglietto"></span><b>Come si gioca</b><small>Il biglietto con le regole</small></button>
+    <button class="oggetto o-account" disabled><img class="o-icona faccia" src="img/mino-neutro.png" alt=""><b>Il tuo account</b><small>Presto: login, classifica, sfide coi follower</small></button>
+  </div>
+  <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="diario-bordo" class="quaderno">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Diario di bordo</p></div>
+  <dl class="db-numeri">
+    <div><dt>Serie</dt><dd id="db-serie">0</dd></div>
+    <div><dt>Record serie</dt><dd id="db-migliore">0</dd></div>
+    <div><dt>Partite</dt><dd id="db-giocati">0</dd></div>
+    <div><dt>Media</dt><dd id="db-media">0</dd></div>
+  </dl>
+  <div class="cal-testa"><button class="freccia" id="cal-prima" aria-label="Mese prima">‹</button><p id="cal-mese"></p><button class="freccia" id="cal-dopo" aria-label="Mese dopo">›</button></div>
+  <ol class="cal-sett" aria-hidden="true"><li>L</li><li>M</li><li>M</li><li>G</li><li>V</li><li>S</li><li>D</li></ol>
+  <ol class="calendario" id="calendario"></ol>
+  <div class="cal-scheda" id="cal-scheda" aria-live="polite" hidden></div>
+  <ul class="legenda" id="legenda"></ul>
+  <h3 class="q-sotto">Come sono andati i giorni</h3>
+  <ol class="barre" id="barre-giorni"></ol>
+  <h3 class="q-sotto">Le tue risposte, tappa per tappa</h3>
+  <ol class="barre" id="barre-risposte"></ol>
+  <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="passaporto" class="quaderno passaporto">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Passaporto dei quartieri</p></div>
+  <p class="pass-conto"><b id="pass-numero">0</b> <span id="pass-totale"></span><span class="timbro pass-nuovi" id="pass-nuovi" hidden></span></p>
   <div class="pass-barra" aria-hidden="true"><i id="pass-riempi"></i></div>
-  <p class="pass-serie" id="pass-serie"></p>
-  <canvas id="pass-mappa" width="720" height="640" aria-label="Le zone timbrate sulla mappa"></canvas>
-  <ol class="pass-elenco" id="pass-elenco"></ol>
-  <button class="primario" id="chiudi-passaporto">Chiudi</button>
+  <section class="mun">
+    <div class="mun-testa">
+      <div><p class="mun-num" id="mun-num"></p><p class="mun-nome" id="mun-nome"></p></div>
+      <p class="mun-conto" id="mun-conto"></p>
+    </div>
+    <canvas id="pass-mappa" width="720" height="480" aria-label="Le zone del municipio sulla mappa"></canvas>
+    <div class="schede" id="pass-schede" role="tablist">
+      <button data-filtro="tutte" role="tab">Tutte <b></b></button>
+      <button data-filtro="trovate" role="tab">Trovate <b></b></button>
+      <button data-filtro="mancanti" role="tab">Mancanti <b></b></button>
+    </div>
+    <div class="chips" id="pass-chip"></div>
+    <ol class="pass-elenco" id="pass-elenco"></ol>
+  </section>
+  <div class="pagine"><button class="freccia" id="mun-prima" aria-label="Municipio prima">‹</button><p id="mun-pagina"></p><button class="freccia" id="mun-dopo" aria-label="Municipio dopo">›</button></div>
+  <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="souvenir" class="quaderno">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Scatola dei souvenir</p></div>
+  <p class="pass-conto"><b id="souv-numero">0</b> <span id="souv-totale"></span></p>
+  <div class="souv-scheda" id="souv-scheda" aria-live="polite" hidden></div>
+  <div id="souv-gruppi"></div>
+  <h3 class="q-sotto">Quasi fatto</h3>
+  <ol class="quasi" id="souv-quasi"></ol>
+  <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="scarta" class="scarta">
+  <p class="etichetta" id="scarta-conto">Hai un pacchetto da scartare</p>
+  <button class="pacco" id="pacco" aria-label="Scarta il pacchetto"><span data-icona="scatola"></span></button>
+  <div class="scartato" id="scartato" hidden>
+    <div class="scartato-icona" id="scartato-icona"></div>
+    <p class="etichetta">Nuovo souvenir</p>
+    <h3 class="scartato-nome" id="scartato-nome"></h3>
+    <p class="scartato-come" id="scartato-come"></p>
+    <blockquote class="esito-contesto"><small>Mino dice</small><span id="scartato-chicca"></span></blockquote>
+  </div>
+  <p class="scarta-aiuto" id="scarta-aiuto">Tocca il pacchetto per scartarlo</p>
+  <button class="primario" id="scarta-avanti" hidden>Metti nella scatola</button>
+  <button class="secondario largo" id="scarta-salta">Lo scarto dopo</button>
 </dialog>
 
 <script type="module" src="src/app.js"></script>

@@ -177,5 +177,8 @@ export const suoni = {
   pagina() { rumore(0.12, { vol: 0.12, filtro: 'highpass', freq: 1800, a: 4000 }); },
   // Diario: ogni zona che si accende e una nota, piu acuta piu la fascia e rara.
   cascata(livello, dopo) { nota(DO[[0, 2, 4, 7, 9][livello]], 0.09, { dopo, vol: 0.02 + livello * 0.006, onda: 'triangle' }); },
+  // Pacchetto del souvenir: carta che si strappa, poi un arpeggio che sale.
+  carta() { rumore(0.22, { vol: 0.16, filtro: 'bandpass', freq: 3000, a: 1400, q: 0.7 }); },
+  souvenir() { [0, 2, 4, 7, 9].forEach((i, k) => nota(DO[i] * 2, 0.12, { dopo: k * 0.07, vol: 0.035, onda: 'triangle' })); },
   copia() { nota(880, 0.06, { vol: 0.04 }); nota(1320, 0.1, { dopo: 0.06, vol: 0.04 }); },
 };

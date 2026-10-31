@@ -6,28 +6,34 @@ import {
 import { creaMappa, COLORI_FASCE } from './mappa.js';
 import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
-import { disegnaMiniMappa } from './minimappa.js';
+import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto } from './storico.js';
+import { aggiornaSouvenir } from './souvenir.js';
+import { creaTaccuino } from './taccuino.js';
 
 const $ = (id) => document.getElementById(id);
 
-const oggi = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date());
-const CHIAVE = `sampietrino:${oggi}`;
+// Il giorno in gioco: oggi, o uno dei 7 giorni prima aperto dal diario di bordo.
+let giorno = oggi;
+const chiave = () => `sampietrino:${giorno}`;
 const TEMPO = 60; // secondi per tappa
 const MOTO_RIDOTTO = matchMedia('(prefers-reduced-motion: reduce)');
 const dopo = (ms) => (MOTO_RIDOTTO.matches ? 0 : ms);
 let orologio = null;
 
-let dati, zonePerId, domande, stati, corrente, selezionata, mappa, aperta = -1;
+let dati, zonePerId, domande, stati, corrente, selezionata, mappa, taccuino, aperta = -1;
+// Le attese della chiusura tappa: cambiando giorno a meta animazione si cancellano.
+let attese = [];
+const programma = (fn, ms) => attese.push(setTimeout(fn, ms));
 
 function salva() {
   try {
-    localStorage.setItem(CHIAVE, JSON.stringify({ ids: domande.map((d) => d.id), stati: stati.map((s) => ({ pin: s.pin, inizio: s.inizio })), corrente }));
+    localStorage.setItem(chiave(), JSON.stringify({ ids: domande.map((d) => d.id), stati: stati.map((s) => ({ pin: s.pin, inizio: s.inizio })), corrente }));
   } catch { /* senza memoria si gioca lo stesso */ }
 }
 
 function ripristina() {
   try {
-    const v = JSON.parse(localStorage.getItem(CHIAVE));
+    const v = JSON.parse(localStorage.getItem(chiave()));
     // Se le domande del giorno sono cambiate (dati nuovi pubblicati) la partita salvata non vale piu.
     if (!v || v.stati.length !== domande.length || v.ids?.join() !== domande.map((d) => d.id).join()) return false;
     stati = v.stati.map((s, i) => ({ ...s, domanda: domande[i] }));
@@ -60,33 +66,58 @@ async function avvia() {
   for (const f of [...FACCE_FASCIA, 'pensieroso', 'buca', 'triste']) new Image().src = `img/mino-${f}.png`;
   dati = await (await fetch('dati/gioco.json')).json();
   zonePerId = Object.fromEntries(dati.zone.map((z) => [z.id, z]));
-  domande = domandeDelGiorno(oggi, dati.domande);
+  $('attribuzione').textContent = dati.attribuzione;
+  mappa = creaMappa($('tela'), dati, { onTocca: tocca, onSopra: () => suoni.sopra() });
+  $('tela').mappa = mappa; // maniglia per le prove nel browser
+  $('scala').replaceChildren(...[...SCALA].reverse().map((f) => {
+    const li = document.createElement('li');
+    const liv = livelloDi(f.nome);
+    li.style.setProperty('--colore', COLORI_FASCE[liv]);
+    li.style.setProperty('--colore-t', coloreT(liv));
+    li.innerHTML = `<i></i><span>${f.nome}</span><b>+${f.punti}</b>`;
+    return li;
+  }));
+  // Souvenir gia meritati con lo storico di prima (giocatori della prima ora): arrivano da scartare.
+  const st = leggi();
+  if (aggiornaSouvenir(st, contesto(st, dati.zone), oggi).length) scrivi(st);
+  taccuino = creaTaccuino({ dati, colori: COLORI_FASCE, suoni, gioca: (d) => apriGiorno(d, true), regole: apriCopertina, giorno: () => giorno });
+  apriGiorno(oggi, false);
+}
+
+// Apre la partita di un giorno: quella salvata se c'e, altrimenti nuova. Fuori dalla finestra dei
+// 7 giorni si apre solo una partita gia giocata, per rivederne il diario.
+function apriGiorno(data, anima) {
+  if (data !== oggi && !giocabile(data) && !leggi().giorni[data]) return;
+  clearInterval(orologio);
+  attese.forEach(clearTimeout);
+  attese = [];
+  giorno = data;
+  aperta = -1;
+  selezionata = null;
+  domande = domandeDelGiorno(giorno, dati.domande);
   if (!ripristina()) {
     stati = domande.map(nuovaDomanda);
     corrente = 0;
   }
-  $('data').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
-  $('attribuzione').textContent = dati.attribuzione;
-  mappa = creaMappa($('tela'), dati, { onTocca: tocca, onSopra: () => suoni.sopra() });
-  $('tela').mappa = mappa; // maniglia per le prove nel browser
+  document.body.classList.remove('in-diario');
+  document.body.classList.toggle('giorno-arretrato', giorno !== oggi);
+  $('tappe').replaceChildren();
+  $('cartellino').hidden = true;
+  $('data').textContent = dataIt(giorno, { weekday: 'long', day: 'numeric', month: 'long' });
+  $('vai-oggi').hidden = giorno === oggi;
   $('totale').textContent = totale(stati);
   // Copertina solo a giornata non ancora iniziata. Si apre prima di mostrare la domanda:
   // a copertina aperta l'orologio aspetta DAJE!, altrimenti la tappa 1 perde secondi.
-  if (corrente === 0 && !stati[0].pin) {
-    $('scala').replaceChildren(...[...SCALA].reverse().map((f) => {
-      const li = document.createElement('li');
-      const liv = livelloDi(f.nome);
-      li.style.setProperty('--colore', COLORI_FASCE[liv]);
-      li.style.setProperty('--colore-t', coloreT(liv));
-      li.innerHTML = `<i></i><span>${f.nome}</span><b>+${f.punti}</b>`;
-      return li;
-    }));
-    $('copertina-data').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long' }).format(new Date());
-    $('copertina').showModal();
-  }
-  if (corrente >= domande.length) mostraFine(false);
+  if (corrente === 0 && !stati[0].pin) apriCopertina();
+  if (corrente >= domande.length) mostraFine(anima);
   else if (stati[corrente].pin) mostraEsito(false);
-  else mostraTappa(false);
+  else mostraTappa(anima);
+}
+
+function apriCopertina() {
+  $('copertina-data').textContent = dataIt(giorno, { day: 'numeric', month: 'long' });
+  $('copertina-arretrato').hidden = giorno === oggi;
+  if (!$('copertina').open) $('copertina').showModal();
 }
 
 function pagina(id, anima = true) {
@@ -219,7 +250,7 @@ function chiudiTappa(id) {
   stati[corrente] = pinna(stati[corrente], id);
   salva();
   // Nuovo timbro: zona indovinata per la prima volta, va nel passaporto.
-  const nuovo = !!stati[corrente].pin.fascia && !(id in leggiStorico().timbri);
+  const nuovo = !!stati[corrente].pin.fascia && !(id in leggi().timbri);
   registra();
   $('pianta').disabled = true;
   const s = stati[corrente];
@@ -227,21 +258,21 @@ function chiudiTappa(id) {
     suoni.scaduto();
     preparaCartellino(s, false);
     rivelaTappa(s, true);
-    setTimeout(() => { aggiornaTappe(); mostraPaginaEsito(true); }, dopo(500));
+    programma(() => { aggiornaTappe(); mostraPaginaEsito(true); }, dopo(500));
     return;
   }
   suoni.timbro();
   mappa.imposta({ stato: (z) => (z === id ? 'attesa' : 'normale'), selezione: id, etichette: [{ id }] });
   mappa.inquadra({ zone: [id], durata: dopo(VOLO), alza: 0.16 }, true);
-  setTimeout(() => preparaCartellino(s, true, nuovo), dopo(250));
-  setTimeout(() => suoni.attesa((VOLO - 250) / 1000), dopo(250));
-  setTimeout(() => {
+  programma(() => preparaCartellino(s, true, nuovo), dopo(250));
+  programma(() => suoni.attesa((VOLO - 250) / 1000), dopo(250));
+  programma(() => {
     mappa.imposta({ stato: (z) => (z === id ? 'attesa' : 'normale'), selezione: id, etichette: [{ id }], pins: [{ id, cade: true }] });
     suoni.caduta();
   }, dopo(VOLO - 150));
-  setTimeout(() => suoni.tocco(), dopo(VOLO - 150 + CADUTA));
+  programma(() => suoni.tocco(), dopo(VOLO - 150 + CADUTA));
   const rivela = VOLO - 150 + CADUTA + 450;
-  setTimeout(() => {
+  programma(() => {
     const liv = s.pin.fascia ? livelloDi(s.pin.fascia) : null;
     rivelaTappa(s, true);
     rivelaCartellino();
@@ -249,7 +280,7 @@ function chiudiTappa(id) {
     aggiornaTappe();
     contaFino($('totale'), prima, totale(stati));
   }, dopo(rivela));
-  setTimeout(() => mostraPaginaEsito(true), dopo(rivela + 650));
+  programma(() => mostraPaginaEsito(true), dopo(rivela + 650));
 }
 
 // La mappa a tappa chiusa: la tua zona col colore della fascia (o rossa), il bersaglio della domanda.
@@ -446,8 +477,14 @@ function mostraFine(anima) {
   $('fine-frase').textContent = FRASI.find(([min]) => tot >= min)[1];
   mettiFaccia($('fine-faccia'), facciaFine(tot), anima);
   registra();
-  const n = serie();
-  $('serie').textContent = n > 1 ? `Serie: ${n} giorni di fila` : n === 1 ? 'Serie: primo giorno. Torna domani!' : '';
+  const n = serie(leggi().giorni);
+  const arretrato = giorno !== oggi;
+  $('diario-titolo').textContent = arretrato ? `Diario del ${dataIt(giorno, { day: 'numeric', month: 'long' })}` : 'Diario di oggi';
+  $('serie').textContent = arretrato ? 'Giorno arretrato: non conta per la serie' : n > 1 ? `Serie: ${n} giorni di fila` : n === 1 ? 'Serie: primo giorno. Torna domani!' : '';
+  $('nota-domani').hidden = arretrato;
+  $('torna-oggi').hidden = !arretrato;
+  // Souvenir nuovi: i pacchetti arrivano dopo che il diario si e acceso.
+  if (anima) programma(() => { if (!document.querySelector('dialog[open]')) taccuino.scartaNuovi(); }, dopo(2200));
   $('righe').replaceChildren(...stati.map((s, i) => {
     const li = document.createElement('li');
     const b = document.createElement('button');
@@ -553,63 +590,34 @@ function apriTappa(i, anima = true) {
   $('risposte').replaceChildren(...blocchi);
 }
 
-// --- Storico: giorni giocati (serie) e zone timbrate (passaporto). Nel browser, finche non arriva il login. ---
+// --- Storico (src/storico.js): giornata, timbri del passaporto, souvenir ---
 
-const STORICO = 'sampietrino:storico';
-function leggiStorico() {
-  try { return { giorni: {}, timbri: {}, ...JSON.parse(localStorage.getItem(STORICO)) }; } catch { return { giorni: {}, timbri: {} }; }
-}
-
-// Registra la giornata di oggi e timbra nel passaporto le zone indovinate, con la fascia migliore.
+// Registra la giornata e timbra nel passaporto le zone indovinate, con la fascia migliore.
+// Un giorno iniziato dopo la sua data e un recupero: si gioca, ma non conta per la serie.
 function registra() {
-  const s = leggiStorico();
+  const s = leggi();
   for (const st of stati) {
     if (!st.pin?.fascia) continue;
     s.timbri[st.pin.zona] = Math.max(s.timbri[st.pin.zona] ?? -1, livelloDi(st.pin.fascia));
   }
-  s.giorni[oggi] = { tot: totale(stati), finita: stati.every((x) => x.pin) };
-  try { localStorage.setItem(STORICO, JSON.stringify(s)); } catch { /* senza memoria niente passaporto */ }
-}
-
-// Giorni di fila con la partita finita, fino a oggi (o fino a ieri, se oggi non e ancora finita).
-function serie() {
-  const g = leggiStorico().giorni;
-  const giorno = (t) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date(t));
-  let t = Date.now();
-  if (!g[giorno(t)]?.finita) t -= 864e5;
-  let n = 0;
-  while (g[giorno(t)]?.finita) { n += 1; t -= 864e5; }
-  return n;
+  const prima = s.giorni[giorno];
+  const recupero = prima ? !!prima.recupero : giorno !== oggi;
+  s.giorni[giorno] = {
+    tot: totale(stati), finita: stati.every((x) => x.pin),
+    livelli: stati.map((x) => (x.pin ? (x.pin.fascia ? livelloDi(x.pin.fascia) : -1) : null)),
+    ...(recupero ? { recupero: true } : {}),
+  };
+  aggiornaSouvenir(s, contesto(s, dati.zone), oggi);
+  scrivi(s);
+  taccuino?.aggiornaSegno();
 }
 
 const facciaFine = (tot) => (tot >= 32 ? 'stupore' : tot >= 24 ? 'risata' : tot >= 16 ? 'sorriso' : tot >= 8 ? 'dubbioso' : tot > 0 ? 'triste' : 'buca');
 
-function apriPassaporto() {
-  const s = leggiStorico();
-  const ids = Object.keys(s.timbri).filter((id) => zonePerId[id]).sort((a, b) => zonePerId[a].nome.localeCompare(zonePerId[b].nome, 'it'));
-  $('pass-numero').textContent = ids.length;
-  $('pass-totale').textContent = `su ${dati.zone.length} zone timbrate`;
-  $('pass-riempi').style.transform = `scaleX(${ids.length / dati.zone.length})`;
-  const n = serie();
-  $('pass-serie').textContent = n ? `Serie: ${n} ${n === 1 ? 'giorno' : 'giorni di fila'}` : '';
-  const cv = $('pass-mappa');
-  const ctx = cv.getContext('2d');
-  ctx.clearRect(0, 0, cv.width, cv.height);
-  disegnaMiniMappa(ctx, dati, { x: 12, y: 12, w: cv.width - 24, h: cv.height - 24, colori: Object.fromEntries(ids.map((id) => [id, COLORI_FASCE[s.timbri[id]]])) });
-  $('pass-elenco').replaceChildren(...(ids.length ? ids.map((id) => {
-    const li = document.createElement('li');
-    li.textContent = zonePerId[id].nome;
-    li.style.setProperty('--colore-t', coloreT(s.timbri[id]));
-    return li;
-  }) : [Object.assign(document.createElement('li'), { className: 'vuoto', textContent: 'Ancora nessun timbro: indovina una zona e finisce qui, col colore della fascia.' })]));
-  suoni.pagina();
-  $('passaporto').showModal();
-}
-
 // --- Comandi ---
 
 document.addEventListener('keydown', (e) => {
-  if ($('copertina').open) return;
+  if (document.querySelector('dialog[open]')) return;
   if (e.key === 'Enter') {
     if (!$('pagina-esito').hidden) { e.preventDefault(); avanti(); }
     else if (!$('pagina-tappa').hidden && !$('pianta').disabled) { e.preventDefault(); pianta(); }
@@ -663,11 +671,11 @@ $('condividi').addEventListener('click', async () => {
     const tot = totale(stati);
     const blob = await creaStoria({
       totale: tot, massimo: MASSIMO_AL_GIORNO, faccia: facciaFine(tot), colori: COLORI_FASCE, chicca: chiccaDelGiorno(),
-      data: new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()),
+      data: dataIt(giorno, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }),
       tappe: stati.map((s) => ({ livello: s.pin?.fascia ? livelloDi(s.pin.fascia) : null, punti: s.pin?.punti ?? 0 })),
-      serie: serie(), timbrati: Object.keys(leggiStorico().timbri).filter((id) => zonePerId[id]).length,
+      serie: giorno === oggi ? serie(leggi().giorni) : 0, timbrati: Object.keys(leggi().timbri).filter((id) => zonePerId[id]).length,
     });
-    const nome = `sampietrino-${oggi}.png`;
+    const nome = `sampietrino-${giorno}.png`;
     const file = new File([blob], nome, { type: 'image/png' });
     if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title: 'Sampietrino' });
     else {
@@ -685,8 +693,8 @@ $('condividi').addEventListener('click', async () => {
     b.disabled = false;
   }
 });
-$('apri-passaporto').addEventListener('click', apriPassaporto);
-$('chiudi-passaporto').addEventListener('click', () => $('passaporto').close());
+$('vai-oggi').addEventListener('click', () => apriGiorno(oggi, true));
+$('torna-oggi').addEventListener('click', () => apriGiorno(oggi, true));
 
 // Suoni: il primo gesto sblocca l'audio; il tasto in testata lo zittisce, e il browser se lo ricorda.
 // Sui telefoni l'audio si sblocca solo con touchend o click (non con pointerdown): si riprova a ogni gesto

@@ -11,16 +11,18 @@ function riquadro(d) {
   return b;
 }
 
-// colori: id zona -> colore di riempimento. Le altre zone restano carta.
+// colori: id zona -> colore di riempimento. Le altre zone restano carta (o il colore fondo).
 // avvicina: inquadra solo le zone colorate (con margine, almeno 7 km), invece di tutta Roma.
-export function disegnaMiniMappa(ctx, dati, { x, y, w, h, colori = {}, filo = 1, avvicina = false }) {
+// fuoco: id delle zone da inquadrare al posto di quelle colorate. municipio: numero del municipio da ripassare.
+// contorno: false per non ripassare le zone colorate col filo pieno.
+export function disegnaMiniMappa(ctx, dati, { x, y, w, h, colori = {}, filo = 1, avvicina = false, fuoco = null, fondo = '#f1e6c6', municipio = null, contorno = true }) {
   const [LW, LH] = dati.dimensioni;
   let vista = [0, 0, LW, LH];
-  const scelte = dati.zone.filter((z) => colori[z.id]);
+  const scelte = fuoco ? dati.zone.filter((z) => fuoco.includes(z.id)) : dati.zone.filter((z) => colori[z.id]);
   if (avvicina && scelte.length) {
     const b = scelte.map((z) => riquadro(z.d)).reduce((a, c) => [Math.min(a[0], c[0]), Math.min(a[1], c[1]), Math.max(a[2], c[2]), Math.max(a[3], c[3])]);
     const cx = (b[0] + b[2]) / 2, cy = (b[1] + b[3]) / 2;
-    const lato = Math.max(7, (b[2] - b[0]) * 1.5, (b[3] - b[1]) * 1.5 * (w / h));
+    const lato = Math.max(7, (b[2] - b[0]) * (fuoco ? 1.15 : 1.5), (b[3] - b[1]) * (fuoco ? 1.15 : 1.5) * (w / h));
     vista = [cx - lato / 2, cy - lato / 2 / (w / h), cx + lato / 2, cy + lato / 2 / (w / h)];
   }
   const vw = vista[2] - vista[0], vh = vista[3] - vista[1];
@@ -40,7 +42,7 @@ export function disegnaMiniMappa(ctx, dati, { x, y, w, h, colori = {}, filo = 1,
   ctx.fillStyle = '#d6d0b8';
   ctx.fill(comune, 'evenodd');
   for (const z of dati.zone) {
-    ctx.fillStyle = colori[z.id] || '#f1e6c6';
+    ctx.fillStyle = colori[z.id] || fondo;
     ctx.fill(new Path2D(z.d), 'evenodd');
   }
   if (dati.tevere) {
@@ -59,10 +61,17 @@ export function disegnaMiniMappa(ctx, dati, { x, y, w, h, colori = {}, filo = 1,
   if (dati.confini_municipi) ctx.stroke(new Path2D(dati.confini_municipi));
   // Le zone colorate col filo pieno, cosi si vedono anche piccole.
   for (const z of dati.zone) {
-    if (!colori[z.id]) continue;
+    if (!colori[z.id] || !contorno) continue;
     ctx.strokeStyle = '#2a1f16';
     ctx.lineWidth = 2 * px;
     ctx.stroke(new Path2D(z.d));
+  }
+  const mun = municipio && dati.municipi?.find((m) => m.num === municipio);
+  if (mun) {
+    ctx.strokeStyle = '#c43a28';
+    ctx.lineWidth = 2.6 * px;
+    ctx.stroke(new Path2D(mun.d));
+    ctx.strokeStyle = '#2a1f16';
   }
   ctx.lineWidth = 2.4 * px;
   ctx.stroke(comune);

@@ -111,8 +111,10 @@ def main():
     notorieta = json.loads((RADICE / 'dati' / 'notorieta.json').read_text())['valori']
 
     per_nome = defaultdict(list)
+    tipo_di = {}
     for f in carica('zone-gioco.geojson'):
         per_nome[f['properties']['nome']].append(in_metri(shape(f['geometry'])).buffer(0))
+        tipo_di[f['properties']['nome']] = f['properties'].get('tipo', 'quartiere')
         notorieta.setdefault(f['properties']['nome'], f['properties'].get('notorieta', 20))
     zone = {n: unary_union(g) for n, g in per_nome.items()}
 
@@ -175,11 +177,14 @@ def main():
             'risposte': sorted(ids[v] for v in vicini[n]),
         })
 
-    mun_di = {}
+    # mun_di: municipio solo se la zona ci sta per piu di meta (domanda "Nel Municipio N").
+    # casa_di: il municipio con la parte piu grande, per sfogliare il passaporto: ogni zona ne ha uno.
+    mun_di, casa_di = {}, {}
     for n in nomi:
         quote = {k: zone[n].intersection(m).area / zone[n].area for k, m in municipi.items()}
         k, q = max(quote.items(), key=lambda kv: kv[1])
         mun_di[n] = k if q > 0.5 else None
+        casa_di[n] = k
     for k in range(1, 16):
         if not municipi[k].area:
             continue
@@ -364,6 +369,7 @@ def main():
                      for k, m in sorted(municipi.items()) if m.area],
         'zone': [{
             'id': ids[n], 'nome': n, 'notorieta': notorieta[n], 'municipio': mun_di[n],
+            'casa': casa_di[n], 'tipo': tipo_di.get(n, 'quartiere'),
             'km2': round(zone[n].area / 1e6, 1), 'd': percorso_svg(semplifica(zone[n]), origine),
             'centro': [round((zone[n].representative_point().x - minx) / 1000, 2),
                        round((maxy - zone[n].representative_point().y) / 1000, 2)],
