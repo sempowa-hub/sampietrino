@@ -119,19 +119,23 @@ function sincronizzaConto() {
 }
 
 // Punteggio di oggi in classifica, una volta sola, e la riga "meglio del X%" nel diario.
+// Si ricorda per quale account e stato pubblicato: chi esce e rientra con un altro account (anonimo -> Google)
+// ritrova il punteggio di oggi sul nuovo, col suo nome.
 async function pubblicaOggi() {
   const g = leggi().giorni[oggi];
   if (!g?.finita || g.recupero || !g.livelli) return;
   try {
-    if (!g.pubblicato) {
+    const u = await avviaConto();
+    if (!u) return;
+    if (g.pubblicato !== u.uid) {
       if (!(await pubblicaPunteggio(oggi, { tot: g.tot, livelli: g.livelli }))) return;
       const s = leggi();
-      s.giorni[oggi].pubblicato = true;
+      s.giorni[oggi].pubblicato = u.uid;
       scrivi(s);
     }
-    if (!leggi().giorni[oggi].settimana && (await pubblicaSettimana(oggi, g.tot))) {
+    if (leggi().giorni[oggi].settimana !== u.uid && (await pubblicaSettimana(oggi, g.tot))) {
       const s = leggi();
-      s.giorni[oggi].settimana = true;
+      s.giorni[oggi].settimana = u.uid;
       scrivi(s);
     }
     if (giorno !== oggi || $('pagina-diario').hidden) return;
@@ -737,8 +741,8 @@ function registra() {
     tot: totale(stati), finita: stati.every((x) => x.pin),
     livelli: stati.map((x) => (x.pin ? (x.pin.fascia ? livelloDi(x.pin.fascia) : -1) : null)),
     ...(recupero ? { recupero: true } : {}),
-    ...(prima?.pubblicato ? { pubblicato: true } : {}),
-    ...(prima?.settimana ? { settimana: true } : {}),
+    ...(prima?.pubblicato ? { pubblicato: prima.pubblicato } : {}),
+    ...(prima?.settimana ? { settimana: prima.settimana } : {}),
   };
   aggiornaSouvenir(s, contesto(s, dati.zone), oggi);
   scrivi(s);

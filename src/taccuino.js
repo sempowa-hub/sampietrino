@@ -157,7 +157,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     b.textContent = 'Salvo…';
     try {
       await salvaProfilo({ nome: $('acc-nome').value.trim(), mostraFoto });
-      await dopoLogin?.();
+      dopoLogin?.(); // nome in classifica e partite: in sottofondo, il tasto non aspetta
       suoni.copia();
       b.textContent = 'Salvato';
       setTimeout(() => { b.textContent = 'Salva'; controllaNome(); }, 1200);
