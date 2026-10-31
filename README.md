@@ -17,7 +17,7 @@ Nessuna dipendenza da installare per giocare: HTML, CSS e JavaScript puri.
 - Ogni giorno 5 tappe, uguali per tutti. Esempi: "Una zona con una fermata della Metro C", "Una zona con una fontana famosa".
 - 60 secondi a tappa. Tocchi una zona, sotto la mappa compare il suo nome, e la timbri per confermare. Allo scadere del tempo la tappa vale 0. Il tempo sopravvive a una ricarica della pagina.
 - Ogni risposta giusta sta in una fascia della scala. Zona sbagliata: buca, 0 punti.
-- Dopo il timbro la mappa zooma sulla tua zona e la accende del colore della sua fascia; tutte le altre risposte giuste si accendono coi loro colori.
+- Dopo il timbro la mappa zooma sulla tua zona e la accende del colore della sua fascia. Le altre risposte restano nascoste fino al diario di fine giro.
 
 | Fascia | Punti |
 |---|---|
@@ -27,7 +27,7 @@ Nessuna dipendenza da installare per giocare: HTML, CSS e JavaScript puri.
 | Nota | 2 |
 | Scontata | 1 |
 
-Massimo 40 al giorno. A fine tappa il gioco mostra tutte le risposte giuste, fascia per fascia, coi luoghi che le rendono giuste. A fine giro, per ogni tappa, tutte le risposte che si potevano dare.
+Massimo 40 al giorno. A fine tappa il gioco mostra solo la tua risposta, con il perché è giusta. A fine giro il diario: per ogni tappa tutte le risposte che si potevano dare, fascia per fascia, coi luoghi che le rendono giuste.
 
 ## Il catalogo delle risposte
 
@@ -56,7 +56,8 @@ Le domande geometriche (confinanti, municipi, Raccordo, Vaticano) sono **di rise
 - **Punti relativi alla domanda.** Una zona vale tanto o poco a seconda delle altre risposte giuste: non esiste una zona che vince sempre.
 - **Domande calcolate dalla geometria, mai scritte a mano.** Una domanda con una risposta sbagliata uccide il gioco.
 - **Varietà**: al massimo 3 domande dello stesso tipo al giorno.
-- **Grafica**: pixel art a 16 bit. La mappa è disegnata su un canvas a pixel (`src/mappa-pixel.js`), una cella ogni 80 metri: ogni zona è un prato, i confini tra zone stradine color sabbia, i confini dei municipi strade grandi, il Tevere un fiume con gli argini (quando ci sono i dati), fuori dal Comune il mare con spiaggia e acqua bassa. Niente case o monumenti disegnati. Colori delle fasce: grigio, verde, azzurro, arancio, oro. Cartelli neri con testo bianco, bottoni arancio come i tetti, bordi squadrati. Caratteri Silkscreen (titoli, numeri, bottoni: il 5 non si confonde con la S) e Jersey 10 (testo). Font nel repo (licenza OFL, `font/`), nessuna richiesta esterna.
+- **Grafica**: carta stampata a vettori (`src/mappa.js`), nitida a ogni zoom: tratti di spessore fisso a schermo, grana della carta a scala di schermo; dentro il Raccordo crema chiaro, fuori campagna grigio-verde spenta, confini d'inchiostro (filo sottile tra zone, piu marcato tra municipi), Tevere acquerello con gli argini. Contrasto da stampa: inchiostro `#2a1f16` su carta. Colori delle fasce: peperino, pino, fontanella, cocciopesto, oro. Caratteri VT323 (testo) e Silkscreen regular (titoli, numeri, bottoni), nel repo con licenza OFL (`font/`), nessuna richiesta esterna. Riferimento di linguaggio visivo: `docs/riferimento-farflung.md`.
+- **Movimento**: un solo ciclo di animazione sulla mappa. Passando col mouse la zona si schiarisce e mostra il nome; la zona scelta ha il contorno rosso che lampeggia. Al timbro la camera vola sulla zona, cade un sampietrino con un po' di polvere, la zona si colora a macchia dal centro, arriva il cartellino col timbro della fascia e i punti contano. Solo la tua risposta: tutte le altre si vedono nel diario a fine giro, tappa per tappa, accese a cascata dalla Scontata alla Da sampietrino. Tutto rispetta `prefers-reduced-motion`.
 - **Giocabile solo con 4-25 risposte giuste.** Meno è indovinello, più è lotteria.
 
 ## Dati
@@ -100,7 +101,7 @@ npm run costruisci  # rigenera dati/gioco.json e dati/catalogo.csv dalle fonti
 index.html                 la pagina
 src/motore.js              regole pure: scala, fasce, un pin a tappa, domande del giorno
 src/app.js                 interfaccia: tappe, biglietto, catalogo, riepilogo
-src/mappa-pixel.js         mappa in pixel art su canvas: griglia, zoom, tocchi
+src/mappa.js               mappa a vettori su canvas: zone, animazioni, zoom, tocchi
 src/stile.css              grafica
 test/motore.test.js        test delle regole (dati finti, solo per le regole)
 dati/                      fonti, notorietà, dati generati

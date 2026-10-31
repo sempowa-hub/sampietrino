@@ -454,50 +454,50 @@ raccordo,Una zona che arriva fino al Raccordo,si,Tor Cervara,Da tassinaro,5,
 raccordo,Una zona che arriva fino al Raccordo,si,Fonte Ostiense,Da sampietrino,8,
 raccordo,Una zona che arriva fino al Raccordo,si,Torraccia di San Basilio,Da sampietrino,8,
 raccordo,Una zona che arriva fino al Raccordo,si,Torricola,Da sampietrino,8,
-metro-a,Una zona con una fermata della Metro A,si,Esquilino,Scontata,1,
-metro-a,Una zona con una fermata della Metro A,si,Prati,Scontata,1,
-metro-a,Una zona con una fermata della Metro A,si,Aurelio,Nota,2,
-metro-a,Una zona con una fermata della Metro A,si,Campo Marzio,Nota,2,
-metro-a,Una zona con una fermata della Metro A,si,Trevi,Nota,2,
-metro-a,Una zona con una fermata della Metro A,si,Tuscolano,Nota,2,
-metro-a,Una zona con una fermata della Metro A,si,Appio-Latino,Da romano,3,
-metro-a,Una zona con una fermata della Metro A,si,Primavalle,Da romano,3,
-metro-a,Una zona con una fermata della Metro A,si,Trionfale,Da romano,3,
-metro-a,Una zona con una fermata della Metro A,si,Castro Pretorio,Da tassinaro,5,
-metro-a,Una zona con una fermata della Metro A,si,Colonna,Da tassinaro,5,
-metro-a,Una zona con una fermata della Metro A,si,Don Bosco,Da tassinaro,5,
-metro-a,Una zona con una fermata della Metro A,si,Pinciano,Da tassinaro,5,
-metro-a,Una zona con una fermata della Metro A,si,Torre Maura,Da tassinaro,5,
-metro-a,Una zona con una fermata della Metro A,si,Appio Claudio,Da sampietrino,8,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,E.U.R.,Scontata,1,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti,Scontata,1,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Esquilino,Nota,2,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ostiense,Nota,2,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Trieste,Nota,2,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Castro Pretorio,Da romano,3,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monte Sacro,Da romano,3,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Nomentano,Da romano,3,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Pietralata,Da romano,3,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ponte Mammolo,Da tassinaro,5,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Da tassinaro,5,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Giuliano-Dalmata,Da sampietrino,8,
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ripa,Da sampietrino,8,
-metro-c,Una zona con una fermata della Metro C,si,Monti,Scontata,1,
-metro-c,Una zona con una fermata della Metro C,si,Tuscolano,Scontata,1,
-metro-c,Una zona con una fermata della Metro C,si,Appio-Latino,Nota,2,
-metro-c,Una zona con una fermata della Metro C,si,Prenestino-Centocelle,Nota,2,
-metro-c,Una zona con una fermata della Metro C,si,Prenestino-Labicano,Da romano,3,
-metro-c,Una zona con una fermata della Metro C,si,Alessandrino,Da tassinaro,5,
-metro-c,Una zona con una fermata della Metro C,si,Don Bosco,Da tassinaro,5,
-metro-c,Una zona con una fermata della Metro C,si,Torre Maura,Da tassinaro,5,
-metro-c,Una zona con una fermata della Metro C,si,Campitelli,Da sampietrino,8,
-metro-c,Una zona con una fermata della Metro C,si,Torre Spaccata,Da sampietrino,8,
-trapizzino,Una zona con un Trapizzino,si,Trastevere,Scontata,1,
-trapizzino,Una zona con un Trapizzino,si,Prati,Nota,2,
-trapizzino,Una zona con un Trapizzino,si,Testaccio,Nota,2,
-trapizzino,Una zona con un Trapizzino,si,Esquilino,Da romano,3,
-trapizzino,Una zona con un Trapizzino,si,Nomentano,Da tassinaro,5,
-trapizzino,Una zona con un Trapizzino,si,Della Vittoria,Da sampietrino,8,
+metro-a,Una zona con una fermata della Metro A,si,Esquilino,Scontata,1,Manzoni / Termini / Vittorio Emanuele
+metro-a,Una zona con una fermata della Metro A,si,Prati,Scontata,1,Lepanto / Ottaviano
+metro-a,Una zona con una fermata della Metro A,si,Aurelio,Nota,2,Baldo degli Ubaldi / Cornelia
+metro-a,Una zona con una fermata della Metro A,si,Campo Marzio,Nota,2,Spagna
+metro-a,Una zona con una fermata della Metro A,si,Trevi,Nota,2,Barberini
+metro-a,Una zona con una fermata della Metro A,si,Tuscolano,Nota,2,Arco di Travertino / Colli Albani / Furio Camillo / ...
+metro-a,Una zona con una fermata della Metro A,si,Appio-Latino,Da romano,3,Furio Camillo / Ponte Lungo / Re di Roma / ...
+metro-a,Una zona con una fermata della Metro A,si,Primavalle,Da romano,3,Battistini
+metro-a,Una zona con una fermata della Metro A,si,Trionfale,Da romano,3,Cipro / Valle Aurelia
+metro-a,Una zona con una fermata della Metro A,si,Castro Pretorio,Da tassinaro,5,Repubblica
+metro-a,Una zona con una fermata della Metro A,si,Colonna,Da tassinaro,5,Barberini
+metro-a,Una zona con una fermata della Metro A,si,Don Bosco,Da tassinaro,5,Cinecittà / Giulio Agricola / Lucio Sestio / ...
+metro-a,Una zona con una fermata della Metro A,si,Pinciano,Da tassinaro,5,Flaminio
+metro-a,Una zona con una fermata della Metro A,si,Torre Maura,Da tassinaro,5,Anagnina
+metro-a,Una zona con una fermata della Metro A,si,Appio Claudio,Da sampietrino,8,Cinecittà / Giulio Agricola / Lucio Sestio / ...
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,E.U.R.,Scontata,1,EUR Fermi / EUR Magliana / EUR Palasport
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti,Scontata,1,Cavour / Colosseo
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Esquilino,Nota,2,Termini
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ostiense,Nota,2,Basilica San Paolo / Garbatella / Marconi / ...
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Trieste,Nota,2,Libia / Sant'Agnese/Annibaliano
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Castro Pretorio,Da romano,3,Castro Pretorio
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monte Sacro,Da romano,3,Conca d'Oro / Jonio
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Nomentano,Da romano,3,Bologna / Policlinico
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Pietralata,Da romano,3,Monti Tiburtini / Pietralata / Ponte Mammolo / ...
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ponte Mammolo,Da tassinaro,5,Rebibbia
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Da tassinaro,5,Circo Massimo
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Giuliano-Dalmata,Da sampietrino,8,Laurentina
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ripa,Da sampietrino,8,Circo Massimo
+metro-c,Una zona con una fermata della Metro C,si,Monti,Scontata,1,Colosseo – Fori Imperiali
+metro-c,Una zona con una fermata della Metro C,si,Tuscolano,Scontata,1,Lodi / San Giovanni
+metro-c,Una zona con una fermata della Metro C,si,Appio-Latino,Nota,2,Porta Metronia
+metro-c,Una zona con una fermata della Metro C,si,Prenestino-Centocelle,Nota,2,Gardenie / Mirti / Parco di Centocelle
+metro-c,Una zona con una fermata della Metro C,si,Prenestino-Labicano,Da romano,3,Malatesta / Pigneto / Teano
+metro-c,Una zona con una fermata della Metro C,si,Alessandrino,Da tassinaro,5,Torre Spaccata
+metro-c,Una zona con una fermata della Metro C,si,Don Bosco,Da tassinaro,5,Alessandrino / Torre Spaccata
+metro-c,Una zona con una fermata della Metro C,si,Torre Maura,Da tassinaro,5,Torre Maura
+metro-c,Una zona con una fermata della Metro C,si,Campitelli,Da sampietrino,8,Colosseo – Fori Imperiali
+metro-c,Una zona con una fermata della Metro C,si,Torre Spaccata,Da sampietrino,8,Torre Maura
+trapizzino,Una zona con un Trapizzino,si,Trastevere,Scontata,1,Trapizzino
+trapizzino,Una zona con un Trapizzino,si,Prati,Nota,2,Trapizzino Piazza Risorgimento
+trapizzino,Una zona con un Trapizzino,si,Testaccio,Nota,2,Trapizzino Testaccio
+trapizzino,Una zona con un Trapizzino,si,Esquilino,Da romano,3,Trapizzino Mercato Centrale Roma
+trapizzino,Una zona con un Trapizzino,si,Nomentano,Da tassinaro,5,Trapizzino
+trapizzino,Una zona con un Trapizzino,si,Della Vittoria,Da sampietrino,8,Trapizzino Ponte Milvio
 tevere,Una zona dove passa il Tevere,si,E.U.R.,Scontata,1,
 tevere,Una zona dove passa il Tevere,si,Prati,Scontata,1,
 tevere,Una zona dove passa il Tevere,si,Testaccio,Scontata,1,
@@ -555,261 +555,261 @@ movida,Una zona famosa per la movida,si,Ostiense,Da tassinaro,5,Via Libetta
 movida,Una zona famosa per la movida,si,Ponte,Da tassinaro,5,Via del Governo Vecchio
 movida,Una zona famosa per la movida,si,Nomentano,Da sampietrino,8,Piazza Bologna
 movida,Una zona famosa per la movida,si,Prenestino-Centocelle,Da sampietrino,8,Piazza dei Mirti
-stazione-fs,Una zona con una stazione dei treni,si,Esquilino,Scontata,1,
-stazione-fs,Una zona con una stazione dei treni,si,Parioli,Scontata,1,
-stazione-fs,Una zona con una stazione dei treni,si,Trieste,Scontata,1,
-stazione-fs,Una zona con una stazione dei treni,si,Aurelio,Nota,2,
-stazione-fs,Una zona con una stazione dei treni,si,Monte Sacro,Nota,2,
-stazione-fs,Una zona con una stazione dei treni,si,Primavalle,Nota,2,
-stazione-fs,Una zona con una stazione dei treni,si,Tuscolano,Nota,2,
-stazione-fs,Una zona con una stazione dei treni,si,Della Vittoria,Da romano,3,
-stazione-fs,Una zona con una stazione dei treni,si,Gianicolense,Da romano,3,
-stazione-fs,Una zona con una stazione dei treni,si,Pietralata,Da romano,3,
-stazione-fs,Una zona con una stazione dei treni,si,Trionfale,Da romano,3,
-stazione-fs,Una zona con una stazione dei treni,si,Capannelle,Da tassinaro,5,
-stazione-fs,Una zona con una stazione dei treni,si,Pinciano,Da tassinaro,5,
-stazione-fs,Una zona con una stazione dei treni,si,Tor Sapienza,Da tassinaro,5,
-stazione-fs,Una zona con una stazione dei treni,si,Tor di Quinto,Da tassinaro,5,
-stazione-fs,Una zona con una stazione dei treni,si,Collatino,Da sampietrino,8,
-stazione-fs,Una zona con una stazione dei treni,si,Grottarossa,Da sampietrino,8,
-stazione-fs,Una zona con una stazione dei treni,si,Ottavia,Da sampietrino,8,
-mercato,Una zona con un mercato rionale,no,Esquilino,Scontata,1,
-mercato,Una zona con un mercato rionale,no,Monti,Scontata,1,
-mercato,Una zona con un mercato rionale,no,Parioli,Scontata,1,
-mercato,Una zona con un mercato rionale,no,Prati,Scontata,1,
-mercato,Una zona con un mercato rionale,no,Testaccio,Scontata,1,
-mercato,Una zona con un mercato rionale,no,Trastevere,Scontata,1,
-mercato,Una zona con un mercato rionale,no,Appio-Latino,Nota,2,
-mercato,Una zona con un mercato rionale,no,Aurelio,Nota,2,
-mercato,Una zona con un mercato rionale,no,Campo Marzio,Nota,2,
-mercato,Una zona con un mercato rionale,no,Flaminio,Nota,2,
-mercato,Una zona con un mercato rionale,no,Monte Sacro,Nota,2,
-mercato,Una zona con un mercato rionale,no,Nomentano,Nota,2,
-mercato,Una zona con un mercato rionale,no,Ostiense,Nota,2,
-mercato,Una zona con un mercato rionale,no,Prenestino-Centocelle,Nota,2,
-mercato,Una zona con un mercato rionale,no,Primavalle,Nota,2,
-mercato,Una zona con un mercato rionale,no,Trieste,Nota,2,
-mercato,Una zona con un mercato rionale,no,Tuscolano,Nota,2,
-mercato,Una zona con un mercato rionale,no,Castro Pretorio,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Della Vittoria,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Pietralata,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Portuense,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Prenestino-Labicano,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Salario,Da romano,3,
+stazione-fs,Una zona con una stazione dei treni,si,Esquilino,Scontata,1,Roma Termini
+stazione-fs,Una zona con una stazione dei treni,si,Parioli,Scontata,1,Acqua Acetosa / Campi Sportivi / Monte Antenne
+stazione-fs,Una zona con una stazione dei treni,si,Trieste,Scontata,1,Roma Nomentana
+stazione-fs,Una zona con una stazione dei treni,si,Aurelio,Nota,2,Città del Vaticano / Roma San Pietro
+stazione-fs,Una zona con una stazione dei treni,si,Monte Sacro,Nota,2,Roma Nomentana / Val d’Ala
+stazione-fs,Una zona con una stazione dei treni,si,Primavalle,Nota,2,Roma Monte Mario
+stazione-fs,Una zona con una stazione dei treni,si,Tuscolano,Nota,2,Roma Tuscolana
+stazione-fs,Una zona con una stazione dei treni,si,Della Vittoria,Da romano,3,Roma San Filippo Neri
+stazione-fs,Una zona con una stazione dei treni,si,Gianicolense,Da romano,3,Quattro Venti / Roma Aurelia
+stazione-fs,Una zona con una stazione dei treni,si,Pietralata,Da romano,3,Roma Tiburtina
+stazione-fs,Una zona con una stazione dei treni,si,Trionfale,Da romano,3,Appiano / Gemelli / Roma Balduina / ...
+stazione-fs,Una zona con una stazione dei treni,si,Capannelle,Da tassinaro,5,Capannelle
+stazione-fs,Una zona con una stazione dei treni,si,Pinciano,Da tassinaro,5,Euclide / Flaminio
+stazione-fs,Una zona con una stazione dei treni,si,Tor Sapienza,Da tassinaro,5,La Rustica Città / Palmiro Togliatti
+stazione-fs,Una zona con una stazione dei treni,si,Tor di Quinto,Da tassinaro,5,Tor di Quinto / Vigna Clara
+stazione-fs,Una zona con una stazione dei treni,si,Collatino,Da sampietrino,8,Palmiro Togliatti / Roma Prenestina / Serenissima
+stazione-fs,Una zona con una stazione dei treni,si,Grottarossa,Da sampietrino,8,Grottarossa / Saxa Rubra
+stazione-fs,Una zona con una stazione dei treni,si,Ottavia,Da sampietrino,8,Ipogeo degli Ottavi / Ottavia
+mercato,Una zona con un mercato rionale,no,Esquilino,Scontata,1,Mercato Esquilino / Nuovo Mercato Esquilino
+mercato,Una zona con un mercato rionale,no,Monti,Scontata,1,Mercato di Monti / Mercato riomale
+mercato,Una zona con un mercato rionale,no,Parioli,Scontata,1,Mercato Rionale
+mercato,Una zona con un mercato rionale,no,Prati,Scontata,1,Mercato dell'Unità
+mercato,Una zona con un mercato rionale,no,Testaccio,Scontata,1,Nuovo Mercato Testaccio
+mercato,Una zona con un mercato rionale,no,Trastevere,Scontata,1,Mercato di San Cosimato
+mercato,Una zona con un mercato rionale,no,Appio-Latino,Nota,2,Mercato Latino / Mercato Magna Grecia – Metronio / Mercato dell'Alberone
+mercato,Una zona con un mercato rionale,no,Aurelio,Nota,2,Mercato Irnerio / Mercato San Silverio / Pineta Sacchetti
+mercato,Una zona con un mercato rionale,no,Campo Marzio,Nota,2,Campo Marzio
+mercato,Una zona con un mercato rionale,no,Flaminio,Nota,2,Mercato Flaminio II
+mercato,Una zona con un mercato rionale,no,Monte Sacro,Nota,2,Mercato Conca d'Oro / Mercato Menenio Agrippa / Mercato Rionale del Tufello / ...
+mercato,Una zona con un mercato rionale,no,Nomentano,Nota,2,Mercato Rionale / Mercato Rionale Portonaccio I
+mercato,Una zona con un mercato rionale,no,Ostiense,Nota,2,Largo Leonardo da Vinci / Mercato Circonvallazione Ostiense / Mercato Ostiense / ...
+mercato,Una zona con un mercato rionale,no,Prenestino-Centocelle,Nota,2,Mercato Arabo / Mercato Insieme / Mercato di Piazza delle Iris
+mercato,Una zona con un mercato rionale,no,Primavalle,Nota,2,Mercato Primavalle / Pineta Sacchetti
+mercato,Una zona con un mercato rionale,no,Trieste,Nota,2,Mercatino delle pulci / Mercato Piazza Gimma / Mercato rionale coperto
+mercato,Una zona con un mercato rionale,no,Tuscolano,Nota,2,Mercato Rionale Piazza dei Tribuni / Mercato Torpignattara / Mercato di Via Orvieto / ...
+mercato,Una zona con un mercato rionale,no,Castro Pretorio,Da romano,3,Mecato Macao
+mercato,Una zona con un mercato rionale,no,Della Vittoria,Da romano,3,AGS Mercato Vittoria / Mercato Monte Mario Thouar / Mercato dei Fiori / ...
+mercato,Una zona con un mercato rionale,no,Pietralata,Da romano,3,CampagnaAmica Coldiretti / Mercato Pietralata / Mercato Rionale
+mercato,Una zona con un mercato rionale,no,Portuense,Da romano,3,Mercato Coperto Magliana / Mercato di Santa Silvia / Mercato rionale / ...
+mercato,Una zona con un mercato rionale,no,Prenestino-Labicano,Da romano,3,Mercato Casilino 23 / Mercato Insieme / Mercato Largo Perestrello / ...
+mercato,Una zona con un mercato rionale,no,Salario,Da romano,3,Mercato Nomentano
 mercato,Una zona con un mercato rionale,no,San Basilio,Da romano,3,
 mercato,Una zona con un mercato rionale,no,Tiburtino,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Trionfale,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Appio Claudio,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Ardeatino,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Collatino,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Don Bosco,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Gianicolense,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Pinciano,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Ponte Mammolo,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,San Saba,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Tor Sapienza,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Tor di Quinto,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Torre Maura,Da tassinaro,5,
+mercato,Una zona con un mercato rionale,no,Trionfale,Da romano,3,Mercato Trionfale / Mercato dei Fiori
+mercato,Una zona con un mercato rionale,no,Appio Claudio,Da tassinaro,5,Mercato rionale Cinecittà / Mercato rionale Tuscolano III
+mercato,Una zona con un mercato rionale,no,Ardeatino,Da tassinaro,5,Mercato Grottaperfetta / Mercato Navigatori / Mercato Tormarancia / ...
+mercato,Una zona con un mercato rionale,no,Collatino,Da tassinaro,5,Mercato / Mercato Rionale / Mercato Rionale Colli Aniene / ...
+mercato,Una zona con un mercato rionale,no,Don Bosco,Da tassinaro,5,Mercato Le Piscine / Mercato Rionale di Torrespaccata / Mercato rionale Carlo Calisse
+mercato,Una zona con un mercato rionale,no,Gianicolense,Da tassinaro,5,Mercato Rionale / Porta Portese
+mercato,Una zona con un mercato rionale,no,Pinciano,Da tassinaro,5,Mercato Rionale
+mercato,Una zona con un mercato rionale,no,Ponte Mammolo,Da tassinaro,5,Mercato Comunale Casal De' Pazzi / MercatoBIO di Aguzzano al Casale Podere Rosa
+mercato,Una zona con un mercato rionale,no,San Saba,Da tassinaro,5,Mercato di San Saba
+mercato,Una zona con un mercato rionale,no,Tor Sapienza,Da tassinaro,5,Porta Portese Est
+mercato,Una zona con un mercato rionale,no,Tor di Quinto,Da tassinaro,5,Mercato di Ponte Milvio
+mercato,Una zona con un mercato rionale,no,Torre Maura,Da tassinaro,5,Mercato Rionale Cinecittà Est
 mercato,Una zona con un mercato rionale,no,Torrino,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Val Melaina,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Castel Giubileo,Da sampietrino,8,
-mercato,Una zona con un mercato rionale,no,Monte Sacro Alto,Da sampietrino,8,
-mercato,Una zona con un mercato rionale,no,Parione,Da sampietrino,8,
-mercato,Una zona con un mercato rionale,no,Regola,Da sampietrino,8,
-mercato,Una zona con un mercato rionale,no,Ripa,Da sampietrino,8,
-ospedale,Una zona con un ospedale,no,E.U.R.,Scontata,1,
-ospedale,Una zona con un ospedale,no,Monti,Scontata,1,
-ospedale,Una zona con un ospedale,no,Parioli,Scontata,1,
-ospedale,Una zona con un ospedale,no,Prati,Scontata,1,
-ospedale,Una zona con un ospedale,no,Trastevere,Scontata,1,
-ospedale,Una zona con un ospedale,no,Aurelio,Nota,2,
-ospedale,Una zona con un ospedale,no,Borgo,Nota,2,
-ospedale,Una zona con un ospedale,no,Nomentano,Nota,2,
-ospedale,Una zona con un ospedale,no,Ostiense,Nota,2,
-ospedale,Una zona con un ospedale,no,Prenestino-Centocelle,Nota,2,
-ospedale,Una zona con un ospedale,no,Primavalle,Nota,2,
-ospedale,Una zona con un ospedale,no,Trieste,Nota,2,
-ospedale,Una zona con un ospedale,no,Tuscolano,Nota,2,
-ospedale,Una zona con un ospedale,no,Celio,Da romano,3,
-ospedale,Una zona con un ospedale,no,Della Vittoria,Da romano,3,
-ospedale,Una zona con un ospedale,no,Magliana Vecchia,Da romano,3,
-ospedale,Una zona con un ospedale,no,Pietralata,Da romano,3,
-ospedale,Una zona con un ospedale,no,Portuense,Da romano,3,
-ospedale,Una zona con un ospedale,no,Prenestino-Labicano,Da romano,3,
-ospedale,Una zona con un ospedale,no,Tiburtino,Da romano,3,
-ospedale,Una zona con un ospedale,no,Trionfale,Da romano,3,
-ospedale,Una zona con un ospedale,no,Alessandrino,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Ardeatino,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Gianicolense,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Pinciano,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Tor Sapienza,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Tor di Quinto,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Torre Maura,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Torre Spaccata,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Torrino,Da tassinaro,5,
-ospedale,Una zona con un ospedale,no,Fonte Ostiense,Da sampietrino,8,
-ospedale,Una zona con un ospedale,no,Grottarossa,Da sampietrino,8,
-ospedale,Una zona con un ospedale,no,Monte Sacro Alto,Da sampietrino,8,
-ospedale,Una zona con un ospedale,no,Ripa,Da sampietrino,8,
-ospedale,Una zona con un ospedale,no,Tomba di Nerone,Da sampietrino,8,
-universita,Una zona con un'università,no,Parioli,Scontata,1,
-universita,Una zona con un'università,no,Prati,Scontata,1,
-universita,Una zona con un'università,no,Testaccio,Scontata,1,
-universita,Una zona con un'università,no,Trastevere,Scontata,1,
-universita,Una zona con un'università,no,Aurelio,Nota,2,
-universita,Una zona con un'università,no,Borgo,Nota,2,
-universita,Una zona con un'università,no,Campo Marzio,Nota,2,
-universita,Una zona con un'università,no,Esquilino,Nota,2,
-universita,Una zona con un'università,no,Flaminio,Nota,2,
-universita,Una zona con un'università,no,Monti,Nota,2,
-universita,Una zona con un'università,no,Ostiense,Nota,2,
-universita,Una zona con un'università,no,Trevi,Nota,2,
-universita,Una zona con un'università,no,Trieste,Nota,2,
-universita,Una zona con un'università,no,Tuscolano,Nota,2,
-universita,Una zona con un'università,no,Nomentano,Da romano,3,
-universita,Una zona con un'università,no,Primavalle,Da romano,3,
-universita,Una zona con un'università,no,Tiburtino,Da romano,3,
-universita,Una zona con un'università,no,Trionfale,Da romano,3,
-universita,Una zona con un'università,no,Campitelli,Da tassinaro,5,
-universita,Una zona con un'università,no,Castro Pretorio,Da tassinaro,5,
-universita,Una zona con un'università,no,Della Vittoria,Da tassinaro,5,
-universita,Una zona con un'università,no,Gianicolense,Da tassinaro,5,
-universita,Una zona con un'università,no,Pinciano,Da tassinaro,5,
-universita,Una zona con un'università,no,Ponte,Da tassinaro,5,
-universita,Una zona con un'università,no,Prenestino-Labicano,Da tassinaro,5,
-universita,Una zona con un'università,no,Salario,Da tassinaro,5,
-universita,Una zona con un'università,no,Val Melaina,Da tassinaro,5,
-universita,Una zona con un'università,no,Castel Giubileo,Da sampietrino,8,
+mercato,Una zona con un mercato rionale,no,Val Melaina,Da tassinaro,5,Mercato Coperto di Val Melaina
+mercato,Una zona con un mercato rionale,no,Castel Giubileo,Da sampietrino,8,Mercato Rionale Settimanale / Mercato Serpentara
+mercato,Una zona con un mercato rionale,no,Monte Sacro Alto,Da sampietrino,8,Mercato Talenti
+mercato,Una zona con un mercato rionale,no,Parione,Da sampietrino,8,Campo de' Fiori
+mercato,Una zona con un mercato rionale,no,Regola,Da sampietrino,8,Campo de' Fiori
+mercato,Una zona con un mercato rionale,no,Ripa,Da sampietrino,8,Mercato di Campagna Amica Circo Massimo
+ospedale,Una zona con un ospedale,no,E.U.R.,Scontata,1,Ospedale Sant'Eugenio
+ospedale,Una zona con un ospedale,no,Monti,Scontata,1,Ospedale Britannico / Ospedale San Giovanni / Ospedale San Giovanni - Presidio Addolorata / ...
+ospedale,Una zona con un ospedale,no,Parioli,Scontata,1,Casa di cura Quisisana
+ospedale,Una zona con un ospedale,no,Prati,Scontata,1,Casa di Cura Santa Famiglia
+ospedale,Una zona con un ospedale,no,Trastevere,Scontata,1,Ospedale Nuovo Regina Margherita / Ospedale Pediatrico Bambino Gesù / Salvator Mundi international Hospital
+ospedale,Una zona con un ospedale,no,Aurelio,Nota,2,Aurelia Hospital / Casa di Cura Pio XI / Clinica Villa Benedetta / ...
+ospedale,Una zona con un ospedale,no,Borgo,Nota,2,"Ospedale Santo Spirito in Sassia / Pronto Soccorso Ospedale ""Santo Spirito in Sassia"""
+ospedale,Una zona con un ospedale,no,Nomentano,Nota,2,"Casa di Cura ""Assunzione di Maria Santissima"" / Casa di Cura ""San Domenico"" / Policlinico Italia / ..."
+ospedale,Una zona con un ospedale,no,Ostiense,Nota,2,Ospedale CTO Andrea Alesini / Ospedale Pediatrico Bambino Gesù - Sede di San Paolo / Ospedale Pediatrico Bambino Gesù - Sede di via Baldelli
+ospedale,Una zona con un ospedale,no,Prenestino-Centocelle,Nota,2,Clinica Guarnieri
+ospedale,Una zona con un ospedale,no,Primavalle,Nota,2,ASL RME / Hospice Villa Speranza / Ospedale Cristo Re / ...
+ospedale,Una zona con un ospedale,no,Trieste,Nota,2,"Casa di Cura ""Assunzione di Maria Santissima"" / Centro Medicina Nucleare Italiano Villa Bianca / Clinica Sanatrix / ..."
+ospedale,Una zona con un ospedale,no,Tuscolano,Nota,2,NCL
+ospedale,Una zona con un ospedale,no,Celio,Da romano,3,Ospedale Britannico / Ospedale San Giovanni - Presidio Addolorata / Policlinico militare Celio
+ospedale,Una zona con un ospedale,no,Della Vittoria,Da romano,3,Fondazione Don Gnocchi - Centro Santa Maria della Pace / Ospedale San Filippo Neri / Policlinico Universitario Agostino Gemelli / ...
+ospedale,Una zona con un ospedale,no,Magliana Vecchia,Da romano,3,Ospedale San Giovanni Battista
+ospedale,Una zona con un ospedale,no,Pietralata,Da romano,3,Casa di Cura Nuova ITOR / Ospedale Sandro Pertini
+ospedale,Una zona con un ospedale,no,Portuense,Da romano,3,European Hospital / Istituto nazionale per le malattie infettive Lazzaro Spallanzani / Ospedale Israelitico / ...
+ospedale,Una zona con un ospedale,no,Prenestino-Labicano,Da romano,3,Ospedale generale Madre Giuseppina Vannini
+ospedale,Una zona con un ospedale,no,Tiburtino,Da romano,3,Policlinico Umberto I / Policlinico Umberto I - Clinica di Neuropsichiatria infantile
+ospedale,Una zona con un ospedale,no,Trionfale,Da romano,3,Complesso Integrato Columbus / Gemelli CURAE / Hospice Villa Speranza / ...
+ospedale,Una zona con un ospedale,no,Alessandrino,Da tassinaro,5,Casa di cura Villa Mendicini
+ospedale,Una zona con un ospedale,no,Ardeatino,Da tassinaro,5,Fondazione Santa Lucia / Nuova Clinica Annunziatella / Studio Odontoiatrico Dominici
+ospedale,Una zona con un ospedale,no,Gianicolense,Da tassinaro,5,Casa di Cura Città di Roma / European Hospital / Istituto nazionale per le malattie infettive Lazzaro Spallanzani / ...
+ospedale,Una zona con un ospedale,no,Pinciano,Da tassinaro,5,Clinica Mater Dei / Clinica Parioli / Clinica Valle Giulia
+ospedale,Una zona con un ospedale,no,Tor Sapienza,Da tassinaro,5,Rome American Hospital
+ospedale,Una zona con un ospedale,no,Tor di Quinto,Da tassinaro,5,Nuova Villa Claudia / Ospedale San Pietro Fatebenefratelli
+ospedale,Una zona con un ospedale,no,Torre Maura,Da tassinaro,5,Policlinico Casilino
+ospedale,Una zona con un ospedale,no,Torre Spaccata,Da tassinaro,5,Policlinico Casilino
+ospedale,Una zona con un ospedale,no,Torrino,Da tassinaro,5,IFO - Istituti Fisioterapici Ospitalieri / Istituto Dermatologico San Gallicano / Istituto Nazionale Tumori Regina Elena
+ospedale,Una zona con un ospedale,no,Fonte Ostiense,Da sampietrino,8,Ospedale Sant'Eugenio
+ospedale,Una zona con un ospedale,no,Grottarossa,Da sampietrino,8,Ospedale Sant'Andrea
+ospedale,Una zona con un ospedale,no,Monte Sacro Alto,Da sampietrino,8,Villa Tiberia
+ospedale,Una zona con un ospedale,no,Ripa,Da sampietrino,8,Fatebenefratelli
+ospedale,Una zona con un ospedale,no,Tomba di Nerone,Da sampietrino,8,Ospedale San Pietro Fatebenefratelli
+universita,Una zona con un'università,no,Parioli,Scontata,1,Libera Università Internazionale degli Studi Sociali (LUISS) Guido Carli
+universita,Una zona con un'università,no,Prati,Scontata,1,Lumsa
+universita,Una zona con un'università,no,Testaccio,Scontata,1,Università Roma Tre - Dipartimento di Architettura
+universita,Una zona con un'università,no,Trastevere,Scontata,1,Auriana Auditorium / John Cabot University / John Cabot University - Guarini Campus / ...
+universita,Una zona con un'università,no,Aurelio,Nota,2,Duquesne University - Italian Campus / Pontificia Università Urbaniana / Pontificio Istituto di Musica Sacra / ...
+universita,Una zona con un'università,no,Borgo,Nota,2,LUMSA / Pontificia Università Urbaniana
+universita,Una zona con un'università,no,Campo Marzio,Nota,2,Temple University Rome / Università La Sapienza sede distaccata Architettura
+universita,Una zona con un'università,no,Esquilino,Nota,2,"Pontificia Universitas Antonianum / Pontificia Università Antonianum / Università La Sapienza - Dipartimento di Ingegneria informatica, automatica e gestionale Antonio Ruberti / ..."
+universita,Una zona con un'università,no,Flaminio,Nota,2,Temple University Rome / Università La Sapienza - Facoltà di Architettura - Via Flaminia / Università La Sapienza - Facoltà di Architettura sede di via E. Gianturco
+universita,Una zona con un'università,no,Monti,Nota,2,"Dipartimento di Ingegneria Civile, Edile e Ambientale / Dipartimento di ingegneria dell'Informazione, Elettronica e Telecomunicazioni / Pontificia Universitas Antonianum / ..."
+universita,Una zona con un'università,no,Ostiense,Nota,2,Il Giovedì di Progetto / Pontifical Beda College Seminary / Università Roma Tre - Corsi di laurea in Fisica / ...
+universita,Una zona con un'università,no,Trevi,Nota,2,Pontificia Università Gregoriana / Pontificio Istituto Biblico
+universita,Una zona con un'università,no,Trieste,Nota,2,LUISS / Libera università internazionale degli studi sociali LUISS
+universita,Una zona con un'università,no,Tuscolano,Nota,2,Istituto Europeo Di Design (IED)
+universita,Una zona con un'università,no,Nomentano,Da romano,3,Sapienza Università di Roma / Sapienza Università di Roma - Facoltà di Economia e Ingegneria / Università La Sapienza - Dipartimento di Filosofia
+universita,Una zona con un'università,no,Primavalle,Da romano,3,Università Cattolica del Sacro Cuore
+universita,Una zona con un'università,no,Tiburtino,Da romano,3,Area studio zoologia / Botanica / Dipartimento Scienze Giuridiche / ...
+universita,Una zona con un'università,no,Trionfale,Da romano,3,John Felice Rome Center / Università Cattolica del Sacro Cuore / Università Niccolò Cusano
+universita,Una zona con un'università,no,Campitelli,Da tassinaro,5,Nobile Collegio Chimico Farmaceutico
+universita,Una zona con un'università,no,Castro Pretorio,Da tassinaro,5,Uninettuno / Università Roma Tre - Dipartimento di Scienze della Formazione / Università Roma Tre - Dipartimento di Scienze della formazione
+universita,Una zona con un'università,no,Della Vittoria,Da tassinaro,5,Università degli Studi di Roma Foro Italico
+universita,Una zona con un'università,no,Gianicolense,Da tassinaro,5,Ateneo Pontificio Regina Apostolorum / Auriana Auditorium / The American University of Rome / ...
+universita,Una zona con un'università,no,Pinciano,Da tassinaro,5,Università La Sapienza - Facoltà di Architettura - Sede Valle Giulia / Università La Sapienza - Facoltà di Architettura - Via Flaminia / Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
+universita,Una zona con un'università,no,Ponte,Da tassinaro,5,Pontificia Università della Santa Croce
+universita,Una zona con un'università,no,Prenestino-Labicano,Da tassinaro,5,Corso di laurea per infermiere Padre Luigi Tezza
+universita,Una zona con un'università,no,Salario,Da tassinaro,5,Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
+universita,Una zona con un'università,no,Val Melaina,Da tassinaro,5,Università Pontificia Salesiana
+universita,Una zona con un'università,no,Castel Giubileo,Da sampietrino,8,Università Pontificia Salesiana
 universita,Una zona con un'università,no,Grottarossa,Da sampietrino,8,
-universita,Una zona con un'università,no,Parione,Da sampietrino,8,
-universita,Una zona con un'università,no,Pigna,Da sampietrino,8,
-universita,Una zona con un'università,no,Ripa,Da sampietrino,8,
-cinema,Una zona con un cinema,no,E.U.R.,Scontata,1,
-cinema,Una zona con un cinema,no,Monti,Scontata,1,
-cinema,Una zona con un cinema,no,Prati,Scontata,1,
-cinema,Una zona con un cinema,no,Testaccio,Scontata,1,
-cinema,Una zona con un cinema,no,Trastevere,Scontata,1,
-cinema,Una zona con un cinema,no,Aurelio,Nota,2,
-cinema,Una zona con un cinema,no,Esquilino,Nota,2,
-cinema,Una zona con un cinema,no,Flaminio,Nota,2,
-cinema,Una zona con un cinema,no,Monte Sacro,Nota,2,
-cinema,Una zona con un cinema,no,Ostiense,Nota,2,
-cinema,Una zona con un cinema,no,Trevi,Nota,2,
-cinema,Una zona con un cinema,no,Trieste,Nota,2,
-cinema,Una zona con un cinema,no,Tuscolano,Nota,2,
-cinema,Una zona con un cinema,no,Appio-Latino,Da romano,3,
-cinema,Una zona con un cinema,no,Castro Pretorio,Da romano,3,
-cinema,Una zona con un cinema,no,Della Vittoria,Da romano,3,
-cinema,Una zona con un cinema,no,Magliana Vecchia,Da romano,3,
-cinema,Una zona con un cinema,no,Nomentano,Da romano,3,
-cinema,Una zona con un cinema,no,Prenestino-Centocelle,Da romano,3,
-cinema,Una zona con un cinema,no,Prenestino-Labicano,Da romano,3,
-cinema,Una zona con un cinema,no,Primavalle,Da romano,3,
-cinema,Una zona con un cinema,no,Salario,Da romano,3,
-cinema,Una zona con un cinema,no,Tiburtino,Da romano,3,
-cinema,Una zona con un cinema,no,Trionfale,Da romano,3,
-cinema,Una zona con un cinema,no,Appio Claudio,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Colonna,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Don Bosco,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Pinciano,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Ponte Mammolo,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Tor di Quinto,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Torrino,Da tassinaro,5,
-cinema,Una zona con un cinema,no,Castel Giubileo,Da sampietrino,8,
-cinema,Una zona con un cinema,no,Giuliano-Dalmata,Da sampietrino,8,
-cinema,Una zona con un cinema,no,Ottavia,Da sampietrino,8,
-cinema,Una zona con un cinema,no,Parione,Da sampietrino,8,
-cinema,Una zona con un cinema,no,Regola,Da sampietrino,8,
-cinema,Una zona con un cinema,no,Sallustiano,Da sampietrino,8,
-cinema,Una zona con un cinema,no,Tomba di Nerone,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Esquilino,Scontata,1,
-teatro,Una zona con un teatro,no,Monti,Scontata,1,
-teatro,Una zona con un teatro,no,Parioli,Scontata,1,
-teatro,Una zona con un teatro,no,Prati,Scontata,1,
-teatro,Una zona con un teatro,no,Testaccio,Scontata,1,
-teatro,Una zona con un teatro,no,Trastevere,Scontata,1,
-teatro,Una zona con un teatro,no,Appio-Latino,Nota,2,
-teatro,Una zona con un teatro,no,Aurelio,Nota,2,
-teatro,Una zona con un teatro,no,Borgo,Nota,2,
-teatro,Una zona con un teatro,no,Campo Marzio,Nota,2,
-teatro,Una zona con un teatro,no,Flaminio,Nota,2,
-teatro,Una zona con un teatro,no,Monte Sacro,Nota,2,
-teatro,Una zona con un teatro,no,Nomentano,Nota,2,
-teatro,Una zona con un teatro,no,Ostiense,Nota,2,
-teatro,Una zona con un teatro,no,Trevi,Nota,2,
-teatro,Una zona con un teatro,no,Trieste,Nota,2,
-teatro,Una zona con un teatro,no,Tuscolano,Nota,2,
-teatro,Una zona con un teatro,no,Castro Pretorio,Da romano,3,
-teatro,Una zona con un teatro,no,Della Vittoria,Da romano,3,
-teatro,Una zona con un teatro,no,Gianicolense,Da romano,3,
-teatro,Una zona con un teatro,no,Pietralata,Da romano,3,
-teatro,Una zona con un teatro,no,Ponte Mammolo,Da romano,3,
-teatro,Una zona con un teatro,no,Portuense,Da romano,3,
-teatro,Una zona con un teatro,no,Prenestino-Labicano,Da romano,3,
-teatro,Una zona con un teatro,no,Trionfale,Da romano,3,
-teatro,Una zona con un teatro,no,Alessandrino,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Campitelli,Da tassinaro,5,
+universita,Una zona con un'università,no,Parione,Da sampietrino,8,UNIMED – Mediterranean Universities Union
+universita,Una zona con un'università,no,Pigna,Da sampietrino,8,Mediateca Università telematica Nettuno / Pontificio Seminario Francese
+universita,Una zona con un'università,no,Ripa,Da sampietrino,8,Accademia Nazionale di Danza
+cinema,Una zona con un cinema,no,E.U.R.,Scontata,1,EUR Cine
+cinema,Una zona con un cinema,no,Monti,Scontata,1,Cineclub Detour / Quattro Fontane
+cinema,Una zona con un cinema,no,Prati,Scontata,1,Azzurro Scipioni / Cinema Adriano / Eden / ...
+cinema,Una zona con un cinema,no,Testaccio,Scontata,1,Greenwich
+cinema,Una zona con un cinema,no,Trastevere,Scontata,1,Alcazar / Cinema Intrastevere / Cinema Troisi / ...
+cinema,Una zona con un cinema,no,Aurelio,Nota,2,Alhambra
+cinema,Una zona con un cinema,no,Esquilino,Nota,2,Royal
+cinema,Una zona con un cinema,no,Flaminio,Nota,2,Cinema Tiziano
+cinema,Una zona con un cinema,no,Monte Sacro,Nota,2,Cinema Antares
+cinema,Una zona con un cinema,no,Ostiense,Nota,2,Arena di Garbatella / Madison
+cinema,Una zona con un cinema,no,Trevi,Nota,2,Cinema Barberini / Fiamma / Time Elevator
+cinema,Una zona con un cinema,no,Trieste,Nota,2,Multisala Lux
+cinema,Una zona con un cinema,no,Tuscolano,Nota,2,Trianon
+cinema,Una zona con un cinema,no,Appio-Latino,Da romano,3,The Cineclub
+cinema,Una zona con un cinema,no,Castro Pretorio,Da romano,3,Ambasciatori / Quattro Fontane / The Space Cinema - Moderno Roma
+cinema,Una zona con un cinema,no,Della Vittoria,Da romano,3,Palomar Produzione Cnematografica
+cinema,Una zona con un cinema,no,Magliana Vecchia,Da romano,3,The Space Cinema
+cinema,Una zona con un cinema,no,Nomentano,Da romano,3,Multisala Jolly / Sala delle Provincie d'Essai
+cinema,Una zona con un cinema,no,Prenestino-Centocelle,Da romano,3,Broadway
+cinema,Una zona con un cinema,no,Prenestino-Labicano,Da romano,3,Cineclub Alphaville / Nuovo Cinema Aquila
+cinema,Una zona con un cinema,no,Primavalle,Da romano,3,Andromeda / Galaxy
+cinema,Una zona con un cinema,no,Salario,Da romano,3,Cinema Europa / Savoy Cityplex
+cinema,Una zona con un cinema,no,Tiburtino,Da romano,3,Tibur
+cinema,Una zona con un cinema,no,Trionfale,Da romano,3,Doria
+cinema,Una zona con un cinema,no,Appio Claudio,Da tassinaro,5,Multisala Atlantic
+cinema,Una zona con un cinema,no,Colonna,Da tassinaro,5,Nuovo Olimpia
+cinema,Una zona con un cinema,no,Don Bosco,Da tassinaro,5,Cinecittà / Cinema Teatro Don Bosco / Multisala Atlantic
+cinema,Una zona con un cinema,no,Pinciano,Da tassinaro,5,Casa del Cinema / Cinema dei Piccoli / Teatro all'aperto Ettore Scola
+cinema,Una zona con un cinema,no,Ponte Mammolo,Da tassinaro,5,CineClub Podere Rosa
+cinema,Una zona con un cinema,no,Tor di Quinto,Da tassinaro,5,Palomar Produzione Cnematografica
+cinema,Una zona con un cinema,no,Torrino,Da tassinaro,5,Stardust Village
+cinema,Una zona con un cinema,no,Castel Giubileo,Da sampietrino,8,UCI Cinemas
+cinema,Una zona con un cinema,no,Giuliano-Dalmata,Da sampietrino,8,UCI Luxe
+cinema,Una zona con un cinema,no,Ottavia,Da sampietrino,8,Starplex
+cinema,Una zona con un cinema,no,Parione,Da sampietrino,8,Farnese
+cinema,Una zona con un cinema,no,Regola,Da sampietrino,8,Farnese
+cinema,Una zona con un cinema,no,Sallustiano,Da sampietrino,8,Fiamma
+cinema,Una zona con un cinema,no,Tomba di Nerone,Da sampietrino,8,Cinestar Cassia
+teatro,Una zona con un teatro,no,Esquilino,Scontata,1,Teatro Ambra Jovinelli / Teatro Basilica / Teatro Brancaccio
+teatro,Una zona con un teatro,no,Monti,Scontata,1,Lo spazio / Piccolo Eliseo / Teatro Brancaccio / ...
+teatro,Una zona con un teatro,no,Parioli,Scontata,1,Auditorium Arte / Teatro Parioli
+teatro,Una zona con un teatro,no,Prati,Scontata,1,Teatro Prati
+teatro,Una zona con un teatro,no,Testaccio,Scontata,1,Amici Del Teatro Di Documenti / Teatro Petrolini / Teatro Studio Zagreus / ...
+teatro,Una zona con un teatro,no,Trastevere,Scontata,1,Anfiteatro Quercia del Tasso / Il Cantiere / Teatro Argot Studio / ...
+teatro,Una zona con un teatro,no,Appio-Latino,Nota,2,Lo spazio / Orione / Teatro Orione / ...
+teatro,Una zona con un teatro,no,Aurelio,Nota,2,Teatro Cyrano / Teatro Ghione
+teatro,Una zona con un teatro,no,Borgo,Nota,2,Auditorium Conciliazione / Le Salette
+teatro,Una zona con un teatro,no,Campo Marzio,Nota,2,Teatro Salone Margherita / Teatro dei burattini San Carlino
+teatro,Una zona con un teatro,no,Flaminio,Nota,2,Teatro Olimpico
+teatro,Una zona con un teatro,no,Monte Sacro,Nota,2,CineTeatro33
+teatro,Una zona con un teatro,no,Nomentano,Nota,2,Associazione Culturale Castalia Teatro Arcobaleno / Teatro Italia / Teatro Sette / ...
+teatro,Una zona con un teatro,no,Ostiense,Nota,2,"Largo Alvaro Amici / Piccolo Teatro San Paolo / Spazio Anarchico ""19 luglio"" / ..."
+teatro,Una zona con un teatro,no,Trevi,Nota,2,Quirinetta / Teatro Quirino / Teatro de' Servi
+teatro,Una zona con un teatro,no,Trieste,Nota,2,Teatro del Sogno
+teatro,Una zona con un teatro,no,Tuscolano,Nota,2,Planet / Teatro Duse / Teatro Golden / ...
+teatro,Una zona con un teatro,no,Castro Pretorio,Da romano,3,Teatro Nazionale / Teatro dell'Opera
+teatro,Una zona con un teatro,no,Della Vittoria,Da romano,3,Teatro Eduardo De Filippo / Teatro Manzoni / Teatro San Genesio / ...
+teatro,Una zona con un teatro,no,Gianicolense,Da romano,3,Teatro Corviale / Teatro Le Maschere / Teatro Porta Portese / ...
+teatro,Una zona con un teatro,no,Pietralata,Da romano,3,Teatro Parrocchia Sant'Atanasio
+teatro,Una zona con un teatro,no,Ponte Mammolo,Da romano,3,Di Via Speroni
+teatro,Una zona con un teatro,no,Portuense,Da romano,3,Nogu Teatro / Teatro India
+teatro,Una zona con un teatro,no,Prenestino-Labicano,Da romano,3,Teatro Hamlet / Teatro San Luca / Teatrosala vignoli
+teatro,Una zona con un teatro,no,Trionfale,Da romano,3,Auditorium
+teatro,Una zona con un teatro,no,Alessandrino,Da tassinaro,5,Teatro Biblioteca Quarticciolo
+teatro,Una zona con un teatro,no,Campitelli,Da tassinaro,5,Teatro della Cometa
 teatro,Una zona con un teatro,no,Collatino,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Colonna,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Don Bosco,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Pinciano,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Ponte,Da tassinaro,5,
-teatro,Una zona con un teatro,no,San Saba,Da tassinaro,5,
+teatro,Una zona con un teatro,no,Colonna,Da tassinaro,5,Teatro Capranica / Teatro Due Roma / Teatro Sala Umberto / ...
+teatro,Una zona con un teatro,no,Don Bosco,Da tassinaro,5,Teatro Giovanni Paolo II Attore
+teatro,Una zona con un teatro,no,Pinciano,Da tassinaro,5,Gigi Proietti Globe Theatre Silvano Toti / Sala Casella / Teatro del Pinguino
+teatro,Una zona con un teatro,no,Ponte,Da tassinaro,5,L’arciliuto / Teatro dell'Orologio
+teatro,Una zona con un teatro,no,San Saba,Da tassinaro,5,Anfitrione
 teatro,Una zona con un teatro,no,Tor Sapienza,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Tor di Quinto,Da tassinaro,5,
+teatro,Una zona con un teatro,no,Tor di Quinto,Da tassinaro,5,Il Sistino Chapiteau
 teatro,Una zona con un teatro,no,Torre Maura,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Torrino,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Castel Giubileo,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Fonte Ostiense,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Parione,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Pigna,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Regola,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Sant'Eustachio,Da sampietrino,8,
-teatro,Una zona con un teatro,no,Tomba di Nerone,Da sampietrino,8,
-biblioteca,Una zona con una biblioteca,no,Esquilino,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Flaminio,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Monti,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Ostiense,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Parioli,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Testaccio,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Trastevere,Scontata,1,
-biblioteca,Una zona con una biblioteca,no,Aurelio,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Borgo,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Campo Marzio,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Celio,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Monte Sacro,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Nomentano,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Primavalle,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Tiburtino,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Trevi,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Trieste,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Trionfale,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Tuscolano,Nota,2,
-biblioteca,Una zona con una biblioteca,no,Ardeatino,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Castro Pretorio,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Della Vittoria,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Gianicolense,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Pietralata,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Ponte Mammolo,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Portuense,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Prenestino-Labicano,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Salario,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,San Basilio,Da romano,3,
-biblioteca,Una zona con una biblioteca,no,Alessandrino,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Collatino,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Colonna,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Don Bosco,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Monte Sacro Alto,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Parione,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Pinciano,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Ponte,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Regola,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Sant'Angelo,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Torre Maura,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Val Melaina,Da tassinaro,5,
-biblioteca,Una zona con una biblioteca,no,Casal Boccone,Da sampietrino,8,
-biblioteca,Una zona con una biblioteca,no,Fonte Ostiense,Da sampietrino,8,
-biblioteca,Una zona con una biblioteca,no,Grottarossa,Da sampietrino,8,
-biblioteca,Una zona con una biblioteca,no,Pigna,Da sampietrino,8,
-biblioteca,Una zona con una biblioteca,no,Ripa,Da sampietrino,8,
-biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da sampietrino,8,
+teatro,Una zona con un teatro,no,Torrino,Da tassinaro,5,Auditorium Santa Chiara / Teatro del Torrino / Teatro di Mostacciano
+teatro,Una zona con un teatro,no,Castel Giubileo,Da sampietrino,8,Il Teatro degli Audaci
+teatro,Una zona con un teatro,no,Fonte Ostiense,Da sampietrino,8,Anfiteatro / Atlantico Live!
+teatro,Una zona con un teatro,no,Parione,Da sampietrino,8,Teatro dei Satiri / Teatro dell'Orologio
+teatro,Una zona con un teatro,no,Pigna,Da sampietrino,8,Teatro Argentina / Teatro Rossini
+teatro,Una zona con un teatro,no,Regola,Da sampietrino,8,Off-Off theatre
+teatro,Una zona con un teatro,no,Sant'Eustachio,Da sampietrino,8,Teatro Argentina / Teatro Rossini / Teatro Valle
+teatro,Una zona con un teatro,no,Tomba di Nerone,Da sampietrino,8,Teatro Ciak Roma / Teatro Stabile Del Giallo
+biblioteca,Una zona con una biblioteca,no,Esquilino,Scontata,1,Biblioteca della Città metropolitana di Roma Capitale
+biblioteca,Una zona con una biblioteca,no,Flaminio,Scontata,1,Biblioteca Flaminia / Biblioteca Quaroni
+biblioteca,Una zona con una biblioteca,no,Monti,Scontata,1,"Biblioteca Beato Pio IX / Biblioteca Ingegneria astronautica, elettrica ed energetica - sede Ingegneria elettrica / Biblioteca Paolo Baffi / ..."
+biblioteca,Una zona con una biblioteca,no,Ostiense,Scontata,1,Biblioteca Joyce Lussu / Moby Dick - Biblioteca e Hub Culturale / TiConZeroLibri
+biblioteca,Una zona con una biblioteca,no,Parioli,Scontata,1,Aula studio Mattia Nicholas Liguori / Biblioteca sportiva nazionale
+biblioteca,Una zona con una biblioteca,no,Testaccio,Scontata,1,"Aula studio La Pelanda / Biblioteca Enzo Tortora / Biblioteca di Area delle Arti - Sezione Architettura ""Enrico Mattiello"""
+biblioteca,Una zona con una biblioteca,no,Trastevere,Scontata,1,Academia de España / Biblioteca dell'Accademia Nazionale dei Lincei e Corsiniana / Cinema Troisi Aula Studio / ...
+biblioteca,Una zona con una biblioteca,no,Aurelio,Nota,2,Aula Studio Casa del Popolo / Biblioteca Cornelia / Biblioteca Valle Aurelia / ...
+biblioteca,Una zona con una biblioteca,no,Borgo,Nota,2,Archivum Generale Augustinianum / Biblioteca Augustinianum
+biblioteca,Una zona con una biblioteca,no,Campo Marzio,Nota,2,Bibliotheca Hertziana
+biblioteca,Una zona con una biblioteca,no,Celio,Nota,2,Biblioteca della Società geografica italiana
+biblioteca,Una zona con una biblioteca,no,Monte Sacro,Nota,2,Biblioteca Ennio Flaiano
+biblioteca,Una zona con una biblioteca,no,Nomentano,Nota,2,"Biblioteca Interdipartimentale di Fisiopatologia cardiocircolatoria, Anestesiologia e Chirurgia generale ""Paride Stefanini"" / Biblioteca Interdipartimentale di Medicina sperimentale e medicina molecolare - sede Storia della Medicina / Biblioteca del Dipartimento Materno infantile e scienze urologiche (Sede principale Pediatria) / ..."
+biblioteca,Una zona con una biblioteca,no,Primavalle,Nota,2,Biblioteca Franco Basaglia
+biblioteca,Una zona con una biblioteca,no,Tiburtino,Nota,2,"Biblioteca Angelo Monteverdi per gli studi filologici, linguistici e letterari (BAM) / Biblioteca Interdipartimentale Giordano Giacomello di Scienze chimico-farmaceutiche fisiologiche e farmacologiche / Biblioteca Interdipartimentale di Medicina sperimentale e medicina molecolare - sede Storia della Medicina / ..."
+biblioteca,Una zona con una biblioteca,no,Trevi,Nota,2,Biblioteca di Archeologia e Storia dell'Arte
+biblioteca,Una zona con una biblioteca,no,Trieste,Nota,2,Biblioteca LUISS / Biblioteca Villa Leopardi / Fondazione Gramsci Onlus
+biblioteca,Una zona con una biblioteca,no,Trionfale,Nota,2,Aula Studio Casa del Popolo / Aula studio Trionfale / Biblioteca Giordano Bruno / ...
+biblioteca,Una zona con una biblioteca,no,Tuscolano,Nota,2,Biblioteca Nelson Mandela / FBM Fondazione Bertugno-Moulinier
+biblioteca,Una zona con una biblioteca,no,Ardeatino,Da romano,3,Biblioteca Don Andrea Gallo / Biblioteca Fabrizio Giucca
+biblioteca,Una zona con una biblioteca,no,Castro Pretorio,Da romano,3,Biblioteca Nazionale Centrale di Roma / Biblioteca medica statale
+biblioteca,Una zona con una biblioteca,no,Della Vittoria,Da romano,3,Biblioteca Antonino De Stefano / Biblioteca del Ministero degli affari esteri / Fondo Andrea Camilleri
+biblioteca,Una zona con una biblioteca,no,Gianicolense,Da romano,3,Biblioteca Renato Nicolini / Historische Bibliothek
+biblioteca,Una zona con una biblioteca,no,Pietralata,Da romano,3,Giunti al Punto
+biblioteca,Una zona con una biblioteca,no,Ponte Mammolo,Da romano,3,Biblioteca Fabrizio Giovenale / Nomentana Libri
+biblioteca,Una zona con una biblioteca,no,Portuense,Da romano,3,Biblioteca Guglielmo Marconi / Biblopoint Cardarelli
+biblioteca,Una zona con una biblioteca,no,Prenestino-Labicano,Da romano,3,Aula studio Torpignattara / Biblioteca Anarchica L'IDEA / Biblioteca Goffredo Mameli / ...
+biblioteca,Una zona con una biblioteca,no,Salario,Da romano,3,Aula studio MACRO / Biblioteca Europea
+biblioteca,Una zona con una biblioteca,no,San Basilio,Da romano,3,Centro culturale Aldo Fabrizi
+biblioteca,Una zona con una biblioteca,no,Alessandrino,Da tassinaro,5,Biblioteca Gianni Rodari / Biblioteca Quarticciolo
+biblioteca,Una zona con una biblioteca,no,Collatino,Da tassinaro,5,Biblioteca Penazzato / Biblioteca Vaccheria Nardi
+biblioteca,Una zona con una biblioteca,no,Colonna,Da tassinaro,5,Anglo American Bookshop / Biblioteca della Camera dei deputati
+biblioteca,Una zona con una biblioteca,no,Don Bosco,Da tassinaro,5,Biblioteca Livio Maitan / Biblioteca Rugantino
+biblioteca,Una zona con una biblioteca,no,Monte Sacro Alto,Da tassinaro,5,Nomentana Libri
+biblioteca,Una zona con una biblioteca,no,Parione,Da tassinaro,5,Biblioteca Vallicelliana / Casa delle Letterature
+biblioteca,Una zona con una biblioteca,no,Pinciano,Da tassinaro,5,Biblioteca Facoltà di Architettura - Università Sapienza / Biblioteca Flaminia / Biblioteca Quaroni / ...
+biblioteca,Una zona con una biblioteca,no,Ponte,Da tassinaro,5,Casa delle Letterature
+biblioteca,Una zona con una biblioteca,no,Regola,Da tassinaro,5,Biblioteca Centrale Ragazzi / Biblioteca della Pontificia Università della Santa Croce / Bibliothèque de l'École française de Rome
+biblioteca,Una zona con una biblioteca,no,Sant'Angelo,Da tassinaro,5,Biblioteca dell'Istituto dell'Enciclopedia Italiana / Biblioteca di storia moderna e contemporanea
+biblioteca,Una zona con una biblioteca,no,Torre Maura,Da tassinaro,5,Biblioteca Casa dei Bimbi / Biblioteca Raffaello
+biblioteca,Una zona con una biblioteca,no,Val Melaina,Da tassinaro,5,Biblioteca Don Bosco
+biblioteca,Una zona con una biblioteca,no,Casal Boccone,Da sampietrino,8,Centro Genealogico FamilySearch
+biblioteca,Una zona con una biblioteca,no,Fonte Ostiense,Da sampietrino,8,Biblioteca ISPRA / Biblioteca Laurentina
+biblioteca,Una zona con una biblioteca,no,Grottarossa,Da sampietrino,8,Biblioteca della Facoltà di Medicina e psicologia Ernesto Valentini - sede Medicina ospedale S. Andrea
+biblioteca,Una zona con una biblioteca,no,Pigna,Da sampietrino,8,Biblioteca Casanatense / Biblioteca del Senato Giovanni Spadolini - Palazzo della Minerva / Biblioteca della Camera dei deputati
+biblioteca,Una zona con una biblioteca,no,Ripa,Da sampietrino,8,Biblioteca del Centro di studi per la storia dell'architettura / Biblioteca dell'Ufficio di Statistica
+biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da sampietrino,8,"Bibilioteca Lelio Basso / Biblioteca Angelica / Biblioteca Magistrale Laziale ""Giorgio Gabrielli"" / ..."

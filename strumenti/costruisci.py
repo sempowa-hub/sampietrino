@@ -35,7 +35,7 @@ from pathlib import Path
 from pyproj import Transformer
 from shapely import transform as trasforma
 from shapely.geometry import shape, mapping
-from shapely.ops import unary_union
+from shapely.ops import linemerge, unary_union
 
 RADICE = Path(__file__).resolve().parent.parent
 FONTI = RADICE / 'dati' / 'fonti'
@@ -90,10 +90,10 @@ def cataloga(ids_giusti, notorieta):
 
 
 def percorso_linee(geom, origine):
-    """Path SVG aperto (per il Tevere) in km, stesso riferimento di percorso_svg."""
+    """Path SVG aperto (Tevere, reti dei confini) in km, stesso riferimento di percorso_svg."""
     x0, y1 = origine
     parti = geom.geoms if hasattr(geom, 'geoms') else [geom]
-    return ''.join('M' + 'L'.join(f'{(x - x0) / 1000:.2f} {(y1 - y) / 1000:.2f}' for x, y in p.coords) for p in parti if p.length)
+    return ''.join('M' + 'L'.join(f'{(x - x0) / 1000:.3f} {(y1 - y) / 1000:.3f}' for x, y in p.coords) for p in parti if p.length)
 
 
 def percorso_svg(geom, origine):
@@ -103,7 +103,7 @@ def percorso_svg(geom, origine):
     pezzi = []
     for p in parti:
         for anello in [p.exterior, *p.interiors]:
-            pts = [f'{(x - x0) / 1000:.2f} {(y1 - y) / 1000:.2f}' for x, y in anello.coords[:-1]]
+            pts = [f'{(x - x0) / 1000:.3f} {(y1 - y) / 1000:.3f}' for x, y in anello.coords[:-1]]
             pezzi.append('M' + 'L'.join(pts) + 'Z')
     return ''.join(pezzi)
 
@@ -253,8 +253,19 @@ def main():
         else:
             tutti = unary_union([g for g, _, _ in luoghi])
             giuste = sorted(ids[n] for n in nomi if zone[n].intersects(tutti))
+            # Perche e giusta: i nomi dei luoghi nella zona (fermate, sedi...), al massimo tre.
+            # Non per il Tevere: "Tevere" non spiega niente.
+            perche = {}
+            if c['tipo'] != 'acqua':
+                for n in nomi:
+                    if ids[n] not in giuste:
+                        continue
+                    trovati = sorted({e for g, _, e in luoghi if e and zone[n].intersects(g)})
+                    if trovati:
+                        perche[ids[n]] = trovati[:3] + (['...'] if len(trovati) > 3 else [])
             resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi, {len(giuste)} zone giuste')
-            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste})
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste,
+                            **({'perche': perche} if perche else {})})
 
     # Catalogo: fascia di ogni risposta, poi le correzioni a mano.
     notorieta_id = {ids[n]: notorieta[n] for n in nomi}
@@ -290,7 +301,13 @@ def main():
 
     minx, miny, maxx, maxy = gra.buffer(500).bounds
     origine = (minx, maxy)
-    semplifica = lambda g: g.simplify(25, preserve_topology=True)
+    # 8 m: a zoom stretto i confini restano curvi, e il file resta piccolo.
+    semplifica = lambda g: g.simplify(8, preserve_topology=True)
+    # Reti dei confini, ciascun tratto una volta sola: tra zone (tratteggiati sulla mappa) e tra
+    # municipi (pieni). Disegnati per zona, i confini in comune uscirebbero doppi e il tratteggio sporco.
+    bordo_gra = gra.boundary.buffer(5)
+    rete_mun = unary_union([m.boundary for m in municipi.values() if m.area]).difference(bordo_gra)
+    rete_zone = unary_union([z.boundary for z in zone.values()]).difference(bordo_gra).difference(rete_mun.buffer(5))
     dati = {
         'nota': 'Generato da strumenti/costruisci.py. Non modificare a mano. Confini: OpenStreetMap (ODbL), vecchia suddivisione toponomastica. Solo dentro il GRA.',
         'attribuzione': 'Confini © OpenStreetMap contributors',
@@ -306,7 +323,9 @@ def main():
         } for n in nomi],
         'domande': giocabili,
         'avvisi': avvisi,
-        'tevere': percorso_linee(unary_union(tevere_linee).intersection(gra.buffer(2000)).simplify(15), origine) if tevere_linee else None,
+        'confini': percorso_linee(linemerge(rete_zone).simplify(8), origine),
+        'confini_municipi': percorso_linee(linemerge(rete_mun).simplify(8), origine),
+        'tevere': percorso_linee(unary_union(tevere_linee).intersection(gra.buffer(2000)).simplify(8), origine) if tevere_linee else None,
     }
     USCITA.write_text(json.dumps(dati, ensure_ascii=False, separators=(',', ':')))
 

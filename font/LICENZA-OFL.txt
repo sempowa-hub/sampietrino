@@ -1,5 +1,5 @@
-Silkscreen: Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen) Silkscreen-Bold.ttf: Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen)
-Jersey 10: Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-jersey)
+Silkscreen: Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen)
+VT323: Copyright 2011 The VT323 Project Authors (https://github.com/phoikoi/VT323)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:

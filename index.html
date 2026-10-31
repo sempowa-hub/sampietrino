@@ -5,69 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sampietrino</title>
 <meta name="description" content="Gioco quotidiano sui quartieri di Roma: vale di più la risposta giusta che pochi darebbero.">
+<meta name="theme-color" content="#f3e7c9">
+<link rel="preload" href="font/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="src/stile.css">
 </head>
 <body>
-<header class="testata">
-  <div>
-    <h1>Sampietrino</h1>
-    <p class="data" id="data"></p>
-  </div>
-  <div class="cassa" aria-live="polite"><span id="totale">0</span><small>sampietrini</small></div>
-</header>
-
-<main>
-  <section class="domanda" id="domanda">
-    <div class="riga-tappa"><p class="numero" id="numero"></p><p class="tempo" id="tempo" aria-label="secondi rimasti"></p></div>
-    <h2 id="testo">Caricamento…</h2>
-    <ol class="pin" id="pin"></ol>
-  </section>
-
+<main class="gioco">
   <section class="mappa" id="mappa">
-    <canvas id="tela" role="img" aria-label="Mappa delle zone di Roma"></canvas>
+    <canvas id="tela" role="img" aria-label="Mappa delle zone di Roma dentro il Raccordo"></canvas>
     <div class="zoom">
       <button id="piu" aria-label="Ingrandisci">+</button>
       <button id="meno" aria-label="Rimpicciolisci">−</button>
     </div>
     <p class="attribuzione" id="attribuzione"></p>
+    <div class="cartellino" id="cartellino" hidden>
+      <p class="c-tappa" id="c-tappa"></p>
+      <p class="c-zona" id="c-zona"></p>
+      <div class="c-riga"><span class="timbro" id="c-timbro"></span><span class="c-punti" id="c-punti"></span></div>
+    </div>
   </section>
 
-  <section class="azioni">
-    <p class="scelta" id="scelta">Tocca una zona sulla mappa</p>
-    <div class="bottoni">
+  <aside class="foglio">
+    <header class="testata">
+      <div class="marchio">
+        <h1>Sampietrino</h1>
+        <p class="data" id="data"></p>
+      </div>
+      <div class="cassa" aria-live="polite"><span id="totale">0</span><small>sampietrini</small></div>
+    </header>
+    <ol class="tappe" id="tappe" aria-label="Tappe di oggi"></ol>
+
+    <section class="pagina" id="pagina-tappa">
+      <div class="riga-tappa">
+        <p class="numero" id="numero"></p>
+        <p class="tempo" aria-label="secondi rimasti"><span id="tempo"></span></p>
+      </div>
+      <div class="clessidra" aria-hidden="true"><i id="barra"></i></div>
+      <h2 class="testo" id="testo">Caricamento…</h2>
+      <div class="biglietto" id="biglietto">
+        <p class="biglietto-etichetta">Biglietto</p>
+        <p class="scelta" id="scelta">Tocca una zona sulla mappa</p>
+      </div>
       <button class="primario" id="pianta" disabled>Timbra</button>
-    </div>
-    <p class="tasti"><kbd>Invio</kbd> timbra · <kbd>Esc</kbd> annulla · rotella per lo zoom</p>
-  </section>
+      <p class="tasti"><kbd>Invio</kbd> timbra · <kbd>Esc</kbd> annulla · rotella per lo zoom</p>
+    </section>
+
+    <section class="pagina esito" id="pagina-esito" hidden>
+      <p class="numero" id="esito-numero"></p>
+      <h2 class="testo piccolo" id="esito-domanda"></h2>
+      <div class="esito-scheda">
+        <p class="esito-zona"><span id="esito-zona"></span><span class="timbro" id="esito-timbro"></span></p>
+        <p class="esito-perche" id="esito-perche"></p>
+      </div>
+      <p class="esito-nota" id="esito-nota"></p>
+      <button class="primario" id="avanti">Prossima tappa</button>
+      <p class="tasti"><kbd>Invio</kbd> prossima tappa</p>
+    </section>
+
+    <section class="pagina diario" id="pagina-diario" hidden>
+      <p class="numero">Diario di oggi</p>
+      <p class="grande"><span id="fine-totale">0</span><small id="fine-massimo"></small></p>
+      <p class="fine-frase" id="fine-frase"></p>
+      <ol class="righe" id="righe"></ol>
+      <div class="risposte" id="risposte" aria-live="polite"></div>
+      <button class="primario" id="copia">Copia il diario</button>
+      <p class="nota">Domani nuove tappe<span id="prossima"></span></p>
+    </section>
+  </aside>
 </main>
 
 <dialog id="copertina" class="copertina">
-  <p class="etichetta-rossa">Diario di bordo · <span id="copertina-data"></span></p>
-  <h2 class="titolo-pixel">Sampietrino</h2>
-  <p class="motto">Cinque tappe dentro Roma. Un biglietto a tappa: la zona giusta che nessuno nomina vale 8.</p>
+  <p class="etichetta">Diario di bordo · <span id="copertina-data"></span></p>
+  <h2 class="titolo">Sampietrino</h2>
+  <p class="motto">Cinque tappe dentro il Raccordo. Un biglietto a tappa: la zona giusta che nessuno nomina vale 8.</p>
   <ul class="regole">
-    <li><b>5</b> tappe</li>
-    <li><b>1</b> biglietto a tappa</li>
-    <li><b>60</b> secondi a tappa</li>
+    <li><b>5</b>tappe</li>
+    <li><b>1</b>biglietto a tappa</li>
+    <li><b>60</b>secondi a tappa</li>
   </ul>
-  <button class="daje" id="daje">DAJE!</button>
   <ol class="scala" id="scala"></ol>
-</dialog>
-
-<dialog id="esito">
-  <h2 id="esito-titolo"></h2>
-  <p id="esito-testo"></p>
-  <ul class="soluzioni" id="soluzioni"></ul>
-  <button class="primario" id="avanti">Avanti</button>
-</dialog>
-
-<dialog id="fine">
-  <h2>Giro finito</h2>
-  <p class="grande"><span id="fine-totale"></span> <small id="fine-massimo"></small></p>
-  <pre id="condividi"></pre>
-  <div class="riepilogo" id="riepilogo"></div>
-  <button class="primario" id="copia">Copia il risultato</button>
-  <p class="nota">Domani nuove domande.</p>
+  <button class="primario daje" id="daje">DAJE!</button>
 </dialog>
 
 <script type="module" src="src/app.js"></script>
