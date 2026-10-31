@@ -47,8 +47,15 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   }
   for (const d of FOGLI) {
     const dlg = $(d);
-    // Tocco fuori dal foglio: si chiude, come un foglio che torna nel taccuino.
-    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    // Tocco fuori dal foglio: si chiude, come un foglio che torna nel taccuino. Solo se pressione e rilascio
+    // sono tutti e due fuori dalla scheda: trascinare per selezionare il nickname non deve chiudere niente.
+    let premutoFuori = false;
+    const fuori = (e) => {
+      const r = dlg.getBoundingClientRect();
+      return e.target === dlg && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom);
+    };
+    dlg.addEventListener('pointerdown', (e) => { premutoFuori = fuori(e); });
+    dlg.addEventListener('click', (e) => { if (premutoFuori && fuori(e)) dlg.close(); premutoFuori = false; });
     dlg.addEventListener('close', aggiornaSegno);
     for (const b of dlg.querySelectorAll('[data-chiudi]')) b.addEventListener('click', () => dlg.close());
     for (const b of dlg.querySelectorAll('[data-indietro]')) b.addEventListener('click', () => apri('taccuino'));

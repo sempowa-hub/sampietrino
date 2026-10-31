@@ -26,10 +26,15 @@ async function carica() {
   return { au, fs, auth: au.getAuth(app), db: fs.getFirestore(app) };
 }
 
+// Nome e foto di Google: collegando un account anonimo restano nei dati del provider, non sull'utente.
+const google = (u) => u?.providerData?.find((p) => p.providerId === 'google.com') || {};
+const fotoGoogle = (u) => u?.photoURL || google(u).photoURL || '';
+const nomeGoogle = (u) => u?.displayName || google(u).displayName || '';
+
 // Chi sta giocando: null finche Firebase non risponde.
 export const utente = () => (io ? {
   uid: io.uid, anonimo: io.isAnonymous,
-  nome: profilo?.nome || '', foto: profilo?.mostraFoto !== false ? (profilo?.foto || io.photoURL || '') : '', fotoGoogle: io.photoURL || '',
+  nome: profilo?.nome || '', foto: profilo?.mostraFoto !== false ? (profilo?.foto || fotoGoogle(io)) : '', fotoGoogle: fotoGoogle(io),
   mostraFoto: profilo?.mostraFoto !== false,
 } : null);
 export const quandoCambia = (fn) => { ascoltatori.add(fn); return () => ascoltatori.delete(fn); };
@@ -48,6 +53,12 @@ export function avviaConto() {
         }
         io = u;
         profilo = u.isAnonymous ? null : await leggiProfilo(u.uid);
+        // Profili nati senza nome o foto di Google (account anonimo collegato): si sistemano da soli.
+        if (profilo && /^Romano\d{3}$/.test(profilo.nome || '') && nomeGoogle(u)) {
+          await salvaProfilo({ nome: pulisciNome(nomeGoogle(u).split(' ')[0]) }).catch(() => {});
+        } else if (profilo && !profilo.foto && fotoGoogle(u)) {
+          await salvaProfilo({}).catch(() => {});
+        }
         avvisa();
         fatto();
       });
@@ -82,9 +93,12 @@ export async function entraConGoogle() {
   io = auth.currentUser;
   profilo = await leggiProfilo(io.uid);
   // Primo login: nickname proposto dal nome Google, la foto si mostra.
-  if (!profilo.nome) {
-    const nome = pulisciNome((io.displayName || '').split(' ')[0]) || `Romano${Math.floor(Math.random() * 900 + 100)}`;
+  // Primo login, o profilo nato senza nome Google (Romano123): nickname dal nome Google.
+  if (!profilo.nome || (/^Romano\d{3}$/.test(profilo.nome) && nomeGoogle(io))) {
+    const nome = pulisciNome(nomeGoogle(io).split(' ')[0]) || `Romano${Math.floor(Math.random() * 900 + 100)}`;
     await salvaProfilo({ nome, mostraFoto: true });
+  } else if (!profilo.foto && fotoGoogle(io)) {
+    await salvaProfilo({});
   }
   avvisa();
   return utente();
@@ -105,7 +119,7 @@ export async function salvaProfilo({ nome, mostraFoto }) {
   const dati = { aggiornato: fs.serverTimestamp() };
   if (nome != null) dati.nome = pulisciNome(nome);
   if (mostraFoto != null) dati.mostraFoto = !!mostraFoto;
-  dati.foto = io.photoURL || '';
+  dati.foto = fotoGoogle(io);
   await fs.setDoc(fs.doc(db, 'giocatori', io.uid), dati, { merge: true });
   profilo = { ...profilo, ...dati };
   avvisa();

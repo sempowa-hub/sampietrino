@@ -212,16 +212,18 @@ function mostraSplash() {
 // Roma intera dietro lo splash, con le zone del passaporto nei colori delle fasce; scorre piano (CSS).
 function disegnaFondoSplash(s) {
   const cv = $('splash-mappa');
-  const lato = Math.max(innerWidth, innerHeight) * 1.5;
+  // Poco piu grande dello schermo (scorre di poco) e Roma intera dentro, col Raccordo che si vede tutto.
+  const w = innerWidth * 1.25, h = innerHeight * 1.25;
   const dpr = Math.min(2, devicePixelRatio || 1);
-  cv.width = Math.round(lato * dpr);
-  cv.height = Math.round(lato * dpr);
-  cv.style.width = cv.style.height = `${lato}px`;
+  cv.width = Math.round(w * dpr);
+  cv.height = Math.round(h * dpr);
+  cv.style.width = `${w}px`;
+  cv.style.height = `${h}px`;
   const ctx = cv.getContext('2d');
   ctx.fillStyle = '#c4c4aa';
   ctx.fillRect(0, 0, cv.width, cv.height);
   const colori = Object.fromEntries(Object.entries(s.timbri).filter(([id]) => zonePerId[id]).map(([id, l]) => [id, COLORI_FASCE[l]]));
-  disegnaMiniMappa(ctx, dati, { x: cv.width * 0.04, y: cv.height * 0.04, w: cv.width * 0.92, h: cv.height * 0.92, colori, filo: dpr, contorno: false });
+  disegnaMiniMappa(ctx, dati, { x: cv.width * 0.07, y: cv.height * 0.07, w: cv.width * 0.86, h: cv.height * 0.86, colori, filo: dpr, contorno: false });
 }
 
 function chiudiSplash() {

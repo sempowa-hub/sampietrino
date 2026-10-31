@@ -847,7 +847,7 @@ body.con-splash { overflow: hidden; }
 .t-icona { width: 38px; height: 38px; flex: none; }
 .t-passaporto .t-nome { display: flex; flex-direction: column; align-items: flex-start; }
 .t-passaporto small { font-family: var(--font-testo); font-size: 12px; font-weight: 650; letter-spacing: 0.04em; color: var(--inchiostro-2); text-transform: none; }
-@keyframes deriva { from { transform: translate(-6%, -8%); } to { transform: translate(-30%, -24%); } }
+@keyframes deriva { from { transform: translate(-4%, -5%); } to { transform: translate(-16%, -15%); } }
 @keyframes banda { from { transform: translateY(-100%); } }
 @keyframes splash-via { to { opacity: 0; transform: scale(1.03); } }
 @media (max-width: 520px) {
@@ -860,4 +860,4 @@ body.con-splash { overflow: hidden; }
   .t-data b { font-size: 18px; }
   .t-archivio .t-nome { padding: 3px 6px; }
 }
-@media (prefers-reduced-motion: reduce) { .splash-fondo canvas { animation: none; transform: translate(-18%, -16%); } }
+@media (prefers-reduced-motion: reduce) { .splash-fondo canvas { animation: none; transform: translate(-10%, -10%); } }
