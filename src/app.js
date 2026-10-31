@@ -72,8 +72,14 @@ function disegnaMappa() {
   el('g', { id: 'etichette' }, svg);
 }
 
+// Etichette sempre a 15 px sullo schermo, a qualsiasi zoom e su qualsiasi schermo.
+function kmPerPixel() {
+  const r = $('svg').getBoundingClientRect();
+  return Math.max(vista.w / r.width, vista.h / r.height) || vista.w / 400;
+}
+
 function etichetta(z, classe = '') {
-  const t = el('text', { x: z.centro[0], y: z.centro[1], class: `etichetta ${classe}`, 'font-size': vista.w / 26, 'stroke-width': vista.w / 120 }, $('etichette'));
+  const t = el('text', { x: z.centro[0], y: z.centro[1], class: `etichetta ${classe}`, 'font-size': 15 * kmPerPixel(), 'stroke-width': 3.5 * kmPerPixel() }, $('etichette'));
   t.textContent = z.nome;
 }
 
@@ -304,6 +310,30 @@ function attivaZoom() {
   $('piu').addEventListener('click', () => zoomA(1 / 1.5, ...centro()));
   $('meno').addEventListener('click', () => zoomA(1.5, ...centro()));
 }
+
+// Tastiera su desktop: Invio mette il pin, F ferma, Esc annulla la scelta.
+document.addEventListener('keydown', (e) => {
+  if ($('esito').open || $('fine').open) {
+    if (e.key === 'Enter' && $('esito').open) { e.preventDefault(); avanti(); }
+    return;
+  }
+  if (e.key === 'Enter' && !$('pianta').disabled) { e.preventDefault(); pianta(); }
+  else if (e.key.toLowerCase() === 'f' && !$('fermati').disabled) fermaQui();
+  else if (e.key === 'Escape' && selezionata) { selezionata = null; ridisegna(); }
+});
+
+// Rotazione del telefono o finestra ridimensionata: si ricalcola l'inquadratura.
+let ultimaForma = '';
+new ResizeObserver(() => {
+  const r = $('svg').getBoundingClientRect();
+  // Solo la larghezza: su telefono la barra degli indirizzi cambia l'altezza e azzererebbe lo zoom.
+  const forma = `${Math.round(r.width)}`;
+  if (!dati || forma === ultimaForma) return;
+  ultimaForma = forma;
+  const s = stati?.[corrente];
+  inquadra(s?.domanda || {}, !!s && s.esito !== 'aperta');
+  ridisegna();
+}).observe($('mappa'));
 
 $('pianta').addEventListener('click', pianta);
 $('fermati').addEventListener('click', fermaQui);
