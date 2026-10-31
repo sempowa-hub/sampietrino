@@ -239,12 +239,12 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 
 /* La faccia di Themino a pixel: reagisce all'esito. */
 .faccia { image-rendering: pixelated; display: block; }
-.c-faccia { position: absolute; left: -34px; top: -38px; width: 96px; height: 96px; filter: drop-shadow(0 3px 0 rgba(42, 31, 22, 0.18)); }
+.c-faccia { position: absolute; left: -40px; top: -46px; width: 112px; height: 112px; filter: drop-shadow(0 3px 0 rgba(42, 31, 22, 0.18)); }
 .cartellino.attesa .c-faccia { animation: dondola 700ms steps(2) infinite; }
 .faccia.reagisce { animation: reazione 420ms var(--deciso); }
-.copertina-faccia { width: 96px; height: 96px; margin: -62px auto 4px; }
+.copertina-faccia { width: 112px; height: 112px; margin: -14px auto 0; }
 .fine-testa { display: flex; align-items: center; gap: 14px; }
-.fine-faccia { width: 96px; height: 96px; flex: none; }
+.fine-faccia { width: 112px; height: 112px; flex: none; }
 @keyframes dondola { 50% { transform: translateY(-3px) rotate(-3deg); } }
 @keyframes reazione { 0% { transform: scale(0.7) rotate(-8deg); } 60% { transform: scale(1.12) rotate(3deg); } 100% { transform: none; } }
 
@@ -349,7 +349,7 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
   .c-punti { font-size: 18px; }
   .cartellino .timbro { font-size: 12px; }
   .attribuzione { font-size: 12px; }
-  .c-faccia { width: 72px; height: 72px; left: -22px; top: -30px; }
+  .c-faccia { width: 84px; height: 84px; left: -26px; top: -36px; }
   /* Nel diario la lista e lunga: la mappa tiene meta schermo e la pagina scorre. */
   body.in-diario .mappa { flex: none; height: 48vh; }
 }

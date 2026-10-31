@@ -43,17 +43,19 @@ function ripristina() {
 const nomeZona = (id) => (id ? zonePerId[id].nome : 'tempo scaduto');
 const livelloDi = (nomeFascia) => SCALA.findIndex((f) => f.nome === nomeFascia);
 const coloreT = (liv) => `var(--f${liv}-t)`;
-// La faccia di Themino per ogni esito: buca, scontata, giusta, rara.
-const faccia = (liv) => (liv === null ? 'buca' : liv === 0 ? 'neutro' : liv <= 2 ? 'sorriso' : 'stupore');
+// La faccia di Mino per ogni esito (strumenti/disegna_mino.py): una per fascia, mano in faccia per la buca,
+// triste se scade il tempo.
+const FACCE_FASCIA = ['dubbioso', 'sorriso', 'occhiolino', 'risata', 'stupore'];
+const faccia = (pin) => (pin.fascia ? FACCE_FASCIA[livelloDi(pin.fascia)] : pin.zona ? 'buca' : 'triste');
 function mettiFaccia(el, nome, anima = true) {
-  el.src = `img/themino-${nome}.png`;
+  el.src = `img/mino-${nome}.png`;
   el.classList.remove('reagisce');
   if (anima) { void el.offsetWidth; el.classList.add('reagisce'); }
 }
 
 async function avvia() {
   // Le facce si caricano subito: al momento della rivelazione devono esserci gia.
-  for (const f of ['neutro', 'sorriso', 'buca', 'stupore']) new Image().src = `img/themino-${f}.png`;
+  for (const f of [...FACCE_FASCIA, 'pensieroso', 'buca', 'triste']) new Image().src = `img/mino-${f}.png`;
   dati = await (await fetch('dati/gioco.json')).json();
   zonePerId = Object.fromEntries(dati.zone.map((z) => [z.id, z]));
   domande = domandeDelGiorno(oggi, dati.domande);
@@ -355,7 +357,7 @@ function preparaCartellino(s, attesa) {
   c.style.setProperty('--colore-t', liv === null ? 'var(--rosso)' : coloreT(liv));
   c.classList.toggle('buca', liv === null);
   c.classList.toggle('attesa', attesa);
-  mettiFaccia($('c-faccia'), attesa ? 'neutro' : faccia(liv), !attesa);
+  mettiFaccia($('c-faccia'), attesa ? 'pensieroso' : faccia(pin), !attesa);
   c.classList.remove('rivelato', 'entra');
   $('c-tappa').textContent = `Tappa ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
   $('c-zona').textContent = pin.zona ? nomeZona(pin.zona) : 'Tempo scaduto';
@@ -369,7 +371,7 @@ function preparaCartellino(s, attesa) {
 function rivelaCartellino() {
   const c = $('cartellino');
   const s = stati[corrente];
-  mettiFaccia($('c-faccia'), faccia(s.pin.fascia ? livelloDi(s.pin.fascia) : null));
+  mettiFaccia($('c-faccia'), faccia(s.pin));
   c.classList.remove('attesa');
   void c.offsetWidth;
   c.classList.add('rivelato');
@@ -436,7 +438,7 @@ function mostraFine(anima) {
   contaFino($('fine-totale'), anima ? 0 : tot, tot, 900);
   $('fine-massimo').textContent = `/ ${MASSIMO_AL_GIORNO}`;
   $('fine-frase').textContent = FRASI.find(([min]) => tot >= min)[1];
-  mettiFaccia($('fine-faccia'), tot >= 22 ? 'stupore' : tot >= 12 ? 'sorriso' : tot > 0 ? 'neutro' : 'buca', anima);
+  mettiFaccia($('fine-faccia'), tot >= 32 ? 'stupore' : tot >= 24 ? 'risata' : tot >= 16 ? 'sorriso' : tot >= 8 ? 'dubbioso' : tot > 0 ? 'triste' : 'buca', anima);
   $('righe').replaceChildren(...stati.map((s, i) => {
     const li = document.createElement('li');
     const b = document.createElement('button');

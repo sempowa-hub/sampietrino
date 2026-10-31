@@ -109,6 +109,7 @@ src/motore.js              regole pure: scala, fasce, un pin a tappa, domande de
 src/app.js                 interfaccia: tappe, biglietto, esito argomentato, diario
 src/mappa.js               mappa a vettori su canvas: zone, animazioni, zoom, tocchi
 src/suoni.js               effetti sonori sintetizzati con Web Audio
+strumenti/disegna_mino.py  disegna Mino a pixel nelle sue dieci espressioni (img/mino-*.png)
 src/stile.css              grafica
 test/motore.test.js        test delle regole (dati finti, solo per le regole)
 dati/                      fonti, notorietà, dati generati
