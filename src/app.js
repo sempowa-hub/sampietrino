@@ -1,6 +1,6 @@
-// Interfaccia di Sampietrino: mappa SVG, pin, banca, riepilogo.
+// Interfaccia di Sampietrino: mappa SVG, un biglietto per tappa, catalogo delle risposte, riepilogo.
 import {
-  punti, nuovaDomanda, pinna, fermati, totale, domandeDelGiorno, PIN_PER_DOMANDA, DOMANDE_AL_GIORNO,
+  SCALA, MASSIMO_AL_GIORNO, fascia, risposte, nuovaDomanda, pinna, totale, domandeDelGiorno, DOMANDE_AL_GIORNO,
 } from './motore.js';
 
 const NS = 'http://www.w3.org/2000/svg';
@@ -9,12 +9,12 @@ const $ = (id) => document.getElementById(id);
 const oggi = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date());
 const CHIAVE = `sampietrino:${oggi}`;
 
-let dati, notorieta, zonePerId, domande, stati, corrente, selezionata;
+let dati, zonePerId, domande, stati, corrente, selezionata;
 const percorsi = new Map();
 
 function salva() {
   try {
-    localStorage.setItem(CHIAVE, JSON.stringify({ stati: stati.map((s) => ({ pin: s.pin, banco: s.banco, esito: s.esito })), corrente }));
+    localStorage.setItem(CHIAVE, JSON.stringify({ stati: stati.map((s) => ({ pin: s.pin })), corrente }));
   } catch { /* senza memoria si gioca lo stesso */ }
 }
 
@@ -30,7 +30,6 @@ function ripristina() {
 
 async function avvia() {
   dati = await (await fetch('dati/gioco.json')).json();
-  notorieta = Object.fromEntries(dati.zone.map((z) => [z.id, z.notorieta]));
   zonePerId = Object.fromEntries(dati.zone.map((z) => [z.id, z]));
   domande = domandeDelGiorno(oggi, dati.domande);
   if (!ripristina()) {
@@ -44,7 +43,12 @@ async function avvia() {
   if (corrente >= domande.length) mostraFine();
   else mostraDomanda();
   // Copertina solo a giornata non ancora iniziata.
-  if (corrente === 0 && stati[0].pin.length === 0) {
+  if (corrente === 0 && !stati[0].pin) {
+    $('scala').replaceChildren(...[...SCALA].reverse().map((f) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span>${f.nome}</span><b>+${f.punti}</b>`;
+      return li;
+    }));
     $('copertina-data').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long' }).format(new Date());
     $('copertina').showModal();
   }
@@ -91,15 +95,15 @@ function etichetta(z, classe = '') {
 function ridisegna() {
   const s = stati[corrente];
   const d = s?.domanda;
-  const chiusa = s && s.esito !== 'aperta';
+  const chiusa = !!s?.pin;
   for (const [id, p] of percorsi) {
-    const pin = s?.pin.find((x) => x.zona === id);
+    const pin = s?.pin?.zona === id ? s.pin : null;
     // Il bersaglio si mostra solo a domanda chiusa: prima rivelerebbe le risposte.
     p.classList.toggle('bersaglio', chiusa && !!d?.evidenzia?.includes(id));
     p.classList.toggle('scelta', id === selezionata);
-    p.classList.toggle('giusta', !!pin && pin.punti !== null);
-    p.classList.toggle('sbagliata', !!pin && pin.punti === null);
-    p.classList.toggle('soluzione', chiusa && !pin && d.risposte.includes(id));
+    p.classList.toggle('giusta', !!pin && pin.fascia !== null);
+    p.classList.toggle('sbagliata', !!pin && pin.fascia === null);
+    p.classList.toggle('soluzione', chiusa && !pin && id in d.catalogo);
   }
   for (const m of document.querySelectorAll('.municipio')) {
     m.classList.toggle('acceso', chiusa && Number(m.dataset.num) === d?.evidenziaMunicipio);
@@ -114,27 +118,23 @@ function ridisegna() {
     etichetta(z, classe);
   };
   if (chiusa) for (const id of d?.evidenzia || []) metti(zonePerId[id], 'bersaglio');
-  for (const pin of s?.pin || []) metti(zonePerId[pin.zona]);
+  if (s?.pin) metti(zonePerId[s.pin.zona]);
 
   const ol = $('pin');
   ol.replaceChildren();
-  for (let i = 0; i < PIN_PER_DOMANDA; i++) {
-    const li = document.createElement('li');
-    const pin = s?.pin[i];
-    if (!pin) { li.className = 'vuoto'; li.textContent = `biglietto ${i + 1}`; }
-    else if (pin.punti === null) { li.className = 'buca'; li.innerHTML = `<span>${zonePerId[pin.zona].nome}</span><b>buca</b>`; }
-    else li.innerHTML = `<span>${zonePerId[pin.zona].nome}</span><b>+${pin.punti}</b>`;
-    li.title = pin ? zonePerId[pin.zona].nome : '';
-    ol.appendChild(li);
-  }
-  $('totale').textContent = totale(stati.slice(0, corrente + (chiusa ? 1 : 0))) + (s && !chiusa ? s.banco : 0);
+  const li = document.createElement('li');
+  const pin = s?.pin;
+  if (!pin) { li.className = 'vuoto'; li.textContent = 'biglietto da timbrare'; }
+  else if (pin.fascia === null) { li.className = 'buca'; li.innerHTML = `<span>${zonePerId[pin.zona].nome}</span><b>buca</b>`; }
+  else li.innerHTML = `<span>${zonePerId[pin.zona].nome} · ${pin.fascia}</span><b>+${pin.punti}</b>`;
+  li.title = pin ? zonePerId[pin.zona].nome : '';
+  ol.appendChild(li);
+  $('totale').textContent = totale(stati.slice(0, corrente + 1));
   $('pianta').disabled = !selezionata || chiusa;
-  $('fermati').disabled = !s || chiusa || s.pin.length === 0;
-  const messaggi = { buca: 'Buca: questa domanda vale 0', fermata: `In banca ${s?.banco}`, piena: `Tre su tre: ${s?.banco}` };
   $('scelta').textContent = selezionata
-    ? 'Zona scelta. Il nome lo scopri col pin'
-    : chiusa ? messaggi[s.esito]
-      : s?.pin.length ? `In banca ${s.banco}. Ti fermi o rischi?` : 'Tocca una zona sulla mappa';
+    ? 'Zona scelta. Il nome lo scopri timbrando'
+    : chiusa ? (pin.fascia ? `${pin.fascia}: +${pin.punti}` : 'Buca: questa tappa vale 0')
+      : 'Tocca una zona sulla mappa';
 }
 
 function mostraDomanda() {
@@ -144,52 +144,53 @@ function mostraDomanda() {
   $('testo').textContent = s.domanda.testo;
   inquadra(s.domanda, false);
   ridisegna();
-  if (s.esito !== 'aperta') mostraEsito();
+  if (s.pin) mostraEsito();
 }
 
 function tocca(id) {
   const s = stati[corrente];
-  if (!s || s.esito !== 'aperta') return;
-  if (s.pin.some((p) => p.zona === id)) return;
+  if (!s || s.pin) return;
   selezionata = selezionata === id ? null : id;
   ridisegna();
 }
 
 function pianta() {
   if (!selezionata) return;
-  stati[corrente] = pinna(stati[corrente], selezionata, notorieta);
+  stati[corrente] = pinna(stati[corrente], selezionata);
   selezionata = null;
   salva();
   ridisegna();
-  if (stati[corrente].esito !== 'aperta') setTimeout(mostraEsito, 500);
-}
-
-function fermaQui() {
-  stati[corrente] = fermati(stati[corrente]);
-  salva();
-  ridisegna();
-  mostraEsito();
+  setTimeout(mostraEsito, 500);
 }
 
 function mostraEsito() {
   const s = stati[corrente];
   inquadra(s.domanda, true);
   ridisegna();
-  const titoli = { buca: 'Buca!', fermata: 'In banca', piena: 'Tre su tre' };
-  $('esito-titolo').textContent = titoli[s.esito];
-  $('esito-testo').textContent = s.esito === 'buca'
-    ? `${zonePerId[s.pin.at(-1).zona].nome} non va bene. Questa domanda vale 0.`
-    : `Porti a casa ${s.banco} sampietrini. Ecco tutte le risposte giuste:`;
-  const mie = new Set(s.pin.map((p) => p.zona));
-  const lista = [...s.domanda.risposte]
-    .map((id) => ({ id, p: punti(s.domanda, id, notorieta) }))
-    .sort((a, b) => b.p - a.p);
-  $('soluzioni').replaceChildren(...lista.map(({ id, p }) => {
+  const nome = zonePerId[s.pin.zona].nome;
+  $('esito-titolo').textContent = s.pin.fascia ? `${s.pin.fascia}!` : 'Buca!';
+  $('esito-testo').textContent = s.pin.fascia
+    ? `${nome}: +${s.pin.punti} sampietrini. Tutte le risposte, fascia per fascia:`
+    : `${nome} non va bene: questa tappa vale 0. Le risposte giuste erano:`;
+  // Il catalogo intero, dalla fascia piu alta alla piu bassa.
+  const blocchi = [];
+  for (let liv = SCALA.length - 1; liv >= 0; liv--) {
+    const zone = risposte(s.domanda).filter((id) => s.domanda.catalogo[id] === liv)
+      .map((id) => zonePerId[id].nome).sort((a, b) => a.localeCompare(b, 'it'));
+    if (!zone.length) continue;
     const li = document.createElement('li');
-    li.innerHTML = `${zonePerId[id].nome} <b>${p}</b>`;
-    if (mie.has(id)) li.className = 'tua';
-    return li;
-  }));
+    const titolo = document.createElement('b');
+    titolo.textContent = `${SCALA[liv].nome} +${SCALA[liv].punti}`;
+    li.append(titolo, document.createElement('br'));
+    for (const [i, n] of zone.entries()) {
+      const span = document.createElement('span');
+      span.textContent = n + (i < zone.length - 1 ? ', ' : '');
+      if (n === nome) span.className = 'tua';
+      li.append(span);
+    }
+    blocchi.push(li);
+  }
+  $('soluzioni').replaceChildren(...blocchi);
   $('esito').showModal();
 }
 
@@ -205,11 +206,14 @@ function mostraFine() {
   const tot = totale(stati);
   $('totale').textContent = tot;
   $('fine-totale').textContent = tot;
+  $('fine-massimo').textContent = `sampietrini su ${MASSIMO_AL_GIORNO}`;
+  const QUADRI = ['⬜', '🟨', '🟧', '🟥', '🟫'];
   const righe = stati.map((s) => {
-    if (s.esito === 'buca') return '🕳️';
-    return s.pin.map((p) => (p.punti >= 8 ? '🟫' : p.punti >= 4 ? '🟧' : '⬜')).join('') + ` ${s.banco}`;
+    if (!s.pin?.fascia) return '🕳️ buca';
+    const liv = SCALA.findIndex((f) => f.nome === s.pin.fascia);
+    return `${QUADRI[liv]} ${s.pin.fascia} +${s.pin.punti}`;
   });
-  $('condividi').textContent = `Diario di Sampietrino ${oggi}\n${righe.join('\n')}\nTotale ${tot}/150`;
+  $('condividi').textContent = `Diario di Sampietrino ${oggi}\n${righe.join('\n')}\nTotale ${tot}/${MASSIMO_AL_GIORNO}`;
   $('numero').textContent = 'Fine';
   $('testo').textContent = `${tot} sampietrini oggi`;
   selezionata = null;
@@ -325,7 +329,7 @@ function attivaZoom() {
   $('meno').addEventListener('click', () => zoomA(1.5, ...centro()));
 }
 
-// Tastiera su desktop: Invio mette il pin, F ferma, Esc annulla la scelta.
+// Tastiera su desktop: Invio timbra, Esc annulla la scelta.
 document.addEventListener('keydown', (e) => {
   if ($('copertina').open) return;
   if ($('esito').open || $('fine').open) {
@@ -333,7 +337,6 @@ document.addEventListener('keydown', (e) => {
     return;
   }
   if (e.key === 'Enter' && !$('pianta').disabled) { e.preventDefault(); pianta(); }
-  else if (e.key.toLowerCase() === 'f' && !$('fermati').disabled) fermaQui();
   else if (e.key === 'Escape' && selezionata) { selezionata = null; ridisegna(); }
 });
 
@@ -346,13 +349,12 @@ new ResizeObserver(() => {
   if (!dati || forma === ultimaForma) return;
   ultimaForma = forma;
   const s = stati?.[corrente];
-  inquadra(s?.domanda || {}, !!s && s.esito !== 'aperta');
+  inquadra(s?.domanda || {}, !!s?.pin);
   ridisegna();
 }).observe($('mappa'));
 
 $('daje').addEventListener('click', () => $('copertina').close());
 $('pianta').addEventListener('click', pianta);
-$('fermati').addEventListener('click', fermaQui);
 $('avanti').addEventListener('click', avanti);
 $('copia').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText($('condividi').textContent); $('copia').textContent = 'Copiato'; } catch { $('copia').textContent = 'Copia a mano dal riquadro'; }

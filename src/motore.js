@@ -1,54 +1,50 @@
 // Motore di Sampietrino: regole pure, senza mappa e senza DOM.
-// Una domanda ha un insieme di zone giuste; ogni zona ha una notorieta (0-100).
+// Ogni domanda ha un catalogo: per ogni zona giusta, la sua fascia nella scala dei punteggi.
 
-export const PIN_PER_DOMANDA = 3;
 export const DOMANDE_AL_GIORNO = 5;
 export const MIN_RISPOSTE = 4;
 export const MAX_RISPOSTE = 25;
-export const MAX_PER_TIPO = 3;
+export const MAX_PER_TIPO = 2;
 
-// Punti di una zona giusta: relativi alle altre risposte della stessa domanda.
-// La piu nota vale 1, la meno nota 10. A parita di notorieta, rango medio.
-export function punti(domanda, zonaId, notorieta) {
-  const giuste = domanda.risposte;
-  if (!giuste.includes(zonaId)) return null;
-  if (giuste.length === 1) return 5;
-  const n = (id) => {
-    const v = notorieta[id];
-    if (typeof v !== 'number') throw new Error(`notorieta mancante per "${id}"`);
-    return v;
-  };
-  const mia = n(zonaId);
-  const piuNote = giuste.filter((id) => n(id) > mia).length;
-  const pari = giuste.filter((id) => n(id) === mia).length;
-  const rango = piuNote + (pari - 1) / 2;
-  return Math.round(1 + (9 * rango) / (giuste.length - 1));
+// La scala: dalla risposta che dicono tutti a quella che conosce solo chi vive per strada.
+export const SCALA = [
+  { nome: 'Scontata', punti: 1 },
+  { nome: 'Nota', punti: 2 },
+  { nome: 'Da romano', punti: 3 },
+  { nome: 'Da tassinaro', punti: 5 },
+  { nome: 'Da sampietrino', punti: 8 },
+];
+export const MASSIMO_AL_GIORNO = DOMANDE_AL_GIORNO * SCALA.at(-1).punti;
+
+// Fascia di una zona per questa domanda, o null se la zona non e una risposta giusta.
+export function fascia(domanda, zonaId) {
+  const livello = domanda.catalogo[zonaId];
+  if (livello === undefined) return null;
+  if (!SCALA[livello]) throw new Error(`fascia ${livello} fuori scala per "${zonaId}" in "${domanda.id}"`);
+  return SCALA[livello];
 }
 
-// Stato di una domanda in corso. Esiti: aperta, fermata, piena, buca.
+export function punti(domanda, zonaId) {
+  return fascia(domanda, zonaId)?.punti ?? 0;
+}
+
+export function risposte(domanda) {
+  return Object.keys(domanda.catalogo);
+}
+
+// Un pin per tappa: lo metti e la tappa e chiusa.
 export function nuovaDomanda(domanda) {
-  return { domanda, pin: [], banco: 0, esito: 'aperta' };
+  return { domanda, pin: null };
 }
 
-export function pinna(stato, zonaId, notorieta) {
-  if (stato.esito !== 'aperta') throw new Error(`domanda gia chiusa (${stato.esito})`);
-  if (stato.pin.some((p) => p.zona === zonaId)) return { ...stato, ripetuta: zonaId };
-  const p = punti(stato.domanda, zonaId, notorieta);
-  const pin = [...stato.pin, { zona: zonaId, punti: p }];
-  if (p === null) return { ...stato, pin, banco: 0, esito: 'buca' };
-  const banco = stato.banco + p;
-  const esito = pin.length >= PIN_PER_DOMANDA ? 'piena' : 'aperta';
-  return { ...stato, pin, banco, esito };
-}
-
-export function fermati(stato) {
-  if (stato.esito !== 'aperta') throw new Error(`domanda gia chiusa (${stato.esito})`);
-  if (stato.pin.length === 0) throw new Error('serve almeno un pin prima di fermarsi');
-  return { ...stato, esito: 'fermata' };
+export function pinna(stato, zonaId) {
+  if (stato.pin) throw new Error('tappa gia chiusa');
+  const f = fascia(stato.domanda, zonaId);
+  return { ...stato, pin: { zona: zonaId, punti: f?.punti ?? 0, fascia: f?.nome ?? null } };
 }
 
 export function totale(stati) {
-  return stati.reduce((s, d) => s + (d.esito === 'buca' ? 0 : d.banco), 0);
+  return stati.reduce((s, d) => s + (d.pin?.punti ?? 0), 0);
 }
 
 // Hash FNV-1a 32 bit: stessa partita per tutti nello stesso giorno.
@@ -73,7 +69,10 @@ function generatore(seme) {
 
 // Solo le domande giocabili: abbastanza risposte per avere scelta, non troppe.
 export function giocabili(pool) {
-  return pool.filter((d) => d.risposte.length >= MIN_RISPOSTE && d.risposte.length <= MAX_RISPOSTE);
+  return pool.filter((d) => {
+    const n = risposte(d).length;
+    return n >= MIN_RISPOSTE && n <= MAX_RISPOSTE;
+  });
 }
 
 export function domandeDelGiorno(dataISO, pool) {
@@ -87,6 +86,8 @@ export function domandeDelGiorno(dataISO, pool) {
     const j = Math.floor(caso() * (i + 1));
     [mazzo[i], mazzo[j]] = [mazzo[j], mazzo[i]];
   }
+  // Prima le domande di categoria (metro, Trapizzino...), le domande di riserva in fondo.
+  mazzo.sort((a, b) => Number(!!a.riserva) - Number(!!b.riserva));
   // Varieta: al massimo MAX_PER_TIPO domande dello stesso tipo, poi si riempie col resto.
   const scelte = [];
   const perTipo = {};

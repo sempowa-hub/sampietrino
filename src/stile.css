@@ -166,8 +166,9 @@ dialog {
 dialog::backdrop { background: rgba(36, 31, 27, 0.45); }
 dialog h2 { font-family: var(--font-pixel); font-weight: 700; text-transform: uppercase; margin: 0 0 6px; font-size: 26px; color: var(--pompeiano); }
 dialog .primario { width: 100%; margin-top: 12px; }
-.soluzioni { list-style: none; padding: 0; margin: 10px 0 0; max-height: 40vh; overflow: auto; columns: 2; font-size: 19px; }
-.soluzioni li { padding: 2px 0; break-inside: avoid; }
+.soluzioni { list-style: none; padding: 0; margin: 10px 0 0; max-height: 45vh; overflow: auto; font-size: 19px; }
+.soluzioni li { padding: 6px 0; border-bottom: 1px dashed var(--linea); }
+.soluzioni li b { font-family: var(--font-pixel); font-size: 13px; color: var(--pompeiano); text-transform: uppercase; letter-spacing: 0.06em; }
 .soluzioni b { color: var(--ocra); }
 .soluzioni .tua { font-weight: 600; }
 .grande { font-family: var(--font-pixel); font-size: 52px; font-weight: 700; margin: 4px 0; }
@@ -235,3 +236,8 @@ pre { background: var(--travertino-scuro); padding: 10px; border-radius: 2px; fo
 }
 .daje:hover { transform: translate(-1px, -1px); box-shadow: 7px 7px 0 var(--basalto); }
 .daje:active { transform: translate(5px, 5px); box-shadow: 1px 1px 0 var(--basalto); }
+
+.scala { list-style: none; padding: 0; margin: 16px 0 0; text-align: left; }
+.scala li { display: flex; justify-content: space-between; padding: 3px 4px; border-bottom: 1px dashed var(--linea); font-size: 18px; }
+.scala b { font-family: var(--font-pixel); color: var(--pompeiano); font-size: 14px; }
+.pin li span { overflow: hidden; text-overflow: ellipsis; }

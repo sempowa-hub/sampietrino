@@ -4,14 +4,25 @@ Zone: i poligoni di dati/fonti/quartieri-osm.geojson, uniti per nome, solo quell
 che stanno almeno per meta dentro il Grande Raccordo Anulare (dati/fonti/gra-osm.geojson,
 da strumenti/scarica_gra.py). Il gioco e la Roma dentro il Raccordo.
 Domande: calcolate dalla geometria, mai scritte a mano.
+  - Categorie (dati/categorie.json): "Una zona con una fermata della Metro A", "con un
+    Trapizzino"... Zone giuste: quelle che contengono almeno un luogo della categoria
+    (dati/fonti/luoghi-osm.geojson, da strumenti/scarica_luoghi.py).
+  Riserva, usate solo se mancano domande di categoria:
   - "Confina con X": zone che condividono con X almeno 100 m di confine.
   - "Nel Municipio N": zone che stanno per piu di meta nel municipio.
   - "Arriva fino al Raccordo": zone che toccano il GRA.
   - "Confina col Vaticano".
 
+Catalogo: ogni risposta giusta di ogni domanda sta in una fascia della scala (0-4,
+da Scontata a Da sampietrino), dalla notorieta della zona rispetto alle altre risposte.
+Correzioni a mano in dati/correzioni-fasce.json. Il catalogo leggibile esce in dati/catalogo.csv.
+
 Uso: pip install shapely pyproj && python3 strumenti/costruisci.py
+     python3 strumenti/costruisci.py --provvisorio   senza GRA e senza luoghi, solo domande
+       di riserva su tutta Roma. Lo scrive nei dati e lo stampa: non e la versione vera.
 Si ferma con errore se un dato manca: niente silenzio verde.
 """
+import csv
 import json
 
 import numpy as np
@@ -32,6 +43,9 @@ USCITA = RADICE / 'dati' / 'gioco.json'
 CONFINE_MINIMO_M = 100
 QUOTA_DENTRO_GRA = 0.5
 MIN_RISPOSTE, MAX_RISPOSTE = 4, 25
+FASCE = ['Scontata', 'Nota', 'Da romano', 'Da tassinaro', 'Da sampietrino']
+PUNTI = [1, 2, 3, 5, 8]
+CATALOGO_CSV = RADICE / 'dati' / 'catalogo.csv'
 ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
 
 utm = Transformer.from_crs(4326, 32633, always_xy=True)
@@ -60,6 +74,21 @@ def carica(nome):
     return feats
 
 
+def cataloga(ids_giusti, notorieta):
+    """Fascia 0-4 per ogni risposta: la piu nota 0, la meno nota 4, le altre distribuite.
+    A parita di notorieta, rango medio e stessa fascia."""
+    n = len(ids_giusti)
+    if n == 1:
+        return {ids_giusti[0]: 2}
+    fasce = {}
+    for z in ids_giusti:
+        piu_note = sum(1 for a in ids_giusti if notorieta[a] > notorieta[z])
+        pari = sum(1 for a in ids_giusti if notorieta[a] == notorieta[z])
+        rango = piu_note + (pari - 1) / 2
+        fasce[z] = round(4 * rango / (n - 1))
+    return fasce
+
+
 def percorso_svg(geom, origine):
     """Path SVG in km, y verso il basso, origine in alto a sinistra."""
     x0, y1 = origine
@@ -72,7 +101,11 @@ def percorso_svg(geom, origine):
     return ''.join(pezzi)
 
 
+PROVVISORIO = '--provvisorio' in sys.argv
+
+
 def main():
+    avvisi = []
     notorieta = json.loads((RADICE / 'dati' / 'notorieta.json').read_text())['valori']
 
     per_nome = defaultdict(list)
@@ -92,10 +125,16 @@ def main():
     comune = unary_union(list(municipi.values()))
 
     gra_file = FONTI / 'gra-osm.geojson'
-    if not gra_file.exists():
+    if gra_file.exists():
+        gra = unary_union([in_metri(shape(f['geometry'])).buffer(0) for f in carica('gra-osm.geojson')])
+    elif PROVVISORIO:
+        avvisi.append('PROVVISORIO: senza GRA, tutta Roma (manca dati/fonti/gra-osm.geojson)')
+        gra = None
+    else:
         errore(f'manca {gra_file.relative_to(RADICE)}: lancia prima python3 strumenti/scarica_gra.py')
-    gra = unary_union([in_metri(shape(f['geometry'])).buffer(0) for f in carica('gra-osm.geojson')])
-    if not 250e6 < gra.area < 500e6:
+    if gra is None:
+        gra = comune
+    if gra_file.exists() and not 250e6 < gra.area < 500e6:
         errore(f'area dentro il GRA di {gra.area / 1e6:.0f} km2: attesa tra 250 e 500, il file e sbagliato')
     tutte = len(zone)
     quota = {n: g.intersection(gra).area / g.area for n, g in zone.items()}
@@ -127,7 +166,7 @@ def main():
     for n in nomi:
         domande.append({
             'id': f'confina-{ids[n]}',
-            'tipo': 'confina',
+            'tipo': 'confina', 'riserva': True,
             'testo': f'Una zona che confina con {n}',
             'evidenzia': [ids[n]],
             'risposte': sorted(ids[v] for v in vicini[n]),
@@ -143,7 +182,7 @@ def main():
             continue
         domande.append({
             'id': f'municipio-{k}',
-            'tipo': 'municipio',
+            'tipo': 'municipio', 'riserva': True,
             'testo': f'Una zona del Municipio {ROMANI[k]}',
             'evidenziaMunicipio': k,
             'risposte': sorted(ids[n] for n in nomi if mun_di[n] == k),
@@ -153,18 +192,69 @@ def main():
     vaticano = comune.boundary.buffer(150)
     domande.append({
         'id': 'vaticano',
-        'tipo': 'vaticano',
+        'tipo': 'vaticano', 'riserva': True,
         'testo': 'Una zona che confina col Vaticano',
         'risposte': sorted(ids[n] for n in nomi if zone[n].intersects(vaticano)),
     })
     domande.append({
         'id': 'raccordo',
-        'tipo': 'raccordo',
+        'tipo': 'raccordo', 'riserva': True,
         'testo': 'Una zona che arriva fino al Raccordo',
         'risposte': sorted(ids[n] for n in nomi if n in tocca_gra),
     })
 
-    giocabili = [d for d in domande if MIN_RISPOSTE <= len(d['risposte']) <= MAX_RISPOSTE]
+    # Domande di categoria: zone che contengono almeno un luogo.
+    categorie = json.loads((RADICE / 'dati' / 'categorie.json').read_text())['categorie']
+    if not categorie and not PROVVISORIO:
+        errore('nessuna categoria in dati/categorie.json')
+    per_categoria = defaultdict(list)
+    luoghi_file = FONTI / 'luoghi-osm.geojson'
+    if not luoghi_file.exists():
+        if not PROVVISORIO:
+            errore(f'manca {luoghi_file.relative_to(RADICE)}: lancia prima python3 strumenti/scarica_luoghi.py')
+        avvisi.append('PROVVISORIO: nessuna domanda di categoria (manca dati/fonti/luoghi-osm.geojson)')
+        categorie = []
+    for f in (carica('luoghi-osm.geojson') if luoghi_file.exists() else []):
+        per_categoria[f['properties']['categoria']].append(in_metri(shape(f['geometry'])).buffer(25))
+    resoconto = []
+    for c in categorie:
+        luoghi = per_categoria.get(c['id'], [])
+        if not luoghi:
+            errore(f'categoria {c["id"]}: nessun luogo in luoghi-osm.geojson. Rilancia strumenti/scarica_luoghi.py')
+        tutti = unary_union(luoghi)
+        giuste = sorted(ids[n] for n in nomi if zone[n].intersects(tutti))
+        resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi, {len(giuste)} zone giuste')
+        domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste})
+
+    # Catalogo: fascia di ogni risposta, poi le correzioni a mano.
+    notorieta_id = {ids[n]: notorieta[n] for n in nomi}
+    for d in domande:
+        d['catalogo'] = cataloga(d.pop('risposte'), notorieta_id)
+    f_corr = RADICE / 'dati' / 'correzioni-fasce.json'
+    correzioni = json.loads(f_corr.read_text()) if f_corr.exists() else {}
+    per_id = {d['id']: d for d in domande}
+    for did, zone_corr in correzioni.items():
+        if did.startswith('_'):
+            continue
+        if did not in per_id:
+            errore(f'correzioni-fasce.json: domanda "{did}" non esiste')
+        for zid, livello in zone_corr.items():
+            if zid not in per_id[did]['catalogo']:
+                errore(f'correzioni-fasce.json: "{zid}" non e una risposta giusta di "{did}"')
+            if livello not in range(5):
+                errore(f'correzioni-fasce.json: fascia {livello} fuori scala per "{zid}" in "{did}"')
+            per_id[did]['catalogo'][zid] = livello
+
+    giocabili = [d for d in domande if MIN_RISPOSTE <= len(d['catalogo']) <= MAX_RISPOSTE]
+    nome_di = {ids[n]: n for n in nomi}
+    with CATALOGO_CSV.open('w', newline='') as fcsv:
+        w = csv.writer(fcsv)
+        w.writerow(['domanda', 'testo', 'giocabile', 'zona', 'fascia', 'punti'])
+        for d in domande:
+            ok = 'si' if d in giocabili else 'no'
+            for zid, liv in sorted(d['catalogo'].items(), key=lambda kv: (kv[1], nome_di[kv[0]])):
+                w.writerow([d['id'], d['testo'], ok, nome_di[zid], FASCE[liv], PUNTI[liv]])
+
     if len(giocabili) < 5:
         errore(f'solo {len(giocabili)} domande giocabili su {len(domande)}')
 
@@ -185,16 +275,27 @@ def main():
                        round((maxy - zone[n].representative_point().y) / 1000, 2)],
         } for n in nomi],
         'domande': giocabili,
+        'avvisi': avvisi,
     }
     USCITA.write_text(json.dumps(dati, ensure_ascii=False, separators=(',', ':')))
 
     coperta = unary_union(list(zone.values())).area / gra.area
+    for a in avvisi:
+        print(f'ATTENZIONE: {a}')
     print(f'Zone lette: {tutte} (da {sum(len(g) for g in per_nome.values())} poligoni)')
-    print(f'Dentro il GRA: {len(zone)}. Fuori: {len(fuori)}')
-    print(f'A cavallo del GRA (decide la quota del {QUOTA_DENTRO_GRA:.0%}): {", ".join(f"{n} {quota[n]:.0%}" for n in a_cavallo)}')
-    print(f'Area dentro il GRA: {gra.area / 1e6:.0f} km2, coperta dalle zone: {coperta:.1%}')
+    if gra_file.exists():
+        print(f'Dentro il GRA: {len(zone)}. Fuori: {len(fuori)}')
+        print(f'A cavallo del GRA (decide la quota del {QUOTA_DENTRO_GRA:.0%}): {", ".join(f"{n} {quota[n]:.0%}" for n in a_cavallo)}')
+        print(f'Area dentro il GRA: {gra.area / 1e6:.0f} km2, coperta dalle zone: {coperta:.1%}')
+    else:
+        print(f'GRA assente: in gioco tutte le {len(zone)} zone, copertura del Comune {coperta:.1%}')
     print(f'Domande: {len(giocabili)} giocabili su {len(domande)} '
           f'(scartate perche con meno di {MIN_RISPOSTE} o piu di {MAX_RISPOSTE} risposte: {len(domande) - len(giocabili)})')
+    print('Domande di categoria:')
+    print('\n'.join(resoconto))
+    di_categoria = [d for d in giocabili if not d.get('riserva')]
+    print(f'Di categoria giocabili: {len(di_categoria)}. Di riserva giocabili: {len(giocabili) - len(di_categoria)}')
+    print(f'Catalogo leggibile: {CATALOGO_CSV.relative_to(RADICE)}')
     senza_vicini = [n for n in nomi if not vicini[n]]
     if senza_vicini:
         print(f'ATTENZIONE: zone senza vicini: {", ".join(senza_vicini)}')

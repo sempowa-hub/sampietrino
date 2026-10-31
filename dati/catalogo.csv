@@ -1,0 +1,643 @@
+domanda,testo,giocabile,zona,fascia,punti
+confina-acilia-nord,Una zona che confina con Acilia Nord,si,Ostia Antica,Scontata,1
+confina-acilia-nord,Una zona che confina con Acilia Nord,si,Acilia Sud,Nota,2
+confina-acilia-nord,Una zona che confina con Acilia Nord,si,Ponte Galeria,Da tassinaro,5
+confina-acilia-nord,Una zona che confina con Acilia Nord,si,Mezzocammino,Da sampietrino,8
+confina-acilia-sud,Una zona che confina con Acilia Sud,no,Acilia Nord,Scontata,1
+confina-acilia-sud,Una zona che confina con Acilia Sud,no,Castel Porziano,Da romano,3
+confina-acilia-sud,Una zona che confina con Acilia Sud,no,Mezzocammino,Da sampietrino,8
+confina-acqua-vergine,Una zona che confina con Acqua Vergine,si,Tor Sapienza,Scontata,1
+confina-acqua-vergine,Una zona che confina con Acqua Vergine,si,Torre Angela,Scontata,1
+confina-acqua-vergine,Una zona che confina con Acqua Vergine,si,Lunghezza,Da romano,3
+confina-acqua-vergine,Una zona che confina con Acqua Vergine,si,Settecamini,Da romano,3
+confina-acqua-vergine,Una zona che confina con Acqua Vergine,si,Tor Cervara,Da sampietrino,8
+confina-aeroporto-di-ciampino,Una zona che confina con Aeroporto di Ciampino,si,Capannelle,Scontata,1
+confina-aeroporto-di-ciampino,Una zona che confina con Aeroporto di Ciampino,si,Casal Morena,Nota,2
+confina-aeroporto-di-ciampino,Una zona che confina con Aeroporto di Ciampino,si,Castel di Leva,Da tassinaro,5
+confina-aeroporto-di-ciampino,Una zona che confina con Aeroporto di Ciampino,si,Torricola,Da sampietrino,8
+confina-alessandrino,Una zona che confina con Alessandrino,si,Prenestino-Centocelle,Scontata,1
+confina-alessandrino,Una zona che confina con Alessandrino,si,Don Bosco,Da romano,3
+confina-alessandrino,Una zona che confina con Alessandrino,si,Tor Sapienza,Da romano,3
+confina-alessandrino,Una zona che confina con Alessandrino,si,Torre Spaccata,Da sampietrino,8
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Tuscolano,Scontata,1
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Capannelle,Da romano,3
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Don Bosco,Da romano,3
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Appio-Pignatelli,Da tassinaro,5
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Torricola,Da sampietrino,8
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Monti,Scontata,1
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Tuscolano,Nota,2
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Celio,Da romano,3
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Ardeatino,Da tassinaro,5
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Appio-Pignatelli,Da sampietrino,8
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Tuscolano,Scontata,1
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Appio-Latino,Nota,2
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Ardeatino,Da romano,3
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Appio Claudio,Da tassinaro,5
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Torricola,Da sampietrino,8
+confina-ardeatino,Una zona che confina con Ardeatino,si,E.U.R.,Scontata,1
+confina-ardeatino,Una zona che confina con Ardeatino,si,Appio-Latino,Nota,2
+confina-ardeatino,Una zona che confina con Ardeatino,si,Ostiense,Nota,2
+confina-ardeatino,Una zona che confina con Ardeatino,si,Cecchignola,Da romano,3
+confina-ardeatino,Una zona che confina con Ardeatino,si,San Saba,Da romano,3
+confina-ardeatino,Una zona che confina con Ardeatino,si,Appio-Pignatelli,Da tassinaro,5
+confina-ardeatino,Una zona che confina con Ardeatino,si,Giuliano-Dalmata,Da tassinaro,5
+confina-ardeatino,Una zona che confina con Ardeatino,si,Torricola,Da sampietrino,8
+confina-aurelio,Una zona che confina con Aurelio,si,Trastevere,Scontata,1
+confina-aurelio,Una zona che confina con Aurelio,si,Borgo,Nota,2
+confina-aurelio,Una zona che confina con Aurelio,si,Primavalle,Da romano,3
+confina-aurelio,Una zona che confina con Aurelio,si,Trionfale,Da romano,3
+confina-aurelio,Una zona che confina con Aurelio,si,Gianicolense,Da tassinaro,5
+confina-aurelio,Una zona che confina con Aurelio,si,Casalotti,Da sampietrino,8
+confina-borgo,Una zona che confina con Borgo,si,Trastevere,Scontata,1
+confina-borgo,Una zona che confina con Borgo,si,Prati,Nota,2
+confina-borgo,Una zona che confina con Borgo,si,Aurelio,Da tassinaro,5
+confina-borgo,Una zona che confina con Borgo,si,Ponte,Da sampietrino,8
+confina-campitelli,Una zona che confina con Campitelli,si,Monti,Scontata,1
+confina-campitelli,Una zona che confina con Campitelli,si,Trevi,Nota,2
+confina-campitelli,Una zona che confina con Campitelli,si,Celio,Da romano,3
+confina-campitelli,Una zona che confina con Campitelli,si,Sant'Angelo,Da romano,3
+confina-campitelli,Una zona che confina con Campitelli,si,Pigna,Da sampietrino,8
+confina-campitelli,Una zona che confina con Campitelli,si,Ripa,Da sampietrino,8
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Prati,Scontata,1
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Flaminio,Nota,2
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Ludovisi,Nota,2
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Colonna,Da romano,3
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Pinciano,Da romano,3
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Ponte,Da tassinaro,5
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Sant'Eustachio,Da sampietrino,8
+confina-capannelle,Una zona che confina con Capannelle,si,Aeroporto di Ciampino,Scontata,1
+confina-capannelle,Una zona che confina con Capannelle,si,Torre Maura,Nota,2
+confina-capannelle,Una zona che confina con Capannelle,si,Appio Claudio,Da romano,3
+confina-capannelle,Una zona che confina con Capannelle,si,Casal Morena,Da tassinaro,5
+confina-capannelle,Una zona che confina con Capannelle,si,Torricola,Da sampietrino,8
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Monte Sacro,Scontata,1
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,San Basilio,Nota,2
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Val Melaina,Nota,2
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Castel Giubileo,Da romano,3
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Monte Sacro Alto,Da romano,3
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Marcigliana,Da sampietrino,8
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Tor San Giovanni,Da sampietrino,8
+confina-casal-morena,Una zona che confina con Casal Morena,si,Aeroporto di Ciampino,Scontata,1
+confina-casal-morena,Una zona che confina con Casal Morena,si,Capannelle,Nota,2
+confina-casal-morena,Una zona che confina con Casal Morena,si,Torrenova,Da tassinaro,5
+confina-casal-morena,Una zona che confina con Casal Morena,si,Torre Gaia,Da sampietrino,8
+confina-casalotti,Una zona che confina con Casalotti,si,Aurelio,Scontata,1
+confina-casalotti,Una zona che confina con Casalotti,si,Trionfale,Nota,2
+confina-casalotti,Una zona che confina con Casalotti,si,La Storta,Da romano,3
+confina-casalotti,Una zona che confina con Casalotti,si,Ottavia,Da romano,3
+confina-casalotti,Una zona che confina con Casalotti,si,Castel di Guido,Da sampietrino,8
+confina-casalotti,Una zona che confina con Casalotti,si,Santa Maria di Galeria,Da sampietrino,8
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,si,Val Melaina,Scontata,1
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,si,Grottarossa,Nota,2
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,si,Casal Boccone,Da tassinaro,5
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,si,Marcigliana,Da tassinaro,5
+confina-castel-porziano,Una zona che confina con Castel Porziano,no,Acilia Sud,Scontata,1
+confina-castel-porziano,Una zona che confina con Castel Porziano,no,Tor de' Cenci,Da sampietrino,8
+confina-castel-di-guido,Una zona che confina con Castel di Guido,si,Gianicolense,Scontata,1
+confina-castel-di-guido,Una zona che confina con Castel di Guido,si,Casalotti,Da romano,3
+confina-castel-di-guido,Una zona che confina con Castel di Guido,si,La Pisana,Da romano,3
+confina-castel-di-guido,Una zona che confina con Castel di Guido,si,Ponte Galeria,Da romano,3
+confina-castel-di-guido,Una zona che confina con Castel di Guido,si,Santa Maria di Galeria,Da sampietrino,8
+confina-castel-di-leva,Una zona che confina con Castel di Leva,si,Aeroporto di Ciampino,Scontata,1
+confina-castel-di-leva,Una zona che confina con Castel di Leva,si,Cecchignola,Nota,2
+confina-castel-di-leva,Una zona che confina con Castel di Leva,si,Giuliano-Dalmata,Da romano,3
+confina-castel-di-leva,Una zona che confina con Castel di Leva,si,Vallerano,Da tassinaro,5
+confina-castel-di-leva,Una zona che confina con Castel di Leva,si,Torricola,Da sampietrino,8
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Monti,Scontata,1
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Esquilino,Nota,2
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Nomentano,Da romano,3
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Trevi,Da romano,3
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Tiburtino,Da tassinaro,5
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Sallustiano,Da sampietrino,8
+confina-cecchignola,Una zona che confina con Cecchignola,si,Ardeatino,Scontata,1
+confina-cecchignola,Una zona che confina con Cecchignola,si,Giuliano-Dalmata,Nota,2
+confina-cecchignola,Una zona che confina con Cecchignola,si,Castel di Leva,Da tassinaro,5
+confina-cecchignola,Una zona che confina con Cecchignola,si,Torricola,Da sampietrino,8
+confina-celio,Una zona che confina con Celio,si,Monti,Scontata,1
+confina-celio,Una zona che confina con Celio,si,Appio-Latino,Nota,2
+confina-celio,Una zona che confina con Celio,si,Campitelli,Da tassinaro,5
+confina-celio,Una zona che confina con Celio,si,San Saba,Da tassinaro,5
+confina-cesano,Una zona che confina con Cesano,no,La Storta,Scontata,1
+confina-cesano,Una zona che confina con Cesano,no,Santa Maria di Galeria,Da sampietrino,8
+confina-collatino,Una zona che confina con Collatino,si,Prenestino-Centocelle,Scontata,1
+confina-collatino,Una zona che confina con Collatino,si,Tiburtino,Nota,2
+confina-collatino,Una zona che confina con Collatino,si,Pietralata,Da romano,3
+confina-collatino,Una zona che confina con Collatino,si,Prenestino-Labicano,Da romano,3
+confina-collatino,Una zona che confina con Collatino,si,Tor Sapienza,Da tassinaro,5
+confina-collatino,Una zona che confina con Collatino,si,Tor Cervara,Da sampietrino,8
+confina-colonna,Una zona che confina con Colonna,si,Campo Marzio,Scontata,1
+confina-colonna,Una zona che confina con Colonna,si,Trevi,Scontata,1
+confina-colonna,Una zona che confina con Colonna,si,Ludovisi,Da romano,3
+confina-colonna,Una zona che confina con Colonna,si,Pigna,Da sampietrino,8
+confina-colonna,Una zona che confina con Colonna,si,Sant'Eustachio,Da sampietrino,8
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Prati,Scontata,1
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Flaminio,Nota,2
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Primavalle,Da romano,3
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Trionfale,Da romano,3
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Tor di Quinto,Da tassinaro,5
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Tomba di Nerone,Da sampietrino,8
+confina-don-bosco,Una zona che confina con Don Bosco,si,Tuscolano,Scontata,1
+confina-don-bosco,Una zona che confina con Don Bosco,si,Prenestino-Centocelle,Nota,2
+confina-don-bosco,Una zona che confina con Don Bosco,si,Prenestino-Labicano,Da romano,3
+confina-don-bosco,Una zona che confina con Don Bosco,si,Alessandrino,Da tassinaro,5
+confina-don-bosco,Una zona che confina con Don Bosco,si,Torre Maura,Da tassinaro,5
+confina-don-bosco,Una zona che confina con Don Bosco,si,Appio Claudio,Da sampietrino,8
+confina-e-u-r,Una zona che confina con E.U.R.,si,Ostiense,Scontata,1
+confina-e-u-r,Una zona che confina con E.U.R.,si,Ardeatino,Nota,2
+confina-e-u-r,Una zona che confina con E.U.R.,si,Portuense,Nota,2
+confina-e-u-r,Una zona che confina con E.U.R.,si,Torrino,Da romano,3
+confina-e-u-r,Una zona che confina con E.U.R.,si,Giuliano-Dalmata,Da tassinaro,5
+confina-e-u-r,Una zona che confina con E.U.R.,si,Tor di Valle,Da tassinaro,5
+confina-e-u-r,Una zona che confina con E.U.R.,si,Fonte Ostiense,Da sampietrino,8
+confina-esquilino,Una zona che confina con Esquilino,si,Monti,Scontata,1
+confina-esquilino,Una zona che confina con Esquilino,si,Tuscolano,Nota,2
+confina-esquilino,Una zona che confina con Esquilino,si,Tiburtino,Da romano,3
+confina-esquilino,Una zona che confina con Esquilino,si,Castro Pretorio,Da sampietrino,8
+confina-esquilino,Una zona che confina con Esquilino,si,Prenestino-Labicano,Da sampietrino,8
+confina-flaminio,Una zona che confina con Flaminio,si,Prati,Scontata,1
+confina-flaminio,Una zona che confina con Flaminio,si,Parioli,Nota,2
+confina-flaminio,Una zona che confina con Flaminio,si,Campo Marzio,Da romano,3
+confina-flaminio,Una zona che confina con Flaminio,si,Della Vittoria,Da tassinaro,5
+confina-flaminio,Una zona che confina con Flaminio,si,Pinciano,Da sampietrino,8
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,si,E.U.R.,Scontata,1
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,si,Torrino,Nota,2
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,si,Giuliano-Dalmata,Da tassinaro,5
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,si,Vallerano,Da sampietrino,8
+confina-gianicolense,Una zona che confina con Gianicolense,si,Trastevere,Scontata,1
+confina-gianicolense,Una zona che confina con Gianicolense,si,Aurelio,Nota,2
+confina-gianicolense,Una zona che confina con Gianicolense,si,Magliana Vecchia,Da romano,3
+confina-gianicolense,Una zona che confina con Gianicolense,si,Portuense,Da romano,3
+confina-gianicolense,Una zona che confina con Gianicolense,si,La Pisana,Da tassinaro,5
+confina-gianicolense,Una zona che confina con Gianicolense,si,Castel di Guido,Da sampietrino,8
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,E.U.R.,Scontata,1
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Ardeatino,Da romano,3
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Cecchignola,Da romano,3
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Castel di Leva,Da tassinaro,5
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Fonte Ostiense,Da sampietrino,8
+confina-grottarossa,Una zona che confina con Grottarossa,si,Tor di Quinto,Scontata,1
+confina-grottarossa,Una zona che confina con Grottarossa,si,La Giustiniana,Da romano,3
+confina-grottarossa,Una zona che confina con Grottarossa,si,Labaro,Da romano,3
+confina-grottarossa,Una zona che confina con Grottarossa,si,Val Melaina,Da romano,3
+confina-grottarossa,Una zona che confina con Grottarossa,si,Castel Giubileo,Da tassinaro,5
+confina-grottarossa,Una zona che confina con Grottarossa,si,Tomba di Nerone,Da sampietrino,8
+confina-isola-farnese,Una zona che confina con Isola Farnese,no,Prima Porta,Scontata,1
+confina-isola-farnese,Una zona che confina con Isola Farnese,no,La Giustiniana,Da tassinaro,5
+confina-isola-farnese,Una zona che confina con Isola Farnese,no,La Storta,Da tassinaro,5
+confina-la-giustiniana,Una zona che confina con La Giustiniana,si,Prima Porta,Scontata,1
+confina-la-giustiniana,Una zona che confina con La Giustiniana,si,La Storta,Nota,2
+confina-la-giustiniana,Una zona che confina con La Giustiniana,si,Labaro,Nota,2
+confina-la-giustiniana,Una zona che confina con La Giustiniana,si,Grottarossa,Da tassinaro,5
+confina-la-giustiniana,Una zona che confina con La Giustiniana,si,Tomba di Nerone,Da tassinaro,5
+confina-la-giustiniana,Una zona che confina con La Giustiniana,si,Isola Farnese,Da sampietrino,8
+confina-la-pisana,Una zona che confina con La Pisana,si,Magliana Vecchia,Scontata,1
+confina-la-pisana,Una zona che confina con La Pisana,si,Gianicolense,Nota,2
+confina-la-pisana,Una zona che confina con La Pisana,si,Ponte Galeria,Da tassinaro,5
+confina-la-pisana,Una zona che confina con La Pisana,si,Castel di Guido,Da sampietrino,8
+confina-la-storta,Una zona che confina con La Storta,si,Casalotti,Scontata,1
+confina-la-storta,Una zona che confina con La Storta,si,La Giustiniana,Scontata,1
+confina-la-storta,Una zona che confina con La Storta,si,Cesano,Da romano,3
+confina-la-storta,Una zona che confina con La Storta,si,Ottavia,Da romano,3
+confina-la-storta,Una zona che confina con La Storta,si,Isola Farnese,Da sampietrino,8
+confina-la-storta,Una zona che confina con La Storta,si,Santa Maria di Galeria,Da sampietrino,8
+confina-labaro,Una zona che confina con Labaro,si,Prima Porta,Scontata,1
+confina-labaro,Una zona che confina con Labaro,si,La Giustiniana,Nota,2
+confina-labaro,Una zona che confina con Labaro,si,Grottarossa,Da tassinaro,5
+confina-labaro,Una zona che confina con Labaro,si,Marcigliana,Da sampietrino,8
+confina-ludovisi,Una zona che confina con Ludovisi,si,Campo Marzio,Scontata,1
+confina-ludovisi,Una zona che confina con Ludovisi,si,Trevi,Scontata,1
+confina-ludovisi,Una zona che confina con Ludovisi,si,Colonna,Da romano,3
+confina-ludovisi,Una zona che confina con Ludovisi,si,Pinciano,Da romano,3
+confina-ludovisi,Una zona che confina con Ludovisi,si,Sallustiano,Da sampietrino,8
+confina-lunghezza,Una zona che confina con Lunghezza,no,Settecamini,Scontata,1
+confina-lunghezza,Una zona che confina con Lunghezza,no,Acqua Vergine,Da sampietrino,8
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Portuense,Scontata,1
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Gianicolense,Nota,2
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,La Pisana,Da tassinaro,5
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Ponte Galeria,Da tassinaro,5
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Tor di Valle,Da tassinaro,5
+confina-marcigliana,Una zona che confina con Marcigliana,si,Prima Porta,Scontata,1
+confina-marcigliana,Una zona che confina con Marcigliana,si,Labaro,Nota,2
+confina-marcigliana,Una zona che confina con Marcigliana,si,Castel Giubileo,Da romano,3
+confina-marcigliana,Una zona che confina con Marcigliana,si,Casal Boccone,Da sampietrino,8
+confina-marcigliana,Una zona che confina con Marcigliana,si,Tor San Giovanni,Da sampietrino,8
+confina-mezzocammino,Una zona che confina con Mezzocammino,si,Acilia Nord,Scontata,1
+confina-mezzocammino,Una zona che confina con Mezzocammino,si,Acilia Sud,Nota,2
+confina-mezzocammino,Una zona che confina con Mezzocammino,si,Torrino,Nota,2
+confina-mezzocammino,Una zona che confina con Mezzocammino,si,Ponte Galeria,Da tassinaro,5
+confina-mezzocammino,Una zona che confina con Mezzocammino,si,Tor di Valle,Da tassinaro,5
+confina-mezzocammino,Una zona che confina con Mezzocammino,si,Tor de' Cenci,Da sampietrino,8
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Trieste,Scontata,1
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Nomentano,Nota,2
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Pietralata,Nota,2
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Ponte Mammolo,Da romano,3
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Monte Sacro Alto,Da tassinaro,5
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Val Melaina,Da tassinaro,5
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Casal Boccone,Da sampietrino,8
+confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Monte Sacro,Scontata,1
+confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Ponte Mammolo,Da romano,3
+confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Casal Boccone,Da sampietrino,8
+confina-monti,Una zona che confina con Monti,si,Esquilino,Scontata,1
+confina-monti,Una zona che confina con Monti,si,Trevi,Nota,2
+confina-monti,Una zona che confina con Monti,si,Appio-Latino,Da romano,3
+confina-monti,Una zona che confina con Monti,si,Celio,Da romano,3
+confina-monti,Una zona che confina con Monti,si,Castro Pretorio,Da tassinaro,5
+confina-monti,Una zona che confina con Monti,si,Campitelli,Da sampietrino,8
+confina-nomentano,Una zona che confina con Nomentano,si,Trieste,Scontata,1
+confina-nomentano,Una zona che confina con Nomentano,si,Monte Sacro,Nota,2
+confina-nomentano,Una zona che confina con Nomentano,si,Tiburtino,Da romano,3
+confina-nomentano,Una zona che confina con Nomentano,si,Castro Pretorio,Da tassinaro,5
+confina-nomentano,Una zona che confina con Nomentano,si,Pietralata,Da tassinaro,5
+confina-nomentano,Una zona che confina con Nomentano,si,Salario,Da tassinaro,5
+confina-ostia-antica,Una zona che confina con Ostia Antica,no,Acilia Nord,Scontata,1
+confina-ostia-antica,Una zona che confina con Ostia Antica,no,Ponte Galeria,Da sampietrino,8
+confina-ostiense,Una zona che confina con Ostiense,si,E.U.R.,Scontata,1
+confina-ostiense,Una zona che confina con Ostiense,si,Testaccio,Nota,2
+confina-ostiense,Una zona che confina con Ostiense,si,Portuense,Da romano,3
+confina-ostiense,Una zona che confina con Ostiense,si,Ardeatino,Da tassinaro,5
+confina-ostiense,Una zona che confina con Ostiense,si,San Saba,Da sampietrino,8
+confina-ottavia,Una zona che confina con Ottavia,si,Trionfale,Scontata,1
+confina-ottavia,Una zona che confina con Ottavia,si,Casalotti,Da romano,3
+confina-ottavia,Una zona che confina con Ottavia,si,La Storta,Da romano,3
+confina-ottavia,Una zona che confina con Ottavia,si,Tomba di Nerone,Da sampietrino,8
+confina-parioli,Una zona che confina con Parioli,si,Flaminio,Scontata,1
+confina-parioli,Una zona che confina con Parioli,si,Trieste,Nota,2
+confina-parioli,Una zona che confina con Parioli,si,Pinciano,Da romano,3
+confina-parioli,Una zona che confina con Parioli,si,Tor di Quinto,Da romano,3
+confina-parioli,Una zona che confina con Parioli,si,Val Melaina,Da sampietrino,8
+confina-parione,Una zona che confina con Parione,no,Ponte,Scontata,1
+confina-parione,Una zona che confina con Parione,no,Regola,Da romano,3
+confina-parione,Una zona che confina con Parione,no,Sant'Eustachio,Da sampietrino,8
+confina-pietralata,Una zona che confina con Pietralata,si,Monte Sacro,Scontata,1
+confina-pietralata,Una zona che confina con Pietralata,si,Nomentano,Nota,2
+confina-pietralata,Una zona che confina con Pietralata,si,Ponte Mammolo,Da romano,3
+confina-pietralata,Una zona che confina con Pietralata,si,Tiburtino,Da romano,3
+confina-pietralata,Una zona che confina con Pietralata,si,Collatino,Da tassinaro,5
+confina-pietralata,Una zona che confina con Pietralata,si,Tor Cervara,Da sampietrino,8
+confina-pigna,Una zona che confina con Pigna,si,Trevi,Scontata,1
+confina-pigna,Una zona che confina con Pigna,si,Colonna,Nota,2
+confina-pigna,Una zona che confina con Pigna,si,Campitelli,Da romano,3
+confina-pigna,Una zona che confina con Pigna,si,Sant'Angelo,Da romano,3
+confina-pigna,Una zona che confina con Pigna,si,Sant'Eustachio,Da sampietrino,8
+confina-pinciano,Una zona che confina con Pinciano,si,Parioli,Scontata,1
+confina-pinciano,Una zona che confina con Pinciano,si,Flaminio,Nota,2
+confina-pinciano,Una zona che confina con Pinciano,si,Campo Marzio,Da romano,3
+confina-pinciano,Una zona che confina con Pinciano,si,Salario,Da tassinaro,5
+confina-pinciano,Una zona che confina con Pinciano,si,Ludovisi,Da sampietrino,8
+confina-ponte,Una zona che confina con Ponte,si,Trastevere,Scontata,1
+confina-ponte,Una zona che confina con Ponte,si,Prati,Nota,2
+confina-ponte,Una zona che confina con Ponte,si,Borgo,Da romano,3
+confina-ponte,Una zona che confina con Ponte,si,Campo Marzio,Da romano,3
+confina-ponte,Una zona che confina con Ponte,si,Parione,Da tassinaro,5
+confina-ponte,Una zona che confina con Ponte,si,Regola,Da tassinaro,5
+confina-ponte,Una zona che confina con Ponte,si,Sant'Eustachio,Da sampietrino,8
+confina-ponte-galeria,Una zona che confina con Ponte Galeria,si,Ostia Antica,Scontata,1
+confina-ponte-galeria,Una zona che confina con Ponte Galeria,si,Magliana Vecchia,Nota,2
+confina-ponte-galeria,Una zona che confina con Ponte Galeria,si,Acilia Nord,Da romano,3
+confina-ponte-galeria,Una zona che confina con Ponte Galeria,si,La Pisana,Da romano,3
+confina-ponte-galeria,Una zona che confina con Ponte Galeria,si,Castel di Guido,Da sampietrino,8
+confina-ponte-galeria,Una zona che confina con Ponte Galeria,si,Mezzocammino,Da sampietrino,8
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Monte Sacro,Scontata,1
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Pietralata,Da romano,3
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,San Basilio,Da romano,3
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Monte Sacro Alto,Da tassinaro,5
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Tor Cervara,Da sampietrino,8
+confina-portuense,Una zona che confina con Portuense,si,Trastevere,Scontata,1
+confina-portuense,Una zona che confina con Portuense,si,E.U.R.,Nota,2
+confina-portuense,Una zona che confina con Portuense,si,Testaccio,Nota,2
+confina-portuense,Una zona che confina con Portuense,si,Ostiense,Da romano,3
+confina-portuense,Una zona che confina con Portuense,si,Gianicolense,Da tassinaro,5
+confina-portuense,Una zona che confina con Portuense,si,Magliana Vecchia,Da tassinaro,5
+confina-portuense,Una zona che confina con Portuense,si,Tor di Valle,Da sampietrino,8
+confina-prati,Una zona che confina con Prati,si,Flaminio,Scontata,1
+confina-prati,Una zona che confina con Prati,si,Borgo,Nota,2
+confina-prati,Una zona che confina con Prati,si,Campo Marzio,Nota,2
+confina-prati,Una zona che confina con Prati,si,Trionfale,Da romano,3
+confina-prati,Una zona che confina con Prati,si,Della Vittoria,Da tassinaro,5
+confina-prati,Una zona che confina con Prati,si,Ponte,Da sampietrino,8
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Prenestino-Labicano,Scontata,1
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Alessandrino,Da romano,3
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Don Bosco,Da romano,3
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Collatino,Da sampietrino,8
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Esquilino,Scontata,1
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Tuscolano,Nota,2
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Prenestino-Centocelle,Da romano,3
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Tiburtino,Da romano,3
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Don Bosco,Da tassinaro,5
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Collatino,Da sampietrino,8
+confina-prima-porta,Una zona che confina con Prima Porta,si,La Giustiniana,Nota,2
+confina-prima-porta,Una zona che confina con Prima Porta,si,Labaro,Nota,2
+confina-prima-porta,Una zona che confina con Prima Porta,si,Isola Farnese,Da tassinaro,5
+confina-prima-porta,Una zona che confina con Prima Porta,si,Marcigliana,Da tassinaro,5
+confina-primavalle,Una zona che confina con Primavalle,no,Aurelio,Scontata,1
+confina-primavalle,Una zona che confina con Primavalle,no,Trionfale,Da romano,3
+confina-primavalle,Una zona che confina con Primavalle,no,Della Vittoria,Da sampietrino,8
+confina-regola,Una zona che confina con Regola,si,Trastevere,Scontata,1
+confina-regola,Una zona che confina con Regola,si,Ponte,Nota,2
+confina-regola,Una zona che confina con Regola,si,Sant'Angelo,Nota,2
+confina-regola,Una zona che confina con Regola,si,Parione,Da romano,3
+confina-regola,Una zona che confina con Regola,si,Ripa,Da sampietrino,8
+confina-regola,Una zona che confina con Regola,si,Sant'Eustachio,Da sampietrino,8
+confina-ripa,Una zona che confina con Ripa,si,Trastevere,Scontata,1
+confina-ripa,Una zona che confina con Ripa,si,Testaccio,Nota,2
+confina-ripa,Una zona che confina con Ripa,si,Campitelli,Da romano,3
+confina-ripa,Una zona che confina con Ripa,si,San Saba,Da romano,3
+confina-ripa,Una zona che confina con Ripa,si,Sant'Angelo,Da romano,3
+confina-ripa,Una zona che confina con Ripa,si,Regola,Da sampietrino,8
+confina-salario,Una zona che confina con Salario,si,Trieste,Scontata,1
+confina-salario,Una zona che confina con Salario,si,Nomentano,Nota,2
+confina-salario,Una zona che confina con Salario,si,Pinciano,Da tassinaro,5
+confina-salario,Una zona che confina con Salario,si,Sallustiano,Da sampietrino,8
+confina-sallustiano,Una zona che confina con Sallustiano,si,Trevi,Scontata,1
+confina-sallustiano,Una zona che confina con Sallustiano,si,Castro Pretorio,Da romano,3
+confina-sallustiano,Una zona che confina con Sallustiano,si,Salario,Da romano,3
+confina-sallustiano,Una zona che confina con Sallustiano,si,Ludovisi,Da sampietrino,8
+confina-san-basilio,Una zona che confina con San Basilio,si,Ponte Mammolo,Scontata,1
+confina-san-basilio,Una zona che confina con San Basilio,si,Settecamini,Nota,2
+confina-san-basilio,Una zona che confina con San Basilio,si,Casal Boccone,Da romano,3
+confina-san-basilio,Una zona che confina con San Basilio,si,Tor Cervara,Da romano,3
+confina-san-basilio,Una zona che confina con San Basilio,si,Torraccia di San Basilio,Da sampietrino,8
+confina-san-saba,Una zona che confina con San Saba,si,Testaccio,Scontata,1
+confina-san-saba,Una zona che confina con San Saba,si,Ostiense,Nota,2
+confina-san-saba,Una zona che confina con San Saba,si,Celio,Da romano,3
+confina-san-saba,Una zona che confina con San Saba,si,Ardeatino,Da tassinaro,5
+confina-san-saba,Una zona che confina con San Saba,si,Ripa,Da sampietrino,8
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Campitelli,Scontata,1
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Regola,Nota,2
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Pigna,Da tassinaro,5
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Ripa,Da tassinaro,5
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Sant'Eustachio,Da tassinaro,5
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Campo Marzio,Scontata,1
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Colonna,Nota,2
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Ponte,Da romano,3
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Sant'Angelo,Da romano,3
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Parione,Da tassinaro,5
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Regola,Da tassinaro,5
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Pigna,Da sampietrino,8
+confina-santa-maria-di-galeria,Una zona che confina con Santa Maria di Galeria,si,Casalotti,Nota,2
+confina-santa-maria-di-galeria,Una zona che confina con Santa Maria di Galeria,si,La Storta,Nota,2
+confina-santa-maria-di-galeria,Una zona che confina con Santa Maria di Galeria,si,Cesano,Da tassinaro,5
+confina-santa-maria-di-galeria,Una zona che confina con Santa Maria di Galeria,si,Castel di Guido,Da sampietrino,8
+confina-settecamini,Una zona che confina con Settecamini,si,San Basilio,Scontata,1
+confina-settecamini,Una zona che confina con Settecamini,si,Lunghezza,Nota,2
+confina-settecamini,Una zona che confina con Settecamini,si,Tor Cervara,Da romano,3
+confina-settecamini,Una zona che confina con Settecamini,si,Tor San Giovanni,Da romano,3
+confina-settecamini,Una zona che confina con Settecamini,si,Acqua Vergine,Da sampietrino,8
+confina-testaccio,Una zona che confina con Testaccio,si,Ostiense,Scontata,1
+confina-testaccio,Una zona che confina con Testaccio,si,Portuense,Nota,2
+confina-testaccio,Una zona che confina con Testaccio,si,San Saba,Da tassinaro,5
+confina-testaccio,Una zona che confina con Testaccio,si,Ripa,Da sampietrino,8
+confina-tiburtino,Una zona che confina con Tiburtino,si,Esquilino,Scontata,1
+confina-tiburtino,Una zona che confina con Tiburtino,si,Nomentano,Nota,2
+confina-tiburtino,Una zona che confina con Tiburtino,si,Castro Pretorio,Da romano,3
+confina-tiburtino,Una zona che confina con Tiburtino,si,Pietralata,Da romano,3
+confina-tiburtino,Una zona che confina con Tiburtino,si,Prenestino-Labicano,Da romano,3
+confina-tiburtino,Una zona che confina con Tiburtino,si,Collatino,Da sampietrino,8
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Trionfale,Scontata,1
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Della Vittoria,Nota,2
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,La Giustiniana,Da romano,3
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Tor di Quinto,Da romano,3
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Ottavia,Da tassinaro,5
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Grottarossa,Da sampietrino,8
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Pietralata,Scontata,1
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,San Basilio,Scontata,1
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Ponte Mammolo,Nota,2
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Tor Sapienza,Da romano,3
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Collatino,Da tassinaro,5
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Settecamini,Da tassinaro,5
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Acqua Vergine,Da sampietrino,8
+confina-tor-san-giovanni,Una zona che confina con Tor San Giovanni,no,Settecamini,Scontata,1
+confina-tor-san-giovanni,Una zona che confina con Tor San Giovanni,no,Casal Boccone,Da tassinaro,5
+confina-tor-san-giovanni,Una zona che confina con Tor San Giovanni,no,Marcigliana,Da tassinaro,5
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Alessandrino,Scontata,1
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Collatino,Da romano,3
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Torre Spaccata,Da romano,3
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Tor Cervara,Da tassinaro,5
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Acqua Vergine,Da sampietrino,8
+confina-tor-de-cenci,Una zona che confina con Tor de' Cenci,si,Torrino,Scontata,1
+confina-tor-de-cenci,Una zona che confina con Tor de' Cenci,si,Castel Porziano,Nota,2
+confina-tor-de-cenci,Una zona che confina con Tor de' Cenci,si,Mezzocammino,Da tassinaro,5
+confina-tor-de-cenci,Una zona che confina con Tor de' Cenci,si,Vallerano,Da tassinaro,5
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Parioli,Scontata,1
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Della Vittoria,Nota,2
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Val Melaina,Da romano,3
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Grottarossa,Da sampietrino,8
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Tomba di Nerone,Da sampietrino,8
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,E.U.R.,Scontata,1
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Magliana Vecchia,Da romano,3
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Portuense,Da romano,3
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Torrino,Da tassinaro,5
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Mezzocammino,Da sampietrino,8
+confina-torraccia-di-san-basilio,Una zona che confina con Torraccia di San Basilio,no,San Basilio,Da romano,3
+confina-torre-angela,Una zona che confina con Torre Angela,si,Torre Spaccata,Scontata,1
+confina-torre-angela,Una zona che confina con Torre Angela,si,Torrenova,Nota,2
+confina-torre-angela,Una zona che confina con Torre Angela,si,Torre Gaia,Da tassinaro,5
+confina-torre-angela,Una zona che confina con Torre Angela,si,Acqua Vergine,Da sampietrino,8
+confina-torre-gaia,Una zona che confina con Torre Gaia,no,Torre Angela,Scontata,1
+confina-torre-gaia,Una zona che confina con Torre Gaia,no,Casal Morena,Da tassinaro,5
+confina-torre-gaia,Una zona che confina con Torre Gaia,no,Torrenova,Da tassinaro,5
+confina-torre-maura,Una zona che confina con Torre Maura,si,Capannelle,Nota,2
+confina-torre-maura,Una zona che confina con Torre Maura,si,Don Bosco,Nota,2
+confina-torre-maura,Una zona che confina con Torre Maura,si,Torre Spaccata,Da tassinaro,5
+confina-torre-maura,Una zona che confina con Torre Maura,si,Torrenova,Da sampietrino,8
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,si,Alessandrino,Da romano,3
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,si,Tor Sapienza,Da romano,3
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,si,Torre Angela,Da romano,3
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,si,Torre Maura,Da romano,3
+confina-torrenova,Una zona che confina con Torrenova,si,Torre Angela,Nota,2
+confina-torrenova,Una zona che confina con Torrenova,si,Torre Maura,Nota,2
+confina-torrenova,Una zona che confina con Torrenova,si,Casal Morena,Da tassinaro,5
+confina-torrenova,Una zona che confina con Torrenova,si,Torre Gaia,Da sampietrino,8
+confina-torricola,Una zona che confina con Torricola,si,Aeroporto di Ciampino,Scontata,1
+confina-torricola,Una zona che confina con Torricola,si,Ardeatino,Nota,2
+confina-torricola,Una zona che confina con Torricola,si,Cecchignola,Nota,2
+confina-torricola,Una zona che confina con Torricola,si,Capannelle,Da romano,3
+confina-torricola,Una zona che confina con Torricola,si,Appio Claudio,Da tassinaro,5
+confina-torricola,Una zona che confina con Torricola,si,Appio-Pignatelli,Da tassinaro,5
+confina-torricola,Una zona che confina con Torricola,si,Castel di Leva,Da sampietrino,8
+confina-torrino,Una zona che confina con Torrino,si,E.U.R.,Scontata,1
+confina-torrino,Una zona che confina con Torrino,si,Tor di Valle,Nota,2
+confina-torrino,Una zona che confina con Torrino,si,Tor de' Cenci,Da romano,3
+confina-torrino,Una zona che confina con Torrino,si,Mezzocammino,Da tassinaro,5
+confina-torrino,Una zona che confina con Torrino,si,Fonte Ostiense,Da sampietrino,8
+confina-trastevere,Una zona che confina con Trastevere,si,Aurelio,Scontata,1
+confina-trastevere,Una zona che confina con Trastevere,si,Borgo,Scontata,1
+confina-trastevere,Una zona che confina con Trastevere,si,Portuense,Nota,2
+confina-trastevere,Una zona che confina con Trastevere,si,Gianicolense,Da romano,3
+confina-trastevere,Una zona che confina con Trastevere,si,Ponte,Da tassinaro,5
+confina-trastevere,Una zona che confina con Trastevere,si,Regola,Da tassinaro,5
+confina-trastevere,Una zona che confina con Trastevere,si,Ripa,Da sampietrino,8
+confina-trevi,Una zona che confina con Trevi,si,Monti,Scontata,1
+confina-trevi,Una zona che confina con Trevi,si,Castro Pretorio,Nota,2
+confina-trevi,Una zona che confina con Trevi,si,Ludovisi,Nota,2
+confina-trevi,Una zona che confina con Trevi,si,Colonna,Da romano,3
+confina-trevi,Una zona che confina con Trevi,si,Campitelli,Da tassinaro,5
+confina-trevi,Una zona che confina con Trevi,si,Pigna,Da sampietrino,8
+confina-trevi,Una zona che confina con Trevi,si,Sallustiano,Da sampietrino,8
+confina-trieste,Una zona che confina con Trieste,si,Parioli,Scontata,1
+confina-trieste,Una zona che confina con Trieste,si,Monte Sacro,Nota,2
+confina-trieste,Una zona che confina con Trieste,si,Nomentano,Da tassinaro,5
+confina-trieste,Una zona che confina con Trieste,si,Salario,Da sampietrino,8
+confina-trionfale,Una zona che confina con Trionfale,si,Prati,Scontata,1
+confina-trionfale,Una zona che confina con Trionfale,si,Aurelio,Nota,2
+confina-trionfale,Una zona che confina con Trionfale,si,Primavalle,Nota,2
+confina-trionfale,Una zona che confina con Trionfale,si,Della Vittoria,Da romano,3
+confina-trionfale,Una zona che confina con Trionfale,si,Casalotti,Da tassinaro,5
+confina-trionfale,Una zona che confina con Trionfale,si,Ottavia,Da tassinaro,5
+confina-trionfale,Una zona che confina con Trionfale,si,Tomba di Nerone,Da sampietrino,8
+confina-tuscolano,Una zona che confina con Tuscolano,si,Esquilino,Scontata,1
+confina-tuscolano,Una zona che confina con Tuscolano,si,Appio-Latino,Nota,2
+confina-tuscolano,Una zona che confina con Tuscolano,si,Don Bosco,Da romano,3
+confina-tuscolano,Una zona che confina con Tuscolano,si,Prenestino-Labicano,Da romano,3
+confina-tuscolano,Una zona che confina con Tuscolano,si,Appio Claudio,Da tassinaro,5
+confina-tuscolano,Una zona che confina con Tuscolano,si,Appio-Pignatelli,Da sampietrino,8
+confina-val-melaina,Una zona che confina con Val Melaina,si,Parioli,Scontata,1
+confina-val-melaina,Una zona che confina con Val Melaina,si,Monte Sacro,Nota,2
+confina-val-melaina,Una zona che confina con Val Melaina,si,Castel Giubileo,Da romano,3
+confina-val-melaina,Una zona che confina con Val Melaina,si,Tor di Quinto,Da romano,3
+confina-val-melaina,Una zona che confina con Val Melaina,si,Grottarossa,Da tassinaro,5
+confina-val-melaina,Una zona che confina con Val Melaina,si,Casal Boccone,Da sampietrino,8
+confina-vallerano,Una zona che confina con Vallerano,no,Tor de' Cenci,Scontata,1
+confina-vallerano,Una zona che confina con Vallerano,no,Castel di Leva,Da romano,3
+confina-vallerano,Una zona che confina con Vallerano,no,Fonte Ostiense,Da sampietrino,8
+municipio-1,Una zona del Municipio I,si,Prati,Scontata,1
+municipio-1,Una zona del Municipio I,si,Testaccio,Scontata,1
+municipio-1,Una zona del Municipio I,si,Trastevere,Scontata,1
+municipio-1,Una zona del Municipio I,si,Borgo,Nota,2
+municipio-1,Una zona del Municipio I,si,Campo Marzio,Nota,2
+municipio-1,Una zona del Municipio I,si,Esquilino,Nota,2
+municipio-1,Una zona del Municipio I,si,Monti,Nota,2
+municipio-1,Una zona del Municipio I,si,Trevi,Nota,2
+municipio-1,Una zona del Municipio I,si,Castro Pretorio,Da romano,3
+municipio-1,Una zona del Municipio I,si,Celio,Da romano,3
+municipio-1,Una zona del Municipio I,si,Colonna,Da romano,3
+municipio-1,Una zona del Municipio I,si,Ludovisi,Da romano,3
+municipio-1,Una zona del Municipio I,si,Campitelli,Da tassinaro,5
+municipio-1,Una zona del Municipio I,si,Parione,Da tassinaro,5
+municipio-1,Una zona del Municipio I,si,Ponte,Da tassinaro,5
+municipio-1,Una zona del Municipio I,si,Regola,Da tassinaro,5
+municipio-1,Una zona del Municipio I,si,San Saba,Da tassinaro,5
+municipio-1,Una zona del Municipio I,si,Sant'Angelo,Da tassinaro,5
+municipio-1,Una zona del Municipio I,si,Pigna,Da sampietrino,8
+municipio-1,Una zona del Municipio I,si,Ripa,Da sampietrino,8
+municipio-1,Una zona del Municipio I,si,Sallustiano,Da sampietrino,8
+municipio-1,Una zona del Municipio I,si,Sant'Eustachio,Da sampietrino,8
+municipio-2,Una zona del Municipio II,si,Parioli,Scontata,1
+municipio-2,Una zona del Municipio II,si,Flaminio,Nota,2
+municipio-2,Una zona del Municipio II,si,Trieste,Nota,2
+municipio-2,Una zona del Municipio II,si,Nomentano,Da romano,3
+municipio-2,Una zona del Municipio II,si,Salario,Da tassinaro,5
+municipio-2,Una zona del Municipio II,si,Tiburtino,Da tassinaro,5
+municipio-2,Una zona del Municipio II,si,Pinciano,Da sampietrino,8
+municipio-3,Una zona del Municipio III,si,Monte Sacro,Scontata,1
+municipio-3,Una zona del Municipio III,si,Val Melaina,Nota,2
+municipio-3,Una zona del Municipio III,si,Castel Giubileo,Da romano,3
+municipio-3,Una zona del Municipio III,si,Monte Sacro Alto,Da romano,3
+municipio-3,Una zona del Municipio III,si,Casal Boccone,Da tassinaro,5
+municipio-3,Una zona del Municipio III,si,Marcigliana,Da tassinaro,5
+municipio-3,Una zona del Municipio III,si,Tor San Giovanni,Da tassinaro,5
+municipio-4,Una zona del Municipio IV,si,Pietralata,Scontata,1
+municipio-4,Una zona del Municipio IV,si,San Basilio,Scontata,1
+municipio-4,Una zona del Municipio IV,si,Ponte Mammolo,Nota,2
+municipio-4,Una zona del Municipio IV,si,Collatino,Da romano,3
+municipio-4,Una zona del Municipio IV,si,Settecamini,Da romano,3
+municipio-4,Una zona del Municipio IV,si,Tor Cervara,Da tassinaro,5
+municipio-4,Una zona del Municipio IV,si,Torraccia di San Basilio,Da sampietrino,8
+municipio-5,Una zona del Municipio V,si,Prenestino-Centocelle,Scontata,1
+municipio-5,Una zona del Municipio V,si,Prenestino-Labicano,Nota,2
+municipio-5,Una zona del Municipio V,si,Alessandrino,Da romano,3
+municipio-5,Una zona del Municipio V,si,Tor Sapienza,Da romano,3
+municipio-5,Una zona del Municipio V,si,Torre Spaccata,Da sampietrino,8
+municipio-6,Una zona del Municipio VI,si,Torre Angela,Scontata,1
+municipio-6,Una zona del Municipio VI,si,Lunghezza,Nota,2
+municipio-6,Una zona del Municipio VI,si,Torre Gaia,Da tassinaro,5
+municipio-6,Una zona del Municipio VI,si,Acqua Vergine,Da sampietrino,8
+municipio-7,Una zona del Municipio VII,si,Appio-Latino,Scontata,1
+municipio-7,Una zona del Municipio VII,si,Tuscolano,Scontata,1
+municipio-7,Una zona del Municipio VII,si,Aeroporto di Ciampino,Nota,2
+municipio-7,Una zona del Municipio VII,si,Capannelle,Da romano,3
+municipio-7,Una zona del Municipio VII,si,Don Bosco,Da romano,3
+municipio-7,Una zona del Municipio VII,si,Torre Maura,Da romano,3
+municipio-7,Una zona del Municipio VII,si,Appio Claudio,Da tassinaro,5
+municipio-7,Una zona del Municipio VII,si,Casal Morena,Da sampietrino,8
+municipio-7,Una zona del Municipio VII,si,Torrenova,Da sampietrino,8
+municipio-8,Una zona del Municipio VIII,si,Ostiense,Scontata,1
+municipio-8,Una zona del Municipio VIII,si,Ardeatino,Nota,2
+municipio-8,Una zona del Municipio VIII,si,Appio-Pignatelli,Da tassinaro,5
+municipio-8,Una zona del Municipio VIII,si,Torricola,Da sampietrino,8
+municipio-9,Una zona del Municipio IX,si,Cecchignola,Scontata,1
+municipio-9,Una zona del Municipio IX,si,E.U.R.,Scontata,1
+municipio-9,Una zona del Municipio IX,si,Tor di Valle,Nota,2
+municipio-9,Una zona del Municipio IX,si,Torrino,Nota,2
+municipio-9,Una zona del Municipio IX,si,Giuliano-Dalmata,Da romano,3
+municipio-9,Una zona del Municipio IX,si,Tor de' Cenci,Da romano,3
+municipio-9,Una zona del Municipio IX,si,Castel di Leva,Da tassinaro,5
+municipio-9,Una zona del Municipio IX,si,Mezzocammino,Da tassinaro,5
+municipio-9,Una zona del Municipio IX,si,Vallerano,Da tassinaro,5
+municipio-9,Una zona del Municipio IX,si,Fonte Ostiense,Da sampietrino,8
+municipio-10,Una zona del Municipio X,si,Ostia Antica,Scontata,1
+municipio-10,Una zona del Municipio X,si,Acilia Nord,Nota,2
+municipio-10,Una zona del Municipio X,si,Acilia Sud,Da tassinaro,5
+municipio-10,Una zona del Municipio X,si,Castel Porziano,Da sampietrino,8
+municipio-11,Una zona del Municipio XI,si,Magliana Vecchia,Nota,2
+municipio-11,Una zona del Municipio XI,si,Portuense,Nota,2
+municipio-11,Una zona del Municipio XI,si,La Pisana,Da tassinaro,5
+municipio-11,Una zona del Municipio XI,si,Ponte Galeria,Da tassinaro,5
+municipio-12,Una zona del Municipio XII,no,Gianicolense,Scontata,1
+municipio-12,Una zona del Municipio XII,no,Castel di Guido,Da sampietrino,8
+municipio-13,Una zona del Municipio XIII,no,Aurelio,Da romano,3
+municipio-14,Una zona del Municipio XIV,si,Primavalle,Scontata,1
+municipio-14,Una zona del Municipio XIV,si,Trionfale,Nota,2
+municipio-14,Una zona del Municipio XIV,si,Casalotti,Da romano,3
+municipio-14,Una zona del Municipio XIV,si,La Storta,Da romano,3
+municipio-14,Una zona del Municipio XIV,si,Ottavia,Da tassinaro,5
+municipio-14,Una zona del Municipio XIV,si,Santa Maria di Galeria,Da sampietrino,8
+municipio-15,Una zona del Municipio XV,si,Prima Porta,Scontata,1
+municipio-15,Una zona del Municipio XV,si,La Giustiniana,Nota,2
+municipio-15,Una zona del Municipio XV,si,Labaro,Nota,2
+municipio-15,Una zona del Municipio XV,si,Tor di Quinto,Nota,2
+municipio-15,Una zona del Municipio XV,si,Cesano,Da romano,3
+municipio-15,Una zona del Municipio XV,si,Grottarossa,Da tassinaro,5
+municipio-15,Una zona del Municipio XV,si,Tomba di Nerone,Da tassinaro,5
+municipio-15,Una zona del Municipio XV,si,Isola Farnese,Da sampietrino,8
+vaticano,Una zona che confina col Vaticano,si,Aurelio,Scontata,1
+vaticano,Una zona che confina col Vaticano,si,Borgo,Scontata,1
+vaticano,Una zona che confina col Vaticano,si,Ostia Antica,Scontata,1
+vaticano,Una zona che confina col Vaticano,si,Prati,Scontata,1
+vaticano,Una zona che confina col Vaticano,si,Aeroporto di Ciampino,Nota,2
+vaticano,Una zona che confina col Vaticano,si,Prima Porta,Nota,2
+vaticano,Una zona che confina col Vaticano,si,Trionfale,Nota,2
+vaticano,Una zona che confina col Vaticano,si,Casal Morena,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,Castel Porziano,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,Cesano,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,La Storta,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,Lunghezza,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,Ponte Galeria,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,Settecamini,Da romano,3
+vaticano,Una zona che confina col Vaticano,si,Torre Gaia,Da tassinaro,5
+vaticano,Una zona che confina col Vaticano,si,Castel di Guido,Da sampietrino,8
+vaticano,Una zona che confina col Vaticano,si,Castel di Leva,Da sampietrino,8
+vaticano,Una zona che confina col Vaticano,si,Isola Farnese,Da sampietrino,8
+vaticano,Una zona che confina col Vaticano,si,Marcigliana,Da sampietrino,8
+vaticano,Una zona che confina col Vaticano,si,Santa Maria di Galeria,Da sampietrino,8
+vaticano,Una zona che confina col Vaticano,si,Tor San Giovanni,Da sampietrino,8
+raccordo,Una zona che arriva fino al Raccordo,si,Aurelio,Scontata,1
+raccordo,Una zona che arriva fino al Raccordo,si,Borgo,Scontata,1
+raccordo,Una zona che arriva fino al Raccordo,si,Ostia Antica,Scontata,1
+raccordo,Una zona che arriva fino al Raccordo,si,Prati,Scontata,1
+raccordo,Una zona che arriva fino al Raccordo,si,Aeroporto di Ciampino,Nota,2
+raccordo,Una zona che arriva fino al Raccordo,si,Prima Porta,Nota,2
+raccordo,Una zona che arriva fino al Raccordo,si,Trionfale,Nota,2
+raccordo,Una zona che arriva fino al Raccordo,si,Casal Morena,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,Castel Porziano,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,Cesano,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,La Storta,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,Lunghezza,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,Ponte Galeria,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,Settecamini,Da romano,3
+raccordo,Una zona che arriva fino al Raccordo,si,Torre Gaia,Da tassinaro,5
+raccordo,Una zona che arriva fino al Raccordo,si,Castel di Guido,Da sampietrino,8
+raccordo,Una zona che arriva fino al Raccordo,si,Castel di Leva,Da sampietrino,8
+raccordo,Una zona che arriva fino al Raccordo,si,Isola Farnese,Da sampietrino,8
+raccordo,Una zona che arriva fino al Raccordo,si,Marcigliana,Da sampietrino,8
+raccordo,Una zona che arriva fino al Raccordo,si,Santa Maria di Galeria,Da sampietrino,8
+raccordo,Una zona che arriva fino al Raccordo,si,Tor San Giovanni,Da sampietrino,8

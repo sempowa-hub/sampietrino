@@ -35,24 +35,23 @@
   <section class="azioni">
     <p class="scelta" id="scelta">Tocca una zona sulla mappa</p>
     <div class="bottoni">
-      <button class="secondario" id="fermati" disabled>Mi fermo</button>
       <button class="primario" id="pianta" disabled>Timbra</button>
     </div>
-    <p class="tasti"><kbd>Invio</kbd> timbra · <kbd>F</kbd> mi fermo · <kbd>Esc</kbd> annulla · rotella per lo zoom</p>
+    <p class="tasti"><kbd>Invio</kbd> timbra · <kbd>Esc</kbd> annulla · rotella per lo zoom</p>
   </section>
 </main>
 
 <dialog id="copertina" class="copertina">
   <p class="etichetta-rossa">Diario di bordo · <span id="copertina-data"></span></p>
   <h2 class="titolo-pixel">Sampietrino</h2>
-  <p class="motto">Cinque tappe dentro Roma. Vale di più la zona giusta che nessuno nomina.</p>
+  <p class="motto">Cinque tappe dentro Roma. Un biglietto a tappa: vale di più la zona giusta che nessuno nomina.</p>
   <ul class="regole">
     <li><b>5</b> tappe</li>
-    <li><b>3</b> biglietti a tappa</li>
-    <li><b>1</b> buca e perdi la tappa</li>
+    <li><b>1</b> biglietto a tappa</li>
+    <li><b>8</b> punti la zona più rara</li>
   </ul>
   <button class="daje" id="daje">DAJE!</button>
-  <p class="nota">Dopo ogni zona giusta: ti fermi o rischi?</p>
+  <ol class="scala" id="scala"></ol>
 </dialog>
 
 <dialog id="esito">
@@ -64,7 +63,7 @@
 
 <dialog id="fine">
   <h2>Giro finito</h2>
-  <p class="grande"><span id="fine-totale"></span> <small>sampietrini su 150</small></p>
+  <p class="grande"><span id="fine-totale"></span> <small id="fine-massimo"></small></p>
   <pre id="condividi"></pre>
   <button class="primario" id="copia">Copia il risultato</button>
   <p class="nota">Domani nuove domande.</p>

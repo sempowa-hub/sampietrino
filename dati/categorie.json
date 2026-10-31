@@ -1,0 +1,17 @@
+{
+ "nota": "Una riga per domanda. osm e il filtro Overpass che trova i luoghi; linee vale solo per la metro. Le zone giuste sono quelle che contengono almeno un luogo. Le categorie con verificata false non sono ancora state controllate contro i dati veri.",
+ "categorie": [
+  {"id": "metro-a", "tipo": "metro", "testo": "Una zona con una fermata della Metro A", "metro": ["A"], "verificata": false},
+  {"id": "metro-b", "tipo": "metro", "testo": "Una zona con una fermata della Metro B (B1 compresa)", "metro": ["B", "B1"], "verificata": false},
+  {"id": "metro-c", "tipo": "metro", "testo": "Una zona con una fermata della Metro C", "metro": ["C"], "verificata": false},
+  {"id": "trapizzino", "tipo": "trapizzino", "testo": "Una zona con un Trapizzino", "osm": "nwr[\"name\"~\"trapizzino\",i]", "verificata": false},
+  {"id": "tevere", "tipo": "acqua", "testo": "Una zona dove passa il Tevere", "osm": "way[\"waterway\"=\"river\"][\"name\"~\"^(Tevere|Fiume Tevere)$\"]", "verificata": false},
+  {"id": "stazione-fs", "tipo": "treno", "testo": "Una zona con una stazione dei treni", "osm": "node[\"railway\"=\"station\"][\"station\"!=\"subway\"][\"subway\"!=\"yes\"]", "verificata": false},
+  {"id": "mercato", "tipo": "mercato", "testo": "Una zona con un mercato rionale", "osm": "nwr[\"amenity\"=\"marketplace\"]", "verificata": false},
+  {"id": "ospedale", "tipo": "ospedale", "testo": "Una zona con un ospedale", "osm": "nwr[\"amenity\"=\"hospital\"]", "verificata": false},
+  {"id": "universita", "tipo": "universita", "testo": "Una zona con un'università", "osm": "nwr[\"amenity\"=\"university\"]", "verificata": false},
+  {"id": "cinema", "tipo": "cultura", "testo": "Una zona con un cinema", "osm": "nwr[\"amenity\"=\"cinema\"]", "verificata": false},
+  {"id": "teatro", "tipo": "cultura", "testo": "Una zona con un teatro", "osm": "nwr[\"amenity\"=\"theatre\"]", "verificata": false},
+  {"id": "biblioteca", "tipo": "cultura", "testo": "Una zona con una biblioteca", "osm": "nwr[\"amenity\"=\"library\"]", "verificata": false}
+ ]
+}
