@@ -19,7 +19,9 @@
       "package-lock.json",
       "img/*anteprima*",
       "firestore.rules",
-      "firestore.indexes.json"
+      "firestore.indexes.json",
+      "dati/domande-generate.json",
+      "dati/domande-scartate.json"
     ],
     "headers": [
       {

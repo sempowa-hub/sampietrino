@@ -44,6 +44,11 @@ USCITA = RADICE / 'dati' / 'gioco.json'
 CONFINE_MINIMO_M = 100
 QUOTA_DENTRO_GRA = 0.4
 MIN_RISPOSTE, MAX_RISPOSTE = 5, 40
+# Le domande di riserva (confina con X, municipio, Vaticano, Raccordo) dal 1/11/2026 non escono piu (src/motore.js,
+# DATA_NUOVE), ma restano nei dati: servono a rigiocare e rivedere i giorni d'archivio fino al 31 ottobre, identici.
+CON_RISERVA = True
+GENERATE = RADICE / 'dati' / 'domande-generate.json'
+LINEA_MINIMA_M = 150  # una strada o una linea vale per la zona se ci corre dentro almeno 150 m
 FASCE = ['Da cartolina', 'Ce sta', 'Da romano de Roma', 'Chicca', 'Da Mino']
 PUNTI = [1, 2, 3, 5, 8]
 CATALOGO_CSV = RADICE / 'dati' / 'catalogo.csv'
@@ -352,6 +357,68 @@ def main():
             domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste,
                             **({} if c['tipo'] == 'acqua' else {'_luoghi': [(e, g.centroid) for g, _, e in luoghi]}),
                             **({'perche': perche} if perche else {})})
+
+    # Domande generate (strumenti/genera_domande.py): luoghi e linee con la loro fama (voci Wikipedia).
+    # Fascia per zona a quinti: la zona col luogo piu famoso e Da cartolina, a parita decide la notorieta della zona.
+    if GENERATE.exists():
+        gen = json.loads(GENERATE.read_text())['domande']
+        # Domande scartate da Simone e Themino nella pagina di revisione (docs/revisione-domande.html, voto No).
+        f_scart = RADICE / 'dati' / 'domande-scartate.json'
+        scartate = set(json.loads(f_scart.read_text())['ids']) if f_scart.exists() else set()
+        gen = [x for x in gen if x['id'] not in scartate]
+        firme = set()
+        testi = {d['testo'].lower() for d in domande if not d.get('riserva')}
+        for g in gen:
+            fama = defaultdict(int)
+            perche = defaultdict(list)
+            punti = []
+            elementi = []
+            for x in g['elementi']:
+                forma = in_metri(shape(x['geom']))
+                if forma.geom_type in ('Point', 'MultiPoint'):
+                    dove = [n for n in nomi if zone[n].intersects(forma.buffer(5))]
+                else:
+                    dove = [n for n in nomi if zone[n].intersects(forma) and zone[n].intersection(forma).length >= LINEA_MINIMA_M]
+                elementi.append((x, forma, dove))
+            # Troppe zone giuste: se c'e la variante "famosa", restano solo i luoghi piu noti, il massimo che sta in 40 zone.
+            testo = g['testo']
+            if len({n for _, _, d in elementi for n in d}) > MAX_RISPOSTE and g.get('famoso'):
+                soglie = sorted({x.get('fama', 0) for x, _, _ in elementi if x.get('fama', 0) > 0}, reverse=True)
+                scelta = None
+                for t in soglie:
+                    if len({n for x, _, d in elementi if x.get('fama', 0) >= t for n in d}) > MAX_RISPOSTE:
+                        break
+                    scelta = t
+                if scelta:
+                    elementi = [e for e in elementi if e[0].get('fama', 0) >= scelta]
+                    testo = g['famoso']
+            for x, forma, dove in elementi:
+                for n in dove:
+                    fama[n] = max(fama[n], x.get('fama', 0))
+                    if x['nome'] and x['nome'] not in perche[n]:
+                        perche[n].append(x['nome'])
+                if x['nome']:
+                    punti.append((x['nome'], forma.representative_point() if forma.geom_type != 'Point' else forma))
+            if not fama:
+                continue
+            firma = tuple(sorted(fama))
+            if firma in firme or testo.lower() in testi:
+                continue  # stesse zone o stesso testo di un'altra domanda: doppione
+            firme.add(firma)
+            testi.add(testo.lower())
+            ordine = sorted(fama, key=lambda n: (-fama[n], -notorieta[n], n))
+            k = len(ordine)
+            domande.append({
+                'id': g['id'], 'tipo': g['tipo'], 'testo': testo, 'famiglia': g['famiglia'], 'generata': True,
+                'fasce_a_mano': {ids[n]: min(4, i * 5 // k) for i, n in enumerate(ordine)},
+                'perche': {ids[n]: v[:3] + (['...'] if len(v) > 3 else []) for n, v in perche.items()},
+                '_luoghi': punti[:400],
+                **({'manca': g['manca']} if g.get('manca') else {}),
+                **({'contesto': g['contesto']} if g.get('contesto') else {}),
+            })
+        resoconto.append(f'  generate: {len(gen)} proposte, {sum(1 for d in domande if d.get("generata"))} dopo i doppioni')
+    if not CON_RISERVA:
+        domande = [d for d in domande if not d.get('riserva')]
 
     # Catalogo: fascia di ogni risposta, poi le correzioni a mano.
     notorieta_id = {ids[n]: notorieta[n] for n in nomi}

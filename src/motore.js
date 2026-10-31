@@ -82,33 +82,61 @@ export function giocabili(pool) {
   });
 }
 
-export function domandeDelGiorno(dataISO, pool) {
-  const valide = giocabili(pool);
-  if (valide.length < DOMANDE_AL_GIORNO) {
-    throw new Error(`servono almeno ${DOMANDE_AL_GIORNO} domande giocabili, ce ne sono ${valide.length} su ${pool.length}`);
-  }
-  const caso = generatore(fnv1a(`sampietrino:${dataISO}`));
-  const mazzo = [...valide];
+export const A_MANO_AL_GIORNO = 2;
+// Dal 1 novembre 2026 niente domande di riserva e dentro quelle generate. I giorni prima restano identici
+// (stessa scelta, stesse domande): le partite salvate, il diario e la classifica di quei giorni non cambiano.
+export const DATA_NUOVE = '2026-11-01';
+
+function mescola(lista, caso) {
+  const mazzo = [...lista];
   for (let i = mazzo.length - 1; i > 0; i--) {
     const j = Math.floor(caso() * (i + 1));
     [mazzo[i], mazzo[j]] = [mazzo[j], mazzo[i]];
   }
-  // Prima le domande di categoria (metro, Trapizzino...), poi quelle di riserva. In ciascun gruppo
-  // varieta: al massimo MAX_PER_TIPO domande dello stesso tipo, poi si riempie col resto del gruppo.
+  return mazzo;
+}
+
+export function domandeDelGiorno(dataISO, pool) {
+  const vecchio = dataISO < DATA_NUOVE;
+  const valide = giocabili(pool.filter((d) => (vecchio ? !d.generata : !d.riserva)));
+  if (valide.length < DOMANDE_AL_GIORNO) {
+    throw new Error(`servono almeno ${DOMANDE_AL_GIORNO} domande giocabili, ce ne sono ${valide.length} su ${pool.length}`);
+  }
+  const caso = generatore(fnv1a(`sampietrino:${dataISO}`));
+  const mazzo = mescola(valide, caso);
   const scelte = [];
   const perTipo = {};
-  for (const gruppo of [mazzo.filter((d) => !d.riserva), mazzo.filter((d) => d.riserva)]) {
+  const prendi = (gruppo, fino, conTetto) => {
     for (const d of gruppo) {
-      if (scelte.length === DOMANDE_AL_GIORNO) break;
+      if (scelte.length >= fino) break;
+      if (scelte.includes(d)) continue;
       const t = d.tipo ?? 'senza-tipo';
-      if ((perTipo[t] ?? 0) >= MAX_PER_TIPO) continue;
+      if (conTetto && (perTipo[t] ?? 0) >= MAX_PER_TIPO) continue;
       perTipo[t] = (perTipo[t] ?? 0) + 1;
       scelte.push(d);
     }
-    for (const d of gruppo) {
-      if (scelte.length === DOMANDE_AL_GIORNO) break;
-      if (!scelte.includes(d)) scelte.push(d);
+  };
+  if (vecchio) {
+    // Fino al 31 ottobre: prima le domande di categoria, poi quelle di riserva; al massimo MAX_PER_TIPO per tipo,
+    // poi si riempie col resto del gruppo.
+    for (const gruppo of [mazzo.filter((d) => !d.riserva), mazzo.filter((d) => d.riserva)]) {
+      prendi(gruppo, DOMANDE_AL_GIORNO, true);
+      prendi(gruppo, DOMANDE_AL_GIORNO, false);
     }
+    return scelte;
   }
-  return scelte;
+  // Dal 1 novembre: fino a A_MANO_AL_GIORNO domande scritte a mano (le prime 9 e le chicche di Mino), poi le generate
+  // (strumenti/genera_domande.py). Stesso tetto per tipo. Poi le tappe in ordine sparso.
+  // Ordine per punteggio di ogni domanda nel giorno (hash di data e id), non per mescolata del mazzo: aggiungere o
+  // togliere una domanda cambia il giorno solo se e proprio quella a entrare o uscire.
+  const punteggio = (d) => fnv1a(`${dataISO}:${d.id}`);
+  const ordinate = [...valide].sort((a, b) => punteggio(a) - punteggio(b) || (a.id < b.id ? -1 : 1));
+  const aMano = ordinate.filter((d) => !d.generata);
+  const generate = ordinate.filter((d) => d.generata);
+  prendi(aMano, A_MANO_AL_GIORNO, true);
+  for (const gruppo of [generate, aMano]) {
+    prendi(gruppo, DOMANDE_AL_GIORNO, true);
+    prendi(gruppo, DOMANDE_AL_GIORNO, false);
+  }
+  return mescola(scelte, caso);
 }

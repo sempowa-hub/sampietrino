@@ -182,11 +182,11 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     mio.replaceChildren();
     if (c.mio) {
       const riga = el('p', 'cl-pos');
-      riga.innerHTML = `<b>${c.posizione}°</b> su ${c.totale}`;
+      riga.innerHTML = `<b>${c.posizione}°</b> oggi`;
       mio.append(riga);
       if (c.percento > 0) mio.append(el('p', 'cl-meglio', `Meglio del ${c.percento}% di chi ha giocato oggi`));
       else if (c.percento === 0) mio.append(el('p', 'cl-meglio', 'Oggi è andata così: domani se riparte'));
-      else mio.append(el('p', 'cl-meglio', 'Sei tra i primi a giocare oggi'));
+      else if (c.percento == null) mio.append(el('p', 'cl-meglio', 'Sei tra i primi a giocare oggi'));
       if (u?.anonimo || !c.mio.pubblico) {
         mio.append(el('p', 'cl-nota', 'In classifica compari col tuo nome se entri con Google.'));
         const b = el('button', 'secondario largo', 'Entra e metti il nome');

@@ -71,7 +71,7 @@ test('le domande di riserva escono solo se mancano quelle di categoria', () => {
     { id: 'trapizzino', tipo: 'trapizzino', catalogo: c },
     ...Array.from({ length: 30 }, (_, i) => ({ id: `confina-${i}`, tipo: 'confina', riserva: true, catalogo: c })),
   ];
-  for (const giorno of ['2026-11-01', '2026-11-02', '2026-11-03']) {
+  for (const giorno of ['2026-10-21', '2026-10-22', '2026-10-23']) {
     const scelte = domandeDelGiorno(giorno, pool);
     // Tutte e 4 le domande di categoria (anche oltre il tetto per tipo), poi una di riserva per arrivare a 5.
     assert.equal(scelte.filter((q) => q.tipo === 'metro').length, 3);
@@ -99,4 +99,18 @@ test('una domanda senza una fascia non e giocabile: il massimo dev essere sempre
   const senzaDaMino = { id: 'x', catalogo: { a: 0, b: 1, c: 2, d: 3, e: 3 } };
   const completa = { id: 'y', catalogo: { a: 0, b: 1, c: 2, d: 3, e: 4 } };
   assert.deepEqual(giocabili([senzaDaMino, completa]).map((d) => d.id), ['y']);
+});
+
+test('ogni giorno due domande a mano, le altre generate', () => {
+  const c = { a: 0, b: 1, c: 2, d: 3, e: 4 };
+  const pool = [
+    ...Array.from({ length: 10 }, (_, i) => ({ id: `mano-${i}`, tipo: `m${i}`, catalogo: c })),
+    ...Array.from({ length: 50 }, (_, i) => ({ id: `gen-${i}`, tipo: `g${i % 7}`, generata: true, catalogo: c })),
+  ];
+  for (const giorno of ['2026-11-01', '2026-11-02', '2026-11-03', '2026-11-04']) {
+    const scelte = domandeDelGiorno(giorno, pool);
+    assert.equal(scelte.length, 5);
+    assert.equal(scelte.filter((q) => !q.generata).length, 2);
+    assert.equal(new Set(scelte.map((q) => q.tipo)).size, 5);
+  }
 });

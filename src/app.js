@@ -130,9 +130,9 @@ async function pubblicaOggi() {
     if (giorno !== oggi || $('pagina-diario').hidden) return;
     const c = await classifica(oggi, 1);
     if (!c?.mio || giorno !== oggi) return;
-    $('meglio').innerHTML = c.percento == null ? `Tra i primi a giocare oggi · ${c.posizione}° su ${c.totale}`
-      : c.percento === 0 ? `<b>${c.posizione}°</b> su ${c.totale} oggi · domani se riparte`
-        : `Meglio del <b>${c.percento}%</b> di chi ha giocato oggi · ${c.posizione}° su ${c.totale}`;
+    // Niente "X su Y": con pochi giocatori il numero smonta. Solo la percentuale, e niente "meglio dello 0%".
+    if (!c.percento) return;
+    $('meglio').innerHTML = `Meglio del <b>${c.percento}%</b> di chi ha giocato oggi`;
     $('meglio').hidden = false;
   } catch (e) { console.warn('Classifica non raggiunta:', e?.code || e?.message); }
 }
@@ -150,6 +150,12 @@ function apriGiorno(data, anima) {
   aperta = -1;
   selezionata = null;
   domande = domandeDelGiorno(giorno, dati.domande);
+  // Partita gia iniziata: tiene le sue domande anche se nel frattempo ne sono arrivate di nuove.
+  try {
+    const salvata = JSON.parse(localStorage.getItem(chiave()));
+    const perId = Object.fromEntries(dati.domande.map((d) => [d.id, d]));
+    if (salvata?.ids?.length === domande.length && salvata.ids.every((id) => perId[id])) domande = salvata.ids.map((id) => perId[id]);
+  } catch { /* niente partita salvata */ }
   if (!ripristina()) {
     stati = domande.map(nuovaDomanda);
     corrente = 0;
@@ -418,7 +424,7 @@ function argomenta(s) {
   if (d.luoghi?.length) {
     const [vicino, dist] = d.luoghi.map((l) => [l, distanza(z.centro, [l[1], l[2]])]).sort((a, b) => a[1] - b[1])[0];
     const dove = Object.keys(d.perche || {}).find((id) => d.perche[id].includes(vicino[0]));
-    motivo = `A ${nome} non c'è ${MANCA[d.id] || 'nessun luogo giusto'}. Il più vicino è ${vicino[0]}${dove && dove !== pin.zona ? `, a ${zonePerId[dove].nome}` : ''}: circa ${km(dist)} dal centro della zona.`;
+    motivo = `A ${nome} non c'è ${MANCA[d.id] || d.manca || 'nessun luogo giusto'}. Il più vicino è ${vicino[0]}${dove && dove !== pin.zona ? `, a ${zonePerId[dove].nome}` : ''}: circa ${km(dist)} dal centro della zona.`;
   } else if (d.tipo === 'acqua' && dati.tevere) {
     const dist = Math.min(...coppie(dati.tevere).map((p) => distanza(z.centro, p)));
     motivo = `Il Tevere non passa per ${nome}: dal centro della zona il fiume è a circa ${km(dist)}.`;
