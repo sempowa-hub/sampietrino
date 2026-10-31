@@ -1,936 +1,936 @@
 domanda,testo,giocabile,zona,fascia,punti,perche
-confina-alessandrino,Una zona che confina con Alessandrino,si,Prenestino-Centocelle,Scontata,1,
-confina-alessandrino,Una zona che confina con Alessandrino,si,Don Bosco,Da romano,3,
-confina-alessandrino,Una zona che confina con Alessandrino,si,Tor Sapienza,Da romano,3,
-confina-alessandrino,Una zona che confina con Alessandrino,si,Torre Spaccata,Da sampietrino,8,
-confina-appio-claudio,Una zona che confina con Appio Claudio,si,Tuscolano,Scontata,1,
-confina-appio-claudio,Una zona che confina con Appio Claudio,si,Capannelle,Da romano,3,
-confina-appio-claudio,Una zona che confina con Appio Claudio,si,Don Bosco,Da romano,3,
-confina-appio-claudio,Una zona che confina con Appio Claudio,si,Appio-Pignatelli,Da tassinaro,5,
-confina-appio-claudio,Una zona che confina con Appio Claudio,si,Torricola,Da sampietrino,8,
-confina-appio-latino,Una zona che confina con Appio-Latino,si,Monti,Scontata,1,
-confina-appio-latino,Una zona che confina con Appio-Latino,si,Tuscolano,Nota,2,
-confina-appio-latino,Una zona che confina con Appio-Latino,si,Celio,Da romano,3,
-confina-appio-latino,Una zona che confina con Appio-Latino,si,Ardeatino,Da tassinaro,5,
-confina-appio-latino,Una zona che confina con Appio-Latino,si,Appio-Pignatelli,Da sampietrino,8,
-confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Tuscolano,Scontata,1,
-confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Appio-Latino,Nota,2,
-confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Ardeatino,Da romano,3,
-confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Appio Claudio,Da tassinaro,5,
-confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Torricola,Da sampietrino,8,
-confina-ardeatino,Una zona che confina con Ardeatino,si,E.U.R.,Scontata,1,
-confina-ardeatino,Una zona che confina con Ardeatino,si,Appio-Latino,Nota,2,
-confina-ardeatino,Una zona che confina con Ardeatino,si,Ostiense,Nota,2,
-confina-ardeatino,Una zona che confina con Ardeatino,si,Cecchignola,Da romano,3,
-confina-ardeatino,Una zona che confina con Ardeatino,si,San Saba,Da romano,3,
-confina-ardeatino,Una zona che confina con Ardeatino,si,Appio-Pignatelli,Da tassinaro,5,
-confina-ardeatino,Una zona che confina con Ardeatino,si,Giuliano-Dalmata,Da tassinaro,5,
-confina-ardeatino,Una zona che confina con Ardeatino,si,Torricola,Da sampietrino,8,
-confina-aurelio,Una zona che confina con Aurelio,si,Trastevere,Scontata,1,
-confina-aurelio,Una zona che confina con Aurelio,si,Borgo,Nota,2,
-confina-aurelio,Una zona che confina con Aurelio,si,Primavalle,Da romano,3,
-confina-aurelio,Una zona che confina con Aurelio,si,Trionfale,Da tassinaro,5,
-confina-aurelio,Una zona che confina con Aurelio,si,Gianicolense,Da sampietrino,8,
-confina-borgo,Una zona che confina con Borgo,si,Trastevere,Scontata,1,
-confina-borgo,Una zona che confina con Borgo,si,Prati,Nota,2,
-confina-borgo,Una zona che confina con Borgo,si,Aurelio,Da tassinaro,5,
-confina-borgo,Una zona che confina con Borgo,si,Ponte,Da sampietrino,8,
-confina-campitelli,Una zona che confina con Campitelli,si,Monti,Scontata,1,
-confina-campitelli,Una zona che confina con Campitelli,si,Trevi,Nota,2,
-confina-campitelli,Una zona che confina con Campitelli,si,Celio,Da romano,3,
-confina-campitelli,Una zona che confina con Campitelli,si,Sant'Angelo,Da romano,3,
-confina-campitelli,Una zona che confina con Campitelli,si,Pigna,Da sampietrino,8,
-confina-campitelli,Una zona che confina con Campitelli,si,Ripa,Da sampietrino,8,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Prati,Scontata,1,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Flaminio,Nota,2,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Ludovisi,Nota,2,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Colonna,Da romano,3,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Pinciano,Da romano,3,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Ponte,Da tassinaro,5,
-confina-campo-marzio,Una zona che confina con Campo Marzio,si,Sant'Eustachio,Da sampietrino,8,
-confina-capannelle,Una zona che confina con Capannelle,no,Torre Maura,Scontata,1,
-confina-capannelle,Una zona che confina con Capannelle,no,Appio Claudio,Da romano,3,
-confina-capannelle,Una zona che confina con Capannelle,no,Torricola,Da sampietrino,8,
-confina-casal-boccone,Una zona che confina con Casal Boccone,si,Monte Sacro,Scontata,1,
-confina-casal-boccone,Una zona che confina con Casal Boccone,si,San Basilio,Nota,2,
-confina-casal-boccone,Una zona che confina con Casal Boccone,si,Val Melaina,Da romano,3,
-confina-casal-boccone,Una zona che confina con Casal Boccone,si,Castel Giubileo,Da sampietrino,8,
-confina-casal-boccone,Una zona che confina con Casal Boccone,si,Monte Sacro Alto,Da sampietrino,8,
-confina-castel-giubileo,Una zona che confina con Castel Giubileo,no,Val Melaina,Scontata,1,
-confina-castel-giubileo,Una zona che confina con Castel Giubileo,no,Grottarossa,Da romano,3,
-confina-castel-giubileo,Una zona che confina con Castel Giubileo,no,Casal Boccone,Da sampietrino,8,
-confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Monti,Scontata,1,
-confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Esquilino,Nota,2,
-confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Nomentano,Da romano,3,
-confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Trevi,Da romano,3,
-confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Tiburtino,Da tassinaro,5,
-confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Sallustiano,Da sampietrino,8,
-confina-cecchignola,Una zona che confina con Cecchignola,no,Ardeatino,Scontata,1,
-confina-cecchignola,Una zona che confina con Cecchignola,no,Giuliano-Dalmata,Da romano,3,
-confina-cecchignola,Una zona che confina con Cecchignola,no,Torricola,Da sampietrino,8,
-confina-celio,Una zona che confina con Celio,si,Monti,Scontata,1,
-confina-celio,Una zona che confina con Celio,si,Appio-Latino,Nota,2,
-confina-celio,Una zona che confina con Celio,si,Campitelli,Da tassinaro,5,
-confina-celio,Una zona che confina con Celio,si,San Saba,Da tassinaro,5,
-confina-collatino,Una zona che confina con Collatino,si,Prenestino-Centocelle,Scontata,1,
-confina-collatino,Una zona che confina con Collatino,si,Tiburtino,Nota,2,
-confina-collatino,Una zona che confina con Collatino,si,Pietralata,Da romano,3,
-confina-collatino,Una zona che confina con Collatino,si,Prenestino-Labicano,Da romano,3,
-confina-collatino,Una zona che confina con Collatino,si,Tor Sapienza,Da tassinaro,5,
-confina-collatino,Una zona che confina con Collatino,si,Tor Cervara,Da sampietrino,8,
-confina-colonna,Una zona che confina con Colonna,si,Campo Marzio,Scontata,1,
-confina-colonna,Una zona che confina con Colonna,si,Trevi,Scontata,1,
-confina-colonna,Una zona che confina con Colonna,si,Ludovisi,Da romano,3,
-confina-colonna,Una zona che confina con Colonna,si,Pigna,Da sampietrino,8,
-confina-colonna,Una zona che confina con Colonna,si,Sant'Eustachio,Da sampietrino,8,
-confina-della-vittoria,Una zona che confina con Della Vittoria,si,Prati,Scontata,1,
-confina-della-vittoria,Una zona che confina con Della Vittoria,si,Flaminio,Nota,2,
-confina-della-vittoria,Una zona che confina con Della Vittoria,si,Primavalle,Da romano,3,
-confina-della-vittoria,Una zona che confina con Della Vittoria,si,Trionfale,Da romano,3,
-confina-della-vittoria,Una zona che confina con Della Vittoria,si,Tor di Quinto,Da tassinaro,5,
-confina-della-vittoria,Una zona che confina con Della Vittoria,si,Tomba di Nerone,Da sampietrino,8,
-confina-don-bosco,Una zona che confina con Don Bosco,si,Tuscolano,Scontata,1,
-confina-don-bosco,Una zona che confina con Don Bosco,si,Prenestino-Centocelle,Nota,2,
-confina-don-bosco,Una zona che confina con Don Bosco,si,Prenestino-Labicano,Da romano,3,
-confina-don-bosco,Una zona che confina con Don Bosco,si,Alessandrino,Da tassinaro,5,
-confina-don-bosco,Una zona che confina con Don Bosco,si,Torre Maura,Da tassinaro,5,
-confina-don-bosco,Una zona che confina con Don Bosco,si,Appio Claudio,Da sampietrino,8,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Ostiense,Scontata,1,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Ardeatino,Nota,2,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Portuense,Nota,2,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Torrino,Da romano,3,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Giuliano-Dalmata,Da tassinaro,5,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Tor di Valle,Da tassinaro,5,
-confina-e-u-r,Una zona che confina con E.U.R.,si,Fonte Ostiense,Da sampietrino,8,
-confina-esquilino,Una zona che confina con Esquilino,si,Monti,Scontata,1,
-confina-esquilino,Una zona che confina con Esquilino,si,Tuscolano,Nota,2,
-confina-esquilino,Una zona che confina con Esquilino,si,Tiburtino,Da romano,3,
-confina-esquilino,Una zona che confina con Esquilino,si,Castro Pretorio,Da sampietrino,8,
-confina-esquilino,Una zona che confina con Esquilino,si,Prenestino-Labicano,Da sampietrino,8,
-confina-flaminio,Una zona che confina con Flaminio,si,Prati,Scontata,1,
-confina-flaminio,Una zona che confina con Flaminio,si,Parioli,Nota,2,
-confina-flaminio,Una zona che confina con Flaminio,si,Campo Marzio,Da romano,3,
-confina-flaminio,Una zona che confina con Flaminio,si,Della Vittoria,Da tassinaro,5,
-confina-flaminio,Una zona che confina con Flaminio,si,Pinciano,Da sampietrino,8,
-confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,no,E.U.R.,Scontata,1,
-confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,no,Torrino,Da romano,3,
-confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,no,Giuliano-Dalmata,Da sampietrino,8,
-confina-gianicolense,Una zona che confina con Gianicolense,si,Trastevere,Scontata,1,
-confina-gianicolense,Una zona che confina con Gianicolense,si,Aurelio,Nota,2,
-confina-gianicolense,Una zona che confina con Gianicolense,si,Magliana Vecchia,Da romano,3,
-confina-gianicolense,Una zona che confina con Gianicolense,si,Portuense,Da romano,3,
-confina-gianicolense,Una zona che confina con Gianicolense,si,La Pisana,Da sampietrino,8,
-confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,E.U.R.,Scontata,1,
-confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Ardeatino,Da romano,3,
-confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Cecchignola,Da romano,3,
-confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Fonte Ostiense,Da sampietrino,8,
-confina-grottarossa,Una zona che confina con Grottarossa,si,Tor di Quinto,Scontata,1,
-confina-grottarossa,Una zona che confina con Grottarossa,si,Val Melaina,Nota,2,
-confina-grottarossa,Una zona che confina con Grottarossa,si,Castel Giubileo,Da tassinaro,5,
-confina-grottarossa,Una zona che confina con Grottarossa,si,Tomba di Nerone,Da sampietrino,8,
-confina-la-pisana,Una zona che confina con La Pisana,no,Magliana Vecchia,Scontata,1,
-confina-la-pisana,Una zona che confina con La Pisana,no,Gianicolense,Da sampietrino,8,
-confina-ludovisi,Una zona che confina con Ludovisi,si,Campo Marzio,Scontata,1,
-confina-ludovisi,Una zona che confina con Ludovisi,si,Trevi,Scontata,1,
-confina-ludovisi,Una zona che confina con Ludovisi,si,Colonna,Da romano,3,
-confina-ludovisi,Una zona che confina con Ludovisi,si,Pinciano,Da romano,3,
-confina-ludovisi,Una zona che confina con Ludovisi,si,Sallustiano,Da sampietrino,8,
-confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Portuense,Scontata,1,
-confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Gianicolense,Nota,2,
-confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,La Pisana,Da tassinaro,5,
-confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Tor di Valle,Da tassinaro,5,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Trieste,Scontata,1,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Nomentano,Nota,2,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Pietralata,Nota,2,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Ponte Mammolo,Da romano,3,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Monte Sacro Alto,Da tassinaro,5,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Val Melaina,Da tassinaro,5,
-confina-monte-sacro,Una zona che confina con Monte Sacro,si,Casal Boccone,Da sampietrino,8,
-confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Monte Sacro,Scontata,1,
-confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Ponte Mammolo,Da romano,3,
-confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Casal Boccone,Da sampietrino,8,
-confina-monti,Una zona che confina con Monti,si,Esquilino,Scontata,1,
-confina-monti,Una zona che confina con Monti,si,Trevi,Nota,2,
-confina-monti,Una zona che confina con Monti,si,Appio-Latino,Da romano,3,
-confina-monti,Una zona che confina con Monti,si,Celio,Da romano,3,
-confina-monti,Una zona che confina con Monti,si,Castro Pretorio,Da tassinaro,5,
-confina-monti,Una zona che confina con Monti,si,Campitelli,Da sampietrino,8,
-confina-nomentano,Una zona che confina con Nomentano,si,Trieste,Scontata,1,
-confina-nomentano,Una zona che confina con Nomentano,si,Monte Sacro,Nota,2,
-confina-nomentano,Una zona che confina con Nomentano,si,Tiburtino,Da romano,3,
-confina-nomentano,Una zona che confina con Nomentano,si,Castro Pretorio,Da tassinaro,5,
-confina-nomentano,Una zona che confina con Nomentano,si,Pietralata,Da tassinaro,5,
-confina-nomentano,Una zona che confina con Nomentano,si,Salario,Da tassinaro,5,
-confina-ostiense,Una zona che confina con Ostiense,si,E.U.R.,Scontata,1,
-confina-ostiense,Una zona che confina con Ostiense,si,Testaccio,Nota,2,
-confina-ostiense,Una zona che confina con Ostiense,si,Portuense,Da romano,3,
-confina-ostiense,Una zona che confina con Ostiense,si,Ardeatino,Da tassinaro,5,
-confina-ostiense,Una zona che confina con Ostiense,si,San Saba,Da sampietrino,8,
-confina-ottavia,Una zona che confina con Ottavia,no,Trionfale,Scontata,1,
-confina-ottavia,Una zona che confina con Ottavia,no,Tomba di Nerone,Da sampietrino,8,
-confina-parioli,Una zona che confina con Parioli,si,Flaminio,Scontata,1,
-confina-parioli,Una zona che confina con Parioli,si,Trieste,Nota,2,
-confina-parioli,Una zona che confina con Parioli,si,Pinciano,Da romano,3,
-confina-parioli,Una zona che confina con Parioli,si,Tor di Quinto,Da romano,3,
-confina-parioli,Una zona che confina con Parioli,si,Val Melaina,Da sampietrino,8,
-confina-parione,Una zona che confina con Parione,no,Ponte,Scontata,1,
-confina-parione,Una zona che confina con Parione,no,Regola,Da romano,3,
-confina-parione,Una zona che confina con Parione,no,Sant'Eustachio,Da sampietrino,8,
-confina-pietralata,Una zona che confina con Pietralata,si,Monte Sacro,Scontata,1,
-confina-pietralata,Una zona che confina con Pietralata,si,Nomentano,Nota,2,
-confina-pietralata,Una zona che confina con Pietralata,si,Ponte Mammolo,Da romano,3,
-confina-pietralata,Una zona che confina con Pietralata,si,Tiburtino,Da romano,3,
-confina-pietralata,Una zona che confina con Pietralata,si,Collatino,Da tassinaro,5,
-confina-pietralata,Una zona che confina con Pietralata,si,Tor Cervara,Da sampietrino,8,
-confina-pigna,Una zona che confina con Pigna,si,Trevi,Scontata,1,
-confina-pigna,Una zona che confina con Pigna,si,Colonna,Nota,2,
-confina-pigna,Una zona che confina con Pigna,si,Campitelli,Da romano,3,
-confina-pigna,Una zona che confina con Pigna,si,Sant'Angelo,Da romano,3,
-confina-pigna,Una zona che confina con Pigna,si,Sant'Eustachio,Da sampietrino,8,
-confina-pinciano,Una zona che confina con Pinciano,si,Parioli,Scontata,1,
-confina-pinciano,Una zona che confina con Pinciano,si,Flaminio,Nota,2,
-confina-pinciano,Una zona che confina con Pinciano,si,Campo Marzio,Da romano,3,
-confina-pinciano,Una zona che confina con Pinciano,si,Salario,Da tassinaro,5,
-confina-pinciano,Una zona che confina con Pinciano,si,Ludovisi,Da sampietrino,8,
-confina-ponte,Una zona che confina con Ponte,si,Trastevere,Scontata,1,
-confina-ponte,Una zona che confina con Ponte,si,Prati,Nota,2,
-confina-ponte,Una zona che confina con Ponte,si,Borgo,Da romano,3,
-confina-ponte,Una zona che confina con Ponte,si,Campo Marzio,Da romano,3,
-confina-ponte,Una zona che confina con Ponte,si,Parione,Da tassinaro,5,
-confina-ponte,Una zona che confina con Ponte,si,Regola,Da tassinaro,5,
-confina-ponte,Una zona che confina con Ponte,si,Sant'Eustachio,Da sampietrino,8,
-confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Monte Sacro,Scontata,1,
-confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Pietralata,Da romano,3,
-confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,San Basilio,Da romano,3,
-confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Monte Sacro Alto,Da tassinaro,5,
-confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Tor Cervara,Da sampietrino,8,
-confina-portuense,Una zona che confina con Portuense,si,Trastevere,Scontata,1,
-confina-portuense,Una zona che confina con Portuense,si,E.U.R.,Nota,2,
-confina-portuense,Una zona che confina con Portuense,si,Testaccio,Nota,2,
-confina-portuense,Una zona che confina con Portuense,si,Ostiense,Da romano,3,
-confina-portuense,Una zona che confina con Portuense,si,Gianicolense,Da tassinaro,5,
-confina-portuense,Una zona che confina con Portuense,si,Magliana Vecchia,Da tassinaro,5,
-confina-portuense,Una zona che confina con Portuense,si,Tor di Valle,Da sampietrino,8,
-confina-prati,Una zona che confina con Prati,si,Flaminio,Scontata,1,
-confina-prati,Una zona che confina con Prati,si,Borgo,Nota,2,
-confina-prati,Una zona che confina con Prati,si,Campo Marzio,Nota,2,
-confina-prati,Una zona che confina con Prati,si,Trionfale,Da romano,3,
-confina-prati,Una zona che confina con Prati,si,Della Vittoria,Da tassinaro,5,
-confina-prati,Una zona che confina con Prati,si,Ponte,Da sampietrino,8,
-confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Prenestino-Labicano,Scontata,1,
-confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Alessandrino,Da romano,3,
-confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Don Bosco,Da romano,3,
-confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Collatino,Da sampietrino,8,
-confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Esquilino,Scontata,1,
-confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Tuscolano,Nota,2,
-confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Prenestino-Centocelle,Da romano,3,
-confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Tiburtino,Da romano,3,
-confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Don Bosco,Da tassinaro,5,
-confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Collatino,Da sampietrino,8,
-confina-primavalle,Una zona che confina con Primavalle,no,Aurelio,Scontata,1,
-confina-primavalle,Una zona che confina con Primavalle,no,Trionfale,Da romano,3,
-confina-primavalle,Una zona che confina con Primavalle,no,Della Vittoria,Da sampietrino,8,
-confina-regola,Una zona che confina con Regola,si,Trastevere,Scontata,1,
-confina-regola,Una zona che confina con Regola,si,Ponte,Nota,2,
-confina-regola,Una zona che confina con Regola,si,Sant'Angelo,Nota,2,
-confina-regola,Una zona che confina con Regola,si,Parione,Da romano,3,
-confina-regola,Una zona che confina con Regola,si,Ripa,Da sampietrino,8,
-confina-regola,Una zona che confina con Regola,si,Sant'Eustachio,Da sampietrino,8,
-confina-ripa,Una zona che confina con Ripa,si,Trastevere,Scontata,1,
-confina-ripa,Una zona che confina con Ripa,si,Testaccio,Nota,2,
-confina-ripa,Una zona che confina con Ripa,si,Campitelli,Da romano,3,
-confina-ripa,Una zona che confina con Ripa,si,San Saba,Da romano,3,
-confina-ripa,Una zona che confina con Ripa,si,Sant'Angelo,Da romano,3,
-confina-ripa,Una zona che confina con Ripa,si,Regola,Da sampietrino,8,
-confina-salario,Una zona che confina con Salario,si,Trieste,Scontata,1,
-confina-salario,Una zona che confina con Salario,si,Nomentano,Nota,2,
-confina-salario,Una zona che confina con Salario,si,Pinciano,Da tassinaro,5,
-confina-salario,Una zona che confina con Salario,si,Sallustiano,Da sampietrino,8,
-confina-sallustiano,Una zona che confina con Sallustiano,si,Trevi,Scontata,1,
-confina-sallustiano,Una zona che confina con Sallustiano,si,Castro Pretorio,Da romano,3,
-confina-sallustiano,Una zona che confina con Sallustiano,si,Salario,Da romano,3,
-confina-sallustiano,Una zona che confina con Sallustiano,si,Ludovisi,Da sampietrino,8,
-confina-san-basilio,Una zona che confina con San Basilio,si,Ponte Mammolo,Scontata,1,
-confina-san-basilio,Una zona che confina con San Basilio,si,Casal Boccone,Da romano,3,
-confina-san-basilio,Una zona che confina con San Basilio,si,Tor Cervara,Da romano,3,
-confina-san-basilio,Una zona che confina con San Basilio,si,Torraccia di San Basilio,Da sampietrino,8,
-confina-san-saba,Una zona che confina con San Saba,si,Testaccio,Scontata,1,
-confina-san-saba,Una zona che confina con San Saba,si,Ostiense,Nota,2,
-confina-san-saba,Una zona che confina con San Saba,si,Celio,Da romano,3,
-confina-san-saba,Una zona che confina con San Saba,si,Ardeatino,Da tassinaro,5,
-confina-san-saba,Una zona che confina con San Saba,si,Ripa,Da sampietrino,8,
-confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Campitelli,Scontata,1,
-confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Regola,Nota,2,
-confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Pigna,Da tassinaro,5,
-confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Ripa,Da tassinaro,5,
-confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Sant'Eustachio,Da tassinaro,5,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Campo Marzio,Scontata,1,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Colonna,Nota,2,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Ponte,Da romano,3,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Sant'Angelo,Da romano,3,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Parione,Da tassinaro,5,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Regola,Da tassinaro,5,
-confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Pigna,Da sampietrino,8,
-confina-testaccio,Una zona che confina con Testaccio,si,Ostiense,Scontata,1,
-confina-testaccio,Una zona che confina con Testaccio,si,Portuense,Nota,2,
-confina-testaccio,Una zona che confina con Testaccio,si,San Saba,Da tassinaro,5,
-confina-testaccio,Una zona che confina con Testaccio,si,Ripa,Da sampietrino,8,
-confina-tiburtino,Una zona che confina con Tiburtino,si,Esquilino,Scontata,1,
-confina-tiburtino,Una zona che confina con Tiburtino,si,Nomentano,Nota,2,
-confina-tiburtino,Una zona che confina con Tiburtino,si,Castro Pretorio,Da romano,3,
-confina-tiburtino,Una zona che confina con Tiburtino,si,Pietralata,Da romano,3,
-confina-tiburtino,Una zona che confina con Tiburtino,si,Prenestino-Labicano,Da romano,3,
-confina-tiburtino,Una zona che confina con Tiburtino,si,Collatino,Da sampietrino,8,
-confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Trionfale,Scontata,1,
-confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Della Vittoria,Nota,2,
-confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Tor di Quinto,Da romano,3,
-confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Ottavia,Da tassinaro,5,
-confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Grottarossa,Da sampietrino,8,
-confina-tor-cervara,Una zona che confina con Tor Cervara,si,Pietralata,Scontata,1,
-confina-tor-cervara,Una zona che confina con Tor Cervara,si,San Basilio,Scontata,1,
-confina-tor-cervara,Una zona che confina con Tor Cervara,si,Ponte Mammolo,Da romano,3,
-confina-tor-cervara,Una zona che confina con Tor Cervara,si,Tor Sapienza,Da tassinaro,5,
-confina-tor-cervara,Una zona che confina con Tor Cervara,si,Collatino,Da sampietrino,8,
-confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Alessandrino,Scontata,1,
-confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Collatino,Da romano,3,
-confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Torre Spaccata,Da romano,3,
-confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Tor Cervara,Da sampietrino,8,
-confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Parioli,Scontata,1,
-confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Della Vittoria,Nota,2,
-confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Val Melaina,Da romano,3,
-confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Grottarossa,Da sampietrino,8,
-confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Tomba di Nerone,Da sampietrino,8,
-confina-tor-di-valle,Una zona che confina con Tor di Valle,si,E.U.R.,Scontata,1,
-confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Magliana Vecchia,Da romano,3,
-confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Portuense,Da romano,3,
-confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Torrino,Da sampietrino,8,
-confina-torraccia-di-san-basilio,Una zona che confina con Torraccia di San Basilio,no,San Basilio,Da romano,3,
-confina-torre-maura,Una zona che confina con Torre Maura,no,Capannelle,Nota,2,
-confina-torre-maura,Una zona che confina con Torre Maura,no,Don Bosco,Nota,2,
-confina-torre-maura,Una zona che confina con Torre Maura,no,Torre Spaccata,Da sampietrino,8,
-confina-torre-spaccata,Una zona che confina con Torre Spaccata,no,Alessandrino,Da romano,3,
-confina-torre-spaccata,Una zona che confina con Torre Spaccata,no,Tor Sapienza,Da romano,3,
-confina-torre-spaccata,Una zona che confina con Torre Spaccata,no,Torre Maura,Da romano,3,
-confina-torricola,Una zona che confina con Torricola,si,Ardeatino,Scontata,1,
-confina-torricola,Una zona che confina con Torricola,si,Cecchignola,Scontata,1,
-confina-torricola,Una zona che confina con Torricola,si,Capannelle,Da romano,3,
-confina-torricola,Una zona che confina con Torricola,si,Appio Claudio,Da tassinaro,5,
-confina-torricola,Una zona che confina con Torricola,si,Appio-Pignatelli,Da sampietrino,8,
-confina-torrino,Una zona che confina con Torrino,no,E.U.R.,Scontata,1,
-confina-torrino,Una zona che confina con Torrino,no,Tor di Valle,Da romano,3,
-confina-torrino,Una zona che confina con Torrino,no,Fonte Ostiense,Da sampietrino,8,
-confina-trastevere,Una zona che confina con Trastevere,si,Aurelio,Scontata,1,
-confina-trastevere,Una zona che confina con Trastevere,si,Borgo,Scontata,1,
-confina-trastevere,Una zona che confina con Trastevere,si,Portuense,Nota,2,
-confina-trastevere,Una zona che confina con Trastevere,si,Gianicolense,Da romano,3,
-confina-trastevere,Una zona che confina con Trastevere,si,Ponte,Da tassinaro,5,
-confina-trastevere,Una zona che confina con Trastevere,si,Regola,Da tassinaro,5,
-confina-trastevere,Una zona che confina con Trastevere,si,Ripa,Da sampietrino,8,
-confina-trevi,Una zona che confina con Trevi,si,Monti,Scontata,1,
-confina-trevi,Una zona che confina con Trevi,si,Castro Pretorio,Nota,2,
-confina-trevi,Una zona che confina con Trevi,si,Ludovisi,Nota,2,
-confina-trevi,Una zona che confina con Trevi,si,Colonna,Da romano,3,
-confina-trevi,Una zona che confina con Trevi,si,Campitelli,Da tassinaro,5,
-confina-trevi,Una zona che confina con Trevi,si,Pigna,Da sampietrino,8,
-confina-trevi,Una zona che confina con Trevi,si,Sallustiano,Da sampietrino,8,
-confina-trieste,Una zona che confina con Trieste,si,Parioli,Scontata,1,
-confina-trieste,Una zona che confina con Trieste,si,Monte Sacro,Nota,2,
-confina-trieste,Una zona che confina con Trieste,si,Nomentano,Da tassinaro,5,
-confina-trieste,Una zona che confina con Trieste,si,Salario,Da sampietrino,8,
-confina-trionfale,Una zona che confina con Trionfale,si,Prati,Scontata,1,
-confina-trionfale,Una zona che confina con Trionfale,si,Aurelio,Nota,2,
-confina-trionfale,Una zona che confina con Trionfale,si,Della Vittoria,Da romano,3,
-confina-trionfale,Una zona che confina con Trionfale,si,Primavalle,Da romano,3,
-confina-trionfale,Una zona che confina con Trionfale,si,Ottavia,Da tassinaro,5,
-confina-trionfale,Una zona che confina con Trionfale,si,Tomba di Nerone,Da sampietrino,8,
-confina-tuscolano,Una zona che confina con Tuscolano,si,Esquilino,Scontata,1,
-confina-tuscolano,Una zona che confina con Tuscolano,si,Appio-Latino,Nota,2,
-confina-tuscolano,Una zona che confina con Tuscolano,si,Don Bosco,Da romano,3,
-confina-tuscolano,Una zona che confina con Tuscolano,si,Prenestino-Labicano,Da romano,3,
-confina-tuscolano,Una zona che confina con Tuscolano,si,Appio Claudio,Da tassinaro,5,
-confina-tuscolano,Una zona che confina con Tuscolano,si,Appio-Pignatelli,Da sampietrino,8,
-confina-val-melaina,Una zona che confina con Val Melaina,si,Parioli,Scontata,1,
-confina-val-melaina,Una zona che confina con Val Melaina,si,Monte Sacro,Nota,2,
-confina-val-melaina,Una zona che confina con Val Melaina,si,Castel Giubileo,Da romano,3,
-confina-val-melaina,Una zona che confina con Val Melaina,si,Tor di Quinto,Da romano,3,
-confina-val-melaina,Una zona che confina con Val Melaina,si,Grottarossa,Da tassinaro,5,
-confina-val-melaina,Una zona che confina con Val Melaina,si,Casal Boccone,Da sampietrino,8,
-municipio-1,Una zona del Municipio I,si,Prati,Scontata,1,
-municipio-1,Una zona del Municipio I,si,Testaccio,Scontata,1,
-municipio-1,Una zona del Municipio I,si,Trastevere,Scontata,1,
-municipio-1,Una zona del Municipio I,si,Borgo,Nota,2,
-municipio-1,Una zona del Municipio I,si,Campo Marzio,Nota,2,
-municipio-1,Una zona del Municipio I,si,Esquilino,Nota,2,
-municipio-1,Una zona del Municipio I,si,Monti,Nota,2,
-municipio-1,Una zona del Municipio I,si,Trevi,Nota,2,
-municipio-1,Una zona del Municipio I,si,Castro Pretorio,Da romano,3,
-municipio-1,Una zona del Municipio I,si,Celio,Da romano,3,
-municipio-1,Una zona del Municipio I,si,Colonna,Da romano,3,
-municipio-1,Una zona del Municipio I,si,Ludovisi,Da romano,3,
-municipio-1,Una zona del Municipio I,si,Campitelli,Da tassinaro,5,
-municipio-1,Una zona del Municipio I,si,Parione,Da tassinaro,5,
-municipio-1,Una zona del Municipio I,si,Ponte,Da tassinaro,5,
-municipio-1,Una zona del Municipio I,si,Regola,Da tassinaro,5,
-municipio-1,Una zona del Municipio I,si,San Saba,Da tassinaro,5,
-municipio-1,Una zona del Municipio I,si,Sant'Angelo,Da tassinaro,5,
-municipio-1,Una zona del Municipio I,si,Pigna,Da sampietrino,8,
-municipio-1,Una zona del Municipio I,si,Ripa,Da sampietrino,8,
-municipio-1,Una zona del Municipio I,si,Sallustiano,Da sampietrino,8,
-municipio-1,Una zona del Municipio I,si,Sant'Eustachio,Da sampietrino,8,
-municipio-2,Una zona del Municipio II,si,Parioli,Scontata,1,
-municipio-2,Una zona del Municipio II,si,Flaminio,Nota,2,
-municipio-2,Una zona del Municipio II,si,Trieste,Nota,2,
-municipio-2,Una zona del Municipio II,si,Nomentano,Da romano,3,
-municipio-2,Una zona del Municipio II,si,Salario,Da tassinaro,5,
-municipio-2,Una zona del Municipio II,si,Tiburtino,Da tassinaro,5,
-municipio-2,Una zona del Municipio II,si,Pinciano,Da sampietrino,8,
-municipio-3,Una zona del Municipio III,si,Monte Sacro,Scontata,1,
-municipio-3,Una zona del Municipio III,si,Val Melaina,Nota,2,
-municipio-3,Una zona del Municipio III,si,Castel Giubileo,Da romano,3,
-municipio-3,Una zona del Municipio III,si,Monte Sacro Alto,Da romano,3,
-municipio-3,Una zona del Municipio III,si,Casal Boccone,Da sampietrino,8,
-municipio-4,Una zona del Municipio IV,si,Pietralata,Scontata,1,
-municipio-4,Una zona del Municipio IV,si,San Basilio,Scontata,1,
-municipio-4,Una zona del Municipio IV,si,Collatino,Da romano,3,
-municipio-4,Una zona del Municipio IV,si,Ponte Mammolo,Da romano,3,
-municipio-4,Una zona del Municipio IV,si,Tor Cervara,Da tassinaro,5,
-municipio-4,Una zona del Municipio IV,si,Torraccia di San Basilio,Da sampietrino,8,
-municipio-5,Una zona del Municipio V,si,Prenestino-Centocelle,Scontata,1,
-municipio-5,Una zona del Municipio V,si,Prenestino-Labicano,Nota,2,
-municipio-5,Una zona del Municipio V,si,Alessandrino,Da romano,3,
-municipio-5,Una zona del Municipio V,si,Tor Sapienza,Da romano,3,
-municipio-5,Una zona del Municipio V,si,Torre Spaccata,Da sampietrino,8,
-municipio-7,Una zona del Municipio VII,si,Tuscolano,Scontata,1,
-municipio-7,Una zona del Municipio VII,si,Appio-Latino,Nota,2,
-municipio-7,Una zona del Municipio VII,si,Capannelle,Da romano,3,
-municipio-7,Una zona del Municipio VII,si,Don Bosco,Da romano,3,
-municipio-7,Una zona del Municipio VII,si,Torre Maura,Da romano,3,
-municipio-7,Una zona del Municipio VII,si,Appio Claudio,Da sampietrino,8,
-municipio-8,Una zona del Municipio VIII,si,Ostiense,Scontata,1,
-municipio-8,Una zona del Municipio VIII,si,Ardeatino,Nota,2,
-municipio-8,Una zona del Municipio VIII,si,Appio-Pignatelli,Da tassinaro,5,
-municipio-8,Una zona del Municipio VIII,si,Torricola,Da sampietrino,8,
-municipio-9,Una zona del Municipio IX,si,E.U.R.,Scontata,1,
-municipio-9,Una zona del Municipio IX,si,Cecchignola,Nota,2,
-municipio-9,Una zona del Municipio IX,si,Tor di Valle,Da romano,3,
-municipio-9,Una zona del Municipio IX,si,Torrino,Da romano,3,
-municipio-9,Una zona del Municipio IX,si,Giuliano-Dalmata,Da tassinaro,5,
-municipio-9,Una zona del Municipio IX,si,Fonte Ostiense,Da sampietrino,8,
-municipio-11,Una zona del Municipio XI,no,Magliana Vecchia,Nota,2,
-municipio-11,Una zona del Municipio XI,no,Portuense,Nota,2,
-municipio-11,Una zona del Municipio XI,no,La Pisana,Da sampietrino,8,
-municipio-12,Una zona del Municipio XII,no,Gianicolense,Da romano,3,
-municipio-13,Una zona del Municipio XIII,no,Aurelio,Da romano,3,
-municipio-14,Una zona del Municipio XIV,no,Primavalle,Scontata,1,
-municipio-14,Una zona del Municipio XIV,no,Trionfale,Da romano,3,
-municipio-14,Una zona del Municipio XIV,no,Ottavia,Da sampietrino,8,
-municipio-15,Una zona del Municipio XV,no,Tor di Quinto,Scontata,1,
-municipio-15,Una zona del Municipio XV,no,Grottarossa,Da tassinaro,5,
-municipio-15,Una zona del Municipio XV,no,Tomba di Nerone,Da tassinaro,5,
-vaticano,Una zona che confina col Vaticano,si,Prati,Scontata,1,
-vaticano,Una zona che confina col Vaticano,si,Aurelio,Da romano,3,
-vaticano,Una zona che confina col Vaticano,si,Borgo,Da romano,3,
-vaticano,Una zona che confina col Vaticano,si,Trionfale,Da sampietrino,8,
-raccordo,Una zona che arriva fino al Raccordo,si,Aurelio,Scontata,1,
-raccordo,Una zona che arriva fino al Raccordo,si,Magliana Vecchia,Scontata,1,
-raccordo,Una zona che arriva fino al Raccordo,si,San Basilio,Scontata,1,
-raccordo,Una zona che arriva fino al Raccordo,si,Trionfale,Scontata,1,
-raccordo,Una zona che arriva fino al Raccordo,si,Capannelle,Nota,2,
-raccordo,Una zona che arriva fino al Raccordo,si,Cecchignola,Nota,2,
-raccordo,Una zona che arriva fino al Raccordo,si,Gianicolense,Nota,2,
-raccordo,Una zona che arriva fino al Raccordo,si,Tor Sapienza,Nota,2,
-raccordo,Una zona che arriva fino al Raccordo,si,Torre Maura,Nota,2,
-raccordo,Una zona che arriva fino al Raccordo,si,Torrino,Nota,2,
-raccordo,Una zona che arriva fino al Raccordo,si,La Pisana,Da romano,3,
-raccordo,Una zona che arriva fino al Raccordo,si,Tor di Valle,Da romano,3,
-raccordo,Una zona che arriva fino al Raccordo,si,Torre Spaccata,Da romano,3,
-raccordo,Una zona che arriva fino al Raccordo,si,Casal Boccone,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Castel Giubileo,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Giuliano-Dalmata,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Grottarossa,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Ottavia,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Tomba di Nerone,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Tor Cervara,Da tassinaro,5,
-raccordo,Una zona che arriva fino al Raccordo,si,Fonte Ostiense,Da sampietrino,8,
-raccordo,Una zona che arriva fino al Raccordo,si,Torraccia di San Basilio,Da sampietrino,8,
-raccordo,Una zona che arriva fino al Raccordo,si,Torricola,Da sampietrino,8,
-metro-a,Una zona con una fermata della Metro A,si,Esquilino,Scontata,1,Manzoni / Termini / Vittorio Emanuele
-metro-a,Una zona con una fermata della Metro A,si,Prati,Scontata,1,Lepanto / Ottaviano
-metro-a,Una zona con una fermata della Metro A,si,Aurelio,Nota,2,Baldo degli Ubaldi / Cornelia
-metro-a,Una zona con una fermata della Metro A,si,Campo Marzio,Nota,2,Spagna
-metro-a,Una zona con una fermata della Metro A,si,Trevi,Nota,2,Barberini
-metro-a,Una zona con una fermata della Metro A,si,Tuscolano,Nota,2,Arco di Travertino / Colli Albani / Furio Camillo / ...
-metro-a,Una zona con una fermata della Metro A,si,Appio-Latino,Da romano,3,Furio Camillo / Ponte Lungo / Re di Roma / ...
-metro-a,Una zona con una fermata della Metro A,si,Primavalle,Da romano,3,Battistini
-metro-a,Una zona con una fermata della Metro A,si,Trionfale,Da romano,3,Cipro / Valle Aurelia
-metro-a,Una zona con una fermata della Metro A,si,Castro Pretorio,Da tassinaro,5,Repubblica
-metro-a,Una zona con una fermata della Metro A,si,Colonna,Da tassinaro,5,Barberini
-metro-a,Una zona con una fermata della Metro A,si,Don Bosco,Da tassinaro,5,Cinecittà / Giulio Agricola / Lucio Sestio / ...
-metro-a,Una zona con una fermata della Metro A,si,Pinciano,Da tassinaro,5,Flaminio
-metro-a,Una zona con una fermata della Metro A,si,Torre Maura,Da tassinaro,5,Anagnina
-metro-a,Una zona con una fermata della Metro A,si,Appio Claudio,Da sampietrino,8,Cinecittà / Giulio Agricola / Lucio Sestio / ...
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,E.U.R.,Scontata,1,EUR Fermi / EUR Magliana / EUR Palasport
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti,Scontata,1,Cavour / Colosseo
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Esquilino,Nota,2,Termini
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ostiense,Nota,2,Basilica San Paolo / Garbatella / Marconi / ...
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Trieste,Nota,2,Libia / Sant'Agnese/Annibaliano
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Castro Pretorio,Da romano,3,Castro Pretorio
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monte Sacro,Da romano,3,Conca d'Oro / Jonio
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Nomentano,Da romano,3,Bologna / Policlinico
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Pietralata,Da romano,3,Monti Tiburtini / Pietralata / Ponte Mammolo / ...
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ponte Mammolo,Da tassinaro,5,Rebibbia
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Da tassinaro,5,Circo Massimo
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Giuliano-Dalmata,Da sampietrino,8,Laurentina
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ripa,Da sampietrino,8,Circo Massimo
-metro-c,Una zona con una fermata della Metro C,si,Monti,Scontata,1,Colosseo – Fori Imperiali
-metro-c,Una zona con una fermata della Metro C,si,Tuscolano,Scontata,1,Lodi / San Giovanni
-metro-c,Una zona con una fermata della Metro C,si,Appio-Latino,Nota,2,Porta Metronia
-metro-c,Una zona con una fermata della Metro C,si,Prenestino-Centocelle,Nota,2,Gardenie / Mirti / Parco di Centocelle
-metro-c,Una zona con una fermata della Metro C,si,Prenestino-Labicano,Da romano,3,Malatesta / Pigneto / Teano
-metro-c,Una zona con una fermata della Metro C,si,Alessandrino,Da tassinaro,5,Torre Spaccata
-metro-c,Una zona con una fermata della Metro C,si,Don Bosco,Da tassinaro,5,Alessandrino / Torre Spaccata
-metro-c,Una zona con una fermata della Metro C,si,Torre Maura,Da tassinaro,5,Torre Maura
-metro-c,Una zona con una fermata della Metro C,si,Campitelli,Da sampietrino,8,Colosseo – Fori Imperiali
-metro-c,Una zona con una fermata della Metro C,si,Torre Spaccata,Da sampietrino,8,Torre Maura
-trapizzino,Una zona con un Trapizzino,si,Trastevere,Scontata,1,Trapizzino
-trapizzino,Una zona con un Trapizzino,si,Prati,Nota,2,Trapizzino Piazza Risorgimento
-trapizzino,Una zona con un Trapizzino,si,Testaccio,Nota,2,Trapizzino Testaccio
-trapizzino,Una zona con un Trapizzino,si,Esquilino,Da romano,3,Trapizzino Mercato Centrale Roma
-trapizzino,Una zona con un Trapizzino,si,Nomentano,Da tassinaro,5,Trapizzino
-trapizzino,Una zona con un Trapizzino,si,Della Vittoria,Da sampietrino,8,Trapizzino Ponte Milvio
-tevere,Una zona dove passa il Tevere,si,E.U.R.,Scontata,1,
-tevere,Una zona dove passa il Tevere,si,Prati,Scontata,1,
-tevere,Una zona dove passa il Tevere,si,Testaccio,Scontata,1,
-tevere,Una zona dove passa il Tevere,si,Trastevere,Scontata,1,
-tevere,Una zona dove passa il Tevere,si,Flaminio,Nota,2,
-tevere,Una zona dove passa il Tevere,si,Ostiense,Nota,2,
-tevere,Una zona dove passa il Tevere,si,Parioli,Nota,2,
-tevere,Una zona dove passa il Tevere,si,Borgo,Da romano,3,
-tevere,Una zona dove passa il Tevere,si,Campo Marzio,Da romano,3,
-tevere,Una zona dove passa il Tevere,si,Della Vittoria,Da romano,3,
-tevere,Una zona dove passa il Tevere,si,Magliana Vecchia,Da romano,3,
-tevere,Una zona dove passa il Tevere,si,Portuense,Da romano,3,
-tevere,Una zona dove passa il Tevere,si,Tor di Quinto,Da romano,3,
-tevere,Una zona dove passa il Tevere,si,Ponte,Da tassinaro,5,
-tevere,Una zona dove passa il Tevere,si,Sant'Angelo,Da tassinaro,5,
-tevere,Una zona dove passa il Tevere,si,Tor di Valle,Da tassinaro,5,
-tevere,Una zona dove passa il Tevere,si,Val Melaina,Da tassinaro,5,
-tevere,Una zona dove passa il Tevere,si,Castel Giubileo,Da sampietrino,8,
-tevere,Una zona dove passa il Tevere,si,Grottarossa,Da sampietrino,8,
-tevere,Una zona dove passa il Tevere,si,Regola,Da sampietrino,8,
-tevere,Una zona dove passa il Tevere,si,Ripa,Da sampietrino,8,
-fontane,Una zona con una fontana famosa,si,Trevi,Scontata,1,Fontana di Trevi / Fontana del Tritone / Fontana delle Api / Fontana del Mosè / Fontana del Facchino
-fontane,Una zona con una fontana famosa,si,Campo Marzio,Nota,2,Fontana della Barcaccia
-fontane,Una zona con una fontana famosa,si,Parione,Nota,2,Fontana dei Quattro Fiumi / Fontana della Terrina
-fontane,Una zona con una fontana famosa,si,Castro Pretorio,Da romano,3,Fontana delle Naiadi / Fontana del Mosè
-fontane,Una zona con una fontana famosa,si,Colonna,Da romano,3,Fontana del Tritone / Fontana delle Api
-fontane,Una zona con una fontana famosa,si,Ludovisi,Da tassinaro,5,Fontana delle Api
-fontane,Una zona con una fontana famosa,si,Sant'Angelo,Da tassinaro,5,Fontana delle Tartarughe
-fontane,Una zona con una fontana famosa,si,Trastevere,Da tassinaro,5,Fontana dell'Acqua Paola / Fontana della Botte
-fontane,Una zona con una fontana famosa,si,Pigna,Da sampietrino,8,Fontana del Facchino
-fontane,Una zona con una fontana famosa,si,Sallustiano,Da sampietrino,8,Fontana del Mosè
-fontane,Una zona con una fontana famosa,si,Testaccio,Da sampietrino,8,Fontana delle Anfore
-ville,Una zona con una villa storica (il parco),si,Gianicolense,Scontata,1,Villa Doria Pamphilj / Villa Sciarra
-ville,Una zona con una villa storica (il parco),si,Pinciano,Scontata,1,Villa Borghese / Villa Glori
-ville,Una zona con una villa storica (il parco),si,Nomentano,Nota,2,Villa Torlonia / Villa Leopardi
-ville,Una zona con una villa storica (il parco),si,Parioli,Nota,2,Villa Ada / Villa Glori
-ville,Una zona con una villa storica (il parco),si,Trieste,Nota,2,Villa Ada / Villa Torlonia / Villa Chigi / Villa Leopardi / Villa Paganini
-ville,Una zona con una villa storica (il parco),si,Celio,Da romano,3,Villa Celimontana
-ville,Una zona con una villa storica (il parco),si,Trastevere,Da tassinaro,5,Villa Sciarra
-ville,Una zona con una villa storica (il parco),si,Appio-Latino,Da sampietrino,8,Villa Lazzaroni
-ville,Una zona con una villa storica (il parco),si,Aurelio,Da sampietrino,8,Villa Carpegna
-ville,Una zona con una villa storica (il parco),si,Collatino,Da sampietrino,8,Villa Gordiani
-ville,Una zona con una villa storica (il parco),si,Prenestino-Labicano,Da sampietrino,8,Villa Gordiani
-ville,Una zona con una villa storica (il parco),si,Tuscolano,Da sampietrino,8,Villa Fiorelli
-movida,Una zona famosa per la movida,si,Trastevere,Scontata,1,Piazza Trilussa
-movida,Una zona famosa per la movida,si,Parione,Nota,2,Campo de' Fiori / Via del Governo Vecchio
-movida,Una zona famosa per la movida,si,Prenestino-Labicano,Nota,2,Via del Pigneto
-movida,Una zona famosa per la movida,si,Regola,Nota,2,Campo de' Fiori
-movida,Una zona famosa per la movida,si,Tiburtino,Nota,2,Piazza dell'Immacolata
-movida,Una zona famosa per la movida,si,Della Vittoria,Da romano,3,Piazzale di Ponte Milvio
-movida,Una zona famosa per la movida,si,Monti,Da romano,3,Piazza della Madonna dei Monti
-movida,Una zona famosa per la movida,si,Testaccio,Da romano,3,Monte Testaccio
-movida,Una zona famosa per la movida,si,Tor di Quinto,Da romano,3,Piazzale di Ponte Milvio
-movida,Una zona famosa per la movida,si,Ostiense,Da tassinaro,5,Via Libetta
-movida,Una zona famosa per la movida,si,Ponte,Da tassinaro,5,Via del Governo Vecchio
-movida,Una zona famosa per la movida,si,Nomentano,Da sampietrino,8,Piazza Bologna
-movida,Una zona famosa per la movida,si,Prenestino-Centocelle,Da sampietrino,8,Piazza dei Mirti
-stazione-fs,Una zona con una stazione dei treni,si,Esquilino,Scontata,1,Roma Termini
-stazione-fs,Una zona con una stazione dei treni,si,Parioli,Scontata,1,Acqua Acetosa / Campi Sportivi / Monte Antenne
-stazione-fs,Una zona con una stazione dei treni,si,Trieste,Scontata,1,Roma Nomentana
-stazione-fs,Una zona con una stazione dei treni,si,Aurelio,Nota,2,Città del Vaticano / Roma San Pietro
-stazione-fs,Una zona con una stazione dei treni,si,Monte Sacro,Nota,2,Roma Nomentana / Val d’Ala
-stazione-fs,Una zona con una stazione dei treni,si,Primavalle,Nota,2,Roma Monte Mario
-stazione-fs,Una zona con una stazione dei treni,si,Tuscolano,Nota,2,Roma Tuscolana
-stazione-fs,Una zona con una stazione dei treni,si,Della Vittoria,Da romano,3,Roma San Filippo Neri
-stazione-fs,Una zona con una stazione dei treni,si,Gianicolense,Da romano,3,Quattro Venti / Roma Aurelia
-stazione-fs,Una zona con una stazione dei treni,si,Pietralata,Da romano,3,Roma Tiburtina
-stazione-fs,Una zona con una stazione dei treni,si,Trionfale,Da romano,3,Appiano / Gemelli / Roma Balduina / ...
-stazione-fs,Una zona con una stazione dei treni,si,Capannelle,Da tassinaro,5,Capannelle
-stazione-fs,Una zona con una stazione dei treni,si,Pinciano,Da tassinaro,5,Euclide / Flaminio
-stazione-fs,Una zona con una stazione dei treni,si,Tor Sapienza,Da tassinaro,5,La Rustica Città / Palmiro Togliatti
-stazione-fs,Una zona con una stazione dei treni,si,Tor di Quinto,Da tassinaro,5,Tor di Quinto / Vigna Clara
-stazione-fs,Una zona con una stazione dei treni,si,Collatino,Da sampietrino,8,Palmiro Togliatti / Roma Prenestina / Serenissima
-stazione-fs,Una zona con una stazione dei treni,si,Grottarossa,Da sampietrino,8,Grottarossa / Saxa Rubra
-stazione-fs,Una zona con una stazione dei treni,si,Ottavia,Da sampietrino,8,Ipogeo degli Ottavi / Ottavia
-mercato,Una zona con un mercato rionale,no,Esquilino,Scontata,1,Mercato Esquilino / Nuovo Mercato Esquilino
-mercato,Una zona con un mercato rionale,no,Monti,Scontata,1,Mercato di Monti / Mercato riomale
-mercato,Una zona con un mercato rionale,no,Parioli,Scontata,1,Mercato Rionale
-mercato,Una zona con un mercato rionale,no,Prati,Scontata,1,Mercato dell'Unità
-mercato,Una zona con un mercato rionale,no,Testaccio,Scontata,1,Nuovo Mercato Testaccio
-mercato,Una zona con un mercato rionale,no,Trastevere,Scontata,1,Mercato di San Cosimato
-mercato,Una zona con un mercato rionale,no,Appio-Latino,Nota,2,Mercato Latino / Mercato Magna Grecia – Metronio / Mercato dell'Alberone
-mercato,Una zona con un mercato rionale,no,Aurelio,Nota,2,Mercato Irnerio / Mercato San Silverio / Pineta Sacchetti
-mercato,Una zona con un mercato rionale,no,Campo Marzio,Nota,2,Campo Marzio
-mercato,Una zona con un mercato rionale,no,Flaminio,Nota,2,Mercato Flaminio II
-mercato,Una zona con un mercato rionale,no,Monte Sacro,Nota,2,Mercato Conca d'Oro / Mercato Menenio Agrippa / Mercato Rionale del Tufello / ...
-mercato,Una zona con un mercato rionale,no,Nomentano,Nota,2,Mercato Rionale / Mercato Rionale Portonaccio I
-mercato,Una zona con un mercato rionale,no,Ostiense,Nota,2,Largo Leonardo da Vinci / Mercato Circonvallazione Ostiense / Mercato Ostiense / ...
-mercato,Una zona con un mercato rionale,no,Prenestino-Centocelle,Nota,2,Mercato Arabo / Mercato Insieme / Mercato di Piazza delle Iris
-mercato,Una zona con un mercato rionale,no,Primavalle,Nota,2,Mercato Primavalle / Pineta Sacchetti
-mercato,Una zona con un mercato rionale,no,Trieste,Nota,2,Mercatino delle pulci / Mercato Piazza Gimma / Mercato rionale coperto
-mercato,Una zona con un mercato rionale,no,Tuscolano,Nota,2,Mercato Rionale Piazza dei Tribuni / Mercato Torpignattara / Mercato di Via Orvieto / ...
-mercato,Una zona con un mercato rionale,no,Castro Pretorio,Da romano,3,Mecato Macao
-mercato,Una zona con un mercato rionale,no,Della Vittoria,Da romano,3,AGS Mercato Vittoria / Mercato Monte Mario Thouar / Mercato dei Fiori / ...
-mercato,Una zona con un mercato rionale,no,Pietralata,Da romano,3,CampagnaAmica Coldiretti / Mercato Pietralata / Mercato Rionale
-mercato,Una zona con un mercato rionale,no,Portuense,Da romano,3,Mercato Coperto Magliana / Mercato di Santa Silvia / Mercato rionale / ...
-mercato,Una zona con un mercato rionale,no,Prenestino-Labicano,Da romano,3,Mercato Casilino 23 / Mercato Insieme / Mercato Largo Perestrello / ...
-mercato,Una zona con un mercato rionale,no,Salario,Da romano,3,Mercato Nomentano
-mercato,Una zona con un mercato rionale,no,San Basilio,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Tiburtino,Da romano,3,
-mercato,Una zona con un mercato rionale,no,Trionfale,Da romano,3,Mercato Trionfale / Mercato dei Fiori
-mercato,Una zona con un mercato rionale,no,Appio Claudio,Da tassinaro,5,Mercato rionale Cinecittà / Mercato rionale Tuscolano III
-mercato,Una zona con un mercato rionale,no,Ardeatino,Da tassinaro,5,Mercato Grottaperfetta / Mercato Navigatori / Mercato Tormarancia / ...
-mercato,Una zona con un mercato rionale,no,Collatino,Da tassinaro,5,Mercato / Mercato Rionale / Mercato Rionale Colli Aniene / ...
-mercato,Una zona con un mercato rionale,no,Don Bosco,Da tassinaro,5,Mercato Le Piscine / Mercato Rionale di Torrespaccata / Mercato rionale Carlo Calisse
-mercato,Una zona con un mercato rionale,no,Gianicolense,Da tassinaro,5,Mercato Rionale / Porta Portese
-mercato,Una zona con un mercato rionale,no,Pinciano,Da tassinaro,5,Mercato Rionale
-mercato,Una zona con un mercato rionale,no,Ponte Mammolo,Da tassinaro,5,Mercato Comunale Casal De' Pazzi / MercatoBIO di Aguzzano al Casale Podere Rosa
-mercato,Una zona con un mercato rionale,no,San Saba,Da tassinaro,5,Mercato di San Saba
-mercato,Una zona con un mercato rionale,no,Tor Sapienza,Da tassinaro,5,Porta Portese Est
-mercato,Una zona con un mercato rionale,no,Tor di Quinto,Da tassinaro,5,Mercato di Ponte Milvio
-mercato,Una zona con un mercato rionale,no,Torre Maura,Da tassinaro,5,Mercato Rionale Cinecittà Est
-mercato,Una zona con un mercato rionale,no,Torrino,Da tassinaro,5,
-mercato,Una zona con un mercato rionale,no,Val Melaina,Da tassinaro,5,Mercato Coperto di Val Melaina
-mercato,Una zona con un mercato rionale,no,Castel Giubileo,Da sampietrino,8,Mercato Rionale Settimanale / Mercato Serpentara
-mercato,Una zona con un mercato rionale,no,Monte Sacro Alto,Da sampietrino,8,Mercato Talenti
-mercato,Una zona con un mercato rionale,no,Parione,Da sampietrino,8,Campo de' Fiori
-mercato,Una zona con un mercato rionale,no,Regola,Da sampietrino,8,Campo de' Fiori
-mercato,Una zona con un mercato rionale,no,Ripa,Da sampietrino,8,Mercato di Campagna Amica Circo Massimo
-ospedale,Una zona con un ospedale,no,E.U.R.,Scontata,1,Ospedale Sant'Eugenio
-ospedale,Una zona con un ospedale,no,Monti,Scontata,1,Ospedale Britannico / Ospedale San Giovanni / Ospedale San Giovanni - Presidio Addolorata / ...
-ospedale,Una zona con un ospedale,no,Parioli,Scontata,1,Casa di cura Quisisana
-ospedale,Una zona con un ospedale,no,Prati,Scontata,1,Casa di Cura Santa Famiglia
-ospedale,Una zona con un ospedale,no,Trastevere,Scontata,1,Ospedale Nuovo Regina Margherita / Ospedale Pediatrico Bambino Gesù / Salvator Mundi international Hospital
-ospedale,Una zona con un ospedale,no,Aurelio,Nota,2,Aurelia Hospital / Casa di Cura Pio XI / Clinica Villa Benedetta / ...
-ospedale,Una zona con un ospedale,no,Borgo,Nota,2,"Ospedale Santo Spirito in Sassia / Pronto Soccorso Ospedale ""Santo Spirito in Sassia"""
-ospedale,Una zona con un ospedale,no,Nomentano,Nota,2,"Casa di Cura ""Assunzione di Maria Santissima"" / Casa di Cura ""San Domenico"" / Policlinico Italia / ..."
-ospedale,Una zona con un ospedale,no,Ostiense,Nota,2,Ospedale CTO Andrea Alesini / Ospedale Pediatrico Bambino Gesù - Sede di San Paolo / Ospedale Pediatrico Bambino Gesù - Sede di via Baldelli
-ospedale,Una zona con un ospedale,no,Prenestino-Centocelle,Nota,2,Clinica Guarnieri
-ospedale,Una zona con un ospedale,no,Primavalle,Nota,2,ASL RME / Hospice Villa Speranza / Ospedale Cristo Re / ...
-ospedale,Una zona con un ospedale,no,Trieste,Nota,2,"Casa di Cura ""Assunzione di Maria Santissima"" / Centro Medicina Nucleare Italiano Villa Bianca / Clinica Sanatrix / ..."
-ospedale,Una zona con un ospedale,no,Tuscolano,Nota,2,NCL
-ospedale,Una zona con un ospedale,no,Celio,Da romano,3,Ospedale Britannico / Ospedale San Giovanni - Presidio Addolorata / Policlinico militare Celio
-ospedale,Una zona con un ospedale,no,Della Vittoria,Da romano,3,Fondazione Don Gnocchi - Centro Santa Maria della Pace / Ospedale San Filippo Neri / Policlinico Universitario Agostino Gemelli / ...
-ospedale,Una zona con un ospedale,no,Magliana Vecchia,Da romano,3,Ospedale San Giovanni Battista
-ospedale,Una zona con un ospedale,no,Pietralata,Da romano,3,Casa di Cura Nuova ITOR / Ospedale Sandro Pertini
-ospedale,Una zona con un ospedale,no,Portuense,Da romano,3,European Hospital / Istituto nazionale per le malattie infettive Lazzaro Spallanzani / Ospedale Israelitico / ...
-ospedale,Una zona con un ospedale,no,Prenestino-Labicano,Da romano,3,Ospedale generale Madre Giuseppina Vannini
-ospedale,Una zona con un ospedale,no,Tiburtino,Da romano,3,Policlinico Umberto I / Policlinico Umberto I - Clinica di Neuropsichiatria infantile
-ospedale,Una zona con un ospedale,no,Trionfale,Da romano,3,Complesso Integrato Columbus / Gemelli CURAE / Hospice Villa Speranza / ...
-ospedale,Una zona con un ospedale,no,Alessandrino,Da tassinaro,5,Casa di cura Villa Mendicini
-ospedale,Una zona con un ospedale,no,Ardeatino,Da tassinaro,5,Fondazione Santa Lucia / Nuova Clinica Annunziatella / Studio Odontoiatrico Dominici
-ospedale,Una zona con un ospedale,no,Gianicolense,Da tassinaro,5,Casa di Cura Città di Roma / European Hospital / Istituto nazionale per le malattie infettive Lazzaro Spallanzani / ...
-ospedale,Una zona con un ospedale,no,Pinciano,Da tassinaro,5,Clinica Mater Dei / Clinica Parioli / Clinica Valle Giulia
-ospedale,Una zona con un ospedale,no,Tor Sapienza,Da tassinaro,5,Rome American Hospital
-ospedale,Una zona con un ospedale,no,Tor di Quinto,Da tassinaro,5,Nuova Villa Claudia / Ospedale San Pietro Fatebenefratelli
-ospedale,Una zona con un ospedale,no,Torre Maura,Da tassinaro,5,Policlinico Casilino
-ospedale,Una zona con un ospedale,no,Torre Spaccata,Da tassinaro,5,Policlinico Casilino
-ospedale,Una zona con un ospedale,no,Torrino,Da tassinaro,5,IFO - Istituti Fisioterapici Ospitalieri / Istituto Dermatologico San Gallicano / Istituto Nazionale Tumori Regina Elena
-ospedale,Una zona con un ospedale,no,Fonte Ostiense,Da sampietrino,8,Ospedale Sant'Eugenio
-ospedale,Una zona con un ospedale,no,Grottarossa,Da sampietrino,8,Ospedale Sant'Andrea
-ospedale,Una zona con un ospedale,no,Monte Sacro Alto,Da sampietrino,8,Villa Tiberia
-ospedale,Una zona con un ospedale,no,Ripa,Da sampietrino,8,Fatebenefratelli
-ospedale,Una zona con un ospedale,no,Tomba di Nerone,Da sampietrino,8,Ospedale San Pietro Fatebenefratelli
-universita,Una zona con un'università,no,Parioli,Scontata,1,Libera Università Internazionale degli Studi Sociali (LUISS) Guido Carli
-universita,Una zona con un'università,no,Prati,Scontata,1,Lumsa
-universita,Una zona con un'università,no,Testaccio,Scontata,1,Università Roma Tre - Dipartimento di Architettura
-universita,Una zona con un'università,no,Trastevere,Scontata,1,Auriana Auditorium / John Cabot University / John Cabot University - Guarini Campus / ...
-universita,Una zona con un'università,no,Aurelio,Nota,2,Duquesne University - Italian Campus / Pontificia Università Urbaniana / Pontificio Istituto di Musica Sacra / ...
-universita,Una zona con un'università,no,Borgo,Nota,2,LUMSA / Pontificia Università Urbaniana
-universita,Una zona con un'università,no,Campo Marzio,Nota,2,Temple University Rome / Università La Sapienza sede distaccata Architettura
-universita,Una zona con un'università,no,Esquilino,Nota,2,"Pontificia Universitas Antonianum / Pontificia Università Antonianum / Università La Sapienza - Dipartimento di Ingegneria informatica, automatica e gestionale Antonio Ruberti / ..."
-universita,Una zona con un'università,no,Flaminio,Nota,2,Temple University Rome / Università La Sapienza - Facoltà di Architettura - Via Flaminia / Università La Sapienza - Facoltà di Architettura sede di via E. Gianturco
-universita,Una zona con un'università,no,Monti,Nota,2,"Dipartimento di Ingegneria Civile, Edile e Ambientale / Dipartimento di ingegneria dell'Informazione, Elettronica e Telecomunicazioni / Pontificia Universitas Antonianum / ..."
-universita,Una zona con un'università,no,Ostiense,Nota,2,Il Giovedì di Progetto / Pontifical Beda College Seminary / Università Roma Tre - Corsi di laurea in Fisica / ...
-universita,Una zona con un'università,no,Trevi,Nota,2,Pontificia Università Gregoriana / Pontificio Istituto Biblico
-universita,Una zona con un'università,no,Trieste,Nota,2,LUISS / Libera università internazionale degli studi sociali LUISS
-universita,Una zona con un'università,no,Tuscolano,Nota,2,Istituto Europeo Di Design (IED)
-universita,Una zona con un'università,no,Nomentano,Da romano,3,Sapienza Università di Roma / Sapienza Università di Roma - Facoltà di Economia e Ingegneria / Università La Sapienza - Dipartimento di Filosofia
-universita,Una zona con un'università,no,Primavalle,Da romano,3,Università Cattolica del Sacro Cuore
-universita,Una zona con un'università,no,Tiburtino,Da romano,3,Area studio zoologia / Botanica / Dipartimento Scienze Giuridiche / ...
-universita,Una zona con un'università,no,Trionfale,Da romano,3,John Felice Rome Center / Università Cattolica del Sacro Cuore / Università Niccolò Cusano
-universita,Una zona con un'università,no,Campitelli,Da tassinaro,5,Nobile Collegio Chimico Farmaceutico
-universita,Una zona con un'università,no,Castro Pretorio,Da tassinaro,5,Uninettuno / Università Roma Tre - Dipartimento di Scienze della Formazione / Università Roma Tre - Dipartimento di Scienze della formazione
-universita,Una zona con un'università,no,Della Vittoria,Da tassinaro,5,Università degli Studi di Roma Foro Italico
-universita,Una zona con un'università,no,Gianicolense,Da tassinaro,5,Ateneo Pontificio Regina Apostolorum / Auriana Auditorium / The American University of Rome / ...
-universita,Una zona con un'università,no,Pinciano,Da tassinaro,5,Università La Sapienza - Facoltà di Architettura - Sede Valle Giulia / Università La Sapienza - Facoltà di Architettura - Via Flaminia / Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
-universita,Una zona con un'università,no,Ponte,Da tassinaro,5,Pontificia Università della Santa Croce
-universita,Una zona con un'università,no,Prenestino-Labicano,Da tassinaro,5,Corso di laurea per infermiere Padre Luigi Tezza
-universita,Una zona con un'università,no,Salario,Da tassinaro,5,Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
-universita,Una zona con un'università,no,Val Melaina,Da tassinaro,5,Università Pontificia Salesiana
-universita,Una zona con un'università,no,Castel Giubileo,Da sampietrino,8,Università Pontificia Salesiana
-universita,Una zona con un'università,no,Grottarossa,Da sampietrino,8,
-universita,Una zona con un'università,no,Parione,Da sampietrino,8,UNIMED – Mediterranean Universities Union
-universita,Una zona con un'università,no,Pigna,Da sampietrino,8,Mediateca Università telematica Nettuno / Pontificio Seminario Francese
-universita,Una zona con un'università,no,Ripa,Da sampietrino,8,Accademia Nazionale di Danza
-cinema,Una zona con un cinema,no,E.U.R.,Scontata,1,EUR Cine
-cinema,Una zona con un cinema,no,Monti,Scontata,1,Cineclub Detour / Quattro Fontane
-cinema,Una zona con un cinema,no,Prati,Scontata,1,Azzurro Scipioni / Cinema Adriano / Eden / ...
-cinema,Una zona con un cinema,no,Testaccio,Scontata,1,Greenwich
-cinema,Una zona con un cinema,no,Trastevere,Scontata,1,Alcazar / Cinema Intrastevere / Cinema Troisi / ...
-cinema,Una zona con un cinema,no,Aurelio,Nota,2,Alhambra
-cinema,Una zona con un cinema,no,Esquilino,Nota,2,Royal
-cinema,Una zona con un cinema,no,Flaminio,Nota,2,Cinema Tiziano
-cinema,Una zona con un cinema,no,Monte Sacro,Nota,2,Cinema Antares
-cinema,Una zona con un cinema,no,Ostiense,Nota,2,Arena di Garbatella / Madison
-cinema,Una zona con un cinema,no,Trevi,Nota,2,Cinema Barberini / Fiamma / Time Elevator
-cinema,Una zona con un cinema,no,Trieste,Nota,2,Multisala Lux
-cinema,Una zona con un cinema,no,Tuscolano,Nota,2,Trianon
-cinema,Una zona con un cinema,no,Appio-Latino,Da romano,3,The Cineclub
-cinema,Una zona con un cinema,no,Castro Pretorio,Da romano,3,Ambasciatori / Quattro Fontane / The Space Cinema - Moderno Roma
-cinema,Una zona con un cinema,no,Della Vittoria,Da romano,3,Palomar Produzione Cnematografica
-cinema,Una zona con un cinema,no,Magliana Vecchia,Da romano,3,The Space Cinema
-cinema,Una zona con un cinema,no,Nomentano,Da romano,3,Multisala Jolly / Sala delle Provincie d'Essai
-cinema,Una zona con un cinema,no,Prenestino-Centocelle,Da romano,3,Broadway
-cinema,Una zona con un cinema,no,Prenestino-Labicano,Da romano,3,Cineclub Alphaville / Nuovo Cinema Aquila
-cinema,Una zona con un cinema,no,Primavalle,Da romano,3,Andromeda / Galaxy
-cinema,Una zona con un cinema,no,Salario,Da romano,3,Cinema Europa / Savoy Cityplex
-cinema,Una zona con un cinema,no,Tiburtino,Da romano,3,Tibur
-cinema,Una zona con un cinema,no,Trionfale,Da romano,3,Doria
-cinema,Una zona con un cinema,no,Appio Claudio,Da tassinaro,5,Multisala Atlantic
-cinema,Una zona con un cinema,no,Colonna,Da tassinaro,5,Nuovo Olimpia
-cinema,Una zona con un cinema,no,Don Bosco,Da tassinaro,5,Cinecittà / Cinema Teatro Don Bosco / Multisala Atlantic
-cinema,Una zona con un cinema,no,Pinciano,Da tassinaro,5,Casa del Cinema / Cinema dei Piccoli / Teatro all'aperto Ettore Scola
-cinema,Una zona con un cinema,no,Ponte Mammolo,Da tassinaro,5,CineClub Podere Rosa
-cinema,Una zona con un cinema,no,Tor di Quinto,Da tassinaro,5,Palomar Produzione Cnematografica
-cinema,Una zona con un cinema,no,Torrino,Da tassinaro,5,Stardust Village
-cinema,Una zona con un cinema,no,Castel Giubileo,Da sampietrino,8,UCI Cinemas
-cinema,Una zona con un cinema,no,Giuliano-Dalmata,Da sampietrino,8,UCI Luxe
-cinema,Una zona con un cinema,no,Ottavia,Da sampietrino,8,Starplex
-cinema,Una zona con un cinema,no,Parione,Da sampietrino,8,Farnese
-cinema,Una zona con un cinema,no,Regola,Da sampietrino,8,Farnese
-cinema,Una zona con un cinema,no,Sallustiano,Da sampietrino,8,Fiamma
-cinema,Una zona con un cinema,no,Tomba di Nerone,Da sampietrino,8,Cinestar Cassia
-teatro,Una zona con un teatro,no,Esquilino,Scontata,1,Teatro Ambra Jovinelli / Teatro Basilica / Teatro Brancaccio
-teatro,Una zona con un teatro,no,Monti,Scontata,1,Lo spazio / Piccolo Eliseo / Teatro Brancaccio / ...
-teatro,Una zona con un teatro,no,Parioli,Scontata,1,Auditorium Arte / Teatro Parioli
-teatro,Una zona con un teatro,no,Prati,Scontata,1,Teatro Prati
-teatro,Una zona con un teatro,no,Testaccio,Scontata,1,Amici Del Teatro Di Documenti / Teatro Petrolini / Teatro Studio Zagreus / ...
-teatro,Una zona con un teatro,no,Trastevere,Scontata,1,Anfiteatro Quercia del Tasso / Il Cantiere / Teatro Argot Studio / ...
-teatro,Una zona con un teatro,no,Appio-Latino,Nota,2,Lo spazio / Orione / Teatro Orione / ...
-teatro,Una zona con un teatro,no,Aurelio,Nota,2,Teatro Cyrano / Teatro Ghione
-teatro,Una zona con un teatro,no,Borgo,Nota,2,Auditorium Conciliazione / Le Salette
-teatro,Una zona con un teatro,no,Campo Marzio,Nota,2,Teatro Salone Margherita / Teatro dei burattini San Carlino
-teatro,Una zona con un teatro,no,Flaminio,Nota,2,Teatro Olimpico
-teatro,Una zona con un teatro,no,Monte Sacro,Nota,2,CineTeatro33
-teatro,Una zona con un teatro,no,Nomentano,Nota,2,Associazione Culturale Castalia Teatro Arcobaleno / Teatro Italia / Teatro Sette / ...
-teatro,Una zona con un teatro,no,Ostiense,Nota,2,"Largo Alvaro Amici / Piccolo Teatro San Paolo / Spazio Anarchico ""19 luglio"" / ..."
-teatro,Una zona con un teatro,no,Trevi,Nota,2,Quirinetta / Teatro Quirino / Teatro de' Servi
-teatro,Una zona con un teatro,no,Trieste,Nota,2,Teatro del Sogno
-teatro,Una zona con un teatro,no,Tuscolano,Nota,2,Planet / Teatro Duse / Teatro Golden / ...
-teatro,Una zona con un teatro,no,Castro Pretorio,Da romano,3,Teatro Nazionale / Teatro dell'Opera
-teatro,Una zona con un teatro,no,Della Vittoria,Da romano,3,Teatro Eduardo De Filippo / Teatro Manzoni / Teatro San Genesio / ...
-teatro,Una zona con un teatro,no,Gianicolense,Da romano,3,Teatro Corviale / Teatro Le Maschere / Teatro Porta Portese / ...
-teatro,Una zona con un teatro,no,Pietralata,Da romano,3,Teatro Parrocchia Sant'Atanasio
-teatro,Una zona con un teatro,no,Ponte Mammolo,Da romano,3,Di Via Speroni
-teatro,Una zona con un teatro,no,Portuense,Da romano,3,Nogu Teatro / Teatro India
-teatro,Una zona con un teatro,no,Prenestino-Labicano,Da romano,3,Teatro Hamlet / Teatro San Luca / Teatrosala vignoli
-teatro,Una zona con un teatro,no,Trionfale,Da romano,3,Auditorium
-teatro,Una zona con un teatro,no,Alessandrino,Da tassinaro,5,Teatro Biblioteca Quarticciolo
-teatro,Una zona con un teatro,no,Campitelli,Da tassinaro,5,Teatro della Cometa
-teatro,Una zona con un teatro,no,Collatino,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Colonna,Da tassinaro,5,Teatro Capranica / Teatro Due Roma / Teatro Sala Umberto / ...
-teatro,Una zona con un teatro,no,Don Bosco,Da tassinaro,5,Teatro Giovanni Paolo II Attore
-teatro,Una zona con un teatro,no,Pinciano,Da tassinaro,5,Gigi Proietti Globe Theatre Silvano Toti / Sala Casella / Teatro del Pinguino
-teatro,Una zona con un teatro,no,Ponte,Da tassinaro,5,L’arciliuto / Teatro dell'Orologio
-teatro,Una zona con un teatro,no,San Saba,Da tassinaro,5,Anfitrione
-teatro,Una zona con un teatro,no,Tor Sapienza,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Tor di Quinto,Da tassinaro,5,Il Sistino Chapiteau
-teatro,Una zona con un teatro,no,Torre Maura,Da tassinaro,5,
-teatro,Una zona con un teatro,no,Torrino,Da tassinaro,5,Auditorium Santa Chiara / Teatro del Torrino / Teatro di Mostacciano
-teatro,Una zona con un teatro,no,Castel Giubileo,Da sampietrino,8,Il Teatro degli Audaci
-teatro,Una zona con un teatro,no,Fonte Ostiense,Da sampietrino,8,Anfiteatro / Atlantico Live!
-teatro,Una zona con un teatro,no,Parione,Da sampietrino,8,Teatro dei Satiri / Teatro dell'Orologio
-teatro,Una zona con un teatro,no,Pigna,Da sampietrino,8,Teatro Argentina / Teatro Rossini
-teatro,Una zona con un teatro,no,Regola,Da sampietrino,8,Off-Off theatre
-teatro,Una zona con un teatro,no,Sant'Eustachio,Da sampietrino,8,Teatro Argentina / Teatro Rossini / Teatro Valle
-teatro,Una zona con un teatro,no,Tomba di Nerone,Da sampietrino,8,Teatro Ciak Roma / Teatro Stabile Del Giallo
-biblioteca,Una zona con una biblioteca,no,Esquilino,Scontata,1,Biblioteca della Città metropolitana di Roma Capitale
-biblioteca,Una zona con una biblioteca,no,Flaminio,Scontata,1,Biblioteca Flaminia / Biblioteca Quaroni
-biblioteca,Una zona con una biblioteca,no,Monti,Scontata,1,"Biblioteca Beato Pio IX / Biblioteca Ingegneria astronautica, elettrica ed energetica - sede Ingegneria elettrica / Biblioteca Paolo Baffi / ..."
-biblioteca,Una zona con una biblioteca,no,Ostiense,Scontata,1,Biblioteca Joyce Lussu / Moby Dick - Biblioteca e Hub Culturale / TiConZeroLibri
-biblioteca,Una zona con una biblioteca,no,Parioli,Scontata,1,Aula studio Mattia Nicholas Liguori / Biblioteca sportiva nazionale
-biblioteca,Una zona con una biblioteca,no,Testaccio,Scontata,1,"Aula studio La Pelanda / Biblioteca Enzo Tortora / Biblioteca di Area delle Arti - Sezione Architettura ""Enrico Mattiello"""
-biblioteca,Una zona con una biblioteca,no,Trastevere,Scontata,1,Academia de España / Biblioteca dell'Accademia Nazionale dei Lincei e Corsiniana / Cinema Troisi Aula Studio / ...
-biblioteca,Una zona con una biblioteca,no,Aurelio,Nota,2,Aula Studio Casa del Popolo / Biblioteca Cornelia / Biblioteca Valle Aurelia / ...
-biblioteca,Una zona con una biblioteca,no,Borgo,Nota,2,Archivum Generale Augustinianum / Biblioteca Augustinianum
-biblioteca,Una zona con una biblioteca,no,Campo Marzio,Nota,2,Bibliotheca Hertziana
-biblioteca,Una zona con una biblioteca,no,Celio,Nota,2,Biblioteca della Società geografica italiana
-biblioteca,Una zona con una biblioteca,no,Monte Sacro,Nota,2,Biblioteca Ennio Flaiano
-biblioteca,Una zona con una biblioteca,no,Nomentano,Nota,2,"Biblioteca Interdipartimentale di Fisiopatologia cardiocircolatoria, Anestesiologia e Chirurgia generale ""Paride Stefanini"" / Biblioteca Interdipartimentale di Medicina sperimentale e medicina molecolare - sede Storia della Medicina / Biblioteca del Dipartimento Materno infantile e scienze urologiche (Sede principale Pediatria) / ..."
-biblioteca,Una zona con una biblioteca,no,Primavalle,Nota,2,Biblioteca Franco Basaglia
-biblioteca,Una zona con una biblioteca,no,Tiburtino,Nota,2,"Biblioteca Angelo Monteverdi per gli studi filologici, linguistici e letterari (BAM) / Biblioteca Interdipartimentale Giordano Giacomello di Scienze chimico-farmaceutiche fisiologiche e farmacologiche / Biblioteca Interdipartimentale di Medicina sperimentale e medicina molecolare - sede Storia della Medicina / ..."
-biblioteca,Una zona con una biblioteca,no,Trevi,Nota,2,Biblioteca di Archeologia e Storia dell'Arte
-biblioteca,Una zona con una biblioteca,no,Trieste,Nota,2,Biblioteca LUISS / Biblioteca Villa Leopardi / Fondazione Gramsci Onlus
-biblioteca,Una zona con una biblioteca,no,Trionfale,Nota,2,Aula Studio Casa del Popolo / Aula studio Trionfale / Biblioteca Giordano Bruno / ...
-biblioteca,Una zona con una biblioteca,no,Tuscolano,Nota,2,Biblioteca Nelson Mandela / FBM Fondazione Bertugno-Moulinier
-biblioteca,Una zona con una biblioteca,no,Ardeatino,Da romano,3,Biblioteca Don Andrea Gallo / Biblioteca Fabrizio Giucca
-biblioteca,Una zona con una biblioteca,no,Castro Pretorio,Da romano,3,Biblioteca Nazionale Centrale di Roma / Biblioteca medica statale
-biblioteca,Una zona con una biblioteca,no,Della Vittoria,Da romano,3,Biblioteca Antonino De Stefano / Biblioteca del Ministero degli affari esteri / Fondo Andrea Camilleri
-biblioteca,Una zona con una biblioteca,no,Gianicolense,Da romano,3,Biblioteca Renato Nicolini / Historische Bibliothek
-biblioteca,Una zona con una biblioteca,no,Pietralata,Da romano,3,Giunti al Punto
-biblioteca,Una zona con una biblioteca,no,Ponte Mammolo,Da romano,3,Biblioteca Fabrizio Giovenale / Nomentana Libri
-biblioteca,Una zona con una biblioteca,no,Portuense,Da romano,3,Biblioteca Guglielmo Marconi / Biblopoint Cardarelli
-biblioteca,Una zona con una biblioteca,no,Prenestino-Labicano,Da romano,3,Aula studio Torpignattara / Biblioteca Anarchica L'IDEA / Biblioteca Goffredo Mameli / ...
-biblioteca,Una zona con una biblioteca,no,Salario,Da romano,3,Aula studio MACRO / Biblioteca Europea
-biblioteca,Una zona con una biblioteca,no,San Basilio,Da romano,3,Centro culturale Aldo Fabrizi
-biblioteca,Una zona con una biblioteca,no,Alessandrino,Da tassinaro,5,Biblioteca Gianni Rodari / Biblioteca Quarticciolo
-biblioteca,Una zona con una biblioteca,no,Collatino,Da tassinaro,5,Biblioteca Penazzato / Biblioteca Vaccheria Nardi
-biblioteca,Una zona con una biblioteca,no,Colonna,Da tassinaro,5,Anglo American Bookshop / Biblioteca della Camera dei deputati
-biblioteca,Una zona con una biblioteca,no,Don Bosco,Da tassinaro,5,Biblioteca Livio Maitan / Biblioteca Rugantino
-biblioteca,Una zona con una biblioteca,no,Monte Sacro Alto,Da tassinaro,5,Nomentana Libri
-biblioteca,Una zona con una biblioteca,no,Parione,Da tassinaro,5,Biblioteca Vallicelliana / Casa delle Letterature
-biblioteca,Una zona con una biblioteca,no,Pinciano,Da tassinaro,5,Biblioteca Facoltà di Architettura - Università Sapienza / Biblioteca Flaminia / Biblioteca Quaroni / ...
-biblioteca,Una zona con una biblioteca,no,Ponte,Da tassinaro,5,Casa delle Letterature
-biblioteca,Una zona con una biblioteca,no,Regola,Da tassinaro,5,Biblioteca Centrale Ragazzi / Biblioteca della Pontificia Università della Santa Croce / Bibliothèque de l'École française de Rome
-biblioteca,Una zona con una biblioteca,no,Sant'Angelo,Da tassinaro,5,Biblioteca dell'Istituto dell'Enciclopedia Italiana / Biblioteca di storia moderna e contemporanea
-biblioteca,Una zona con una biblioteca,no,Torre Maura,Da tassinaro,5,Biblioteca Casa dei Bimbi / Biblioteca Raffaello
-biblioteca,Una zona con una biblioteca,no,Val Melaina,Da tassinaro,5,Biblioteca Don Bosco
-biblioteca,Una zona con una biblioteca,no,Casal Boccone,Da sampietrino,8,Centro Genealogico FamilySearch
-biblioteca,Una zona con una biblioteca,no,Fonte Ostiense,Da sampietrino,8,Biblioteca ISPRA / Biblioteca Laurentina
-biblioteca,Una zona con una biblioteca,no,Grottarossa,Da sampietrino,8,Biblioteca della Facoltà di Medicina e psicologia Ernesto Valentini - sede Medicina ospedale S. Andrea
-biblioteca,Una zona con una biblioteca,no,Pigna,Da sampietrino,8,Biblioteca Casanatense / Biblioteca del Senato Giovanni Spadolini - Palazzo della Minerva / Biblioteca della Camera dei deputati
-biblioteca,Una zona con una biblioteca,no,Ripa,Da sampietrino,8,Biblioteca del Centro di studi per la storia dell'architettura / Biblioteca dell'Ufficio di Statistica
-biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da sampietrino,8,"Bibilioteca Lelio Basso / Biblioteca Angelica / Biblioteca Magistrale Laziale ""Giorgio Gabrielli"" / ..."
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campo Marzio,Scontata,1,Terrazza del Pincio
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trastevere,Scontata,1,Gianicolo / Piazza di San Pietro in Montorio
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campitelli,Nota,2,Terrazza sul Foro / Terrazza Caffarelli
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trevi,Nota,2,Piazza del Quirinale
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Della Vittoria,Da romano,3,Zodiaco / Villa Mazzanti
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Ripa,Da romano,3,Giardino degli Aranci
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Gianicolense,Da tassinaro,5,Fortino della Madonnina
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Monti,Da tassinaro,5,Villa Aldobrandini
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Pinciano,Da tassinaro,5,Villa Balestra
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trionfale,Da tassinaro,5,Monte Ciocci / Piazzale Socrate
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Aurelio,Da sampietrino,8,Belvedere di via Piccolomini
-cupola,Una zona da cui si vede il Cupolone,si,Trastevere,Scontata,1,Gianicolo
-cupola,Una zona da cui si vede il Cupolone,si,Ripa,Nota,2,Buco della serratura dei Cavalieri di Malta / Giardino degli Aranci
-cupola,Una zona da cui si vede il Cupolone,si,Della Vittoria,Da romano,3,Zodiaco
-cupola,Una zona da cui si vede il Cupolone,si,Trevi,Da romano,3,Piazza del Quirinale
-cupola,Una zona da cui si vede il Cupolone,si,Gianicolense,Da tassinaro,5,Villa Doria Pamphilj
-cupola,Una zona da cui si vede il Cupolone,si,Pinciano,Da tassinaro,5,Villa Balestra
-cupola,Una zona da cui si vede il Cupolone,si,Trionfale,Da tassinaro,5,Monte Ciocci / Piazzale Socrate
-cupola,Una zona da cui si vede il Cupolone,si,Aurelio,Da sampietrino,8,Belvedere di via Piccolomini / Passeggiata del Gelsomino
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Ripa,Nota,2,Buco della serratura
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Da romano,3,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Da tassinaro,5,Refettorio di Andrea Pozzo a Trinità dei Monti / Effetto acustico di piazza del Popolo
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aurelio,Da sampietrino,8,Cupola che si rimpicciolisce in via Piccolomini
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Da sampietrino,8,Galleria prospettica di Palazzo Spada
-misteri,Una zona con una leggenda nera o un mistero,si,Ripa,Scontata,1,Bocca della Verità
-misteri,Una zona con una leggenda nera o un mistero,si,Campitelli,Nota,2,Rupe Tarpea
-misteri,Una zona con una leggenda nera o un mistero,si,Esquilino,Da romano,3,Porta Magica
-misteri,Una zona con una leggenda nera o un mistero,si,Appio-Latino,Da tassinaro,5,Impronte di Gesù al Domine Quo Vadis
-misteri,Una zona con una leggenda nera o un mistero,si,Ardeatino,Da tassinaro,5,Impronte di Gesù al Domine Quo Vadis
-misteri,Una zona con una leggenda nera o un mistero,si,Campo Marzio,Da tassinaro,5,"Casa dei Mostri, Palazzo Zuccari"
-misteri,Una zona con una leggenda nera o un mistero,si,Trastevere,Da tassinaro,5,Crocifissioni di San Pietro in Montorio
-misteri,Una zona con una leggenda nera o un mistero,si,Celio,Da sampietrino,8,Mano dell'operaio sotto l'obelisco di Villa Celimontana
-misteri,Una zona con una leggenda nera o un mistero,si,Parione,Da sampietrino,8,Oste decapitato e mano di Palazzo Tuccimei / Madonna del Latte del Passetto del Biscione
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Ardeatino,Scontata,1,Catacombe di San Callisto / Catacombe di San Sebastiano / Catacombe di Commodilla
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Ludovisi,Nota,2,Cripta dei Cappuccini
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Testaccio,Nota,2,Cimitero acattolico
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Tiburtino,Da romano,3,Verano
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Trieste,Da romano,3,Catacombe di Priscilla / Catacombe di Sant'Agnese
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Appio-Latino,Da tassinaro,5,Catacombe di Pretestato
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Gianicolense,Da sampietrino,8,Catacombe di San Pancrazio
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Nomentano,Da sampietrino,8,Catacombe ebraiche di Villa Torlonia
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Portuense,Da sampietrino,8,Catacombe di Generosa
-ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Prenestino-Labicano,Da sampietrino,8,Catacombe dei Santi Marcellino e Pietro
-bernini,Una zona con un capolavoro di Bernini,si,Parione,Scontata,1,Fontana dei Quattro Fiumi
-bernini,Una zona con un capolavoro di Bernini,si,Borgo,Nota,2,Angeli di Ponte Sant'Angelo
-bernini,Una zona con un capolavoro di Bernini,si,Pinciano,Nota,2,Galleria Borghese
-bernini,Una zona con un capolavoro di Bernini,si,Ponte,Nota,2,Angeli di Ponte Sant'Angelo
-bernini,Una zona con un capolavoro di Bernini,si,Trevi,Nota,2,Fontana del Tritone
-bernini,Una zona con un capolavoro di Bernini,si,Campo Marzio,Da romano,3,Santa Maria del Popolo
-bernini,Una zona con un capolavoro di Bernini,si,Pigna,Da romano,3,Elefantino della Minerva
-bernini,Una zona con un capolavoro di Bernini,si,Sallustiano,Da romano,3,Estasi di Santa Teresa
-bernini,Una zona con un capolavoro di Bernini,si,Ludovisi,Da tassinaro,5,Fontana delle Api
-bernini,Una zona con un capolavoro di Bernini,si,Monti,Da tassinaro,5,Sant'Andrea al Quirinale
-bernini,Una zona con un capolavoro di Bernini,si,Colonna,Da sampietrino,8,Palazzo di Montecitorio
-bernini,Una zona con un capolavoro di Bernini,si,Trastevere,Da sampietrino,8,Beata Ludovica Albertoni a San Francesco a Ripa
-borromini,Una zona con un'opera di Borromini,si,Parione,Nota,2,Sant'Agnese in Agone / Oratorio dei Filippini
-borromini,Una zona con un'opera di Borromini,si,Monti,Da romano,3,San Carlo alle Quattro Fontane / Navata di San Giovanni in Laterano
-borromini,Una zona con un'opera di Borromini,si,Sant'Eustachio,Da romano,3,Sant'Ivo alla Sapienza
-borromini,Una zona con un'opera di Borromini,si,Trevi,Da romano,3,San Carlo alle Quattro Fontane
-borromini,Una zona con un'opera di Borromini,si,Colonna,Da tassinaro,5,Sant'Andrea delle Fratte
-borromini,Una zona con un'opera di Borromini,si,Campo Marzio,Da sampietrino,8,Palazzo di Propaganda Fide
-borromini,Una zona con un'opera di Borromini,si,Regola,Da sampietrino,8,Prospettiva di Palazzo Spada
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Sant'Eustachio,Scontata,1,San Luigi dei Francesi / Sant'Agostino
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campo Marzio,Nota,2,Santa Maria del Popolo
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pinciano,Nota,2,Galleria Borghese
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trevi,Da romano,3,Palazzo Barberini
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campitelli,Da tassinaro,5,Musei Capitolini
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pigna,Da tassinaro,5,Galleria Doria Pamphilj
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ludovisi,Da sampietrino,8,Casino dell'Aurora (soffitto)
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trastevere,Da sampietrino,8,Galleria Corsini
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigna,Scontata,1,Area sacra di Largo Argentina
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Monti,Nota,2,Domus Aurea
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ostiense,Nota,2,Piramide Cestia
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Testaccio,Nota,2,Monte dei Cocci / Piramide Cestia
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Parione,Da romano,3,Stadio di Domiziano
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Celio,Da tassinaro,5,Case romane del Celio
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trevi,Da tassinaro,5,Città dell'acqua (Vicus Caprarius)
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Esquilino,Da sampietrino,8,Ipogeo degli Aureli
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ripa,Da sampietrino,8,Mitreo del Circo Massimo
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Sant'Angelo,Da sampietrino,8,Crypta Balbi
-street-art,Una zona famosa per i murales,si,Ostiense,Nota,2,Via del Porto Fluviale
-street-art,Una zona famosa per i murales,si,Prenestino-Labicano,Nota,2,Pigneto e i murales per Pasolini
-street-art,Una zona famosa per i murales,si,Ardeatino,Da romano,3,Museo condominiale di Tor Marancia
-street-art,Una zona famosa per i murales,si,Tiburtino,Da romano,3,San Lorenzo
-street-art,Una zona famosa per i murales,si,Portuense,Da tassinaro,5,"Trullo, murales e Poeti der Trullo"
-street-art,Una zona famosa per i murales,si,Tuscolano,Da tassinaro,5,"Quadraro, il M.U.Ro."
-novecento,Una zona con un gioiello del Novecento,si,E.U.R.,Scontata,1,Laghetto e quartiere dell'Eur
-novecento,Una zona con un gioiello del Novecento,si,Ostiense,Nota,2,Gazometro / Fontana della Carlotta alla Garbatella
-novecento,Una zona con un gioiello del Novecento,si,Trieste,Nota,2,Quartiere Coppedè
-novecento,Una zona con un gioiello del Novecento,si,Nomentano,Da tassinaro,5,Casina delle Civette
-novecento,Una zona con un gioiello del Novecento,si,Ardeatino,Da sampietrino,8,Case popolari di Tor Marancia
-novecento,Una zona con un gioiello del Novecento,si,Portuense,Da sampietrino,8,Borgata razionalista del Trullo
-estero,Una zona dove c'è un pezzetto di estero,si,Campo Marzio,Nota,2,"Trinità dei Monti, chiesa dei francesi"
-estero,Una zona dove c'è un pezzetto di estero,si,Sant'Eustachio,Nota,2,San Luigi dei Francesi
-estero,Una zona dove c'è un pezzetto di estero,si,Ripa,Da romano,3,Priorato dei Cavalieri di Malta
-estero,Una zona dove c'è un pezzetto di estero,si,Testaccio,Da romano,3,Cimitero degli inglesi
-estero,Una zona dove c'è un pezzetto di estero,si,E.U.R.,Da tassinaro,5,Ciliegi giapponesi del laghetto
-estero,Una zona dove c'è un pezzetto di estero,si,Monti,Da sampietrino,8,"Santo Stefano Rotondo, chiesa degli ungheresi"
-scalinate,Una zona con una scalinata da fiato corto,si,Campo Marzio,Scontata,1,Scalinata di Trinità dei Monti
-scalinate,Una zona con una scalinata da fiato corto,si,Campitelli,Nota,2,Cordonata e scalinata dell'Aracoeli
-scalinate,Una zona con una scalinata da fiato corto,si,Monti,Da romano,3,Scala Santa
-scalinate,Una zona con una scalinata da fiato corto,si,Trastevere,Da tassinaro,5,Scalea del Tamburino
-scalinate,Una zona con una scalinata da fiato corto,si,Gianicolense,Da sampietrino,8,Scala del Righetto al Fortino della Madonnina
-scalinate,Una zona con una scalinata da fiato corto,si,Ostiense,Da sampietrino,8,Scalinata della Carlotta
-orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Trastevere,Nota,2,Cannone del mezzogiorno al Gianicolo
-orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Campo Marzio,Da tassinaro,5,Orologio ad acqua del Pincio / Meridiana nel chiostro di Trinità dei Monti
-orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Castro Pretorio,Da tassinaro,5,Meridiana di Santa Maria degli Angeli
-orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Della Vittoria,Da sampietrino,8,Torre del Primo Meridiano d'Italia
-orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Pigna,Da sampietrino,8,Orologio di via del Gesù
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Gianicolense,Scontata,1,Villa Doria Pamphilj
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Pinciano,Scontata,1,Villa Borghese
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Appio Claudio,Nota,2,Parco degli Acquedotti
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,E.U.R.,Nota,2,Laghetto dell'Eur
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Nomentano,Nota,2,Villa Torlonia
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Parioli,Nota,2,Villa Ada
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Appio-Latino,Da romano,3,Parco della Caffarella
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Celio,Da romano,3,Villa Celimontana
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Monti,Da romano,3,Parco del Colle Oppio
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Trastevere,Da romano,3,Orto Botanico
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Della Vittoria,Da tassinaro,5,Riserva di Monte Mario
-ville-themino,Una zona con una villa o un parco del libro di Themino,si,Tor di Quinto,Da sampietrino,8,Parco di Tor di Quinto (laghetto a forma di cuore)
+confina-alessandrino,Una zona che confina con Alessandrino,si,Prenestino-Centocelle,Da cartolina,1,
+confina-alessandrino,Una zona che confina con Alessandrino,si,Don Bosco,Da romano de Roma,3,
+confina-alessandrino,Una zona che confina con Alessandrino,si,Tor Sapienza,Da romano de Roma,3,
+confina-alessandrino,Una zona che confina con Alessandrino,si,Torre Spaccata,Da Mino,8,
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Tuscolano,Da cartolina,1,
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Capannelle,Da romano de Roma,3,
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Don Bosco,Da romano de Roma,3,
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Appio-Pignatelli,Chicca,5,
+confina-appio-claudio,Una zona che confina con Appio Claudio,si,Torricola,Da Mino,8,
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Monti,Da cartolina,1,
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Tuscolano,Ce sta,2,
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Celio,Da romano de Roma,3,
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Ardeatino,Chicca,5,
+confina-appio-latino,Una zona che confina con Appio-Latino,si,Appio-Pignatelli,Da Mino,8,
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Tuscolano,Da cartolina,1,
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Appio-Latino,Ce sta,2,
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Ardeatino,Da romano de Roma,3,
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Appio Claudio,Chicca,5,
+confina-appio-pignatelli,Una zona che confina con Appio-Pignatelli,si,Torricola,Da Mino,8,
+confina-ardeatino,Una zona che confina con Ardeatino,si,E.U.R.,Da cartolina,1,
+confina-ardeatino,Una zona che confina con Ardeatino,si,Appio-Latino,Ce sta,2,
+confina-ardeatino,Una zona che confina con Ardeatino,si,Ostiense,Ce sta,2,
+confina-ardeatino,Una zona che confina con Ardeatino,si,Cecchignola,Da romano de Roma,3,
+confina-ardeatino,Una zona che confina con Ardeatino,si,San Saba,Da romano de Roma,3,
+confina-ardeatino,Una zona che confina con Ardeatino,si,Appio-Pignatelli,Chicca,5,
+confina-ardeatino,Una zona che confina con Ardeatino,si,Giuliano-Dalmata,Chicca,5,
+confina-ardeatino,Una zona che confina con Ardeatino,si,Torricola,Da Mino,8,
+confina-aurelio,Una zona che confina con Aurelio,si,Trastevere,Da cartolina,1,
+confina-aurelio,Una zona che confina con Aurelio,si,Borgo,Ce sta,2,
+confina-aurelio,Una zona che confina con Aurelio,si,Primavalle,Da romano de Roma,3,
+confina-aurelio,Una zona che confina con Aurelio,si,Trionfale,Chicca,5,
+confina-aurelio,Una zona che confina con Aurelio,si,Gianicolense,Da Mino,8,
+confina-borgo,Una zona che confina con Borgo,si,Trastevere,Da cartolina,1,
+confina-borgo,Una zona che confina con Borgo,si,Prati,Ce sta,2,
+confina-borgo,Una zona che confina con Borgo,si,Aurelio,Chicca,5,
+confina-borgo,Una zona che confina con Borgo,si,Ponte,Da Mino,8,
+confina-campitelli,Una zona che confina con Campitelli,si,Monti,Da cartolina,1,
+confina-campitelli,Una zona che confina con Campitelli,si,Trevi,Ce sta,2,
+confina-campitelli,Una zona che confina con Campitelli,si,Celio,Da romano de Roma,3,
+confina-campitelli,Una zona che confina con Campitelli,si,Sant'Angelo,Da romano de Roma,3,
+confina-campitelli,Una zona che confina con Campitelli,si,Pigna,Da Mino,8,
+confina-campitelli,Una zona che confina con Campitelli,si,Ripa,Da Mino,8,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Prati,Da cartolina,1,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Flaminio,Ce sta,2,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Ludovisi,Ce sta,2,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Colonna,Da romano de Roma,3,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Pinciano,Da romano de Roma,3,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Ponte,Chicca,5,
+confina-campo-marzio,Una zona che confina con Campo Marzio,si,Sant'Eustachio,Da Mino,8,
+confina-capannelle,Una zona che confina con Capannelle,no,Torre Maura,Da cartolina,1,
+confina-capannelle,Una zona che confina con Capannelle,no,Appio Claudio,Da romano de Roma,3,
+confina-capannelle,Una zona che confina con Capannelle,no,Torricola,Da Mino,8,
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Monte Sacro,Da cartolina,1,
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,San Basilio,Ce sta,2,
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Val Melaina,Da romano de Roma,3,
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Castel Giubileo,Da Mino,8,
+confina-casal-boccone,Una zona che confina con Casal Boccone,si,Monte Sacro Alto,Da Mino,8,
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,no,Val Melaina,Da cartolina,1,
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,no,Grottarossa,Da romano de Roma,3,
+confina-castel-giubileo,Una zona che confina con Castel Giubileo,no,Casal Boccone,Da Mino,8,
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Monti,Da cartolina,1,
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Esquilino,Ce sta,2,
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Nomentano,Da romano de Roma,3,
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Trevi,Da romano de Roma,3,
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Tiburtino,Chicca,5,
+confina-castro-pretorio,Una zona che confina con Castro Pretorio,si,Sallustiano,Da Mino,8,
+confina-cecchignola,Una zona che confina con Cecchignola,no,Ardeatino,Da cartolina,1,
+confina-cecchignola,Una zona che confina con Cecchignola,no,Giuliano-Dalmata,Da romano de Roma,3,
+confina-cecchignola,Una zona che confina con Cecchignola,no,Torricola,Da Mino,8,
+confina-celio,Una zona che confina con Celio,si,Monti,Da cartolina,1,
+confina-celio,Una zona che confina con Celio,si,Appio-Latino,Ce sta,2,
+confina-celio,Una zona che confina con Celio,si,Campitelli,Chicca,5,
+confina-celio,Una zona che confina con Celio,si,San Saba,Chicca,5,
+confina-collatino,Una zona che confina con Collatino,si,Prenestino-Centocelle,Da cartolina,1,
+confina-collatino,Una zona che confina con Collatino,si,Tiburtino,Ce sta,2,
+confina-collatino,Una zona che confina con Collatino,si,Pietralata,Da romano de Roma,3,
+confina-collatino,Una zona che confina con Collatino,si,Prenestino-Labicano,Da romano de Roma,3,
+confina-collatino,Una zona che confina con Collatino,si,Tor Sapienza,Chicca,5,
+confina-collatino,Una zona che confina con Collatino,si,Tor Cervara,Da Mino,8,
+confina-colonna,Una zona che confina con Colonna,si,Campo Marzio,Da cartolina,1,
+confina-colonna,Una zona che confina con Colonna,si,Trevi,Da cartolina,1,
+confina-colonna,Una zona che confina con Colonna,si,Ludovisi,Da romano de Roma,3,
+confina-colonna,Una zona che confina con Colonna,si,Pigna,Da Mino,8,
+confina-colonna,Una zona che confina con Colonna,si,Sant'Eustachio,Da Mino,8,
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Prati,Da cartolina,1,
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Flaminio,Ce sta,2,
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Primavalle,Da romano de Roma,3,
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Trionfale,Da romano de Roma,3,
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Tor di Quinto,Chicca,5,
+confina-della-vittoria,Una zona che confina con Della Vittoria,si,Tomba di Nerone,Da Mino,8,
+confina-don-bosco,Una zona che confina con Don Bosco,si,Tuscolano,Da cartolina,1,
+confina-don-bosco,Una zona che confina con Don Bosco,si,Prenestino-Centocelle,Ce sta,2,
+confina-don-bosco,Una zona che confina con Don Bosco,si,Prenestino-Labicano,Da romano de Roma,3,
+confina-don-bosco,Una zona che confina con Don Bosco,si,Alessandrino,Chicca,5,
+confina-don-bosco,Una zona che confina con Don Bosco,si,Torre Maura,Chicca,5,
+confina-don-bosco,Una zona che confina con Don Bosco,si,Appio Claudio,Da Mino,8,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Ostiense,Da cartolina,1,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Ardeatino,Ce sta,2,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Portuense,Ce sta,2,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Torrino,Da romano de Roma,3,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Giuliano-Dalmata,Chicca,5,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Tor di Valle,Chicca,5,
+confina-e-u-r,Una zona che confina con E.U.R.,si,Fonte Ostiense,Da Mino,8,
+confina-esquilino,Una zona che confina con Esquilino,si,Monti,Da cartolina,1,
+confina-esquilino,Una zona che confina con Esquilino,si,Tuscolano,Ce sta,2,
+confina-esquilino,Una zona che confina con Esquilino,si,Tiburtino,Da romano de Roma,3,
+confina-esquilino,Una zona che confina con Esquilino,si,Castro Pretorio,Da Mino,8,
+confina-esquilino,Una zona che confina con Esquilino,si,Prenestino-Labicano,Da Mino,8,
+confina-flaminio,Una zona che confina con Flaminio,si,Prati,Da cartolina,1,
+confina-flaminio,Una zona che confina con Flaminio,si,Parioli,Ce sta,2,
+confina-flaminio,Una zona che confina con Flaminio,si,Campo Marzio,Da romano de Roma,3,
+confina-flaminio,Una zona che confina con Flaminio,si,Della Vittoria,Chicca,5,
+confina-flaminio,Una zona che confina con Flaminio,si,Pinciano,Da Mino,8,
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,no,E.U.R.,Da cartolina,1,
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,no,Torrino,Da romano de Roma,3,
+confina-fonte-ostiense,Una zona che confina con Fonte Ostiense,no,Giuliano-Dalmata,Da Mino,8,
+confina-gianicolense,Una zona che confina con Gianicolense,si,Trastevere,Da cartolina,1,
+confina-gianicolense,Una zona che confina con Gianicolense,si,Aurelio,Ce sta,2,
+confina-gianicolense,Una zona che confina con Gianicolense,si,Magliana Vecchia,Da romano de Roma,3,
+confina-gianicolense,Una zona che confina con Gianicolense,si,Portuense,Da romano de Roma,3,
+confina-gianicolense,Una zona che confina con Gianicolense,si,La Pisana,Da Mino,8,
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,E.U.R.,Da cartolina,1,
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Ardeatino,Da romano de Roma,3,
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Cecchignola,Da romano de Roma,3,
+confina-giuliano-dalmata,Una zona che confina con Giuliano-Dalmata,si,Fonte Ostiense,Da Mino,8,
+confina-grottarossa,Una zona che confina con Grottarossa,si,Tor di Quinto,Da cartolina,1,
+confina-grottarossa,Una zona che confina con Grottarossa,si,Val Melaina,Ce sta,2,
+confina-grottarossa,Una zona che confina con Grottarossa,si,Castel Giubileo,Chicca,5,
+confina-grottarossa,Una zona che confina con Grottarossa,si,Tomba di Nerone,Da Mino,8,
+confina-la-pisana,Una zona che confina con La Pisana,no,Magliana Vecchia,Da cartolina,1,
+confina-la-pisana,Una zona che confina con La Pisana,no,Gianicolense,Da Mino,8,
+confina-ludovisi,Una zona che confina con Ludovisi,si,Campo Marzio,Da cartolina,1,
+confina-ludovisi,Una zona che confina con Ludovisi,si,Trevi,Da cartolina,1,
+confina-ludovisi,Una zona che confina con Ludovisi,si,Colonna,Da romano de Roma,3,
+confina-ludovisi,Una zona che confina con Ludovisi,si,Pinciano,Da romano de Roma,3,
+confina-ludovisi,Una zona che confina con Ludovisi,si,Sallustiano,Da Mino,8,
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Portuense,Da cartolina,1,
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Gianicolense,Ce sta,2,
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,La Pisana,Chicca,5,
+confina-magliana-vecchia,Una zona che confina con Magliana Vecchia,si,Tor di Valle,Chicca,5,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Trieste,Da cartolina,1,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Nomentano,Ce sta,2,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Pietralata,Ce sta,2,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Ponte Mammolo,Da romano de Roma,3,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Monte Sacro Alto,Chicca,5,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Val Melaina,Chicca,5,
+confina-monte-sacro,Una zona che confina con Monte Sacro,si,Casal Boccone,Da Mino,8,
+confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Monte Sacro,Da cartolina,1,
+confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Ponte Mammolo,Da romano de Roma,3,
+confina-monte-sacro-alto,Una zona che confina con Monte Sacro Alto,no,Casal Boccone,Da Mino,8,
+confina-monti,Una zona che confina con Monti,si,Esquilino,Da cartolina,1,
+confina-monti,Una zona che confina con Monti,si,Trevi,Ce sta,2,
+confina-monti,Una zona che confina con Monti,si,Appio-Latino,Da romano de Roma,3,
+confina-monti,Una zona che confina con Monti,si,Celio,Da romano de Roma,3,
+confina-monti,Una zona che confina con Monti,si,Castro Pretorio,Chicca,5,
+confina-monti,Una zona che confina con Monti,si,Campitelli,Da Mino,8,
+confina-nomentano,Una zona che confina con Nomentano,si,Trieste,Da cartolina,1,
+confina-nomentano,Una zona che confina con Nomentano,si,Monte Sacro,Ce sta,2,
+confina-nomentano,Una zona che confina con Nomentano,si,Tiburtino,Da romano de Roma,3,
+confina-nomentano,Una zona che confina con Nomentano,si,Castro Pretorio,Chicca,5,
+confina-nomentano,Una zona che confina con Nomentano,si,Pietralata,Chicca,5,
+confina-nomentano,Una zona che confina con Nomentano,si,Salario,Chicca,5,
+confina-ostiense,Una zona che confina con Ostiense,si,E.U.R.,Da cartolina,1,
+confina-ostiense,Una zona che confina con Ostiense,si,Testaccio,Ce sta,2,
+confina-ostiense,Una zona che confina con Ostiense,si,Portuense,Da romano de Roma,3,
+confina-ostiense,Una zona che confina con Ostiense,si,Ardeatino,Chicca,5,
+confina-ostiense,Una zona che confina con Ostiense,si,San Saba,Da Mino,8,
+confina-ottavia,Una zona che confina con Ottavia,no,Trionfale,Da cartolina,1,
+confina-ottavia,Una zona che confina con Ottavia,no,Tomba di Nerone,Da Mino,8,
+confina-parioli,Una zona che confina con Parioli,si,Flaminio,Da cartolina,1,
+confina-parioli,Una zona che confina con Parioli,si,Trieste,Ce sta,2,
+confina-parioli,Una zona che confina con Parioli,si,Pinciano,Da romano de Roma,3,
+confina-parioli,Una zona che confina con Parioli,si,Tor di Quinto,Da romano de Roma,3,
+confina-parioli,Una zona che confina con Parioli,si,Val Melaina,Da Mino,8,
+confina-parione,Una zona che confina con Parione,no,Ponte,Da cartolina,1,
+confina-parione,Una zona che confina con Parione,no,Regola,Da romano de Roma,3,
+confina-parione,Una zona che confina con Parione,no,Sant'Eustachio,Da Mino,8,
+confina-pietralata,Una zona che confina con Pietralata,si,Monte Sacro,Da cartolina,1,
+confina-pietralata,Una zona che confina con Pietralata,si,Nomentano,Ce sta,2,
+confina-pietralata,Una zona che confina con Pietralata,si,Ponte Mammolo,Da romano de Roma,3,
+confina-pietralata,Una zona che confina con Pietralata,si,Tiburtino,Da romano de Roma,3,
+confina-pietralata,Una zona che confina con Pietralata,si,Collatino,Chicca,5,
+confina-pietralata,Una zona che confina con Pietralata,si,Tor Cervara,Da Mino,8,
+confina-pigna,Una zona che confina con Pigna,si,Trevi,Da cartolina,1,
+confina-pigna,Una zona che confina con Pigna,si,Colonna,Ce sta,2,
+confina-pigna,Una zona che confina con Pigna,si,Campitelli,Da romano de Roma,3,
+confina-pigna,Una zona che confina con Pigna,si,Sant'Angelo,Da romano de Roma,3,
+confina-pigna,Una zona che confina con Pigna,si,Sant'Eustachio,Da Mino,8,
+confina-pinciano,Una zona che confina con Pinciano,si,Parioli,Da cartolina,1,
+confina-pinciano,Una zona che confina con Pinciano,si,Flaminio,Ce sta,2,
+confina-pinciano,Una zona che confina con Pinciano,si,Campo Marzio,Da romano de Roma,3,
+confina-pinciano,Una zona che confina con Pinciano,si,Salario,Chicca,5,
+confina-pinciano,Una zona che confina con Pinciano,si,Ludovisi,Da Mino,8,
+confina-ponte,Una zona che confina con Ponte,si,Trastevere,Da cartolina,1,
+confina-ponte,Una zona che confina con Ponte,si,Prati,Ce sta,2,
+confina-ponte,Una zona che confina con Ponte,si,Borgo,Da romano de Roma,3,
+confina-ponte,Una zona che confina con Ponte,si,Campo Marzio,Da romano de Roma,3,
+confina-ponte,Una zona che confina con Ponte,si,Parione,Chicca,5,
+confina-ponte,Una zona che confina con Ponte,si,Regola,Chicca,5,
+confina-ponte,Una zona che confina con Ponte,si,Sant'Eustachio,Da Mino,8,
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Monte Sacro,Da cartolina,1,
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Pietralata,Da romano de Roma,3,
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,San Basilio,Da romano de Roma,3,
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Monte Sacro Alto,Chicca,5,
+confina-ponte-mammolo,Una zona che confina con Ponte Mammolo,si,Tor Cervara,Da Mino,8,
+confina-portuense,Una zona che confina con Portuense,si,Trastevere,Da cartolina,1,
+confina-portuense,Una zona che confina con Portuense,si,E.U.R.,Ce sta,2,
+confina-portuense,Una zona che confina con Portuense,si,Testaccio,Ce sta,2,
+confina-portuense,Una zona che confina con Portuense,si,Ostiense,Da romano de Roma,3,
+confina-portuense,Una zona che confina con Portuense,si,Gianicolense,Chicca,5,
+confina-portuense,Una zona che confina con Portuense,si,Magliana Vecchia,Chicca,5,
+confina-portuense,Una zona che confina con Portuense,si,Tor di Valle,Da Mino,8,
+confina-prati,Una zona che confina con Prati,si,Flaminio,Da cartolina,1,
+confina-prati,Una zona che confina con Prati,si,Borgo,Ce sta,2,
+confina-prati,Una zona che confina con Prati,si,Campo Marzio,Ce sta,2,
+confina-prati,Una zona che confina con Prati,si,Trionfale,Da romano de Roma,3,
+confina-prati,Una zona che confina con Prati,si,Della Vittoria,Chicca,5,
+confina-prati,Una zona che confina con Prati,si,Ponte,Da Mino,8,
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Prenestino-Labicano,Da cartolina,1,
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Alessandrino,Da romano de Roma,3,
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Don Bosco,Da romano de Roma,3,
+confina-prenestino-centocelle,Una zona che confina con Prenestino-Centocelle,si,Collatino,Da Mino,8,
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Esquilino,Da cartolina,1,
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Tuscolano,Ce sta,2,
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Prenestino-Centocelle,Da romano de Roma,3,
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Tiburtino,Da romano de Roma,3,
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Don Bosco,Chicca,5,
+confina-prenestino-labicano,Una zona che confina con Prenestino-Labicano,si,Collatino,Da Mino,8,
+confina-primavalle,Una zona che confina con Primavalle,no,Aurelio,Da cartolina,1,
+confina-primavalle,Una zona che confina con Primavalle,no,Trionfale,Da romano de Roma,3,
+confina-primavalle,Una zona che confina con Primavalle,no,Della Vittoria,Da Mino,8,
+confina-regola,Una zona che confina con Regola,si,Trastevere,Da cartolina,1,
+confina-regola,Una zona che confina con Regola,si,Ponte,Ce sta,2,
+confina-regola,Una zona che confina con Regola,si,Sant'Angelo,Ce sta,2,
+confina-regola,Una zona che confina con Regola,si,Parione,Da romano de Roma,3,
+confina-regola,Una zona che confina con Regola,si,Ripa,Da Mino,8,
+confina-regola,Una zona che confina con Regola,si,Sant'Eustachio,Da Mino,8,
+confina-ripa,Una zona che confina con Ripa,si,Trastevere,Da cartolina,1,
+confina-ripa,Una zona che confina con Ripa,si,Testaccio,Ce sta,2,
+confina-ripa,Una zona che confina con Ripa,si,Campitelli,Da romano de Roma,3,
+confina-ripa,Una zona che confina con Ripa,si,San Saba,Da romano de Roma,3,
+confina-ripa,Una zona che confina con Ripa,si,Sant'Angelo,Da romano de Roma,3,
+confina-ripa,Una zona che confina con Ripa,si,Regola,Da Mino,8,
+confina-salario,Una zona che confina con Salario,si,Trieste,Da cartolina,1,
+confina-salario,Una zona che confina con Salario,si,Nomentano,Ce sta,2,
+confina-salario,Una zona che confina con Salario,si,Pinciano,Chicca,5,
+confina-salario,Una zona che confina con Salario,si,Sallustiano,Da Mino,8,
+confina-sallustiano,Una zona che confina con Sallustiano,si,Trevi,Da cartolina,1,
+confina-sallustiano,Una zona che confina con Sallustiano,si,Castro Pretorio,Da romano de Roma,3,
+confina-sallustiano,Una zona che confina con Sallustiano,si,Salario,Da romano de Roma,3,
+confina-sallustiano,Una zona che confina con Sallustiano,si,Ludovisi,Da Mino,8,
+confina-san-basilio,Una zona che confina con San Basilio,si,Ponte Mammolo,Da cartolina,1,
+confina-san-basilio,Una zona che confina con San Basilio,si,Casal Boccone,Da romano de Roma,3,
+confina-san-basilio,Una zona che confina con San Basilio,si,Tor Cervara,Da romano de Roma,3,
+confina-san-basilio,Una zona che confina con San Basilio,si,Torraccia di San Basilio,Da Mino,8,
+confina-san-saba,Una zona che confina con San Saba,si,Testaccio,Da cartolina,1,
+confina-san-saba,Una zona che confina con San Saba,si,Ostiense,Ce sta,2,
+confina-san-saba,Una zona che confina con San Saba,si,Celio,Da romano de Roma,3,
+confina-san-saba,Una zona che confina con San Saba,si,Ardeatino,Chicca,5,
+confina-san-saba,Una zona che confina con San Saba,si,Ripa,Da Mino,8,
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Campitelli,Da cartolina,1,
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Regola,Ce sta,2,
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Pigna,Chicca,5,
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Ripa,Chicca,5,
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Sant'Eustachio,Chicca,5,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Campo Marzio,Da cartolina,1,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Colonna,Ce sta,2,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Ponte,Da romano de Roma,3,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Sant'Angelo,Da romano de Roma,3,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Parione,Chicca,5,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Regola,Chicca,5,
+confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Pigna,Da Mino,8,
+confina-testaccio,Una zona che confina con Testaccio,si,Ostiense,Da cartolina,1,
+confina-testaccio,Una zona che confina con Testaccio,si,Portuense,Ce sta,2,
+confina-testaccio,Una zona che confina con Testaccio,si,San Saba,Chicca,5,
+confina-testaccio,Una zona che confina con Testaccio,si,Ripa,Da Mino,8,
+confina-tiburtino,Una zona che confina con Tiburtino,si,Esquilino,Da cartolina,1,
+confina-tiburtino,Una zona che confina con Tiburtino,si,Nomentano,Ce sta,2,
+confina-tiburtino,Una zona che confina con Tiburtino,si,Castro Pretorio,Da romano de Roma,3,
+confina-tiburtino,Una zona che confina con Tiburtino,si,Pietralata,Da romano de Roma,3,
+confina-tiburtino,Una zona che confina con Tiburtino,si,Prenestino-Labicano,Da romano de Roma,3,
+confina-tiburtino,Una zona che confina con Tiburtino,si,Collatino,Da Mino,8,
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Trionfale,Da cartolina,1,
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Della Vittoria,Ce sta,2,
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Tor di Quinto,Da romano de Roma,3,
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Ottavia,Chicca,5,
+confina-tomba-di-nerone,Una zona che confina con Tomba di Nerone,si,Grottarossa,Da Mino,8,
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Pietralata,Da cartolina,1,
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,San Basilio,Da cartolina,1,
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Ponte Mammolo,Da romano de Roma,3,
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Tor Sapienza,Chicca,5,
+confina-tor-cervara,Una zona che confina con Tor Cervara,si,Collatino,Da Mino,8,
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Alessandrino,Da cartolina,1,
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Collatino,Da romano de Roma,3,
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Torre Spaccata,Da romano de Roma,3,
+confina-tor-sapienza,Una zona che confina con Tor Sapienza,si,Tor Cervara,Da Mino,8,
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Parioli,Da cartolina,1,
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Della Vittoria,Ce sta,2,
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Val Melaina,Da romano de Roma,3,
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Grottarossa,Da Mino,8,
+confina-tor-di-quinto,Una zona che confina con Tor di Quinto,si,Tomba di Nerone,Da Mino,8,
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,E.U.R.,Da cartolina,1,
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Magliana Vecchia,Da romano de Roma,3,
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Portuense,Da romano de Roma,3,
+confina-tor-di-valle,Una zona che confina con Tor di Valle,si,Torrino,Da Mino,8,
+confina-torraccia-di-san-basilio,Una zona che confina con Torraccia di San Basilio,no,San Basilio,Da romano de Roma,3,
+confina-torre-maura,Una zona che confina con Torre Maura,no,Capannelle,Ce sta,2,
+confina-torre-maura,Una zona che confina con Torre Maura,no,Don Bosco,Ce sta,2,
+confina-torre-maura,Una zona che confina con Torre Maura,no,Torre Spaccata,Da Mino,8,
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,no,Alessandrino,Da romano de Roma,3,
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,no,Tor Sapienza,Da romano de Roma,3,
+confina-torre-spaccata,Una zona che confina con Torre Spaccata,no,Torre Maura,Da romano de Roma,3,
+confina-torricola,Una zona che confina con Torricola,si,Ardeatino,Da cartolina,1,
+confina-torricola,Una zona che confina con Torricola,si,Cecchignola,Da cartolina,1,
+confina-torricola,Una zona che confina con Torricola,si,Capannelle,Da romano de Roma,3,
+confina-torricola,Una zona che confina con Torricola,si,Appio Claudio,Chicca,5,
+confina-torricola,Una zona che confina con Torricola,si,Appio-Pignatelli,Da Mino,8,
+confina-torrino,Una zona che confina con Torrino,no,E.U.R.,Da cartolina,1,
+confina-torrino,Una zona che confina con Torrino,no,Tor di Valle,Da romano de Roma,3,
+confina-torrino,Una zona che confina con Torrino,no,Fonte Ostiense,Da Mino,8,
+confina-trastevere,Una zona che confina con Trastevere,si,Aurelio,Da cartolina,1,
+confina-trastevere,Una zona che confina con Trastevere,si,Borgo,Da cartolina,1,
+confina-trastevere,Una zona che confina con Trastevere,si,Portuense,Ce sta,2,
+confina-trastevere,Una zona che confina con Trastevere,si,Gianicolense,Da romano de Roma,3,
+confina-trastevere,Una zona che confina con Trastevere,si,Ponte,Chicca,5,
+confina-trastevere,Una zona che confina con Trastevere,si,Regola,Chicca,5,
+confina-trastevere,Una zona che confina con Trastevere,si,Ripa,Da Mino,8,
+confina-trevi,Una zona che confina con Trevi,si,Monti,Da cartolina,1,
+confina-trevi,Una zona che confina con Trevi,si,Castro Pretorio,Ce sta,2,
+confina-trevi,Una zona che confina con Trevi,si,Ludovisi,Ce sta,2,
+confina-trevi,Una zona che confina con Trevi,si,Colonna,Da romano de Roma,3,
+confina-trevi,Una zona che confina con Trevi,si,Campitelli,Chicca,5,
+confina-trevi,Una zona che confina con Trevi,si,Pigna,Da Mino,8,
+confina-trevi,Una zona che confina con Trevi,si,Sallustiano,Da Mino,8,
+confina-trieste,Una zona che confina con Trieste,si,Parioli,Da cartolina,1,
+confina-trieste,Una zona che confina con Trieste,si,Monte Sacro,Ce sta,2,
+confina-trieste,Una zona che confina con Trieste,si,Nomentano,Chicca,5,
+confina-trieste,Una zona che confina con Trieste,si,Salario,Da Mino,8,
+confina-trionfale,Una zona che confina con Trionfale,si,Prati,Da cartolina,1,
+confina-trionfale,Una zona che confina con Trionfale,si,Aurelio,Ce sta,2,
+confina-trionfale,Una zona che confina con Trionfale,si,Della Vittoria,Da romano de Roma,3,
+confina-trionfale,Una zona che confina con Trionfale,si,Primavalle,Da romano de Roma,3,
+confina-trionfale,Una zona che confina con Trionfale,si,Ottavia,Chicca,5,
+confina-trionfale,Una zona che confina con Trionfale,si,Tomba di Nerone,Da Mino,8,
+confina-tuscolano,Una zona che confina con Tuscolano,si,Esquilino,Da cartolina,1,
+confina-tuscolano,Una zona che confina con Tuscolano,si,Appio-Latino,Ce sta,2,
+confina-tuscolano,Una zona che confina con Tuscolano,si,Don Bosco,Da romano de Roma,3,
+confina-tuscolano,Una zona che confina con Tuscolano,si,Prenestino-Labicano,Da romano de Roma,3,
+confina-tuscolano,Una zona che confina con Tuscolano,si,Appio Claudio,Chicca,5,
+confina-tuscolano,Una zona che confina con Tuscolano,si,Appio-Pignatelli,Da Mino,8,
+confina-val-melaina,Una zona che confina con Val Melaina,si,Parioli,Da cartolina,1,
+confina-val-melaina,Una zona che confina con Val Melaina,si,Monte Sacro,Ce sta,2,
+confina-val-melaina,Una zona che confina con Val Melaina,si,Castel Giubileo,Da romano de Roma,3,
+confina-val-melaina,Una zona che confina con Val Melaina,si,Tor di Quinto,Da romano de Roma,3,
+confina-val-melaina,Una zona che confina con Val Melaina,si,Grottarossa,Chicca,5,
+confina-val-melaina,Una zona che confina con Val Melaina,si,Casal Boccone,Da Mino,8,
+municipio-1,Una zona del Municipio I,si,Prati,Da cartolina,1,
+municipio-1,Una zona del Municipio I,si,Testaccio,Da cartolina,1,
+municipio-1,Una zona del Municipio I,si,Trastevere,Da cartolina,1,
+municipio-1,Una zona del Municipio I,si,Borgo,Ce sta,2,
+municipio-1,Una zona del Municipio I,si,Campo Marzio,Ce sta,2,
+municipio-1,Una zona del Municipio I,si,Esquilino,Ce sta,2,
+municipio-1,Una zona del Municipio I,si,Monti,Ce sta,2,
+municipio-1,Una zona del Municipio I,si,Trevi,Ce sta,2,
+municipio-1,Una zona del Municipio I,si,Castro Pretorio,Da romano de Roma,3,
+municipio-1,Una zona del Municipio I,si,Celio,Da romano de Roma,3,
+municipio-1,Una zona del Municipio I,si,Colonna,Da romano de Roma,3,
+municipio-1,Una zona del Municipio I,si,Ludovisi,Da romano de Roma,3,
+municipio-1,Una zona del Municipio I,si,Campitelli,Chicca,5,
+municipio-1,Una zona del Municipio I,si,Parione,Chicca,5,
+municipio-1,Una zona del Municipio I,si,Ponte,Chicca,5,
+municipio-1,Una zona del Municipio I,si,Regola,Chicca,5,
+municipio-1,Una zona del Municipio I,si,San Saba,Chicca,5,
+municipio-1,Una zona del Municipio I,si,Sant'Angelo,Chicca,5,
+municipio-1,Una zona del Municipio I,si,Pigna,Da Mino,8,
+municipio-1,Una zona del Municipio I,si,Ripa,Da Mino,8,
+municipio-1,Una zona del Municipio I,si,Sallustiano,Da Mino,8,
+municipio-1,Una zona del Municipio I,si,Sant'Eustachio,Da Mino,8,
+municipio-2,Una zona del Municipio II,si,Parioli,Da cartolina,1,
+municipio-2,Una zona del Municipio II,si,Flaminio,Ce sta,2,
+municipio-2,Una zona del Municipio II,si,Trieste,Ce sta,2,
+municipio-2,Una zona del Municipio II,si,Nomentano,Da romano de Roma,3,
+municipio-2,Una zona del Municipio II,si,Salario,Chicca,5,
+municipio-2,Una zona del Municipio II,si,Tiburtino,Chicca,5,
+municipio-2,Una zona del Municipio II,si,Pinciano,Da Mino,8,
+municipio-3,Una zona del Municipio III,si,Monte Sacro,Da cartolina,1,
+municipio-3,Una zona del Municipio III,si,Val Melaina,Ce sta,2,
+municipio-3,Una zona del Municipio III,si,Castel Giubileo,Da romano de Roma,3,
+municipio-3,Una zona del Municipio III,si,Monte Sacro Alto,Da romano de Roma,3,
+municipio-3,Una zona del Municipio III,si,Casal Boccone,Da Mino,8,
+municipio-4,Una zona del Municipio IV,si,Pietralata,Da cartolina,1,
+municipio-4,Una zona del Municipio IV,si,San Basilio,Da cartolina,1,
+municipio-4,Una zona del Municipio IV,si,Collatino,Da romano de Roma,3,
+municipio-4,Una zona del Municipio IV,si,Ponte Mammolo,Da romano de Roma,3,
+municipio-4,Una zona del Municipio IV,si,Tor Cervara,Chicca,5,
+municipio-4,Una zona del Municipio IV,si,Torraccia di San Basilio,Da Mino,8,
+municipio-5,Una zona del Municipio V,si,Prenestino-Centocelle,Da cartolina,1,
+municipio-5,Una zona del Municipio V,si,Prenestino-Labicano,Ce sta,2,
+municipio-5,Una zona del Municipio V,si,Alessandrino,Da romano de Roma,3,
+municipio-5,Una zona del Municipio V,si,Tor Sapienza,Da romano de Roma,3,
+municipio-5,Una zona del Municipio V,si,Torre Spaccata,Da Mino,8,
+municipio-7,Una zona del Municipio VII,si,Tuscolano,Da cartolina,1,
+municipio-7,Una zona del Municipio VII,si,Appio-Latino,Ce sta,2,
+municipio-7,Una zona del Municipio VII,si,Capannelle,Da romano de Roma,3,
+municipio-7,Una zona del Municipio VII,si,Don Bosco,Da romano de Roma,3,
+municipio-7,Una zona del Municipio VII,si,Torre Maura,Da romano de Roma,3,
+municipio-7,Una zona del Municipio VII,si,Appio Claudio,Da Mino,8,
+municipio-8,Una zona del Municipio VIII,si,Ostiense,Da cartolina,1,
+municipio-8,Una zona del Municipio VIII,si,Ardeatino,Ce sta,2,
+municipio-8,Una zona del Municipio VIII,si,Appio-Pignatelli,Chicca,5,
+municipio-8,Una zona del Municipio VIII,si,Torricola,Da Mino,8,
+municipio-9,Una zona del Municipio IX,si,E.U.R.,Da cartolina,1,
+municipio-9,Una zona del Municipio IX,si,Cecchignola,Ce sta,2,
+municipio-9,Una zona del Municipio IX,si,Tor di Valle,Da romano de Roma,3,
+municipio-9,Una zona del Municipio IX,si,Torrino,Da romano de Roma,3,
+municipio-9,Una zona del Municipio IX,si,Giuliano-Dalmata,Chicca,5,
+municipio-9,Una zona del Municipio IX,si,Fonte Ostiense,Da Mino,8,
+municipio-11,Una zona del Municipio XI,no,Magliana Vecchia,Ce sta,2,
+municipio-11,Una zona del Municipio XI,no,Portuense,Ce sta,2,
+municipio-11,Una zona del Municipio XI,no,La Pisana,Da Mino,8,
+municipio-12,Una zona del Municipio XII,no,Gianicolense,Da romano de Roma,3,
+municipio-13,Una zona del Municipio XIII,no,Aurelio,Da romano de Roma,3,
+municipio-14,Una zona del Municipio XIV,no,Primavalle,Da cartolina,1,
+municipio-14,Una zona del Municipio XIV,no,Trionfale,Da romano de Roma,3,
+municipio-14,Una zona del Municipio XIV,no,Ottavia,Da Mino,8,
+municipio-15,Una zona del Municipio XV,no,Tor di Quinto,Da cartolina,1,
+municipio-15,Una zona del Municipio XV,no,Grottarossa,Chicca,5,
+municipio-15,Una zona del Municipio XV,no,Tomba di Nerone,Chicca,5,
+vaticano,Una zona che confina col Vaticano,si,Prati,Da cartolina,1,
+vaticano,Una zona che confina col Vaticano,si,Aurelio,Da romano de Roma,3,
+vaticano,Una zona che confina col Vaticano,si,Borgo,Da romano de Roma,3,
+vaticano,Una zona che confina col Vaticano,si,Trionfale,Da Mino,8,
+raccordo,Una zona che arriva fino al Raccordo,si,Aurelio,Da cartolina,1,
+raccordo,Una zona che arriva fino al Raccordo,si,Magliana Vecchia,Da cartolina,1,
+raccordo,Una zona che arriva fino al Raccordo,si,San Basilio,Da cartolina,1,
+raccordo,Una zona che arriva fino al Raccordo,si,Trionfale,Da cartolina,1,
+raccordo,Una zona che arriva fino al Raccordo,si,Capannelle,Ce sta,2,
+raccordo,Una zona che arriva fino al Raccordo,si,Cecchignola,Ce sta,2,
+raccordo,Una zona che arriva fino al Raccordo,si,Gianicolense,Ce sta,2,
+raccordo,Una zona che arriva fino al Raccordo,si,Tor Sapienza,Ce sta,2,
+raccordo,Una zona che arriva fino al Raccordo,si,Torre Maura,Ce sta,2,
+raccordo,Una zona che arriva fino al Raccordo,si,Torrino,Ce sta,2,
+raccordo,Una zona che arriva fino al Raccordo,si,La Pisana,Da romano de Roma,3,
+raccordo,Una zona che arriva fino al Raccordo,si,Tor di Valle,Da romano de Roma,3,
+raccordo,Una zona che arriva fino al Raccordo,si,Torre Spaccata,Da romano de Roma,3,
+raccordo,Una zona che arriva fino al Raccordo,si,Casal Boccone,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Castel Giubileo,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Giuliano-Dalmata,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Grottarossa,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Ottavia,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Tomba di Nerone,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Tor Cervara,Chicca,5,
+raccordo,Una zona che arriva fino al Raccordo,si,Fonte Ostiense,Da Mino,8,
+raccordo,Una zona che arriva fino al Raccordo,si,Torraccia di San Basilio,Da Mino,8,
+raccordo,Una zona che arriva fino al Raccordo,si,Torricola,Da Mino,8,
+metro-a,Una zona con una fermata della Metro A,si,Esquilino,Da cartolina,1,Manzoni / Termini / Vittorio Emanuele
+metro-a,Una zona con una fermata della Metro A,si,Prati,Da cartolina,1,Lepanto / Ottaviano
+metro-a,Una zona con una fermata della Metro A,si,Aurelio,Ce sta,2,Baldo degli Ubaldi / Cornelia
+metro-a,Una zona con una fermata della Metro A,si,Campo Marzio,Ce sta,2,Spagna
+metro-a,Una zona con una fermata della Metro A,si,Trevi,Ce sta,2,Barberini
+metro-a,Una zona con una fermata della Metro A,si,Tuscolano,Ce sta,2,Arco di Travertino / Colli Albani / Furio Camillo / ...
+metro-a,Una zona con una fermata della Metro A,si,Appio-Latino,Da romano de Roma,3,Furio Camillo / Ponte Lungo / Re di Roma / ...
+metro-a,Una zona con una fermata della Metro A,si,Primavalle,Da romano de Roma,3,Battistini
+metro-a,Una zona con una fermata della Metro A,si,Trionfale,Da romano de Roma,3,Cipro / Valle Aurelia
+metro-a,Una zona con una fermata della Metro A,si,Castro Pretorio,Chicca,5,Repubblica
+metro-a,Una zona con una fermata della Metro A,si,Colonna,Chicca,5,Barberini
+metro-a,Una zona con una fermata della Metro A,si,Don Bosco,Chicca,5,Cinecittà / Giulio Agricola / Lucio Sestio / ...
+metro-a,Una zona con una fermata della Metro A,si,Pinciano,Chicca,5,Flaminio
+metro-a,Una zona con una fermata della Metro A,si,Torre Maura,Chicca,5,Anagnina
+metro-a,Una zona con una fermata della Metro A,si,Appio Claudio,Da Mino,8,Cinecittà / Giulio Agricola / Lucio Sestio / ...
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,E.U.R.,Da cartolina,1,EUR Fermi / EUR Magliana / EUR Palasport
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti,Da cartolina,1,Cavour / Colosseo
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Esquilino,Ce sta,2,Termini
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ostiense,Ce sta,2,Basilica San Paolo / Garbatella / Marconi / ...
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Trieste,Ce sta,2,Libia / Sant'Agnese/Annibaliano
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Castro Pretorio,Da romano de Roma,3,Castro Pretorio
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monte Sacro,Da romano de Roma,3,Conca d'Oro / Jonio
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Nomentano,Da romano de Roma,3,Bologna / Policlinico
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Pietralata,Da romano de Roma,3,Monti Tiburtini / Pietralata / Ponte Mammolo / ...
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ponte Mammolo,Chicca,5,Rebibbia
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Chicca,5,Circo Massimo
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Giuliano-Dalmata,Da Mino,8,Laurentina
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ripa,Da Mino,8,Circo Massimo
+metro-c,Una zona con una fermata della Metro C,si,Monti,Da cartolina,1,Colosseo – Fori Imperiali
+metro-c,Una zona con una fermata della Metro C,si,Tuscolano,Da cartolina,1,Lodi / San Giovanni
+metro-c,Una zona con una fermata della Metro C,si,Appio-Latino,Ce sta,2,Porta Metronia
+metro-c,Una zona con una fermata della Metro C,si,Prenestino-Centocelle,Ce sta,2,Gardenie / Mirti / Parco di Centocelle
+metro-c,Una zona con una fermata della Metro C,si,Prenestino-Labicano,Da romano de Roma,3,Malatesta / Pigneto / Teano
+metro-c,Una zona con una fermata della Metro C,si,Alessandrino,Chicca,5,Torre Spaccata
+metro-c,Una zona con una fermata della Metro C,si,Don Bosco,Chicca,5,Alessandrino / Torre Spaccata
+metro-c,Una zona con una fermata della Metro C,si,Torre Maura,Chicca,5,Torre Maura
+metro-c,Una zona con una fermata della Metro C,si,Campitelli,Da Mino,8,Colosseo – Fori Imperiali
+metro-c,Una zona con una fermata della Metro C,si,Torre Spaccata,Da Mino,8,Torre Maura
+trapizzino,Una zona con un Trapizzino,si,Trastevere,Da cartolina,1,Trapizzino
+trapizzino,Una zona con un Trapizzino,si,Prati,Ce sta,2,Trapizzino Piazza Risorgimento
+trapizzino,Una zona con un Trapizzino,si,Testaccio,Ce sta,2,Trapizzino Testaccio
+trapizzino,Una zona con un Trapizzino,si,Esquilino,Da romano de Roma,3,Trapizzino Mercato Centrale Roma
+trapizzino,Una zona con un Trapizzino,si,Nomentano,Chicca,5,Trapizzino
+trapizzino,Una zona con un Trapizzino,si,Della Vittoria,Da Mino,8,Trapizzino Ponte Milvio
+tevere,Una zona dove passa il Tevere,si,E.U.R.,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Prati,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Testaccio,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Trastevere,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Flaminio,Ce sta,2,
+tevere,Una zona dove passa il Tevere,si,Ostiense,Ce sta,2,
+tevere,Una zona dove passa il Tevere,si,Parioli,Ce sta,2,
+tevere,Una zona dove passa il Tevere,si,Borgo,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Campo Marzio,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Della Vittoria,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Magliana Vecchia,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Portuense,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Tor di Quinto,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Ponte,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Sant'Angelo,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Tor di Valle,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Val Melaina,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Castel Giubileo,Da Mino,8,
+tevere,Una zona dove passa il Tevere,si,Grottarossa,Da Mino,8,
+tevere,Una zona dove passa il Tevere,si,Regola,Da Mino,8,
+tevere,Una zona dove passa il Tevere,si,Ripa,Da Mino,8,
+fontane,Una zona con una fontana famosa,si,Trevi,Da cartolina,1,Fontana di Trevi / Fontana del Tritone / Fontana delle Api / Fontana del Mosè / Fontana del Facchino
+fontane,Una zona con una fontana famosa,si,Campo Marzio,Ce sta,2,Fontana della Barcaccia
+fontane,Una zona con una fontana famosa,si,Parione,Ce sta,2,Fontana dei Quattro Fiumi / Fontana della Terrina
+fontane,Una zona con una fontana famosa,si,Castro Pretorio,Da romano de Roma,3,Fontana delle Naiadi / Fontana del Mosè
+fontane,Una zona con una fontana famosa,si,Colonna,Da romano de Roma,3,Fontana del Tritone / Fontana delle Api
+fontane,Una zona con una fontana famosa,si,Ludovisi,Chicca,5,Fontana delle Api
+fontane,Una zona con una fontana famosa,si,Sant'Angelo,Chicca,5,Fontana delle Tartarughe
+fontane,Una zona con una fontana famosa,si,Trastevere,Chicca,5,Fontana dell'Acqua Paola / Fontana della Botte
+fontane,Una zona con una fontana famosa,si,Pigna,Da Mino,8,Fontana del Facchino
+fontane,Una zona con una fontana famosa,si,Sallustiano,Da Mino,8,Fontana del Mosè
+fontane,Una zona con una fontana famosa,si,Testaccio,Da Mino,8,Fontana delle Anfore
+ville,Una zona con una villa storica (il parco),si,Gianicolense,Da cartolina,1,Villa Doria Pamphilj / Villa Sciarra
+ville,Una zona con una villa storica (il parco),si,Pinciano,Da cartolina,1,Villa Borghese / Villa Glori
+ville,Una zona con una villa storica (il parco),si,Nomentano,Ce sta,2,Villa Torlonia / Villa Leopardi
+ville,Una zona con una villa storica (il parco),si,Parioli,Ce sta,2,Villa Ada / Villa Glori
+ville,Una zona con una villa storica (il parco),si,Trieste,Ce sta,2,Villa Ada / Villa Torlonia / Villa Chigi / Villa Leopardi / Villa Paganini
+ville,Una zona con una villa storica (il parco),si,Celio,Da romano de Roma,3,Villa Celimontana
+ville,Una zona con una villa storica (il parco),si,Trastevere,Chicca,5,Villa Sciarra
+ville,Una zona con una villa storica (il parco),si,Appio-Latino,Da Mino,8,Villa Lazzaroni
+ville,Una zona con una villa storica (il parco),si,Aurelio,Da Mino,8,Villa Carpegna
+ville,Una zona con una villa storica (il parco),si,Collatino,Da Mino,8,Villa Gordiani
+ville,Una zona con una villa storica (il parco),si,Prenestino-Labicano,Da Mino,8,Villa Gordiani
+ville,Una zona con una villa storica (il parco),si,Tuscolano,Da Mino,8,Villa Fiorelli
+movida,Una zona famosa per la movida,si,Trastevere,Da cartolina,1,Piazza Trilussa
+movida,Una zona famosa per la movida,si,Parione,Ce sta,2,Campo de' Fiori / Via del Governo Vecchio
+movida,Una zona famosa per la movida,si,Prenestino-Labicano,Ce sta,2,Via del Pigneto
+movida,Una zona famosa per la movida,si,Regola,Ce sta,2,Campo de' Fiori
+movida,Una zona famosa per la movida,si,Tiburtino,Ce sta,2,Piazza dell'Immacolata
+movida,Una zona famosa per la movida,si,Della Vittoria,Da romano de Roma,3,Piazzale di Ponte Milvio
+movida,Una zona famosa per la movida,si,Monti,Da romano de Roma,3,Piazza della Madonna dei Monti
+movida,Una zona famosa per la movida,si,Testaccio,Da romano de Roma,3,Monte Testaccio
+movida,Una zona famosa per la movida,si,Tor di Quinto,Da romano de Roma,3,Piazzale di Ponte Milvio
+movida,Una zona famosa per la movida,si,Ostiense,Chicca,5,Via Libetta
+movida,Una zona famosa per la movida,si,Ponte,Chicca,5,Via del Governo Vecchio
+movida,Una zona famosa per la movida,si,Nomentano,Da Mino,8,Piazza Bologna
+movida,Una zona famosa per la movida,si,Prenestino-Centocelle,Da Mino,8,Piazza dei Mirti
+stazione-fs,Una zona con una stazione dei treni,si,Esquilino,Da cartolina,1,Roma Termini
+stazione-fs,Una zona con una stazione dei treni,si,Parioli,Da cartolina,1,Acqua Acetosa / Campi Sportivi / Monte Antenne
+stazione-fs,Una zona con una stazione dei treni,si,Trieste,Da cartolina,1,Roma Nomentana
+stazione-fs,Una zona con una stazione dei treni,si,Aurelio,Ce sta,2,Città del Vaticano / Roma San Pietro
+stazione-fs,Una zona con una stazione dei treni,si,Monte Sacro,Ce sta,2,Roma Nomentana / Val d’Ala
+stazione-fs,Una zona con una stazione dei treni,si,Primavalle,Ce sta,2,Roma Monte Mario
+stazione-fs,Una zona con una stazione dei treni,si,Tuscolano,Ce sta,2,Roma Tuscolana
+stazione-fs,Una zona con una stazione dei treni,si,Della Vittoria,Da romano de Roma,3,Roma San Filippo Neri
+stazione-fs,Una zona con una stazione dei treni,si,Gianicolense,Da romano de Roma,3,Quattro Venti / Roma Aurelia
+stazione-fs,Una zona con una stazione dei treni,si,Pietralata,Da romano de Roma,3,Roma Tiburtina
+stazione-fs,Una zona con una stazione dei treni,si,Trionfale,Da romano de Roma,3,Appiano / Gemelli / Roma Balduina / ...
+stazione-fs,Una zona con una stazione dei treni,si,Capannelle,Chicca,5,Capannelle
+stazione-fs,Una zona con una stazione dei treni,si,Pinciano,Chicca,5,Euclide / Flaminio
+stazione-fs,Una zona con una stazione dei treni,si,Tor Sapienza,Chicca,5,La Rustica Città / Palmiro Togliatti
+stazione-fs,Una zona con una stazione dei treni,si,Tor di Quinto,Chicca,5,Tor di Quinto / Vigna Clara
+stazione-fs,Una zona con una stazione dei treni,si,Collatino,Da Mino,8,Palmiro Togliatti / Roma Prenestina / Serenissima
+stazione-fs,Una zona con una stazione dei treni,si,Grottarossa,Da Mino,8,Grottarossa / Saxa Rubra
+stazione-fs,Una zona con una stazione dei treni,si,Ottavia,Da Mino,8,Ipogeo degli Ottavi / Ottavia
+mercato,Una zona con un mercato rionale,no,Esquilino,Da cartolina,1,Mercato Esquilino / Nuovo Mercato Esquilino
+mercato,Una zona con un mercato rionale,no,Monti,Da cartolina,1,Mercato di Monti / Mercato riomale
+mercato,Una zona con un mercato rionale,no,Parioli,Da cartolina,1,Mercato Rionale
+mercato,Una zona con un mercato rionale,no,Prati,Da cartolina,1,Mercato dell'Unità
+mercato,Una zona con un mercato rionale,no,Testaccio,Da cartolina,1,Nuovo Mercato Testaccio
+mercato,Una zona con un mercato rionale,no,Trastevere,Da cartolina,1,Mercato di San Cosimato
+mercato,Una zona con un mercato rionale,no,Appio-Latino,Ce sta,2,Mercato Latino / Mercato Magna Grecia – Metronio / Mercato dell'Alberone
+mercato,Una zona con un mercato rionale,no,Aurelio,Ce sta,2,Mercato Irnerio / Mercato San Silverio / Pineta Sacchetti
+mercato,Una zona con un mercato rionale,no,Campo Marzio,Ce sta,2,Campo Marzio
+mercato,Una zona con un mercato rionale,no,Flaminio,Ce sta,2,Mercato Flaminio II
+mercato,Una zona con un mercato rionale,no,Monte Sacro,Ce sta,2,Mercato Conca d'Oro / Mercato Menenio Agrippa / Mercato Rionale del Tufello / ...
+mercato,Una zona con un mercato rionale,no,Nomentano,Ce sta,2,Mercato Rionale / Mercato Rionale Portonaccio I
+mercato,Una zona con un mercato rionale,no,Ostiense,Ce sta,2,Largo Leonardo da Vinci / Mercato Circonvallazione Ostiense / Mercato Ostiense / ...
+mercato,Una zona con un mercato rionale,no,Prenestino-Centocelle,Ce sta,2,Mercato Arabo / Mercato Insieme / Mercato di Piazza delle Iris
+mercato,Una zona con un mercato rionale,no,Primavalle,Ce sta,2,Mercato Primavalle / Pineta Sacchetti
+mercato,Una zona con un mercato rionale,no,Trieste,Ce sta,2,Mercatino delle pulci / Mercato Piazza Gimma / Mercato rionale coperto
+mercato,Una zona con un mercato rionale,no,Tuscolano,Ce sta,2,Mercato Rionale Piazza dei Tribuni / Mercato Torpignattara / Mercato di Via Orvieto / ...
+mercato,Una zona con un mercato rionale,no,Castro Pretorio,Da romano de Roma,3,Mecato Macao
+mercato,Una zona con un mercato rionale,no,Della Vittoria,Da romano de Roma,3,AGS Mercato Vittoria / Mercato Monte Mario Thouar / Mercato dei Fiori / ...
+mercato,Una zona con un mercato rionale,no,Pietralata,Da romano de Roma,3,CampagnaAmica Coldiretti / Mercato Pietralata / Mercato Rionale
+mercato,Una zona con un mercato rionale,no,Portuense,Da romano de Roma,3,Mercato Coperto Magliana / Mercato di Santa Silvia / Mercato rionale / ...
+mercato,Una zona con un mercato rionale,no,Prenestino-Labicano,Da romano de Roma,3,Mercato Casilino 23 / Mercato Insieme / Mercato Largo Perestrello / ...
+mercato,Una zona con un mercato rionale,no,Salario,Da romano de Roma,3,Mercato Nomentano
+mercato,Una zona con un mercato rionale,no,San Basilio,Da romano de Roma,3,
+mercato,Una zona con un mercato rionale,no,Tiburtino,Da romano de Roma,3,
+mercato,Una zona con un mercato rionale,no,Trionfale,Da romano de Roma,3,Mercato Trionfale / Mercato dei Fiori
+mercato,Una zona con un mercato rionale,no,Appio Claudio,Chicca,5,Mercato rionale Cinecittà / Mercato rionale Tuscolano III
+mercato,Una zona con un mercato rionale,no,Ardeatino,Chicca,5,Mercato Grottaperfetta / Mercato Navigatori / Mercato Tormarancia / ...
+mercato,Una zona con un mercato rionale,no,Collatino,Chicca,5,Mercato / Mercato Rionale / Mercato Rionale Colli Aniene / ...
+mercato,Una zona con un mercato rionale,no,Don Bosco,Chicca,5,Mercato Le Piscine / Mercato Rionale di Torrespaccata / Mercato rionale Carlo Calisse
+mercato,Una zona con un mercato rionale,no,Gianicolense,Chicca,5,Mercato Rionale / Porta Portese
+mercato,Una zona con un mercato rionale,no,Pinciano,Chicca,5,Mercato Rionale
+mercato,Una zona con un mercato rionale,no,Ponte Mammolo,Chicca,5,Mercato Comunale Casal De' Pazzi / MercatoBIO di Aguzzano al Casale Podere Rosa
+mercato,Una zona con un mercato rionale,no,San Saba,Chicca,5,Mercato di San Saba
+mercato,Una zona con un mercato rionale,no,Tor Sapienza,Chicca,5,Porta Portese Est
+mercato,Una zona con un mercato rionale,no,Tor di Quinto,Chicca,5,Mercato di Ponte Milvio
+mercato,Una zona con un mercato rionale,no,Torre Maura,Chicca,5,Mercato Rionale Cinecittà Est
+mercato,Una zona con un mercato rionale,no,Torrino,Chicca,5,
+mercato,Una zona con un mercato rionale,no,Val Melaina,Chicca,5,Mercato Coperto di Val Melaina
+mercato,Una zona con un mercato rionale,no,Castel Giubileo,Da Mino,8,Mercato Rionale Settimanale / Mercato Serpentara
+mercato,Una zona con un mercato rionale,no,Monte Sacro Alto,Da Mino,8,Mercato Talenti
+mercato,Una zona con un mercato rionale,no,Parione,Da Mino,8,Campo de' Fiori
+mercato,Una zona con un mercato rionale,no,Regola,Da Mino,8,Campo de' Fiori
+mercato,Una zona con un mercato rionale,no,Ripa,Da Mino,8,Mercato di Campagna Amica Circo Massimo
+ospedale,Una zona con un ospedale,no,E.U.R.,Da cartolina,1,Ospedale Sant'Eugenio
+ospedale,Una zona con un ospedale,no,Monti,Da cartolina,1,Ospedale Britannico / Ospedale San Giovanni / Ospedale San Giovanni - Presidio Addolorata / ...
+ospedale,Una zona con un ospedale,no,Parioli,Da cartolina,1,Casa di cura Quisisana
+ospedale,Una zona con un ospedale,no,Prati,Da cartolina,1,Casa di Cura Santa Famiglia
+ospedale,Una zona con un ospedale,no,Trastevere,Da cartolina,1,Ospedale Nuovo Regina Margherita / Ospedale Pediatrico Bambino Gesù / Salvator Mundi international Hospital
+ospedale,Una zona con un ospedale,no,Aurelio,Ce sta,2,Aurelia Hospital / Casa di Cura Pio XI / Clinica Villa Benedetta / ...
+ospedale,Una zona con un ospedale,no,Borgo,Ce sta,2,"Ospedale Santo Spirito in Sassia / Pronto Soccorso Ospedale ""Santo Spirito in Sassia"""
+ospedale,Una zona con un ospedale,no,Nomentano,Ce sta,2,"Casa di Cura ""Assunzione di Maria Santissima"" / Casa di Cura ""San Domenico"" / Policlinico Italia / ..."
+ospedale,Una zona con un ospedale,no,Ostiense,Ce sta,2,Ospedale CTO Andrea Alesini / Ospedale Pediatrico Bambino Gesù - Sede di San Paolo / Ospedale Pediatrico Bambino Gesù - Sede di via Baldelli
+ospedale,Una zona con un ospedale,no,Prenestino-Centocelle,Ce sta,2,Clinica Guarnieri
+ospedale,Una zona con un ospedale,no,Primavalle,Ce sta,2,ASL RME / Hospice Villa Speranza / Ospedale Cristo Re / ...
+ospedale,Una zona con un ospedale,no,Trieste,Ce sta,2,"Casa di Cura ""Assunzione di Maria Santissima"" / Centro Medicina Nucleare Italiano Villa Bianca / Clinica Sanatrix / ..."
+ospedale,Una zona con un ospedale,no,Tuscolano,Ce sta,2,NCL
+ospedale,Una zona con un ospedale,no,Celio,Da romano de Roma,3,Ospedale Britannico / Ospedale San Giovanni - Presidio Addolorata / Policlinico militare Celio
+ospedale,Una zona con un ospedale,no,Della Vittoria,Da romano de Roma,3,Fondazione Don Gnocchi - Centro Santa Maria della Pace / Ospedale San Filippo Neri / Policlinico Universitario Agostino Gemelli / ...
+ospedale,Una zona con un ospedale,no,Magliana Vecchia,Da romano de Roma,3,Ospedale San Giovanni Battista
+ospedale,Una zona con un ospedale,no,Pietralata,Da romano de Roma,3,Casa di Cura Nuova ITOR / Ospedale Sandro Pertini
+ospedale,Una zona con un ospedale,no,Portuense,Da romano de Roma,3,European Hospital / Istituto nazionale per le malattie infettive Lazzaro Spallanzani / Ospedale Israelitico / ...
+ospedale,Una zona con un ospedale,no,Prenestino-Labicano,Da romano de Roma,3,Ospedale generale Madre Giuseppina Vannini
+ospedale,Una zona con un ospedale,no,Tiburtino,Da romano de Roma,3,Policlinico Umberto I / Policlinico Umberto I - Clinica di Neuropsichiatria infantile
+ospedale,Una zona con un ospedale,no,Trionfale,Da romano de Roma,3,Complesso Integrato Columbus / Gemelli CURAE / Hospice Villa Speranza / ...
+ospedale,Una zona con un ospedale,no,Alessandrino,Chicca,5,Casa di cura Villa Mendicini
+ospedale,Una zona con un ospedale,no,Ardeatino,Chicca,5,Fondazione Santa Lucia / Nuova Clinica Annunziatella / Studio Odontoiatrico Dominici
+ospedale,Una zona con un ospedale,no,Gianicolense,Chicca,5,Casa di Cura Città di Roma / European Hospital / Istituto nazionale per le malattie infettive Lazzaro Spallanzani / ...
+ospedale,Una zona con un ospedale,no,Pinciano,Chicca,5,Clinica Mater Dei / Clinica Parioli / Clinica Valle Giulia
+ospedale,Una zona con un ospedale,no,Tor Sapienza,Chicca,5,Rome American Hospital
+ospedale,Una zona con un ospedale,no,Tor di Quinto,Chicca,5,Nuova Villa Claudia / Ospedale San Pietro Fatebenefratelli
+ospedale,Una zona con un ospedale,no,Torre Maura,Chicca,5,Policlinico Casilino
+ospedale,Una zona con un ospedale,no,Torre Spaccata,Chicca,5,Policlinico Casilino
+ospedale,Una zona con un ospedale,no,Torrino,Chicca,5,IFO - Istituti Fisioterapici Ospitalieri / Istituto Dermatologico San Gallicano / Istituto Nazionale Tumori Regina Elena
+ospedale,Una zona con un ospedale,no,Fonte Ostiense,Da Mino,8,Ospedale Sant'Eugenio
+ospedale,Una zona con un ospedale,no,Grottarossa,Da Mino,8,Ospedale Sant'Andrea
+ospedale,Una zona con un ospedale,no,Monte Sacro Alto,Da Mino,8,Villa Tiberia
+ospedale,Una zona con un ospedale,no,Ripa,Da Mino,8,Fatebenefratelli
+ospedale,Una zona con un ospedale,no,Tomba di Nerone,Da Mino,8,Ospedale San Pietro Fatebenefratelli
+universita,Una zona con un'università,no,Parioli,Da cartolina,1,Libera Università Internazionale degli Studi Sociali (LUISS) Guido Carli
+universita,Una zona con un'università,no,Prati,Da cartolina,1,Lumsa
+universita,Una zona con un'università,no,Testaccio,Da cartolina,1,Università Roma Tre - Dipartimento di Architettura
+universita,Una zona con un'università,no,Trastevere,Da cartolina,1,Auriana Auditorium / John Cabot University / John Cabot University - Guarini Campus / ...
+universita,Una zona con un'università,no,Aurelio,Ce sta,2,Duquesne University - Italian Campus / Pontificia Università Urbaniana / Pontificio Istituto di Musica Sacra / ...
+universita,Una zona con un'università,no,Borgo,Ce sta,2,LUMSA / Pontificia Università Urbaniana
+universita,Una zona con un'università,no,Campo Marzio,Ce sta,2,Temple University Rome / Università La Sapienza sede distaccata Architettura
+universita,Una zona con un'università,no,Esquilino,Ce sta,2,"Pontificia Universitas Antonianum / Pontificia Università Antonianum / Università La Sapienza - Dipartimento di Ingegneria informatica, automatica e gestionale Antonio Ruberti / ..."
+universita,Una zona con un'università,no,Flaminio,Ce sta,2,Temple University Rome / Università La Sapienza - Facoltà di Architettura - Via Flaminia / Università La Sapienza - Facoltà di Architettura sede di via E. Gianturco
+universita,Una zona con un'università,no,Monti,Ce sta,2,"Dipartimento di Ingegneria Civile, Edile e Ambientale / Dipartimento di ingegneria dell'Informazione, Elettronica e Telecomunicazioni / Pontificia Universitas Antonianum / ..."
+universita,Una zona con un'università,no,Ostiense,Ce sta,2,Il Giovedì di Progetto / Pontifical Beda College Seminary / Università Roma Tre - Corsi di laurea in Fisica / ...
+universita,Una zona con un'università,no,Trevi,Ce sta,2,Pontificia Università Gregoriana / Pontificio Istituto Biblico
+universita,Una zona con un'università,no,Trieste,Ce sta,2,LUISS / Libera università internazionale degli studi sociali LUISS
+universita,Una zona con un'università,no,Tuscolano,Ce sta,2,Istituto Europeo Di Design (IED)
+universita,Una zona con un'università,no,Nomentano,Da romano de Roma,3,Sapienza Università di Roma / Sapienza Università di Roma - Facoltà di Economia e Ingegneria / Università La Sapienza - Dipartimento di Filosofia
+universita,Una zona con un'università,no,Primavalle,Da romano de Roma,3,Università Cattolica del Sacro Cuore
+universita,Una zona con un'università,no,Tiburtino,Da romano de Roma,3,Area studio zoologia / Botanica / Dipartimento Scienze Giuridiche / ...
+universita,Una zona con un'università,no,Trionfale,Da romano de Roma,3,John Felice Rome Center / Università Cattolica del Sacro Cuore / Università Niccolò Cusano
+universita,Una zona con un'università,no,Campitelli,Chicca,5,Nobile Collegio Chimico Farmaceutico
+universita,Una zona con un'università,no,Castro Pretorio,Chicca,5,Uninettuno / Università Roma Tre - Dipartimento di Scienze della Formazione / Università Roma Tre - Dipartimento di Scienze della formazione
+universita,Una zona con un'università,no,Della Vittoria,Chicca,5,Università degli Studi di Roma Foro Italico
+universita,Una zona con un'università,no,Gianicolense,Chicca,5,Ateneo Pontificio Regina Apostolorum / Auriana Auditorium / The American University of Rome / ...
+universita,Una zona con un'università,no,Pinciano,Chicca,5,Università La Sapienza - Facoltà di Architettura - Sede Valle Giulia / Università La Sapienza - Facoltà di Architettura - Via Flaminia / Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
+universita,Una zona con un'università,no,Ponte,Chicca,5,Pontificia Università della Santa Croce
+universita,Una zona con un'università,no,Prenestino-Labicano,Chicca,5,Corso di laurea per infermiere Padre Luigi Tezza
+universita,Una zona con un'università,no,Salario,Chicca,5,Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
+universita,Una zona con un'università,no,Val Melaina,Chicca,5,Università Pontificia Salesiana
+universita,Una zona con un'università,no,Castel Giubileo,Da Mino,8,Università Pontificia Salesiana
+universita,Una zona con un'università,no,Grottarossa,Da Mino,8,
+universita,Una zona con un'università,no,Parione,Da Mino,8,UNIMED – Mediterranean Universities Union
+universita,Una zona con un'università,no,Pigna,Da Mino,8,Mediateca Università telematica Nettuno / Pontificio Seminario Francese
+universita,Una zona con un'università,no,Ripa,Da Mino,8,Accademia Nazionale di Danza
+cinema,Una zona con un cinema,no,E.U.R.,Da cartolina,1,EUR Cine
+cinema,Una zona con un cinema,no,Monti,Da cartolina,1,Cineclub Detour / Quattro Fontane
+cinema,Una zona con un cinema,no,Prati,Da cartolina,1,Azzurro Scipioni / Cinema Adriano / Eden / ...
+cinema,Una zona con un cinema,no,Testaccio,Da cartolina,1,Greenwich
+cinema,Una zona con un cinema,no,Trastevere,Da cartolina,1,Alcazar / Cinema Intrastevere / Cinema Troisi / ...
+cinema,Una zona con un cinema,no,Aurelio,Ce sta,2,Alhambra
+cinema,Una zona con un cinema,no,Esquilino,Ce sta,2,Royal
+cinema,Una zona con un cinema,no,Flaminio,Ce sta,2,Cinema Tiziano
+cinema,Una zona con un cinema,no,Monte Sacro,Ce sta,2,Cinema Antares
+cinema,Una zona con un cinema,no,Ostiense,Ce sta,2,Arena di Garbatella / Madison
+cinema,Una zona con un cinema,no,Trevi,Ce sta,2,Cinema Barberini / Fiamma / Time Elevator
+cinema,Una zona con un cinema,no,Trieste,Ce sta,2,Multisala Lux
+cinema,Una zona con un cinema,no,Tuscolano,Ce sta,2,Trianon
+cinema,Una zona con un cinema,no,Appio-Latino,Da romano de Roma,3,The Cineclub
+cinema,Una zona con un cinema,no,Castro Pretorio,Da romano de Roma,3,Ambasciatori / Quattro Fontane / The Space Cinema - Moderno Roma
+cinema,Una zona con un cinema,no,Della Vittoria,Da romano de Roma,3,Palomar Produzione Cnematografica
+cinema,Una zona con un cinema,no,Magliana Vecchia,Da romano de Roma,3,The Space Cinema
+cinema,Una zona con un cinema,no,Nomentano,Da romano de Roma,3,Multisala Jolly / Sala delle Provincie d'Essai
+cinema,Una zona con un cinema,no,Prenestino-Centocelle,Da romano de Roma,3,Broadway
+cinema,Una zona con un cinema,no,Prenestino-Labicano,Da romano de Roma,3,Cineclub Alphaville / Nuovo Cinema Aquila
+cinema,Una zona con un cinema,no,Primavalle,Da romano de Roma,3,Andromeda / Galaxy
+cinema,Una zona con un cinema,no,Salario,Da romano de Roma,3,Cinema Europa / Savoy Cityplex
+cinema,Una zona con un cinema,no,Tiburtino,Da romano de Roma,3,Tibur
+cinema,Una zona con un cinema,no,Trionfale,Da romano de Roma,3,Doria
+cinema,Una zona con un cinema,no,Appio Claudio,Chicca,5,Multisala Atlantic
+cinema,Una zona con un cinema,no,Colonna,Chicca,5,Nuovo Olimpia
+cinema,Una zona con un cinema,no,Don Bosco,Chicca,5,Cinecittà / Cinema Teatro Don Bosco / Multisala Atlantic
+cinema,Una zona con un cinema,no,Pinciano,Chicca,5,Casa del Cinema / Cinema dei Piccoli / Teatro all'aperto Ettore Scola
+cinema,Una zona con un cinema,no,Ponte Mammolo,Chicca,5,CineClub Podere Rosa
+cinema,Una zona con un cinema,no,Tor di Quinto,Chicca,5,Palomar Produzione Cnematografica
+cinema,Una zona con un cinema,no,Torrino,Chicca,5,Stardust Village
+cinema,Una zona con un cinema,no,Castel Giubileo,Da Mino,8,UCI Cinemas
+cinema,Una zona con un cinema,no,Giuliano-Dalmata,Da Mino,8,UCI Luxe
+cinema,Una zona con un cinema,no,Ottavia,Da Mino,8,Starplex
+cinema,Una zona con un cinema,no,Parione,Da Mino,8,Farnese
+cinema,Una zona con un cinema,no,Regola,Da Mino,8,Farnese
+cinema,Una zona con un cinema,no,Sallustiano,Da Mino,8,Fiamma
+cinema,Una zona con un cinema,no,Tomba di Nerone,Da Mino,8,Cinestar Cassia
+teatro,Una zona con un teatro,no,Esquilino,Da cartolina,1,Teatro Ambra Jovinelli / Teatro Basilica / Teatro Brancaccio
+teatro,Una zona con un teatro,no,Monti,Da cartolina,1,Lo spazio / Piccolo Eliseo / Teatro Brancaccio / ...
+teatro,Una zona con un teatro,no,Parioli,Da cartolina,1,Auditorium Arte / Teatro Parioli
+teatro,Una zona con un teatro,no,Prati,Da cartolina,1,Teatro Prati
+teatro,Una zona con un teatro,no,Testaccio,Da cartolina,1,Amici Del Teatro Di Documenti / Teatro Petrolini / Teatro Studio Zagreus / ...
+teatro,Una zona con un teatro,no,Trastevere,Da cartolina,1,Anfiteatro Quercia del Tasso / Il Cantiere / Teatro Argot Studio / ...
+teatro,Una zona con un teatro,no,Appio-Latino,Ce sta,2,Lo spazio / Orione / Teatro Orione / ...
+teatro,Una zona con un teatro,no,Aurelio,Ce sta,2,Teatro Cyrano / Teatro Ghione
+teatro,Una zona con un teatro,no,Borgo,Ce sta,2,Auditorium Conciliazione / Le Salette
+teatro,Una zona con un teatro,no,Campo Marzio,Ce sta,2,Teatro Salone Margherita / Teatro dei burattini San Carlino
+teatro,Una zona con un teatro,no,Flaminio,Ce sta,2,Teatro Olimpico
+teatro,Una zona con un teatro,no,Monte Sacro,Ce sta,2,CineTeatro33
+teatro,Una zona con un teatro,no,Nomentano,Ce sta,2,Associazione Culturale Castalia Teatro Arcobaleno / Teatro Italia / Teatro Sette / ...
+teatro,Una zona con un teatro,no,Ostiense,Ce sta,2,"Largo Alvaro Amici / Piccolo Teatro San Paolo / Spazio Anarchico ""19 luglio"" / ..."
+teatro,Una zona con un teatro,no,Trevi,Ce sta,2,Quirinetta / Teatro Quirino / Teatro de' Servi
+teatro,Una zona con un teatro,no,Trieste,Ce sta,2,Teatro del Sogno
+teatro,Una zona con un teatro,no,Tuscolano,Ce sta,2,Planet / Teatro Duse / Teatro Golden / ...
+teatro,Una zona con un teatro,no,Castro Pretorio,Da romano de Roma,3,Teatro Nazionale / Teatro dell'Opera
+teatro,Una zona con un teatro,no,Della Vittoria,Da romano de Roma,3,Teatro Eduardo De Filippo / Teatro Manzoni / Teatro San Genesio / ...
+teatro,Una zona con un teatro,no,Gianicolense,Da romano de Roma,3,Teatro Corviale / Teatro Le Maschere / Teatro Porta Portese / ...
+teatro,Una zona con un teatro,no,Pietralata,Da romano de Roma,3,Teatro Parrocchia Sant'Atanasio
+teatro,Una zona con un teatro,no,Ponte Mammolo,Da romano de Roma,3,Di Via Speroni
+teatro,Una zona con un teatro,no,Portuense,Da romano de Roma,3,Nogu Teatro / Teatro India
+teatro,Una zona con un teatro,no,Prenestino-Labicano,Da romano de Roma,3,Teatro Hamlet / Teatro San Luca / Teatrosala vignoli
+teatro,Una zona con un teatro,no,Trionfale,Da romano de Roma,3,Auditorium
+teatro,Una zona con un teatro,no,Alessandrino,Chicca,5,Teatro Biblioteca Quarticciolo
+teatro,Una zona con un teatro,no,Campitelli,Chicca,5,Teatro della Cometa
+teatro,Una zona con un teatro,no,Collatino,Chicca,5,
+teatro,Una zona con un teatro,no,Colonna,Chicca,5,Teatro Capranica / Teatro Due Roma / Teatro Sala Umberto / ...
+teatro,Una zona con un teatro,no,Don Bosco,Chicca,5,Teatro Giovanni Paolo II Attore
+teatro,Una zona con un teatro,no,Pinciano,Chicca,5,Gigi Proietti Globe Theatre Silvano Toti / Sala Casella / Teatro del Pinguino
+teatro,Una zona con un teatro,no,Ponte,Chicca,5,L’arciliuto / Teatro dell'Orologio
+teatro,Una zona con un teatro,no,San Saba,Chicca,5,Anfitrione
+teatro,Una zona con un teatro,no,Tor Sapienza,Chicca,5,
+teatro,Una zona con un teatro,no,Tor di Quinto,Chicca,5,Il Sistino Chapiteau
+teatro,Una zona con un teatro,no,Torre Maura,Chicca,5,
+teatro,Una zona con un teatro,no,Torrino,Chicca,5,Auditorium Santa Chiara / Teatro del Torrino / Teatro di Mostacciano
+teatro,Una zona con un teatro,no,Castel Giubileo,Da Mino,8,Il Teatro degli Audaci
+teatro,Una zona con un teatro,no,Fonte Ostiense,Da Mino,8,Anfiteatro / Atlantico Live!
+teatro,Una zona con un teatro,no,Parione,Da Mino,8,Teatro dei Satiri / Teatro dell'Orologio
+teatro,Una zona con un teatro,no,Pigna,Da Mino,8,Teatro Argentina / Teatro Rossini
+teatro,Una zona con un teatro,no,Regola,Da Mino,8,Off-Off theatre
+teatro,Una zona con un teatro,no,Sant'Eustachio,Da Mino,8,Teatro Argentina / Teatro Rossini / Teatro Valle
+teatro,Una zona con un teatro,no,Tomba di Nerone,Da Mino,8,Teatro Ciak Roma / Teatro Stabile Del Giallo
+biblioteca,Una zona con una biblioteca,no,Esquilino,Da cartolina,1,Biblioteca della Città metropolitana di Roma Capitale
+biblioteca,Una zona con una biblioteca,no,Flaminio,Da cartolina,1,Biblioteca Flaminia / Biblioteca Quaroni
+biblioteca,Una zona con una biblioteca,no,Monti,Da cartolina,1,"Biblioteca Beato Pio IX / Biblioteca Ingegneria astronautica, elettrica ed energetica - sede Ingegneria elettrica / Biblioteca Paolo Baffi / ..."
+biblioteca,Una zona con una biblioteca,no,Ostiense,Da cartolina,1,Biblioteca Joyce Lussu / Moby Dick - Biblioteca e Hub Culturale / TiConZeroLibri
+biblioteca,Una zona con una biblioteca,no,Parioli,Da cartolina,1,Aula studio Mattia Nicholas Liguori / Biblioteca sportiva nazionale
+biblioteca,Una zona con una biblioteca,no,Testaccio,Da cartolina,1,"Aula studio La Pelanda / Biblioteca Enzo Tortora / Biblioteca di Area delle Arti - Sezione Architettura ""Enrico Mattiello"""
+biblioteca,Una zona con una biblioteca,no,Trastevere,Da cartolina,1,Academia de España / Biblioteca dell'Accademia Nazionale dei Lincei e Corsiniana / Cinema Troisi Aula Studio / ...
+biblioteca,Una zona con una biblioteca,no,Aurelio,Ce sta,2,Aula Studio Casa del Popolo / Biblioteca Cornelia / Biblioteca Valle Aurelia / ...
+biblioteca,Una zona con una biblioteca,no,Borgo,Ce sta,2,Archivum Generale Augustinianum / Biblioteca Augustinianum
+biblioteca,Una zona con una biblioteca,no,Campo Marzio,Ce sta,2,Bibliotheca Hertziana
+biblioteca,Una zona con una biblioteca,no,Celio,Ce sta,2,Biblioteca della Società geografica italiana
+biblioteca,Una zona con una biblioteca,no,Monte Sacro,Ce sta,2,Biblioteca Ennio Flaiano
+biblioteca,Una zona con una biblioteca,no,Nomentano,Ce sta,2,"Biblioteca Interdipartimentale di Fisiopatologia cardiocircolatoria, Anestesiologia e Chirurgia generale ""Paride Stefanini"" / Biblioteca Interdipartimentale di Medicina sperimentale e medicina molecolare - sede Storia della Medicina / Biblioteca del Dipartimento Materno infantile e scienze urologiche (Sede principale Pediatria) / ..."
+biblioteca,Una zona con una biblioteca,no,Primavalle,Ce sta,2,Biblioteca Franco Basaglia
+biblioteca,Una zona con una biblioteca,no,Tiburtino,Ce sta,2,"Biblioteca Angelo Monteverdi per gli studi filologici, linguistici e letterari (BAM) / Biblioteca Interdipartimentale Giordano Giacomello di Scienze chimico-farmaceutiche fisiologiche e farmacologiche / Biblioteca Interdipartimentale di Medicina sperimentale e medicina molecolare - sede Storia della Medicina / ..."
+biblioteca,Una zona con una biblioteca,no,Trevi,Ce sta,2,Biblioteca di Archeologia e Storia dell'Arte
+biblioteca,Una zona con una biblioteca,no,Trieste,Ce sta,2,Biblioteca LUISS / Biblioteca Villa Leopardi / Fondazione Gramsci Onlus
+biblioteca,Una zona con una biblioteca,no,Trionfale,Ce sta,2,Aula Studio Casa del Popolo / Aula studio Trionfale / Biblioteca Giordano Bruno / ...
+biblioteca,Una zona con una biblioteca,no,Tuscolano,Ce sta,2,Biblioteca Nelson Mandela / FBM Fondazione Bertugno-Moulinier
+biblioteca,Una zona con una biblioteca,no,Ardeatino,Da romano de Roma,3,Biblioteca Don Andrea Gallo / Biblioteca Fabrizio Giucca
+biblioteca,Una zona con una biblioteca,no,Castro Pretorio,Da romano de Roma,3,Biblioteca Nazionale Centrale di Roma / Biblioteca medica statale
+biblioteca,Una zona con una biblioteca,no,Della Vittoria,Da romano de Roma,3,Biblioteca Antonino De Stefano / Biblioteca del Ministero degli affari esteri / Fondo Andrea Camilleri
+biblioteca,Una zona con una biblioteca,no,Gianicolense,Da romano de Roma,3,Biblioteca Renato Nicolini / Historische Bibliothek
+biblioteca,Una zona con una biblioteca,no,Pietralata,Da romano de Roma,3,Giunti al Punto
+biblioteca,Una zona con una biblioteca,no,Ponte Mammolo,Da romano de Roma,3,Biblioteca Fabrizio Giovenale / Nomentana Libri
+biblioteca,Una zona con una biblioteca,no,Portuense,Da romano de Roma,3,Biblioteca Guglielmo Marconi / Biblopoint Cardarelli
+biblioteca,Una zona con una biblioteca,no,Prenestino-Labicano,Da romano de Roma,3,Aula studio Torpignattara / Biblioteca Anarchica L'IDEA / Biblioteca Goffredo Mameli / ...
+biblioteca,Una zona con una biblioteca,no,Salario,Da romano de Roma,3,Aula studio MACRO / Biblioteca Europea
+biblioteca,Una zona con una biblioteca,no,San Basilio,Da romano de Roma,3,Centro culturale Aldo Fabrizi
+biblioteca,Una zona con una biblioteca,no,Alessandrino,Chicca,5,Biblioteca Gianni Rodari / Biblioteca Quarticciolo
+biblioteca,Una zona con una biblioteca,no,Collatino,Chicca,5,Biblioteca Penazzato / Biblioteca Vaccheria Nardi
+biblioteca,Una zona con una biblioteca,no,Colonna,Chicca,5,Anglo American Bookshop / Biblioteca della Camera dei deputati
+biblioteca,Una zona con una biblioteca,no,Don Bosco,Chicca,5,Biblioteca Livio Maitan / Biblioteca Rugantino
+biblioteca,Una zona con una biblioteca,no,Monte Sacro Alto,Chicca,5,Nomentana Libri
+biblioteca,Una zona con una biblioteca,no,Parione,Chicca,5,Biblioteca Vallicelliana / Casa delle Letterature
+biblioteca,Una zona con una biblioteca,no,Pinciano,Chicca,5,Biblioteca Facoltà di Architettura - Università Sapienza / Biblioteca Flaminia / Biblioteca Quaroni / ...
+biblioteca,Una zona con una biblioteca,no,Ponte,Chicca,5,Casa delle Letterature
+biblioteca,Una zona con una biblioteca,no,Regola,Chicca,5,Biblioteca Centrale Ragazzi / Biblioteca della Pontificia Università della Santa Croce / Bibliothèque de l'École française de Rome
+biblioteca,Una zona con una biblioteca,no,Sant'Angelo,Chicca,5,Biblioteca dell'Istituto dell'Enciclopedia Italiana / Biblioteca di storia moderna e contemporanea
+biblioteca,Una zona con una biblioteca,no,Torre Maura,Chicca,5,Biblioteca Casa dei Bimbi / Biblioteca Raffaello
+biblioteca,Una zona con una biblioteca,no,Val Melaina,Chicca,5,Biblioteca Don Bosco
+biblioteca,Una zona con una biblioteca,no,Casal Boccone,Da Mino,8,Centro Genealogico FamilySearch
+biblioteca,Una zona con una biblioteca,no,Fonte Ostiense,Da Mino,8,Biblioteca ISPRA / Biblioteca Laurentina
+biblioteca,Una zona con una biblioteca,no,Grottarossa,Da Mino,8,Biblioteca della Facoltà di Medicina e psicologia Ernesto Valentini - sede Medicina ospedale S. Andrea
+biblioteca,Una zona con una biblioteca,no,Pigna,Da Mino,8,Biblioteca Casanatense / Biblioteca del Senato Giovanni Spadolini - Palazzo della Minerva / Biblioteca della Camera dei deputati
+biblioteca,Una zona con una biblioteca,no,Ripa,Da Mino,8,Biblioteca del Centro di studi per la storia dell'architettura / Biblioteca dell'Ufficio di Statistica
+biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da Mino,8,"Bibilioteca Lelio Basso / Biblioteca Angelica / Biblioteca Magistrale Laziale ""Giorgio Gabrielli"" / ..."
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campo Marzio,Da cartolina,1,Terrazza del Pincio
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trastevere,Da cartolina,1,Gianicolo / Piazza di San Pietro in Montorio
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campitelli,Ce sta,2,Terrazza sul Foro / Terrazza Caffarelli
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trevi,Ce sta,2,Piazza del Quirinale
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Della Vittoria,Da romano de Roma,3,Zodiaco / Villa Mazzanti
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Ripa,Da romano de Roma,3,Giardino degli Aranci
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Gianicolense,Chicca,5,Fortino della Madonnina
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Monti,Chicca,5,Villa Aldobrandini
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Pinciano,Chicca,5,Villa Balestra
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trionfale,Chicca,5,Monte Ciocci / Piazzale Socrate
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Aurelio,Da Mino,8,Belvedere di via Piccolomini
+cupola,Una zona da cui si vede il Cupolone,si,Trastevere,Da cartolina,1,Gianicolo
+cupola,Una zona da cui si vede il Cupolone,si,Ripa,Ce sta,2,Buco della serratura dei Cavalieri di Malta / Giardino degli Aranci
+cupola,Una zona da cui si vede il Cupolone,si,Della Vittoria,Da romano de Roma,3,Zodiaco
+cupola,Una zona da cui si vede il Cupolone,si,Trevi,Da romano de Roma,3,Piazza del Quirinale
+cupola,Una zona da cui si vede il Cupolone,si,Gianicolense,Chicca,5,Villa Doria Pamphilj
+cupola,Una zona da cui si vede il Cupolone,si,Pinciano,Chicca,5,Villa Balestra
+cupola,Una zona da cui si vede il Cupolone,si,Trionfale,Chicca,5,Monte Ciocci / Piazzale Socrate
+cupola,Una zona da cui si vede il Cupolone,si,Aurelio,Da Mino,8,Belvedere di via Piccolomini / Passeggiata del Gelsomino
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Ripa,Ce sta,2,Buco della serratura
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Da romano de Roma,3,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Chicca,5,Refettorio di Andrea Pozzo a Trinità dei Monti / Effetto acustico di piazza del Popolo
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aurelio,Da Mino,8,Cupola che si rimpicciolisce in via Piccolomini
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Da Mino,8,Galleria prospettica di Palazzo Spada
+misteri,Una zona con una leggenda nera o un mistero,si,Ripa,Da cartolina,1,Bocca della Verità
+misteri,Una zona con una leggenda nera o un mistero,si,Campitelli,Ce sta,2,Rupe Tarpea
+misteri,Una zona con una leggenda nera o un mistero,si,Esquilino,Da romano de Roma,3,Porta Magica
+misteri,Una zona con una leggenda nera o un mistero,si,Appio-Latino,Chicca,5,Impronte di Gesù al Domine Quo Vadis
+misteri,Una zona con una leggenda nera o un mistero,si,Ardeatino,Chicca,5,Impronte di Gesù al Domine Quo Vadis
+misteri,Una zona con una leggenda nera o un mistero,si,Campo Marzio,Chicca,5,"Casa dei Mostri, Palazzo Zuccari"
+misteri,Una zona con una leggenda nera o un mistero,si,Trastevere,Chicca,5,Crocifissioni di San Pietro in Montorio
+misteri,Una zona con una leggenda nera o un mistero,si,Celio,Da Mino,8,Mano dell'operaio sotto l'obelisco di Villa Celimontana
+misteri,Una zona con una leggenda nera o un mistero,si,Parione,Da Mino,8,Oste decapitato e mano di Palazzo Tuccimei / Madonna del Latte del Passetto del Biscione
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Ardeatino,Da cartolina,1,Catacombe di San Callisto / Catacombe di San Sebastiano / Catacombe di Commodilla
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Ludovisi,Ce sta,2,Cripta dei Cappuccini
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Testaccio,Ce sta,2,Cimitero acattolico
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Tiburtino,Da romano de Roma,3,Verano
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Trieste,Da romano de Roma,3,Catacombe di Priscilla / Catacombe di Sant'Agnese
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Appio-Latino,Chicca,5,Catacombe di Pretestato
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Gianicolense,Da Mino,8,Catacombe di San Pancrazio
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Nomentano,Da Mino,8,Catacombe ebraiche di Villa Torlonia
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Portuense,Da Mino,8,Catacombe di Generosa
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Prenestino-Labicano,Da Mino,8,Catacombe dei Santi Marcellino e Pietro
+bernini,Una zona con un capolavoro di Bernini,si,Parione,Da cartolina,1,Fontana dei Quattro Fiumi
+bernini,Una zona con un capolavoro di Bernini,si,Borgo,Ce sta,2,Angeli di Ponte Sant'Angelo
+bernini,Una zona con un capolavoro di Bernini,si,Pinciano,Ce sta,2,Galleria Borghese
+bernini,Una zona con un capolavoro di Bernini,si,Ponte,Ce sta,2,Angeli di Ponte Sant'Angelo
+bernini,Una zona con un capolavoro di Bernini,si,Trevi,Ce sta,2,Fontana del Tritone
+bernini,Una zona con un capolavoro di Bernini,si,Campo Marzio,Da romano de Roma,3,Santa Maria del Popolo
+bernini,Una zona con un capolavoro di Bernini,si,Pigna,Da romano de Roma,3,Elefantino della Minerva
+bernini,Una zona con un capolavoro di Bernini,si,Sallustiano,Da romano de Roma,3,Estasi di Santa Teresa
+bernini,Una zona con un capolavoro di Bernini,si,Ludovisi,Chicca,5,Fontana delle Api
+bernini,Una zona con un capolavoro di Bernini,si,Monti,Chicca,5,Sant'Andrea al Quirinale
+bernini,Una zona con un capolavoro di Bernini,si,Colonna,Da Mino,8,Palazzo di Montecitorio
+bernini,Una zona con un capolavoro di Bernini,si,Trastevere,Da Mino,8,Beata Ludovica Albertoni a San Francesco a Ripa
+borromini,Una zona con un'opera di Borromini,si,Parione,Ce sta,2,Sant'Agnese in Agone / Oratorio dei Filippini
+borromini,Una zona con un'opera di Borromini,si,Monti,Da romano de Roma,3,San Carlo alle Quattro Fontane / Navata di San Giovanni in Laterano
+borromini,Una zona con un'opera di Borromini,si,Sant'Eustachio,Da romano de Roma,3,Sant'Ivo alla Sapienza
+borromini,Una zona con un'opera di Borromini,si,Trevi,Da romano de Roma,3,San Carlo alle Quattro Fontane
+borromini,Una zona con un'opera di Borromini,si,Colonna,Chicca,5,Sant'Andrea delle Fratte
+borromini,Una zona con un'opera di Borromini,si,Campo Marzio,Da Mino,8,Palazzo di Propaganda Fide
+borromini,Una zona con un'opera di Borromini,si,Regola,Da Mino,8,Prospettiva di Palazzo Spada
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Sant'Eustachio,Da cartolina,1,San Luigi dei Francesi / Sant'Agostino
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campo Marzio,Ce sta,2,Santa Maria del Popolo
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pinciano,Ce sta,2,Galleria Borghese
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trevi,Da romano de Roma,3,Palazzo Barberini
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campitelli,Chicca,5,Musei Capitolini
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pigna,Chicca,5,Galleria Doria Pamphilj
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ludovisi,Da Mino,8,Casino dell'Aurora (soffitto)
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trastevere,Da Mino,8,Galleria Corsini
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigna,Da cartolina,1,Area sacra di Largo Argentina
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Monti,Ce sta,2,Domus Aurea
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ostiense,Ce sta,2,Piramide Cestia
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Testaccio,Ce sta,2,Monte dei Cocci / Piramide Cestia
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Parione,Da romano de Roma,3,Stadio di Domiziano
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Celio,Chicca,5,Case romane del Celio
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trevi,Chicca,5,Città dell'acqua (Vicus Caprarius)
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Esquilino,Da Mino,8,Ipogeo degli Aureli
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ripa,Da Mino,8,Mitreo del Circo Massimo
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Sant'Angelo,Da Mino,8,Crypta Balbi
+street-art,Una zona famosa per i murales,si,Ostiense,Ce sta,2,Via del Porto Fluviale
+street-art,Una zona famosa per i murales,si,Prenestino-Labicano,Ce sta,2,Pigneto e i murales per Pasolini
+street-art,Una zona famosa per i murales,si,Ardeatino,Da romano de Roma,3,Museo condominiale di Tor Marancia
+street-art,Una zona famosa per i murales,si,Tiburtino,Da romano de Roma,3,San Lorenzo
+street-art,Una zona famosa per i murales,si,Portuense,Chicca,5,"Trullo, murales e Poeti der Trullo"
+street-art,Una zona famosa per i murales,si,Tuscolano,Chicca,5,"Quadraro, il M.U.Ro."
+novecento,Una zona con un gioiello del Novecento,si,E.U.R.,Da cartolina,1,Laghetto e quartiere dell'Eur
+novecento,Una zona con un gioiello del Novecento,si,Ostiense,Ce sta,2,Gazometro / Fontana della Carlotta alla Garbatella
+novecento,Una zona con un gioiello del Novecento,si,Trieste,Ce sta,2,Quartiere Coppedè
+novecento,Una zona con un gioiello del Novecento,si,Nomentano,Chicca,5,Casina delle Civette
+novecento,Una zona con un gioiello del Novecento,si,Ardeatino,Da Mino,8,Case popolari di Tor Marancia
+novecento,Una zona con un gioiello del Novecento,si,Portuense,Da Mino,8,Borgata razionalista del Trullo
+estero,Una zona dove c'è un pezzetto di estero,si,Campo Marzio,Ce sta,2,"Trinità dei Monti, chiesa dei francesi"
+estero,Una zona dove c'è un pezzetto di estero,si,Sant'Eustachio,Ce sta,2,San Luigi dei Francesi
+estero,Una zona dove c'è un pezzetto di estero,si,Ripa,Da romano de Roma,3,Priorato dei Cavalieri di Malta
+estero,Una zona dove c'è un pezzetto di estero,si,Testaccio,Da romano de Roma,3,Cimitero degli inglesi
+estero,Una zona dove c'è un pezzetto di estero,si,E.U.R.,Chicca,5,Ciliegi giapponesi del laghetto
+estero,Una zona dove c'è un pezzetto di estero,si,Monti,Da Mino,8,"Santo Stefano Rotondo, chiesa degli ungheresi"
+scalinate,Una zona con una scalinata da fiato corto,si,Campo Marzio,Da cartolina,1,Scalinata di Trinità dei Monti
+scalinate,Una zona con una scalinata da fiato corto,si,Campitelli,Ce sta,2,Cordonata e scalinata dell'Aracoeli
+scalinate,Una zona con una scalinata da fiato corto,si,Monti,Da romano de Roma,3,Scala Santa
+scalinate,Una zona con una scalinata da fiato corto,si,Trastevere,Chicca,5,Scalea del Tamburino
+scalinate,Una zona con una scalinata da fiato corto,si,Gianicolense,Da Mino,8,Scala del Righetto al Fortino della Madonnina
+scalinate,Una zona con una scalinata da fiato corto,si,Ostiense,Da Mino,8,Scalinata della Carlotta
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Trastevere,Ce sta,2,Cannone del mezzogiorno al Gianicolo
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Campo Marzio,Chicca,5,Orologio ad acqua del Pincio / Meridiana nel chiostro di Trinità dei Monti
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Castro Pretorio,Chicca,5,Meridiana di Santa Maria degli Angeli
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Della Vittoria,Da Mino,8,Torre del Primo Meridiano d'Italia
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Pigna,Da Mino,8,Orologio di via del Gesù
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Gianicolense,Da cartolina,1,Villa Doria Pamphilj
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Pinciano,Da cartolina,1,Villa Borghese
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Appio Claudio,Ce sta,2,Parco degli Acquedotti
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,E.U.R.,Ce sta,2,Laghetto dell'Eur
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Nomentano,Ce sta,2,Villa Torlonia
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Parioli,Ce sta,2,Villa Ada
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Appio-Latino,Da romano de Roma,3,Parco della Caffarella
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Celio,Da romano de Roma,3,Villa Celimontana
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Monti,Da romano de Roma,3,Parco del Colle Oppio
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Trastevere,Da romano de Roma,3,Orto Botanico
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Della Vittoria,Chicca,5,Riserva di Monte Mario
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Tor di Quinto,Da Mino,8,Parco di Tor di Quinto (laghetto a forma di cuore)

@@ -25,17 +25,17 @@ Nessuna dipendenza da installare per giocare: HTML, CSS e JavaScript puri.
 
 | Fascia | Punti |
 |---|---|
-| Da sampietrino | 8 |
-| Da tassinaro | 5 |
-| Da romano | 3 |
-| Nota | 2 |
-| Scontata | 1 |
+| Da Mino | 8 |
+| Chicca | 5 |
+| Da romano de Roma | 3 |
+| Ce sta | 2 |
+| Da cartolina | 1 |
 
 Massimo 40 al giorno. A fine tappa il gioco mostra solo la tua risposta, con il perché è giusta. A fine giro il diario: per ogni tappa tutte le risposte che si potevano dare, fascia per fascia, coi luoghi che le rendono giuste.
 
 ## Il catalogo delle risposte
 
-Ogni risposta possibile di ogni domanda è catalogata in una fascia: la zona più nota tra le risposte va in Scontata, la meno nota in Da sampietrino, le altre distribuite in mezzo (dalla notorietà in `dati/notorieta.json`).
+Ogni risposta possibile di ogni domanda è catalogata in una fascia: la zona più nota tra le risposte va in Da cartolina, la meno nota in Da Mino, le altre distribuite in mezzo (dalla notorietà in `dati/notorieta.json`).
 
 - Tutto il catalogo, leggibile: `dati/catalogo.csv` (domanda, zona, fascia, punti).
 - Per spostare a mano una zona di fascia: `dati/correzioni-fasce.json`, per esempio `{"metro-a": {"prati": 0}}`. La costruzione si ferma se la domanda o la zona non esistono.

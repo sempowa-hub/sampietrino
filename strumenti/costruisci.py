@@ -14,7 +14,7 @@ Domande: calcolate dalla geometria, mai scritte a mano.
   - "Confina col Vaticano".
 
 Catalogo: ogni risposta giusta di ogni domanda sta in una fascia della scala (0-4,
-da Scontata a Da sampietrino), dalla notorieta della zona rispetto alle altre risposte.
+da Da cartolina a Da Mino), dalla notorieta della zona rispetto alle altre risposte.
 Correzioni a mano in dati/correzioni-fasce.json. Il catalogo leggibile esce in dati/catalogo.csv.
 
 Uso: pip install shapely pyproj && python3 strumenti/costruisci.py
@@ -43,7 +43,7 @@ USCITA = RADICE / 'dati' / 'gioco.json'
 CONFINE_MINIMO_M = 100
 QUOTA_DENTRO_GRA = 0.5
 MIN_RISPOSTE, MAX_RISPOSTE = 4, 25
-FASCE = ['Scontata', 'Nota', 'Da romano', 'Da tassinaro', 'Da sampietrino']
+FASCE = ['Da cartolina', 'Ce sta', 'Da romano de Roma', 'Chicca', 'Da Mino']
 PUNTI = [1, 2, 3, 5, 8]
 CATALOGO_CSV = RADICE / 'dati' / 'catalogo.csv'
 ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']

@@ -10,7 +10,7 @@ const dom = { id: 'prova', catalogo: { a: 0, b: 1, c: 2, d: 3, e: 4 } };
 
 test('ogni fascia della scala da i suoi punti', () => {
   assert.deepEqual(['a', 'b', 'c', 'd', 'e'].map((z) => punti(dom, z)), [1, 2, 3, 5, 8]);
-  assert.equal(fascia(dom, 'e').nome, 'Da sampietrino');
+  assert.equal(fascia(dom, 'e').nome, 'Da Mino');
   assert.equal(MASSIMO_AL_GIORNO, 40);
 });
 
@@ -25,7 +25,7 @@ test('fascia fuori scala fa errore, non passa in silenzio', () => {
 
 test('un solo pin per tappa', () => {
   const s = pinna(nuovaDomanda(dom), 'd');
-  assert.deepEqual(s.pin, { zona: 'd', punti: 5, fascia: 'Da tassinaro' });
+  assert.deepEqual(s.pin, { zona: 'd', punti: 5, fascia: 'Chicca' });
   assert.throws(() => pinna(s, 'e'), /chiusa/);
 });
 

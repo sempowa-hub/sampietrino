@@ -17,7 +17,7 @@ const C = {
   scelta: [196, 58, 40], sceltaScura: [120, 30, 18],
 };
 
-// Fasce della scala, dalla Scontata alla Da sampietrino: peperino, pino, fontanella, cocciopesto, oro.
+// Fasce della scala, da Da cartolina a Da Mino: peperino, pino, fontanella, cocciopesto, oro.
 // Stessi colori dell'interfaccia (stile.css).
 export const COLORI_FASCE = ['#a9a397', '#6e9a5a', '#5b8fb8', '#d0663f', '#e8b33a'];
 const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));

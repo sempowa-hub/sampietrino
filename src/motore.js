@@ -7,12 +7,13 @@ export const MAX_RISPOSTE = 25;
 export const MAX_PER_TIPO = 1;
 
 // La scala: dalla risposta che dicono tutti a quella che conosce solo chi vive per strada.
+// Diciture scelte da Themino; le registrera anche a voce.
 export const SCALA = [
-  { nome: 'Scontata', punti: 1 },
-  { nome: 'Nota', punti: 2 },
-  { nome: 'Da romano', punti: 3 },
-  { nome: 'Da tassinaro', punti: 5 },
-  { nome: 'Da sampietrino', punti: 8 },
+  { nome: 'Da cartolina', punti: 1 },
+  { nome: 'Ce sta', punti: 2 },
+  { nome: 'Da romano de Roma', punti: 3 },
+  { nome: 'Chicca', punti: 5 },
+  { nome: 'Da Mino', punti: 8 },
 ];
 export const MASSIMO_AL_GIORNO = DOMANDE_AL_GIORNO * SCALA.at(-1).punti;
 

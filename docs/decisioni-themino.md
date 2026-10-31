@@ -6,7 +6,7 @@ Prese da Simone e Themino insieme, sulle domande di `docs/domande-themino.md`.
 |---|---|
 | Nome del gioco | Ci stanno pensando. Per ora resta "Sampietrino". |
 | Voce | Un po' di romanesco va bene, ma senza caricatura esagerata del romano. |
-| Audio e fasce | L'idea gli piace molto; vuole rivedere lui le diciture delle 5 fasce. |
+| Diciture delle fasce | Da cartolina (1) · Ce sta (2) · Da romano de Roma (3) · Chicca (5) · Da Mino (8). Zero punti: Buca, e Capolinea se scade il tempo. Themino le registra a voce, 3-4 varianti ciascuna. |
 | Dominio | Più avanti. Per ora resta sampietrino-roma.web.app. |
 | Fasce belvederi e Bernini | Giuste così. Giardino degli Aranci passa a Da romano. |
 | La chicca Da sampietrino | Gli effetti ottici e prospettici: via Piccolomini, la galleria di Borromini a Palazzo Spada. |

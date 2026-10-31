@@ -1,7 +1,7 @@
 // Interfaccia di Sampietrino: la mappa, un biglietto per tappa, l'esito della sola tua risposta,
 // il diario finale con tutte le risposte tappa per tappa.
 import {
-  SCALA, MASSIMO_AL_GIORNO, risposte, nuovaDomanda, pinna, totale, domandeDelGiorno, DOMANDE_AL_GIORNO,
+  SCALA, MASSIMO_AL_GIORNO, fascia, risposte, nuovaDomanda, pinna, totale, domandeDelGiorno, DOMANDE_AL_GIORNO,
 } from './motore.js';
 import { creaMappa, COLORI_FASCE } from './mappa.js';
 import { suoni, sblocca, eMuto, cambiaMuto } from './suoni.js';
@@ -29,6 +29,12 @@ function ripristina() {
     // Se le domande del giorno sono cambiate (dati nuovi pubblicati) la partita salvata non vale piu.
     if (!v || v.stati.length !== domande.length || v.ids?.join() !== domande.map((d) => d.id).join()) return false;
     stati = v.stati.map((s, i) => ({ ...s, domanda: domande[i] }));
+    // Fascia e punti si ricalcolano dal catalogo: se le diciture cambiano, le partite salvate restano valide.
+    for (const s of stati) {
+      if (!s.pin?.zona) continue;
+      const f = fascia(s.domanda, s.pin.zona);
+      s.pin = { ...s.pin, fascia: f?.nome ?? null, punti: f?.punti ?? 0 };
+    }
     corrente = v.corrente;
     return true;
   } catch { return false; }
@@ -353,7 +359,7 @@ function preparaCartellino(s, attesa) {
   c.classList.remove('rivelato', 'entra');
   $('c-tappa').textContent = `Tappa ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
   $('c-zona').textContent = pin.zona ? nomeZona(pin.zona) : 'Tempo scaduto';
-  $('c-timbro').textContent = pin.fascia ?? (pin.zona ? 'Buca' : 'Niente timbro');
+  $('c-timbro').textContent = pin.fascia ?? (pin.zona ? 'Buca' : 'Capolinea');
   $('c-punti').textContent = pin.punti ? `+${pin.punti}` : '0';
   void c.offsetWidth;
   c.classList.add('entra');
@@ -377,7 +383,7 @@ function mostraPaginaEsito(anima) {
   $('esito-domanda').textContent = s.domanda.testo;
   $('esito-zona').textContent = pin.zona ? nomeZona(pin.zona) : 'Tempo scaduto';
   const t = $('esito-timbro');
-  t.textContent = pin.fascia ? `${pin.fascia} +${pin.punti}` : pin.zona ? 'Buca' : '0';
+  t.textContent = pin.fascia ? `${pin.fascia} +${pin.punti}` : pin.zona ? 'Buca' : 'Capolinea';
   t.style.setProperty('--colore-t', liv === null ? 'var(--rosso)' : coloreT(liv));
   const [motivo, nota] = argomenta(s);
   $('esito-perche').textContent = motivo;
@@ -440,7 +446,7 @@ function mostraFine(anima) {
     b.innerHTML = `<span class="n">${i + 1}</span><span class="d"></span><span class="p">${s.pin?.punti ? `+${s.pin.punti}` : '0'}</span><span class="z"><span class="nome"></span><span class="timbro"></span></span>`;
     b.querySelector('.d').textContent = s.domanda.testo;
     b.querySelector('.nome').textContent = nomeZona(s.pin?.zona);
-    b.querySelector('.timbro').textContent = s.pin?.fascia ?? (s.pin?.zona ? 'Buca' : 'Tempo');
+    b.querySelector('.timbro').textContent = s.pin?.fascia ?? (s.pin?.zona ? 'Buca' : 'Capolinea');
     b.addEventListener('click', () => apriTappa(aperta === i ? -1 : i));
     li.append(b);
     return li;
@@ -456,7 +462,7 @@ function mostraFine(anima) {
 }
 
 // Tutte le tue tappe sulla mappa; aprendone una, le sue risposte si accendono a cascata,
-// dalla Scontata alla Da sampietrino.
+// da Da cartolina a Da Mino.
 function apriTappa(i, anima = true) {
   aperta = i;
   [...$('righe').querySelectorAll('button')].forEach((b, j) => b.setAttribute('aria-expanded', String(j === i)));
