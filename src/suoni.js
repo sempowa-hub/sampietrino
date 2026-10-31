@@ -9,17 +9,31 @@ let uscita = null;
 let muto = (() => { try { return localStorage.getItem(CHIAVE) === '1'; } catch { return false; } })();
 let ultimoTic = 0;
 
+// Sblocca l'audio dentro un gesto vero (touchend, click, tasto): sui telefoni pointerdown non basta.
+// Su iPhone (anche Chrome usa il motore di Safari) l'audio del gioco tace col telefono in silenzioso:
+// si chiede la sessione "playback", come un video, e si suona un attimo di silenzio con <audio> e Web Audio.
+// Torna una promessa che si risolve quando l'audio e partito davvero.
+const SILENZIO = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=';
 export function sblocca() {
   if (!ac) {
     const Ctx = window.AudioContext || window.webkitAudioContext;
-    if (!Ctx) return;
+    if (!Ctx) return Promise.resolve();
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch { /* non c'e: pazienza */ }
     ac = new Ctx();
     uscita = ac.createGain();
     uscita.gain.value = 0.9;
     uscita.connect(ac.destination);
     caricaVoci();
   }
-  if (ac.state === 'suspended') ac.resume();
+  try {
+    const muto = new Audio(SILENZIO);
+    muto.setAttribute('playsinline', '');
+    muto.play().catch(() => {});
+    const b = ac.createBuffer(1, 1, 22050);
+    const s = ac.createBufferSource();
+    s.buffer = b; s.connect(ac.destination); s.start(0);
+  } catch { /* niente */ }
+  return ac.state === 'running' ? Promise.resolve() : ac.resume().catch(() => {});
 }
 
 // Voci di Themino: si scaricano tutte al primo gesto (sono poche centinaia di KB) e si decodificano.
@@ -52,6 +66,7 @@ export function voce(nome, dopo = 0) {
 }
 
 export const eMuto = () => muto;
+export const audioAttivo = () => !!ac && ac.state === 'running';
 export function cambiaMuto() {
   muto = !muto;
   try { localStorage.setItem(CHIAVE, muto ? '1' : '0'); } catch { /* resta per questa sessione */ }

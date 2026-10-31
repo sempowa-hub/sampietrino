@@ -4,7 +4,7 @@ import {
   SCALA, MASSIMO_AL_GIORNO, fascia, risposte, nuovaDomanda, pinna, totale, domandeDelGiorno, DOMANDE_AL_GIORNO,
 } from './motore.js';
 import { creaMappa, COLORI_FASCE } from './mappa.js';
-import { suoni, sblocca, eMuto, cambiaMuto } from './suoni.js';
+import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
 import { disegnaMiniMappa } from './minimappa.js';
 
@@ -622,8 +622,7 @@ new ResizeObserver(() => {
 $('piu').addEventListener('click', () => mappa.zoom(1 / 1.5));
 $('meno').addEventListener('click', () => mappa.zoom(1.5));
 $('daje').addEventListener('click', () => {
-  sblocca();
-  suoni.daje();
+  sblocca().then(() => suoni.daje());
   const c = $('copertina');
   c.classList.add('esce');
   setTimeout(() => { c.close(); c.classList.remove('esce'); avviaOrologio(); }, dopo(200));
@@ -671,7 +670,11 @@ $('apri-passaporto').addEventListener('click', apriPassaporto);
 $('chiudi-passaporto').addEventListener('click', () => $('passaporto').close());
 
 // Suoni: il primo gesto sblocca l'audio; il tasto in testata lo zittisce, e il browser se lo ricorda.
-document.addEventListener('pointerdown', sblocca, { once: true });
+// Sui telefoni l'audio si sblocca solo con touchend o click (non con pointerdown): si riprova a ogni gesto
+// finche non parte, poi gli ascoltatori se ne vanno.
+for (const ev of ['touchend', 'click', 'keydown']) document.addEventListener(ev, function prova() {
+  sblocca().then(() => { if (audioAttivo()) for (const e of ['touchend', 'click', 'keydown']) document.removeEventListener(e, prova); });
+}, { passive: true });
 $('suono').setAttribute('aria-pressed', String(!eMuto()));
 $('suono').addEventListener('click', () => {
   sblocca();
