@@ -816,9 +816,9 @@ biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da sampietrino,8,"Bibil
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campo Marzio,Scontata,1,Terrazza del Pincio
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trastevere,Scontata,1,Gianicolo / Piazza di San Pietro in Montorio
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campitelli,Nota,2,Terrazza sul Foro / Terrazza Caffarelli
-belvedere-themino,Una zona con un belvedere segreto di Themino,si,Ripa,Nota,2,Giardino degli Aranci
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trevi,Nota,2,Piazza del Quirinale
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Della Vittoria,Da romano,3,Zodiaco / Villa Mazzanti
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Ripa,Da romano,3,Giardino degli Aranci
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Gianicolense,Da tassinaro,5,Fortino della Madonnina
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Monti,Da tassinaro,5,Villa Aldobrandini
 belvedere-themino,Una zona con un belvedere segreto di Themino,si,Pinciano,Da tassinaro,5,Villa Balestra
@@ -832,11 +832,11 @@ cupola,Una zona da cui si vede il Cupolone,si,Gianicolense,Da tassinaro,5,Villa 
 cupola,Una zona da cui si vede il Cupolone,si,Pinciano,Da tassinaro,5,Villa Balestra
 cupola,Una zona da cui si vede il Cupolone,si,Trionfale,Da tassinaro,5,Monte Ciocci / Piazzale Socrate
 cupola,Una zona da cui si vede il Cupolone,si,Aurelio,Da sampietrino,8,Belvedere di via Piccolomini / Passeggiata del Gelsomino
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Nota,2,Galleria prospettica di Palazzo Spada
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Ripa,Nota,2,Buco della serratura
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Da romano,3,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Da tassinaro,5,Refettorio di Andrea Pozzo a Trinità dei Monti / Effetto acustico di piazza del Popolo
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aurelio,Da sampietrino,8,Cupola che si rimpicciolisce in via Piccolomini
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Da sampietrino,8,Galleria prospettica di Palazzo Spada
 misteri,Una zona con una leggenda nera o un mistero,si,Ripa,Scontata,1,Bocca della Verità
 misteri,Una zona con una leggenda nera o un mistero,si,Campitelli,Nota,2,Rupe Tarpea
 misteri,Una zona con una leggenda nera o un mistero,si,Esquilino,Da romano,3,Porta Magica
@@ -869,12 +869,12 @@ bernini,Una zona con un capolavoro di Bernini,si,Monti,Da tassinaro,5,Sant'Andre
 bernini,Una zona con un capolavoro di Bernini,si,Colonna,Da sampietrino,8,Palazzo di Montecitorio
 bernini,Una zona con un capolavoro di Bernini,si,Trastevere,Da sampietrino,8,Beata Ludovica Albertoni a San Francesco a Ripa
 borromini,Una zona con un'opera di Borromini,si,Parione,Nota,2,Sant'Agnese in Agone / Oratorio dei Filippini
-borromini,Una zona con un'opera di Borromini,si,Regola,Nota,2,Prospettiva di Palazzo Spada
 borromini,Una zona con un'opera di Borromini,si,Monti,Da romano,3,San Carlo alle Quattro Fontane / Navata di San Giovanni in Laterano
 borromini,Una zona con un'opera di Borromini,si,Sant'Eustachio,Da romano,3,Sant'Ivo alla Sapienza
 borromini,Una zona con un'opera di Borromini,si,Trevi,Da romano,3,San Carlo alle Quattro Fontane
 borromini,Una zona con un'opera di Borromini,si,Colonna,Da tassinaro,5,Sant'Andrea delle Fratte
 borromini,Una zona con un'opera di Borromini,si,Campo Marzio,Da sampietrino,8,Palazzo di Propaganda Fide
+borromini,Una zona con un'opera di Borromini,si,Regola,Da sampietrino,8,Prospettiva di Palazzo Spada
 caravaggio,Una zona dove puoi vedere un Caravaggio,si,Sant'Eustachio,Scontata,1,San Luigi dei Francesi / Sant'Agostino
 caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campo Marzio,Nota,2,Santa Maria del Popolo
 caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pinciano,Nota,2,Galleria Borghese

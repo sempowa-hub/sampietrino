@@ -37,8 +37,17 @@ function ripristina() {
 const nomeZona = (id) => (id ? zonePerId[id].nome : 'tempo scaduto');
 const livelloDi = (nomeFascia) => SCALA.findIndex((f) => f.nome === nomeFascia);
 const coloreT = (liv) => `var(--f${liv}-t)`;
+// La faccia di Themino per ogni esito: buca, scontata, giusta, rara.
+const faccia = (liv) => (liv === null ? 'buca' : liv === 0 ? 'neutro' : liv <= 2 ? 'sorriso' : 'stupore');
+function mettiFaccia(el, nome, anima = true) {
+  el.src = `img/themino-${nome}.png`;
+  el.classList.remove('reagisce');
+  if (anima) { void el.offsetWidth; el.classList.add('reagisce'); }
+}
 
 async function avvia() {
+  // Le facce si caricano subito: al momento della rivelazione devono esserci gia.
+  for (const f of ['neutro', 'sorriso', 'buca', 'stupore']) new Image().src = `img/themino-${f}.png`;
   dati = await (await fetch('dati/gioco.json')).json();
   zonePerId = Object.fromEntries(dati.zone.map((z) => [z.id, z]));
   domande = domandeDelGiorno(oggi, dati.domande);
@@ -340,6 +349,7 @@ function preparaCartellino(s, attesa) {
   c.style.setProperty('--colore-t', liv === null ? 'var(--rosso)' : coloreT(liv));
   c.classList.toggle('buca', liv === null);
   c.classList.toggle('attesa', attesa);
+  mettiFaccia($('c-faccia'), attesa ? 'neutro' : faccia(liv), !attesa);
   c.classList.remove('rivelato', 'entra');
   $('c-tappa').textContent = `Tappa ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
   $('c-zona').textContent = pin.zona ? nomeZona(pin.zona) : 'Tempo scaduto';
@@ -352,6 +362,8 @@ function preparaCartellino(s, attesa) {
 
 function rivelaCartellino() {
   const c = $('cartellino');
+  const s = stati[corrente];
+  mettiFaccia($('c-faccia'), faccia(s.pin.fascia ? livelloDi(s.pin.fascia) : null));
   c.classList.remove('attesa');
   void c.offsetWidth;
   c.classList.add('rivelato');
@@ -418,6 +430,7 @@ function mostraFine(anima) {
   contaFino($('fine-totale'), anima ? 0 : tot, tot, 900);
   $('fine-massimo').textContent = `/ ${MASSIMO_AL_GIORNO}`;
   $('fine-frase').textContent = FRASI.find(([min]) => tot >= min)[1];
+  mettiFaccia($('fine-faccia'), tot >= 22 ? 'stupore' : tot >= 12 ? 'sorriso' : tot > 0 ? 'neutro' : 'buca', anima);
   $('righe').replaceChildren(...stati.map((s, i) => {
     const li = document.createElement('li');
     const b = document.createElement('button');

@@ -65,7 +65,7 @@
   {"id": "belvedere-themino", "tipo": "vista", "testo": "Una zona con un belvedere segreto di Themino", "contesto": "Roma si guarda dall'alto: dodici terrazze del libro, dal Pincio che conoscono tutti al Piazzale Socrate che Themino ha riempito di panchine.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
    {"nome": "Gianicolo", "lat": 41.891422, "lon": 12.460778, "fascia": 0, "zona_attesa": "Trastevere", "libro": 20},
    {"nome": "Terrazza del Pincio", "lat": 41.911197, "lon": 12.478442, "fascia": 0, "zona_attesa": "Campo Marzio", "libro": 26},
-   {"nome": "Giardino degli Aranci", "lat": 41.884224, "lon": 12.480157, "fascia": 1, "zona_attesa": "Ripa", "libro": 21},
+   {"nome": "Giardino degli Aranci", "lat": 41.884224, "lon": 12.480157, "fascia": 2, "zona_attesa": "Ripa", "libro": 21},
    {"nome": "Piazza del Quirinale", "lat": 41.899348, "lon": 12.486482, "fascia": 1, "zona_attesa": "Trevi", "libro": 23},
    {"nome": "Terrazza sul Foro", "lat": 41.892251, "lon": 12.483441, "fascia": 1, "zona_attesa": "Campitelli", "libro": 28},
    {"nome": "Terrazza Caffarelli", "lat": 41.892885, "lon": 12.481684, "fascia": 2, "zona_attesa": "Campitelli", "libro": 27},
@@ -83,7 +83,7 @@
   {"id": "cupola", "tipo": "vista", "testo": "Una zona da cui si vede il Cupolone", "contesto": "La cupola di San Pietro spunta ovunque, ma certi posti la incorniciano: un buco della serratura, un vecchio binario, una strada che la fa rimpicciolire mentre ti avvicini.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
    {"nome": "Gianicolo", "lat": 41.891422, "lon": 12.460778, "fascia": 0, "zona_attesa": "Trastevere", "libro": 20},
    {"nome": "Buco della serratura dei Cavalieri di Malta", "lat": 41.882909, "lon": 12.477846, "fascia": 1, "zona_attesa": "Ripa", "libro": 45},
-   {"nome": "Giardino degli Aranci", "lat": 41.884224, "lon": 12.480157, "fascia": 1, "zona_attesa": "Ripa", "libro": 21},
+   {"nome": "Giardino degli Aranci", "lat": 41.884224, "lon": 12.480157, "fascia": 2, "zona_attesa": "Ripa", "libro": 21},
    {"nome": "Piazza del Quirinale", "lat": 41.899348, "lon": 12.486482, "fascia": 2, "zona_attesa": "Trevi", "libro": 23},
    {"nome": "Zodiaco", "lat": 41.923572, "lon": 12.452727, "fascia": 2, "zona_attesa": "Della Vittoria", "libro": 29},
    {"nome": "Villa Doria Pamphilj", "lat": 41.884328, "lon": 12.44776, "fascia": 3, "zona_attesa": "Gianicolense", "libro": 14},
@@ -95,7 +95,7 @@
   ]},
 
   {"id": "illusioni", "tipo": "illusioni", "testo": "Una zona dove Roma ti inganna gli occhi (o le orecchie)", "contesto": "Una galleria di 8 metri che ne sembra 30, una cupola dipinta su un soffitto piatto, una piazza dove ci si parla a cento metri senza alzare la voce.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
-   {"nome": "Galleria prospettica di Palazzo Spada", "lat": 41.893919, "lon": 12.472225, "fascia": 1, "zona_attesa": "Regola", "libro": 66},
+   {"nome": "Galleria prospettica di Palazzo Spada", "lat": 41.893919, "lon": 12.472225, "fascia": 4, "zona_attesa": "Regola", "libro": 66},
    {"nome": "Buco della serratura", "lat": 41.882909, "lon": 12.477846, "fascia": 1, "zona_attesa": "Ripa", "libro": 45},
    {"nome": "Finta cupola di Sant'Ignazio", "lat": 41.89875, "lon": 12.479808, "fascia": 2, "zona_attesa": "Pigna", "libro": 39},
    {"nome": "Volta del Baciccio al Gesù", "lat": 41.895776, "lon": 12.479135, "fascia": 2, "zona_attesa": "Pigna", "libro": 37},
@@ -148,7 +148,7 @@
 
   {"id": "borromini", "tipo": "arte", "testo": "Una zona con un'opera di Borromini", "contesto": "Il rivale di Bernini: curve, ellissi e prospettive bugiarde. San Carlino sta tutto dentro un pilastro di San Pietro.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
    {"nome": "Sant'Agnese in Agone", "lat": 41.898928, "lon": 12.473118, "fascia": 1, "zona_attesa": "Parione"},
-   {"nome": "Prospettiva di Palazzo Spada", "lat": 41.893919, "lon": 12.472225, "fascia": 1, "zona_attesa": "Regola", "libro": 66},
+   {"nome": "Prospettiva di Palazzo Spada", "lat": 41.893919, "lon": 12.472225, "fascia": 4, "zona_attesa": "Regola", "libro": 66},
    {"nome": "San Carlo alle Quattro Fontane", "lat": 41.899984, "lon": 12.487913, "fascia": 2, "zona_attesa": "Monti", "libro": "box", "zone_anche": ["Trevi"]},
    {"nome": "Sant'Ivo alla Sapienza", "lat": 41.898151, "lon": 12.474097, "fascia": 2, "zona_attesa": "Sant'Eustachio"},
    {"nome": "Navata di San Giovanni in Laterano", "lat": 41.886107, "lon": 12.503957, "fascia": 3, "zona_attesa": "Monti", "libro": 31},
