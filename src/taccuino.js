@@ -231,7 +231,12 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
         mio.append(b);
       }
     } else {
-      mio.append(el('p', 'cl-nota', g?.finita && g.recupero ? 'Oggi hai giocato solo partite arretrate: la classifica è per la partita del giorno.'
+      if (!u || u.anonimo) {
+        mio.append(el('p', 'cl-nota', 'In classifica ci sono solo i giocatori entrati con Google: entra e il tuo punteggio di oggi finisce qui col tuo nome.'));
+        const b = el('button', 'primario piccolo', 'Entra con Google');
+        b.addEventListener('click', () => apri('account', { da: daTaccuino }));
+        mio.append(b);
+      } else mio.append(el('p', 'cl-nota', g?.finita && g.recupero ? 'Oggi hai giocato solo partite arretrate: la classifica è per la partita del giorno.'
         : chiesta === 'oggi' ? 'Finisci la partita di oggi per entrare in classifica.' : 'Finisci la partita di oggi per entrare nella classifica della settimana.'));
       if (!g?.finita) {
         const b = el('button', 'primario piccolo', 'Gioca oggi');

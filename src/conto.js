@@ -177,18 +177,16 @@ export function salvaStorico(storico) {
 const colPunteggi = (data) => fb.fs.collection(fb.db, 'partite', data, 'punteggi');
 
 // Il punteggio di oggi, una volta sola. Se poi entri con Google, al punteggio si aggiungono nome e foto.
+// In classifica va solo chi e entrato con Google: gli anonimi non pubblicano niente (lo fanno quando entrano).
 export async function pubblicaPunteggio(data, { tot, livelli }) {
   const u = await avviaConto();
-  if (!u) return false;
+  if (!u || u.anonimo) return false;
   const { fs } = fb;
   const rif = fs.doc(colPunteggi(data), io.uid);
   const esiste = (await fs.getDoc(rif)).exists();
   if (esiste) { await aggiornaNomeInClassifica(data); return true; }
   const me = utente();
-  await fs.setDoc(rif, {
-    tot, livelli, ora: fs.serverTimestamp(),
-    pubblico: !me.anonimo && !!me.nome, nome: me.anonimo ? '' : me.nome, foto: me.anonimo ? '' : me.foto,
-  });
+  await fs.setDoc(rif, { tot, livelli, ora: fs.serverTimestamp(), pubblico: !!me.nome, nome: me.nome || '', foto: me.foto || '' });
   return true;
 }
 
@@ -220,7 +218,7 @@ const colSettimana = (lunedi) => fb.fs.collection(fb.db, 'settimane', lunedi, 'p
 // Aggiunge il punteggio di un giorno alla settimana, una volta sola (le regole controllano che sia quello vero).
 export async function pubblicaSettimana(data, tot) {
   const u = await avviaConto();
-  if (!u) return false;
+  if (!u || u.anonimo) return false;
   const { fs } = fb;
   const rif = fs.doc(colSettimana(settimanaDi(data)), io.uid);
   const me = utente();

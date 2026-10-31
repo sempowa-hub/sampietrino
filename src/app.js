@@ -127,6 +127,16 @@ async function pubblicaOggi() {
   try {
     const u = await avviaConto();
     if (!u) return;
+    if (u.anonimo) {
+      // Senza login niente classifica: un invito al posto del "meglio del X%".
+      if (giorno === oggi && !$('pagina-diario').hidden) {
+        $('meglio').innerHTML = 'Entra con Google per finire in classifica';
+        $('meglio').dataset.apri = 'account';
+        $('meglio').hidden = false;
+      }
+      return;
+    }
+    $('meglio').dataset.apri = 'classifica';
     if (g.pubblicato !== u.uid) {
       if (!(await pubblicaPunteggio(oggi, { tot: g.tot, livelli: g.livelli }))) return;
       const s = leggi();
