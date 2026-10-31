@@ -26,6 +26,7 @@
       <img class="faccia c-faccia" id="c-faccia" src="img/mino-pensieroso.png" alt="" width="56" height="56">
       <p class="c-tappa" id="c-tappa"></p>
       <p class="c-zona" id="c-zona"></p>
+      <p class="c-nuovo" id="c-nuovo" hidden>Nuovo timbro nel passaporto</p>
       <div class="c-riga"><span class="c-attesa" aria-label="in attesa"><i></i><i></i><i></i></span><span class="timbro" id="c-timbro"></span><span class="c-punti" id="c-punti"></span></div>
     </div>
   </section>
@@ -37,6 +38,9 @@
         <p class="data" id="data"></p>
       </div>
       <div class="cassa" aria-live="polite"><span id="totale">0</span><small>sampietrini</small></div>
+      <button class="suono" id="apri-passaporto" aria-label="Passaporto dei quartieri">
+        <svg viewBox="0 0 16 16" width="20" height="20" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v14H3zM4 2v12h8V2zM6 5h4v1H6zM5 6h1v3H5zM10 6h1v3h-1zM6 9h4v1H6zM6 11h4v1H6z"/></svg>
+      </button>
       <button class="suono" id="suono" aria-label="Suoni" aria-pressed="true">
         <svg viewBox="0 0 16 16" width="20" height="20" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 6h3l4-3v10l-4-3H2z"/><path class="onde" fill="currentColor" d="M11 6h1v4h-1zM13 4h1v8h-1z"/><path class="croce" fill="currentColor" d="M10 5h1v1h-1zM14 5h1v1h-1zM11 6h1v1h-1zM13 6h1v1h-1zM12 7h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1z"/></svg>
       </button>
@@ -66,7 +70,7 @@
         <p class="esito-perche" id="esito-perche"></p>
       </div>
       <p class="esito-nota" id="esito-nota"></p>
-      <blockquote class="esito-contesto" id="esito-contesto" hidden><small>Dalla guida di Themino</small><span id="esito-contesto-testo"></span></blockquote>
+      <blockquote class="esito-contesto" id="esito-contesto" hidden><small>Mino dice</small><span id="esito-contesto-testo"></span></blockquote>
       <button class="primario" id="avanti">Prossima tappa</button>
       <p class="tasti"><kbd>Invio</kbd> prossima tappa</p>
     </section>
@@ -76,9 +80,10 @@
       <div class="fine-testa"><img class="faccia fine-faccia" id="fine-faccia" src="img/mino-sorriso.png" alt="" width="56" height="56">
       <p class="grande"><span id="fine-totale">0</span><small id="fine-massimo"></small></p></div>
       <p class="fine-frase" id="fine-frase"></p>
+      <p class="serie" id="serie"></p>
       <ol class="righe" id="righe"></ol>
       <div class="risposte" id="risposte" aria-live="polite"></div>
-      <button class="primario" id="copia">Copia il diario</button>
+      <button class="primario" id="condividi">Condividi nella storia</button>
       <p class="nota">Domani nuove tappe<span id="prossima"></span></p>
     </section>
   </aside>
@@ -96,6 +101,16 @@
   </ul>
   <ol class="scala" id="scala"></ol>
   <button class="primario daje" id="daje">DAJE!</button>
+</dialog>
+
+<dialog id="passaporto" class="passaporto">
+  <p class="etichetta">Passaporto dei quartieri</p>
+  <p class="pass-conto"><b id="pass-numero">0</b> <span id="pass-totale"></span></p>
+  <div class="pass-barra" aria-hidden="true"><i id="pass-riempi"></i></div>
+  <p class="pass-serie" id="pass-serie"></p>
+  <canvas id="pass-mappa" width="720" height="640" aria-label="Le zone timbrate sulla mappa"></canvas>
+  <ol class="pass-elenco" id="pass-elenco"></ol>
+  <button class="primario" id="chiudi-passaporto">Chiudi</button>
 </dialog>
 
 <script type="module" src="src/app.js"></script>

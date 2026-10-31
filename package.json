@@ -1,6 +1,6 @@
 {
   "name": "sampietrino",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "type": "module",
   "description": "Gioco quotidiano sui quartieri di Roma: vale di piu la risposta giusta che pochi danno.",
@@ -10,6 +10,8 @@
     "costruisci": "python3 strumenti/costruisci.py",
     "pubblica": "firebase deploy --only hosting",
     "quartieri": "python3 strumenti/scarica_quartieri.py",
-    "mino": "python3 strumenti/disegna_mino.py"
+    "mino": "python3 strumenti/disegna_mino.py",
+    "zone": "python3 strumenti/accorpa_zone.py",
+    "vocali": "python3 strumenti/taglia_vocali.py"
   }
 }

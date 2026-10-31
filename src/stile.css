@@ -291,6 +291,28 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 .risposte .luoghi { color: var(--inchiostro-2); font-weight: 400; }
 .nota { margin: 10px 0 0; text-align: center; font-size: 14px; color: var(--inchiostro-2); }
 
+/* Nuovo timbro sul cartellino. */
+.c-nuovo { margin: 0 0 8px; font-size: 12px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--f2-t); }
+.c-nuovo[hidden] { display: none; }
+.cartellino.rivelato .c-nuovo { animation: timbra 340ms var(--deciso) 420ms both; }
+
+/* Serie di giorni nel diario. */
+.serie { margin: -4px 0 12px; font-size: 16px; font-weight: 600; color: var(--rosso); }
+.serie:empty { display: none; }
+
+/* Passaporto dei quartieri: quante zone hai timbrato, dove, con che fascia. */
+.passaporto { width: min(94vw, 560px); max-height: 92dvh; overflow: auto; }
+.pass-conto { margin: 8px 0 6px; font-size: 20px; }
+.pass-conto b { font-family: var(--font-titolo); font-weight: 400; font-size: 44px; }
+.pass-barra { height: 10px; box-shadow: var(--filo); background: var(--carta); margin-bottom: 8px; }
+.pass-barra i { display: block; height: 100%; background: var(--f4); transform-origin: left; transition: transform 700ms var(--esce); }
+.pass-serie { margin: 0 0 10px; font-size: 16px; font-weight: 600; color: var(--rosso); }
+.pass-serie:empty { display: none; }
+#pass-mappa { width: 100%; height: auto; display: block; background: var(--carta); box-shadow: var(--filo); margin-bottom: 12px; }
+.pass-elenco { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.pass-elenco li { font-size: 14px; font-weight: 600; padding: 2px 7px; box-shadow: 0 0 0 1.5px var(--colore-t); color: var(--colore-t); background: var(--scheda); }
+.pass-elenco .vuoto { box-shadow: none; color: var(--inchiostro-2); font-weight: 400; }
+
 /* Copertina del giorno. */
 dialog {
   border: none; padding: 26px 24px 22px;

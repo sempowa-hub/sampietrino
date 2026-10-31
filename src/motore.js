@@ -2,7 +2,7 @@
 // Ogni domanda ha un catalogo: per ogni zona giusta, la sua fascia nella scala dei punteggi.
 
 export const DOMANDE_AL_GIORNO = 5;
-export const MIN_RISPOSTE = 4;
+export const MIN_RISPOSTE = 5;
 export const MAX_RISPOSTE = 40;
 export const MAX_PER_TIPO = 1;
 
@@ -72,11 +72,13 @@ function generatore(seme) {
   };
 }
 
-// Solo le domande giocabili: abbastanza risposte per avere scelta, non troppe.
+// Solo le domande giocabili: abbastanza risposte per avere scelta, non troppe, tutte le fasce coperte.
 export function giocabili(pool) {
   return pool.filter((d) => {
     const n = risposte(d).length;
-    return n >= MIN_RISPOSTE && n <= MAX_RISPOSTE;
+    // Ogni fascia deve avere almeno una zona: il punteggio massimo dev'essere sempre possibile.
+    const fasce = new Set(Object.values(d.catalogo));
+    return n >= MIN_RISPOSTE && n <= MAX_RISPOSTE && SCALA.every((_, i) => fasce.has(i));
   });
 }
 

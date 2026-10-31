@@ -1,7 +1,7 @@
 """Costruisce dati/gioco.json dalle fonti geografiche.
 
-Zone: le localita della mappa ufficiale 2026 (dati/fonti/localita-2026.geojson, da strumenti/scarica_quartieri.py:
-rioni, quartieri e zone funzionali coi nomi che usa la gente), unite per nome, solo quelle
+Zone: le localita della mappa ufficiale 2026 accorpate a una via di mezzo (dati/fonti/zone-gioco.geojson, da
+strumenti/scarica_quartieri.py e strumenti/accorpa_zone.py: rioni, quartieri, poche zone funzionali), solo quelle
 che stanno almeno per il 40% dentro il Grande Raccordo Anulare (cosi entra il Parco dell'Appia Antica, al 48%) (dati/fonti/gra-osm.geojson,
 da strumenti/scarica_gra.py). Il gioco e la Roma dentro il Raccordo.
 Domande: calcolate dalla geometria, mai scritte a mano.
@@ -43,7 +43,7 @@ FONTI = RADICE / 'dati' / 'fonti'
 USCITA = RADICE / 'dati' / 'gioco.json'
 CONFINE_MINIMO_M = 100
 QUOTA_DENTRO_GRA = 0.4
-MIN_RISPOSTE, MAX_RISPOSTE = 4, 40
+MIN_RISPOSTE, MAX_RISPOSTE = 5, 40
 FASCE = ['Da cartolina', 'Ce sta', 'Da romano de Roma', 'Chicca', 'Da Mino']
 PUNTI = [1, 2, 3, 5, 8]
 CATALOGO_CSV = RADICE / 'dati' / 'catalogo.csv'
@@ -76,18 +76,12 @@ def carica(nome):
 
 
 def cataloga(ids_giusti, notorieta):
-    """Fascia 0-4 per ogni risposta: la piu nota 0, la meno nota 4, le altre distribuite.
-    A parita di notorieta, rango medio e stessa fascia."""
-    n = len(ids_giusti)
-    if n == 1:
-        return {ids_giusti[0]: 2}
-    fasce = {}
-    for z in ids_giusti:
-        piu_note = sum(1 for a in ids_giusti if notorieta[a] > notorieta[z])
-        pari = sum(1 for a in ids_giusti if notorieta[a] == notorieta[z])
-        rango = piu_note + (pari - 1) / 2
-        fasce[z] = round(4 * rango / (n - 1))
-    return fasce
+    """Fascia 0-4 per ogni risposta, per posizione in classifica di notorieta: le piu note Da cartolina,
+    le meno note Da Mino, a quinti. Con almeno 5 risposte ogni fascia ha almeno una zona, cosi il punteggio
+    massimo e sempre possibile. A parita di notorieta decide il nome, per avere sempre lo stesso risultato."""
+    ordine = sorted(ids_giusti, key=lambda z: (-notorieta[z], z))
+    n = len(ordine)
+    return {z: min(4, i * 5 // n) for i, z in enumerate(ordine)}
 
 
 def percorso_linee(geom, origine):
@@ -117,8 +111,9 @@ def main():
     notorieta = json.loads((RADICE / 'dati' / 'notorieta.json').read_text())['valori']
 
     per_nome = defaultdict(list)
-    for f in carica('localita-2026.geojson'):
+    for f in carica('zone-gioco.geojson'):
         per_nome[f['properties']['nome']].append(in_metri(shape(f['geometry'])).buffer(0))
+        notorieta.setdefault(f['properties']['nome'], f['properties'].get('notorieta', 20))
     zone = {n: unary_union(g) for n, g in per_nome.items()}
 
     mancanti = sorted(n for n in zone if n not in notorieta)
@@ -320,7 +315,12 @@ def main():
                 errore(f'correzioni-fasce.json: fascia {livello} fuori scala per "{zid}" in "{did}"')
             per_id[did]['catalogo'][zid] = livello
 
-    giocabili = [d for d in domande if MIN_RISPOSTE <= len(d['catalogo']) <= MAX_RISPOSTE]
+    # Giocabile: abbastanza risposte, non troppe, e almeno una zona per ogni fascia (il massimo si puo fare).
+    giocabili = [d for d in domande if MIN_RISPOSTE <= len(d['catalogo']) <= MAX_RISPOSTE and set(d['catalogo'].values()) == set(range(5))]
+    for d in domande:
+        mancano = sorted(set(range(5)) - set(d['catalogo'].values()))
+        if mancano and not d.get('riserva') and MIN_RISPOSTE <= len(d['catalogo']) <= MAX_RISPOSTE:
+            print(f'ATTENZIONE {d["id"]}: nessuna risposta in {", ".join(FASCE[m] for m in mancano)}: domanda fuori gioco')
     nome_di = {ids[n]: n for n in nomi}
     with CATALOGO_CSV.open('w', newline='') as fcsv:
         w = csv.writer(fcsv)
@@ -388,7 +388,7 @@ def main():
     else:
         print(f'GRA assente: in gioco tutte le {len(zone)} zone, copertura del Comune {coperta:.1%}')
     print(f'Domande: {len(giocabili)} giocabili su {len(domande)} '
-          f'(scartate perche con meno di {MIN_RISPOSTE} o piu di {MAX_RISPOSTE} risposte: {len(domande) - len(giocabili)})')
+          f'(scartate perche con meno di {MIN_RISPOSTE} o piu di {MAX_RISPOSTE} risposte, o senza tutte le fasce: {len(domande) - len(giocabili)})')
     print('Domande di categoria:')
     print('\n'.join(resoconto))
     di_categoria = [d for d in giocabili if not d.get('riserva')]

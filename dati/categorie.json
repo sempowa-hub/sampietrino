@@ -16,7 +16,7 @@
   {"id": "cinema", "tipo": "cultura", "testo": "Una zona con un cinema", "osm": "nwr[\"amenity\"=\"cinema\"]", "verificata": false},
   {"id": "teatro", "tipo": "cultura", "testo": "Una zona con un teatro", "osm": "nwr[\"amenity\"=\"theatre\"]", "verificata": false},
   {"id": "biblioteca", "tipo": "cultura", "testo": "Una zona con una biblioteca", "osm": "nwr[\"amenity\"=\"library\"]", "verificata": false},
-  {"id": "belvedere-themino", "tipo": "vista", "testo": "Una zona con un belvedere segreto di Themino", "contesto": "Roma si guarda dall'alto: dodici terrazze del libro, dal Pincio che conoscono tutti al Piazzale Socrate che Themino ha riempito di panchine.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "belvedere-themino", "tipo": "vista", "testo": "Una zona con un belvedere segreto", "contesto": "Roma si guarda dall'alto: dodici terrazze, chicche di Mino, dal Pincio che conoscono tutti al Piazzale Socrate dove Mino ha portato le panchine.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Gianicolo", "lat": 41.891422, "lon": 12.460778, "fascia": 0, "zona_attesa": "Trastevere", "libro": 20},
    {"nome": "Terrazza del Pincio", "lat": 41.911197, "lon": 12.478442, "fascia": 0, "zona_attesa": "Campo Marzio", "libro": 26},
    {"nome": "Giardino degli Aranci", "lat": 41.884224, "lon": 12.480157, "fascia": 2, "zona_attesa": "Ripa", "libro": 21},
@@ -24,38 +24,39 @@
    {"nome": "Terrazza sul Foro", "lat": 41.892251, "lon": 12.483441, "fascia": 1, "zona_attesa": "Campitelli", "libro": 28},
    {"nome": "Terrazza Caffarelli", "lat": 41.892885, "lon": 12.481684, "fascia": 2, "zona_attesa": "Campitelli", "libro": 27},
    {"nome": "Piazza di San Pietro in Montorio", "lat": 41.888615, "lon": 12.466837, "fascia": 2, "zona_attesa": "Trastevere", "libro": 24},
-   {"nome": "Zodiaco", "lat": 41.923572, "lon": 12.452727, "fascia": 2, "zona_attesa": "Parco di Monte Mario", "libro": 29},
+   {"nome": "Zodiaco", "lat": 41.923572, "lon": 12.452727, "fascia": 2, "zona_attesa": "Della Vittoria", "libro": 29},
    {"nome": "Villa Aldobrandini", "lat": 41.896727, "lon": 12.48864, "fascia": 3, "zona_attesa": "Monti", "libro": 10},
-   {"nome": "Fortino della Madonnina", "lat": 41.881015, "lon": 12.464297, "fascia": 3, "zona_attesa": "Monteverde Vecchio", "libro": 19},
-   {"nome": "Monte Ciocci", "lat": 41.90532, "lon": 12.444878, "fascia": 3, "zona_attesa": "Eroi Trionfale", "libro": 22},
+   {"nome": "Fortino della Madonnina", "lat": 41.881015, "lon": 12.464297, "fascia": 3, "zona_attesa": "Monteverde", "libro": 19},
+   {"nome": "Monte Ciocci", "lat": 41.90532, "lon": 12.444878, "fascia": 3, "zona_attesa": "Trionfale", "libro": 22},
    {"nome": "Villa Balestra", "lat": 41.920561, "lon": 12.476071, "fascia": 3, "zona_attesa": "Parioli", "libro": 11},
    {"nome": "Villa Mazzanti", "lat": 41.921349, "lon": 12.455793, "fascia": 3, "zona_attesa": "Della Vittoria", "libro": 15},
    {"nome": "Piazzale Socrate", "lat": 41.912625, "lon": 12.447107, "fascia": 4, "zona_attesa": "Balduina", "libro": 25},
-   {"nome": "Belvedere di via Piccolomini", "lat": 41.891501, "lon": 12.442635, "fascia": 4, "zona_attesa": "Aurelio Gregorio VII", "libro": 18}
+   {"nome": "Belvedere di via Piccolomini", "lat": 41.891501, "lon": 12.442635, "fascia": 4, "zona_attesa": "Aurelio", "libro": 18}
   ]},
-  {"id": "cupola", "tipo": "vista", "testo": "Una zona da cui si vede il Cupolone", "contesto": "La cupola di San Pietro spunta ovunque, ma certi posti la incorniciano: un buco della serratura, un vecchio binario, una strada che la fa rimpicciolire mentre ti avvicini.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "cupola", "tipo": "vista", "testo": "Una zona da cui si vede il Cupolone", "contesto": "La cupola di San Pietro spunta ovunque, ma certi posti la incorniciano: un buco della serratura, un vecchio binario, una strada che la fa rimpicciolire mentre ti avvicini.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Gianicolo", "lat": 41.891422, "lon": 12.460778, "fascia": 0, "zona_attesa": "Trastevere", "libro": 20},
    {"nome": "Buco della serratura dei Cavalieri di Malta", "lat": 41.882909, "lon": 12.477846, "fascia": 1, "zona_attesa": "Ripa", "libro": 45},
    {"nome": "Giardino degli Aranci", "lat": 41.884224, "lon": 12.480157, "fascia": 2, "zona_attesa": "Ripa", "libro": 21},
    {"nome": "Piazza del Quirinale", "lat": 41.899348, "lon": 12.486482, "fascia": 2, "zona_attesa": "Trevi", "libro": 23},
-   {"nome": "Zodiaco", "lat": 41.923572, "lon": 12.452727, "fascia": 2, "zona_attesa": "Parco di Monte Mario", "libro": 29},
+   {"nome": "Zodiaco", "lat": 41.923572, "lon": 12.452727, "fascia": 2, "zona_attesa": "Della Vittoria", "libro": 29},
    {"nome": "Villa Doria Pamphilj", "lat": 41.884328, "lon": 12.44776, "fascia": 3, "zona_attesa": "Villa Pamphili", "libro": 14},
-   {"nome": "Monte Ciocci", "lat": 41.90532, "lon": 12.444878, "fascia": 3, "zona_attesa": "Eroi Trionfale", "libro": 22},
+   {"nome": "Monte Ciocci", "lat": 41.90532, "lon": 12.444878, "fascia": 3, "zona_attesa": "Trionfale", "libro": 22},
    {"nome": "Villa Balestra", "lat": 41.920561, "lon": 12.476071, "fascia": 3, "zona_attesa": "Parioli", "libro": 11},
    {"nome": "Piazzale Socrate", "lat": 41.912625, "lon": 12.447107, "fascia": 4, "zona_attesa": "Balduina", "libro": 25},
-   {"nome": "Belvedere di via Piccolomini", "lat": 41.891501, "lon": 12.442635, "fascia": 4, "zona_attesa": "Aurelio Gregorio VII", "libro": 18},
+   {"nome": "Belvedere di via Piccolomini", "lat": 41.891501, "lon": 12.442635, "fascia": 4, "zona_attesa": "Aurelio", "libro": 18},
    {"nome": "Passeggiata del Gelsomino", "lat": 41.896029, "lon": 12.455143, "fascia": 4, "zona_attesa": "Cavalleggeri - San Pietro", "libro": 68}
   ]},
-  {"id": "illusioni", "tipo": "illusioni", "testo": "Una zona dove Roma ti inganna gli occhi (o le orecchie)", "contesto": "Una galleria di 8 metri che ne sembra 30, una cupola dipinta su un soffitto piatto, una piazza dove ci si parla a cento metri senza alzare la voce.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "illusioni", "tipo": "illusioni", "testo": "Una zona dove Roma ti inganna gli occhi (o le orecchie)", "contesto": "Una galleria di 8 metri che ne sembra 30, una cupola dipinta su un soffitto piatto, una piazza dove ci si parla a cento metri senza alzare la voce.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Galleria prospettica di Palazzo Spada", "lat": 41.893919, "lon": 12.472225, "fascia": 4, "zona_attesa": "Regola", "libro": 66},
-   {"nome": "Buco della serratura", "lat": 41.882909, "lon": 12.477846, "fascia": 1, "zona_attesa": "Ripa", "libro": 45},
-   {"nome": "Finta cupola di Sant'Ignazio", "lat": 41.89875, "lon": 12.479808, "fascia": 2, "zona_attesa": "Pigna", "libro": 39},
+   {"nome": "Buco della serratura", "lat": 41.882909, "lon": 12.477846, "fascia": 0, "zona_attesa": "Ripa", "libro": 45},
+   {"nome": "Finta cupola di Sant'Ignazio", "lat": 41.89875, "lon": 12.479808, "fascia": 1, "zona_attesa": "Pigna", "libro": 39},
    {"nome": "Volta del Baciccio al Gesù", "lat": 41.895776, "lon": 12.479135, "fascia": 2, "zona_attesa": "Pigna", "libro": 37},
    {"nome": "Refettorio di Andrea Pozzo a Trinità dei Monti", "lat": 41.906168, "lon": 12.483275, "fascia": 3, "zona_attesa": "Campo Marzio", "libro": 40},
-   {"nome": "Effetto acustico di piazza del Popolo", "lat": 41.910748, "lon": 12.476365, "fascia": 3, "zona_attesa": "Campo Marzio", "libro": 52},
-   {"nome": "Cupola che si rimpicciolisce in via Piccolomini", "lat": 41.891501, "lon": 12.442635, "fascia": 4, "zona_attesa": "Aurelio Gregorio VII", "libro": 18}
+   {"nome": "Effetto acustico di piazza del Popolo", "lat": 41.910748, "lon": 12.476365, "fascia": 2, "zona_attesa": "Campo Marzio", "libro": 52},
+   {"nome": "Cupola che si rimpicciolisce in via Piccolomini", "lat": 41.891501, "lon": 12.442635, "fascia": 4, "zona_attesa": "Aurelio", "libro": 18},
+   {"nome": "Cupola di San Carlino, coi cassettoni che rimpiccioliscono", "lat": 41.899984, "lon": 12.487913, "fascia": 3, "zona_attesa": "Trevi"}
   ]},
-  {"id": "misteri", "tipo": "mistero", "testo": "Una zona con una leggenda nera o un mistero", "contesto": "Alchimisti spariti, osti decapitati, mani di donna alla finestra con la luna piena: la Roma che si racconta a bassa voce.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "misteri", "tipo": "mistero", "testo": "Una zona con una leggenda nera o un mistero", "contesto": "Alchimisti spariti, osti decapitati, mani di donna alla finestra con la luna piena: la Roma che si racconta a bassa voce.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Bocca della Verità", "lat": 41.888814, "lon": 12.481627, "fascia": 0, "zona_attesa": "Ripa", "libro": 44},
    {"nome": "Rupe Tarpea", "lat": 41.892885, "lon": 12.481684, "fascia": 1, "zona_attesa": "Campitelli", "libro": 27},
    {"nome": "Porta Magica", "lat": 41.894579, "lon": 12.504323, "fascia": 2, "zona_attesa": "Esquilino", "libro": 70},
@@ -66,7 +67,7 @@
    {"nome": "Madonna del Latte del Passetto del Biscione", "lat": 41.895376, "lon": 12.473605, "fascia": 4, "zona_attesa": "Parione", "libro": 61},
    {"nome": "Mano dell'operaio sotto l'obelisco di Villa Celimontana", "lat": 41.884452, "lon": 12.495735, "fascia": 4, "zona_attesa": "Celio", "libro": 13}
   ]},
-  {"id": "ossa", "tipo": "morti", "testo": "Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)", "contesto": "Sotto Roma ci sono chilometri di gallerie: Priscilla da sola ne ha 13. E una cripta dove quattromila frati sono diventati lampadari.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "ossa", "tipo": "morti", "testo": "Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)", "contesto": "Sotto Roma ci sono chilometri di gallerie: Priscilla da sola ne ha 13. E una cripta dove quattromila frati sono diventati lampadari.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Catacombe di San Callisto", "lat": 41.858901, "lon": 12.510753, "fascia": 0, "zona_attesa": "Appia Antica", "libro": 46},
    {"nome": "Catacombe di San Sebastiano", "lat": 41.85593, "lon": 12.515797, "fascia": 0, "zona_attesa": "Appia Antica", "libro": "box"},
    {"nome": "Cripta dei Cappuccini", "lat": 41.904791, "lon": 12.488585, "fascia": 1, "zona_attesa": "Ludovisi", "libro": 50},
@@ -79,9 +80,9 @@
    {"nome": "Catacombe dei Santi Marcellino e Pietro", "lat": 41.878696, "lon": 12.548603, "fascia": 4, "zona_attesa": "Tor Pignattara"},
    {"nome": "Catacombe ebraiche di Villa Torlonia", "lat": 41.914774, "lon": 12.511324, "fascia": 4, "zona_attesa": "Nomentano"},
    {"nome": "Catacombe di San Pancrazio", "lat": 41.884736, "lon": 12.455342, "fascia": 4, "zona_attesa": "Villa Pamphili"},
-   {"nome": "Catacombe di Generosa", "lat": 41.857328, "lon": 12.459151, "fascia": 4, "zona_attesa": "Pian Due Torri"}
+   {"nome": "Catacombe di Generosa", "lat": 41.857328, "lon": 12.459151, "fascia": 4, "zona_attesa": "Magliana"}
   ]},
-  {"id": "bernini", "tipo": "arte", "testo": "Una zona con un capolavoro di Bernini", "contesto": "Il papa Urbano VIII disse che Bernini era nato per Roma e Roma per lui: fontane, angeli, un elefantino e una santa in estasi.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "bernini", "tipo": "arte", "testo": "Una zona con un capolavoro di Bernini", "contesto": "Il papa Urbano VIII disse che Bernini era nato per Roma e Roma per lui: fontane, angeli, un elefantino e una santa in estasi.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Fontana dei Quattro Fiumi", "lat": 41.898928, "lon": 12.473118, "fascia": 0, "zona_attesa": "Parione", "libro": 53},
    {"nome": "Fontana del Tritone", "lat": 41.903749, "lon": 12.488716, "fascia": 1, "zona_attesa": "Trevi", "libro": 54},
    {"nome": "Angeli di Ponte Sant'Angelo", "lat": 41.901925, "lon": 12.466461, "fascia": 1, "zona_attesa": "Borgo", "zone_anche": ["Ponte"]},
@@ -94,17 +95,17 @@
    {"nome": "Beata Ludovica Albertoni a San Francesco a Ripa", "lat": 41.887137, "lon": 12.471738, "fascia": 4, "zona_attesa": "Trastevere"},
    {"nome": "Palazzo di Montecitorio", "lat": 41.900646, "lon": 12.478668, "fascia": 4, "zona_attesa": "Colonna"}
   ]},
-  {"id": "borromini", "tipo": "arte", "testo": "Una zona con un'opera di Borromini", "contesto": "Il rivale di Bernini: curve, ellissi e prospettive bugiarde. San Carlino sta tutto dentro un pilastro di San Pietro.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
-   {"nome": "Sant'Agnese in Agone", "lat": 41.898928, "lon": 12.473118, "fascia": 1, "zona_attesa": "Parione"},
+  {"id": "borromini", "tipo": "arte", "testo": "Una zona con un'opera di Borromini", "contesto": "Il rivale di Bernini: curve, ellissi e prospettive bugiarde. San Carlino sta tutto dentro un pilastro di San Pietro.", "fonte": "chicche di Mino", "verificata": true, "punti": [
+   {"nome": "Sant'Agnese in Agone", "lat": 41.898928, "lon": 12.473118, "fascia": 0, "zona_attesa": "Parione"},
    {"nome": "Prospettiva di Palazzo Spada", "lat": 41.893919, "lon": 12.472225, "fascia": 4, "zona_attesa": "Regola", "libro": 66},
-   {"nome": "San Carlo alle Quattro Fontane", "lat": 41.899984, "lon": 12.487913, "fascia": 2, "zona_attesa": "Trevi", "libro": "box", "zone_anche": ["Trevi"]},
-   {"nome": "Sant'Ivo alla Sapienza", "lat": 41.898151, "lon": 12.474097, "fascia": 2, "zona_attesa": "Sant'Eustachio"},
+   {"nome": "San Carlo alle Quattro Fontane", "lat": 41.899984, "lon": 12.487913, "fascia": 2, "zona_attesa": "Trevi", "libro": "box"},
+   {"nome": "Sant'Ivo alla Sapienza", "lat": 41.898151, "lon": 12.474097, "fascia": 1, "zona_attesa": "Sant'Eustachio"},
    {"nome": "Navata di San Giovanni in Laterano", "lat": 41.886107, "lon": 12.503957, "fascia": 3, "zona_attesa": "Monti", "libro": 31},
    {"nome": "Oratorio dei Filippini", "lat": 41.897967, "lon": 12.469105, "fascia": 3, "zona_attesa": "Parione"},
    {"nome": "Sant'Andrea delle Fratte", "lat": 41.903291, "lon": 12.483289, "fascia": 3, "zona_attesa": "Colonna"},
    {"nome": "Palazzo di Propaganda Fide", "lat": 41.905639, "lon": 12.482358, "fascia": 4, "zona_attesa": "Campo Marzio"}
   ]},
-  {"id": "caravaggio", "tipo": "arte", "testo": "Una zona dove puoi vedere un Caravaggio", "contesto": "A Roma i Caravaggio si vedono anche gratis: tre stanno in una cappella di San Luigi dei Francesi, a due passi da piazza Navona.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "caravaggio", "tipo": "arte", "testo": "Una zona dove puoi vedere un Caravaggio", "contesto": "A Roma i Caravaggio si vedono anche gratis: tre stanno in una cappella di San Luigi dei Francesi, a due passi da piazza Navona.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "San Luigi dei Francesi", "lat": 41.899669, "lon": 12.474922, "fascia": 0, "zona_attesa": "Sant'Eustachio", "libro": 38},
    {"nome": "Sant'Agostino", "lat": 41.900675, "lon": 12.474255, "fascia": 1, "zona_attesa": "Sant'Eustachio"},
    {"nome": "Galleria Borghese", "lat": 41.914113, "lon": 12.492105, "fascia": 1, "zona_attesa": "Villa Borghese"},
@@ -115,7 +116,7 @@
    {"nome": "Galleria Corsini", "lat": 41.893209, "lon": 12.466881, "fascia": 4, "zona_attesa": "Trastevere"},
    {"nome": "Casino dell'Aurora (soffitto)", "lat": 41.907632, "lon": 12.487345, "fascia": 4, "zona_attesa": "Ludovisi"}
   ]},
-  {"id": "roma-sotto", "tipo": "antica", "testo": "Una zona con un pezzo di Roma antica nascosto in città", "contesto": "Un condominio romano sotto un ex cinema a due passi da Trevi, una montagna fatta di 25 milioni di anfore rotte, uno stadio sotto piazza Navona.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "roma-sotto", "tipo": "antica", "testo": "Una zona con un pezzo di Roma antica nascosto in città", "contesto": "Un condominio romano sotto un ex cinema a due passi da Trevi, una montagna fatta di 25 milioni di anfore rotte, uno stadio sotto piazza Navona.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Area sacra di Largo Argentina", "lat": 41.895325, "lon": 12.47688, "fascia": 0, "zona_attesa": "Pigna", "libro": 43},
    {"nome": "Domus Aurea", "lat": 41.890486, "lon": 12.498145, "fascia": 1, "zona_attesa": "Monti"},
    {"nome": "Piramide Cestia", "lat": 41.876014, "lon": 12.482115, "fascia": 1, "zona_attesa": "Miani", "libro": 69, "zone_anche": ["Testaccio"]},
@@ -127,59 +128,59 @@
    {"nome": "Crypta Balbi", "lat": 41.894842, "lon": 12.478446, "fascia": 4, "zona_attesa": "Sant'Angelo"},
    {"nome": "Mitreo del Circo Massimo", "lat": 41.888814, "lon": 12.481627, "fascia": 4, "zona_attesa": "Ripa"}
   ]},
-  {"id": "street-art", "tipo": "murales", "testo": "Una zona famosa per i murales", "contesto": "Al Trullo sui muri ci sono le poesie in romanesco dei Poeti der Trullo; a Tor Marancia ventidue artisti hanno dipinto un intero lotto di case popolari.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
-   {"nome": "Via del Porto Fluviale", "lat": 41.872382, "lon": 12.476879, "fascia": 1, "zona_attesa": "Ostiense"},
+  {"id": "street-art", "tipo": "murales", "testo": "Una zona famosa per i murales", "contesto": "Al Trullo sui muri ci sono le poesie in romanesco dei Poeti der Trullo; a Tor Marancia ventidue artisti hanno dipinto un intero lotto di case popolari.", "fonte": "chicche di Mino", "verificata": true, "punti": [
+   {"nome": "Via del Porto Fluviale", "lat": 41.872382, "lon": 12.476879, "fascia": 0, "zona_attesa": "Ostiense"},
    {"nome": "Pigneto e i murales per Pasolini", "lat": 41.888413, "lon": 12.528716, "fascia": 1, "zona_attesa": "Pigneto"},
    {"nome": "San Lorenzo", "lat": 41.899566, "lon": 12.518291, "fascia": 2, "zona_attesa": "San Lorenzo"},
-   {"nome": "Museo condominiale di Tor Marancia", "lat": 41.855811, "lon": 12.497471, "fascia": 2, "zona_attesa": "Tor Marancia", "libro": 64},
-   {"nome": "Quadraro, il M.U.Ro.", "lat": 41.865185, "lon": 12.54446, "fascia": 3, "zona_attesa": "Quadraro Vecchio"},
+   {"nome": "Museo condominiale di Tor Marancia", "lat": 41.855811, "lon": 12.497471, "fascia": 3, "zona_attesa": "Tor Marancia", "libro": 64},
+   {"nome": "Quadraro, il M.U.Ro.", "lat": 41.865185, "lon": 12.54446, "fascia": 4, "zona_attesa": "Quadraro"},
    {"nome": "Trullo, murales e Poeti der Trullo", "lat": 41.834423, "lon": 12.43654, "fascia": 3, "zona_attesa": "Colle del Sole", "libro": 74}
   ]},
-  {"id": "novecento", "tipo": "novecento", "testo": "Una zona con un gioiello del Novecento", "contesto": "Non è tutto antico: un quartiere da fiaba dove i Beatles fecero il bagno in una fontana, un Colosseo di ferro, un lago con i ciliegi di Tokyo.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "novecento", "tipo": "novecento", "testo": "Una zona con un gioiello del Novecento", "contesto": "Non è tutto antico: un quartiere da fiaba dove i Beatles fecero il bagno in una fontana, un Colosseo di ferro, un lago con i ciliegi di Tokyo.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Quartiere Coppedè", "lat": 41.918693, "lon": 12.502384, "fascia": 1, "zona_attesa": "Trieste", "libro": 71},
-   {"nome": "Gazometro", "lat": 41.8705, "lon": 12.476019, "fascia": 1, "zona_attesa": "Ostiense", "libro": 58},
+   {"nome": "Gazometro", "lat": 41.8705, "lon": 12.476019, "fascia": 2, "zona_attesa": "Ostiense", "libro": 58},
    {"nome": "Laghetto e quartiere dell'Eur", "lat": 41.833973, "lon": 12.462428, "fascia": 0, "zona_attesa": "Eur", "libro": 1},
    {"nome": "Fontana della Carlotta alla Garbatella", "lat": 41.863418, "lon": 12.49126, "fascia": 3, "zona_attesa": "Garbatella", "libro": 56},
    {"nome": "Casina delle Civette", "lat": 41.914774, "lon": 12.511324, "fascia": 3, "zona_attesa": "Nomentano", "libro": 17},
    {"nome": "Case popolari di Tor Marancia", "lat": 41.855811, "lon": 12.497471, "fascia": 4, "zona_attesa": "Tor Marancia", "libro": 64},
    {"nome": "Borgata razionalista del Trullo", "lat": 41.834423, "lon": 12.43654, "fascia": 4, "zona_attesa": "Colle del Sole", "libro": 74}
   ]},
-  {"id": "estero", "tipo": "estero", "testo": "Una zona dove c'è un pezzetto di estero", "contesto": "Dal buco della serratura dell'Aventino vedi tre Stati insieme: Italia, Malta e Vaticano. E all'Eur i ciliegi li ha regalati il sindaco di Tokyo.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
-   {"nome": "Trinità dei Monti, chiesa dei francesi", "lat": 41.906168, "lon": 12.483275, "fascia": 1, "zona_attesa": "Campo Marzio", "libro": 40},
+  {"id": "estero", "tipo": "estero", "testo": "Una zona dove c'è un pezzetto di estero", "contesto": "Dal buco della serratura dell'Aventino vedi tre Stati insieme: Italia, Malta e Vaticano. E all'Eur i ciliegi li ha regalati il sindaco di Tokyo.", "fonte": "chicche di Mino", "verificata": true, "punti": [
+   {"nome": "Trinità dei Monti, chiesa dei francesi", "lat": 41.906168, "lon": 12.483275, "fascia": 0, "zona_attesa": "Campo Marzio", "libro": 40},
    {"nome": "San Luigi dei Francesi", "lat": 41.899669, "lon": 12.474922, "fascia": 1, "zona_attesa": "Sant'Eustachio", "libro": 38},
    {"nome": "Priorato dei Cavalieri di Malta", "lat": 41.882909, "lon": 12.477846, "fascia": 2, "zona_attesa": "Ripa", "libro": 45},
    {"nome": "Cimitero degli inglesi", "lat": 41.876366, "lon": 12.479461, "fascia": 2, "zona_attesa": "Testaccio", "libro": 48},
    {"nome": "Ciliegi giapponesi del laghetto", "lat": 41.833973, "lon": 12.462428, "fascia": 3, "zona_attesa": "Eur", "libro": 1},
    {"nome": "Santo Stefano Rotondo, chiesa degli ungheresi", "lat": 41.884894, "lon": 12.496681, "fascia": 4, "zona_attesa": "Monti", "libro": 35}
   ]},
-  {"id": "scalinate", "tipo": "scalinate", "testo": "Una zona con una scalinata da fiato corto", "contesto": "I 126 scalini della Scalea del Tamburino portano il nome di un garibaldino di sedici anni; la Scala Santa si sale solo in ginocchio.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "scalinate", "tipo": "scalinate", "testo": "Una zona con una scalinata da fiato corto", "contesto": "I 126 scalini della Scalea del Tamburino portano il nome di un garibaldino di sedici anni; la Scala Santa si sale solo in ginocchio.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Scalinata di Trinità dei Monti", "lat": 41.906168, "lon": 12.483275, "fascia": 0, "zona_attesa": "Campo Marzio", "libro": 40},
    {"nome": "Cordonata e scalinata dell'Aracoeli", "lat": 41.894214, "lon": 12.481307, "fascia": 1, "zona_attesa": "Campitelli"},
    {"nome": "Scala Santa", "lat": 41.886887, "lon": 12.504555, "fascia": 2, "zona_attesa": "Monti", "libro": "box"},
    {"nome": "Scalea del Tamburino", "lat": 41.885385, "lon": 12.467382, "fascia": 3, "zona_attesa": "Trastevere", "libro": 72},
-   {"nome": "Scala del Righetto al Fortino della Madonnina", "lat": 41.881015, "lon": 12.464297, "fascia": 4, "zona_attesa": "Monteverde Vecchio", "libro": 19},
+   {"nome": "Scala del Righetto al Fortino della Madonnina", "lat": 41.881015, "lon": 12.464297, "fascia": 4, "zona_attesa": "Monteverde", "libro": 19},
    {"nome": "Scalinata della Carlotta", "lat": 41.863418, "lon": 12.49126, "fascia": 4, "zona_attesa": "Garbatella", "libro": 56}
   ]},
-  {"id": "orologi", "tipo": "orologi", "testo": "Una zona dove a Roma si segna l'ora in modo strano", "contesto": "Un orologio che va ad acqua dentro un tronco finto, una meridiana lunga un corridoio, un cannone che spara a mezzogiorno, la torre del Primo Meridiano d'Italia.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
-   {"nome": "Cannone del mezzogiorno al Gianicolo", "lat": 41.890255, "lon": 12.461511, "fascia": 1, "zona_attesa": "Trastevere"},
-   {"nome": "Orologio ad acqua del Pincio", "lat": 41.911003, "lon": 12.480554, "fascia": 3, "zona_attesa": "Campo Marzio", "libro": 65},
+  {"id": "orologi", "tipo": "orologi", "testo": "Una zona dove a Roma si segna l'ora in modo strano", "contesto": "Un orologio che va ad acqua dentro un tronco finto, una meridiana lunga un corridoio, un cannone che spara a mezzogiorno, la torre del Primo Meridiano d'Italia.", "fonte": "chicche di Mino", "verificata": true, "punti": [
+   {"nome": "Cannone del mezzogiorno al Gianicolo", "lat": 41.890255, "lon": 12.461511, "fascia": 0, "zona_attesa": "Trastevere"},
+   {"nome": "Orologio ad acqua del Pincio", "lat": 41.911003, "lon": 12.480554, "fascia": 2, "zona_attesa": "Campo Marzio", "libro": 65},
    {"nome": "Meridiana nel chiostro di Trinità dei Monti", "lat": 41.906168, "lon": 12.483275, "fascia": 3, "zona_attesa": "Campo Marzio", "libro": 40},
-   {"nome": "Meridiana di Santa Maria degli Angeli", "lat": 41.902699, "lon": 12.496418, "fascia": 3, "zona_attesa": "Castro Pretorio"},
+   {"nome": "Meridiana di Santa Maria degli Angeli", "lat": 41.902699, "lon": 12.496418, "fascia": 1, "zona_attesa": "Castro Pretorio"},
    {"nome": "Orologio di via del Gesù", "lat": 41.896617, "lon": 12.478706, "fascia": 4, "zona_attesa": "Pigna", "libro": 37},
-   {"nome": "Torre del Primo Meridiano d'Italia", "lat": 41.923572, "lon": 12.452727, "fascia": 4, "zona_attesa": "Parco di Monte Mario", "libro": 29}
+   {"nome": "Torre del Primo Meridiano d'Italia", "lat": 41.923572, "lon": 12.452727, "fascia": 3, "zona_attesa": "Della Vittoria", "libro": 29}
   ]},
-  {"id": "ville-themino", "tipo": "verde", "testo": "Una zona con una villa o un parco del libro di Themino", "contesto": "Roma è la città più verde d'Europa: il 67 per cento del territorio è parchi, ville e giardini. Questi sono quelli dove Themino ti manda a perderti.", "fonte": "Themino, Una Roma così non l'hai mai vista", "verificata": true, "punti": [
+  {"id": "ville-themino", "tipo": "verde", "testo": "Una zona con una villa o un parco", "contesto": "Roma è la città più verde d'Europa: il 67 per cento del territorio è parchi, ville e giardini. Questi sono quelli dove Mino ti manda a perderti.", "fonte": "chicche di Mino", "verificata": true, "punti": [
    {"nome": "Villa Borghese", "lat": 41.913832, "lon": 12.486402, "fascia": 0, "zona_attesa": "Villa Borghese", "libro": 12},
    {"nome": "Villa Doria Pamphilj", "lat": 41.884328, "lon": 12.44776, "fascia": 0, "zona_attesa": "Villa Pamphili", "libro": 14},
    {"nome": "Villa Ada", "lat": 41.926236, "lon": 12.502361, "fascia": 1, "zona_attesa": "Villa Ada", "libro": 9},
    {"nome": "Villa Torlonia", "lat": 41.914774, "lon": 12.511324, "fascia": 1, "zona_attesa": "Nomentano", "libro": 17},
    {"nome": "Laghetto dell'Eur", "lat": 41.833973, "lon": 12.462428, "fascia": 1, "zona_attesa": "Eur", "libro": 1},
-   {"nome": "Parco degli Acquedotti", "lat": 41.851313, "lon": 12.560172, "fascia": 1, "zona_attesa": "Appio Claudio", "libro": 3},
-   {"nome": "Parco della Caffarella", "lat": 41.868499, "lon": 12.512125, "fascia": 2, "zona_attesa": "Caffarella - Parco dell'Appia Antica", "libro": 5},
+   {"nome": "Parco degli Acquedotti", "lat": 41.851313, "lon": 12.560172, "fascia": 1, "zona_attesa": "Parco degli Acquedotti", "libro": 3},
+   {"nome": "Parco della Caffarella", "lat": 41.868499, "lon": 12.512125, "fascia": 2, "zona_attesa": "Caffarella", "libro": 5},
    {"nome": "Villa Celimontana", "lat": 41.884452, "lon": 12.495735, "fascia": 2, "zona_attesa": "Celio", "libro": 13},
    {"nome": "Orto Botanico", "lat": 41.89285, "lon": 12.464865, "fascia": 2, "zona_attesa": "Trastevere", "libro": 2},
    {"nome": "Parco del Colle Oppio", "lat": 41.892187, "lon": 12.497981, "fascia": 2, "zona_attesa": "Monti", "libro": 4},
-   {"nome": "Riserva di Monte Mario", "lat": 41.92568, "lon": 12.452227, "fascia": 3, "zona_attesa": "Parco di Monte Mario", "libro": 8},
+   {"nome": "Riserva di Monte Mario", "lat": 41.92568, "lon": 12.452227, "fascia": 3, "zona_attesa": "Della Vittoria", "libro": 8},
    {"nome": "Parco di Tor di Quinto (laghetto a forma di cuore)", "lat": 41.936161, "lon": 12.481381, "fascia": 4, "zona_attesa": "Tor di Quinto", "libro": 6}
   ]}
  ]

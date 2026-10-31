@@ -1,0 +1,128 @@
+# Le 140 zone del gioco
+
+Accorpate da `strumenti/accorpa_zone.py` a partire dalle 262 località ufficiali dentro il Raccordo (mappa dei quartieri di Roma Capitale, 2026). I 22 rioni restano com'erano; i quartieri piccoli e poco nominati sono fusi col vicino. **Da rivedere con Themino**: se un nome non è quello giusto o una zona va divisa, si cambia in testa a `accorpa_zone.py` (nomi forti, famiglie a mano).
+
+## Rioni (22)
+
+Borgo · Campitelli · Campo Marzio · Castro Pretorio · Celio · Colonna · Esquilino · Ludovisi · Monti · Parione · Pigna · Ponte · Prati · Regola · Ripa · Sallustiano · San Saba · Sant'Angelo · Sant'Eustachio · Testaccio · Trastevere · Trevi
+
+## Quartieri e parchi
+
+- **Alberone**: comprende Colli Albani, Furio Camillo
+- **Appia Antica**: comprende Fotografia, Parco dell'Appia Antica, Quarto Miglio, Torricola - Cornacchiole
+- **Appio Latino**
+- **Ardeatino**
+- **Aurelio**: comprende Aurelio Gregorio VII
+- **Baldo degli Ubaldi**
+- **Balduina**: comprende Parco Monte Ciocci, Pineto
+- **Boccea Cornelia**
+- **Bravetta**
+- **Caffarella**: comprende Caffarella - Parco dell'Appia Antica
+- **Camilluccia**: comprende Farnesina, Farneto
+- **Capannelle**: comprende Villaggio Appio
+- **Casal Bertone**: comprende Portonaccio
+- **Casal Boccone**: comprende Santa Maria delle Grazie - Australiano, Vigne Nuove
+- **Casaletto - Colli Portuensi**
+- **Casetta Mattei**
+- **Cavalleggeri - San Pietro**
+- **Cecchignola**: comprende Area Servizi Tor Pagnotta, Castello della Cecchignola, Città Militare della Cecchignola, Fosso della Cecchignola, Millevoi
+- **Centocelle**: comprende Tor de' Schiavi
+- **Certosa**
+- **Cinecittà**: comprende Cinecittà Est, Lamaro - Cinecittà, Osteria del Curato, Torre Spaccata
+- **Collatino**
+- **Colle del Sole**: comprende Monte delle Capre
+- **Colli Aniene**
+- **Collina Fleming**
+- **Collina delle Muse**
+- **Conca d'Oro**: comprende Parco delle Valli
+- **Cortina d'Ampezzo**
+- **Corviale**
+- **Della Vittoria**: comprende Parco di Monte Mario
+- **Don Bosco**
+- **Eur**
+- **Flaminio**
+- **Fonte Meravigliosa**: comprende Tenuta di Sant'Alessio
+- **Foro Italico**
+- **Garbatella**
+- **Giuliano Dalmata**: comprende Colle di Mezzo, Ottavo Colle, Tintoretto - Tre Fontane
+- **Grottarossa**
+- **Grottarossa Valle Vescovo**
+- **Italia**: comprende Pretorio, Sapienza Università
+- **La Pisana**
+- **Laurentino Fonte Ostiense**: comprende Acqua Acetosa Ostiense, Ferratella
+- **Longoni - Maggiolino**: comprende La Rustica
+- **Magliana**: comprende Pian Due Torri
+- **Marconi**
+- **Miani**
+- **Monte Mario**: comprende Parco dell'Insugherata, Sant'Andrea
+- **Monte Sacro**
+- **Monte del Gallo**
+- **Monte del Marmo**: comprende Bastogi
+- **Montespaccato**: comprende Parco Acquafredda
+- **Monteverde**: comprende Monteverde Nuovo, Monteverde Vecchio, Ospedali San Camillo Spallanzani, Vigna Pia
+- **Monti di Creta**
+- **Monti di Pietralata**
+- **Muratella**
+- **Nomentano**: comprende Africano
+- **Nuovo Salario**: comprende Fidene, Prati Fiscali, Serpentara
+- **Ostiense**
+- **Ottavia**
+- **Palmarola**: comprende Casal del Marmo, Santa Maria della Pietà, Torresina
+- **Parco degli Acquedotti**: comprende Appio Claudio, Cecafumo, Statuario
+- **Parioli**
+- **Pietralata**: comprende Collina Lanciani, Monti Tiburtini
+- **Pigneto**: comprende Casilina Vecchia
+- **Pinciano**
+- **Pineta Sacchetti**: comprende Ospedale Gemelli, Pineta Sacchetti - Gemelli
+- **Pisana Brava**
+- **Podere San Giusto - Podere Zara**
+- **Ponte Mammolo**: comprende Casal de' Pazzi, Casale Caletto, Casale Cavallari, Casale Rocchi, Parco Valle dell'Aniene, Parco della Cervelletta, Podere Rosa, Tor Cervara
+- **Ponte Milvio**
+- **Porta Portese**
+- **Porta di Roma**: comprende Colle Salario, Parco delle Sabine
+- **Portuense**
+- **Prenestino Labicano**
+- **Primavalle**
+- **Quadraro**: comprende Aeroporto Militare Baracca, Parco di Centocelle, Quadraro Vecchio
+- **Quarticciolo**: comprende Alessandrino, Tor Tre Teste
+- **Rebibbia**: comprende Giardino Nomentano, Parco di Aguzzano
+- **Sacco Pastore**
+- **Salario**
+- **San Basilio**: comprende Casal Tidei, Istituti Penitenziari Rebibbia
+- **San Cleto**: comprende Torraccia
+- **San Giovanni**: comprende Appio San Giovanni, Tuscolano San Giovanni
+- **San Godenzo**: comprende Due Ponti, Tomba di Nerone
+- **San Lorenzo**
+- **San Paolo**
+- **Talenti**
+- **Tenuta dei Massimi**
+- **Tiburtino III**: comprende Casal Bruciato, Parco della Serenissima, Verderocca
+- **Tor Fiscale**: comprende Arco di Travertino
+- **Tor Marancia**: comprende Grotta Perfetta Rinnovamento, Grotta Perfetta Roma 70, Montagnola, Tor Marancia - Parco dell'Appia Antica
+- **Tor Pagnotta**
+- **Tor Pignattara**: comprende Villa de Sanctis, Villini Santa Maria
+- **Tor Sapienza**: comprende Collatina Vecchia, Prampolini
+- **Tor di Quinto**: comprende Acqua Acetosa, Aeroporto dell'Urbe, Castel Giubileo, Piana del Tevere, Saxa Rubra, Villa Spada
+- **Tor di Valle**: comprende Idrovore della Magliana, Parco de' Medici
+- **Torre Maura**: comprende Mistica, Omo
+- **Torrevecchia**: comprende Quartaccio, Torrevecchia Alta, Torrevecchia Bassa
+- **Torrino**: comprende Castellaccio, Decima, Mostacciano, Torrino Nord, Torrino Sud
+- **Trieste**
+- **Trionfale**: comprende Eroi Trionfale, Igea, Igea Trionfale
+- **Trullo**: comprende Monte Cucco, Parrocchietta
+- **Tufello**: comprende Val Melaina
+- **Tuscolano**: comprende Tuscolano Lais
+- **Val Cannuta**
+- **Valco San Paolo**
+- **Valle Aurelia**: comprende Valle Aurelia Nuova, Valle Aurelia Vecchia
+- **Verano**: comprende Scalo San Lorenzo
+- **Vescovio**
+- **Vigna Clara**: comprende Inviolatella Borghese
+- **Vignaccia - Quaroni**
+- **Villa Ada**
+- **Villa Bonelli**: comprende Borgata Petrelli
+- **Villa Borghese**: comprende Valle Giulia
+- **Villa Gordiani**: comprende Nuova Gordiani
+- **Villa Pamphili**
+- **Villa Troili**: comprende Colle Aurelio
+- **Villaggio Olimpico**

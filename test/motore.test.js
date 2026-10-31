@@ -42,7 +42,7 @@ test('tempo scaduto: pin senza zona, zero punti', () => {
 });
 
 test('stesso giorno, stesse 5 domande; giorni diversi possono cambiare', () => {
-  const pool = Array.from({ length: 12 }, (_, i) => ({ id: `q${i}`, tipo: `t${i}`, catalogo: { a: 0, b: 1, c: 2, d: 3 } }));
+  const pool = Array.from({ length: 12 }, (_, i) => ({ id: `q${i}`, tipo: `t${i}`, catalogo: { a: 0, b: 1, c: 2, d: 3, e: 4 } }));
   const ids = (d) => domandeDelGiorno(d, pool).map((q) => q.id).join();
   assert.equal(ids('2026-11-01'), ids('2026-11-01'));
   assert.equal(domandeDelGiorno('2026-11-01', pool).length, 5);
@@ -51,7 +51,7 @@ test('stesso giorno, stesse 5 domande; giorni diversi possono cambiare', () => {
 });
 
 test('la varieta prende una domanda per tipo prima di riempire', () => {
-  const c = { a: 0, b: 1, c: 2, d: 3 };
+  const c = { a: 0, b: 1, c: 2, d: 3, e: 4 };
   const pool = [
     ...Array.from({ length: 20 }, (_, i) => ({ id: `m${i}`, tipo: 'metro', catalogo: c })),
     ...Array.from({ length: 3 }, (_, i) => ({ id: `t${i}`, tipo: 'trapizzino', catalogo: c })),
@@ -65,7 +65,7 @@ test('la varieta prende una domanda per tipo prima di riempire', () => {
 });
 
 test('le domande di riserva escono solo se mancano quelle di categoria', () => {
-  const c = { a: 0, b: 1, c: 2, d: 3 };
+  const c = { a: 0, b: 1, c: 2, d: 3, e: 4 };
   const pool = [
     ...['metro-a', 'metro-b', 'metro-c'].map((id) => ({ id, tipo: 'metro', catalogo: c })),
     { id: 'trapizzino', tipo: 'trapizzino', catalogo: c },
@@ -81,9 +81,9 @@ test('le domande di riserva escono solo se mancano quelle di categoria', () => {
 });
 
 test('pool troppo povero fa errore e dice quanto ha guardato', () => {
-  const pool = [{ id: 'x', catalogo: { a: 0 } }, { id: 'y', catalogo: { a: 0, b: 1, c: 2, d: 3 } }];
+  const pool = [{ id: 'x', catalogo: { a: 0 } }, { id: 'y', catalogo: { a: 0, b: 1, c: 2, d: 3, e: 4 } }];
   assert.equal(giocabili(pool).length, 1);
-  assert.equal(risposte(pool[1]).length, 4);
+  assert.equal(risposte(pool[1]).length, 5);
   assert.throws(() => domandeDelGiorno('2026-11-01', pool), /ce ne sono 1 su 2/);
 });
 
@@ -93,4 +93,10 @@ test('la scala sale sempre', () => {
 
 test('fnv1a valore noto', () => {
   assert.equal(fnv1a('a'), 0xe40c292c);
+});
+
+test('una domanda senza una fascia non e giocabile: il massimo dev essere sempre possibile', () => {
+  const senzaDaMino = { id: 'x', catalogo: { a: 0, b: 1, c: 2, d: 3, e: 3 } };
+  const completa = { id: 'y', catalogo: { a: 0, b: 1, c: 2, d: 3, e: 4 } };
+  assert.deepEqual(giocabili([senzaDaMino, completa]).map((d) => d.id), ['y']);
 });

@@ -5,6 +5,8 @@ import {
 } from './motore.js';
 import { creaMappa, COLORI_FASCE } from './mappa.js';
 import { suoni, sblocca, eMuto, cambiaMuto } from './suoni.js';
+import { creaStoria } from './storia.js';
+import { disegnaMiniMappa } from './minimappa.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -216,6 +218,9 @@ function chiudiTappa(id) {
   const prima = totale(stati);
   stati[corrente] = pinna(stati[corrente], id);
   salva();
+  // Nuovo timbro: zona indovinata per la prima volta, va nel passaporto.
+  const nuovo = !!stati[corrente].pin.fascia && !(id in leggiStorico().timbri);
+  registra();
   $('pianta').disabled = true;
   const s = stati[corrente];
   if (!id) {
@@ -228,7 +233,7 @@ function chiudiTappa(id) {
   suoni.timbro();
   mappa.imposta({ stato: (z) => (z === id ? 'attesa' : 'normale'), selezione: id, etichette: [{ id }] });
   mappa.inquadra({ zone: [id], durata: dopo(VOLO), alza: 0.16 }, true);
-  setTimeout(() => preparaCartellino(s, true), dopo(250));
+  setTimeout(() => preparaCartellino(s, true, nuovo), dopo(250));
   setTimeout(() => suoni.attesa((VOLO - 250) / 1000), dopo(250));
   setTimeout(() => {
     mappa.imposta({ stato: (z) => (z === id ? 'attesa' : 'normale'), selezione: id, etichette: [{ id }], pins: [{ id, cade: true }] });
@@ -289,12 +294,12 @@ const MANCA = {
   'metro-a': 'nessuna fermata della Metro A', 'metro-b': 'nessuna fermata della Metro B', 'metro-c': 'nessuna fermata della Metro C',
   trapizzino: 'nessun Trapizzino', fontane: 'nessuna delle fontane famose in gara', ville: 'nessuna delle ville storiche in gara',
   movida: 'nessuno dei posti della movida in gara', 'stazione-fs': 'nessuna stazione dei treni',
-  'belvedere-themino': 'nessuno dei belvederi della guida', cupola: 'nessuno dei punti della guida da cui si vede il Cupolone',
-  illusioni: 'nessuna delle illusioni della guida', misteri: 'nessuno dei misteri della guida', ossa: 'nessuna delle catacombe, cripte o cimiteri in gara',
+  'belvedere-themino': 'nessuno dei belvederi segreti in gara', cupola: 'nessuno dei punti in gara da cui si vede il Cupolone',
+  illusioni: 'nessuna delle illusioni in gara', misteri: 'nessuno dei misteri in gara', ossa: 'nessuna delle catacombe, cripte o cimiteri in gara',
   bernini: 'nessuna delle opere di Bernini in gara', borromini: 'nessuna delle opere di Borromini in gara', caravaggio: 'nessun Caravaggio',
   'roma-sotto': 'nessuno dei pezzi di Roma antica in gara', 'street-art': 'nessuno dei murales in gara', novecento: 'nessuno dei gioielli del Novecento in gara',
   estero: 'nessuno dei pezzetti di estero in gara', scalinate: 'nessuna delle scalinate in gara', orologi: 'nessuno degli orologi strani in gara',
-  'ville-themino': 'nessuna delle ville e dei parchi della guida',
+  'ville-themino': 'nessuna delle ville e dei parchi in gara',
 };
 const PERCHE_FASCIA = [
   'È la prima che viene in mente a tutti: per questo vale poco.',
@@ -349,8 +354,9 @@ const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
 // --- Esito ---
 
 // Il cartellino sulla mappa: in attesa mostra solo il nome e tre puntini.
-function preparaCartellino(s, attesa) {
+function preparaCartellino(s, attesa, nuovo = false) {
   const { pin } = s;
+  $('c-nuovo').hidden = !nuovo;
   const liv = pin.fascia ? livelloDi(pin.fascia) : null;
   const c = $('cartellino');
   c.hidden = false;
@@ -390,7 +396,7 @@ function mostraPaginaEsito(anima) {
   const [motivo, nota] = argomenta(s);
   $('esito-perche').textContent = motivo;
   $('esito-nota').textContent = nota;
-  // Le domande dalla guida di Themino hanno una riga di contesto: il racconto dietro la domanda.
+  // Le domande con le chicche di Mino hanno una riga di contesto: "Mino dice", il racconto dietro la domanda.
   $('esito-contesto').hidden = !s.domanda.contesto;
   $('esito-contesto-testo').textContent = s.domanda.contesto || '';
   $('avanti').textContent = corrente === domande.length - 1 ? 'Apri il diario' : 'Prossima tappa';
@@ -438,7 +444,10 @@ function mostraFine(anima) {
   contaFino($('fine-totale'), anima ? 0 : tot, tot, 900);
   $('fine-massimo').textContent = `/ ${MASSIMO_AL_GIORNO}`;
   $('fine-frase').textContent = FRASI.find(([min]) => tot >= min)[1];
-  mettiFaccia($('fine-faccia'), tot >= 32 ? 'stupore' : tot >= 24 ? 'risata' : tot >= 16 ? 'sorriso' : tot >= 8 ? 'dubbioso' : tot > 0 ? 'triste' : 'buca', anima);
+  mettiFaccia($('fine-faccia'), facciaFine(tot), anima);
+  registra();
+  const n = serie();
+  $('serie').textContent = n > 1 ? `Serie: ${n} giorni di fila` : n === 1 ? 'Serie: primo giorno. Torna domani!' : '';
   $('righe').replaceChildren(...stati.map((s, i) => {
     const li = document.createElement('li');
     const b = document.createElement('button');
@@ -453,10 +462,6 @@ function mostraFine(anima) {
     li.append(b);
     return li;
   }));
-  const QUADRI = ['⬜', '🟩', '🟦', '🟧', '🟨'];
-  const righe = stati.map((s) => (s.pin?.fascia ? QUADRI[livelloDi(s.pin.fascia)] : '🟥'));
-  $('copia').dataset.testo = `Sampietrino ${oggi}\n${righe.join('')} ${tot}/${MASSIMO_AL_GIORNO}\n${stati.map((s, i) => `${i + 1}. ${nomeZona(s.pin?.zona)} ${s.pin?.fascia ? `+${s.pin.punti}` : '0'}`).join('\n')}`;
-  $('copia').textContent = 'Copia il diario';
   const mezzanotte = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
   const minuti = 24 * 60 - (mezzanotte.getHours() * 60 + mezzanotte.getMinutes());
   $('prossima').textContent = ` · tra ${Math.floor(minuti / 60)} h ${minuti % 60} min`;
@@ -536,6 +541,59 @@ function apriTappa(i, anima = true) {
   $('risposte').replaceChildren(...blocchi);
 }
 
+// --- Storico: giorni giocati (serie) e zone timbrate (passaporto). Nel browser, finche non arriva il login. ---
+
+const STORICO = 'sampietrino:storico';
+function leggiStorico() {
+  try { return { giorni: {}, timbri: {}, ...JSON.parse(localStorage.getItem(STORICO)) }; } catch { return { giorni: {}, timbri: {} }; }
+}
+
+// Registra la giornata di oggi e timbra nel passaporto le zone indovinate, con la fascia migliore.
+function registra() {
+  const s = leggiStorico();
+  for (const st of stati) {
+    if (!st.pin?.fascia) continue;
+    s.timbri[st.pin.zona] = Math.max(s.timbri[st.pin.zona] ?? -1, livelloDi(st.pin.fascia));
+  }
+  s.giorni[oggi] = { tot: totale(stati), finita: stati.every((x) => x.pin) };
+  try { localStorage.setItem(STORICO, JSON.stringify(s)); } catch { /* senza memoria niente passaporto */ }
+}
+
+// Giorni di fila con la partita finita, fino a oggi (o fino a ieri, se oggi non e ancora finita).
+function serie() {
+  const g = leggiStorico().giorni;
+  const giorno = (t) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date(t));
+  let t = Date.now();
+  if (!g[giorno(t)]?.finita) t -= 864e5;
+  let n = 0;
+  while (g[giorno(t)]?.finita) { n += 1; t -= 864e5; }
+  return n;
+}
+
+const facciaFine = (tot) => (tot >= 32 ? 'stupore' : tot >= 24 ? 'risata' : tot >= 16 ? 'sorriso' : tot >= 8 ? 'dubbioso' : tot > 0 ? 'triste' : 'buca');
+
+function apriPassaporto() {
+  const s = leggiStorico();
+  const ids = Object.keys(s.timbri).filter((id) => zonePerId[id]).sort((a, b) => zonePerId[a].nome.localeCompare(zonePerId[b].nome, 'it'));
+  $('pass-numero').textContent = ids.length;
+  $('pass-totale').textContent = `su ${dati.zone.length} zone timbrate`;
+  $('pass-riempi').style.transform = `scaleX(${ids.length / dati.zone.length})`;
+  const n = serie();
+  $('pass-serie').textContent = n ? `Serie: ${n} ${n === 1 ? 'giorno' : 'giorni di fila'}` : '';
+  const cv = $('pass-mappa');
+  const ctx = cv.getContext('2d');
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  disegnaMiniMappa(ctx, dati, { x: 12, y: 12, w: cv.width - 24, h: cv.height - 24, colori: Object.fromEntries(ids.map((id) => [id, COLORI_FASCE[s.timbri[id]]])) });
+  $('pass-elenco').replaceChildren(...(ids.length ? ids.map((id) => {
+    const li = document.createElement('li');
+    li.textContent = zonePerId[id].nome;
+    li.style.setProperty('--colore-t', coloreT(s.timbri[id]));
+    return li;
+  }) : [Object.assign(document.createElement('li'), { className: 'vuoto', textContent: 'Ancora nessun timbro: indovina una zona e finisce qui, col colore della fascia.' })]));
+  suoni.pagina();
+  $('passaporto').showModal();
+}
+
 // --- Comandi ---
 
 document.addEventListener('keydown', (e) => {
@@ -572,9 +630,45 @@ $('daje').addEventListener('click', () => {
 });
 $('pianta').addEventListener('click', pianta);
 $('avanti').addEventListener('click', avanti);
-$('copia').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText($('copia').dataset.testo); $('copia').textContent = 'Copiato!'; suoni.copia(); } catch { $('copia').textContent = 'Non riesco a copiare'; }
+// Storia da condividere: il diario di oggi in formato storia Instagram. Sul telefono si apre la condivisione,
+// sul computer si scarica il PNG.
+const TESTO_FASCE = ['#5f5a50', '#33602a', '#255a86', '#9c3a17', '#835d00'];
+$('condividi').addEventListener('click', async () => {
+  const b = $('condividi');
+  b.disabled = true;
+  b.textContent = 'Preparo la storia…';
+  try {
+    const tot = totale(stati);
+    const blob = await creaStoria({
+      dati, totale: tot, massimo: MASSIMO_AL_GIORNO, frase: $('fine-frase').textContent, faccia: facciaFine(tot),
+      data: new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()),
+      righe: stati.map((s, i) => {
+        const liv = s.pin?.fascia ? livelloDi(s.pin.fascia) : null;
+        return { n: i + 1, zona: s.pin?.zona ? nomeZona(s.pin.zona) : 'Tempo scaduto', fascia: s.pin?.fascia ?? (s.pin?.zona ? 'Buca' : 'Capolinea'),
+          punti: s.pin?.punti ?? 0, coloreTesto: liv === null ? '#c43a28' : TESTO_FASCE[liv] };
+      }),
+      colori: Object.fromEntries(stati.filter((s) => s.pin?.zona).map((s) => [s.pin.zona, s.pin.fascia ? COLORI_FASCE[livelloDi(s.pin.fascia)] : '#d98a78'])),
+    });
+    const nome = `sampietrino-${oggi}.png`;
+    const file = new File([blob], nome, { type: 'image/png' });
+    if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title: 'Sampietrino' });
+    else {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = nome;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    }
+    suoni.copia();
+    b.textContent = 'Condividi nella storia';
+  } catch (e) {
+    b.textContent = e?.name === 'AbortError' ? 'Condividi nella storia' : 'Non riesco, riprova';
+  } finally {
+    b.disabled = false;
+  }
 });
+$('apri-passaporto').addEventListener('click', apriPassaporto);
+$('chiudi-passaporto').addEventListener('click', () => $('passaporto').close());
 
 // Suoni: il primo gesto sblocca l'audio; il tasto in testata lo zittisce, e il browser se lo ricorda.
 document.addEventListener('pointerdown', sblocca, { once: true });

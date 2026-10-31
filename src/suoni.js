@@ -1,6 +1,7 @@
 // Effetti sonori di Sampietrino, sintetizzati al volo con Web Audio: niente file da scaricare.
 // Onde quadre e triangolari, rumore filtrato per timbri e tonfi. Il silenzio si ricorda nel browser.
 // L'audio parte solo dopo un gesto (DAJE!, un tocco): prima i browser lo bloccano.
+// Sopra ai suoni sintetici c'e la voce di Themino: clip in audio/, tagliate da strumenti/taglia_vocali.py.
 
 const CHIAVE = 'sampietrino:muto';
 let ac = null;
@@ -16,8 +17,38 @@ export function sblocca() {
     uscita = ac.createGain();
     uscita.gain.value = 0.9;
     uscita.connect(ac.destination);
+    caricaVoci();
   }
   if (ac.state === 'suspended') ac.resume();
+}
+
+// Voci di Themino: si scaricano tutte al primo gesto (sono poche centinaia di KB) e si decodificano.
+const voci = {};
+const ultimaVoce = {};
+async function caricaVoci() {
+  try {
+    const conteggi = await (await fetch('audio/voci.json')).json();
+    await Promise.all(Object.entries(conteggi).flatMap(([nome, n]) => Array.from({ length: n }, async (_, i) => {
+      const buf = await (await fetch(`audio/${nome}-${i + 1}.mp3`)).arrayBuffer();
+      (voci[nome] ||= [])[i] = await ac.decodeAudioData(buf);
+    })));
+  } catch { /* senza voci restano i suoni sintetici */ }
+}
+
+// Una variante a caso, mai la stessa due volte di fila. Torna false se la voce non c'e (ancora).
+export function voce(nome, dopo = 0) {
+  const lista = (voci[nome] || []).filter(Boolean);
+  if (!pronto() || !lista.length) return false;
+  let i = Math.floor(Math.random() * lista.length);
+  if (lista.length > 1 && i === ultimaVoce[nome]) i = (i + 1) % lista.length;
+  ultimaVoce[nome] = i;
+  const s = ac.createBufferSource();
+  s.buffer = lista[i];
+  const g = ac.createGain();
+  g.gain.value = 1.1;
+  s.connect(g).connect(uscita);
+  s.start(ac.currentTime + dopo);
+  return true;
 }
 
 export const eMuto = () => muto;
@@ -72,7 +103,10 @@ function rumore(durata, { vol = 0.2, filtro = 'lowpass', freq = 800, a = freq, d
 const DO = [523.25, 587.33, 659.25, 698.46, 783.99, 880, 987.77, 1046.5, 1318.5, 1568, 2093];
 
 export const suoni = {
-  daje() { [0, 4, 7].forEach((k, i) => nota(DO[k], 0.14, { dopo: i * 0.09, vol: 0.05 })); nota(DO[7], 0.3, { dopo: 0.27, vol: 0.05 }); },
+  daje() {
+    if (voce('daje')) return;
+    [0, 4, 7].forEach((k, i) => nota(DO[k], 0.14, { dopo: i * 0.09, vol: 0.05 })); nota(DO[7], 0.3, { dopo: 0.27, vol: 0.05 });
+  },
   // Passaggio del mouse: un ticchettio appena percettibile, non piu di uno ogni 60 ms.
   sopra() {
     if (!pronto() || ac.currentTime - ultimoTic < 0.06) return;
@@ -101,7 +135,10 @@ export const suoni = {
   caduta() { rumore(0.4, { vol: 0.08, filtro: 'bandpass', freq: 2400, a: 380, q: 2 }); },
   tocco() { rumore(0.09, { vol: 0.5, freq: 260 }); nota(150, 0.12, { onda: 'triangle', a: 60, vol: 0.2 }); },
   // La rivelazione: piu la fascia e rara, piu la fanfara e lunga. Buca: un pernacchio a 8 bit.
+  // Poi la voce di Themino che dice la fascia (o "buca"); con la voce la fanfara si abbassa.
   rivela(livello) {
+    const parla = voce(livello === null || livello === undefined ? 'buca' : ['cartolina', 'ce-sta', 'romano', 'chicca', 'da-mino'][livello], 0.12);
+    if (parla && uscita) { uscita.gain.setValueAtTime(0.45, ac.currentTime); uscita.gain.setValueAtTime(0.9, ac.currentTime + 0.7); }
     if (livello === null || livello === undefined) {
       nota(196, 0.18, { onda: 'sawtooth', a: 174, vol: 0.06 });
       nota(147, 0.4, { onda: 'sawtooth', a: 110, vol: 0.06, dopo: 0.17 });
@@ -121,7 +158,7 @@ export const suoni = {
   },
   // Gli ultimi dieci secondi.
   tic(resto) { nota(resto <= 3 ? 1000 : 820, 0.05, { vol: 0.035 }); },
-  scaduto() { nota(330, 0.5, { onda: 'sawtooth', a: 165, vol: 0.06 }); },
+  scaduto() { nota(330, 0.5, { onda: 'sawtooth', a: 165, vol: 0.06 }); voce('capolinea', 0.25); },
   pagina() { rumore(0.12, { vol: 0.12, filtro: 'highpass', freq: 1800, a: 4000 }); },
   // Diario: ogni zona che si accende e una nota, piu acuta piu la fascia e rara.
   cascata(livello, dopo) { nota(DO[[0, 2, 4, 7, 9][livello]], 0.09, { dopo, vol: 0.02 + livello * 0.006, onda: 'triangle' }); },
