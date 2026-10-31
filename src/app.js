@@ -19,14 +19,15 @@ let dati, zonePerId, domande, stati, corrente, selezionata, mappa, aperta = -1;
 
 function salva() {
   try {
-    localStorage.setItem(CHIAVE, JSON.stringify({ stati: stati.map((s) => ({ pin: s.pin, inizio: s.inizio })), corrente }));
+    localStorage.setItem(CHIAVE, JSON.stringify({ ids: domande.map((d) => d.id), stati: stati.map((s) => ({ pin: s.pin, inizio: s.inizio })), corrente }));
   } catch { /* senza memoria si gioca lo stesso */ }
 }
 
 function ripristina() {
   try {
     const v = JSON.parse(localStorage.getItem(CHIAVE));
-    if (!v || v.stati.length !== domande.length) return false;
+    // Se le domande del giorno sono cambiate (dati nuovi pubblicati) la partita salvata non vale piu.
+    if (!v || v.stati.length !== domande.length || v.ids?.join() !== domande.map((d) => d.id).join()) return false;
     stati = v.stati.map((s, i) => ({ ...s, domanda: domande[i] }));
     corrente = v.corrente;
     return true;
@@ -271,6 +272,12 @@ const MANCA = {
   'metro-a': 'nessuna fermata della Metro A', 'metro-b': 'nessuna fermata della Metro B', 'metro-c': 'nessuna fermata della Metro C',
   trapizzino: 'nessun Trapizzino', fontane: 'nessuna delle fontane famose in gara', ville: 'nessuna delle ville storiche in gara',
   movida: 'nessuno dei posti della movida in gara', 'stazione-fs': 'nessuna stazione dei treni',
+  'belvedere-themino': 'nessuno dei belvederi della guida', cupola: 'nessuno dei punti della guida da cui si vede il Cupolone',
+  illusioni: 'nessuna delle illusioni della guida', misteri: 'nessuno dei misteri della guida', ossa: 'nessuna delle catacombe, cripte o cimiteri in gara',
+  bernini: 'nessuna delle opere di Bernini in gara', borromini: 'nessuna delle opere di Borromini in gara', caravaggio: 'nessun Caravaggio',
+  'roma-sotto': 'nessuno dei pezzi di Roma antica in gara', 'street-art': 'nessuno dei murales in gara', novecento: 'nessuno dei gioielli del Novecento in gara',
+  estero: 'nessuno dei pezzetti di estero in gara', scalinate: 'nessuna delle scalinate in gara', orologi: 'nessuno degli orologi strani in gara',
+  'ville-themino': 'nessuna delle ville e dei parchi della guida',
 };
 const PERCHE_FASCIA = [
   'È la prima che viene in mente a tutti: per questo vale poco.',
@@ -290,7 +297,7 @@ function argomenta(s) {
   if (pin.fascia) {
     const liv = livelloDi(pin.fascia);
     const luoghi = perche(d, pin.zona);
-    const prima = luoghi ? `Giusta: a ${nome} c'è ${luoghi.replace(/ · /g, ', ')}.`
+    const prima = luoghi ? `Giusta, a ${nome}: ${luoghi.replace(/ · /g, ', ')}.`
       : d.tipo === 'acqua' ? `Giusta: il Tevere passa per ${nome}.`
         : d.tipo === 'confina' ? `Giusta: ${nome} confina con ${zonePerId[d.evidenzia[0]].nome}.`
           : d.tipo === 'municipio' ? `Giusta: ${nome} sta nel ${d.testo.replace('Una zona del ', '')}.`
@@ -363,6 +370,9 @@ function mostraPaginaEsito(anima) {
   const [motivo, nota] = argomenta(s);
   $('esito-perche').textContent = motivo;
   $('esito-nota').textContent = nota;
+  // Le domande dalla guida di Themino hanno una riga di contesto: il racconto dietro la domanda.
+  $('esito-contesto').hidden = !s.domanda.contesto;
+  $('esito-contesto-testo').textContent = s.domanda.contesto || '';
   $('avanti').textContent = corrente === domande.length - 1 ? 'Apri il diario' : 'Prossima tappa';
   pagina('pagina-esito', anima);
 }

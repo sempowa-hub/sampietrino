@@ -34,7 +34,7 @@ from pathlib import Path
 
 from pyproj import Transformer
 from shapely import transform as trasforma
-from shapely.geometry import shape, mapping
+from shapely.geometry import Point, shape, mapping
 from shapely.ops import linemerge, unary_union
 
 RADICE = Path(__file__).resolve().parent.parent
@@ -231,7 +231,44 @@ def main():
         if pr['categoria'] == 'tevere':
             tevere_linee.append(g)
     resoconto = []
+    def fasce_e_perche(luoghi):
+        """Luoghi con la fascia decisa a mano: la zona prende la fascia del suo luogo piu scontato,
+        e si ricorda quali luoghi la rendono giusta."""
+        fasce, perche = {}, defaultdict(list)
+        for g, fascia_luogo, etichetta in luoghi:
+            for n in nomi:
+                if zone[n].intersects(g):
+                    fasce[ids[n]] = min(fasce.get(ids[n], 4), int(fascia_luogo))
+                    if etichetta not in perche[ids[n]]:
+                        perche[ids[n]].append(etichetta)
+        return fasce, dict(perche)
+
     for c in categorie:
+        if 'punti' in c:
+            # Luoghi con le coordinate scritte nella categoria (la guida di Themino): niente OpenStreetMap.
+            # Un luogo vale per la zona in cui cade; sui confini veri (un ponte, un incrocio tra due rioni)
+            # la categoria elenca le altre zone in zone_anche, a mano: un raggio fisso prenderebbe anche
+            # le zone sbagliate (l'ingresso di Villa Borghese sta in Flaminio).
+            luoghi = [(in_metri(Point(x['lon'], x['lat'])).buffer(5), x['fascia'], x['nome']) for x in c['punti']]
+            fasce, perche = fasce_e_perche(luoghi)
+            per_nome_zona = {n: ids[n] for n in nomi}
+            for x in c['punti']:
+                for altra in x.get('zone_anche', []):
+                    if altra not in per_nome_zona:
+                        errore(f'categoria {c["id"]}: zona_anche "{altra}" per {x["nome"]} non e una zona in gioco')
+                    z = per_nome_zona[altra]
+                    fasce[z] = min(fasce.get(z, 4), int(x['fascia']))
+                    if x['nome'] not in perche.setdefault(z, []):
+                        perche[z].append(x['nome'])
+            for (g, _, nome), x in zip(luoghi, c['punti']):
+                atteso = x.get('zona_attesa')
+                if atteso and atteso not in x.get('zone_anche', []) and not (atteso in zone and zone[atteso].intersects(g)):
+                    dove = [n for n in nomi if zone[n].intersects(g)] or ['nessuna zona in gioco']
+                    resoconto.append(f'  ATTENZIONE {c["id"]}: {nome} cade in {", ".join(dove)}, non in {atteso}')
+            resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi a mano, {len(fasce)} zone giuste')
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': perche,
+                            '_luoghi': [(e, g.centroid) for g, _, e in luoghi], **({'contesto': c['contesto']} if c.get('contesto') else {})})
+            continue
         luoghi = per_categoria.get(c['id'], [])
         if not luoghi:
             errore(f'categoria {c["id"]}: nessun luogo in luoghi-osm.geojson. Rilancia strumenti/scarica_luoghi.py')
@@ -241,15 +278,9 @@ def main():
             mancanti = [x['nome'] for x in c['elenco'] if x['nome'] not in trovati_per_nome[c['id']]]
             if mancanti:
                 resoconto.append(f'  ATTENZIONE {c["id"]}: non trovati in OpenStreetMap: {", ".join(mancanti)}')
-            fasce, perche = {}, defaultdict(list)
-            for g, fascia_luogo, etichetta in luoghi:
-                for n in nomi:
-                    if zone[n].intersects(g):
-                        fasce[ids[n]] = min(fasce.get(ids[n], 4), int(fascia_luogo))
-                        if etichetta not in perche[ids[n]]:
-                            perche[ids[n]].append(etichetta)
+            fasce, perche = fasce_e_perche(luoghi)
             resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi su {len(c["elenco"])} in elenco, {len(fasce)} zone giuste')
-            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': dict(perche),
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': perche,
                             '_luoghi': [(e, g.centroid) for g, _, e in luoghi]})
         else:
             tutti = unary_union([g for g, _, _ in luoghi])

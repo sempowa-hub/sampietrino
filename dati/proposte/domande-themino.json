@@ -1,0 +1,938 @@
+[
+ {
+  "id": "belvedere-themino",
+  "testo": "Una zona con un belvedere segreto di Themino",
+  "contesto": "Roma si guarda dall'alto: dodici terrazze del libro, dal Pincio che conoscono tutti al Piazzale Socrate che Themino ha riempito di panchine.",
+  "luoghi": [
+   [
+    "Gianicolo",
+    "Trastevere",
+    0,
+    20
+   ],
+   [
+    "Terrazza del Pincio",
+    "Campo Marzio",
+    0,
+    26
+   ],
+   [
+    "Giardino degli Aranci",
+    "Ripa",
+    1,
+    21
+   ],
+   [
+    "Piazza del Quirinale",
+    "Trevi",
+    1,
+    23
+   ],
+   [
+    "Terrazza sul Foro",
+    "Campitelli",
+    1,
+    28
+   ],
+   [
+    "Terrazza Caffarelli",
+    "Campitelli",
+    2,
+    27
+   ],
+   [
+    "Piazza di San Pietro in Montorio",
+    "Trastevere",
+    2,
+    24
+   ],
+   [
+    "Zodiaco",
+    "Della Vittoria",
+    2,
+    29
+   ],
+   [
+    "Villa Aldobrandini",
+    "Monti",
+    3,
+    10
+   ],
+   [
+    "Fortino della Madonnina",
+    "Gianicolense",
+    3,
+    19
+   ],
+   [
+    "Monte Ciocci",
+    "Trionfale",
+    3,
+    22
+   ],
+   [
+    "Villa Balestra",
+    "Pinciano",
+    3,
+    11
+   ],
+   [
+    "Villa Mazzanti",
+    "Della Vittoria",
+    3,
+    15
+   ],
+   [
+    "Piazzale Socrate",
+    "Trionfale",
+    4,
+    25
+   ],
+   [
+    "Belvedere di via Piccolomini",
+    "Aurelio",
+    4,
+    18
+   ]
+  ],
+  "n_zone": 11
+ },
+ {
+  "id": "cupola",
+  "testo": "Una zona da cui si vede il Cupolone",
+  "contesto": "La cupola di San Pietro spunta ovunque, ma certi posti la incorniciano: un buco della serratura, un vecchio binario, una strada che la fa rimpicciolire mentre ti avvicini.",
+  "luoghi": [
+   [
+    "Gianicolo",
+    "Trastevere",
+    0,
+    20
+   ],
+   [
+    "Buco della serratura dei Cavalieri di Malta",
+    "Ripa",
+    1,
+    45
+   ],
+   [
+    "Giardino degli Aranci",
+    "Ripa",
+    1,
+    21
+   ],
+   [
+    "Piazza del Quirinale",
+    "Trevi",
+    2,
+    23
+   ],
+   [
+    "Zodiaco",
+    "Della Vittoria",
+    2,
+    29
+   ],
+   [
+    "Villa Doria Pamphilj",
+    "Gianicolense",
+    3,
+    14
+   ],
+   [
+    "Monte Ciocci",
+    "Trionfale",
+    3,
+    22
+   ],
+   [
+    "Villa Balestra",
+    "Pinciano",
+    3,
+    11
+   ],
+   [
+    "Piazzale Socrate",
+    "Trionfale",
+    4,
+    25
+   ],
+   [
+    "Belvedere di via Piccolomini",
+    "Aurelio",
+    4,
+    18
+   ],
+   [
+    "Passeggiata del Gelsomino",
+    "Aurelio",
+    4,
+    68
+   ]
+  ],
+  "n_zone": 8
+ },
+ {
+  "id": "illusioni",
+  "testo": "Una zona dove Roma ti inganna gli occhi (o le orecchie)",
+  "contesto": "Una galleria di 8 metri che ne sembra 30, una cupola dipinta su un soffitto piatto, una piazza dove ci si parla a cento metri senza alzare la voce.",
+  "luoghi": [
+   [
+    "Galleria prospettica di Palazzo Spada",
+    "Regola",
+    1,
+    66
+   ],
+   [
+    "Buco della serratura",
+    "Ripa",
+    1,
+    45
+   ],
+   [
+    "Finta cupola di Sant'Ignazio",
+    "Pigna",
+    2,
+    39
+   ],
+   [
+    "Volta del Baciccio al Gesù",
+    "Pigna",
+    2,
+    37
+   ],
+   [
+    "Refettorio di Andrea Pozzo a Trinità dei Monti",
+    "Campo Marzio",
+    3,
+    40
+   ],
+   [
+    "Effetto acustico di piazza del Popolo",
+    "Campo Marzio",
+    3,
+    52
+   ],
+   [
+    "Cupola che si rimpicciolisce in via Piccolomini",
+    "Aurelio",
+    4,
+    18
+   ]
+  ],
+  "n_zone": 5
+ },
+ {
+  "id": "misteri",
+  "testo": "Una zona con una leggenda nera o un mistero",
+  "contesto": "Alchimisti spariti, osti decapitati, mani di donna alla finestra con la luna piena: la Roma che si racconta a bassa voce.",
+  "luoghi": [
+   [
+    "Bocca della Verità",
+    "Ripa",
+    0,
+    44
+   ],
+   [
+    "Rupe Tarpea",
+    "Campitelli",
+    1,
+    27
+   ],
+   [
+    "Porta Magica",
+    "Esquilino",
+    2,
+    70
+   ],
+   [
+    "Impronte di Gesù al Domine Quo Vadis",
+    "Appio-Latino",
+    3,
+    36
+   ],
+   [
+    "Casa dei Mostri, Palazzo Zuccari",
+    "Campo Marzio",
+    3,
+    67
+   ],
+   [
+    "Crocifissioni di San Pietro in Montorio",
+    "Trastevere",
+    3,
+    24
+   ],
+   [
+    "Oste decapitato e mano di Palazzo Tuccimei",
+    "Parione",
+    4,
+    62
+   ],
+   [
+    "Madonna del Latte del Passetto del Biscione",
+    "Parione",
+    4,
+    61
+   ],
+   [
+    "Mano dell'operaio sotto l'obelisco di Villa Celimontana",
+    "Celio",
+    4,
+    13
+   ]
+  ],
+  "n_zone": 8
+ },
+ {
+  "id": "ossa",
+  "testo": "Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",
+  "contesto": "Sotto Roma ci sono chilometri di gallerie: Priscilla da sola ne ha 13. E una cripta dove quattromila frati sono diventati lampadari.",
+  "luoghi": [
+   [
+    "Catacombe di San Callisto",
+    "Ardeatino",
+    0,
+    46
+   ],
+   [
+    "Catacombe di San Sebastiano",
+    "Ardeatino",
+    0,
+    "box"
+   ],
+   [
+    "Cripta dei Cappuccini",
+    "Ludovisi",
+    1,
+    50
+   ],
+   [
+    "Cimitero acattolico",
+    "Testaccio",
+    1,
+    48
+   ],
+   [
+    "Verano",
+    "Tiburtino",
+    2,
+    "+"
+   ],
+   [
+    "Catacombe di Priscilla",
+    "Trieste",
+    2,
+    "box"
+   ],
+   [
+    "Catacombe di Sant'Agnese",
+    "Trieste",
+    2,
+    32
+   ],
+   [
+    "Catacombe di Commodilla",
+    "Ardeatino",
+    3,
+    "+"
+   ],
+   [
+    "Catacombe di Pretestato",
+    "Appio-Latino",
+    3,
+    "+"
+   ],
+   [
+    "Catacombe dei Santi Marcellino e Pietro",
+    "Prenestino-Labicano",
+    4,
+    "+"
+   ],
+   [
+    "Catacombe ebraiche di Villa Torlonia",
+    "Nomentano",
+    4,
+    "+"
+   ],
+   [
+    "Catacombe di San Pancrazio",
+    "Gianicolense",
+    4,
+    "+"
+   ],
+   [
+    "Catacombe di Generosa",
+    "Portuense",
+    4,
+    "+"
+   ]
+  ],
+  "n_zone": 10
+ },
+ {
+  "id": "bernini",
+  "testo": "Una zona con un capolavoro di Bernini",
+  "contesto": "Il papa Urbano VIII disse che Bernini era nato per Roma e Roma per lui: fontane, angeli, un elefantino e una santa in estasi.",
+  "luoghi": [
+   [
+    "Fontana dei Quattro Fiumi",
+    "Parione",
+    0,
+    53
+   ],
+   [
+    "Fontana del Tritone",
+    "Trevi",
+    1,
+    54
+   ],
+   [
+    "Angeli di Ponte Sant'Angelo",
+    "Borgo",
+    1,
+    "+"
+   ],
+   [
+    "Galleria Borghese",
+    "Pinciano",
+    1,
+    "+"
+   ],
+   [
+    "Estasi di Santa Teresa",
+    "Sallustiano",
+    2,
+    "+"
+   ],
+   [
+    "Elefantino della Minerva",
+    "Pigna",
+    2,
+    "+"
+   ],
+   [
+    "Santa Maria del Popolo",
+    "Campo Marzio",
+    2,
+    "+"
+   ],
+   [
+    "Fontana delle Api",
+    "Ludovisi",
+    3,
+    "+"
+   ],
+   [
+    "Sant'Andrea al Quirinale",
+    "Monti",
+    3,
+    "+"
+   ],
+   [
+    "Beata Ludovica Albertoni a San Francesco a Ripa",
+    "Trastevere",
+    4,
+    "+"
+   ],
+   [
+    "Palazzo di Montecitorio",
+    "Colonna",
+    4,
+    "+"
+   ]
+  ],
+  "n_zone": 11
+ },
+ {
+  "id": "borromini",
+  "testo": "Una zona con un'opera di Borromini",
+  "contesto": "Il rivale di Bernini: curve, ellissi e prospettive bugiarde. San Carlino sta tutto dentro un pilastro di San Pietro.",
+  "luoghi": [
+   [
+    "Sant'Agnese in Agone",
+    "Parione",
+    1,
+    "+"
+   ],
+   [
+    "Prospettiva di Palazzo Spada",
+    "Regola",
+    1,
+    66
+   ],
+   [
+    "San Carlo alle Quattro Fontane",
+    "Monti",
+    2,
+    "box"
+   ],
+   [
+    "Sant'Ivo alla Sapienza",
+    "Sant'Eustachio",
+    2,
+    "+"
+   ],
+   [
+    "Navata di San Giovanni in Laterano",
+    "Monti",
+    3,
+    31
+   ],
+   [
+    "Oratorio dei Filippini",
+    "Parione",
+    3,
+    "+"
+   ],
+   [
+    "Sant'Andrea delle Fratte",
+    "Colonna",
+    3,
+    "+"
+   ],
+   [
+    "Palazzo di Propaganda Fide",
+    "Campo Marzio",
+    4,
+    "+"
+   ]
+  ],
+  "n_zone": 6
+ },
+ {
+  "id": "caravaggio",
+  "testo": "Una zona dove puoi vedere un Caravaggio",
+  "contesto": "A Roma i Caravaggio si vedono anche gratis: tre stanno in una cappella di San Luigi dei Francesi, a due passi da piazza Navona.",
+  "luoghi": [
+   [
+    "San Luigi dei Francesi",
+    "Sant'Eustachio",
+    0,
+    38
+   ],
+   [
+    "Sant'Agostino",
+    "Sant'Eustachio",
+    1,
+    "+"
+   ],
+   [
+    "Galleria Borghese",
+    "Pinciano",
+    1,
+    "+"
+   ],
+   [
+    "Santa Maria del Popolo",
+    "Campo Marzio",
+    1,
+    "+"
+   ],
+   [
+    "Palazzo Barberini",
+    "Trevi",
+    2,
+    "+"
+   ],
+   [
+    "Galleria Doria Pamphilj",
+    "Pigna",
+    3,
+    "+"
+   ],
+   [
+    "Musei Capitolini",
+    "Campitelli",
+    3,
+    "+"
+   ],
+   [
+    "Galleria Corsini",
+    "Trastevere",
+    4,
+    "+"
+   ],
+   [
+    "Casino dell'Aurora (soffitto)",
+    "Ludovisi",
+    4,
+    "+"
+   ]
+  ],
+  "n_zone": 8
+ },
+ {
+  "id": "roma-sotto",
+  "testo": "Una zona con un pezzo di Roma antica nascosto in città",
+  "contesto": "Un condominio romano sotto un ex cinema a due passi da Trevi, una montagna fatta di 25 milioni di anfore rotte, uno stadio sotto piazza Navona.",
+  "luoghi": [
+   [
+    "Area sacra di Largo Argentina",
+    "Pigna",
+    0,
+    43
+   ],
+   [
+    "Domus Aurea",
+    "Monti",
+    1,
+    "+"
+   ],
+   [
+    "Piramide Cestia",
+    "Testaccio",
+    1,
+    69
+   ],
+   [
+    "Monte dei Cocci",
+    "Testaccio",
+    2,
+    63
+   ],
+   [
+    "Stadio di Domiziano",
+    "Parione",
+    2,
+    "+"
+   ],
+   [
+    "Città dell'acqua (Vicus Caprarius)",
+    "Trevi",
+    3,
+    49
+   ],
+   [
+    "Case romane del Celio",
+    "Celio",
+    3,
+    "+"
+   ],
+   [
+    "Ipogeo degli Aureli",
+    "Esquilino",
+    4,
+    "+"
+   ],
+   [
+    "Crypta Balbi",
+    "Sant'Angelo",
+    4,
+    "+"
+   ],
+   [
+    "Mitreo del Circo Massimo",
+    "Ripa",
+    4,
+    "+"
+   ]
+  ],
+  "n_zone": 9
+ },
+ {
+  "id": "street-art",
+  "testo": "Una zona famosa per i murales",
+  "contesto": "Al Trullo sui muri ci sono le poesie in romanesco dei Poeti der Trullo; a Tor Marancia ventidue artisti hanno dipinto un intero lotto di case popolari.",
+  "luoghi": [
+   [
+    "Via del Porto Fluviale",
+    "Ostiense",
+    1,
+    "+"
+   ],
+   [
+    "Pigneto e i murales per Pasolini",
+    "Prenestino-Labicano",
+    1,
+    "+"
+   ],
+   [
+    "San Lorenzo",
+    "Tiburtino",
+    2,
+    "+"
+   ],
+   [
+    "Museo condominiale di Tor Marancia",
+    "Ardeatino",
+    2,
+    64
+   ],
+   [
+    "Quadraro, il M.U.Ro.",
+    "Tuscolano",
+    3,
+    "+"
+   ],
+   [
+    "Trullo, murales e Poeti der Trullo",
+    "Portuense",
+    3,
+    74
+   ]
+  ],
+  "n_zone": 6
+ },
+ {
+  "id": "novecento",
+  "testo": "Una zona con un gioiello del Novecento",
+  "contesto": "Non è tutto antico: un quartiere da fiaba dove i Beatles fecero il bagno in una fontana, un Colosseo di ferro, un lago con i ciliegi di Tokyo.",
+  "luoghi": [
+   [
+    "Quartiere Coppedè",
+    "Trieste",
+    1,
+    71
+   ],
+   [
+    "Gazometro",
+    "Ostiense",
+    1,
+    58
+   ],
+   [
+    "Laghetto e quartiere dell'Eur",
+    "E.U.R.",
+    0,
+    1
+   ],
+   [
+    "Fontana della Carlotta alla Garbatella",
+    "Ostiense",
+    3,
+    56
+   ],
+   [
+    "Casina delle Civette",
+    "Nomentano",
+    3,
+    17
+   ],
+   [
+    "Case popolari di Tor Marancia",
+    "Ardeatino",
+    4,
+    64
+   ],
+   [
+    "Borgata razionalista del Trullo",
+    "Portuense",
+    4,
+    74
+   ]
+  ],
+  "n_zone": 6
+ },
+ {
+  "id": "estero",
+  "testo": "Una zona dove c'è un pezzetto di estero",
+  "contesto": "Dal buco della serratura dell'Aventino vedi tre Stati insieme: Italia, Malta e Vaticano. E all'Eur i ciliegi li ha regalati il sindaco di Tokyo.",
+  "luoghi": [
+   [
+    "Trinità dei Monti, chiesa dei francesi",
+    "Campo Marzio",
+    1,
+    40
+   ],
+   [
+    "San Luigi dei Francesi",
+    "Sant'Eustachio",
+    1,
+    38
+   ],
+   [
+    "Priorato dei Cavalieri di Malta",
+    "Ripa",
+    2,
+    45
+   ],
+   [
+    "Cimitero degli inglesi",
+    "Testaccio",
+    2,
+    48
+   ],
+   [
+    "Ciliegi giapponesi del laghetto",
+    "E.U.R.",
+    3,
+    1
+   ],
+   [
+    "Santo Stefano Rotondo, chiesa degli ungheresi",
+    "Monti",
+    4,
+    35
+   ]
+  ],
+  "n_zone": 6
+ },
+ {
+  "id": "scalinate",
+  "testo": "Una zona con una scalinata da fiato corto",
+  "contesto": "I 126 scalini della Scalea del Tamburino portano il nome di un garibaldino di sedici anni; la Scala Santa si sale solo in ginocchio.",
+  "luoghi": [
+   [
+    "Scalinata di Trinità dei Monti",
+    "Campo Marzio",
+    0,
+    40
+   ],
+   [
+    "Cordonata e scalinata dell'Aracoeli",
+    "Campitelli",
+    1,
+    "+"
+   ],
+   [
+    "Scala Santa",
+    "Monti",
+    2,
+    "box"
+   ],
+   [
+    "Scalea del Tamburino",
+    "Trastevere",
+    3,
+    72
+   ],
+   [
+    "Scala del Righetto al Fortino della Madonnina",
+    "Gianicolense",
+    4,
+    19
+   ],
+   [
+    "Scalinata della Carlotta",
+    "Ostiense",
+    4,
+    56
+   ]
+  ],
+  "n_zone": 6
+ },
+ {
+  "id": "orologi",
+  "testo": "Una zona dove a Roma si segna l'ora in modo strano",
+  "contesto": "Un orologio che va ad acqua dentro un tronco finto, una meridiana lunga un corridoio, un cannone che spara a mezzogiorno, la torre del Primo Meridiano d'Italia.",
+  "luoghi": [
+   [
+    "Cannone del mezzogiorno al Gianicolo",
+    "Trastevere",
+    1,
+    "+"
+   ],
+   [
+    "Orologio ad acqua del Pincio",
+    "Campo Marzio",
+    3,
+    65
+   ],
+   [
+    "Meridiana nel chiostro di Trinità dei Monti",
+    "Campo Marzio",
+    3,
+    40
+   ],
+   [
+    "Meridiana di Santa Maria degli Angeli",
+    "Castro Pretorio",
+    3,
+    "+"
+   ],
+   [
+    "Orologio di via del Gesù",
+    "Pigna",
+    4,
+    37
+   ],
+   [
+    "Torre del Primo Meridiano d'Italia",
+    "Della Vittoria",
+    4,
+    29
+   ]
+  ],
+  "n_zone": 5
+ },
+ {
+  "id": "ville-themino",
+  "testo": "Una zona con una villa o un parco del libro di Themino",
+  "contesto": "Roma è la città più verde d'Europa: il 67 per cento del territorio è parchi, ville e giardini. Questi sono quelli dove Themino ti manda a perderti.",
+  "luoghi": [
+   [
+    "Villa Borghese",
+    "Pinciano",
+    0,
+    12
+   ],
+   [
+    "Villa Doria Pamphilj",
+    "Gianicolense",
+    0,
+    14
+   ],
+   [
+    "Villa Ada",
+    "Parioli",
+    1,
+    9
+   ],
+   [
+    "Villa Torlonia",
+    "Nomentano",
+    1,
+    17
+   ],
+   [
+    "Laghetto dell'Eur",
+    "E.U.R.",
+    1,
+    1
+   ],
+   [
+    "Parco degli Acquedotti",
+    "Appio Claudio",
+    1,
+    3
+   ],
+   [
+    "Parco della Caffarella",
+    "Appio-Latino",
+    2,
+    5
+   ],
+   [
+    "Villa Celimontana",
+    "Celio",
+    2,
+    13
+   ],
+   [
+    "Orto Botanico",
+    "Trastevere",
+    2,
+    2
+   ],
+   [
+    "Parco del Colle Oppio",
+    "Monti",
+    2,
+    4
+   ],
+   [
+    "Riserva di Monte Mario",
+    "Della Vittoria",
+    3,
+    8
+   ],
+   [
+    "Parco di Tor di Quinto (laghetto a forma di cuore)",
+    "Tor di Quinto",
+    4,
+    6
+   ]
+  ],
+  "n_zone": 12
+ }
+]

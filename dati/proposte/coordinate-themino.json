@@ -1,0 +1,682 @@
+{
+ "Laghetto dell'Eur": {
+  "lat": 41.833973,
+  "lon": 12.462428,
+  "zona": "E.U.R."
+ },
+ "Orto Botanico": {
+  "lat": 41.89285,
+  "lon": 12.464865,
+  "zona": "Trastevere"
+ },
+ "Parco degli Acquedotti": {
+  "lat": 41.851313,
+  "lon": 12.560172,
+  "zona": "Appio Claudio"
+ },
+ "Parco del Colle Oppio": {
+  "lat": 41.892187,
+  "lon": 12.497981,
+  "zona": "Monti"
+ },
+ "Parco della Caffarella": {
+  "lat": 41.865597,
+  "lon": 12.50974,
+  "zona": "Appio-Latino"
+ },
+ "Parco di Tor di Quinto": {
+  "lat": 41.936161,
+  "lon": 12.481381,
+  "zona": "Tor di Quinto"
+ },
+ "Parco dell'Appia Antica": {
+  "lat": 41.858752,
+  "lon": 12.513163,
+  "zona": "Appio-Latino"
+ },
+ "Riserva di Monte Mario": {
+  "lat": 41.94101,
+  "lon": 12.457544,
+  "zona": "Della Vittoria"
+ },
+ "Villa Ada": {
+  "lat": 41.926236,
+  "lon": 12.502361,
+  "zona": "Parioli"
+ },
+ "Catacombe di Priscilla": {
+  "lat": 41.929726,
+  "lon": 12.508765,
+  "zona": "Trieste"
+ },
+ "Villa Aldobrandini": {
+  "lat": 41.896727,
+  "lon": 12.48864,
+  "zona": "Monti"
+ },
+ "Villa Balestra": {
+  "lat": 41.920561,
+  "lon": 12.476071,
+  "zona": "Pinciano"
+ },
+ "Villa Borghese": {
+  "lat": 41.911912,
+  "lon": 12.476226,
+  "zona": "Pinciano"
+ },
+ "Villa Celimontana": {
+  "lat": 41.884452,
+  "lon": 12.495735,
+  "zona": "Celio"
+ },
+ "Basilica dei Santi Giovanni e Paolo": {
+  "lat": 41.886395,
+  "lon": 12.492588,
+  "zona": "Celio"
+ },
+ "Villa Doria Pamphilj": {
+  "lat": 41.890043,
+  "lon": 12.435454,
+  "zona": "Gianicolense"
+ },
+ "Villa Mazzanti": {
+  "lat": 41.921349,
+  "lon": 12.455793,
+  "zona": "Della Vittoria"
+ },
+ "Villa Sciarra": {
+  "lat": 41.882731,
+  "lon": 12.46485,
+  "zona": "Gianicolense"
+ },
+ "Villa Torlonia": {
+  "lat": 41.914774,
+  "lon": 12.511324,
+  "zona": "Nomentano"
+ },
+ "Belvedere di via Piccolomini": {
+  "lat": 41.891501,
+  "lon": 12.442635,
+  "zona": "Aurelio"
+ },
+ "Fortino della Madonnina": {
+  "lat": 41.881015,
+  "lon": 12.464297,
+  "zona": "Gianicolense"
+ },
+ "Gianicolo": {
+  "lat": 41.891422,
+  "lon": 12.460778,
+  "zona": "Trastevere"
+ },
+ "Giardino degli Aranci": {
+  "lat": 41.884224,
+  "lon": 12.480157,
+  "zona": "Ripa"
+ },
+ "Monte Ciocci": {
+  "lat": 41.90532,
+  "lon": 12.444878,
+  "zona": "Trionfale"
+ },
+ "Piazza del Quirinale": {
+  "lat": 41.899348,
+  "lon": 12.486482,
+  "zona": "Trevi"
+ },
+ "Piazza di San Pietro in Montorio": {
+  "lat": 41.888615,
+  "lon": 12.466837,
+  "zona": "Trastevere"
+ },
+ "Tempietto del Bramante": {
+  "lat": 41.789764,
+  "lon": 12.666018,
+  "zona": "Casal Morena (vicina)"
+ },
+ "Piazzale Socrate": {
+  "lat": 41.912625,
+  "lon": 12.447107,
+  "zona": "Trionfale"
+ },
+ "Terrazza del Pincio": {
+  "lat": 41.911197,
+  "lon": 12.478442,
+  "zona": "Campo Marzio"
+ },
+ "Terrazza Caffarelli": {
+  "lat": 41.892885,
+  "lon": 12.481684,
+  "zona": "Campitelli"
+ },
+ "Terrazza sul Foro": {
+  "lat": 41.892251,
+  "lon": 12.483441,
+  "zona": "Campitelli"
+ },
+ "Zodiaco": {
+  "lat": 41.923572,
+  "lon": 12.452727,
+  "zona": "Della Vittoria"
+ },
+ "Basilica di San Crisogono": {
+  "lat": 41.88963,
+  "lon": 12.474225,
+  "zona": "Trastevere"
+ },
+ "San Giovanni in Laterano": {
+  "lat": 41.886107,
+  "lon": 12.503957,
+  "zona": "Monti"
+ },
+ "Scala Santa": {
+  "lat": 41.886887,
+  "lon": 12.504555,
+  "zona": "Monti"
+ },
+ "Sant'Agnese fuori le Mura": {
+  "lat": 41.922848,
+  "lon": 12.518975,
+  "zona": "Trieste"
+ },
+ "Santa Cecilia in Trastevere": {
+  "lat": 41.887192,
+  "lon": 12.476779,
+  "zona": "Trastevere"
+ },
+ "Santa Sabina all'Aventino": {
+  "lat": 41.884465,
+  "lon": 12.479109,
+  "zona": "Ripa"
+ },
+ "Santo Stefano Rotondo": {
+  "lat": 41.884894,
+  "lon": 12.496681,
+  "zona": "Monti"
+ },
+ "Chiesa del Domine Quo Vadis": {
+  "lat": 41.866488,
+  "lon": 12.503724,
+  "zona": "Appio-Latino"
+ },
+ "Catacombe di San Sebastiano": {
+  "lat": 41.85593,
+  "lon": 12.515797,
+  "zona": "Ardeatino"
+ },
+ "Chiesa del Gesù": {
+  "lat": 41.895776,
+  "lon": 12.479135,
+  "zona": "Pigna"
+ },
+ "San Luigi dei Francesi": {
+  "lat": 41.899669,
+  "lon": 12.474922,
+  "zona": "Sant'Eustachio"
+ },
+ "Sant'Ignazio di Loyola": {
+  "lat": 41.89933,
+  "lon": 12.480803,
+  "zona": "Pigna"
+ },
+ "Trinità dei Monti": {
+  "lat": 41.906168,
+  "lon": 12.483275,
+  "zona": "Campo Marzio"
+ },
+ "Antico Ghetto ebraico": {
+  "lat": 41.892465,
+  "lon": 12.47835,
+  "zona": "Sant'Angelo"
+ },
+ "Arco dei Banchi": {
+  "lat": 41.900608,
+  "lon": 12.466566,
+  "zona": "Ponte"
+ },
+ "Area sacra di Largo Argentina": {
+  "lat": 41.895325,
+  "lon": 12.47688,
+  "zona": "Pigna"
+ },
+ "Bocca della Verità": {
+  "lat": 41.888814,
+  "lon": 12.481627,
+  "zona": "Ripa"
+ },
+ "Buco della serratura": {
+  "lat": 41.882909,
+  "lon": 12.477846,
+  "zona": "Ripa"
+ },
+ "Catacombe di San Callisto": {
+  "lat": 41.858901,
+  "lon": 12.510753,
+  "zona": "Ardeatino"
+ },
+ "Centro del colonnato": {
+  "lat": 41.807772,
+  "lon": 12.680485,
+  "zona": "Torre Gaia (vicina)"
+ },
+ "Cimitero acattolico": {
+  "lat": 41.876366,
+  "lon": 12.479461,
+  "zona": "Testaccio"
+ },
+ "Città dell'acqua": {
+  "lat": 41.900405,
+  "lon": 12.484155,
+  "zona": "Trevi"
+ },
+ "Cripta dei Cappuccini": {
+  "lat": 41.904791,
+  "lon": 12.488585,
+  "zona": "Ludovisi"
+ },
+ "Il cuore di Nerone": {
+  "lat": 41.807772,
+  "lon": 12.680485,
+  "zona": "Torre Gaia (vicina)"
+ },
+ "Effetto acustico di piazza del Popolo": {
+  "lat": 41.910748,
+  "lon": 12.476365,
+  "zona": "Campo Marzio"
+ },
+ "Fontana dei Quattro Fiumi": {
+  "lat": 41.898928,
+  "lon": 12.473118,
+  "zona": "Parione"
+ },
+ "Fontana del Tritone": {
+  "lat": 41.903749,
+  "lon": 12.488716,
+  "zona": "Trevi"
+ },
+ "Fontana dell'Acqua Paola": {
+  "lat": 41.888998,
+  "lon": 12.464256,
+  "zona": "Trastevere"
+ },
+ "Fontana della Carlotta": {
+  "lat": 41.863418,
+  "lon": 12.49126,
+  "zona": "Ostiense"
+ },
+ "Gabbia della Lupa e dell'Aquila": {
+  "lat": 41.891205,
+  "lon": 12.480535,
+  "zona": "Campitelli"
+ },
+ "Gazometro": {
+  "lat": 41.8705,
+  "lon": 12.476019,
+  "zona": "Ostiense"
+ },
+ "Incrocio delle Quattro Fontane": {
+  "lat": 41.899984,
+  "lon": 12.487913,
+  "zona": "Trevi"
+ },
+ "San Carlo alle Quattro Fontane": {
+  "lat": 41.899984,
+  "lon": 12.487913,
+  "zona": "Trevi"
+ },
+ "Isola Tiberina": {
+  "lat": 41.891056,
+  "lon": 12.478236,
+  "zona": "Ripa"
+ },
+ "Madonna del Latte": {
+  "lat": 41.895376,
+  "lon": 12.473605,
+  "zona": "Parione"
+ },
+ "Misteri di Palazzo Tuccimei": {
+  "lat": 41.898928,
+  "lon": 12.473118,
+  "zona": "Parione"
+ },
+ "Monte dei Cocci": {
+  "lat": 41.876655,
+  "lon": 12.47647,
+  "zona": "Testaccio"
+ },
+ "Museo condominiale di Tor Marancia": {
+  "lat": 41.855811,
+  "lon": 12.497471,
+  "zona": "Ardeatino"
+ },
+ "Orologio ad acqua": {
+  "lat": 41.911003,
+  "lon": 12.480554,
+  "zona": "Campo Marzio"
+ },
+ "Palazzo Spada": {
+  "lat": 41.893919,
+  "lon": 12.472225,
+  "zona": "Regola"
+ },
+ "Palazzo Zuccari": {
+  "lat": 41.90551,
+  "lon": 12.483989,
+  "zona": "Campo Marzio"
+ },
+ "Passeggiata del Gelsomino": {
+  "lat": 41.896029,
+  "lon": 12.455143,
+  "zona": "Aurelio"
+ },
+ "Piramide Cestia": {
+  "lat": 41.876014,
+  "lon": 12.482115,
+  "zona": "Ostiense"
+ },
+ "Porta Magica": {
+  "lat": 41.894579,
+  "lon": 12.504323,
+  "zona": "Esquilino"
+ },
+ "Quartiere Coppedè": {
+  "lat": 41.918693,
+  "lon": 12.502384,
+  "zona": "Trieste"
+ },
+ "Scalea del Tamburino": {
+  "lat": 41.885385,
+  "lon": 12.467382,
+  "zona": "Trastevere"
+ },
+ "Tempio di Esculapio": {
+  "lat": 41.914928,
+  "lon": 12.482772,
+  "zona": "Pinciano"
+ },
+ "Trullo": {
+  "lat": 41.834423,
+  "lon": 12.43654,
+  "zona": "Portuense"
+ },
+ "Villa Farnesina": {
+  "lat": 41.893628,
+  "lon": 12.467333,
+  "zona": "Trastevere"
+ },
+ "Bernini: Fontana dei Quattro Fiumi": {
+  "lat": 41.898928,
+  "lon": 12.473118,
+  "zona": "Parione"
+ },
+ "Bernini: Fontana del Tritone": {
+  "lat": 41.903749,
+  "lon": 12.488716,
+  "zona": "Trevi"
+ },
+ "Bernini: Fontana delle Api": {
+  "lat": 41.908463,
+  "lon": 12.489052,
+  "zona": "Ludovisi"
+ },
+ "Bernini: Sant'Andrea al Quirinale": {
+  "lat": 41.900671,
+  "lon": 12.489352,
+  "zona": "Monti"
+ },
+ "Bernini: Estasi di Santa Teresa": {
+  "lat": 41.904719,
+  "lon": 12.494189,
+  "zona": "Sallustiano"
+ },
+ "Bernini: Elefantino della Minerva": {
+  "lat": 41.897905,
+  "lon": 12.477528,
+  "zona": "Pigna"
+ },
+ "Bernini: angeli di Ponte Sant'Angelo": {
+  "lat": 41.901925,
+  "lon": 12.466461,
+  "zona": "Borgo"
+ },
+ "Bernini: Beata Ludovica Albertoni": {
+  "lat": 41.887137,
+  "lon": 12.471738,
+  "zona": "Trastevere"
+ },
+ "Bernini: Galleria Borghese": {
+  "lat": 41.914113,
+  "lon": 12.492105,
+  "zona": "Pinciano"
+ },
+ "Bernini: Palazzo di Montecitorio": {
+  "lat": 41.900646,
+  "lon": 12.478668,
+  "zona": "Colonna"
+ },
+ "Bernini: Fontana del Moro": {
+  "lat": 41.898928,
+  "lon": 12.473118,
+  "zona": "Parione"
+ },
+ "Bernini: Cappella Chigi a Santa Maria del Popolo": {
+  "lat": 41.911473,
+  "lon": 12.476546,
+  "zona": "Campo Marzio"
+ },
+ "Borromini: San Carlo alle Quattro Fontane": {
+  "lat": 41.899984,
+  "lon": 12.487913,
+  "zona": "Trevi"
+ },
+ "Borromini: Sant'Ivo alla Sapienza": {
+  "lat": 41.898151,
+  "lon": 12.474097,
+  "zona": "Sant'Eustachio"
+ },
+ "Borromini: Sant'Agnese in Agone": {
+  "lat": 41.898928,
+  "lon": 12.473118,
+  "zona": "Parione"
+ },
+ "Borromini: Prospettiva di Palazzo Spada": {
+  "lat": 41.893919,
+  "lon": 12.472225,
+  "zona": "Regola"
+ },
+ "Borromini: Oratorio dei Filippini": {
+  "lat": 41.897967,
+  "lon": 12.469105,
+  "zona": "Parione"
+ },
+ "Borromini: Sant'Andrea delle Fratte": {
+  "lat": 41.903291,
+  "lon": 12.483289,
+  "zona": "Colonna"
+ },
+ "Borromini: Propaganda Fide": {
+  "lat": 41.905639,
+  "lon": 12.482358,
+  "zona": "Campo Marzio"
+ },
+ "Borromini: navata di San Giovanni in Laterano": {
+  "lat": 41.886107,
+  "lon": 12.503957,
+  "zona": "Monti"
+ },
+ "Caravaggio: San Luigi dei Francesi": {
+  "lat": 41.899669,
+  "lon": 12.474922,
+  "zona": "Sant'Eustachio"
+ },
+ "Caravaggio: Madonna dei Pellegrini a Sant'Agostino": {
+  "lat": 41.900675,
+  "lon": 12.474255,
+  "zona": "Sant'Eustachio"
+ },
+ "Caravaggio: Santa Maria del Popolo": {
+  "lat": 41.911473,
+  "lon": 12.476546,
+  "zona": "Campo Marzio"
+ },
+ "Caravaggio: Galleria Borghese": {
+  "lat": 41.914113,
+  "lon": 12.492105,
+  "zona": "Pinciano"
+ },
+ "Caravaggio: Palazzo Barberini": {
+  "lat": 41.903325,
+  "lon": 12.489875,
+  "zona": "Trevi"
+ },
+ "Caravaggio: Galleria Doria Pamphilj": {
+  "lat": 41.897824,
+  "lon": 12.481561,
+  "zona": "Pigna"
+ },
+ "Caravaggio: Musei Capitolini": {
+  "lat": 41.893248,
+  "lon": 12.482985,
+  "zona": "Campitelli"
+ },
+ "Caravaggio: Galleria Corsini": {
+  "lat": 41.893209,
+  "lon": 12.466881,
+  "zona": "Trastevere"
+ },
+ "Caravaggio: Casino dell'Aurora Ludovisi": {
+  "lat": 41.907632,
+  "lon": 12.487345,
+  "zona": "Ludovisi"
+ },
+ "Catacombe di Sant'Agnese": {
+  "lat": 41.922848,
+  "lon": 12.518975,
+  "zona": "Trieste"
+ },
+ "Catacombe di Domitilla": {
+  "lat": 41.858764,
+  "lon": 12.505611,
+  "zona": "Ardeatino"
+ },
+ "Catacombe dei Santi Marcellino e Pietro": {
+  "lat": 41.878696,
+  "lon": 12.548603,
+  "zona": "Prenestino-Labicano"
+ },
+ "Catacombe di Commodilla": {
+  "lat": 41.859751,
+  "lon": 12.500208,
+  "zona": "Ardeatino"
+ },
+ "Catacombe di Pretestato": {
+  "lat": 41.858778,
+  "lon": 12.515307,
+  "zona": "Appio-Latino"
+ },
+ "Catacombe ebraiche di Villa Torlonia": {
+  "lat": 41.914774,
+  "lon": 12.511324,
+  "zona": "Nomentano"
+ },
+ "Catacombe di Generosa": {
+  "lat": 41.857328,
+  "lon": 12.459151,
+  "zona": "Portuense"
+ },
+ "Catacombe di San Pancrazio": {
+  "lat": 41.884736,
+  "lon": 12.455342,
+  "zona": "Gianicolense"
+ },
+ "Street art: Tor Marancia": {
+  "lat": 41.855811,
+  "lon": 12.497471,
+  "zona": "Ardeatino"
+ },
+ "Street art: Ostiense, via del Porto Fluviale": {
+  "lat": 41.872382,
+  "lon": 12.476879,
+  "zona": "Ostiense"
+ },
+ "Street art: Quadraro, M.U.Ro.": {
+  "lat": 41.865185,
+  "lon": 12.54446,
+  "zona": "Tuscolano"
+ },
+ "Street art: Trullo, poeti der Trullo": {
+  "lat": 41.834423,
+  "lon": 12.43654,
+  "zona": "Portuense"
+ },
+ "Street art: Pigneto, Pasolini": {
+  "lat": 41.888413,
+  "lon": 12.528716,
+  "zona": "Prenestino-Labicano"
+ },
+ "Street art: Torpignattara": {
+  "lat": 41.878533,
+  "lon": 12.541904,
+  "zona": "Tuscolano"
+ },
+ "Street art: San Lorenzo": {
+  "lat": 41.899566,
+  "lon": 12.518291,
+  "zona": "Tiburtino"
+ },
+ "Street art: Big City Life Tor Marancia": {
+  "lat": 41.855811,
+  "lon": 12.497471,
+  "zona": "Ardeatino"
+ },
+ "Sotterraneo: Città dell'acqua": {
+  "lat": 41.900405,
+  "lon": 12.484155,
+  "zona": "Trevi"
+ },
+ "Sotterraneo: Cripta dei Cappuccini": {
+  "lat": 41.904791,
+  "lon": 12.488585,
+  "zona": "Ludovisi"
+ },
+ "Sotterraneo: San Clemente": {
+  "lat": 41.889314,
+  "lon": 12.497466,
+  "zona": "Monti"
+ },
+ "Sotterraneo: Case romane del Celio": {
+  "lat": 41.886277,
+  "lon": 12.492281,
+  "zona": "Celio"
+ },
+ "Sotterraneo: Domus Aurea": {
+  "lat": 41.890486,
+  "lon": 12.498145,
+  "zona": "Monti"
+ },
+ "Sotterraneo: Mitreo del Circo Massimo": {
+  "lat": 41.888814,
+  "lon": 12.481627,
+  "zona": "Ripa"
+ },
+ "Sotterraneo: Stadio di Domiziano": {
+  "lat": 41.900205,
+  "lon": 12.472561,
+  "zona": "Parione"
+ },
+ "Sotterraneo: Crypta Balbi": {
+  "lat": 41.894842,
+  "lon": 12.478446,
+  "zona": "Sant'Angelo"
+ },
+ "Sotterraneo: Necropoli di via Triumphalis": {
+  "lat": 41.902253,
+  "lon": 12.463597,
+  "zona": "Borgo"
+ },
+ "Sotterraneo: Ipogeo degli Aureli": {
+  "lat": 41.892437,
+  "lon": 12.509398,
+  "zona": "Esquilino"
+ }
+}

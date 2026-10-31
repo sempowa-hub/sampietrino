@@ -246,6 +246,9 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 .esito-perche:empty { display: none; }
 .esito-nota { margin: 0 0 14px; font-size: 16px; line-height: 1.4; color: var(--inchiostro-2); }
 .esito-nota:empty { display: none; }
+.esito-contesto { margin: 0 0 14px; padding: 10px 12px; background: var(--scheda); box-shadow: inset 3px 0 0 var(--rosso), var(--filo); font-size: 16px; line-height: 1.4; }
+.esito-contesto[hidden] { display: none; }
+.esito-contesto small { display: block; margin-bottom: 3px; font-size: 11px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rosso); }
 
 /* Diario: totale, le cinque tappe coi timbri, le risposte della tappa aperta. */
 .grande { font-family: var(--font-titolo); font-size: 56px; line-height: 1; margin: 6px 0 2px; }

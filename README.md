@@ -51,7 +51,7 @@ Le domande vere sono **di categoria**: "una zona con...". Stanno in `dati/catego
 
 Le posizioni vengono sempre da OpenStreetMap (`strumenti/scarica_luoghi.py`): le zone giuste si calcolano, non si scrivono. I nomi non trovati vengono elencati.
 
-Le domande geometriche (confinanti, municipi, Raccordo, Vaticano) sono **di riserva**: escono solo se mancano domande di categoria. Al massimo 2 domande dello stesso tipo al giorno.
+Le domande geometriche (confinanti, municipi, Raccordo, Vaticano) sono **di riserva**: escono solo se mancano domande di categoria. Una domanda per tipo al giorno, finché bastano.
 
 ## Scelte di progetto
 
@@ -59,7 +59,7 @@ Le domande geometriche (confinanti, municipi, Raccordo, Vaticano) sono **di rise
 - **Il tempo tiene onesto il gioco.** Il nome della zona si vede mentre scegli; senza timer basterebbe girare la mappa con calma per trovare le risposte. Il bersaglio della domanda (la zona di "confina con X") si mostra solo a tappa chiusa.
 - **Punti relativi alla domanda.** Una zona vale tanto o poco a seconda delle altre risposte giuste: non esiste una zona che vince sempre.
 - **Domande calcolate dalla geometria, mai scritte a mano.** Una domanda con una risposta sbagliata uccide il gioco.
-- **Varietà**: al massimo 3 domande dello stesso tipo al giorno.
+- **Varietà**: una domanda per tipo al giorno (niente due metro o due belvederi insieme), finché le domande di categoria bastano.
 - **Grafica**: carta stampata a vettori (`src/mappa.js`), nitida a ogni zoom: tratti di spessore fisso a schermo, grana della carta a scala di schermo; dentro il Raccordo crema chiaro, fuori campagna grigio-verde spenta, confini d'inchiostro (filo sottile tra zone, piu marcato tra municipi), Tevere acquerello con gli argini. Contrasto da stampa: inchiostro `#2a1f16` su carta. Colori delle fasce: peperino, pino, fontanella, cocciopesto, oro. Caratteri Pixelify Sans (testo, pixel ma fatto per leggere) e Silkscreen regular (marchio, numeri grandi, bottoni, e tutte le cifre dentro il testo: nel Pixelify il 5 sembra una S), nel repo con licenza OFL (`font/`), nessuna richiesta esterna. Riferimento di linguaggio visivo: `docs/riferimento-farflung.md`.
 - **Ogni esito si argomenta coi dati.** Giusta: cosa c'è nella zona ("a Ponte c'è Via del Governo Vecchio") e perché vale quei punti. Sbagliata: perché no, secondo la domanda: il luogo giusto più vicino e dove sta ("il più vicino è Piazza della Madonna dei Monti, a Monti"), la distanza dal Tevere o dal Raccordo, le zone che confinano davvero, il municipio vero. I luoghi con le coordinate e le confinanti di ogni zona sono in `dati/gioco.json`.
 - **Suoni**: sintetizzati con Web Audio in `src/suoni.js`, nessun file. Passaggio sulle zone, scelta, timbro, tic della suspense, caduta e tonfo del sampietrino, fanfara più lunga per le fasce più rare, pernacchio a 8 bit per la buca, tic negli ultimi dieci secondi, una nota per ogni zona che si accende nel diario. Tasto in testata per zittirli, il browser se lo ricorda.

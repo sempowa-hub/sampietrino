@@ -813,3 +813,124 @@ biblioteca,Una zona con una biblioteca,no,Grottarossa,Da sampietrino,8,Bibliotec
 biblioteca,Una zona con una biblioteca,no,Pigna,Da sampietrino,8,Biblioteca Casanatense / Biblioteca del Senato Giovanni Spadolini - Palazzo della Minerva / Biblioteca della Camera dei deputati
 biblioteca,Una zona con una biblioteca,no,Ripa,Da sampietrino,8,Biblioteca del Centro di studi per la storia dell'architettura / Biblioteca dell'Ufficio di Statistica
 biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da sampietrino,8,"Bibilioteca Lelio Basso / Biblioteca Angelica / Biblioteca Magistrale Laziale ""Giorgio Gabrielli"" / ..."
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campo Marzio,Scontata,1,Terrazza del Pincio
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trastevere,Scontata,1,Gianicolo / Piazza di San Pietro in Montorio
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Campitelli,Nota,2,Terrazza sul Foro / Terrazza Caffarelli
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Ripa,Nota,2,Giardino degli Aranci
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trevi,Nota,2,Piazza del Quirinale
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Della Vittoria,Da romano,3,Zodiaco / Villa Mazzanti
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Gianicolense,Da tassinaro,5,Fortino della Madonnina
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Monti,Da tassinaro,5,Villa Aldobrandini
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Pinciano,Da tassinaro,5,Villa Balestra
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Trionfale,Da tassinaro,5,Monte Ciocci / Piazzale Socrate
+belvedere-themino,Una zona con un belvedere segreto di Themino,si,Aurelio,Da sampietrino,8,Belvedere di via Piccolomini
+cupola,Una zona da cui si vede il Cupolone,si,Trastevere,Scontata,1,Gianicolo
+cupola,Una zona da cui si vede il Cupolone,si,Ripa,Nota,2,Buco della serratura dei Cavalieri di Malta / Giardino degli Aranci
+cupola,Una zona da cui si vede il Cupolone,si,Della Vittoria,Da romano,3,Zodiaco
+cupola,Una zona da cui si vede il Cupolone,si,Trevi,Da romano,3,Piazza del Quirinale
+cupola,Una zona da cui si vede il Cupolone,si,Gianicolense,Da tassinaro,5,Villa Doria Pamphilj
+cupola,Una zona da cui si vede il Cupolone,si,Pinciano,Da tassinaro,5,Villa Balestra
+cupola,Una zona da cui si vede il Cupolone,si,Trionfale,Da tassinaro,5,Monte Ciocci / Piazzale Socrate
+cupola,Una zona da cui si vede il Cupolone,si,Aurelio,Da sampietrino,8,Belvedere di via Piccolomini / Passeggiata del Gelsomino
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Nota,2,Galleria prospettica di Palazzo Spada
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Ripa,Nota,2,Buco della serratura
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Da romano,3,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Da tassinaro,5,Refettorio di Andrea Pozzo a Trinità dei Monti / Effetto acustico di piazza del Popolo
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aurelio,Da sampietrino,8,Cupola che si rimpicciolisce in via Piccolomini
+misteri,Una zona con una leggenda nera o un mistero,si,Ripa,Scontata,1,Bocca della Verità
+misteri,Una zona con una leggenda nera o un mistero,si,Campitelli,Nota,2,Rupe Tarpea
+misteri,Una zona con una leggenda nera o un mistero,si,Esquilino,Da romano,3,Porta Magica
+misteri,Una zona con una leggenda nera o un mistero,si,Appio-Latino,Da tassinaro,5,Impronte di Gesù al Domine Quo Vadis
+misteri,Una zona con una leggenda nera o un mistero,si,Ardeatino,Da tassinaro,5,Impronte di Gesù al Domine Quo Vadis
+misteri,Una zona con una leggenda nera o un mistero,si,Campo Marzio,Da tassinaro,5,"Casa dei Mostri, Palazzo Zuccari"
+misteri,Una zona con una leggenda nera o un mistero,si,Trastevere,Da tassinaro,5,Crocifissioni di San Pietro in Montorio
+misteri,Una zona con una leggenda nera o un mistero,si,Celio,Da sampietrino,8,Mano dell'operaio sotto l'obelisco di Villa Celimontana
+misteri,Una zona con una leggenda nera o un mistero,si,Parione,Da sampietrino,8,Oste decapitato e mano di Palazzo Tuccimei / Madonna del Latte del Passetto del Biscione
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Ardeatino,Scontata,1,Catacombe di San Callisto / Catacombe di San Sebastiano / Catacombe di Commodilla
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Ludovisi,Nota,2,Cripta dei Cappuccini
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Testaccio,Nota,2,Cimitero acattolico
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Tiburtino,Da romano,3,Verano
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Trieste,Da romano,3,Catacombe di Priscilla / Catacombe di Sant'Agnese
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Appio-Latino,Da tassinaro,5,Catacombe di Pretestato
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Gianicolense,Da sampietrino,8,Catacombe di San Pancrazio
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Nomentano,Da sampietrino,8,Catacombe ebraiche di Villa Torlonia
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Portuense,Da sampietrino,8,Catacombe di Generosa
+ossa,"Una zona dove si va a trovare i morti (catacombe, cripte, cimiteri)",si,Prenestino-Labicano,Da sampietrino,8,Catacombe dei Santi Marcellino e Pietro
+bernini,Una zona con un capolavoro di Bernini,si,Parione,Scontata,1,Fontana dei Quattro Fiumi
+bernini,Una zona con un capolavoro di Bernini,si,Borgo,Nota,2,Angeli di Ponte Sant'Angelo
+bernini,Una zona con un capolavoro di Bernini,si,Pinciano,Nota,2,Galleria Borghese
+bernini,Una zona con un capolavoro di Bernini,si,Ponte,Nota,2,Angeli di Ponte Sant'Angelo
+bernini,Una zona con un capolavoro di Bernini,si,Trevi,Nota,2,Fontana del Tritone
+bernini,Una zona con un capolavoro di Bernini,si,Campo Marzio,Da romano,3,Santa Maria del Popolo
+bernini,Una zona con un capolavoro di Bernini,si,Pigna,Da romano,3,Elefantino della Minerva
+bernini,Una zona con un capolavoro di Bernini,si,Sallustiano,Da romano,3,Estasi di Santa Teresa
+bernini,Una zona con un capolavoro di Bernini,si,Ludovisi,Da tassinaro,5,Fontana delle Api
+bernini,Una zona con un capolavoro di Bernini,si,Monti,Da tassinaro,5,Sant'Andrea al Quirinale
+bernini,Una zona con un capolavoro di Bernini,si,Colonna,Da sampietrino,8,Palazzo di Montecitorio
+bernini,Una zona con un capolavoro di Bernini,si,Trastevere,Da sampietrino,8,Beata Ludovica Albertoni a San Francesco a Ripa
+borromini,Una zona con un'opera di Borromini,si,Parione,Nota,2,Sant'Agnese in Agone / Oratorio dei Filippini
+borromini,Una zona con un'opera di Borromini,si,Regola,Nota,2,Prospettiva di Palazzo Spada
+borromini,Una zona con un'opera di Borromini,si,Monti,Da romano,3,San Carlo alle Quattro Fontane / Navata di San Giovanni in Laterano
+borromini,Una zona con un'opera di Borromini,si,Sant'Eustachio,Da romano,3,Sant'Ivo alla Sapienza
+borromini,Una zona con un'opera di Borromini,si,Trevi,Da romano,3,San Carlo alle Quattro Fontane
+borromini,Una zona con un'opera di Borromini,si,Colonna,Da tassinaro,5,Sant'Andrea delle Fratte
+borromini,Una zona con un'opera di Borromini,si,Campo Marzio,Da sampietrino,8,Palazzo di Propaganda Fide
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Sant'Eustachio,Scontata,1,San Luigi dei Francesi / Sant'Agostino
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campo Marzio,Nota,2,Santa Maria del Popolo
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pinciano,Nota,2,Galleria Borghese
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trevi,Da romano,3,Palazzo Barberini
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campitelli,Da tassinaro,5,Musei Capitolini
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pigna,Da tassinaro,5,Galleria Doria Pamphilj
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ludovisi,Da sampietrino,8,Casino dell'Aurora (soffitto)
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trastevere,Da sampietrino,8,Galleria Corsini
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigna,Scontata,1,Area sacra di Largo Argentina
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Monti,Nota,2,Domus Aurea
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ostiense,Nota,2,Piramide Cestia
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Testaccio,Nota,2,Monte dei Cocci / Piramide Cestia
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Parione,Da romano,3,Stadio di Domiziano
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Celio,Da tassinaro,5,Case romane del Celio
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trevi,Da tassinaro,5,Città dell'acqua (Vicus Caprarius)
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Esquilino,Da sampietrino,8,Ipogeo degli Aureli
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ripa,Da sampietrino,8,Mitreo del Circo Massimo
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Sant'Angelo,Da sampietrino,8,Crypta Balbi
+street-art,Una zona famosa per i murales,si,Ostiense,Nota,2,Via del Porto Fluviale
+street-art,Una zona famosa per i murales,si,Prenestino-Labicano,Nota,2,Pigneto e i murales per Pasolini
+street-art,Una zona famosa per i murales,si,Ardeatino,Da romano,3,Museo condominiale di Tor Marancia
+street-art,Una zona famosa per i murales,si,Tiburtino,Da romano,3,San Lorenzo
+street-art,Una zona famosa per i murales,si,Portuense,Da tassinaro,5,"Trullo, murales e Poeti der Trullo"
+street-art,Una zona famosa per i murales,si,Tuscolano,Da tassinaro,5,"Quadraro, il M.U.Ro."
+novecento,Una zona con un gioiello del Novecento,si,E.U.R.,Scontata,1,Laghetto e quartiere dell'Eur
+novecento,Una zona con un gioiello del Novecento,si,Ostiense,Nota,2,Gazometro / Fontana della Carlotta alla Garbatella
+novecento,Una zona con un gioiello del Novecento,si,Trieste,Nota,2,Quartiere Coppedè
+novecento,Una zona con un gioiello del Novecento,si,Nomentano,Da tassinaro,5,Casina delle Civette
+novecento,Una zona con un gioiello del Novecento,si,Ardeatino,Da sampietrino,8,Case popolari di Tor Marancia
+novecento,Una zona con un gioiello del Novecento,si,Portuense,Da sampietrino,8,Borgata razionalista del Trullo
+estero,Una zona dove c'è un pezzetto di estero,si,Campo Marzio,Nota,2,"Trinità dei Monti, chiesa dei francesi"
+estero,Una zona dove c'è un pezzetto di estero,si,Sant'Eustachio,Nota,2,San Luigi dei Francesi
+estero,Una zona dove c'è un pezzetto di estero,si,Ripa,Da romano,3,Priorato dei Cavalieri di Malta
+estero,Una zona dove c'è un pezzetto di estero,si,Testaccio,Da romano,3,Cimitero degli inglesi
+estero,Una zona dove c'è un pezzetto di estero,si,E.U.R.,Da tassinaro,5,Ciliegi giapponesi del laghetto
+estero,Una zona dove c'è un pezzetto di estero,si,Monti,Da sampietrino,8,"Santo Stefano Rotondo, chiesa degli ungheresi"
+scalinate,Una zona con una scalinata da fiato corto,si,Campo Marzio,Scontata,1,Scalinata di Trinità dei Monti
+scalinate,Una zona con una scalinata da fiato corto,si,Campitelli,Nota,2,Cordonata e scalinata dell'Aracoeli
+scalinate,Una zona con una scalinata da fiato corto,si,Monti,Da romano,3,Scala Santa
+scalinate,Una zona con una scalinata da fiato corto,si,Trastevere,Da tassinaro,5,Scalea del Tamburino
+scalinate,Una zona con una scalinata da fiato corto,si,Gianicolense,Da sampietrino,8,Scala del Righetto al Fortino della Madonnina
+scalinate,Una zona con una scalinata da fiato corto,si,Ostiense,Da sampietrino,8,Scalinata della Carlotta
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Trastevere,Nota,2,Cannone del mezzogiorno al Gianicolo
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Campo Marzio,Da tassinaro,5,Orologio ad acqua del Pincio / Meridiana nel chiostro di Trinità dei Monti
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Castro Pretorio,Da tassinaro,5,Meridiana di Santa Maria degli Angeli
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Della Vittoria,Da sampietrino,8,Torre del Primo Meridiano d'Italia
+orologi,Una zona dove a Roma si segna l'ora in modo strano,si,Pigna,Da sampietrino,8,Orologio di via del Gesù
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Gianicolense,Scontata,1,Villa Doria Pamphilj
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Pinciano,Scontata,1,Villa Borghese
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Appio Claudio,Nota,2,Parco degli Acquedotti
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,E.U.R.,Nota,2,Laghetto dell'Eur
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Nomentano,Nota,2,Villa Torlonia
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Parioli,Nota,2,Villa Ada
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Appio-Latino,Da romano,3,Parco della Caffarella
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Celio,Da romano,3,Villa Celimontana
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Monti,Da romano,3,Parco del Colle Oppio
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Trastevere,Da romano,3,Orto Botanico
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Della Vittoria,Da tassinaro,5,Riserva di Monte Mario
+ville-themino,Una zona con una villa o un parco del libro di Themino,si,Tor di Quinto,Da sampietrino,8,Parco di Tor di Quinto (laghetto a forma di cuore)

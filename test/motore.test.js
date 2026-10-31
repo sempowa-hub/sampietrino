@@ -50,7 +50,7 @@ test('stesso giorno, stesse 5 domande; giorni diversi possono cambiare', () => {
   assert.ok(giorni.size > 1);
 });
 
-test('la varieta prende almeno 2 domande per tipo prima di riempire', () => {
+test('la varieta prende una domanda per tipo prima di riempire', () => {
   const c = { a: 0, b: 1, c: 2, d: 3 };
   const pool = [
     ...Array.from({ length: 20 }, (_, i) => ({ id: `m${i}`, tipo: 'metro', catalogo: c })),
@@ -59,10 +59,8 @@ test('la varieta prende almeno 2 domande per tipo prima di riempire', () => {
   for (const giorno of ['2026-11-01', '2026-11-02', '2026-11-03']) {
     const tipi = domandeDelGiorno(giorno, pool).map((q) => q.tipo);
     assert.equal(tipi.length, 5);
-    // Prima passata: 2 per tipo (il tetto). La quinta riempie con quello che resta.
-    const metro = tipi.filter((t) => t === 'metro').length;
-    assert.ok(metro >= 2 && metro <= 3, `metro: ${metro}`);
-    assert.ok(tipi.filter((t) => t === 'trapizzino').length >= 2);
+    // Prima passata: 1 per tipo (il tetto). Poi si riempie con quello che resta.
+    assert.ok(tipi.includes('metro') && tipi.includes('trapizzino'), tipi.join());
   }
 });
 
@@ -75,10 +73,10 @@ test('le domande di riserva escono solo se mancano quelle di categoria', () => {
   ];
   for (const giorno of ['2026-11-01', '2026-11-02', '2026-11-03']) {
     const scelte = domandeDelGiorno(giorno, pool);
-    // 2 metro (tetto) + trapizzino, poi riserva per arrivare a 5.
-    assert.equal(scelte.filter((q) => q.tipo === 'metro').length, 2);
+    // Tutte e 4 le domande di categoria (anche oltre il tetto per tipo), poi una di riserva per arrivare a 5.
+    assert.equal(scelte.filter((q) => q.tipo === 'metro').length, 3);
     assert.equal(scelte.filter((q) => q.id === 'trapizzino').length, 1);
-    assert.equal(scelte.filter((q) => q.riserva).length, 2);
+    assert.equal(scelte.filter((q) => q.riserva).length, 1);
   }
 });
 
