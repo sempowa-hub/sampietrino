@@ -77,14 +77,14 @@ function disegnaMappa() {
   el('g', { id: 'etichette' }, svg);
 }
 
-// Etichette sempre a 15 px sullo schermo, a qualsiasi zoom e su qualsiasi schermo.
+// Etichette sempre a 18 px sullo schermo, a qualsiasi zoom e su qualsiasi schermo.
 function kmPerPixel() {
   const r = $('svg').getBoundingClientRect();
   return Math.max(vista.w / r.width, vista.h / r.height) || vista.w / 400;
 }
 
 function etichetta(z, classe = '') {
-  const t = el('text', { x: z.centro[0], y: z.centro[1], class: `etichetta ${classe}`, 'font-size': 15 * kmPerPixel(), 'stroke-width': 3.5 * kmPerPixel() }, $('etichette'));
+  const t = el('text', { x: z.centro[0], y: z.centro[1], class: `etichetta ${classe}`, 'font-size': 18 * kmPerPixel(), 'stroke-width': 4 * kmPerPixel() }, $('etichette'));
   t.textContent = z.nome;
 }
 
@@ -122,8 +122,9 @@ function ridisegna() {
     const li = document.createElement('li');
     const pin = s?.pin[i];
     if (!pin) { li.className = 'vuoto'; li.textContent = `biglietto ${i + 1}`; }
-    else if (pin.punti === null) { li.className = 'buca'; li.innerHTML = `${zonePerId[pin.zona].nome}<b>buca</b>`; }
-    else li.innerHTML = `${zonePerId[pin.zona].nome}<b>+${pin.punti}</b>`;
+    else if (pin.punti === null) { li.className = 'buca'; li.innerHTML = `<span>${zonePerId[pin.zona].nome}</span><b>buca</b>`; }
+    else li.innerHTML = `<span>${zonePerId[pin.zona].nome}</span><b>+${pin.punti}</b>`;
+    li.title = pin ? zonePerId[pin.zona].nome : '';
     ol.appendChild(li);
   }
   $('totale').textContent = totale(stati.slice(0, corrente + (chiusa ? 1 : 0))) + (s && !chiusa ? s.banco : 0);

@@ -1,14 +1,10 @@
-/* Caratteri: EB Garamond, IM Fell English e Silkscreen (licenza SIL OFL 1.1, font/LICENZA-OFL.txt), da Fontsource. */
-@font-face { font-family: 'Silkscreen'; src: url('../font/silkscreen-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Silkscreen'; src: url('../font/silkscreen-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: 'EB Garamond'; src: url('../font/eb-garamond-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'EB Garamond'; src: url('../font/eb-garamond-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: 'IM Fell English'; src: url('../font/im-fell-english-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'IM Fell English'; src: url('../font/im-fell-english-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: 'IM Fell English SC'; src: url('../font/im-fell-english-sc-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+/* Caratteri pixel: Silkscreen (titoli, etichette, bottoni) e Jersey 10 (testo). Licenza SIL OFL 1.1, font/LICENZA-OFL.txt, da Fontsource. */
+@font-face { font-family: 'Silkscreen'; src: url('../font/silkscreen-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Silkscreen'; src: url('../font/silkscreen-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Jersey 10'; src: url('../font/jersey-10-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
 
 :root {
-  /* Riferimento: la Pianta di Roma di G. B. Nolli (1748), incisione su rame. */
+  /* Diario di bordo romano: carta, rosso pompeiano, cornici dalla Pianta di Roma del Nolli (1748). */
   --travertino: #efe5cc;
   --travertino-scuro: #e2d4b2;
   --pietra: #76674d;
@@ -19,8 +15,7 @@
   --edera: #55683b;
   --zona: #f7f0dd;
   --linea: #a8987a;
-  --font-titolo: 'IM Fell English SC', Georgia, serif;
-  --font-testo: 'EB Garamond', Georgia, serif;
+  --font-testo: 'Jersey 10', 'Courier New', monospace;
   --font-pixel: 'Silkscreen', 'Courier New', monospace;
   --tevere: #cddbd2;
   --tevere-scuro: #b3c8bb;
@@ -35,6 +30,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.15 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
   color: var(--inchiostro);
   font-family: var(--font-testo);
+  font-size: 19px;
   display: flex;
   flex-direction: column;
   max-width: 640px;
@@ -59,7 +55,7 @@ h1 {
   margin: 0;
   letter-spacing: 0.06em;
 }
-.data { margin: 2px 0 0; color: var(--pietra); font-size: 13px; }
+.data { margin: 2px 0 0; color: var(--pietra); font-size: 17px; }
 .cassa {
   display: flex;
   flex-direction: column;
@@ -69,15 +65,18 @@ h1 {
   font-size: 32px;
   line-height: 1;
 }
-.cassa small { font-family: var(--font-testo); font-weight: 400; font-size: 11px; color: var(--pietra); }
+.cassa small { font-family: var(--font-testo); font-weight: 400; font-size: 14px; color: var(--pietra); }
 
 main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
 
 .domanda { padding: 12px 0 8px; }
 .numero { margin: 0; font-family: var(--font-pixel); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--pompeiano); }
-.domanda h2 { font-family: 'IM Fell English', Georgia, serif; font-weight: 400; font-style: italic; font-size: 24px; margin: 4px 0 8px; line-height: 1.2; }
+.domanda h2 { font-family: var(--font-testo); font-weight: 400; font-size: 30px; margin: 4px 0 8px; line-height: 1.2; }
 
-.pin { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; min-height: 30px; flex-wrap: wrap; }
+.pin { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0 3px 3px 0; min-height: 30px; }
+.pin li { flex: 1 1 0; min-width: 0; padding-left: 7px !important; padding-right: 6px !important; display: flex; align-items: center; justify-content: space-between; white-space: nowrap; }
+.pin li span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.pin li b { flex: none; }
 .pin li {
   position: relative;
   background: #f4ead0;
@@ -86,11 +85,11 @@ main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
   border-left: 6px solid var(--pompeiano);
   box-shadow: 2px 2px 0 var(--basalto);
   border-radius: 2px;
-  padding: 4px 9px;
-  font-size: 15px;
+  padding: 3px 9px;
+  font-size: 19px;
   animation: entra 0.25s ease-out;
 }
-.pin li b { font-family: var(--font-pixel); color: var(--pompeiano); margin-left: 8px; padding-left: 8px; border-left: 1.5px dashed var(--linea); }
+.pin li b { font-family: var(--font-pixel); font-size: 14px; color: var(--pompeiano); margin-left: 5px; padding-left: 5px; border-left: 1.5px dashed var(--linea); }
 .pin li.vuoto { background: transparent; border: 1.5px dashed var(--linea); box-shadow: none; color: var(--pietra); font-family: var(--font-pixel); font-size: 12px; }
 .pin li.buca { background: var(--pompeiano); color: var(--travertino); border-left-color: var(--basalto); }
 .pin li.buca b { color: var(--travertino); }
@@ -129,10 +128,10 @@ main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
   background: var(--travertino); color: var(--inchiostro);
   font-size: 20px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-.attribuzione { position: absolute; left: 8px; bottom: 4px; margin: 0; font-size: 10px; color: var(--pietra); }
+.attribuzione { position: absolute; left: 8px; bottom: 4px; margin: 0; font-size: 13px; color: var(--pietra); }
 
 .azioni { padding: 10px 0 14px; }
-.scelta { margin: 0 0 8px; text-align: center; font-size: 15px; min-height: 20px; }
+.scelta { margin: 0 0 8px; text-align: center; font-size: 20px; min-height: 20px; }
 .bottoni { display: flex; gap: 8px; }
 button { font-family: var(--font-pixel); font-size: 18px; font-weight: 700; text-transform: uppercase; }
 .primario, .secondario {
@@ -167,14 +166,14 @@ dialog {
 dialog::backdrop { background: rgba(36, 31, 27, 0.45); }
 dialog h2 { font-family: var(--font-pixel); font-weight: 700; text-transform: uppercase; margin: 0 0 6px; font-size: 26px; color: var(--pompeiano); }
 dialog .primario { width: 100%; margin-top: 12px; }
-.soluzioni { list-style: none; padding: 0; margin: 10px 0 0; max-height: 40vh; overflow: auto; columns: 2; font-size: 14px; }
+.soluzioni { list-style: none; padding: 0; margin: 10px 0 0; max-height: 40vh; overflow: auto; columns: 2; font-size: 19px; }
 .soluzioni li { padding: 2px 0; break-inside: avoid; }
 .soluzioni b { color: var(--ocra); }
 .soluzioni .tua { font-weight: 600; }
 .grande { font-family: var(--font-pixel); font-size: 52px; font-weight: 700; margin: 4px 0; }
-.grande small { font-family: var(--font-testo); font-size: 14px; font-weight: 400; color: var(--pietra); }
-pre { background: var(--travertino-scuro); padding: 10px; border-radius: 2px; font-family: var(--font-testo); font-size: 15px; white-space: pre-wrap; }
-.nota { color: var(--pietra); font-size: 13px; text-align: center; margin-bottom: 0; }
+.grande small { font-family: var(--font-testo); font-size: 19px; font-weight: 400; color: var(--pietra); }
+pre { background: var(--travertino-scuro); padding: 10px; border-radius: 2px; font-family: var(--font-testo); font-size: 20px; white-space: pre-wrap; }
+.nota { color: var(--pietra); font-size: 17px; text-align: center; margin-bottom: 0; }
 
 @keyframes entra { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
@@ -184,7 +183,7 @@ pre { background: var(--travertino-scuro); padding: 10px; border-radius: 2px; fo
 .tasti { display: none; }
 
 @media (max-height: 700px) {
-  .domanda h2 { font-size: 20px; margin: 2px 0 6px; }
+  .domanda h2 { font-size: 26px; margin: 2px 0 6px; }
   .testata { padding: 8px 0 6px; }
   h1 { font-size: 24px; }
   .primario, .secondario { min-height: 46px; padding: 10px; }
@@ -204,13 +203,13 @@ pre { background: var(--travertino-scuro); padding: 10px; border-radius: 2px; fo
   }
   .mappa { grid-area: mappa; min-height: 0; margin-top: 16px; }
   .domanda { grid-area: domanda; padding-top: 22px; }
-  .domanda h2 { font-size: 30px; }
+  .domanda h2 { font-size: 36px; }
   .pin { flex-direction: column; align-items: stretch; }
-  .pin li { font-size: 17px; padding: 8px 12px; display: flex; justify-content: space-between; }
+  .pin li { flex: none; font-size: 21px; padding: 8px 12px; }
   .azioni { grid-area: azioni; align-self: end; padding-bottom: 0; }
   .bottoni { flex-direction: column; }
   .primario { order: -1; }
-  .tasti { display: block; margin: 12px 0 0; text-align: center; font-size: 14px; color: var(--pietra); }
+  .tasti { display: block; margin: 12px 0 0; text-align: center; font-size: 17px; color: var(--pietra); }
   kbd { font-family: var(--font-testo); border: 1px solid var(--linea); border-bottom-width: 2px; border-radius: 2px; padding: 0 5px; }
 }
 
@@ -218,9 +217,9 @@ pre { background: var(--travertino-scuro); padding: 10px; border-radius: 2px; fo
 .copertina { text-align: center; padding: 30px 24px 22px; width: min(92vw, 460px); }
 .etichetta-rossa { margin: 0; font-family: var(--font-pixel); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pompeiano); }
 .titolo-pixel { font-size: clamp(26px, 8.5vw, 44px) !important; white-space: nowrap; color: var(--inchiostro) !important; margin: 10px 0 6px !important; text-shadow: 3px 3px 0 rgba(142, 43, 31, 0.35); letter-spacing: 0.04em; }
-.motto { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 19px; margin: 0 0 16px; }
+.motto { font-family: var(--font-testo); font-size: 23px; margin: 0 0 16px; }
 .regole { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0; margin: 0 0 22px; }
-.regole li { border: 1px solid var(--basalto); padding: 8px 4px; font-size: 14px; line-height: 1.2; background: rgba(255, 250, 238, 0.5); }
+.regole li { border: 1px solid var(--basalto); padding: 8px 4px; font-size: 18px; line-height: 1.2; background: rgba(255, 250, 238, 0.5); }
 .regole b { display: block; font-family: var(--font-pixel); font-size: 26px; color: var(--pompeiano); }
 .daje {
   width: 100%;

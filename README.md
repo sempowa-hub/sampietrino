@@ -28,7 +28,7 @@ Nessuna dipendenza da installare per giocare: HTML, CSS e JavaScript puri.
 - **Punti relativi alla domanda.** Una zona vale tanto o poco a seconda delle altre risposte giuste: non esiste una zona che vince sempre.
 - **Domande calcolate dalla geometria, mai scritte a mano.** Una domanda con una risposta sbagliata uccide il gioco.
 - **Varietà**: al massimo 3 domande dello stesso tipo al giorno.
-- **Grafica**: diario di bordo romano. Carta con grana, rosso pompeiano, cornici a doppio filetto (dalla Pianta di Roma del Nolli, 1748). Titoli, numeri e bottoni in Silkscreen (carattere pixel scelto perché il 5 non si confonde con la S), domande nel corsivo IM Fell English, testo in EB Garamond. Le domande sono tappe, i pin sono biglietti timbrati, le zone fuori gioco hanno il verde del Tevere. Copertina del giorno con un bottone grosso: DAJE!. Font nel repo (licenza OFL, `font/`), nessuna richiesta esterna.
+- **Grafica**: diario di bordo romano. Carta con grana, rosso pompeiano, cornici a doppio filetto (dalla Pianta di Roma del Nolli, 1748). Titoli, numeri e bottoni in Silkscreen (carattere pixel scelto perché il 5 non si confonde con la S), domande e testi in Jersey 10, un pixel con le minuscole e cifre chiare. Le domande sono tappe, i pin sono biglietti timbrati, le zone fuori gioco hanno il verde del Tevere. Copertina del giorno con un bottone grosso: DAJE!. Font nel repo (licenza OFL, `font/`), nessuna richiesta esterna.
 - **Giocabile solo con 4-25 risposte giuste.** Meno è indovinello, più è lotteria.
 
 ## Dati
