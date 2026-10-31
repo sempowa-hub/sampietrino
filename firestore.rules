@@ -21,6 +21,28 @@ service cloud.firestore {
       allow read, write: if mio(uid);
     }
 
+    // Amministratori (Simone, Themino): un documento admin/{uid} creato a mano dalla console. Niente email nel codice.
+    function admin() { return request.auth != null && exists(/databases/$(database)/documents/admin/$(request.auth.uid)); }
+    function conGoogle() { return request.auth != null && request.auth.token.firebase.sign_in_provider == 'google.com'; }
+    function testo(v, min, max) { return v is string && v.size() >= min && v.size() <= max; }
+    match /admin/{uid} {
+      allow read: if mio(uid);
+    }
+
+    // Chicche proposte dai follower: le scrive chi e entrato con Google, le leggono lui e gli amministratori,
+    // le approvano o scartano solo gli amministratori.
+    match /proposte/{id} {
+      allow create: if conGoogle() && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['uid', 'nome', 'luogo', 'zona', 'perche', 'domanda', 'quando', 'stato'])
+        && testo(request.resource.data.nome, 1, 20) && testo(request.resource.data.luogo, 3, 80) && testo(request.resource.data.zona, 2, 60)
+        && testo(request.resource.data.perche, 20, 500) && testo(request.resource.data.domanda, 0, 120)
+        && request.resource.data.stato == 'nuova' && request.resource.data.quando == request.time;
+      allow read: if request.auth != null && (resource.data.uid == request.auth.uid || admin());
+      allow update: if admin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['stato', 'nota', 'decisa'])
+        && request.resource.data.stato in ['approvata', 'scartata', 'nuova'] && testo(request.resource.data.get('nota', ''), 0, 300);
+    }
+
     match /partite/{data}/punteggi/{uid} {
       allow read: if true;
       allow create: if mio(uid) && vicino(data)

@@ -278,3 +278,41 @@ export async function classifica(data, n = 50) {
   const totale = tutti.data().count;
   return { righe, mio: mio.exists() ? { uid: io.uid, ...mio.data() } : null, posizione, totale, percento: meglio && totale > 1 ? Math.round((meglio.sotto / (totale - 1)) * 100) : null };
 }
+
+// --- Chicche proposte dai follower ---
+
+// Amministratore (Simone, Themino): ha un documento admin/{uid}, creato a mano dalla console.
+export async function sonoAdmin() {
+  const u = await avviaConto();
+  if (!u || u.anonimo) return false;
+  try { return (await fb.fs.getDoc(fb.fs.doc(fb.db, 'admin', io.uid))).exists(); } catch { return false; }
+}
+
+export async function proponi({ luogo, zona, perche, domanda }) {
+  const u = await avviaConto();
+  if (!u || u.anonimo) throw new Error('serve il login');
+  const { fs, db } = fb;
+  await fs.addDoc(fs.collection(db, 'proposte'), {
+    uid: io.uid, nome: utente().nome || 'Anonimo', luogo: luogo.trim(), zona, perche: perche.trim(), domanda: (domanda || '').trim(),
+    quando: fs.serverTimestamp(), stato: 'nuova',
+  });
+}
+
+export async function mieProposte() {
+  const u = await avviaConto();
+  if (!u || u.anonimo) return [];
+  const { fs, db } = fb;
+  const q = fs.query(fs.collection(db, 'proposte'), fs.where('uid', '==', io.uid), fs.orderBy('quando', 'desc'), fs.limit(30));
+  return (await fs.getDocs(q)).docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+export async function proposteDaDecidere(stato = 'nuova') {
+  const { fs, db } = fb;
+  const q = fs.query(fs.collection(db, 'proposte'), fs.where('stato', '==', stato), fs.orderBy('quando', 'desc'), fs.limit(100));
+  return (await fs.getDocs(q)).docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+export async function decidiProposta(id, stato, nota = '') {
+  const { fs, db } = fb;
+  await fs.updateDoc(fs.doc(db, 'proposte', id), { stato, nota: nota.slice(0, 300), decisa: fs.serverTimestamp() });
+}

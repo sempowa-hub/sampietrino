@@ -369,6 +369,27 @@ export const ICONE = {
     ],
   },
   // Oggetti del taccuino.
+  cartolina: {
+    colori: { w: '#fbf4e0', b: '#e9dab2', r: '#c43a28', s: '#5b8fb8', t: '#8a7a66', g: '#6e9a5a' },
+    disegno: [
+      '................',
+      '................',
+      '................',
+      '.wwwwwwwwwwwwww.',
+      '.wbbbbbbwwwrrrw.',
+      '.wbsssssbwwrgrw.',
+      '.wbsgggsbwwrrrw.',
+      '.wbsgggsbwwwwww.',
+      '.wbbbbbbbwtttww.',
+      '.wwwwwwwwwwwwww.',
+      '.wtttttwwwtttww.',
+      '.wttttwwwwtttww.',
+      '.wwwwwwwwwwwwww.',
+      '.wwwwwwwwwwwwww.',
+      '................',
+      '................',
+    ],
+  },
   coppa: {
     colori: { Y: '#f0c445', o: '#b5821f', h: '#fff3b0', b: '#6e4426', W: '#e8b33a' },
     disegno: [

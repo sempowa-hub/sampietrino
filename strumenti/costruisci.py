@@ -358,6 +358,33 @@ def main():
                             **({} if c['tipo'] == 'acqua' else {'_luoghi': [(e, g.centroid) for g, _, e in luoghi]}),
                             **({'perche': perche} if perche else {})})
 
+    # Chicche dei follower approvate da Simone e Themino (strumenti/proposte.py): ogni 8 zone diverse una domanda nuova.
+    # Un gruppo si chiude solo a 8 zone, cosi una domanda gia uscita non cambia piu. Fasce per notorieta della zona.
+    f_foll = RADICE / 'dati' / 'proposte-follower.json'
+    if f_foll.exists():
+        per_nome_zona = {n: n for n in nomi}
+        gruppo, zone_gruppo, n_gruppo = [], [], 0
+        def chiudi(gruppo, n_gruppo):
+            perche = defaultdict(list)
+            for x in gruppo:
+                perche[ids[x['zona']]].append(f"{x['luogo']} (segnalata da {x['nome']})")
+            chi = sorted({x['nome'] for x in gruppo})
+            domande.append({'id': f'follower-{n_gruppo}', 'tipo': 'follower', 'testo': 'Una zona con una chicca segnalata da voi',
+                            'risposte': sorted(perche), 'perche': dict(perche),
+                            'contesto': f"Le risposte di questa domanda le avete segnalate voi, una per una: grazie a {', '.join(chi[:-1]) + ' e ' + chi[-1] if len(chi) > 1 else chi[0]}."})
+        for x in json.loads(f_foll.read_text()):
+            if x.get('zona') not in per_nome_zona:
+                resoconto.append(f"  ATTENZIONE follower: zona \"{x.get('zona')}\" non in gioco ({x.get('luogo')})")
+                continue
+            gruppo.append(x)
+            if x['zona'] not in zone_gruppo:
+                zone_gruppo.append(x['zona'])
+            if len(zone_gruppo) >= 8:
+                n_gruppo += 1
+                chiudi(gruppo, n_gruppo)
+                gruppo, zone_gruppo = [], []
+        resoconto.append(f'  follower: {n_gruppo} domande, {len(zone_gruppo)} zone in attesa del prossimo gruppo')
+
     # Domande generate (strumenti/genera_domande.py): luoghi e linee con la loro fama (voci Wikipedia).
     # Fascia per zona a quinti: la zona col luogo piu famoso e Da cartolina, a parita decide la notorieta della zona.
     if GENERATE.exists():

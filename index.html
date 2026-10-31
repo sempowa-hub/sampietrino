@@ -142,6 +142,8 @@
     <button class="oggetto o-souvenir" data-apri="souvenir"><span class="o-icona" data-icona="scatola"></span><b>Souvenir</b><small id="t-souvenir"></small><i class="bollo" id="t-souv-nuovi" hidden></i></button>
     <button class="oggetto o-regole" data-apri="regole"><span class="o-icona" data-icona="biglietto"></span><b>Come si gioca</b><small>Il biglietto con le regole</small></button>
     <button class="oggetto o-classifica" data-apri="classifica"><span class="o-icona" data-icona="coppa"></span><b>Classifica</b><small id="t-classifica">Chi ha fatto meglio oggi</small></button>
+    <button class="oggetto o-proponi" data-apri="proponi"><span class="o-icona" data-icona="cartolina"></span><span class="o-testo"><b>Proponi una chicca</b><small>Un posto che a Roma sanno in pochi? Finisce nel gioco col tuo nome</small></span></button>
+    <button class="oggetto o-moderazione" data-apri="moderazione" hidden><span class="o-icona" data-icona="scatola"></span><b>Proposte da approvare</b><small id="t-moderazione">Solo per te e Themino</small><i class="bollo" id="t-mod-nuove" hidden></i></button>
     <button class="oggetto o-account" data-apri="account"><img class="o-icona faccia" id="t-account-foto" src="img/mino-neutro.png" alt="" referrerpolicy="no-referrer"><b id="t-account-nome">Il tuo account</b><small id="t-account">Entra con Google</small></button>
   </div>
   <button class="primario" data-chiudi>Chiudi</button>
@@ -234,6 +236,49 @@
   <p class="cl-data" id="cl-data"></p>
   <div class="cl-mio" id="cl-mio" aria-live="polite"></div>
   <ol class="cl-elenco" id="cl-elenco"></ol>
+  <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="proponi" class="quaderno proponi">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Proponi una chicca</p></div>
+  <div class="pr-fuori" id="pr-fuori" hidden>
+    <img class="faccia pr-mino" src="img/mino-occhiolino.png" alt="" width="56" height="56">
+    <p>Per proporre una chicca entra con Google: così nel "Mino dice" c'è il tuo nome.</p>
+    <button class="primario piccolo" data-apri="account">Entra con Google</button>
+  </div>
+  <form class="pr-form" id="pr-form" novalidate>
+    <p class="pr-intro">Conosci un posto che a Roma sanno in pochi? Scrivilo qui. Se a Mino e Simone piace, entra nel gioco col tuo nome.</p>
+    <label class="campo" for="pr-luogo"><span>Il posto</span><input id="pr-luogo" maxlength="80" autocomplete="off" placeholder="Es. il buco della serratura dell'Aventino"></label>
+    <div class="campo"><span id="pr-zona-etichetta">La zona</span>
+      <div class="pr-zona">
+        <input id="pr-zona-cerca" maxlength="40" autocomplete="off" placeholder="Cerca la zona: Trastevere, Garbatella..." aria-labelledby="pr-zona-etichetta">
+        <div class="pr-zone" id="pr-zone" role="listbox" aria-labelledby="pr-zona-etichetta"></div>
+        <p class="pr-scelta" id="pr-scelta" hidden><span id="pr-scelta-nome"></span><button type="button" id="pr-scelta-via" aria-label="Cambia zona">cambia</button></p>
+      </div>
+    </div>
+    <label class="campo" for="pr-perche"><span>Perché è una chicca</span><textarea id="pr-perche" maxlength="500" rows="4" placeholder="Cosa c'è, cosa lo rende speciale, come ci si arriva."></textarea><small class="pr-conta" id="pr-conta">0 / 500</small></label>
+    <label class="campo" for="pr-domanda"><span>Che domanda faresti? (se ti va)</span><input id="pr-domanda" maxlength="120" autocomplete="off" placeholder="Es. Una zona con una porta che non porta da nessuna parte"></label>
+    <p class="acc-errore" id="pr-errore" hidden></p>
+    <button class="primario" id="pr-invia" type="submit">Manda a Mino</button>
+  </form>
+  <div class="pr-grazie" id="pr-grazie" hidden>
+    <img class="faccia pr-mino" src="img/mino-risata.png" alt="" width="56" height="56">
+    <p><b>Ricevuta!</b> Mino la legge con Simone. Se entra nel gioco te ne accorgi: c'è il tuo nome.</p>
+    <button class="secondario" id="pr-altra" type="button">Proponine un'altra</button>
+  </div>
+  <h3 class="q-sotto">Le tue proposte</h3>
+  <ol class="pr-mie" id="pr-mie"></ol>
+  <button class="secondario largo" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="moderazione" class="quaderno moderazione">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Proposte da approvare</p></div>
+  <div class="schede" id="mod-schede" role="tablist">
+    <button data-stato="nuova" role="tab">Da vedere</button>
+    <button data-stato="approvata" role="tab">Approvate</button>
+    <button data-stato="scartata" role="tab">Scartate</button>
+  </div>
+  <ol class="mod-elenco" id="mod-elenco"></ol>
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 

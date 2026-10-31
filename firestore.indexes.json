@@ -4,9 +4,46 @@
       "collectionGroup": "punteggi",
       "queryScope": "COLLECTION",
       "fields": [
-        { "fieldPath": "pubblico", "order": "ASCENDING" },
-        { "fieldPath": "tot", "order": "DESCENDING" },
-        { "fieldPath": "ora", "order": "ASCENDING" }
+        {
+          "fieldPath": "pubblico",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "tot",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "ora",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "proposte",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "quando",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "proposte",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "stato",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "quando",
+          "order": "DESCENDING"
+        }
       ]
     }
   ],

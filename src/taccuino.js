@@ -6,7 +6,7 @@ import { pixel } from './pixel.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { SOUVENIR, GRUPPI } from './souvenir.js';
 import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO, PRIMO_GIORNO } from './storico.js';
-import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi } from './conto.js';
+import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi, sonoAdmin, proponi, mieProposte, proposteDaDecidere, decidiProposta } from './conto.js';
 
 const $ = (id) => document.getElementById(id);
 const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV'];
@@ -30,8 +30,8 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
 
   // --- Navigazione tra i fogli del taccuino ---
 
-  const FOGLI = ['taccuino', 'diario-bordo', 'passaporto', 'souvenir', 'account', 'classifica'];
-  const PREPARA = { taccuino: preparaTaccuino, 'diario-bordo': preparaDiario, passaporto: preparaPassaporto, souvenir: preparaSouvenir, account: preparaAccount, classifica: preparaClassifica };
+  const FOGLI = ['taccuino', 'diario-bordo', 'passaporto', 'souvenir', 'account', 'classifica', 'proponi', 'moderazione'];
+  const PREPARA = { taccuino: preparaTaccuino, 'diario-bordo': preparaDiario, passaporto: preparaPassaporto, souvenir: preparaSouvenir, account: preparaAccount, classifica: preparaClassifica, proponi: preparaProponi, moderazione: preparaModerazione };
   function apri(id, { da = false } = {}) {
     if (id === 'regole') { chiudiTutti(); regole(); return; }
     daTaccuino = da;
@@ -95,9 +95,24 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   // Avatar: la foto Google se il giocatore la mostra, altrimenti la faccia di Mino.
   const avatar = (img, foto, faccia = 'neutro') => { img.src = foto || `img/mino-${faccia}.png`; img.classList.toggle('faccia', !foto); };
 
+  let admin = false;
+  async function aggiornaAdmin() {
+    admin = await sonoAdmin();
+    $('t-mod-nuove').hidden = true;
+    document.querySelector('.o-moderazione').hidden = !admin;
+    if (!admin) return;
+    try {
+      const n = (await proposteDaDecidere('nuova')).length;
+      $('t-mod-nuove').hidden = !n;
+      $('t-mod-nuove').textContent = n;
+      $('t-moderazione').textContent = n ? `${plurale(n, 'proposta nuova', 'proposte nuove')}` : 'Niente di nuovo';
+    } catch { /* riprova alla prossima apertura */ }
+  }
+
   function aggiornaConto() {
     const u = utente();
     const dentro = u && !u.anonimo;
+    aggiornaAdmin();
     avatar($('t-account-foto'), dentro ? u.foto : '', dentro ? 'sorriso' : 'neutro');
     $('t-account-nome').textContent = dentro ? u.nome || 'Il tuo account' : 'Il tuo account';
     $('t-account').textContent = dentro ? 'Nickname, foto, partite salvate' : 'Entra con Google';
@@ -271,6 +286,127 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       li.append(nome, el('span', 'cl-tot', r.tot));
       return li;
     }));
+  }
+
+  // --- Proponi una chicca (chi e entrato con Google) ---
+
+  const normale = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const zoneOrdinate = [...dati.zone].sort((a, b) => a.nome.localeCompare(b.nome, 'it'));
+  let zonaScelta = null;
+
+  function preparaProponi() {
+    const u = utente();
+    const dentro = u && !u.anonimo;
+    $('pr-fuori').hidden = dentro;
+    $('pr-form').hidden = !dentro;
+    $('pr-grazie').hidden = true;
+    $('pr-errore').hidden = true;
+    disegnaZone();
+    mostraMie();
+  }
+  function scegliZona(z) {
+    zonaScelta = z;
+    $('pr-scelta').hidden = !z;
+    $('pr-zona-cerca').hidden = !!z;
+    $('pr-zone').replaceChildren();
+    if (z) { $('pr-scelta-nome').textContent = z.nome; suoni.scegli(); } else { $('pr-zona-cerca').value = ''; $('pr-zona-cerca').focus(); }
+  }
+  function disegnaZone() {
+    if (zonaScelta) return;
+    const q = normale($('pr-zona-cerca').value.trim());
+    if (!q) { $('pr-zone').replaceChildren(); return; }
+    const trovate = zoneOrdinate.filter((z) => normale(z.nome).includes(q)).slice(0, 8);
+    $('pr-zone').replaceChildren(...(trovate.length ? trovate.map((z) => {
+      const b = el('button', 'pr-zona-voce', z.nome);
+      b.type = 'button';
+      b.setAttribute('role', 'option');
+      b.addEventListener('click', () => scegliZona(z));
+      return b;
+    }) : [el('p', 'pr-nessuna', 'Nessuna zona con questo nome dentro il Raccordo.')]));
+  }
+  $('pr-zona-cerca').addEventListener('input', disegnaZone);
+  $('pr-zona-cerca').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); $('pr-zone').querySelector('button')?.click(); } });
+  $('pr-scelta-via').addEventListener('click', () => scegliZona(null));
+  $('pr-perche').addEventListener('input', () => { $('pr-conta').textContent = `${$('pr-perche').value.length} / 500`; });
+  $('pr-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const luogo = $('pr-luogo').value.trim(), perche = $('pr-perche').value.trim(), domanda = $('pr-domanda').value.trim();
+    const sbaglio = luogo.length < 3 ? 'Scrivi il nome del posto (almeno 3 lettere).' : !zonaScelta ? 'Scegli la zona dove sta.' : perche.length < 20 ? 'Raccontalo un po\' di più: almeno 20 caratteri sul perché è una chicca.' : '';
+    if (sbaglio) { $('pr-errore').textContent = sbaglio; $('pr-errore').hidden = false; return; }
+    const b = $('pr-invia');
+    b.disabled = true;
+    b.textContent = 'Mando…';
+    try {
+      await proponi({ luogo, zona: zonaScelta.nome, perche, domanda });
+      suoni.souvenir();
+      $('pr-form').hidden = true;
+      $('pr-grazie').hidden = false;
+      $('pr-luogo').value = $('pr-perche').value = $('pr-domanda').value = '';
+      $('pr-conta').textContent = '0 / 500';
+      scegliZona(null);
+      mostraMie();
+    } catch {
+      $('pr-errore').textContent = 'Non è partita: controlla la connessione e riprova.';
+      $('pr-errore').hidden = false;
+    } finally {
+      b.disabled = false;
+      b.textContent = 'Manda a Mino';
+    }
+  });
+  $('pr-altra').addEventListener('click', () => { $('pr-grazie').hidden = true; $('pr-form').hidden = false; $('pr-errore').hidden = true; $('pr-luogo').focus(); });
+
+  const STATI = { nuova: 'In attesa', approvata: 'Nel gioco', scartata: 'Non questa volta' };
+  async function mostraMie() {
+    const ol = $('pr-mie');
+    let mie = [];
+    try { mie = await mieProposte(); } catch { /* niente */ }
+    ol.replaceChildren(...(mie.length ? mie.map((m) => {
+      const li = el('li', `pr-mia stato-${m.stato}`);
+      li.append(el('b', null, m.luogo), el('span', 'pr-mia-zona', m.zona), el('span', 'pr-stato', STATI[m.stato] || m.stato));
+      if (m.nota) li.append(el('p', 'pr-nota', `Mino: ${m.nota}`));
+      return li;
+    }) : [el('li', 'vuoto', 'Ancora nessuna proposta. La prima chicca è tua?')]));
+  }
+
+  // --- Proposte da approvare (solo amministratori) ---
+
+  let statoMod = 'nuova';
+  for (const b of $('mod-schede').querySelectorAll('button')) {
+    b.addEventListener('click', () => { statoMod = b.dataset.stato; suoni.scegli(); preparaModerazione(); });
+  }
+  async function preparaModerazione() {
+    for (const b of $('mod-schede').querySelectorAll('button')) b.setAttribute('aria-selected', String(b.dataset.stato === statoMod));
+    const ol = $('mod-elenco');
+    ol.replaceChildren(el('li', 'cl-carico', 'Carico le proposte…'));
+    let lista = [];
+    try { lista = await proposteDaDecidere(statoMod); } catch { ol.replaceChildren(el('li', 'vuoto', 'Non riesco a leggere le proposte: riprova tra poco.')); return; }
+    ol.replaceChildren(...(lista.length ? lista.map((p) => {
+      const li = el('li', 'mod-voce');
+      const testa = el('div', 'mod-testa');
+      testa.append(el('b', null, p.luogo), el('span', 'mod-zona', p.zona));
+      li.append(testa, el('p', 'mod-perche', p.perche));
+      if (p.domanda) li.append(el('p', 'mod-domanda', `Domanda: ${p.domanda}`));
+      const quando = p.quando?.toDate ? p.quando.toDate().toLocaleDateString('it-IT', { day: 'numeric', month: 'long' }) : '';
+      li.append(el('p', 'mod-chi', `Da ${p.nome}${quando ? ` · ${quando}` : ''}`));
+      const nota = el('input', 'mod-nota');
+      nota.placeholder = 'Nota per chi l\'ha proposta (facoltativa)';
+      nota.maxLength = 300;
+      nota.value = p.nota || '';
+      nota.setAttribute('aria-label', 'Nota per chi l\'ha proposta');
+      const tasti = el('div', 'voti mod-tasti');
+      for (const [stato, t] of [['approvata', 'Sì'], ['scartata', 'No']]) {
+        const b = el('button', stato === 'approvata' ? 'si' : 'no', t);
+        b.setAttribute('aria-pressed', String(p.stato === stato));
+        b.addEventListener('click', async () => {
+          b.disabled = true;
+          try { await decidiProposta(p.id, stato, nota.value); suoni.scegli(); li.classList.add('decisa'); setTimeout(() => { preparaModerazione(); aggiornaAdmin(); }, 350); }
+          catch { b.disabled = false; nota.placeholder = 'Non salvato: riprova'; }
+        });
+        tasti.append(b);
+      }
+      li.append(nota, tasti);
+      return li;
+    }) : [el('li', 'vuoto', statoMod === 'nuova' ? 'Nessuna proposta da vedere. Tutto letto!' : 'Nessuna proposta qui.')]));
   }
 
   // --- Diario di bordo: calendario, archivio, statistiche ---
