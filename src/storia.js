@@ -196,6 +196,6 @@ export async function creaStoria({ data, totale, massimo, faccia, tappe, colori,
   ctx.beginPath(); ctx.arc(110, 1834, 18, -Math.PI / 2, Math.PI / 2); ctx.fill();
   ctx.beginPath(); ctx.arc(L - 110, 1834, 18, Math.PI / 2, Math.PI * 1.5); ctx.fill();
   testo(ctx, 'BATTI IL MIO PUNTEGGIO', L / 2, 1828, { font: "40px 'Silkscreen', monospace", colore: NOTTE, spazio: 2 });
-  testo(ctx, 'sampietrino-roma.web.app', L / 2, 1870, { font: "700 32px 'Pixelify Sans', sans-serif", colore: ROSSO });
+  testo(ctx, 'themino.it', L / 2, 1870, { font: "700 32px 'Pixelify Sans', sans-serif", colore: ROSSO });
   return new Promise((ok) => c.toBlob(ok, 'image/png'));
 }
