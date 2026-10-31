@@ -43,6 +43,11 @@ async function avvia() {
   attivaZoom();
   if (corrente >= domande.length) mostraFine();
   else mostraDomanda();
+  // Copertina solo a giornata non ancora iniziata.
+  if (corrente === 0 && stati[0].pin.length === 0) {
+    $('copertina-data').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', day: 'numeric', month: 'long' }).format(new Date());
+    $('copertina').showModal();
+  }
 }
 
 function el(tag, attr = {}, padre) {
@@ -59,8 +64,8 @@ function disegnaMappa() {
   aggiornaVista();
   const defs = el('defs', {}, svg);
   const motivo = el('pattern', { id: 'fuori', width: 0.6, height: 0.6, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
-  el('rect', { width: 0.6, height: 0.6, fill: '#ddd2bf' }, motivo);
-  el('line', { x1: 0, y1: 0, x2: 0, y2: 0.6, stroke: '#cbbfa9', 'stroke-width': 0.25 }, motivo);
+  el('rect', { width: 0.6, height: 0.6, fill: '#cddbd2' }, motivo);
+  el('line', { x1: 0, y1: 0, x2: 0, y2: 0.6, stroke: '#b3c8bb', 'stroke-width': 0.25 }, motivo);
   el('path', { d: dati.comune, class: 'comune', 'fill-rule': 'evenodd' }, svg);
   const gZone = el('g', {}, svg);
   for (const z of dati.zone) {
@@ -100,15 +105,23 @@ function ridisegna() {
     m.classList.toggle('acceso', chiusa && Number(m.dataset.num) === d?.evidenziaMunicipio);
   }
   $('etichette').replaceChildren();
-  if (chiusa) for (const id of d?.evidenzia || []) etichetta(zonePerId[id], 'bersaglio');
-  for (const pin of s?.pin || []) etichetta(zonePerId[pin.zona]);
+  // Un'etichetta che cadrebbe sopra un'altra si salta: a mappa intera i centri sono vicini.
+  const messe = [];
+  const metti = (z, classe) => {
+    const minimo = 60 * kmPerPixel();
+    if (messe.some(([x, y]) => Math.abs(x - z.centro[0]) < minimo && Math.abs(y - z.centro[1]) < minimo / 3)) return;
+    messe.push(z.centro);
+    etichetta(z, classe);
+  };
+  if (chiusa) for (const id of d?.evidenzia || []) metti(zonePerId[id], 'bersaglio');
+  for (const pin of s?.pin || []) metti(zonePerId[pin.zona]);
 
   const ol = $('pin');
   ol.replaceChildren();
   for (let i = 0; i < PIN_PER_DOMANDA; i++) {
     const li = document.createElement('li');
     const pin = s?.pin[i];
-    if (!pin) { li.className = 'vuoto'; li.textContent = `pin ${i + 1}`; }
+    if (!pin) { li.className = 'vuoto'; li.textContent = `biglietto ${i + 1}`; }
     else if (pin.punti === null) { li.className = 'buca'; li.innerHTML = `${zonePerId[pin.zona].nome}<b>buca</b>`; }
     else li.innerHTML = `${zonePerId[pin.zona].nome}<b>+${pin.punti}</b>`;
     ol.appendChild(li);
@@ -126,7 +139,7 @@ function ridisegna() {
 function mostraDomanda() {
   const s = stati[corrente];
   selezionata = null;
-  $('numero').textContent = `Domanda ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
+  $('numero').textContent = `Tappa ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
   $('testo').textContent = s.domanda.testo;
   inquadra(s.domanda, false);
   ridisegna();
@@ -195,7 +208,7 @@ function mostraFine() {
     if (s.esito === 'buca') return '🕳️';
     return s.pin.map((p) => (p.punti >= 8 ? '🟫' : p.punti >= 4 ? '🟧' : '⬜')).join('') + ` ${s.banco}`;
   });
-  $('condividi').textContent = `Sampietrino ${oggi}\n${righe.join('\n')}\nTotale ${tot}/150`;
+  $('condividi').textContent = `Diario di Sampietrino ${oggi}\n${righe.join('\n')}\nTotale ${tot}/150`;
   $('numero').textContent = 'Fine';
   $('testo').textContent = `${tot} sampietrini oggi`;
   selezionata = null;
@@ -313,6 +326,7 @@ function attivaZoom() {
 
 // Tastiera su desktop: Invio mette il pin, F ferma, Esc annulla la scelta.
 document.addEventListener('keydown', (e) => {
+  if ($('copertina').open) return;
   if ($('esito').open || $('fine').open) {
     if (e.key === 'Enter' && $('esito').open) { e.preventDefault(); avanti(); }
     return;
@@ -335,6 +349,7 @@ new ResizeObserver(() => {
   ridisegna();
 }).observe($('mappa'));
 
+$('daje').addEventListener('click', () => $('copertina').close());
 $('pianta').addEventListener('click', pianta);
 $('fermati').addEventListener('click', fermaQui);
 $('avanti').addEventListener('click', avanti);

@@ -94,3 +94,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 IM Fell English, IM Fell English SC:
 Google Inc.
+
+
+Silkscreen:
+Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen) Silkscreen-Bold.ttf: Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen)
