@@ -1,10 +1,13 @@
 """Costruisce dati/gioco.json dalle fonti geografiche.
 
-Zone: i poligoni di dati/fonti/quartieri-osm.geojson, uniti per nome.
+Zone: i poligoni di dati/fonti/quartieri-osm.geojson, uniti per nome, solo quelle
+che stanno almeno per meta dentro il Grande Raccordo Anulare (dati/fonti/gra-osm.geojson,
+da strumenti/scarica_gra.py). Il gioco e la Roma dentro il Raccordo.
 Domande: calcolate dalla geometria, mai scritte a mano.
   - "Confina con X": zone che condividono con X almeno 100 m di confine.
   - "Nel Municipio N": zone che stanno per piu di meta nel municipio.
-  - "Sul confine del Comune": zone che toccano il bordo esterno di Roma.
+  - "Arriva fino al Raccordo": zone che toccano il GRA.
+  - "Confina col Vaticano".
 
 Uso: pip install shapely pyproj && python3 strumenti/costruisci.py
 Si ferma con errore se un dato manca: niente silenzio verde.
@@ -27,6 +30,7 @@ RADICE = Path(__file__).resolve().parent.parent
 FONTI = RADICE / 'dati' / 'fonti'
 USCITA = RADICE / 'dati' / 'gioco.json'
 CONFINE_MINIMO_M = 100
+QUOTA_DENTRO_GRA = 0.5
 MIN_RISPOSTE, MAX_RISPOSTE = 4, 25
 ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
 
@@ -87,6 +91,22 @@ def main():
         errore(f'attesi 15 municipi, letti {sorted(municipi)}')
     comune = unary_union(list(municipi.values()))
 
+    gra_file = FONTI / 'gra-osm.geojson'
+    if not gra_file.exists():
+        errore(f'manca {gra_file.relative_to(RADICE)}: lancia prima python3 strumenti/scarica_gra.py')
+    gra = unary_union([in_metri(shape(f['geometry'])).buffer(0) for f in carica('gra-osm.geojson')])
+    if not 250e6 < gra.area < 500e6:
+        errore(f'area dentro il GRA di {gra.area / 1e6:.0f} km2: attesa tra 250 e 500, il file e sbagliato')
+    tutte = len(zone)
+    quota = {n: g.intersection(gra).area / g.area for n, g in zone.items()}
+    fuori = sorted(n for n in zone if quota[n] < QUOTA_DENTRO_GRA)
+    a_cavallo = sorted(n for n in zone if 0.05 < quota[n] < 0.95)
+    tocca_gra = {n for n, g in zone.items() if quota[n] >= QUOTA_DENTRO_GRA and g.intersects(gra.boundary.buffer(100))}
+    zone = {n: g.intersection(gra) for n, g in zone.items() if quota[n] >= QUOTA_DENTRO_GRA}
+    if not zone:
+        errore('nessuna zona dentro il GRA')
+    municipi = {k: m.intersection(gra) for k, m in municipi.items()}
+
     ids = {n: slug(n) for n in zone}
     if len(set(ids.values())) != len(ids):
         errore('due zone hanno lo stesso id')
@@ -119,6 +139,8 @@ def main():
         k, q = max(quote.items(), key=lambda kv: kv[1])
         mun_di[n] = k if q > 0.5 else None
     for k in range(1, 16):
+        if not municipi[k].area:
+            continue
         domande.append({
             'id': f'municipio-{k}',
             'tipo': 'municipio',
@@ -127,28 +149,35 @@ def main():
             'risposte': sorted(ids[n] for n in nomi if mun_di[n] == k),
         })
 
-    bordo = comune.boundary.buffer(150)
+    # Dentro il GRA l'unico confine del Comune e quello col Vaticano.
+    vaticano = comune.boundary.buffer(150)
     domande.append({
-        'id': 'bordo-comune',
-        'tipo': 'bordo',
-        'testo': 'Una zona che confina con un altro Comune o col Vaticano',
-        'risposte': sorted(ids[n] for n in nomi if zone[n].intersects(bordo)),
+        'id': 'vaticano',
+        'tipo': 'vaticano',
+        'testo': 'Una zona che confina col Vaticano',
+        'risposte': sorted(ids[n] for n in nomi if zone[n].intersects(vaticano)),
+    })
+    domande.append({
+        'id': 'raccordo',
+        'tipo': 'raccordo',
+        'testo': 'Una zona che arriva fino al Raccordo',
+        'risposte': sorted(ids[n] for n in nomi if n in tocca_gra),
     })
 
     giocabili = [d for d in domande if MIN_RISPOSTE <= len(d['risposte']) <= MAX_RISPOSTE]
     if len(giocabili) < 5:
         errore(f'solo {len(giocabili)} domande giocabili su {len(domande)}')
 
-    minx, miny, maxx, maxy = comune.bounds
+    minx, miny, maxx, maxy = gra.buffer(500).bounds
     origine = (minx, maxy)
     semplifica = lambda g: g.simplify(25, preserve_topology=True)
     dati = {
-        'nota': 'Generato da strumenti/costruisci.py. Non modificare a mano. Confini: OpenStreetMap (ODbL), vecchia suddivisione toponomastica.',
+        'nota': 'Generato da strumenti/costruisci.py. Non modificare a mano. Confini: OpenStreetMap (ODbL), vecchia suddivisione toponomastica. Solo dentro il GRA.',
         'attribuzione': 'Confini © OpenStreetMap contributors',
         'dimensioni': [round((maxx - minx) / 1000, 2), round((maxy - miny) / 1000, 2)],
-        'comune': percorso_svg(semplifica(comune), origine),
+        'comune': percorso_svg(semplifica(gra), origine),
         'municipi': [{'num': k, 'nome': f'Municipio {ROMANI[k]}', 'd': percorso_svg(semplifica(m), origine)}
-                     for k, m in sorted(municipi.items())],
+                     for k, m in sorted(municipi.items()) if m.area],
         'zone': [{
             'id': ids[n], 'nome': n, 'notorieta': notorieta[n], 'municipio': mun_di[n],
             'km2': round(zone[n].area / 1e6, 1), 'd': percorso_svg(semplifica(zone[n]), origine),
@@ -159,9 +188,11 @@ def main():
     }
     USCITA.write_text(json.dumps(dati, ensure_ascii=False, separators=(',', ':')))
 
-    coperta = unary_union(list(zone.values())).intersection(comune).area / comune.area
-    print(f'Zone: {len(zone)} (da {sum(len(g) for g in per_nome.values())} poligoni)')
-    print(f'Copertura del Comune: {coperta:.1%}')
+    coperta = unary_union(list(zone.values())).area / gra.area
+    print(f'Zone lette: {tutte} (da {sum(len(g) for g in per_nome.values())} poligoni)')
+    print(f'Dentro il GRA: {len(zone)}. Fuori: {len(fuori)}')
+    print(f'A cavallo del GRA (decide la quota del {QUOTA_DENTRO_GRA:.0%}): {", ".join(f"{n} {quota[n]:.0%}" for n in a_cavallo)}')
+    print(f'Area dentro il GRA: {gra.area / 1e6:.0f} km2, coperta dalle zone: {coperta:.1%}')
     print(f'Domande: {len(giocabili)} giocabili su {len(domande)} '
           f'(scartate perche con meno di {MIN_RISPOSTE} o piu di {MAX_RISPOSTE} risposte: {len(domande) - len(giocabili)})')
     senza_vicini = [n for n in nomi if not vicini[n]]
