@@ -6,6 +6,10 @@ Stato: **prototipo giocabile coi dati veri** (31 ottobre 2026). Il gioco è la R
 
 ## Giocare
 
+Online: **https://sampietrino-roma.web.app** (Firebase Hosting, progetto `sampietrino-roma`). Per pubblicare: `npm run pubblica`.
+
+In locale:
+
 ```
 npm run gioca      # poi apri http://localhost:8080
 ```

@@ -1,12 +1,13 @@
 {
   "name": "sampietrino",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Gioco quotidiano sui quartieri di Roma: vale di piu la risposta giusta che pochi danno.",
   "scripts": {
     "test": "node --test test/*.test.js",
     "gioca": "node strumenti/servi.js",
-    "costruisci": "python3 strumenti/costruisci.py"
+    "costruisci": "python3 strumenti/costruisci.py",
+    "pubblica": "firebase deploy --only hosting"
   }
 }
