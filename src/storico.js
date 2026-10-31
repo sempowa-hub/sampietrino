@@ -102,3 +102,19 @@ export function contesto(s, zone) {
     recuperi: giorni.filter((g) => g.recupero && g.finita).length,
   };
 }
+
+// Partite finite salvate nel browser, per portarle sull'account (e rivederne il diario da un altro telefono).
+export function partiteLocali(s) {
+  const out = {};
+  for (const [d, g] of Object.entries(s.giorni)) {
+    if (!g.finita) continue;
+    const p = partita(d);
+    if (p) out[d] = p;
+  }
+  return out;
+}
+export function ripristinaPartite(partite = {}) {
+  for (const [d, p] of Object.entries(partite)) {
+    try { if (!localStorage.getItem(`sampietrino:${d}`)) localStorage.setItem(`sampietrino:${d}`, JSON.stringify(p)); } catch { /* pieno */ }
+  }
+}

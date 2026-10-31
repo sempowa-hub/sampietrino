@@ -1,0 +1,41 @@
+rules_version = '2';
+
+// Sampietrino: ognuno scrive solo il suo profilo e il suo punteggio del giorno.
+// I punteggi si leggono da tutti (classifica); il totale deve tornare con le fasce tappa per tappa.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function mio(uid) { return request.auth != null && request.auth.uid == uid; }
+    function due(n) { return (n < 10 ? '0' : '') + string(n); }
+    function giorno(t) { return string(t.year()) + '-' + due(t.month()) + '-' + due(t.day()); }
+    // Oggi a Roma cade tra ieri e domani in UTC.
+    function vicino(data) {
+      return data in [giorno(request.time), giorno(request.time - duration.value(1, 'd')), giorno(request.time + duration.value(1, 'd'))];
+    }
+    function punti(l) { return l == 4 ? 8 : l == 3 ? 5 : l == 2 ? 3 : l == 1 ? 2 : l == 0 ? 1 : 0; }
+    function livello(l) { return l == null || (l is int && l >= -1 && l <= 4); }
+    function nomeOk(d) { return d.nome is string && d.nome.size() <= 20 && d.foto is string && d.foto.size() <= 500 && d.pubblico is bool; }
+
+    match /giocatori/{uid} {
+      allow read, write: if mio(uid);
+    }
+
+    match /partite/{data}/punteggi/{uid} {
+      allow read: if true;
+      allow create: if mio(uid) && vicino(data)
+        && request.resource.data.keys().hasOnly(['tot', 'livelli', 'ora', 'pubblico', 'nome', 'foto'])
+        && request.resource.data.livelli is list && request.resource.data.livelli.size() == 5
+        && livello(request.resource.data.livelli[0]) && livello(request.resource.data.livelli[1])
+        && livello(request.resource.data.livelli[2]) && livello(request.resource.data.livelli[3])
+        && livello(request.resource.data.livelli[4])
+        && request.resource.data.tot == punti(request.resource.data.livelli[0]) + punti(request.resource.data.livelli[1])
+          + punti(request.resource.data.livelli[2]) + punti(request.resource.data.livelli[3]) + punti(request.resource.data.livelli[4])
+        && request.resource.data.ora == request.time
+        && nomeOk(request.resource.data);
+      // Dopo il login si aggiungono nome e foto; il punteggio non si tocca.
+      allow update: if mio(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto'])
+        && nomeOk(request.resource.data);
+    }
+  }
+}

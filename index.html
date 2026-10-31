@@ -83,6 +83,7 @@
       <p class="grande"><span id="fine-totale">0</span><small id="fine-massimo"></small></p></div>
       <p class="fine-frase" id="fine-frase"></p>
       <p class="serie" id="serie"></p>
+      <button class="meglio" id="meglio" data-apri="classifica" hidden></button>
       <ol class="righe" id="righe"></ol>
       <div class="risposte" id="risposte" aria-live="polite"></div>
       <button class="primario" id="condividi">Condividi nella storia</button>
@@ -90,6 +91,7 @@
         <button class="secondario" data-apri="diario-bordo"><span data-icona="diario"></span>Diario</button>
         <button class="secondario" data-apri="passaporto"><span data-icona="passaporto"></span>Passaporto</button>
         <button class="secondario" data-apri="souvenir"><span data-icona="scatola"></span>Souvenir</button>
+        <button class="secondario" data-apri="classifica"><span data-icona="coppa"></span>Classifica</button>
       </div>
       <p class="nota" id="nota-domani">Domani nuove tappe<span id="prossima"></span></p>
       <button class="secondario largo" id="torna-oggi" hidden>Torna alla partita di oggi</button>
@@ -120,7 +122,8 @@
     <button class="oggetto o-passaporto" data-apri="passaporto"><span class="o-icona" data-icona="passaporto"></span><b>Passaporto</b><small id="t-passaporto"></small><i class="bollo" id="t-pass-nuovi" hidden></i></button>
     <button class="oggetto o-souvenir" data-apri="souvenir"><span class="o-icona" data-icona="scatola"></span><b>Souvenir</b><small id="t-souvenir"></small><i class="bollo" id="t-souv-nuovi" hidden></i></button>
     <button class="oggetto o-regole" data-apri="regole"><span class="o-icona" data-icona="biglietto"></span><b>Come si gioca</b><small>Il biglietto con le regole</small></button>
-    <button class="oggetto o-account" disabled><img class="o-icona faccia" src="img/mino-neutro.png" alt=""><b>Il tuo account</b><small>Presto: login, classifica, sfide coi follower</small></button>
+    <button class="oggetto o-classifica" data-apri="classifica"><span class="o-icona" data-icona="coppa"></span><b>Classifica</b><small id="t-classifica">Chi ha fatto meglio oggi</small></button>
+    <button class="oggetto o-account" data-apri="account"><img class="o-icona faccia" id="t-account-foto" src="img/mino-neutro.png" alt="" referrerpolicy="no-referrer"><b id="t-account-nome">Il tuo account</b><small id="t-account">Entra con Google</small></button>
   </div>
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
@@ -174,6 +177,40 @@
   <div id="souv-gruppi"></div>
   <h3 class="q-sotto">Quasi fatto</h3>
   <ol class="quasi" id="souv-quasi"></ol>
+  <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="account" class="quaderno account">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Il tuo account</p></div>
+  <div class="acc-fuori" id="acc-fuori">
+    <img class="faccia acc-mino" src="img/mino-occhiolino.png" alt="" width="56" height="56">
+    <h3 class="acc-titolo">Entra e fatti vedere</h3>
+    <ul class="acc-vantaggi">
+      <li><span data-icona="coppa"></span>Il tuo nickname in classifica, con la foto se vuoi</li>
+      <li><span data-icona="diario"></span>Partite e serie salvate su ogni telefono</li>
+      <li><span data-icona="scatola"></span>Passaporto e souvenir al sicuro</li>
+    </ul>
+    <button class="google" id="acc-google"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.9 6.2C12.4 13.7 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17.1z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.2C1 16.6 0 20.2 0 24s1 7.4 2.6 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.2-8.5 2.2-6.3 0-11.6-4.2-13.5-10l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg><span>Entra con Google</span></button>
+    <p class="acc-nota">In classifica si vede solo il nickname che scegli e, se vuoi, la foto. L'email resta tua.</p>
+  </div>
+  <div class="acc-dentro" id="acc-dentro" hidden>
+    <div class="acc-testa"><img class="acc-foto" id="acc-foto" src="img/mino-neutro.png" alt="" referrerpolicy="no-referrer"><div><p class="etichetta">Giochi come</p><p class="acc-nome" id="acc-nome-vista"></p></div></div>
+    <label class="campo" for="acc-nome"><span>Nickname</span><input id="acc-nome" maxlength="20" autocomplete="nickname" spellcheck="false"></label>
+    <p class="acc-aiuto" id="acc-aiuto">Da 3 a 20 caratteri: lettere, numeri, spazi.</p>
+    <button class="interruttore" id="acc-mostra-foto" aria-pressed="true"><i></i><span>Mostra la mia foto in classifica</span></button>
+    <button class="primario" id="acc-salva">Salva</button>
+    <p class="acc-sync" id="acc-sync">Partite, passaporto e souvenir salvati sull'account</p>
+    <button class="secondario largo" id="acc-esci">Esci dall'account</button>
+  </div>
+  <p class="acc-errore" id="acc-errore" hidden></p>
+  <button class="secondario largo" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="classifica" class="quaderno classifica">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Classifica di oggi</p></div>
+  <p class="cl-data" id="cl-data"></p>
+  <div class="cl-mio" id="cl-mio" aria-live="polite"></div>
+  <ol class="cl-elenco" id="cl-elenco"></ol>
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 

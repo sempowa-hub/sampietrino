@@ -1,0 +1,14 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "punteggi",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "pubblico", "order": "ASCENDING" },
+        { "fieldPath": "tot", "order": "DESCENDING" },
+        { "fieldPath": "ora", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

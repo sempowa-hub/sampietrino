@@ -6,7 +6,8 @@ import {
 import { creaMappa, COLORI_FASCE } from './mappa.js';
 import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
-import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto } from './storico.js';
+import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite } from './storico.js';
+import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, aggiornaNomeInClassifica, classifica } from './conto.js';
 import { aggiornaSouvenir } from './souvenir.js';
 import { creaTaccuino } from './taccuino.js';
 
@@ -80,14 +81,66 @@ async function avvia() {
   // Souvenir gia meritati con lo storico di prima (giocatori della prima ora): arrivano da scartare.
   const st = leggi();
   if (aggiornaSouvenir(st, contesto(st, dati.zone), oggi).length) scrivi(st);
-  taccuino = creaTaccuino({ dati, colori: COLORI_FASCE, suoni, gioca: (d) => apriGiorno(d, true), regole: apriCopertina, giorno: () => giorno });
+  taccuino = creaTaccuino({ dati, colori: COLORI_FASCE, suoni, gioca: (d) => apriGiorno(d, true), regole: apriCopertina, giorno: () => giorno, dopoLogin: sincronizzaConto });
   apriGiorno(oggi, false);
+  // L'account arriva dopo, senza fermare il gioco: anonimo per tutti, con Google le partite si sincronizzano.
+  avviaConto().then(sincronizzaConto);
+  let ultimo = null;
+  quandoCambia((u) => { if (u && !u.anonimo && u.uid !== ultimo) { ultimo = u.uid; sincronizzaConto(); } if (!u || u.anonimo) ultimo = null; });
+}
+
+// Storico del browser <-> account Google. Se la partita di oggi era gia stata giocata su un altro telefono,
+// si riapre quella. Poi il punteggio di oggi (se c'e) prende nome e foto in classifica.
+let sincronizzando = null;
+function sincronizzaConto() {
+  const u = utente();
+  if (!u || u.anonimo) return Promise.resolve();
+  sincronizzando ??= (async () => {
+    try {
+      const s = leggi();
+      const unito = await sincronizza({ ...s, partite: partiteLocali(s) });
+      if (!unito) return;
+      const { partite, ...resto } = unito;
+      const nonIniziata = !stati?.some((x) => x.pin);
+      ripristinaPartite(partite);
+      scrivi({ ...leggi(), ...resto });
+      if (nonIniziata && partite?.[giorno] && !document.querySelector('dialog[open]:not(#copertina)')) {
+        $('copertina').close();
+        apriGiorno(giorno, false);
+      }
+      taccuino.aggiornaSegno();
+      pubblicaOggi();
+      aggiornaNomeInClassifica(oggi);
+    } catch (e) { console.warn('Sincronizzazione non riuscita:', e?.code || e?.message); } finally { sincronizzando = null; }
+  })();
+  return sincronizzando;
+}
+
+// Punteggio di oggi in classifica, una volta sola, e la riga "meglio del X%" nel diario.
+async function pubblicaOggi() {
+  const g = leggi().giorni[oggi];
+  if (!g?.finita || g.recupero || !g.livelli) return;
+  try {
+    if (!g.pubblicato) {
+      if (!(await pubblicaPunteggio(oggi, { tot: g.tot, livelli: g.livelli }))) return;
+      const s = leggi();
+      s.giorni[oggi].pubblicato = true;
+      scrivi(s);
+    }
+    if (giorno !== oggi || $('pagina-diario').hidden) return;
+    const c = await classifica(oggi, 1);
+    if (!c?.mio || giorno !== oggi) return;
+    $('meglio').innerHTML = c.percento != null ? `Meglio del <b>${c.percento}%</b> di chi ha giocato oggi · ${c.posizione}° su ${c.totale}` : `Tra i primi a giocare oggi · ${c.posizione}° su ${c.totale}`;
+    $('meglio').hidden = false;
+  } catch (e) { console.warn('Classifica non raggiunta:', e?.code || e?.message); }
 }
 
 // Apre la partita di un giorno: quella salvata se c'e, altrimenti nuova. Fuori dalla finestra dei
 // 7 giorni si apre solo una partita gia giocata, per rivederne il diario.
 function apriGiorno(data, anima) {
   if (data !== oggi && !giocabile(data) && !leggi().giorni[data]) return;
+  // Giorno finito su un altro telefono e non ancora sincronizzato: niente partita nuova sopra quella vera.
+  if (leggi().giorni[data]?.finita && !partita(data)) return;
   clearInterval(orologio);
   attese.forEach(clearTimeout);
   attese = [];
@@ -482,6 +535,8 @@ function mostraFine(anima) {
   $('diario-titolo').textContent = arretrato ? `Diario del ${dataIt(giorno, { day: 'numeric', month: 'long' })}` : 'Diario di oggi';
   $('serie').textContent = arretrato ? 'Giorno arretrato: non conta per la serie' : n > 1 ? `Serie: ${n} giorni di fila` : n === 1 ? 'Serie: primo giorno. Torna domani!' : '';
   $('nota-domani').hidden = arretrato;
+  $('meglio').hidden = true;
+  if (!arretrato) pubblicaOggi();
   $('torna-oggi').hidden = !arretrato;
   // Souvenir nuovi: i pacchetti arrivano dopo che il diario si e acceso.
   if (anima) programma(() => { if (!document.querySelector('dialog[open]')) taccuino.scartaNuovi(); }, dopo(2200));
@@ -606,9 +661,11 @@ function registra() {
     tot: totale(stati), finita: stati.every((x) => x.pin),
     livelli: stati.map((x) => (x.pin ? (x.pin.fascia ? livelloDi(x.pin.fascia) : -1) : null)),
     ...(recupero ? { recupero: true } : {}),
+    ...(prima?.pubblicato ? { pubblicato: true } : {}),
   };
   aggiornaSouvenir(s, contesto(s, dati.zone), oggi);
   scrivi(s);
+  salvaStorico({ ...s, partite: partiteLocali(s) });
   taccuino?.aggiornaSegno();
 }
 

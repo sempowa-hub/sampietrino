@@ -17,7 +17,9 @@
       "README.md",
       "package.json",
       "package-lock.json",
-      "img/*anteprima*"
+      "img/*anteprima*",
+      "firestore.rules",
+      "firestore.indexes.json"
     ],
     "headers": [
       {
@@ -39,5 +41,9 @@
         ]
       }
     ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }

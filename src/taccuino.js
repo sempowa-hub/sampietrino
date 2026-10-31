@@ -6,6 +6,7 @@ import { pixel } from './pixel.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { SOUVENIR, GRUPPI } from './souvenir.js';
 import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO } from './storico.js';
+import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica } from './conto.js';
 
 const $ = (id) => document.getElementById(id);
 const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV'];
@@ -18,7 +19,7 @@ const ROSSO = '#c43a28';
 const el = (tag, classe, testo) => { const e = document.createElement(tag); if (classe) e.className = classe; if (testo != null) e.textContent = testo; return e; };
 const plurale = (n, uno, tanti) => `${n} ${n === 1 ? uno : tanti}`;
 
-export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno }) {
+export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoLogin }) {
   const zonePerId = Object.fromEntries(dati.zone.map((z) => [z.id, z]));
   const coloreGrado = (g) => (g.livello < 0 ? ROSSO : colori[g.livello]);
   const coloreLiv = (l) => (l == null || l < 0 ? ROSSO : colori[l]);
@@ -29,7 +30,8 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno }) {
 
   // --- Navigazione tra i fogli del taccuino ---
 
-  const PREPARA = { taccuino: preparaTaccuino, 'diario-bordo': preparaDiario, passaporto: preparaPassaporto, souvenir: preparaSouvenir };
+  const FOGLI = ['taccuino', 'diario-bordo', 'passaporto', 'souvenir', 'account', 'classifica'];
+  const PREPARA = { taccuino: preparaTaccuino, 'diario-bordo': preparaDiario, passaporto: preparaPassaporto, souvenir: preparaSouvenir, account: preparaAccount, classifica: preparaClassifica };
   function apri(id, { da = false } = {}) {
     if (id === 'regole') { chiudiTutti(); regole(); return; }
     daTaccuino = da;
@@ -41,9 +43,9 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno }) {
     $(id).scrollTop = 0;
   }
   function chiudiTutti(tranne) {
-    for (const d of ['taccuino', 'diario-bordo', 'passaporto', 'souvenir']) if (d !== tranne && $(d).open) $(d).close();
+    for (const d of FOGLI) if (d !== tranne && $(d).open) $(d).close();
   }
-  for (const d of ['taccuino', 'diario-bordo', 'passaporto', 'souvenir']) {
+  for (const d of FOGLI) {
     const dlg = $(d);
     // Tocco fuori dal foglio: si chiude, come un foglio che torna nel taccuino.
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
@@ -78,6 +80,156 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno }) {
     $('t-pass-nuovi').textContent = nt;
     $('t-souv-nuovi').hidden = !ns;
     $('t-souv-nuovi').textContent = ns;
+    aggiornaConto();
+  }
+
+  // --- Account ---
+
+  // Avatar: la foto Google se il giocatore la mostra, altrimenti la faccia di Mino.
+  const avatar = (img, foto, faccia = 'neutro') => { img.src = foto || `img/mino-${faccia}.png`; img.classList.toggle('faccia', !foto); };
+
+  function aggiornaConto() {
+    const u = utente();
+    const dentro = u && !u.anonimo;
+    avatar($('t-account-foto'), dentro ? u.foto : '', dentro ? 'sorriso' : 'neutro');
+    $('t-account-nome').textContent = dentro ? u.nome || 'Il tuo account' : 'Il tuo account';
+    $('t-account').textContent = dentro ? 'Nickname, foto, partite salvate' : 'Entra con Google';
+  }
+  quandoCambia(() => { aggiornaConto(); if ($('account').open) preparaAccount(); });
+
+  let mostraFoto = true;
+  function preparaAccount() {
+    const u = utente();
+    const dentro = u && !u.anonimo;
+    $('acc-fuori').hidden = dentro;
+    $('acc-dentro').hidden = !dentro;
+    $('acc-errore').hidden = true;
+    if (!dentro) return;
+    mostraFoto = u.mostraFoto;
+    $('acc-nome').value = u.nome;
+    $('acc-nome-vista').textContent = u.nome;
+    avatar($('acc-foto'), mostraFoto ? u.fotoGoogle : '', 'sorriso');
+    $('acc-mostra-foto').setAttribute('aria-pressed', String(mostraFoto));
+    $('acc-mostra-foto').hidden = !u.fotoGoogle;
+    controllaNome();
+  }
+  function errore(testo) { $('acc-errore').textContent = testo; $('acc-errore').hidden = false; }
+  function controllaNome() {
+    const v = $('acc-nome').value;
+    const ok = nomeValido(v);
+    $('acc-aiuto').classList.toggle('no', !ok && v.length > 0);
+    $('acc-aiuto').textContent = ok || !v ? 'Da 3 a 20 caratteri: lettere, numeri, spazi.' : pulisciNome(v).length < 3 ? 'Almeno 3 caratteri.' : 'Solo lettere, numeri, spazi e . _ \' -';
+    $('acc-salva').disabled = !ok;
+  }
+  $('acc-nome').addEventListener('input', controllaNome);
+  $('acc-nome').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !$('acc-salva').disabled) $('acc-salva').click(); });
+  $('acc-mostra-foto').addEventListener('click', () => {
+    mostraFoto = !mostraFoto;
+    $('acc-mostra-foto').setAttribute('aria-pressed', String(mostraFoto));
+    avatar($('acc-foto'), mostraFoto ? utente()?.fotoGoogle : '', 'sorriso');
+    suoni.scegli();
+  });
+  $('acc-salva').addEventListener('click', async () => {
+    const b = $('acc-salva');
+    b.disabled = true;
+    b.textContent = 'Salvo…';
+    try {
+      await salvaProfilo({ nome: $('acc-nome').value.trim(), mostraFoto });
+      await dopoLogin?.();
+      suoni.copia();
+      b.textContent = 'Salvato';
+      setTimeout(() => { b.textContent = 'Salva'; controllaNome(); }, 1200);
+    } catch {
+      b.textContent = 'Salva';
+      b.disabled = false;
+      errore('Non riesco a salvare: controlla la connessione e riprova.');
+    }
+  });
+  $('acc-google').addEventListener('click', async () => {
+    const b = $('acc-google');
+    b.disabled = true;
+    b.querySelector('span').textContent = 'Apro Google…';
+    try {
+      await entraConGoogle();
+      await dopoLogin?.();
+      suoni.souvenir();
+      preparaAccount();
+    } catch (e) {
+      if (e?.code !== 'auth/popup-closed-by-user' && e?.code !== 'auth/cancelled-popup-request') {
+        errore(e?.code === 'auth/popup-blocked' ? 'Il browser ha bloccato la finestra di Google: consentila e riprova.'
+          : e?.code === 'auth/operation-not-allowed' || e?.code === 'auth/configuration-not-found' ? 'Il login con Google non è ancora attivo. Torna tra poco!'
+            : 'Non sono riuscito a entrare: riprova tra un attimo.');
+      }
+    } finally {
+      b.disabled = false;
+      b.querySelector('span').textContent = 'Entra con Google';
+    }
+  });
+  $('acc-esci').addEventListener('click', async () => { await esci(); suoni.annulla(); preparaAccount(); });
+
+  // --- Classifica di oggi ---
+
+  async function preparaClassifica() {
+    $('cl-data').textContent = dataIt(oggi, { weekday: 'long', day: 'numeric', month: 'long' });
+    $('cl-mio').replaceChildren(el('p', 'cl-carico', 'Carico la classifica…'));
+    $('cl-elenco').replaceChildren();
+    let c = null;
+    try { c = await classifica(oggi, 50); } catch (e) { console.warn(e); }
+    if (!c) { $('cl-mio').replaceChildren(el('p', 'cl-carico', 'Classifica non disponibile ora: riprova tra poco.')); return; }
+    const u = utente();
+    const g = leggi().giorni[oggi];
+    const mio = $('cl-mio');
+    mio.replaceChildren();
+    if (c.mio) {
+      const riga = el('p', 'cl-pos');
+      riga.innerHTML = `<b>${c.posizione}°</b> su ${c.totale}`;
+      mio.append(riga);
+      if (c.percento != null) mio.append(el('p', 'cl-meglio', `Meglio del ${c.percento}% di chi ha giocato oggi`));
+      else mio.append(el('p', 'cl-meglio', 'Sei tra i primi a giocare oggi'));
+      if (u?.anonimo || !c.mio.pubblico) {
+        mio.append(el('p', 'cl-nota', 'In classifica compari col tuo nome se entri con Google.'));
+        const b = el('button', 'secondario largo', 'Entra e metti il nome');
+        b.addEventListener('click', () => apri('account', { da: daTaccuino }));
+        mio.append(b);
+      }
+    } else {
+      mio.append(el('p', 'cl-nota', g?.finita && g.recupero ? 'Oggi hai giocato solo partite arretrate: la classifica è per la partita di oggi.' : 'Finisci la partita di oggi per entrare in classifica.'));
+      if (!g?.finita) {
+        const b = el('button', 'primario piccolo', 'Gioca oggi');
+        b.addEventListener('click', () => { chiudiTutti(); gioca(oggi); });
+        mio.append(b);
+      }
+    }
+    const righe = c.righe;
+    if (!righe.length) { $('cl-elenco').replaceChildren(el('li', 'vuoto', 'Ancora nessun nome in classifica oggi: il primo posto è libero.')); return; }
+    let pos = 0, prima = null;
+    $('cl-elenco').replaceChildren(...righe.map((r, k) => {
+      if (r.tot !== prima) { pos = k + 1; prima = r.tot; }
+      const li = el('li');
+      if (r.uid === u?.uid) li.classList.add('io');
+      if (pos <= 3) li.classList.add(`podio-${pos}`);
+      li.style.animationDelay = `${Math.min(k, 15) * 30}ms`;
+      li.append(el('span', 'cl-n', `${pos}`));
+      const img = el('img', 'cl-foto');
+      img.alt = '';
+      img.referrerPolicy = 'no-referrer';
+      img.loading = 'lazy';
+      avatar(img, r.foto, gradoDi(r.tot).faccia);
+      img.addEventListener('error', () => avatar(img, '', gradoDi(r.tot).faccia), { once: true });
+      li.append(img);
+      const nome = el('span', 'cl-nome');
+      nome.append(el('b', null, r.nome || 'Anonimo'));
+      const tappe = el('span', 'cl-tappe');
+      for (const l of r.livelli || []) {
+        const i = el('i');
+        i.style.setProperty('--colore', coloreLiv(l));
+        if (l == null || l < 0) i.classList.add('buca');
+        tappe.append(i);
+      }
+      nome.append(tappe);
+      li.append(nome, el('span', 'cl-tot', r.tot));
+      return li;
+    }));
   }
 
   // --- Diario di bordo: calendario, archivio, statistiche ---
@@ -467,5 +619,6 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno }) {
   }
 
   aggiornaSegno();
-  return { apri, scartaNuovi, aggiornaSegno };
+  avviaConto().then(aggiornaConto);
+  return { apri, scartaNuovi, aggiornaSegno, aggiornaConto };
 }
