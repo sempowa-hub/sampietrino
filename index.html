@@ -18,7 +18,7 @@
 
 <main>
   <section class="domanda" id="domanda">
-    <p class="numero" id="numero"></p>
+    <div class="riga-tappa"><p class="numero" id="numero"></p><p class="tempo" id="tempo" aria-label="secondi rimasti"></p></div>
     <h2 id="testo">Caricamento…</h2>
     <ol class="pin" id="pin"></ol>
   </section>
@@ -44,11 +44,11 @@
 <dialog id="copertina" class="copertina">
   <p class="etichetta-rossa">Diario di bordo · <span id="copertina-data"></span></p>
   <h2 class="titolo-pixel">Sampietrino</h2>
-  <p class="motto">Cinque tappe dentro Roma. Un biglietto a tappa: vale di più la zona giusta che nessuno nomina.</p>
+  <p class="motto">Cinque tappe dentro Roma. Un biglietto a tappa: la zona giusta che nessuno nomina vale 8.</p>
   <ul class="regole">
     <li><b>5</b> tappe</li>
     <li><b>1</b> biglietto a tappa</li>
-    <li><b>8</b> punti la zona più rara</li>
+    <li><b>60</b> secondi a tappa</li>
   </ul>
   <button class="daje" id="daje">DAJE!</button>
   <ol class="scala" id="scala"></ol>
@@ -65,6 +65,7 @@
   <h2>Giro finito</h2>
   <p class="grande"><span id="fine-totale"></span> <small id="fine-massimo"></small></p>
   <pre id="condividi"></pre>
+  <div class="riepilogo" id="riepilogo"></div>
   <button class="primario" id="copia">Copia il risultato</button>
   <p class="nota">Domani nuove domande.</p>
 </dialog>

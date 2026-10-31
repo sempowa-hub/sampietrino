@@ -1,6 +1,7 @@
 """Scarica da OpenStreetMap i luoghi delle categorie in dati/categorie.json.
 
 Metro: le fermate delle relazioni route=subway con la sigla della linea (A, B, B1, C).
+Elenco: un luogo per nome (Fontana di Trevi, Villa Ada...), con la fascia decisa a mano.
 Altre categorie: il filtro Overpass scritto nella categoria.
 Esce dati/fonti/luoghi-osm.geojson: un punto (o una linea, per il Tevere) per luogo,
 con la categoria nelle proprieta.
@@ -55,19 +56,47 @@ def luoghi(filtro):
     return geometrie
 
 
+def da_elenco(elenco):
+    """Un luogo per nome. Se un nome non si trova, lo dice e va avanti: la costruzione lo segnala."""
+    geometrie, mancanti = [], []
+    for voce in elenco:
+        nome = voce['nome'].replace('"', '\\"')
+        filtro = voce.get('osm') or f'nwr["name"~"^{nome}$",i]'
+        trovati = luoghi(filtro)
+        punti = [g for g in trovati if g['type'] == 'Point'] or trovati
+        if not punti:
+            mancanti.append(voce['nome'])
+        for g in punti[:1] if voce.get('uno', True) else punti:
+            g['nome'] = voce['nome']
+            g['fascia'] = voce['fascia']
+            geometrie.append(g)
+        time.sleep(0.5)
+    return geometrie, mancanti
+
+
 def main():
     categorie = json.loads((RADICE / 'dati' / 'categorie.json').read_text())['categorie']
     if not categorie:
         sys.exit('ERRORE: nessuna categoria in dati/categorie.json')
     feature, vuote = [], []
     for c in categorie:
-        trovati = fermate_metro(c['metro']) if 'metro' in c else luoghi(c['osm'])
-        print(f'{c["id"]}: {len(trovati)} luoghi')
+        mancanti = []
+        if 'metro' in c:
+            trovati = fermate_metro(c['metro'])
+        elif 'elenco' in c:
+            trovati, mancanti = da_elenco(c['elenco'])
+        else:
+            trovati = luoghi(c['osm'])
+        print(f'{c["id"]}: {len(trovati)} luoghi' + (f'. NON TROVATI: {", ".join(mancanti)}' if mancanti else ''))
         if not trovati:
             vuote.append(c['id'])
         for g in trovati:
             nome = g.pop('nome')
-            feature.append({'type': 'Feature', 'properties': {'categoria': c['id'], 'nome': nome}, 'geometry': g})
+            proprieta = {'categoria': c['id'], 'nome': nome}
+            if 'fascia' in g:
+                proprieta['fascia'] = g.pop('fascia')
+                proprieta['etichetta'] = nome
+            feature.append({'type': 'Feature', 'properties': proprieta, 'geometry': g})
         time.sleep(1)
     if vuote:
         sys.exit(f'ERRORE: categorie senza nessun luogo: {", ".join(vuote)}. Controlla il filtro in dati/categorie.json')

@@ -240,3 +240,15 @@ pre { background: #1b1b22; padding: 10px; font-family: var(--font-testo); font-s
   .tasti { display: block; margin: 12px 0 0; text-align: center; font-size: 17px; color: var(--sabbia); }
   kbd { font-family: var(--font-testo); background: var(--nero); color: var(--bianco); padding: 0 5px; box-shadow: 0 0 0 2px var(--bianco); }
 }
+
+/* Timer della tappa e colori delle fasce. */
+.riga-tappa { display: flex; justify-content: space-between; align-items: center; }
+.tempo { margin: 0 0 6px; min-width: 52px; text-align: center; padding: 2px 8px; background: var(--nero); color: var(--bianco); font-family: var(--font-pixel); font-weight: 700; font-size: 22px; box-shadow: 0 0 0 2px var(--bianco); }
+.tempo:empty { visibility: hidden; }
+.tempo.poco { background: var(--tetto); animation: pulsa 0.5s steps(2) infinite; }
+.pin li.timbrato { box-shadow: 0 0 0 3px var(--nero), inset 8px 0 0 var(--fascia), 4px 4px 0 3px var(--nero); padding-left: 16px; }
+.scelta.qui { display: inline-block; width: 100%; background: var(--bianco); color: var(--nero); text-shadow: none; font-size: 22px; padding: 4px 8px; text-transform: uppercase; }
+.riepilogo { margin-top: 14px; max-height: 32vh; overflow: auto; text-align: left; }
+.riepilogo details { border-bottom: 2px dotted #3a3a46; padding: 6px 0; }
+.riepilogo summary { cursor: pointer; font-size: 18px; }
+.riepilogo .soluzioni { max-height: none; }

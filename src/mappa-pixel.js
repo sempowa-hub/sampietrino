@@ -1,7 +1,7 @@
 // Mappa di Roma in pixel art: ogni zona diventa un prato, i confini stradine,
-// i confini dei municipi strade grandi, fuori dal Comune il mare con la spiaggia.
-// Una cella della griglia = CELLA km. Alberi e casette sono decisi da un hash
-// della cella: la stessa mappa per tutti, a ogni apertura.
+// i confini dei municipi strade grandi, il Tevere un fiume con gli argini,
+// fuori dal Comune il mare con la spiaggia. Una cella della griglia = CELLA km.
+// La grana del prato viene da un hash della cella: la stessa mappa per tutti.
 
 const CELLA = 0.08;
 
@@ -10,19 +10,22 @@ const COLORI = {
   sabbia: [232, 212, 154],
   campagna: [125, 143, 69], campagnaRiga: [110, 127, 60],
   strada: [205, 182, 139], stradaGrande: [170, 146, 104], stradaAccesa: [255, 210, 63],
-  albero: [47, 107, 42], alberoLuce: [70, 140, 56],
-  tetto: [226, 104, 60], tettoOmbra: [185, 71, 42], muro: [243, 234, 216],
+  fiume: [52, 116, 186], fiumeLuce: [96, 158, 220], argine: [214, 196, 140],
   fiore: [242, 228, 107],
 };
 
 // Prato per stato della zona: [base, macchia].
+// f0-f4 sono le fasce della scala, dalla Scontata alla Da sampietrino: stessi colori dell'interfaccia.
+export const COLORI_FASCE = ['#d4d4cf', '#8fd16a', '#4fb3e8', '#ff9f40', '#ffd23f'];
+const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+const chiaro = (c) => c.map((v) => Math.min(255, v + 22));
 const PRATI = {
   normale: [[99, 165, 66], [113, 180, 76]],
-  scelta: [[255, 206, 63], [255, 226, 120]],
-  giusta: [[143, 209, 106], [163, 221, 127]],
+  scelta: [[255, 255, 255], [235, 235, 228]],
   sbagliata: [[216, 80, 63], [228, 110, 92]],
-  soluzione: [[236, 176, 74], [245, 196, 110]],
+  spento: [[78, 120, 60], [84, 128, 64]],
   bersaglio: [[138, 143, 153], [158, 163, 172]],
+  ...Object.fromEntries(COLORI_FASCE.map((h, i) => [`f${i}`, [rgb(h), chiaro(rgb(h))]])),
 };
 
 function hash(x, y) {
@@ -57,6 +60,23 @@ export function creaMappa(canvas, dati, { onTocca }) {
   const zona = rasterizza(dati.zone.map((z) => z.d), W, H);
   const mun = rasterizza(dati.municipi.map((m) => m.d), W, H);
   const terra = rasterizza([dati.comune], W, H).map((v) => (v === 0 ? 1 : 0));
+  // Il Tevere, se c'e nei dati: una linea larga circa 200 m, con un argine di una cella.
+  const fiume = new Uint8Array(W * H);
+  if (dati.tevere) {
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const fctx = c.getContext('2d', { willReadFrequently: true });
+    fctx.setTransform(1 / CELLA, 0, 0, 1 / CELLA, 0, 0);
+    fctx.strokeStyle = '#fff'; fctx.lineWidth = 0.2; fctx.lineJoin = 'round'; fctx.lineCap = 'round';
+    fctx.stroke(new Path2D(dati.tevere));
+    const px = fctx.getImageData(0, 0, W, H).data;
+    for (let k = 0; k < W * H; k++) if (px[k * 4 + 3] > 100) fiume[k] = 1;
+    for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) {
+      const k = y * W + x;
+      if (fiume[k] !== 1) continue;
+      for (const j of [k - 1, k + 1, k - W, k + W]) if (!fiume[j]) fiume[j] = 2;
+    }
+  }
   const idx = (x, y) => y * W + x;
   const dentro = (x, y) => x >= 0 && y >= 0 && x < W && y < H;
 
@@ -90,33 +110,6 @@ export function creaMappa(canvas, dati, { onTocca }) {
         }
       }
       riva[idx(x, y)] = d;
-    }
-  }
-
-  // Alberi e casette: solo su prato pieno, lontano dalle strade.
-  const decoro = new Uint8Array(W * H); // 1 albero, 2 luce albero, 3 tetto, 4 tetto ombra, 5 muro
-  const libero = (x, y, z) => {
-    for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) {
-      const nx = x + dx, ny = y + dy;
-      if (!dentro(nx, ny)) return false;
-      const j = idx(nx, ny);
-      if (zona[j] !== z || strada[j] || decoro[j]) return false;
-    }
-    return true;
-  };
-  for (let y = 2; y < H - 2; y++) {
-    for (let x = 2; x < W - 2; x++) {
-      const z = zona[idx(x, y)];
-      if (z < 0) continue;
-      const h = hash(x, y) % 1000;
-      if (h < 9 && libero(x, y, z)) {
-        for (const [dx, dy] of [[0, -1], [-1, 0], [0, 0], [1, 0], [0, 1]]) decoro[idx(x + dx, y + dy)] = 1;
-        decoro[idx(x, y - 1)] = 2; decoro[idx(x - 1, y)] = 2;
-      } else if (h >= 9 && h < 14 && libero(x, y, z)) {
-        decoro[idx(x - 1, y - 1)] = 3; decoro[idx(x, y - 1)] = 3; decoro[idx(x + 1, y - 1)] = 3;
-        decoro[idx(x - 1, y)] = 4; decoro[idx(x, y)] = 4; decoro[idx(x + 1, y)] = 4;
-        decoro[idx(x - 1, y + 1)] = 5; decoro[idx(x, y + 1)] = 5; decoro[idx(x + 1, y + 1)] = 5;
-      }
     }
   }
 
@@ -159,14 +152,16 @@ export function creaMappa(canvas, dati, { onTocca }) {
           const d = riva[k];
           c = d === 1 ? COLORI.sabbia : d === 2 ? COLORI.mareChiaro : d === 3 ? COLORI.mare
             : (h % 97 === 0 ? COLORI.luccichio : ((x >> 2) + (y >> 3)) % 7 === 0 ? COLORI.mare : COLORI.mareProfondo);
+        } else if (fiume[k] === 1) {
+          c = h % 13 === 0 ? COLORI.fiumeLuce : COLORI.fiume;
+        } else if (fiume[k] === 2) {
+          c = COLORI.argine;
         } else if (strada[k] === 2) {
           c = accesoIdx >= 0 && mun[k] === accesoIdx ? COLORI.stradaAccesa : COLORI.stradaGrande;
         } else if (strada[k] === 1) {
           c = COLORI.strada;
         } else if (zona[k] < 0) {
           c = (x + y) % 6 === 0 ? COLORI.campagnaRiga : COLORI.campagna;
-        } else if (decoro[k]) {
-          c = [null, COLORI.albero, COLORI.alberoLuce, COLORI.tetto, COLORI.tettoOmbra, COLORI.muro][decoro[k]];
         } else {
           const [pieno, macchia] = statoPerIndice[zona[k]];
           c = h % 1000 < 4 ? COLORI.fiore : h % 11 === 0 ? macchia : pieno;

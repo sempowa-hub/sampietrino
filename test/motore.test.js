@@ -36,6 +36,11 @@ test('pin sbagliato: zero punti, tappa chiusa lo stesso', () => {
   assert.equal(totale([s, pinna(nuovaDomanda(dom), 'e')]), 8);
 });
 
+test('tempo scaduto: pin senza zona, zero punti', () => {
+  const s = pinna(nuovaDomanda(dom), null);
+  assert.deepEqual(s.pin, { zona: null, punti: 0, fascia: null });
+});
+
 test('stesso giorno, stesse 5 domande; giorni diversi possono cambiare', () => {
   const pool = Array.from({ length: 12 }, (_, i) => ({ id: `q${i}`, tipo: `t${i}`, catalogo: { a: 0, b: 1, c: 2, d: 3 } }));
   const ids = (d) => domandeDelGiorno(d, pool).map((q) => q.id).join();

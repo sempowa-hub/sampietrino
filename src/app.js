@@ -2,18 +2,20 @@
 import {
   SCALA, MASSIMO_AL_GIORNO, risposte, nuovaDomanda, pinna, totale, domandeDelGiorno, DOMANDE_AL_GIORNO,
 } from './motore.js';
-import { creaMappa } from './mappa-pixel.js';
+import { creaMappa, COLORI_FASCE } from './mappa-pixel.js';
 
 const $ = (id) => document.getElementById(id);
 
 const oggi = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date());
 const CHIAVE = `sampietrino:${oggi}`;
+const TEMPO = 60; // secondi per tappa
+let orologio = null;
 
 let dati, zonePerId, domande, stati, corrente, selezionata, mappa;
 
 function salva() {
   try {
-    localStorage.setItem(CHIAVE, JSON.stringify({ stati: stati.map((s) => ({ pin: s.pin })), corrente }));
+    localStorage.setItem(CHIAVE, JSON.stringify({ stati: stati.map((s) => ({ pin: s.pin, inizio: s.inizio })), corrente }));
   } catch { /* senza memoria si gioca lo stesso */ }
 }
 
@@ -53,39 +55,51 @@ async function avvia() {
   }
 }
 
+const nomeZona = (id) => (id ? zonePerId[id].nome : 'tempo scaduto');
+const livelloDi = (nomeFascia) => SCALA.findIndex((f) => f.nome === nomeFascia);
+
 function ridisegna() {
   const s = stati[corrente];
   const d = s?.domanda;
   const chiusa = !!s?.pin;
   const pin = s?.pin;
 
-  // Stato di ogni zona. Il bersaglio si mostra solo a tappa chiusa: prima rivelerebbe le risposte.
+  // Stato di ogni zona. A tappa chiusa ogni risposta giusta si accende col colore della sua fascia.
+  // Il bersaglio si mostra solo a tappa chiusa: prima rivelerebbe le risposte.
   const stato = (id) => {
-    if (pin?.zona === id) return pin.fascia ? 'giusta' : 'sbagliata';
-    if (id === selezionata) return 'scelta';
-    if (chiusa && d.evidenzia?.includes(id)) return 'bersaglio';
-    if (chiusa && id in d.catalogo) return 'soluzione';
-    return 'normale';
+    if (chiusa) {
+      if (pin.zona === id && !pin.fascia) return 'sbagliata';
+      if (id in d.catalogo) return `f${d.catalogo[id]}`;
+      if (d.evidenzia?.includes(id)) return 'bersaglio';
+      return 'spento';
+    }
+    return id === selezionata ? 'scelta' : 'normale';
   };
   const etichette = [];
+  if (pin?.zona) etichette.push({ id: pin.zona });
   if (chiusa) for (const id of d.evidenzia || []) etichette.push({ id, inverso: true });
-  if (pin) etichette.push({ id: pin.zona });
+  if (selezionata) etichette.push({ id: selezionata });
   mappa.imposta({ stato, etichette, municipio: chiusa ? d.evidenziaMunicipio : null });
 
   const ol = $('pin');
   ol.replaceChildren();
   const li = document.createElement('li');
   if (!pin) { li.className = 'vuoto'; li.textContent = 'biglietto da timbrare'; }
-  else if (pin.fascia === null) { li.className = 'buca'; li.innerHTML = `<span>${zonePerId[pin.zona].nome}</span><b>buca</b>`; }
-  else li.innerHTML = `<span>${zonePerId[pin.zona].nome} · ${pin.fascia}</span><b>+${pin.punti}</b>`;
-  li.title = pin ? zonePerId[pin.zona].nome : '';
+  else if (pin.fascia === null) { li.className = 'buca'; li.innerHTML = `<span>${nomeZona(pin.zona)}</span><b>buca</b>`; }
+  else {
+    li.innerHTML = `<span>${nomeZona(pin.zona)} · ${pin.fascia}</span><b>+${pin.punti}</b>`;
+    li.style.setProperty('--fascia', COLORI_FASCE[livelloDi(pin.fascia)]);
+    li.classList.add('timbrato');
+  }
+  li.title = pin ? nomeZona(pin.zona) : '';
   ol.appendChild(li);
   $('totale').textContent = totale(stati.slice(0, corrente + 1));
   $('pianta').disabled = !selezionata || chiusa;
   $('scelta').textContent = selezionata
-    ? 'Zona scelta. Il nome lo scopri timbrando'
-    : chiusa ? (pin.fascia ? `${pin.fascia}: +${pin.punti}` : 'Buca: questa tappa vale 0')
+    ? `Qui: ${zonePerId[selezionata].nome}`
+    : chiusa ? (pin.fascia ? `${pin.fascia}: +${pin.punti}` : pin.zona ? 'Buca: questa tappa vale 0' : 'Tempo scaduto: questa tappa vale 0')
       : 'Tocca una zona sulla mappa';
+  $('scelta').classList.toggle('qui', !!selezionata);
 }
 
 function mostraDomanda() {
@@ -97,6 +111,30 @@ function mostraDomanda() {
   mappa.inquadra();
   ridisegna();
   if (s.pin) mostraEsito();
+  else if (!$('copertina').open) avviaOrologio();
+}
+
+// Il tempo parte quando vedi la domanda e sopravvive a una ricarica: ricaricare non regala secondi.
+function avviaOrologio() {
+  const s = stati[corrente];
+  if (!s || s.pin) return;
+  if (!s.inizio) { s.inizio = Date.now(); salva(); }
+  clearInterval(orologio);
+  const scatta = () => {
+    const resto = Math.max(0, TEMPO - Math.floor((Date.now() - s.inizio) / 1000));
+    $('tempo').textContent = resto;
+    $('tempo').classList.toggle('poco', resto <= 10);
+    if (resto === 0) {
+      clearInterval(orologio);
+      selezionata = null;
+      stati[corrente] = pinna(stati[corrente], null);
+      salva();
+      ridisegna();
+      setTimeout(mostraEsito, 400);
+    }
+  };
+  scatta();
+  orologio = setInterval(scatta, 250);
 }
 
 function tocca(id) {
@@ -108,6 +146,7 @@ function tocca(id) {
 
 function pianta() {
   if (!selezionata) return;
+  clearInterval(orologio);
   stati[corrente] = pinna(stati[corrente], selezionata);
   selezionata = null;
   salva();
@@ -117,34 +156,51 @@ function pianta() {
 
 function mostraEsito() {
   const s = stati[corrente];
-  // A tappa chiusa la mappa inquadra la zona (o il municipio) della domanda.
-  mappa.inquadra({ zone: s.domanda.evidenzia || [], municipio: s.domanda.evidenziaMunicipio || null });
+  // La mappa zooma sulla zona timbrata, che si accende del colore della sua fascia.
+  // Buca o tempo scaduto: inquadra la zona della domanda, o tutte le risposte.
+  const fuoco = s.pin.zona && s.pin.fascia ? [s.pin.zona] : [...(s.pin.zona ? [s.pin.zona] : []), ...(s.domanda.evidenzia || [])];
+  mappa.inquadra(fuoco.length || s.domanda.evidenziaMunicipio
+    ? { zone: fuoco, municipio: fuoco.length ? null : s.domanda.evidenziaMunicipio }
+    : { zone: risposte(s.domanda) });
   ridisegna();
-  const nome = zonePerId[s.pin.zona].nome;
-  $('esito-titolo').textContent = s.pin.fascia ? `${s.pin.fascia}!` : 'Buca!';
+  const nome = nomeZona(s.pin.zona);
+  const liv = livelloDi(s.pin.fascia);
+  $('esito-titolo').textContent = s.pin.fascia ? `${s.pin.fascia}!` : s.pin.zona ? 'Buca!' : 'Tempo scaduto!';
+  $('esito-titolo').style.color = s.pin.fascia ? COLORI_FASCE[liv] : '';
   $('esito-testo').textContent = s.pin.fascia
-    ? `${nome}: +${s.pin.punti} sampietrini. Tutte le risposte, fascia per fascia:`
-    : `${nome} non va bene: questa tappa vale 0. Le risposte giuste erano:`;
-  // Il catalogo intero, dalla fascia piu alta alla piu bassa.
+    ? `${nome}: +${s.pin.punti} sampietrini.${perche(s.domanda, s.pin.zona)}`
+    : s.pin.zona ? `${nome} non va bene: questa tappa vale 0.` : 'Niente timbro: questa tappa vale 0.';
+  $('soluzioni').replaceChildren(...catalogoInBlocchi(s.domanda, s.pin.zona));
+  $('esito').showModal();
+}
+
+function perche(domanda, id) {
+  const luoghi = domanda.perche?.[id];
+  return luoghi?.length ? ` Per: ${luoghi.join(', ')}.` : '';
+}
+
+// Il catalogo intero di una domanda, dalla fascia piu alta alla piu bassa, coi luoghi che rendono giusta la zona.
+function catalogoInBlocchi(domanda, tua) {
   const blocchi = [];
   for (let liv = SCALA.length - 1; liv >= 0; liv--) {
-    const zone = risposte(s.domanda).filter((id) => s.domanda.catalogo[id] === liv)
-      .map((id) => zonePerId[id].nome).sort((a, b) => a.localeCompare(b, 'it'));
-    if (!zone.length) continue;
+    const ids = risposte(domanda).filter((id) => domanda.catalogo[id] === liv)
+      .sort((a, b) => zonePerId[a].nome.localeCompare(zonePerId[b].nome, 'it'));
+    if (!ids.length) continue;
     const li = document.createElement('li');
     const titolo = document.createElement('b');
     titolo.textContent = `${SCALA[liv].nome} +${SCALA[liv].punti}`;
+    titolo.style.color = COLORI_FASCE[liv];
     li.append(titolo, document.createElement('br'));
-    for (const [i, n] of zone.entries()) {
+    for (const [i, id] of ids.entries()) {
       const span = document.createElement('span');
-      span.textContent = n + (i < zone.length - 1 ? ', ' : '');
-      if (n === nome) span.className = 'tua';
+      const luoghi = domanda.perche?.[id];
+      span.textContent = zonePerId[id].nome + (luoghi?.length ? ` (${luoghi.join(', ')})` : '') + (i < ids.length - 1 ? ', ' : '');
+      if (id === tua) span.className = 'tua';
       li.append(span);
     }
     blocchi.push(li);
   }
-  $('soluzioni').replaceChildren(...blocchi);
-  $('esito').showModal();
+  return blocchi;
 }
 
 function avanti() {
@@ -160,12 +216,22 @@ function mostraFine() {
   $('totale').textContent = tot;
   $('fine-totale').textContent = tot;
   $('fine-massimo').textContent = `sampietrini su ${MASSIMO_AL_GIORNO}`;
-  const QUADRI = ['⬜', '🟨', '🟧', '🟥', '🟫'];
+  const QUADRI = ['⬜', '🟩', '🟦', '🟧', '🟨'];
   const righe = stati.map((s) => {
-    if (!s.pin?.fascia) return '🕳️ buca';
-    const liv = SCALA.findIndex((f) => f.nome === s.pin.fascia);
-    return `${QUADRI[liv]} ${s.pin.fascia} +${s.pin.punti}`;
+    if (!s.pin?.fascia) return s.pin?.zona ? '🕳️ buca' : '⏱️ tempo scaduto';
+    return `${QUADRI[livelloDi(s.pin.fascia)]} ${s.pin.fascia} +${s.pin.punti}`;
   });
+  // Tutte le risposte che si potevano dare, tappa per tappa.
+  $('riepilogo').replaceChildren(...stati.map((s, i) => {
+    const det = document.createElement('details');
+    const sum = document.createElement('summary');
+    sum.textContent = `${i + 1}. ${s.domanda.testo}: ${nomeZona(s.pin?.zona)} ${s.pin?.fascia ? `+${s.pin.punti}` : '0'}`;
+    const ul = document.createElement('ul');
+    ul.className = 'soluzioni';
+    ul.append(...catalogoInBlocchi(s.domanda, s.pin?.zona));
+    det.append(sum, ul);
+    return det;
+  }));
   $('condividi').textContent = `Diario di Sampietrino ${oggi}\n${righe.join('\n')}\nTotale ${tot}/${MASSIMO_AL_GIORNO}`;
   $('numero').textContent = 'Fine';
   $('testo').textContent = `${tot} sampietrini oggi`;
@@ -203,7 +269,7 @@ new ResizeObserver(() => {
 
 $('piu').addEventListener('click', () => mappa.zoom(1 / 1.5));
 $('meno').addEventListener('click', () => mappa.zoom(1.5));
-$('daje').addEventListener('click', () => $('copertina').close());
+$('daje').addEventListener('click', () => { $('copertina').close(); avviaOrologio(); });
 $('pianta').addEventListener('click', pianta);
 $('avanti').addEventListener('click', avanti);
 $('copia').addEventListener('click', async () => {

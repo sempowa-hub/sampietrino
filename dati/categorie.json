@@ -1,11 +1,59 @@
 {
- "nota": "Una riga per domanda. osm e il filtro Overpass che trova i luoghi; linee vale solo per la metro. Le zone giuste sono quelle che contengono almeno un luogo. Le categorie con verificata false non sono ancora state controllate contro i dati veri.",
+ "nota": "Una riga per domanda. metro: linee della metropolitana. osm: filtro Overpass, le zone giuste contengono almeno un luogo e la fascia viene dalla notorieta della zona. elenco: luoghi per nome, ciascuno con la sua fascia decisa a mano (0 Scontata, 1 Nota, 2 Da romano, 3 Da tassinaro, 4 Da sampietrino); la zona prende la fascia del suo luogo piu scontato. verificata false: non ancora controllata contro i dati veri.",
  "categorie": [
   {"id": "metro-a", "tipo": "metro", "testo": "Una zona con una fermata della Metro A", "metro": ["A"], "verificata": false},
   {"id": "metro-b", "tipo": "metro", "testo": "Una zona con una fermata della Metro B (B1 compresa)", "metro": ["B", "B1"], "verificata": false},
   {"id": "metro-c", "tipo": "metro", "testo": "Una zona con una fermata della Metro C", "metro": ["C"], "verificata": false},
   {"id": "trapizzino", "tipo": "trapizzino", "testo": "Una zona con un Trapizzino", "osm": "nwr[\"name\"~\"trapizzino\",i]", "verificata": false},
   {"id": "tevere", "tipo": "acqua", "testo": "Una zona dove passa il Tevere", "osm": "way[\"waterway\"=\"river\"][\"name\"~\"^(Tevere|Fiume Tevere)$\"]", "verificata": false},
+
+  {"id": "fontane", "tipo": "fontane", "testo": "Una zona con una fontana famosa", "verificata": false, "elenco": [
+   {"nome": "Fontana di Trevi", "fascia": 0},
+   {"nome": "Fontana dei Quattro Fiumi", "fascia": 1},
+   {"nome": "Fontana della Barcaccia", "fascia": 1},
+   {"nome": "Fontana del Tritone", "fascia": 2},
+   {"nome": "Fontana delle Naiadi", "fascia": 2},
+   {"nome": "Fontana delle Tartarughe", "fascia": 3},
+   {"nome": "Fontana dell'Acqua Paola", "fascia": 3},
+   {"nome": "Fontana delle Api", "fascia": 3},
+   {"nome": "Fontana della Botte", "fascia": 4},
+   {"nome": "Fontana delle Anfore", "fascia": 4},
+   {"nome": "Fontana del Mosè", "fascia": 4},
+   {"nome": "Fontana della Terrina", "fascia": 4},
+   {"nome": "Fontana del Facchino", "fascia": 4}
+  ]},
+
+  {"id": "ville", "tipo": "verde", "testo": "Una zona con una villa storica (il parco)", "verificata": false, "elenco": [
+   {"nome": "Villa Borghese", "fascia": 0},
+   {"nome": "Villa Doria Pamphilj", "fascia": 0},
+   {"nome": "Villa Ada", "fascia": 1},
+   {"nome": "Villa Torlonia", "fascia": 1},
+   {"nome": "Villa Celimontana", "fascia": 2},
+   {"nome": "Villa Sciarra", "fascia": 3},
+   {"nome": "Villa Glori", "fascia": 3},
+   {"nome": "Villa Gordiani", "fascia": 4},
+   {"nome": "Villa Lazzaroni", "fascia": 4},
+   {"nome": "Villa Carpegna", "fascia": 4},
+   {"nome": "Villa Chigi", "fascia": 4},
+   {"nome": "Villa Leopardi", "fascia": 4},
+   {"nome": "Villa Fiorelli", "fascia": 4},
+   {"nome": "Villa Paganini", "fascia": 4}
+  ]},
+
+  {"id": "movida", "tipo": "movida", "testo": "Una zona famosa per la movida", "verificata": false, "elenco": [
+   {"nome": "Piazza Trilussa", "fascia": 0},
+   {"nome": "Piazza dell'Immacolata", "fascia": 1},
+   {"nome": "Via del Pigneto", "fascia": 1},
+   {"nome": "Campo de' Fiori", "fascia": 1},
+   {"nome": "Monte Testaccio", "fascia": 2},
+   {"nome": "Piazza della Madonna dei Monti", "fascia": 2},
+   {"nome": "Piazzale di Ponte Milvio", "fascia": 2},
+   {"nome": "Via del Governo Vecchio", "fascia": 3},
+   {"nome": "Via Libetta", "fascia": 3},
+   {"nome": "Piazza dei Mirti", "fascia": 4},
+   {"nome": "Piazza Bologna", "fascia": 4}
+  ]},
+
   {"id": "stazione-fs", "tipo": "treno", "testo": "Una zona con una stazione dei treni", "osm": "node[\"railway\"=\"station\"][\"station\"!=\"subway\"][\"subway\"!=\"yes\"]", "verificata": false},
   {"id": "mercato", "tipo": "mercato", "testo": "Una zona con un mercato rionale", "osm": "nwr[\"amenity\"=\"marketplace\"]", "verificata": false},
   {"id": "ospedale", "tipo": "ospedale", "testo": "Una zona con un ospedale", "osm": "nwr[\"amenity\"=\"hospital\"]", "verificata": false},

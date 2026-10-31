@@ -89,6 +89,13 @@ def cataloga(ids_giusti, notorieta):
     return fasce
 
 
+def percorso_linee(geom, origine):
+    """Path SVG aperto (per il Tevere) in km, stesso riferimento di percorso_svg."""
+    x0, y1 = origine
+    parti = geom.geoms if hasattr(geom, 'geoms') else [geom]
+    return ''.join('M' + 'L'.join(f'{(x - x0) / 1000:.2f} {(y1 - y) / 1000:.2f}' for x, y in p.coords) for p in parti if p.length)
+
+
 def percorso_svg(geom, origine):
     """Path SVG in km, y verso il basso, origine in alto a sinistra."""
     x0, y1 = origine
@@ -214,22 +221,45 @@ def main():
             errore(f'manca {luoghi_file.relative_to(RADICE)}: lancia prima python3 strumenti/scarica_luoghi.py')
         avvisi.append('PROVVISORIO: nessuna domanda di categoria (manca dati/fonti/luoghi-osm.geojson)')
         categorie = []
+    trovati_per_nome = defaultdict(set)
+    tevere_linee = []
     for f in (carica('luoghi-osm.geojson') if luoghi_file.exists() else []):
-        per_categoria[f['properties']['categoria']].append(in_metri(shape(f['geometry'])).buffer(25))
+        pr = f['properties']
+        g = in_metri(shape(f['geometry']))
+        per_categoria[pr['categoria']].append((g.buffer(25), pr.get('fascia'), pr.get('etichetta') or pr.get('nome', '')))
+        trovati_per_nome[pr['categoria']].add(pr.get('etichetta') or pr.get('nome', ''))
+        if pr['categoria'] == 'tevere':
+            tevere_linee.append(g)
     resoconto = []
     for c in categorie:
         luoghi = per_categoria.get(c['id'], [])
         if not luoghi:
             errore(f'categoria {c["id"]}: nessun luogo in luoghi-osm.geojson. Rilancia strumenti/scarica_luoghi.py')
-        tutti = unary_union(luoghi)
-        giuste = sorted(ids[n] for n in nomi if zone[n].intersects(tutti))
-        resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi, {len(giuste)} zone giuste')
-        domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste})
+        if 'elenco' in c:
+            # Elenco di luoghi con la fascia decisa a mano: la zona prende la fascia del suo luogo
+            # piu scontato, e si ricorda quali luoghi la rendono giusta.
+            mancanti = [x['nome'] for x in c['elenco'] if x['nome'] not in trovati_per_nome[c['id']]]
+            if mancanti:
+                resoconto.append(f'  ATTENZIONE {c["id"]}: non trovati in OpenStreetMap: {", ".join(mancanti)}')
+            fasce, perche = {}, defaultdict(list)
+            for g, fascia_luogo, etichetta in luoghi:
+                for n in nomi:
+                    if zone[n].intersects(g):
+                        fasce[ids[n]] = min(fasce.get(ids[n], 4), int(fascia_luogo))
+                        if etichetta not in perche[ids[n]]:
+                            perche[ids[n]].append(etichetta)
+            resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi su {len(c["elenco"])} in elenco, {len(fasce)} zone giuste')
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': dict(perche)})
+        else:
+            tutti = unary_union([g for g, _, _ in luoghi])
+            giuste = sorted(ids[n] for n in nomi if zone[n].intersects(tutti))
+            resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi, {len(giuste)} zone giuste')
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste})
 
     # Catalogo: fascia di ogni risposta, poi le correzioni a mano.
     notorieta_id = {ids[n]: notorieta[n] for n in nomi}
     for d in domande:
-        d['catalogo'] = cataloga(d.pop('risposte'), notorieta_id)
+        d['catalogo'] = d.pop('fasce_a_mano') if 'fasce_a_mano' in d else cataloga(d.pop('risposte'), notorieta_id)
     f_corr = RADICE / 'dati' / 'correzioni-fasce.json'
     correzioni = json.loads(f_corr.read_text()) if f_corr.exists() else {}
     per_id = {d['id']: d for d in domande}
@@ -249,11 +279,11 @@ def main():
     nome_di = {ids[n]: n for n in nomi}
     with CATALOGO_CSV.open('w', newline='') as fcsv:
         w = csv.writer(fcsv)
-        w.writerow(['domanda', 'testo', 'giocabile', 'zona', 'fascia', 'punti'])
+        w.writerow(['domanda', 'testo', 'giocabile', 'zona', 'fascia', 'punti', 'perche'])
         for d in domande:
             ok = 'si' if d in giocabili else 'no'
             for zid, liv in sorted(d['catalogo'].items(), key=lambda kv: (kv[1], nome_di[kv[0]])):
-                w.writerow([d['id'], d['testo'], ok, nome_di[zid], FASCE[liv], PUNTI[liv]])
+                w.writerow([d['id'], d['testo'], ok, nome_di[zid], FASCE[liv], PUNTI[liv], ' / '.join(d.get('perche', {}).get(zid, []))])
 
     if len(giocabili) < 5:
         errore(f'solo {len(giocabili)} domande giocabili su {len(domande)}')
@@ -276,6 +306,7 @@ def main():
         } for n in nomi],
         'domande': giocabili,
         'avvisi': avvisi,
+        'tevere': percorso_linee(unary_union(tevere_linee).intersection(gra.buffer(2000)).simplify(15), origine) if tevere_linee else None,
     }
     USCITA.write_text(json.dumps(dati, ensure_ascii=False, separators=(',', ':')))
 
