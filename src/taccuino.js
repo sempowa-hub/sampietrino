@@ -6,7 +6,7 @@ import { pixel } from './pixel.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { SOUVENIR, GRUPPI } from './souvenir.js';
 import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO, PRIMO_GIORNO } from './storico.js';
-import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica } from './conto.js';
+import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi } from './conto.js';
 
 const $ = (id) => document.getElementById(id);
 const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV'];
@@ -174,14 +174,25 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   });
   $('acc-esci').addEventListener('click', async () => { await esci(); suoni.annulla(); preparaAccount(); });
 
-  // --- Classifica di oggi ---
+  // --- Classifica: oggi e settimana (da lunedi a domenica) ---
+
+  let vista = 'oggi';
+  for (const b of $('cl-schede').querySelectorAll('button')) {
+    b.addEventListener('click', () => { if (vista === b.dataset.cl) return; vista = b.dataset.cl; suoni.scegli(); preparaClassifica(); });
+  }
 
   async function preparaClassifica() {
-    $('cl-data').textContent = dataIt(oggi, { weekday: 'long', day: 'numeric', month: 'long' });
+    for (const b of $('cl-schede').querySelectorAll('button')) b.setAttribute('aria-selected', String(b.dataset.cl === vista));
+    const lunedi = settimanaDi(oggi);
+    const domenica = sposta(lunedi, 6);
+    $('cl-data').textContent = vista === 'oggi' ? dataIt(oggi, { weekday: 'long', day: 'numeric', month: 'long' })
+      : `Dal ${dataIt(lunedi, { day: 'numeric', month: 'long' })} al ${dataIt(domenica, { day: 'numeric', month: 'long' })}`;
     $('cl-mio').replaceChildren(el('p', 'cl-carico', 'Carico la classifica…'));
     $('cl-elenco').replaceChildren();
+    const chiesta = vista;
     let c = null;
-    try { c = await classifica(oggi, 50); } catch (e) { console.warn(e); }
+    try { c = chiesta === 'oggi' ? await classifica(oggi, 50) : await classificaSettimana(oggi, 50); } catch (e) { console.warn(e); }
+    if (chiesta !== vista) return;
     if (!c) { $('cl-mio').replaceChildren(el('p', 'cl-carico', 'Classifica non disponibile ora: riprova tra poco.')); return; }
     const u = utente();
     const g = leggi().giorni[oggi];
@@ -189,11 +200,15 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     mio.replaceChildren();
     if (c.mio) {
       const riga = el('p', 'cl-pos');
-      riga.innerHTML = `<b>${c.posizione}°</b> oggi`;
+      riga.innerHTML = `<b>${c.posizione}°</b> ${chiesta === 'oggi' ? 'oggi' : 'questa settimana'}`;
       mio.append(riga);
-      if (c.percento > 0) mio.append(el('p', 'cl-meglio', `Meglio del ${c.percento}% di chi ha giocato oggi`));
-      else if (c.percento === 0) mio.append(el('p', 'cl-meglio', 'Oggi è andata così: domani se riparte'));
-      else if (c.percento == null) mio.append(el('p', 'cl-meglio', 'Sei tra i primi a giocare oggi'));
+      if (chiesta === 'oggi') {
+        if (c.percento > 0) mio.append(el('p', 'cl-meglio', `Meglio del ${c.percento}% di chi ha giocato oggi`));
+        else if (c.percento === 0) mio.append(el('p', 'cl-meglio', 'Oggi è andata così: domani se riparte'));
+        else mio.append(el('p', 'cl-meglio', 'Sei tra i primi a giocare oggi'));
+      } else {
+        mio.append(el('p', 'cl-meglio', `${c.mio.tot} sampietrini in ${plurale(c.mio.n, 'partita', 'partite')}: ogni giorno che giochi conta`));
+      }
       if (u?.anonimo || !c.mio.pubblico) {
         mio.append(el('p', 'cl-nota', 'In classifica compari col tuo nome se entri con Google.'));
         const b = el('button', 'secondario largo', 'Entra e metti il nome');
@@ -201,17 +216,21 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
         mio.append(b);
       }
     } else {
-      mio.append(el('p', 'cl-nota', g?.finita && g.recupero ? 'Oggi hai giocato solo partite arretrate: la classifica è per la partita di oggi.' : 'Finisci la partita di oggi per entrare in classifica.'));
+      mio.append(el('p', 'cl-nota', g?.finita && g.recupero ? 'Oggi hai giocato solo partite arretrate: la classifica è per la partita del giorno.'
+        : chiesta === 'oggi' ? 'Finisci la partita di oggi per entrare in classifica.' : 'Finisci la partita di oggi per entrare nella classifica della settimana.'));
       if (!g?.finita) {
         const b = el('button', 'primario piccolo', 'Gioca oggi');
         b.addEventListener('click', () => { chiudiTutti(); gioca(oggi); });
         mio.append(b);
       }
     }
-    const righe = c.righe;
-    if (!righe.length) { $('cl-elenco').replaceChildren(el('li', 'vuoto', 'Ancora nessun nome in classifica oggi: il primo posto è libero.')); return; }
+    if (!c.righe.length) {
+      $('cl-elenco').replaceChildren(el('li', 'vuoto', chiesta === 'oggi' ? 'Ancora nessun nome in classifica oggi: il primo posto è libero.' : 'Ancora nessun nome in classifica questa settimana: il primo posto è libero.'));
+      return;
+    }
+    const giorniSettimana = Array.from({ length: 7 }, (_, k) => sposta(lunedi, k));
     let pos = 0, prima = null;
-    $('cl-elenco').replaceChildren(...righe.map((r, k) => {
+    $('cl-elenco').replaceChildren(...c.righe.map((r, k) => {
       if (r.tot !== prima) { pos = k + 1; prima = r.tot; }
       const li = el('li');
       if (r.uid === u?.uid) li.classList.add('io');
@@ -222,17 +241,31 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       img.alt = '';
       img.referrerPolicy = 'no-referrer';
       img.loading = 'lazy';
-      avatar(img, r.foto, gradoDi(r.tot).faccia);
-      img.addEventListener('error', () => avatar(img, '', gradoDi(r.tot).faccia), { once: true });
+      const media = chiesta === 'oggi' ? r.tot : Math.round(r.tot / Math.max(1, r.n));
+      avatar(img, r.foto, gradoDi(media).faccia);
+      img.addEventListener('error', () => avatar(img, '', gradoDi(media).faccia), { once: true });
       li.append(img);
       const nome = el('span', 'cl-nome');
       nome.append(el('b', null, r.nome || 'Anonimo'));
       const tappe = el('span', 'cl-tappe');
-      for (const l of r.livelli || []) {
-        const i = el('i');
-        i.style.setProperty('--colore', coloreLiv(l));
-        if (l == null || l < 0) i.classList.add('buca');
-        tappe.append(i);
+      if (chiesta === 'oggi') {
+        for (const l of r.livelli || []) {
+          const i = el('i');
+          i.style.setProperty('--colore', coloreLiv(l));
+          if (l == null || l < 0) i.classList.add('buca');
+          tappe.append(i);
+        }
+      } else {
+        // Un quadratino per giorno della settimana, col colore del grado di quel giorno.
+        tappe.classList.add('cl-sett');
+        for (const d of giorniSettimana) {
+          const i = el('i');
+          const t = r.giorni?.[d];
+          if (t == null) i.classList.add('vuoto');
+          else { const gr = gradoDi(t); i.style.setProperty('--colore', coloreGrado(gr)); if (gr.livello < 0) i.classList.add('buca'); }
+          i.title = `${dataIt(d, { weekday: 'short', day: 'numeric' })}: ${t ?? 'non giocato'}`;
+          tappe.append(i);
+        }
       }
       nome.append(tappe);
       li.append(nome, el('span', 'cl-tot', r.tot));

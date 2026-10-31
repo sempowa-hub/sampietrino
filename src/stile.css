@@ -861,3 +861,8 @@ body.con-splash { overflow: hidden; }
   .t-archivio .t-nome { padding: 3px 6px; }
 }
 @media (prefers-reduced-motion: reduce) { .splash-fondo canvas { animation: none; transform: translate(-10%, -10%); } }
+
+/* Classifica: schede Oggi / Settimana, un quadratino per giorno nella settimana. */
+.cl-schede { margin: 4px 0 10px; }
+.cl-tappe.cl-sett i { width: 12px; height: 12px; }
+.cl-tappe i.vuoto { background: transparent; box-shadow: inset 0 0 0 1px var(--matita); }

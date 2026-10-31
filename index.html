@@ -226,7 +226,11 @@
 </dialog>
 
 <dialog id="classifica" class="quaderno classifica">
-  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Classifica di oggi</p></div>
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Classifica</p></div>
+  <div class="schede cl-schede" id="cl-schede" role="tablist">
+    <button data-cl="oggi" role="tab">Oggi</button>
+    <button data-cl="settimana" role="tab">Settimana</button>
+  </div>
   <p class="cl-data" id="cl-data"></p>
   <div class="cl-mio" id="cl-mio" aria-live="polite"></div>
   <ol class="cl-elenco" id="cl-elenco"></ol>

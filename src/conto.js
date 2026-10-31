@@ -196,12 +196,61 @@ export async function aggiornaNomeInClassifica(data) {
   const me = utente();
   if (!me || me.anonimo || !me.nome) return false;
   const { fs } = fb;
-  const rif = fs.doc(colPunteggi(data), io.uid);
-  try {
-    if (!(await fs.getDoc(rif)).exists()) return false;
-    await fs.updateDoc(rif, { pubblico: true, nome: me.nome, foto: me.foto });
+  let fatto = false;
+  for (const rif of [fs.doc(colPunteggi(data), io.uid), fs.doc(colSettimana(settimanaDi(data)), io.uid)]) {
+    try {
+      if (!(await fs.getDoc(rif)).exists()) continue;
+      await fs.updateDoc(rif, { pubblico: true, nome: me.nome, foto: me.foto });
+      fatto = true;
+    } catch { /* la prossima volta */ }
+  }
+  return fatto;
+}
+
+// --- Settimana: da lunedi a domenica, somma dei punteggi del giorno ---
+
+// Lunedi della settimana di una data (AAAA-MM-GG).
+export function settimanaDi(data) {
+  const t = Date.parse(`${data}T12:00:00Z`);
+  const dal = (new Date(t).getUTCDay() + 6) % 7;
+  return new Date(t - dal * 864e5).toISOString().slice(0, 10);
+}
+const colSettimana = (lunedi) => fb.fs.collection(fb.db, 'settimane', lunedi, 'punteggi');
+
+// Aggiunge il punteggio di un giorno alla settimana, una volta sola (le regole controllano che sia quello vero).
+export async function pubblicaSettimana(data, tot) {
+  const u = await avviaConto();
+  if (!u) return false;
+  const { fs } = fb;
+  const rif = fs.doc(colSettimana(settimanaDi(data)), io.uid);
+  const me = utente();
+  const chi = { pubblico: !me.anonimo && !!me.nome, nome: me.anonimo ? '' : me.nome, foto: me.anonimo ? '' : me.foto };
+  const prima = await fs.getDoc(rif);
+  if (!prima.exists()) {
+    await fs.setDoc(rif, { giorni: { [data]: tot }, tot, n: 1, ultimo: data, ora: fs.serverTimestamp(), ...chi });
     return true;
-  } catch { return false; }
+  }
+  const v = prima.data();
+  if (data in (v.giorni || {})) return true;
+  await fs.updateDoc(rif, new fs.FieldPath('giorni', data), tot, 'tot', v.tot + tot, 'n', v.n + 1, 'ultimo', data,
+    'ora', fs.serverTimestamp(), 'pubblico', chi.pubblico, 'nome', chi.nome, 'foto', chi.foto);
+  return true;
+}
+
+// Primi n della settimana, la tua riga e quanti hanno giocato.
+export async function classificaSettimana(data, n = 50) {
+  const u = await avviaConto();
+  if (!u) return null;
+  const { fs } = fb;
+  const col = colSettimana(settimanaDi(data));
+  const [primi, mio, tutti] = await Promise.all([
+    fs.getDocs(fs.query(col, fs.where('pubblico', '==', true), fs.orderBy('tot', 'desc'), fs.orderBy('ora', 'asc'), fs.limit(n))),
+    fs.getDoc(fs.doc(col, io.uid)),
+    fs.getCountFromServer(col),
+  ]);
+  let posizione = null;
+  if (mio.exists()) posizione = (await fs.getCountFromServer(fs.query(col, fs.where('tot', '>', mio.data().tot)))).data().count + 1;
+  return { lunedi: settimanaDi(data), righe: primi.docs.map((d) => ({ uid: d.id, ...d.data() })), mio: mio.exists() ? { uid: io.uid, ...mio.data() } : null, posizione, totale: tutti.data().count };
 }
 
 // Primi n della classifica pubblica del giorno, piu la tua riga e quanti hanno giocato.

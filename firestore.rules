@@ -38,5 +38,33 @@ service cloud.firestore {
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto'])
         && nomeOk(request.resource.data);
     }
+
+    // Settimana (da lunedi): la somma dei punteggi del giorno. Ogni giorno si aggiunge una volta sola e deve
+    // valere esattamente quanto il punteggio di quel giorno gia salvato in partite/{data}/punteggi/{uid}.
+    function delGiorno(d, uid) { return get(/databases/$(database)/documents/partite/$(d)/punteggi/$(uid)).data.tot; }
+    function settimanaOk(d, settimana) { return d >= settimana && vicino(d); }
+    match /settimane/{settimana}/punteggi/{uid} {
+      allow read: if true;
+      allow create: if mio(uid)
+        && request.resource.data.keys().hasOnly(['tot', 'giorni', 'n', 'ultimo', 'ora', 'pubblico', 'nome', 'foto'])
+        && settimanaOk(request.resource.data.ultimo, settimana)
+        && request.resource.data.giorni.keys().hasOnly([request.resource.data.ultimo])
+        && request.resource.data.giorni[request.resource.data.ultimo] == delGiorno(request.resource.data.ultimo, uid)
+        && request.resource.data.tot == request.resource.data.giorni[request.resource.data.ultimo]
+        && request.resource.data.n == 1 && request.resource.data.ora == request.time
+        && nomeOk(request.resource.data);
+      allow update: if mio(uid) && (
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto']) && nomeOk(request.resource.data))
+        || (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['tot', 'giorni', 'n', 'ultimo', 'ora', 'pubblico', 'nome', 'foto'])
+          && settimanaOk(request.resource.data.ultimo, settimana)
+          && !(request.resource.data.ultimo in resource.data.giorni)
+          && request.resource.data.giorni.diff(resource.data.giorni).affectedKeys().hasOnly([request.resource.data.ultimo])
+          && request.resource.data.giorni[request.resource.data.ultimo] == delGiorno(request.resource.data.ultimo, uid)
+          && request.resource.data.tot == resource.data.tot + request.resource.data.giorni[request.resource.data.ultimo]
+          && request.resource.data.n == resource.data.n + 1 && request.resource.data.ora == request.time
+          && nomeOk(request.resource.data)
+        ));
+    }
   }
 }

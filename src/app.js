@@ -8,7 +8,7 @@ import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
 import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite, PRIMO_GIORNO, gradoDi } from './storico.js';
 import { disegnaMiniMappa } from './minimappa.js';
-import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, aggiornaNomeInClassifica, classifica } from './conto.js';
+import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, pubblicaSettimana, aggiornaNomeInClassifica, classifica } from './conto.js';
 import { aggiornaSouvenir } from './souvenir.js';
 import { creaTaccuino } from './taccuino.js';
 
@@ -127,6 +127,11 @@ async function pubblicaOggi() {
       if (!(await pubblicaPunteggio(oggi, { tot: g.tot, livelli: g.livelli }))) return;
       const s = leggi();
       s.giorni[oggi].pubblicato = true;
+      scrivi(s);
+    }
+    if (!leggi().giorni[oggi].settimana && (await pubblicaSettimana(oggi, g.tot))) {
+      const s = leggi();
+      s.giorni[oggi].settimana = true;
       scrivi(s);
     }
     if (giorno !== oggi || $('pagina-diario').hidden) return;
@@ -733,6 +738,7 @@ function registra() {
     livelli: stati.map((x) => (x.pin ? (x.pin.fascia ? livelloDi(x.pin.fascia) : -1) : null)),
     ...(recupero ? { recupero: true } : {}),
     ...(prima?.pubblicato ? { pubblicato: true } : {}),
+    ...(prima?.settimana ? { settimana: true } : {}),
   };
   aggiornaSouvenir(s, contesto(s, dati.zone), oggi);
   scrivi(s);
