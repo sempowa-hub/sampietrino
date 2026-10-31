@@ -1,7 +1,10 @@
-/* Caratteri: VT323 (testo, sottile e nitido) e Silkscreen regular (titoli, numeri, bottoni).
-   Licenza SIL OFL 1.1, font/LICENZA-OFL.txt, da Fontsource. */
-@font-face { font-family: 'VT323'; src: url('../font/vt323-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+/* Caratteri: Pixelify Sans (testo, pixel ma fatto per leggere, pesi 400-700) e Silkscreen regular
+   (marchio, numeri grandi, bottoni). Licenza SIL OFL 1.1, font/LICENZA-OFL.txt, da Fontsource. */
+@font-face { font-family: 'Pixelify Sans'; src: url('../font/pixelify-sans-latin-wght-normal.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
 @font-face { font-family: 'Silkscreen'; src: url('../font/silkscreen-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+/* Testo: Pixelify per le lettere, Silkscreen per cifre e segni (nel Pixelify il 5 sembra una S). */
+@font-face { font-family: 'Testo'; src: url('../font/silkscreen-latin-400-normal.woff2') format('woff2'); font-weight: 400 700; unicode-range: U+0030-0039, U+002B; font-display: swap; }
+@font-face { font-family: 'Testo'; src: url('../font/pixelify-sans-latin-wght-normal.woff2') format('woff2'); font-weight: 400 700; unicode-range: U+0000-002A, U+002C-002F, U+003A-FFFF; font-display: swap; }
 
 /* Carta di Roma: crema, inchiostro, cocciopesto. Contrasto da stampa, mai grigio su grigio. */
 :root {
@@ -9,7 +12,7 @@
   --carta-2: #e9dab2;
   --scheda: #fbf4e0;
   --inchiostro: #2a1f16;
-  --inchiostro-2: #574330;
+  --inchiostro-2: #46352a;
   --matita: #a48d66;
   --rosso: #c43a28;
   --rosso-scuro: #8a2414;
@@ -19,8 +22,8 @@
   --f2: #5b8fb8; --f2-t: #255a86;
   --f3: #d0663f; --f3-t: #9c3a17;
   --f4: #e8b33a; --f4-t: #835d00;
-  --font-testo: 'VT323', ui-monospace, 'SF Mono', Menlo, monospace;
-  --font-titolo: 'Silkscreen', 'VT323', ui-monospace, monospace;
+  --font-testo: 'Testo', 'Pixelify Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-titolo: 'Silkscreen', 'Pixelify Sans', ui-monospace, monospace;
   --esce: cubic-bezier(0.22, 1, 0.36, 1);
   --deciso: cubic-bezier(0.16, 1, 0.3, 1);
   --filo: 0 0 0 1px var(--inchiostro);
@@ -36,10 +39,17 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' shape-rendering='crispEdges'%3E%3Crect x='3' y='5' width='1' height='1' fill='%23cdb98e'/%3E%3Crect x='17' y='11' width='1' height='1' fill='%23d9c79f'/%3E%3Crect x='9' y='19' width='1' height='1' fill='%23cdb98e'/%3E%3Crect x='21' y='2' width='1' height='1' fill='%23e0cfa8'/%3E%3C/svg%3E");
   color: var(--inchiostro);
   font-family: var(--font-testo);
-  font-size: 20px;
-  line-height: 1.2;
-  -webkit-font-smoothing: none;
-  font-smooth: never;
+  font-size: 18px;
+  line-height: 1.35;
+  font-synthesis-weight: none;
+  /* La legatura fi del Pixelify esce rotta ("Confini", "fiume"): lettere sempre separate. */
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'clig' 0;
+}
+button, input { font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'clig' 0; }
+/* Etichette in maiuscolo: Pixelify a peso pieno, leggibile anche piccola. */
+.numero, .biglietto-etichetta, .c-tappa, .etichetta, .risposte .fascia h3, .cassa small {
+  font-family: var(--font-testo) !important; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase;
 }
 
 button { font-family: var(--font-titolo); cursor: pointer; color: inherit; }
@@ -72,17 +82,29 @@ button:focus-visible { outline: 2px solid var(--rosso); outline-offset: 3px; }
   transition: transform 80ms steps(2), box-shadow 80ms steps(2);
 }
 .zoom button:active { transform: translateY(2px); box-shadow: var(--filo); }
-.attribuzione { position: absolute; right: 0; top: 0; margin: 0; padding: 1px 6px; background: var(--scheda); font-size: 14px; color: var(--inchiostro-2); box-shadow: var(--filo); }
+.attribuzione { position: absolute; right: 0; top: 0; margin: 0; padding: 2px 7px; background: var(--scheda); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; color: var(--inchiostro-2); box-shadow: var(--filo); }
 
 /* Il foglio di bordo: testata, tappe, la pagina del momento. */
 .foglio { display: contents; }
 .testata { order: -2; display: flex; justify-content: space-between; align-items: center; padding: 10px 0 4px; }
 .marchio h1 { font-family: var(--font-titolo); font-weight: 400; font-size: 24px; letter-spacing: 0.06em; text-transform: uppercase; margin: 0; line-height: 1; }
-.data { margin: 4px 0 0; font-size: 17px; color: var(--inchiostro-2); }
+.data { margin: 5px 0 0; font-size: 15px; color: var(--inchiostro-2); }
 .cassa { display: flex; flex-direction: column; align-items: flex-end; line-height: 1; }
 .cassa span { font-family: var(--font-titolo); font-size: 30px; display: inline-block; }
 .cassa span.scatto { animation: scatto 360ms var(--deciso); }
-.cassa small { font-size: 15px; color: var(--inchiostro-2); letter-spacing: 0.06em; text-transform: uppercase; }
+.cassa small { font-size: 12px; color: var(--inchiostro-2); }
+.testata { gap: 12px; }
+.marchio { margin-right: auto; }
+.suono {
+  width: 36px; height: 36px; display: grid; place-items: center; border: none;
+  background: var(--scheda); box-shadow: var(--ombra); color: var(--inchiostro);
+  transition: transform 90ms steps(2), box-shadow 90ms steps(2);
+}
+.suono:active { transform: translateY(2px); box-shadow: var(--filo); }
+.suono .croce { display: none; }
+.suono[aria-pressed='false'] .onde { display: none; }
+.suono[aria-pressed='false'] .croce { display: block; }
+.suono[aria-pressed='false'] { color: var(--rosso); }
 
 .tappe { order: -1; list-style: none; display: flex; gap: 6px; margin: 4px 0 2px; padding: 0; }
 .tappe li {
@@ -106,7 +128,7 @@ button:focus-visible { outline: 2px solid var(--rosso); outline-offset: 3px; }
 .pagina.entra > *:nth-child(7) { animation-delay: 300ms; }
 
 .riga-tappa { display: flex; justify-content: space-between; align-items: baseline; }
-.numero { margin: 0; font-family: var(--font-titolo); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rosso); }
+.numero { margin: 0; font-size: 13px; color: var(--rosso); }
 .tempo { margin: 0; font-family: var(--font-titolo); font-size: 22px; line-height: 1; min-width: 2ch; text-align: right; }
 .tempo.poco { color: var(--rosso); animation: lampeggia-testo 500ms steps(1) infinite; }
 .clessidra {
@@ -127,8 +149,8 @@ button:focus-visible { outline: 2px solid var(--rosso); outline-offset: 3px; }
 .clessidra.meta i { background: var(--f4); }
 .clessidra.poco i { background: var(--rosso); }
 
-.testo { font-family: var(--font-testo); font-weight: 400; font-size: 32px; line-height: 1.02; margin: 0 0 14px; text-wrap: balance; }
-.testo.piccolo { font-size: 24px; color: var(--inchiostro-2); margin-bottom: 12px; }
+.testo { font-family: var(--font-testo); font-weight: 500; font-size: 28px; line-height: 1.15; margin: 0 0 14px; text-wrap: balance; }
+.testo.piccolo { font-size: 19px; font-weight: 500; color: var(--inchiostro-2); margin-bottom: 12px; }
 
 /* Il biglietto: la zona scelta, da timbrare. */
 .biglietto {
@@ -145,9 +167,9 @@ button:focus-visible { outline: 2px solid var(--rosso); outline-offset: 3px; }
 }
 .biglietto::before { left: -6px; }
 .biglietto::after { right: -6px; }
-.biglietto-etichetta { margin: 0 0 4px; font-family: var(--font-titolo); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--inchiostro-2); }
-.scelta { margin: 0; font-size: 28px; line-height: 1; min-height: 28px; color: var(--matita); }
-.scelta.qui { color: var(--inchiostro); text-transform: uppercase; letter-spacing: 0.04em; animation: battuta 220ms var(--deciso); }
+.biglietto-etichetta { margin: 0 0 4px; font-size: 12px; color: var(--inchiostro-2); }
+.scelta { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.15; min-height: 26px; color: #8a7556; }
+.scelta.qui { color: var(--inchiostro); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; animation: battuta 220ms var(--deciso); }
 .biglietto.timbrato { animation: punzona 260ms var(--deciso); }
 
 .primario {
@@ -167,16 +189,17 @@ button:focus-visible { outline: 2px solid var(--rosso); outline-offset: 3px; }
 .primario:hover:not(:disabled) { background: #d4452f; }
 .primario:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 0 0 1px var(--inchiostro), 0 1px 0 1px var(--inchiostro); }
 .primario:disabled { background: var(--scheda); color: var(--matita); box-shadow: 0 0 0 1px var(--matita); cursor: default; }
-.tasti { display: none; margin: 12px 0 0; text-align: center; font-size: 17px; color: var(--inchiostro-2); }
-kbd { font-family: var(--font-testo); font-size: 15px; padding: 0 5px; background: var(--scheda); box-shadow: var(--filo); }
+.tasti { display: none; margin: 12px 0 0; text-align: center; font-size: 14px; color: var(--inchiostro-2); }
+kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding: 1px 5px; background: var(--scheda); box-shadow: var(--filo); }
 
 /* Timbro: fascia scritta dentro un doppio filo del suo colore, un po' storta. */
 .timbro {
   display: inline-block;
-  padding: 3px 9px 2px;
-  font-family: var(--font-titolo);
+  padding: 3px 10px 2px;
+  font-family: var(--font-testo);
+  font-weight: 650;
   font-size: 15px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--colore-t, var(--inchiostro));
   box-shadow: 0 0 0 2px currentColor, 0 0 0 4px var(--scheda), 0 0 0 5px currentColor;
@@ -197,52 +220,62 @@ kbd { font-family: var(--font-testo); font-size: 15px; padding: 0 5px; backgroun
 }
 .cartellino[hidden] { display: none; }
 .cartellino.entra { animation: cartellino 460ms var(--esce) both; }
-.cartellino.entra .timbro { animation: timbra 300ms var(--deciso) 420ms both; }
-.cartellino.entra .c-punti { animation: entra 300ms var(--esce) 620ms both; }
-.cartellino.buca.entra { animation: cartellino 460ms var(--esce) both, scuoti 360ms steps(6) 700ms; }
-.c-tappa { margin: 0; font-family: var(--font-titolo); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rosso); }
+/* Attesa: il nome c'e, la fascia no. Tre puntini che pulsano finche il sampietrino non tocca terra. */
+.c-attesa { display: none; gap: 8px; height: 30px; align-items: center; }
+.c-attesa i { width: 7px; height: 7px; background: var(--inchiostro); animation: puntino 900ms steps(1) infinite; }
+.c-attesa i:nth-child(2) { animation-delay: 150ms; }
+.c-attesa i:nth-child(3) { animation-delay: 300ms; }
+.cartellino.attesa .c-attesa { display: flex; }
+.cartellino.attesa .timbro, .cartellino.attesa .c-punti { display: none; }
+.cartellino.attesa .c-zona { animation: battuta 300ms var(--deciso) 150ms both; }
+.cartellino.rivelato .timbro { animation: timbra 340ms var(--deciso) both; }
+.cartellino.rivelato .c-punti { animation: entra 300ms var(--esce) 220ms both; }
+.cartellino.rivelato { animation: sobbalzo 300ms var(--deciso) 120ms; }
+.cartellino.buca.rivelato { animation: scuoti 360ms steps(6) 260ms; }
+.c-tappa { margin: 0; font-size: 12px; color: var(--rosso); }
 .c-zona { margin: 4px 0 10px; font-family: var(--font-titolo); font-size: 26px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; }
 .c-riga { display: flex; align-items: center; justify-content: center; gap: 18px; }
 .c-punti { font-family: var(--font-titolo); font-size: 22px; color: var(--colore-t, var(--inchiostro)); }
 
 /* Esito nel foglio: perche e giusta, e avanti. */
 .esito-scheda { background: var(--scheda); box-shadow: var(--filo); padding: 12px 14px; margin: 0 0 12px; }
-.esito-zona { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 6px; font-size: 26px; text-transform: uppercase; }
-.esito-zona .timbro { font-size: 12px; }
-.esito-perche { margin: 0; font-size: 20px; color: var(--inchiostro-2); }
+.esito-zona { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 10px; font-size: 22px; font-weight: 600; text-transform: uppercase; }
+.esito-zona .timbro { font-size: 14px; }
+.esito-perche { margin: 0; font-size: 17px; line-height: 1.4; }
+.esito-perche b { font-weight: 650; }
 .esito-perche:empty { display: none; }
-.esito-nota { margin: 0 0 14px; font-size: 19px; color: var(--inchiostro-2); }
+.esito-nota { margin: 0 0 14px; font-size: 16px; line-height: 1.4; color: var(--inchiostro-2); }
 .esito-nota:empty { display: none; }
 
 /* Diario: totale, le cinque tappe coi timbri, le risposte della tappa aperta. */
 .grande { font-family: var(--font-titolo); font-size: 56px; line-height: 1; margin: 6px 0 2px; }
-.grande small { font-family: var(--font-testo); font-size: 22px; color: var(--inchiostro-2); margin-left: 6px; }
-.fine-frase { margin: 0 0 12px; font-size: 20px; color: var(--inchiostro-2); }
+.grande small { font-family: var(--font-testo); font-size: 20px; font-weight: 500; color: var(--inchiostro-2); margin-left: 6px; }
+.fine-frase { margin: 0 0 12px; font-size: 17px; font-weight: 500; }
 .righe { list-style: none; margin: 0 0 12px; padding: 0; box-shadow: var(--filo); background: var(--scheda); }
 .righe li + li { border-top: 1px dashed var(--matita); }
 .righe button {
   display: grid; grid-template-columns: 22px 1fr auto; gap: 2px 10px; align-items: center;
   width: 100%; padding: 9px 12px; border: none; background: transparent; text-align: left;
-  font-family: var(--font-testo); font-size: 18px;
+  font-family: var(--font-testo); font-size: 16px;
   transition: background-color 160ms;
 }
 .righe button:hover { background: rgba(196, 58, 40, 0.06); }
 .righe button[aria-expanded='true'] { background: rgba(42, 31, 22, 0.06); }
 .righe .n { font-family: var(--font-titolo); font-size: 14px; grid-row: span 2; }
-.righe .d { color: var(--inchiostro-2); font-size: 16px; line-height: 1.05; }
-.righe .z { font-size: 21px; display: flex; gap: 10px; align-items: center; }
-.righe .z .timbro { font-size: 11px; padding: 2px 6px 1px; }
+.righe .d { color: var(--inchiostro-2); font-size: 14px; line-height: 1.25; }
+.righe .z { font-size: 18px; font-weight: 600; display: flex; gap: 12px; align-items: center; margin-top: 3px; }
+.righe .z .timbro { font-size: 12px; padding: 2px 7px 1px; }
 .righe .p { font-family: var(--font-titolo); font-size: 15px; grid-row: span 2; color: var(--colore-t, var(--inchiostro)); }
 .risposte { margin: 0 0 14px; }
 .risposte:empty { display: none; }
 .risposte .fascia { margin: 0 0 8px; animation: entra 360ms var(--esce) both; }
-.risposte .fascia h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 2px; font-family: var(--font-titolo); font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--colore-t); }
+.risposte .fascia h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 3px; font-size: 13px; color: var(--colore-t); }
 .risposte .fascia h3 i { width: 12px; height: 12px; background: var(--colore); box-shadow: var(--filo); }
-.risposte .fascia h3 b { margin-left: auto; font-weight: 400; }
-.risposte .fascia p { margin: 0; font-size: 19px; line-height: 1.15; }
+.risposte .fascia h3 b { margin-left: auto; }
+.risposte .fascia p { margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4; }
 .risposte .tua { color: var(--rosso); text-decoration: underline; text-underline-offset: 3px; }
-.risposte .luoghi { color: var(--inchiostro-2); }
-.nota { margin: 10px 0 0; text-align: center; font-size: 17px; color: var(--inchiostro-2); }
+.risposte .luoghi { color: var(--inchiostro-2); font-weight: 400; }
+.nota { margin: 10px 0 0; text-align: center; font-size: 14px; color: var(--inchiostro-2); }
 
 /* Copertina del giorno. */
 dialog {
@@ -261,15 +294,15 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
 .copertina > :nth-child(4) { animation-delay: 200ms; }
 .copertina > :nth-child(5) { animation-delay: 260ms; }
 .copertina > :nth-child(6) { animation-delay: 320ms; }
-.etichetta { margin: 0; font-family: var(--font-titolo); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rosso); }
+.etichetta { margin: 0; font-size: 12px; color: var(--rosso); }
 .titolo { font-family: var(--font-titolo); font-weight: 400; font-size: clamp(30px, 9vw, 44px); letter-spacing: 0.04em; text-transform: uppercase; margin: 12px 0 10px; white-space: nowrap; }
-.motto { font-size: 22px; line-height: 1.12; margin: 0 0 18px; text-wrap: balance; }
+.motto { font-size: 18px; font-weight: 500; line-height: 1.35; margin: 0 0 18px; text-wrap: balance; }
 .regole { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: 0; margin: 0 0 18px; box-shadow: var(--filo); }
-.regole li { padding: 10px 4px 8px; font-size: 17px; line-height: 1.05; }
+.regole li { padding: 10px 4px 8px; font-size: 14px; line-height: 1.2; }
 .regole li + li { box-shadow: -1px 0 0 var(--inchiostro); }
 .regole b { display: block; font-family: var(--font-titolo); font-weight: 400; font-size: 28px; margin-bottom: 2px; }
 .scala { list-style: none; padding: 0; margin: 0 0 20px; text-align: left; }
-.scala li { display: flex; align-items: center; gap: 10px; padding: 4px 2px; font-size: 20px; border-bottom: 1px dashed var(--matita); }
+.scala li { display: flex; align-items: center; gap: 10px; padding: 5px 2px; font-size: 16px; font-weight: 500; border-bottom: 1px dashed var(--matita); }
 .scala li i { width: 14px; height: 14px; background: var(--colore); box-shadow: var(--filo); }
 .scala li b { margin-left: auto; font-family: var(--font-titolo); font-weight: 400; font-size: 15px; color: var(--colore-t); }
 .daje { font-size: 26px; min-height: 60px; }
@@ -280,7 +313,9 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
 @keyframes cartellino { from { opacity: 0; transform: translate(-50%, 28px) scale(0.96); } to { opacity: 1; transform: translate(-50%, 0); } }
 @keyframes cartellino-dialog { from { opacity: 0; transform: translateY(24px) scale(0.97); } }
 @keyframes timbra { 0% { opacity: 0; transform: scale(2.4) rotate(-14deg); } 70% { opacity: 1; transform: scale(0.94) rotate(-3deg); } 100% { opacity: 1; transform: scale(1) rotate(-3deg); } }
-@keyframes scuoti { 0%, 100% { margin-left: 0; } 20%, 60% { margin-left: -4px; } 40%, 80% { margin-left: 4px; } }
+@keyframes puntino { 0%, 100% { opacity: 1; transform: none; } 50% { opacity: 0.25; transform: translateY(-3px); } }
+@keyframes sobbalzo { 0% { transform: translateX(-50%); } 35% { transform: translate(-50%, 3px) scale(0.985); } 100% { transform: translateX(-50%); } }
+@keyframes scuoti { 0%, 100% { transform: translateX(-50%); } 20%, 60% { transform: translateX(calc(-50% - 5px)); } 40%, 80% { transform: translateX(calc(-50% + 5px)); } }
 @keyframes punzona { 0% { transform: none; } 40% { transform: translateY(2px) scale(0.985); } 100% { transform: none; } }
 @keyframes battuta { from { opacity: 0.2; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @keyframes scatto { 0% { transform: none; } 30% { transform: translateY(-4px) scale(1.12); } 100% { transform: none; } }
@@ -306,9 +341,9 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
 
 /* Telefono basso: meno aria. */
 @media (max-width: 899px) and (max-height: 760px) {
-  .testo { font-size: 26px; margin-bottom: 10px; }
+  .testo { font-size: 23px; margin-bottom: 10px; }
   .biglietto { padding: 8px 12px 10px; margin-bottom: 10px; }
-  .scelta { font-size: 24px; min-height: 24px; }
+  .scelta { font-size: 20px; min-height: 23px; }
   .primario { min-height: 48px; padding: 10px; }
   .clessidra { margin: 6px 0 8px; }
 }
@@ -335,7 +370,7 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
   .tappe { margin: 0; padding: 12px 18px; border-bottom: 1px solid var(--inchiostro); }
   .pagina { padding: 18px; display: flex; flex-direction: column; flex: 1; }
   .pagina[hidden] { display: none; }
-  .testo { font-size: 38px; }
+  .testo { font-size: 32px; }
   .biglietto { margin-top: auto; }
   #pagina-tappa .primario { margin-top: 0; }
   #pagina-esito .primario { margin-top: auto; }

@@ -249,7 +249,8 @@ def main():
                         if etichetta not in perche[ids[n]]:
                             perche[ids[n]].append(etichetta)
             resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi su {len(c["elenco"])} in elenco, {len(fasce)} zone giuste')
-            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': dict(perche)})
+            domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'fasce_a_mano': fasce, 'perche': dict(perche),
+                            '_luoghi': [(e, g.centroid) for g, _, e in luoghi]})
         else:
             tutti = unary_union([g for g, _, _ in luoghi])
             giuste = sorted(ids[n] for n in nomi if zone[n].intersects(tutti))
@@ -265,6 +266,7 @@ def main():
                         perche[ids[n]] = trovati[:3] + (['...'] if len(trovati) > 3 else [])
             resoconto.append(f'  {c["id"]}: {len(luoghi)} luoghi, {len(giuste)} zone giuste')
             domande.append({'id': c['id'], 'tipo': c['tipo'], 'testo': c['testo'], 'risposte': giuste,
+                            **({} if c['tipo'] == 'acqua' else {'_luoghi': [(e, g.centroid) for g, _, e in luoghi]}),
                             **({'perche': perche} if perche else {})})
 
     # Catalogo: fascia di ogni risposta, poi le correzioni a mano.
@@ -308,6 +310,19 @@ def main():
     bordo_gra = gra.boundary.buffer(5)
     rete_mun = unary_union([m.boundary for m in municipi.values() if m.area]).difference(bordo_gra)
     rete_zone = unary_union([z.boundary for z in zone.values()]).difference(bordo_gra).difference(rete_mun.buffer(5))
+    # Luoghi di ogni domanda in km, per spiegare una risposta sbagliata ("il piu vicino e...").
+    # Stesso nome entro 300 m = stesso luogo (le fermate hanno banchina e punto di fermata).
+    for d in giocabili:
+        visti, punti = [], []
+        for nome, c in d.pop('_luoghi', []):
+            if not nome or any(n == nome and c.distance(v) < 300 for n, v in visti):
+                continue
+            visti.append((nome, c))
+            punti.append([nome, round((c.x - minx) / 1000, 2), round((maxy - c.y) / 1000, 2)])
+        if punti:
+            d['luoghi'] = punti
+    for d in domande:
+        d.pop('_luoghi', None)
     dati = {
         'nota': 'Generato da strumenti/costruisci.py. Non modificare a mano. Confini: OpenStreetMap (ODbL), vecchia suddivisione toponomastica. Solo dentro il GRA.',
         'attribuzione': 'Confini © OpenStreetMap contributors',
@@ -320,6 +335,7 @@ def main():
             'km2': round(zone[n].area / 1e6, 1), 'd': percorso_svg(semplifica(zone[n]), origine),
             'centro': [round((zone[n].representative_point().x - minx) / 1000, 2),
                        round((maxy - zone[n].representative_point().y) / 1000, 2)],
+            'vicini': sorted(ids[v] for v in vicini[n]),
         } for n in nomi],
         'domande': giocabili,
         'avvisi': avvisi,

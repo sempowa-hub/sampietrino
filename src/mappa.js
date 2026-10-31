@@ -32,12 +32,14 @@ const TINTE = {
   spento: [218, 212, 188],
   sbagliata: sbiadisci(C.scelta, 0.6),
   bersaglio: [204, 197, 172],
+  attesa: [232, 220, 188],
   ...Object.fromEntries(COLORI_FASCE.map((h, i) => [`f${i}`, rgb(h)])),
   ...Object.fromEntries(COLORI_FASCE.map((h, i) => [`r${i}`, sbiadisci(rgb(h), 0.62)])),
 };
 // Contorni pieni: [orlo interno, filo]. Il filo e la tinta scurita.
 const CONTORNI = {
   scelta: [C.scelta, C.sceltaScura],
+  attesa: [[120, 98, 70], [42, 31, 22]],
   sbagliata: [C.scelta, C.sceltaScura],
   ...Object.fromEntries(COLORI_FASCE.map((h, i) => [`r${i}`, [rgb(h), luce(rgb(h), -75)]])),
 };
@@ -84,7 +86,8 @@ const TRATTEGGIO = motivo(8, (g, l) => {
   for (let i = 0; i < l; i++) g.fillRect(i, l - 1 - i, 1, 1);
 });
 
-export function creaMappa(canvas, dati, { onTocca }) {
+// onSopra(id): il mouse e entrato in una zona sceglibile (per il suono).
+export function creaMappa(canvas, dati, { onTocca, onSopra = () => {} }) {
   const [LW, LH] = dati.dimensioni;
   const N = dati.zone.length;
   const ctx = canvas.getContext('2d');
@@ -311,8 +314,9 @@ export function creaMappa(canvas, dati, { onTocca }) {
     }
 
     // Cartellini: carta, filo d'inchiostro, ombra piena. Entrano con un piccolo scatto.
-    const fs = Math.round(19 * dpr);
-    ctx.font = `${fs}px VT323, monospace`;
+    const fs = Math.round(14 * dpr);
+    ctx.font = `600 ${fs}px 'Pixelify Sans', sans-serif`;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = `${dpr}px`;
     ctx.textBaseline = 'middle';
     const messi = [];
     for (const e of etichette) {
@@ -325,7 +329,7 @@ export function creaMappa(canvas, dati, { onTocca }) {
       const testo = z.nome.toUpperCase();
       const conPin = pins.some((p) => p.id === e.id);
       const tx = ox + z.centro[0] * s, ty = oy + z.centro[1] * s - (conPin ? 40 * dpr : 0);
-      const w = (ctx.measureText(testo).width + (e.colore ? 26 : 14) * dpr) * k, h = (fs + 6 * dpr) * k;
+      const w = (ctx.measureText(testo).width + (e.colore ? 28 : 16) * dpr) * k, h = (fs + 11 * dpr) * k;
       const box = [Math.round(tx - w / 2), Math.round(ty - h / 2), Math.round(w), Math.round(h)];
       if (messi.some((b) => box[0] < b[0] + b[2] && box[0] + box[2] > b[0] && box[1] < b[1] + b[3] && box[1] + box[3] > b[1])) continue;
       messi.push(box);
@@ -348,6 +352,7 @@ export function creaMappa(canvas, dati, { onTocca }) {
       else ctx.fillText(testo, Math.round(x0), Math.round(box[1] + box[3] / 2 + dpr));
       ctx.globalAlpha = 1;
     }
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
 
     // Scala grafica in basso a destra: un chilometro (o 500 m da vicino), a pixel.
     const passoKm = s / dpr > 260 ? 0.5 : 1;
@@ -360,7 +365,7 @@ export function creaMappa(canvas, dati, { onTocca }) {
       ctx.fillRect(x0, y0 - 4 * l, l * 2, 6 * l);
       ctx.fillRect(x1 - 2 * l, y0 - 4 * l, l * 2, 6 * l);
       ctx.fillRect(x0 + Math.round(km / 2) - l, y0 - 2 * l, l * 2, 4 * l);
-      ctx.font = `${Math.round(16 * dpr)}px VT323, monospace`;
+      ctx.font = `600 ${Math.round(12 * dpr)}px 'Pixelify Sans', sans-serif`;
       ctx.textBaseline = 'bottom';
       ctx.fillText(passoKm === 1 ? '1 KM' : '500 M', x0, y0 - 5 * l);
     }
@@ -422,7 +427,7 @@ export function creaMappa(canvas, dati, { onTocca }) {
     for (let i = 0; i < N; i++) if (!macchia[i]) tinta[i] = tintaDi(i);
     canvas.style.cursor = z >= 0 && sceglibile ? 'pointer' : 'grab';
     etichette = etichette.filter((e) => !e.sopra);
-    if (z >= 0 && sceglibile && z !== scelta) etichette.push({ id: dati.zone[z].id, sopra: true, t0: ora() });
+    if (z >= 0 && sceglibile && z !== scelta) { etichette.push({ id: dati.zone[z].id, sopra: true, t0: ora() }); onSopra(dati.zone[z].id); }
     richiedi();
   }
 
@@ -495,7 +500,8 @@ export function creaMappa(canvas, dati, { onTocca }) {
   richiedi();
 
   return {
-    // stato: id -> normale | scelta | sbagliata | spento | bersaglio | f0-f4 | r0-r4.
+    // stato: id -> normale | scelta | attesa | sbagliata | spento | bersaglio | f0-f4 | r0-r4.
+    // selezione: la zona il cui contorno lampeggia (scelta, o attesa della rivelazione).
     // macchia: { ritardo(id) ms, durata ms } colora le zone cambiate allargando la tinta dal loro
     // centro, con un ritardo per zona: e la rivelazione. Senza macchia cambiano subito.
     imposta({ stato, etichette: nuove = [], municipio = null, pins: nuoviPin = [], scegli = false, selezione = null, macchia: anima = null }) {

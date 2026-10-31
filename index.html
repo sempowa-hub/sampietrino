@@ -6,7 +6,7 @@
 <title>Sampietrino</title>
 <meta name="description" content="Gioco quotidiano sui quartieri di Roma: vale di più la risposta giusta che pochi darebbero.">
 <meta name="theme-color" content="#f3e7c9">
-<link rel="preload" href="font/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="font/pixelify-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="src/stile.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="cartellino" id="cartellino" hidden>
       <p class="c-tappa" id="c-tappa"></p>
       <p class="c-zona" id="c-zona"></p>
-      <div class="c-riga"><span class="timbro" id="c-timbro"></span><span class="c-punti" id="c-punti"></span></div>
+      <div class="c-riga"><span class="c-attesa" aria-label="in attesa"><i></i><i></i><i></i></span><span class="timbro" id="c-timbro"></span><span class="c-punti" id="c-punti"></span></div>
     </div>
   </section>
 
@@ -32,6 +32,9 @@
         <p class="data" id="data"></p>
       </div>
       <div class="cassa" aria-live="polite"><span id="totale">0</span><small>sampietrini</small></div>
+      <button class="suono" id="suono" aria-label="Suoni" aria-pressed="true">
+        <svg viewBox="0 0 16 16" width="20" height="20" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 6h3l4-3v10l-4-3H2z"/><path class="onde" fill="currentColor" d="M11 6h1v4h-1zM13 4h1v8h-1z"/><path class="croce" fill="currentColor" d="M10 5h1v1h-1zM14 5h1v1h-1zM11 6h1v1h-1zM13 6h1v1h-1zM12 7h1v1h-1zM11 8h1v1h-1zM13 8h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1z"/></svg>
+      </button>
     </header>
     <ol class="tappe" id="tappe" aria-label="Tappe di oggi"></ol>
 

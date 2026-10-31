@@ -56,8 +56,10 @@ Le domande geometriche (confinanti, municipi, Raccordo, Vaticano) sono **di rise
 - **Punti relativi alla domanda.** Una zona vale tanto o poco a seconda delle altre risposte giuste: non esiste una zona che vince sempre.
 - **Domande calcolate dalla geometria, mai scritte a mano.** Una domanda con una risposta sbagliata uccide il gioco.
 - **Varietà**: al massimo 3 domande dello stesso tipo al giorno.
-- **Grafica**: carta stampata a vettori (`src/mappa.js`), nitida a ogni zoom: tratti di spessore fisso a schermo, grana della carta a scala di schermo; dentro il Raccordo crema chiaro, fuori campagna grigio-verde spenta, confini d'inchiostro (filo sottile tra zone, piu marcato tra municipi), Tevere acquerello con gli argini. Contrasto da stampa: inchiostro `#2a1f16` su carta. Colori delle fasce: peperino, pino, fontanella, cocciopesto, oro. Caratteri VT323 (testo) e Silkscreen regular (titoli, numeri, bottoni), nel repo con licenza OFL (`font/`), nessuna richiesta esterna. Riferimento di linguaggio visivo: `docs/riferimento-farflung.md`.
-- **Movimento**: un solo ciclo di animazione sulla mappa. Passando col mouse la zona si schiarisce e mostra il nome; la zona scelta ha il contorno rosso che lampeggia. Al timbro la camera vola sulla zona, cade un sampietrino con un po' di polvere, la zona si colora a macchia dal centro, arriva il cartellino col timbro della fascia e i punti contano. Solo la tua risposta: tutte le altre si vedono nel diario a fine giro, tappa per tappa, accese a cascata dalla Scontata alla Da sampietrino. Tutto rispetta `prefers-reduced-motion`.
+- **Grafica**: carta stampata a vettori (`src/mappa.js`), nitida a ogni zoom: tratti di spessore fisso a schermo, grana della carta a scala di schermo; dentro il Raccordo crema chiaro, fuori campagna grigio-verde spenta, confini d'inchiostro (filo sottile tra zone, piu marcato tra municipi), Tevere acquerello con gli argini. Contrasto da stampa: inchiostro `#2a1f16` su carta. Colori delle fasce: peperino, pino, fontanella, cocciopesto, oro. Caratteri Pixelify Sans (testo, pixel ma fatto per leggere) e Silkscreen regular (marchio, numeri grandi, bottoni, e tutte le cifre dentro il testo: nel Pixelify il 5 sembra una S), nel repo con licenza OFL (`font/`), nessuna richiesta esterna. Riferimento di linguaggio visivo: `docs/riferimento-farflung.md`.
+- **Ogni esito si argomenta coi dati.** Giusta: cosa c'è nella zona ("a Ponte c'è Via del Governo Vecchio") e perché vale quei punti. Sbagliata: perché no, secondo la domanda: il luogo giusto più vicino e dove sta ("il più vicino è Piazza della Madonna dei Monti, a Monti"), la distanza dal Tevere o dal Raccordo, le zone che confinano davvero, il municipio vero. I luoghi con le coordinate e le confinanti di ogni zona sono in `dati/gioco.json`.
+- **Suoni**: sintetizzati con Web Audio in `src/suoni.js`, nessun file. Passaggio sulle zone, scelta, timbro, tic della suspense, caduta e tonfo del sampietrino, fanfara più lunga per le fasce più rare, pernacchio a 8 bit per la buca, tic negli ultimi dieci secondi, una nota per ogni zona che si accende nel diario. Tasto in testata per zittirli, il browser se lo ricorda.
+- **Movimento**: un solo ciclo di animazione sulla mappa. Passando col mouse la zona si schiarisce e mostra il nome; la zona scelta ha il contorno rosso che lampeggia. Al timbro c'è suspense: la zona resta a inchiostro col contorno che pulsa, la camera vola piano verso di lei, il cartellino mostra il nome e tre puntini, i tic si fanno fitti; poi cade il sampietrino, mezzo secondo di silenzio, e la zona si colora dal punto di caduta mentre il timbro della fascia sbatte sul cartellino e i punti contano. Solo la tua risposta: tutte le altre si vedono nel diario a fine giro, tappa per tappa, accese a cascata dalla Scontata alla Da sampietrino. Tutto rispetta `prefers-reduced-motion`.
 - **Giocabile solo con 4-25 risposte giuste.** Meno è indovinello, più è lotteria.
 
 ## Dati
@@ -100,8 +102,9 @@ npm run costruisci  # rigenera dati/gioco.json e dati/catalogo.csv dalle fonti
 ```
 index.html                 la pagina
 src/motore.js              regole pure: scala, fasce, un pin a tappa, domande del giorno
-src/app.js                 interfaccia: tappe, biglietto, catalogo, riepilogo
+src/app.js                 interfaccia: tappe, biglietto, esito argomentato, diario
 src/mappa.js               mappa a vettori su canvas: zone, animazioni, zoom, tocchi
+src/suoni.js               effetti sonori sintetizzati con Web Audio
 src/stile.css              grafica
 test/motore.test.js        test delle regole (dati finti, solo per le regole)
 dati/                      fonti, notorietà, dati generati

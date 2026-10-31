@@ -4,6 +4,7 @@ import {
   SCALA, MASSIMO_AL_GIORNO, risposte, nuovaDomanda, pinna, totale, domandeDelGiorno, DOMANDE_AL_GIORNO,
 } from './motore.js';
 import { creaMappa, COLORI_FASCE } from './mappa.js';
+import { suoni, sblocca, eMuto, cambiaMuto } from './suoni.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -46,7 +47,7 @@ async function avvia() {
   }
   $('data').textContent = new Intl.DateTimeFormat('it-IT', { timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
   $('attribuzione').textContent = dati.attribuzione;
-  mappa = creaMappa($('tela'), dati, { onTocca: tocca });
+  mappa = creaMappa($('tela'), dati, { onTocca: tocca, onSopra: () => suoni.sopra() });
   $('tela').mappa = mappa; // maniglia per le prove nel browser
   $('totale').textContent = totale(stati);
   // Copertina solo a giornata non ancora iniziata. Si apre prima di mostrare la domanda:
@@ -97,7 +98,9 @@ function contaFino(el, a, b, durata = 700) {
   const t0 = performance.now();
   const passo = (t) => {
     const p = Math.min(1, (t - t0) / durata);
-    el.textContent = Math.round(a + (b - a) * (1 - Math.pow(1 - p, 3)));
+    const v = Math.round(a + (b - a) * (1 - Math.pow(1 - p, 3)));
+    if (String(v) !== el.textContent) suoni.conta();
+    el.textContent = v;
     if (p < 1) requestAnimationFrame(passo);
     else { el.classList.remove('scatto'); void el.offsetWidth; el.classList.add('scatto'); }
   };
@@ -153,6 +156,7 @@ function avviaOrologio() {
   clearInterval(orologio);
   const scatta = () => {
     const resto = Math.max(0, TEMPO - Math.floor((Date.now() - s.inizio) / 1000));
+    if (resto <= 10 && resto > 0 && String(resto) !== $('tempo').textContent) suoni.tic(resto);
     aggiornaTempo(resto);
     if (resto === 0) {
       clearInterval(orologio);
@@ -168,6 +172,7 @@ function tocca(id) {
   const s = stati[corrente];
   if (!s || s.pin || corrente >= domande.length) return;
   selezionata = selezionata === id ? null : id;
+  if (selezionata) suoni.scegli(); else suoni.annulla();
   aggiornaBiglietto();
 }
 
@@ -181,20 +186,47 @@ function pianta() {
   chiudiTappa(id);
 }
 
-// Chiude la tappa: il sampietrino cade, la zona si accende dal punto in cui e caduto,
-// poi arriva il cartellino. Solo la tua risposta: le altre si vedono nel diario.
+// Chiude la tappa con un po' di suspense:
+// 1. timbro: la zona resta a inchiostro col contorno che pulsa, la camera vola piano verso di lei,
+//    il cartellino mostra il nome e tre puntini, i tic si fanno fitti;
+// 2. cade il sampietrino, tocca terra, mezzo secondo di silenzio;
+// 3. la zona si colora dal punto in cui e caduto, il timbro sbatte sul cartellino, fanfara, punti.
+// Solo la tua risposta: le altre si vedono nel diario.
+const VOLO = 1500, CADUTA = 420;
 function chiudiTappa(id) {
   clearInterval(orologio);
   const prima = totale(stati);
   stati[corrente] = pinna(stati[corrente], id);
   salva();
   $('pianta').disabled = true;
-  rivelaTappa(stati[corrente], true);
+  const s = stati[corrente];
+  if (!id) {
+    suoni.scaduto();
+    preparaCartellino(s, false);
+    rivelaTappa(s, true);
+    setTimeout(() => { aggiornaTappe(); mostraPaginaEsito(true); }, dopo(500));
+    return;
+  }
+  suoni.timbro();
+  mappa.imposta({ stato: (z) => (z === id ? 'attesa' : 'normale'), selezione: id, etichette: [{ id }] });
+  mappa.inquadra({ zone: [id], durata: dopo(VOLO), alza: 0.16 }, true);
+  setTimeout(() => preparaCartellino(s, true), dopo(250));
+  setTimeout(() => suoni.attesa((VOLO - 250) / 1000), dopo(250));
   setTimeout(() => {
+    mappa.imposta({ stato: (z) => (z === id ? 'attesa' : 'normale'), selezione: id, etichette: [{ id }], pins: [{ id, cade: true }] });
+    suoni.caduta();
+  }, dopo(VOLO - 150));
+  setTimeout(() => suoni.tocco(), dopo(VOLO - 150 + CADUTA));
+  const rivela = VOLO - 150 + CADUTA + 450;
+  setTimeout(() => {
+    const liv = s.pin.fascia ? livelloDi(s.pin.fascia) : null;
+    rivelaTappa(s, true);
+    rivelaCartellino();
+    suoni.rivela(liv);
     aggiornaTappe();
     contaFino($('totale'), prima, totale(stati));
-  }, dopo(1250));
-  setTimeout(() => mostraEsito(true), dopo(id ? 1050 : 350));
+  }, dopo(rivela));
+  setTimeout(() => mostraPaginaEsito(true), dopo(rivela + 650));
 }
 
 // La mappa a tappa chiusa: la tua zona col colore della fascia (o rossa), il bersaglio della domanda.
@@ -207,17 +239,20 @@ function rivelaTappa(s, anima) {
       if (d.evidenzia?.includes(id)) return 'bersaglio';
       return 'normale';
     },
-    pins: pin.zona ? [{ id: pin.zona, livello: liv, cade: anima }] : [],
+    pins: pin.zona ? [{ id: pin.zona, livello: liv }] : [],
     etichette: [
-      ...(pin.zona ? [{ id: pin.zona, colore: liv === null ? '#c43a28' : COLORI_FASCE[liv], ritardo: anima ? 900 : 0 }] : []),
-      ...(d.evidenzia || []).map((e) => ({ id: e, inverso: true, ritardo: anima ? 1100 : 0 })),
+      ...(pin.zona ? [{ id: pin.zona, colore: liv === null ? '#c43a28' : COLORI_FASCE[liv] }] : []),
+      ...(d.evidenzia || []).map((e) => ({ id: e, inverso: true, ritardo: anima ? 500 : 0 })),
     ],
     municipio: d.evidenziaMunicipio ?? null,
-    macchia: anima ? { ritardo: (id) => (id === pin.zona ? 430 : 700), durata: 750 } : null,
+    macchia: anima ? { ritardo: (id) => (id === pin.zona ? 0 : 350), durata: 650 } : null,
   });
+  // Se la domanda ha un bersaglio (confina con X, municipio) la camera si allarga per mostrarlo.
   const fuoco = [...(pin.zona ? [pin.zona] : []), ...(d.evidenzia || [])];
-  if (fuoco.length) mappa.inquadra({ zone: fuoco, durata: 850, alza: 0.16 }, anima);
-  else if (d.evidenziaMunicipio) mappa.inquadra({ municipio: d.evidenziaMunicipio, alza: 0.16 }, anima);
+  if (d.evidenzia?.length || !anima) {
+    if (fuoco.length) mappa.inquadra({ zone: fuoco, durata: 900, alza: 0.16 }, anima);
+  }
+  if (d.evidenziaMunicipio) mappa.inquadra({ municipio: d.evidenziaMunicipio, alza: 0.16 }, anima);
 }
 
 function perche(domanda, id) {
@@ -225,44 +260,126 @@ function perche(domanda, id) {
   return luoghi?.length ? luoghi.join(' · ') : '';
 }
 
-function mostraEsito(anima) {
-  const s = stati[corrente];
+// --- Perche: ogni esito si argomenta coi dati ---
+
+const km = (d) => (d < 0.95 ? `${Math.max(100, Math.round(d * 10) * 100)} m` : `${d.toFixed(1).replace(/\.0$/, '').replace('.', ',')} km`);
+const coppie = (d) => { const n = d.match(/-?\d+(?:\.\d+)?/g).map(Number); return Array.from({ length: n.length / 2 }, (_, i) => [n[2 * i], n[2 * i + 1]]); };
+const distanza = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+const elenco = (ids) => ids.map((i) => zonePerId[i].nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+// "nessun ..." per categoria, per dire cosa manca nella zona sbagliata.
+const MANCA = {
+  'metro-a': 'nessuna fermata della Metro A', 'metro-b': 'nessuna fermata della Metro B', 'metro-c': 'nessuna fermata della Metro C',
+  trapizzino: 'nessun Trapizzino', fontane: 'nessuna delle fontane famose in gara', ville: 'nessuna delle ville storiche in gara',
+  movida: 'nessuno dei posti della movida in gara', 'stazione-fs': 'nessuna stazione dei treni',
+};
+const PERCHE_FASCIA = [
+  'È la prima che viene in mente a tutti: per questo vale poco.',
+  'Giusta e nota: la danno in tanti.',
+  'Una risposta da romano: non la dice chiunque.',
+  'La sanno in pochi: questa la dà chi gira davvero la città.',
+  'Quasi nessuno la nomina: risposta da sampietrino.',
+];
+
+// Due righe: cosa c'e (o non c'e) nella zona, e perche vale quei punti.
+function argomenta(s) {
+  const { pin, domanda: d } = s;
+  const n = Object.keys(d.catalogo).length;
+  if (!pin.zona) return [`Tempo scaduto prima del timbro: questa tappa vale 0.`, `Le zone giuste erano ${n}: le trovi tutte nel diario a fine giro.`];
+  const z = zonePerId[pin.zona];
+  const nome = z.nome;
+  if (pin.fascia) {
+    const liv = livelloDi(pin.fascia);
+    const luoghi = perche(d, pin.zona);
+    const prima = luoghi ? `Giusta: a ${nome} c'è ${luoghi.replace(/ · /g, ', ')}.`
+      : d.tipo === 'acqua' ? `Giusta: il Tevere passa per ${nome}.`
+        : d.tipo === 'confina' ? `Giusta: ${nome} confina con ${zonePerId[d.evidenzia[0]].nome}.`
+          : d.tipo === 'municipio' ? `Giusta: ${nome} sta nel ${d.testo.replace('Una zona del ', '')}.`
+            : d.tipo === 'raccordo' ? `Giusta: ${nome} arriva fino al Raccordo.`
+              : d.tipo === 'vaticano' ? `Giusta: ${nome} tocca le mura del Vaticano.` : `Giusta.`;
+    return [prima, `${PERCHE_FASCIA[liv]} Le zone giuste erano ${n}.`];
+  }
+  // Buca: si spiega perche no, coi dati della domanda.
+  let motivo = `${nome} non è tra le ${n} zone giuste.`;
+  if (d.luoghi?.length) {
+    const [vicino, dist] = d.luoghi.map((l) => [l, distanza(z.centro, [l[1], l[2]])]).sort((a, b) => a[1] - b[1])[0];
+    const dove = Object.keys(d.perche || {}).find((id) => d.perche[id].includes(vicino[0]));
+    motivo = `A ${nome} non c'è ${MANCA[d.id] || 'nessun luogo giusto'}. Il più vicino è ${vicino[0]}${dove && dove !== pin.zona ? `, a ${zonePerId[dove].nome}` : ''}: circa ${km(dist)} dal centro della zona.`;
+  } else if (d.tipo === 'acqua' && dati.tevere) {
+    const dist = Math.min(...coppie(dati.tevere).map((p) => distanza(z.centro, p)));
+    motivo = `Il Tevere non passa per ${nome}: dal centro della zona il fiume è a circa ${km(dist)}.`;
+  } else if (d.tipo === 'confina') {
+    const x = zonePerId[d.evidenzia[0]];
+    motivo = `${nome} non tocca ${x.nome}. Con ${x.nome} confinano ${elenco(x.vicini)}.`;
+  } else if (d.tipo === 'municipio') {
+    motivo = z.municipio ? `${nome} sta nel Municipio ${ROMANI[z.municipio]}, non nel ${d.testo.replace('Una zona del Municipio ', '')}.` : `${nome} non sta per più di metà in nessun municipio.`;
+  } else if (d.tipo === 'raccordo') {
+    const dist = Math.min(...coppie(dati.comune).map((p) => distanza(z.centro, p)));
+    motivo = `${nome} non arriva al Raccordo: dal centro della zona il GRA è a circa ${km(dist)}.`;
+  } else if (d.tipo === 'vaticano') {
+    motivo = `${nome} non tocca il Vaticano: le mura confinano con ${elenco(Object.keys(d.catalogo))}.`;
+  }
+  return [motivo, 'Buca: questa tappa vale 0. Tutte le risposte giuste le trovi nel diario a fine giro.'];
+}
+const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV'];
+
+// --- Esito ---
+
+// Il cartellino sulla mappa: in attesa mostra solo il nome e tre puntini.
+function preparaCartellino(s, attesa) {
   const { pin } = s;
   const liv = pin.fascia ? livelloDi(pin.fascia) : null;
-  if (!anima) rivelaTappa(s, false);
-  aggiornaTappe();
-
-  // Cartellino sulla mappa.
   const c = $('cartellino');
   c.hidden = false;
   c.style.setProperty('--colore-t', liv === null ? 'var(--rosso)' : coloreT(liv));
   c.classList.toggle('buca', liv === null);
+  c.classList.toggle('attesa', attesa);
+  c.classList.remove('rivelato', 'entra');
   $('c-tappa').textContent = `Tappa ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
   $('c-zona').textContent = pin.zona ? nomeZona(pin.zona) : 'Tempo scaduto';
   $('c-timbro').textContent = pin.fascia ?? (pin.zona ? 'Buca' : 'Niente timbro');
   $('c-punti').textContent = pin.punti ? `+${pin.punti}` : '0';
-  c.classList.remove('entra');
-  if (anima) { void c.offsetWidth; c.classList.add('entra'); }
+  void c.offsetWidth;
+  c.classList.add('entra');
+  if (!attesa) c.classList.add('rivelato');
+}
 
-  // Foglio: la domanda, perche e giusta, avanti.
+function rivelaCartellino() {
+  const c = $('cartellino');
+  c.classList.remove('attesa');
+  void c.offsetWidth;
+  c.classList.add('rivelato');
+}
+
+function mostraPaginaEsito(anima) {
+  const s = stati[corrente];
+  const { pin } = s;
+  const liv = pin.fascia ? livelloDi(pin.fascia) : null;
   $('esito-numero').textContent = `Tappa ${corrente + 1} di ${DOMANDE_AL_GIORNO}`;
   $('esito-domanda').textContent = s.domanda.testo;
   $('esito-zona').textContent = pin.zona ? nomeZona(pin.zona) : 'Tempo scaduto';
   const t = $('esito-timbro');
   t.textContent = pin.fascia ? `${pin.fascia} +${pin.punti}` : pin.zona ? 'Buca' : '0';
   t.style.setProperty('--colore-t', liv === null ? 'var(--rosso)' : coloreT(liv));
-  const motivo = pin.fascia ? perche(s.domanda, pin.zona) : '';
-  $('esito-perche').textContent = motivo ? `Giusta per: ${motivo}` : '';
-  $('esito-nota').textContent = pin.fascia
-    ? (liv >= 3 ? 'Questa la sanno in pochi.' : liv === 0 ? 'Giusta, ma la dicono tutti.' : '')
-    : pin.zona ? `${nomeZona(pin.zona)} non va bene. Le risposte giuste le vedi nel diario a fine giro.`
-      : 'Il tempo è finito prima del timbro. Le risposte giuste le vedi nel diario a fine giro.';
+  const [motivo, nota] = argomenta(s);
+  $('esito-perche').textContent = motivo;
+  $('esito-nota').textContent = nota;
   $('avanti').textContent = corrente === domande.length - 1 ? 'Apri il diario' : 'Prossima tappa';
   pagina('pagina-esito', anima);
 }
 
+// Dopo una ricarica a tappa chiusa: tutto subito, senza animazioni.
+function mostraEsito() {
+  const s = stati[corrente];
+  rivelaTappa(s, false);
+  preparaCartellino(s, false);
+  $('cartellino').classList.remove('entra', 'rivelato');
+  aggiornaTappe();
+  mostraPaginaEsito(false);
+}
+
 function avanti() {
   if ($('pagina-esito').hidden) return;
+  suoni.pagina();
   corrente += 1;
   salva();
   if (corrente >= domande.length) mostraFine(true);
@@ -358,6 +475,10 @@ function apriTappa(i, anima = true) {
     macchia: anima ? { ritardo: (id) => (id in d.catalogo ? d.catalogo[id] * 240 + ordine.indexOf(id) * 30 : 0), durata: 520 } : null,
   });
   mappa.inquadra({ zone: [...ordine, ...(tua ? [tua] : [])] }, anima);
+  if (anima) {
+    suoni.pagina();
+    ordine.slice(0, 30).forEach((id) => suoni.cascata(d.catalogo[id], (d.catalogo[id] * 240 + ordine.indexOf(id) * 30) / 1000));
+  }
   // Le risposte nel foglio, dalla fascia piu alta alla piu bassa.
   const blocchi = [];
   for (let liv = SCALA.length - 1; liv >= 0; liv--) {
@@ -412,6 +533,8 @@ new ResizeObserver(() => {
 $('piu').addEventListener('click', () => mappa.zoom(1 / 1.5));
 $('meno').addEventListener('click', () => mappa.zoom(1.5));
 $('daje').addEventListener('click', () => {
+  sblocca();
+  suoni.daje();
   const c = $('copertina');
   c.classList.add('esce');
   setTimeout(() => { c.close(); c.classList.remove('esce'); avviaOrologio(); }, dopo(200));
@@ -419,7 +542,17 @@ $('daje').addEventListener('click', () => {
 $('pianta').addEventListener('click', pianta);
 $('avanti').addEventListener('click', avanti);
 $('copia').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText($('copia').dataset.testo); $('copia').textContent = 'Copiato!'; } catch { $('copia').textContent = 'Non riesco a copiare'; }
+  try { await navigator.clipboard.writeText($('copia').dataset.testo); $('copia').textContent = 'Copiato!'; suoni.copia(); } catch { $('copia').textContent = 'Non riesco a copiare'; }
+});
+
+// Suoni: il primo gesto sblocca l'audio; il tasto in testata lo zittisce, e il browser se lo ricorda.
+document.addEventListener('pointerdown', sblocca, { once: true });
+$('suono').setAttribute('aria-pressed', String(!eMuto()));
+$('suono').addEventListener('click', () => {
+  sblocca();
+  const muto = cambiaMuto();
+  $('suono').setAttribute('aria-pressed', String(!muto));
+  if (!muto) suoni.scegli();
 });
 
 avvia().catch((err) => {
