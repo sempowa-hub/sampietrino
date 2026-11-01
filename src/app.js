@@ -844,6 +844,31 @@ $('condividi').addEventListener('click', async () => {
     b.disabled = false;
   }
 });
+// Risultato da mandare in chat, come Wordle: un quadratino per tappa col colore della fascia, punti e link.
+// Sul telefono si apre la condivisione (WhatsApp, Telegram...), sul computer si copia.
+const QUADRATI = ['⬜', '🟩', '🟦', '🟧', '🟨'];
+$('manda').addEventListener('click', async () => {
+  const b = $('manda');
+  const tot = totale(stati);
+  const n = Math.round((Date.parse(`${giorno}T12:00:00Z`) - Date.parse(`${PRIMO_GIORNO}T12:00:00Z`)) / 864e5) + 1;
+  const testo = [
+    `Sampietrino n° ${n} · ${dataIt(giorno, { day: 'numeric', month: 'long' })}`,
+    stati.map((s) => (s.pin?.fascia ? QUADRATI[livelloDi(s.pin.fascia)] : '⬛')).join(''),
+    `${tot} sampietrini · ${gradoDi(tot).nome}`,
+    'https://themino.it',
+  ].join('\n');
+  try {
+    if (navigator.share && matchMedia('(pointer: coarse)').matches) await navigator.share({ text: testo });
+    else {
+      await navigator.clipboard.writeText(testo);
+      b.textContent = 'Copiato: incollalo in chat';
+      setTimeout(() => { b.textContent = 'Manda il risultato'; }, 2500);
+    }
+    suoni.copia();
+  } catch (e) {
+    if (e?.name !== 'AbortError') b.textContent = 'Non riesco, riprova';
+  }
+});
 $('vai-oggi').addEventListener('click', () => apriGiorno(oggi, true));
 $('torna-oggi').addEventListener('click', () => apriGiorno(oggi, true));
 

@@ -334,6 +334,8 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 body.giorno-arretrato .tappe li.ora { animation-duration: 1.2s; }
 
 /* Scorciatoie a fine diario. */
+.condividi-due { display: grid; gap: 8px; }
+.condividi-due > button { width: 100%; margin: 0; }
 .scorciatoie { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0 0; }
 .scorciatoie .secondario { flex-direction: column; gap: 2px; padding: 8px 4px 7px; font-size: 13px; }
 .scorciatoie [data-icona] { width: 34px; height: 34px; transition: transform 220ms var(--esce); }
