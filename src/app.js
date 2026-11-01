@@ -82,7 +82,8 @@ async function avvia() {
   // Souvenir gia meritati con lo storico di prima (giocatori della prima ora): arrivano da scartare.
   const st = leggi();
   if (aggiornaSouvenir(st, contesto(st, dati.zone), oggi).length) scrivi(st);
-  taccuino = creaTaccuino({ dati, colori: COLORI_FASCE, suoni, gioca: (d) => apriGiorno(d, true), regole: apriCopertina, giorno: () => giorno, dopoLogin: sincronizzaConto });
+  taccuino = creaTaccuino({ dati, colori: COLORI_FASCE, suoni, gioca: (d) => apriGiorno(d, true), regole: apriCopertina, giorno: () => giorno, dopoLogin: sincronizzaConto,
+    ripubblica: () => { const s = leggi(); if (s.giorni[oggi]) { delete s.giorni[oggi].pubblicato; delete s.giorni[oggi].settimana; scrivi(s); } return pubblicaOggi(); } });
   mostraSplash();
   apriGiorno(oggi, false);
   // L'account arriva dopo, senza fermare il gioco: anonimo per tutti, con Google le partite si sincronizzano.

@@ -19,7 +19,7 @@ const ROSSO = '#c43a28';
 const el = (tag, classe, testo) => { const e = document.createElement(tag); if (classe) e.className = classe; if (testo != null) e.textContent = testo; return e; };
 const plurale = (n, uno, tanti) => `${n} ${n === 1 ? uno : tanti}`;
 
-export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoLogin }) {
+export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoLogin, ripubblica }) {
   const zonePerId = Object.fromEntries(dati.zone.map((z) => [z.id, z]));
   const coloreGrado = (g) => (g.livello < 0 ? ROSSO : colori[g.livello]);
   const coloreLiv = (l) => (l == null || l < 0 ? ROSSO : colori[l]);
@@ -192,6 +192,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   // --- Classifica: oggi e settimana (da lunedi a domenica) ---
 
   let vista = 'oggi';
+  const riprovato = new Set();
   for (const b of $('cl-schede').querySelectorAll('button')) {
     b.addEventListener('click', () => { if (vista === b.dataset.cl) return; vista = b.dataset.cl; suoni.scegli(); preparaClassifica(); });
   }
@@ -211,6 +212,13 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     if (!c) { $('cl-mio').replaceChildren(el('p', 'cl-carico', 'Classifica non disponibile ora: riprova tra poco.')); return; }
     const u = utente();
     const g = leggi().giorni[oggi];
+    // Partita finita ma il punteggio sul server non c'e (cancellato, o invio perso): lo rimanda una volta e ricarica.
+    if (!c.mio && u && !u.anonimo && g?.finita && !g.recupero && ripubblica && !riprovato.has(oggi)) {
+      riprovato.add(oggi);
+      await ripubblica();
+      if (chiesta === vista) preparaClassifica();
+      return;
+    }
     const mio = $('cl-mio');
     mio.replaceChildren();
     if (c.mio) {
