@@ -814,59 +814,122 @@ function chiccaDelGiorno() {
   const luoghi = perche(d, id);
   return `${d.testo}: la risposta da Mino era ${zonePerId[id].nome}${luoghi ? ` (${luoghi.replace(/ · /g, ', ')})` : ''}. Questa la sanno in pochi.`;
 }
-$('condividi').addEventListener('click', async () => {
-  const b = $('condividi');
-  b.disabled = true;
-  b.textContent = 'Preparo la storia…';
-  try {
-    const tot = totale(stati);
-    const blob = await creaStoria({
-      totale: tot, massimo: MASSIMO_AL_GIORNO, faccia: facciaFine(tot), colori: COLORI_FASCE, chicca: chiccaDelGiorno(),
-      data: dataIt(giorno, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }),
-      tappe: stati.map((s) => ({ livello: s.pin?.fascia ? livelloDi(s.pin.fascia) : null, punti: s.pin?.punti ?? 0 })),
-      serie: giorno === oggi ? serie(leggi().giorni) : 0, timbrati: Object.keys(leggi().timbri).filter((id) => zonePerId[id]).length,
-    });
-    const nome = `sampietrino-${giorno}.png`;
-    const file = new File([blob], nome, { type: 'image/png' });
-    if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title: 'Sampietrino' });
-    else {
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = nome;
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
-    }
-    suoni.copia();
-    b.textContent = 'Condividi nella storia';
-  } catch (e) {
-    b.textContent = e?.name === 'AbortError' ? 'Condividi nella storia' : 'Non riesco, riprova';
-  } finally {
-    b.disabled = false;
-  }
-});
-// Risultato da mandare in chat, come Wordle: un quadratino per tappa col colore della fascia, punti e link.
-// Sul telefono si apre la condivisione (WhatsApp, Telegram...), sul computer si copia.
+// Foglio "Condividi": anteprima del biglietto e tre strade. La storia (PNG 9:16) si prepara appena il foglio
+// si apre, cosi al tocco la condivisione parte subito (sul telefono il permesso vale solo dentro il gesto).
+// Il testo, come Wordle: un quadratino per tappa col colore della fascia, punti, serie, posizione e link.
 const QUADRATI = ['⬜', '🟩', '🟦', '🟧', '🟨'];
-$('manda').addEventListener('click', async () => {
-  const b = $('manda');
+const TOCCO = matchMedia('(pointer: coarse)').matches && !!navigator.share;
+let storia = null, testoCondiviso = '';
+
+function scriviTestoCondiviso(extra) {
   const tot = totale(stati);
   const n = Math.round((Date.parse(`${giorno}T12:00:00Z`) - Date.parse(`${PRIMO_GIORNO}T12:00:00Z`)) / 864e5) + 1;
-  const testo = [
+  testoCondiviso = [
     `Sampietrino n° ${n} · ${dataIt(giorno, { day: 'numeric', month: 'long' })}`,
     stati.map((s) => (s.pin?.fascia ? QUADRATI[livelloDi(s.pin.fascia)] : '⬛')).join(''),
     `${tot} sampietrini · ${gradoDi(tot).nome}`,
+    ...(extra.length ? [extra.map((e) => `${e.icona} ${e.testo}`).join(' · ')] : []),
     'https://themino.it',
   ].join('\n');
+  $('cd-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(testoCondiviso)}`;
+  $('cd-extra').hidden = !extra.length;
+  $('cd-extra').textContent = extra.map((e) => e.testo).join(' · ');
+}
+
+async function apriCondividi() {
+  const tot = totale(stati);
+  const n = Math.round((Date.parse(`${giorno}T12:00:00Z`) - Date.parse(`${PRIMO_GIORNO}T12:00:00Z`)) / 864e5) + 1;
+  $('cd-titolo').textContent = `Sampietrino n° ${n} · ${dataIt(giorno, { day: 'numeric', month: 'long' })}`;
+  $('cd-tappe').replaceChildren(...stati.map((s, k) => {
+    const q = document.createElement('i');
+    const l = s.pin?.fascia ? livelloDi(s.pin.fascia) : -1;
+    if (l < 0) q.className = 'buca';
+    else q.style.setProperty('--colore', COLORI_FASCE[l]);
+    q.style.animationDelay = `${120 + k * 90}ms`;
+    q.title = s.pin?.fascia || 'Buca';
+    return q;
+  }));
+  $('cd-punti').innerHTML = `<b>${tot}</b> sampietrini · ${gradoDi(tot).nome}`;
+  const extra = [];
+  const filo = giorno === oggi ? serie(leggi().giorni) : 0;
+  if (filo >= 2) extra.push({ icona: '🔥', testo: `${filo} giorni di fila` });
+  scriviTestoCondiviso(extra);
+  $('cd-copia-nome').textContent = TOCCO ? 'Altre app' : 'Copia';
+  $('cd-copia-sotto').textContent = TOCCO ? 'Telegram, Messaggi...' : 'Per ogni altra chat';
+  $('cd-anteprima').hidden = true;
+  $('cd-storia').disabled = true;
+  storia = null;
+  suoni.pagina();
+  $('condividi-foglio').showModal();
+  // La storia e la posizione in classifica arrivano dopo, senza far aspettare il foglio.
+  const chiesto = giorno;
+  creaStoria({
+    totale: tot, massimo: MASSIMO_AL_GIORNO, faccia: facciaFine(tot), colori: COLORI_FASCE, chicca: chiccaDelGiorno(),
+    data: dataIt(giorno, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }),
+    tappe: stati.map((s) => ({ livello: s.pin?.fascia ? livelloDi(s.pin.fascia) : null, punti: s.pin?.punti ?? 0 })),
+    serie: filo, timbrati: Object.keys(leggi().timbri).filter((id) => zonePerId[id]).length,
+  }).then((blob) => {
+    if (chiesto !== giorno) return;
+    storia = new File([blob], `sampietrino-${giorno}.png`, { type: 'image/png' });
+    const img = $('cd-anteprima');
+    if (img.src) URL.revokeObjectURL(img.src);
+    img.src = URL.createObjectURL(blob);
+    img.hidden = false;
+    $('cd-storia').disabled = false;
+  }).catch(() => { $('cd-storia').querySelector('small').textContent = 'Non riesco a prepararla'; });
+  if (giorno === oggi && utente() && !utente().anonimo) {
+    try {
+      const c = await classifica(oggi, 1);
+      if (c?.mio?.pubblico && c.posizione && chiesto === giorno && $('condividi-foglio').open) {
+        extra.push({ icona: '🏆', testo: `${c.posizione}° in classifica oggi` });
+        scriviTestoCondiviso(extra);
+      }
+    } catch { /* senza classifica il testo resta com'e */ }
+  }
+}
+
+$('condividi').addEventListener('click', apriCondividi);
+$('cd-chiudi').addEventListener('click', () => $('condividi-foglio').close());
+{
+  // Tocco fuori dal foglio: si chiude (pressione e rilascio entrambi fuori, come per i fogli del taccuino).
+  const dlg = $('condividi-foglio');
+  const fuori = (e) => { const r = dlg.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+  let premutoFuori = false;
+  dlg.addEventListener('pointerdown', (e) => { premutoFuori = fuori(e); });
+  dlg.addEventListener('click', (e) => { if (premutoFuori && fuori(e)) dlg.close(); premutoFuori = false; });
+}
+$('cd-storia').addEventListener('click', async () => {
+  if (!storia) return;
+  const sotto = $('cd-storia').querySelector('small');
   try {
-    if (navigator.share && matchMedia('(pointer: coarse)').matches) await navigator.share({ text: testo });
+    if (navigator.canShare?.({ files: [storia] })) await navigator.share({ files: [storia], title: 'Sampietrino' });
     else {
-      await navigator.clipboard.writeText(testo);
-      b.textContent = 'Copiato: incollalo in chat';
-      setTimeout(() => { b.textContent = 'Manda il risultato'; }, 2500);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(storia);
+      a.download = storia.name;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+      sotto.textContent = 'Scaricata: caricala nella storia';
     }
     suoni.copia();
   } catch (e) {
-    if (e?.name !== 'AbortError') b.textContent = 'Non riesco, riprova';
+    if (e?.name !== 'AbortError') sotto.textContent = 'Non riesco, riprova';
+  }
+});
+$('cd-whatsapp').addEventListener('click', () => suoni.copia());
+$('cd-copia').addEventListener('click', async () => {
+  const sotto = $('cd-copia-sotto');
+  try {
+    if (TOCCO) await navigator.share({ text: testoCondiviso });
+    else {
+      await navigator.clipboard.writeText(testoCondiviso);
+      $('cd-copia').classList.add('fatto');
+      sotto.textContent = 'Copiato: incollalo in chat';
+      setTimeout(() => { $('cd-copia').classList.remove('fatto'); sotto.textContent = 'Per ogni altra chat'; }, 2500);
+    }
+    suoni.copia();
+  } catch (e) {
+    if (e?.name !== 'AbortError') sotto.textContent = 'Non riesco, riprova';
   }
 });
 $('vai-oggi').addEventListener('click', () => apriGiorno(oggi, true));

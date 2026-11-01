@@ -88,10 +88,7 @@
       <button class="meglio" id="meglio" data-apri="classifica" hidden></button>
       <ol class="righe" id="righe"></ol>
       <div class="risposte" id="risposte" aria-live="polite"></div>
-      <div class="condividi-due">
-        <button class="primario" id="condividi">Condividi nella storia</button>
-        <button class="secondario" id="manda">Manda il risultato</button>
-      </div>
+      <button class="primario" id="condividi">Condividi</button>
       <div class="scorciatoie">
         <button class="secondario" data-apri="diario-bordo"><span data-icona="diario"></span>Diario</button>
         <button class="secondario" data-apri="passaporto"><span data-icona="passaporto"></span>Passaporto</button>
@@ -285,6 +282,23 @@
   </div>
   <ol class="mod-elenco" id="mod-elenco"></ol>
   <button class="primario" data-chiudi>Chiudi</button>
+</dialog>
+
+<dialog id="condividi-foglio" class="quaderno condividi-foglio" aria-labelledby="cd-etichetta">
+  <div class="q-testa"><p class="etichetta" id="cd-etichetta">Condividi</p></div>
+  <div class="cd-biglietto">
+    <p class="cd-titolo" id="cd-titolo"></p>
+    <div class="cd-tappe" id="cd-tappe"></div>
+    <p class="cd-punti" id="cd-punti"></p>
+    <p class="cd-extra" id="cd-extra" hidden></p>
+    <p class="cd-link">themino.it</p>
+  </div>
+  <div class="cd-scelte">
+    <button class="cd-scelta" id="cd-storia"><span class="cd-anteprima"><img id="cd-anteprima" alt="" hidden></span><b>Storia</b><small>Immagine per Instagram</small></button>
+    <a class="cd-scelta" id="cd-whatsapp" href="https://wa.me/" target="_blank" rel="noopener"><span data-icona="fumetto"></span><b>WhatsApp</b><small>Quadratini e link</small></a>
+    <button class="cd-scelta" id="cd-copia"><span data-icona="foglietti"></span><b id="cd-copia-nome">Copia</b><small id="cd-copia-sotto">Per ogni altra chat</small></button>
+  </div>
+  <button class="primario" id="cd-chiudi">Chiudi</button>
 </dialog>
 
 <dialog id="scarta" class="scarta">

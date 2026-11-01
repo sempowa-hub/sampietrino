@@ -334,8 +334,6 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 body.giorno-arretrato .tappe li.ora { animation-duration: 1.2s; }
 
 /* Scorciatoie a fine diario. */
-.condividi-due { display: grid; gap: 8px; }
-.condividi-due > button { width: 100%; margin: 0; }
 .scorciatoie { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0 0; }
 .scorciatoie .secondario { flex-direction: column; gap: 2px; padding: 8px 4px 7px; font-size: 13px; }
 .scorciatoie [data-icona] { width: 34px; height: 34px; transition: transform 220ms var(--esce); }
@@ -917,3 +915,59 @@ body.con-splash { overflow: hidden; }
 .mod-tasti button { min-width: 64px; padding: 8px 12px; border: none; background: var(--carta); font-family: var(--font-titolo); font-size: 14px; box-shadow: 0 0 0 1px var(--inchiostro), 0 3px 0 1px var(--inchiostro); }
 .mod-tasti button[aria-pressed='true'].si { background: var(--f1); color: var(--scheda); }
 .mod-tasti button[aria-pressed='true'].no { background: var(--rosso); color: var(--scheda); }
+
+/* --- Foglio Condividi: biglietto d'anteprima e tre strade --- */
+.condividi-foglio { width: min(94vw, 460px); }
+.cd-biglietto {
+  position: relative; margin: 6px 0 16px; padding: 16px 16px 14px; text-align: center;
+  background: var(--scheda); box-shadow: var(--ombra); transform: rotate(-0.6deg);
+  background-image: repeating-linear-gradient(0deg, transparent 0 23px, rgba(164, 141, 102, 0.16) 23px 24px);
+}
+.cd-biglietto::before, .cd-biglietto::after {
+  content: ''; position: absolute; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%;
+  background: var(--carta); box-shadow: inset 0 0 0 1px var(--inchiostro);
+}
+.cd-biglietto::before { left: -8px; } .cd-biglietto::after { right: -8px; }
+.cd-titolo { margin: 0 0 12px; font-family: var(--font-titolo); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rosso); }
+.cd-tappe { display: flex; justify-content: center; gap: 8px; }
+.cd-tappe i {
+  width: 38px; height: 38px; background: var(--colore); box-shadow: var(--ombra);
+  animation: cd-accendi 420ms var(--deciso) both;
+}
+.cd-tappe i.buca { background: var(--inchiostro-2); background-image: linear-gradient(45deg, transparent 44%, var(--matita) 44% 56%, transparent 56%), linear-gradient(-45deg, transparent 44%, var(--matita) 44% 56%, transparent 56%); }
+@keyframes cd-accendi { from { opacity: 0; transform: translateY(8px) scale(0.6); } 60% { transform: translateY(-3px) scale(1.08); } to { opacity: 1; transform: none; } }
+.cd-punti { margin: 14px 0 0; font-size: 16px; }
+.cd-punti b { font-family: var(--font-titolo); font-size: 22px; color: var(--rosso); }
+.cd-extra { margin: 6px 0 0; font-size: 14px; color: var(--inchiostro-2); }
+.cd-link { margin: 8px 0 0; font-size: 12px; letter-spacing: 0.1em; color: var(--matita); }
+.cd-scelte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.cd-scelta {
+  display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 12px 6px 10px; border: none;
+  background: var(--scheda); color: var(--inchiostro); text-decoration: none; text-align: center; cursor: pointer;
+  font-family: var(--font-testo); box-shadow: var(--ombra);
+  transition: transform 160ms var(--esce), box-shadow 160ms var(--esce), background-color 160ms;
+}
+.cd-scelta:hover:not(:disabled) { transform: translateY(-3px); background: #fffaf0; box-shadow: 0 0 0 1px var(--inchiostro), 0 6px 0 1px var(--inchiostro); }
+.cd-scelta:hover:not(:disabled) [data-icona], .cd-scelta:hover:not(:disabled) .cd-anteprima { transform: rotate(-6deg) scale(1.08); }
+.cd-scelta:active:not(:disabled) { transform: translateY(2px); box-shadow: var(--filo); }
+.cd-scelta:disabled { cursor: progress; }
+.cd-scelta b { font-size: 15px; }
+.cd-scelta small { font-size: 11px; line-height: 1.25; color: var(--inchiostro-2); }
+.cd-scelta [data-icona] { width: 44px; height: 44px; margin-bottom: 2px; transition: transform 220ms var(--esce); }
+.cd-anteprima {
+  display: block; width: 26px; height: 44px; margin-bottom: 2px; background: var(--carta-2); box-shadow: var(--filo);
+  transition: transform 220ms var(--esce); overflow: hidden;
+}
+.cd-scelta:disabled .cd-anteprima { animation: cd-attesa 900ms ease-in-out infinite alternate; }
+@keyframes cd-attesa { to { background: var(--scheda); } }
+.cd-anteprima img { display: block; width: 100%; height: 100%; object-fit: cover; animation: dissolvi 300ms ease-out; }
+.cd-scelta.fatto { background: #eef6e6; }
+.condividi-foglio .primario { margin-top: 18px; }
+@media (max-width: 380px) {
+  .cd-tappe { gap: 6px; } .cd-tappe i { width: 32px; height: 32px; }
+  .cd-scelte { gap: 8px; } .cd-scelta small { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cd-tappe i, .cd-anteprima img { animation: none; }
+  .cd-scelta, .cd-scelta [data-icona], .cd-anteprima { transition: none; }
+}
