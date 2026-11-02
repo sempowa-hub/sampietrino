@@ -369,6 +369,27 @@ export const ICONE = {
     ],
   },
   // Oggetti del taccuino.
+  casa: {
+    colori: { r: '#c43a28', R: '#9a2a1c', w: '#fbf4e0', b: '#e9dab2', d: '#8a5a3a', f: '#7fb2d8' },
+    disegno: [
+      '................',
+      '.......rr.......',
+      '......rrrr......',
+      '.....rrrrrr.....',
+      '....rrrrrrrr....',
+      '...rrrrrrrrrr...',
+      '..rrrrrrrrrrrr..',
+      '.RRRRRRRRRRRRRR.',
+      '...wwwwwwwwww...',
+      '...wffwwwwwwb...',
+      '...wffwwddwwb...',
+      '...wwwwwddwwb...',
+      '...wwwwwddwwb...',
+      '...wwwwwddwwb...',
+      '...bbbbbddbbb...',
+      '................',
+    ],
+  },
   fumetto: {
     colori: { v: '#6fc06a', V: '#4f9e4b', b: '#fbf4e0' },
     disegno: [

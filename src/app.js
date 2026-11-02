@@ -201,6 +201,7 @@ function apriGiorno(data, anima) {
 // la serie, un tasto solo per partire. Il gioco (e l'orologio) parte solo da qui. ---
 
 const splashAperto = () => !$('splash').hidden;
+let splashAscolta = false; // mostraSplash si riapre dal tasto Home: l'ascolto del login una volta sola
 
 function mostraSplash() {
   const s = leggi();
@@ -223,7 +224,7 @@ function mostraSplash() {
   $('splash-pass').textContent = ` ${Object.keys(s.timbri).filter((id) => zonePerId[id]).length} di ${dati.zone.length}`;
   const u = utente();
   $('splash-entra').hidden = !!(u && !u.anonimo);
-  quandoCambia((x) => { $('splash-entra').hidden = !!(x && !x.anonimo); });
+  if (!splashAscolta) { splashAscolta = true; quandoCambia((x) => { $('splash-entra').hidden = !!(x && !x.anonimo); }); }
   disegnaFondoSplash(s);
   $('splash').hidden = false;
   document.body.classList.add('con-splash');
@@ -889,6 +890,8 @@ async function apriCondividi() {
 }
 
 $('condividi').addEventListener('click', apriCondividi);
+// Home: la pagina d'apertura. Da un giorno arretrato si torna a oggi, sotto lo splash (l'orologio aspetta il tasto).
+$('home').addEventListener('click', () => { suoni.copia(); mostraSplash(); if (giorno !== oggi) apriGiorno(oggi, false); });
 $('cd-chiudi').addEventListener('click', () => $('condividi-foglio').close());
 {
   // Tocco fuori dal foglio: si chiude (pressione e rilascio entrambi fuori, come per i fogli del taccuino).

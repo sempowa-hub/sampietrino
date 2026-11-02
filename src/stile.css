@@ -315,6 +315,11 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 }
 .secondario:hover { background: #fffaf0; }
 .secondario:active { transform: translateY(2px); box-shadow: var(--filo); }
+/* Fine partita: Home accanto a Condividi. */
+.fine-azioni { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: stretch; }
+.fine-azioni .secondario { min-height: 54px; padding: 6px 14px; gap: 6px; }
+.fine-azioni [data-icona] { width: 28px; height: 28px; transition: transform 220ms var(--esce); }
+.fine-azioni .secondario:hover [data-icona] { transform: translateY(-2px) scale(1.08); }
 .secondario.largo { display: flex; width: 100%; margin-top: 12px; }
 .secondario[hidden] { display: none; }
 .primario.piccolo { min-height: 46px; font-size: 15px; margin-top: 10px; }
