@@ -166,21 +166,21 @@
    "gen-stili-un-edificio-del-rinascimento",
    "gen-tipi-chiesa-nazionale",
    "gen-tipi-porta-cittadina",
-   "gen-tipi-scultura",
-   "gen-epoche-palazzo-del-seicento"
+   "gen-epoche-chiesa-del-seicento",
+   "gen-tipi-scultura"
   ],
   "2026-11-24": [
    "gen-tipi-sito-archeologico",
-   "gen-epoche-chiesa-del-cinquecento",
-   "gen-tipi-tempio",
+   "gen-epoche-palazzo-del-seicento",
+   "gen-tipi-tempio-romano",
    "gen-tipi-edificio",
-   "gen-tipi-museo-archeologico"
+   "gen-epoche-chiesa-del-cinquecento"
   ]
  },
  "avanzano": [
-  "gen-tipi-tempio-romano",
+  "gen-tipi-tempio",
   "gen-tipi-edificio-romano",
   "gen-tipi-palazzo",
-  "gen-epoche-chiesa-del-seicento"
+  "gen-tipi-museo-archeologico"
  ]
 }

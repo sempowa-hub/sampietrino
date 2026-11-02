@@ -52,6 +52,8 @@ LINEA_MINIMA_M = 150  # una strada o una linea vale per la zona se ci corre dent
 FASCE = ['Da cartolina', 'Ce sta', 'Da romano de Roma', 'Chicca', 'Da Mino']
 PUNTI = [1, 2, 3, 5, 8]
 CATALOGO_CSV = RADICE / 'dati' / 'catalogo.csv'
+# Nome mostrato in gioco quando la gente chiama la zona in un altro modo. L'id resta quello del nome ufficiale (partite gia giocate).
+NOMI_DI_GIOCO = {'Ripa': 'Aventino'}
 ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
 
 utm = Transformer.from_crs(4326, 32633, always_xy=True)
@@ -177,7 +179,7 @@ def main():
         domande.append({
             'id': f'confina-{ids[n]}',
             'tipo': 'confina', 'riserva': True,
-            'testo': f'Una zona che confina con {n}',
+            'testo': f'Una zona che confina con {NOMI_DI_GIOCO.get(n, n)}',
             'evidenzia': [ids[n]],
             'risposte': sorted(ids[v] for v in vicini[n]),
         })
@@ -478,7 +480,7 @@ def main():
         mancano = sorted(set(range(5)) - set(d['catalogo'].values()))
         if mancano and not d.get('riserva') and MIN_RISPOSTE <= len(d['catalogo']) <= MAX_RISPOSTE:
             print(f'ATTENZIONE {d["id"]}: nessuna risposta in {", ".join(FASCE[m] for m in mancano)}: domanda fuori gioco')
-    nome_di = {ids[n]: n for n in nomi}
+    nome_di = {ids[n]: NOMI_DI_GIOCO.get(n, n) for n in nomi}
     with CATALOGO_CSV.open('w', newline='') as fcsv:
         w = csv.writer(fcsv)
         w.writerow(['domanda', 'testo', 'giocabile', 'zona', 'fascia', 'punti', 'perche'])
@@ -520,7 +522,7 @@ def main():
         'municipi': [{'num': k, 'nome': f'Municipio {ROMANI[k]}', 'd': percorso_svg(semplifica(m), origine)}
                      for k, m in sorted(municipi.items()) if m.area],
         'zone': [{
-            'id': ids[n], 'nome': n, 'notorieta': notorieta[n], 'municipio': mun_di[n],
+            'id': ids[n], 'nome': NOMI_DI_GIOCO.get(n, n), 'notorieta': notorieta[n], 'municipio': mun_di[n],
             'casa': casa_di[n], 'tipo': tipo_di.get(n, 'quartiere'),
             'km2': round(zone[n].area / 1e6, 1), 'd': percorso_svg(semplifica(zone[n]), origine),
             'centro': [round((zone[n].representative_point().x - minx) / 1000, 2),

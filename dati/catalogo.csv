@@ -75,7 +75,7 @@ confina-campitelli,Una zona che confina con Campitelli,si,Monti,Da cartolina,1,
 confina-campitelli,Una zona che confina con Campitelli,si,Celio,Ce sta,2,
 confina-campitelli,Una zona che confina con Campitelli,si,Sant'Angelo,Da romano de Roma,3,
 confina-campitelli,Una zona che confina con Campitelli,si,Pigna,Chicca,5,
-confina-campitelli,Una zona che confina con Campitelli,si,Ripa,Da Mino,8,
+confina-campitelli,Una zona che confina con Campitelli,si,Aventino,Da Mino,8,
 confina-campo-marzio,Una zona che confina con Campo Marzio,si,Prati,Da cartolina,1,
 confina-campo-marzio,Una zona che confina con Campo Marzio,si,Villa Borghese,Da cartolina,1,
 confina-campo-marzio,Una zona che confina con Campo Marzio,si,Flaminio,Ce sta,2,
@@ -463,14 +463,14 @@ confina-regola,Una zona che confina con Regola,si,Ponte,Da cartolina,1,
 confina-regola,Una zona che confina con Regola,si,Trastevere,Da cartolina,1,
 confina-regola,Una zona che confina con Regola,si,Sant'Angelo,Ce sta,2,
 confina-regola,Una zona che confina con Regola,si,Parione,Da romano de Roma,3,
-confina-regola,Una zona che confina con Regola,si,Ripa,Chicca,5,
+confina-regola,Una zona che confina con Regola,si,Aventino,Chicca,5,
 confina-regola,Una zona che confina con Regola,si,Sant'Eustachio,Da Mino,8,
-confina-ripa,Una zona che confina con Ripa,si,Testaccio,Da cartolina,1,
-confina-ripa,Una zona che confina con Ripa,si,Trastevere,Da cartolina,1,
-confina-ripa,Una zona che confina con Ripa,si,Campitelli,Ce sta,2,
-confina-ripa,Una zona che confina con Ripa,si,San Saba,Da romano de Roma,3,
-confina-ripa,Una zona che confina con Ripa,si,Sant'Angelo,Chicca,5,
-confina-ripa,Una zona che confina con Ripa,si,Regola,Da Mino,8,
+confina-ripa,Una zona che confina con Aventino,si,Testaccio,Da cartolina,1,
+confina-ripa,Una zona che confina con Aventino,si,Trastevere,Da cartolina,1,
+confina-ripa,Una zona che confina con Aventino,si,Campitelli,Ce sta,2,
+confina-ripa,Una zona che confina con Aventino,si,San Saba,Da romano de Roma,3,
+confina-ripa,Una zona che confina con Aventino,si,Sant'Angelo,Chicca,5,
+confina-ripa,Una zona che confina con Aventino,si,Regola,Da Mino,8,
 confina-sacco-pastore,Una zona che confina con Sacco Pastore,no,Monte Sacro,Da cartolina,1,
 confina-sacco-pastore,Una zona che confina con Sacco Pastore,no,Vescovio,Ce sta,2,
 confina-sacco-pastore,Una zona che confina con Sacco Pastore,no,Nomentano,Da romano de Roma,3,
@@ -513,11 +513,11 @@ confina-san-paolo,Una zona che confina con San Paolo,si,Valco San Paolo,Da Mino,
 confina-san-saba,Una zona che confina con San Saba,no,Testaccio,Da cartolina,1,
 confina-san-saba,Una zona che confina con San Saba,no,Miani,Ce sta,2,
 confina-san-saba,Una zona che confina con San Saba,no,Celio,Da romano de Roma,3,
-confina-san-saba,Una zona che confina con San Saba,no,Ripa,Chicca,5,
+confina-san-saba,Una zona che confina con San Saba,no,Aventino,Chicca,5,
 confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Campitelli,Da cartolina,1,
 confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Regola,Ce sta,2,
 confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Pigna,Da romano de Roma,3,
-confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Ripa,Chicca,5,
+confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Aventino,Chicca,5,
 confina-sant-angelo,Una zona che confina con Sant'Angelo,si,Sant'Eustachio,Da Mino,8,
 confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Campo Marzio,Da cartolina,1,
 confina-sant-eustachio,Una zona che confina con Sant'Eustachio,si,Colonna,Da cartolina,1,
@@ -540,7 +540,7 @@ confina-tenuta-dei-massimi,Una zona che confina con Tenuta dei Massimi,si,Pisana
 confina-testaccio,Una zona che confina con Testaccio,no,Ostiense,Da cartolina,1,
 confina-testaccio,Una zona che confina con Testaccio,no,Porta Portese,Ce sta,2,
 confina-testaccio,Una zona che confina con Testaccio,no,San Saba,Da romano de Roma,3,
-confina-testaccio,Una zona che confina con Testaccio,no,Ripa,Chicca,5,
+confina-testaccio,Una zona che confina con Testaccio,no,Aventino,Chicca,5,
 confina-tiburtino-iii,Una zona che confina con Tiburtino III,si,Casal Bertone,Da cartolina,1,
 confina-tiburtino-iii,Una zona che confina con Tiburtino III,si,Pietralata,Da cartolina,1,
 confina-tiburtino-iii,Una zona che confina con Tiburtino III,si,Tor Sapienza,Ce sta,2,
@@ -609,7 +609,7 @@ confina-trastevere,Una zona che confina con Trastevere,si,Borgo,Ce sta,2,
 confina-trastevere,Una zona che confina con Trastevere,si,Cavalleggeri - San Pietro,Da romano de Roma,3,
 confina-trastevere,Una zona che confina con Trastevere,si,Ponte,Da romano de Roma,3,
 confina-trastevere,Una zona che confina con Trastevere,si,Regola,Chicca,5,
-confina-trastevere,Una zona che confina con Trastevere,si,Ripa,Da Mino,8,
+confina-trastevere,Una zona che confina con Trastevere,si,Aventino,Da Mino,8,
 confina-trevi,Una zona che confina con Trevi,si,Castro Pretorio,Da cartolina,1,
 confina-trevi,Una zona che confina con Trevi,si,Monti,Da cartolina,1,
 confina-trevi,Una zona che confina con Trevi,si,Ludovisi,Ce sta,2,
@@ -727,9 +727,9 @@ municipio-1,Una zona del Municipio I,si,Parione,Chicca,5,
 municipio-1,Una zona del Municipio I,si,Ponte,Chicca,5,
 municipio-1,Una zona del Municipio I,si,San Saba,Chicca,5,
 municipio-1,Una zona del Municipio I,si,Sant'Angelo,Chicca,5,
+municipio-1,Una zona del Municipio I,si,Aventino,Da Mino,8,
 municipio-1,Una zona del Municipio I,si,Pigna,Da Mino,8,
 municipio-1,Una zona del Municipio I,si,Regola,Da Mino,8,
-municipio-1,Una zona del Municipio I,si,Ripa,Da Mino,8,
 municipio-1,Una zona del Municipio I,si,Sallustiano,Da Mino,8,
 municipio-1,Una zona del Municipio I,si,Sant'Eustachio,Da Mino,8,
 municipio-2,Una zona del Municipio II,si,Parioli,Da cartolina,1,
@@ -918,8 +918,8 @@ metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Italia,Chicca,5,
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti di Pietralata,Chicca,5,Quintiliani
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ponte Mammolo,Chicca,5,Rebibbia
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Tufello,Chicca,5,Jonio
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Aventino,Da Mino,8,Circo Massimo
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Giuliano Dalmata,Da Mino,8,Laurentina
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ripa,Da Mino,8,Circo Massimo
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Da Mino,8,Circo Massimo
 metro-c,Una zona con una fermata della Metro C,si,Monti,Da cartolina,1,Colosseo – Fori Imperiali
 metro-c,Una zona con una fermata della Metro C,si,Pigneto,Da cartolina,1,Pigneto
@@ -957,9 +957,9 @@ tevere,Una zona dove passa il Tevere,si,Tor di Quinto,Chicca,5,
 tevere,Una zona dove passa il Tevere,si,Tor di Valle,Chicca,5,
 tevere,Una zona dove passa il Tevere,si,Valco San Paolo,Chicca,5,
 tevere,Una zona dove passa il Tevere,si,Villaggio Olimpico,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Aventino,Da Mino,8,
 tevere,Una zona dove passa il Tevere,si,Ponte,Da Mino,8,
 tevere,Una zona dove passa il Tevere,si,Regola,Da Mino,8,
-tevere,Una zona dove passa il Tevere,si,Ripa,Da Mino,8,
 tevere,Una zona dove passa il Tevere,si,Sant'Angelo,Da Mino,8,
 fontane,Una zona con una fontana famosa,si,Trevi,Da cartolina,1,Fontana di Trevi / Fontana del Tritone / Fontana delle Api / Fontana del Mosè / Fontana del Facchino
 fontane,Una zona con una fontana famosa,si,Campo Marzio,Ce sta,2,Fontana della Barcaccia
@@ -1089,6 +1089,7 @@ mercato,Una zona con un mercato rionale,no,Tor di Quinto,Chicca,5,Mercato Rional
 mercato,Una zona con un mercato rionale,no,Torrevecchia,Chicca,5,
 mercato,Una zona con un mercato rionale,no,Tufello,Chicca,5,Mercato Rionale del Tufello
 mercato,Una zona con un mercato rionale,no,Ardeatino,Da Mino,8,Mercato Navigatori
+mercato,Una zona con un mercato rionale,no,Aventino,Da Mino,8,Mercato di Campagna Amica Circo Massimo
 mercato,Una zona con un mercato rionale,no,Casal Boccone,Da Mino,8,Mercato Coperto di Val Melaina / Mercato Rionale Settimanale
 mercato,Una zona con un mercato rionale,no,Colli Aniene,Da Mino,8,Mercato Rionale Colli Aniene
 mercato,Una zona con un mercato rionale,no,Della Vittoria,Da Mino,8,AGS Mercato Vittoria / Mercato dei Fiori / TaoMark
@@ -1096,7 +1097,6 @@ mercato,Una zona con un mercato rionale,no,Fonte Meravigliosa,Da Mino,8,Mercato 
 mercato,Una zona con un mercato rionale,no,Parione,Da Mino,8,Campo de' Fiori
 mercato,Una zona con un mercato rionale,no,Portuense,Da Mino,8,Mercato di Santa Silvia
 mercato,Una zona con un mercato rionale,no,Regola,Da Mino,8,Campo de' Fiori
-mercato,Una zona con un mercato rionale,no,Ripa,Da Mino,8,Mercato di Campagna Amica Circo Massimo
 mercato,Una zona con un mercato rionale,no,San Saba,Da Mino,8,Mercato di San Saba
 mercato,Una zona con un mercato rionale,no,Tiburtino III,Da Mino,8,Mercato
 mercato,Una zona con un mercato rionale,no,Torrino,Da Mino,8,
@@ -1149,6 +1149,7 @@ ospedale,Una zona con un ospedale,no,Torre Maura,Chicca,5,Policlinico Casilino
 ospedale,Una zona con un ospedale,no,Torrevecchia,Chicca,5,
 ospedale,Una zona con un ospedale,no,Torrino,Chicca,5,IFO - Istituti Fisioterapici Ospitalieri / Istituto Dermatologico San Gallicano / Istituto Nazionale Tumori Regina Elena
 ospedale,Una zona con un ospedale,no,Appia Antica,Da Mino,8,Fondazione Santa Lucia
+ospedale,Una zona con un ospedale,no,Aventino,Da Mino,8,Fatebenefratelli
 ospedale,Una zona con un ospedale,no,Casaletto - Colli Portuensi,Da Mino,8,European Hospital
 ospedale,Una zona con un ospedale,no,Casetta Mattei,Da Mino,8,European Hospital / Policlinico Luigi di Liegro / Villa Sandra
 ospedale,Una zona con un ospedale,no,Giuliano Dalmata,Da Mino,8,Studio Odontoiatrico Dominici
@@ -1156,7 +1157,6 @@ ospedale,Una zona con un ospedale,no,Grottarossa Valle Vescovo,Da Mino,8,Ospedal
 ospedale,Una zona con un ospedale,no,La Pisana,Da Mino,8,San Raffaele Pisana
 ospedale,Una zona con un ospedale,no,Longoni - Maggiolino,Da Mino,8,Rome American Hospital
 ospedale,Una zona con un ospedale,no,Palmarola,Da Mino,8,Ospedale San Filippo Neri
-ospedale,Una zona con un ospedale,no,Ripa,Da Mino,8,Fatebenefratelli
 ospedale,Una zona con un ospedale,no,San Godenzo,Da Mino,8,Ospedale San Pietro Fatebenefratelli
 ospedale,Una zona con un ospedale,no,Villa Troili,Da Mino,8,
 universita,Una zona con un'università,no,Esquilino,Da cartolina,1,"Pontificia Universitas Antonianum / Pontificia Università Antonianum / Università La Sapienza - Dipartimento di Ingegneria informatica, automatica e gestionale Antonio Ruberti / ..."
@@ -1193,12 +1193,12 @@ universita,Una zona con un'università,no,Nuovo Salario,Chicca,5,Università Pon
 universita,Una zona con un'università,no,Pinciano,Chicca,5,Libera Università Internazionale degli Studi Sociali (LUISS) Guido Carli / Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
 universita,Una zona con un'università,no,Pineta Sacchetti,Chicca,5,Università Cattolica del Sacro Cuore
 universita,Una zona con un'università,no,Salario,Chicca,5,Università Sapienza di Roma - Dipartimento di Comunicazione e ricerca sociale
+universita,Una zona con un'università,no,Aventino,Da Mino,8,Accademia Nazionale di Danza
 universita,Una zona con un'università,no,Campitelli,Da Mino,8,Nobile Collegio Chimico Farmaceutico
 universita,Una zona con un'università,no,Grottarossa Valle Vescovo,Da Mino,8,
 universita,Una zona con un'università,no,Parione,Da Mino,8,Pontificia Università della Santa Croce / UNIMED – Mediterranean Universities Union
 universita,Una zona con un'università,no,Pigna,Da Mino,8,Mediateca Università telematica Nettuno / Pontificio Seminario Francese
 universita,Una zona con un'università,no,Ponte,Da Mino,8,Pontificia Università della Santa Croce
-universita,Una zona con un'università,no,Ripa,Da Mino,8,Accademia Nazionale di Danza
 universita,Una zona con un'università,no,Valco San Paolo,Da Mino,8,Il Giovedì di Progetto / Università Roma Tre - Corsi di laurea in Fisica / Università Roma Tre - Dipartimenti di Ingegneria / ...
 universita,Una zona con un'università,no,Villa Troili,Da Mino,8,Ateneo Pontificio Regina Apostolorum / Università Europea di Roma
 cinema,Una zona con un cinema,si,Eur,Da cartolina,1,EUR Cine
@@ -1351,6 +1351,7 @@ biblioteca,Una zona con una biblioteca,no,Prenestino Labicano,Chicca,5,Mediateca
 biblioteca,Una zona con una biblioteca,no,Tor di Quinto,Chicca,5,Biblioteca sportiva nazionale
 biblioteca,Una zona con una biblioteca,no,Valco San Paolo,Chicca,5,TiConZeroLibri
 biblioteca,Una zona con una biblioteca,no,Valle Aurelia,Chicca,5,Aula Studio Casa del Popolo / Biblioteca Valle Aurelia
+biblioteca,Una zona con una biblioteca,no,Aventino,Da Mino,8,Biblioteca del Centro di studi per la storia dell'architettura / Biblioteca dell'Ufficio di Statistica
 biblioteca,Una zona con una biblioteca,no,Bravetta,Da Mino,8,Historische Bibliothek
 biblioteca,Una zona con una biblioteca,no,Casal Boccone,Da Mino,8,Centro Genealogico FamilySearch
 biblioteca,Una zona con una biblioteca,no,Collatino,Da Mino,8,Biblioteca Penazzato
@@ -1360,15 +1361,14 @@ biblioteca,Una zona con una biblioteca,no,Parione,Da Mino,8,Biblioteca Vallicell
 biblioteca,Una zona con una biblioteca,no,Pigna,Da Mino,8,Biblioteca Casanatense / Biblioteca del Senato Giovanni Spadolini - Palazzo della Minerva / Biblioteca della Camera dei deputati
 biblioteca,Una zona con una biblioteca,no,Ponte,Da Mino,8,Casa delle Letterature
 biblioteca,Una zona con una biblioteca,no,Regola,Da Mino,8,Biblioteca Centrale Ragazzi / Biblioteca della Pontificia Università della Santa Croce / Bibliothèque de l'École française de Rome
-biblioteca,Una zona con una biblioteca,no,Ripa,Da Mino,8,Biblioteca del Centro di studi per la storia dell'architettura / Biblioteca dell'Ufficio di Statistica
 biblioteca,Una zona con una biblioteca,no,Sant'Angelo,Da Mino,8,Biblioteca dell'Istituto dell'Enciclopedia Italiana / Biblioteca di storia moderna e contemporanea
 biblioteca,Una zona con una biblioteca,no,Sant'Eustachio,Da Mino,8,"Bibilioteca Lelio Basso / Biblioteca Angelica / Biblioteca Magistrale Laziale ""Giorgio Gabrielli"" / ..."
 belvedere-themino,Una zona con un belvedere segreto,si,Campo Marzio,Da cartolina,1,Terrazza del Pincio
 belvedere-themino,Una zona con un belvedere segreto,si,Trastevere,Da cartolina,1,Gianicolo / Piazza di San Pietro in Montorio
 belvedere-themino,Una zona con un belvedere segreto,si,Campitelli,Ce sta,2,Terrazza sul Foro / Terrazza Caffarelli
 belvedere-themino,Una zona con un belvedere segreto,si,Trevi,Ce sta,2,Piazza del Quirinale
+belvedere-themino,Una zona con un belvedere segreto,si,Aventino,Da romano de Roma,3,Giardino degli Aranci
 belvedere-themino,Una zona con un belvedere segreto,si,Della Vittoria,Da romano de Roma,3,Zodiaco / Villa Mazzanti
-belvedere-themino,Una zona con un belvedere segreto,si,Ripa,Da romano de Roma,3,Giardino degli Aranci
 belvedere-themino,Una zona con un belvedere segreto,si,Monteverde,Chicca,5,Fortino della Madonnina
 belvedere-themino,Una zona con un belvedere segreto,si,Monti,Chicca,5,Villa Aldobrandini
 belvedere-themino,Una zona con un belvedere segreto,si,Parioli,Chicca,5,Villa Balestra
@@ -1376,7 +1376,7 @@ belvedere-themino,Una zona con un belvedere segreto,si,Trionfale,Chicca,5,Monte 
 belvedere-themino,Una zona con un belvedere segreto,si,Aurelio,Da Mino,8,Belvedere di via Piccolomini
 belvedere-themino,Una zona con un belvedere segreto,si,Balduina,Da Mino,8,Piazzale Socrate
 cupola,Una zona da cui si vede il Cupolone,si,Trastevere,Da cartolina,1,Gianicolo
-cupola,Una zona da cui si vede il Cupolone,si,Ripa,Ce sta,2,Buco della serratura dei Cavalieri di Malta / Giardino degli Aranci
+cupola,Una zona da cui si vede il Cupolone,si,Aventino,Ce sta,2,Buco della serratura dei Cavalieri di Malta / Giardino degli Aranci
 cupola,Una zona da cui si vede il Cupolone,si,Della Vittoria,Da romano de Roma,3,Zodiaco
 cupola,Una zona da cui si vede il Cupolone,si,Trevi,Da romano de Roma,3,Piazza del Quirinale
 cupola,Una zona da cui si vede il Cupolone,si,Parioli,Chicca,5,Villa Balestra
@@ -1385,14 +1385,14 @@ cupola,Una zona da cui si vede il Cupolone,si,Villa Pamphili,Chicca,5,Villa Dori
 cupola,Una zona da cui si vede il Cupolone,si,Aurelio,Da Mino,8,Belvedere di via Piccolomini
 cupola,Una zona da cui si vede il Cupolone,si,Balduina,Da Mino,8,Piazzale Socrate
 cupola,Una zona da cui si vede il Cupolone,si,Cavalleggeri - San Pietro,Da Mino,8,Passeggiata del Gelsomino
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Ripa,Da cartolina,1,Buco della serratura
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aventino,Da cartolina,1,Buco della serratura
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Ce sta,2,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Da romano de Roma,3,Refettorio di Andrea Pozzo a Trinità dei Monti / Effetto acustico di piazza del Popolo
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Monti,Chicca,5,"Cupola di San Carlino, coi cassettoni che rimpiccioliscono"
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Trevi,Chicca,5,"Cupola di San Carlino, coi cassettoni che rimpiccioliscono"
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aurelio,Da Mino,8,Cupola che si rimpicciolisce in via Piccolomini
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Da Mino,8,Galleria prospettica di Palazzo Spada
-misteri,Una zona con una leggenda nera o un mistero,si,Ripa,Da cartolina,1,Bocca della Verità
+misteri,Una zona con una leggenda nera o un mistero,si,Aventino,Da cartolina,1,Bocca della Verità
 misteri,Una zona con una leggenda nera o un mistero,si,Campitelli,Ce sta,2,Rupe Tarpea
 misteri,Una zona con una leggenda nera o un mistero,si,Esquilino,Da romano de Roma,3,Porta Magica
 misteri,Una zona con una leggenda nera o un mistero,si,Appia Antica,Chicca,5,Impronte di Gesù al Domine Quo Vadis
@@ -1445,8 +1445,8 @@ roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Testaccio,
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Parione,Da romano de Roma,3,Stadio di Domiziano
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Celio,Chicca,5,Case romane del Celio
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trevi,Chicca,5,Città dell'acqua (Vicus Caprarius)
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Aventino,Da Mino,8,Mitreo del Circo Massimo
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Esquilino,Da Mino,8,Ipogeo degli Aureli
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Ripa,Da Mino,8,Mitreo del Circo Massimo
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Sant'Angelo,Da Mino,8,Crypta Balbi
 street-art,Una zona famosa per i murales,si,Ostiense,Da cartolina,1,Via del Porto Fluviale
 street-art,Una zona famosa per i murales,si,Pigneto,Ce sta,2,Pigneto e i murales per Pasolini
@@ -1465,7 +1465,7 @@ novecento,Una zona con un gioiello del Novecento,si,Tor Marancia,Da Mino,8,Case 
 novecento,Una zona con un gioiello del Novecento,si,Trullo,Da Mino,8,Borgata razionalista del Trullo
 estero,Una zona dove c'è un pezzetto di estero,si,Campo Marzio,Da cartolina,1,"Trinità dei Monti, chiesa dei francesi"
 estero,Una zona dove c'è un pezzetto di estero,si,Sant'Eustachio,Ce sta,2,San Luigi dei Francesi
-estero,Una zona dove c'è un pezzetto di estero,si,Ripa,Da romano de Roma,3,Priorato dei Cavalieri di Malta
+estero,Una zona dove c'è un pezzetto di estero,si,Aventino,Da romano de Roma,3,Priorato dei Cavalieri di Malta
 estero,Una zona dove c'è un pezzetto di estero,si,Testaccio,Da romano de Roma,3,Cimitero degli inglesi
 estero,Una zona dove c'è un pezzetto di estero,si,Eur,Chicca,5,Ciliegi giapponesi del laghetto
 estero,Una zona dove c'è un pezzetto di estero,si,Monti,Da Mino,8,"Santo Stefano Rotondo, chiesa degli ungheresi"
@@ -1520,9 +1520,9 @@ ville-themino,Una zona con un grande parco,si,Grottarossa Valle Vescovo,Da Mino,
 ville-themino,Una zona con un grande parco,si,Quarticciolo,Da Mino,8,Parco Giovanni Palatucci
 ville-themino,Una zona con un grande parco,si,Torrino,Da Mino,8,Parco del Castellaccio
 ville-themino,Una zona con un grande parco,si,Vigna Clara,Da Mino,8,Parco regionale di Veio
+gen-tipi-tempio-romano,Una zona con un tempio romano,si,Aventino,Da cartolina,1,Tempio di Giunone Regina / Tempio di Ercole Vincitore / Tempio di Portuno / ...
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Campitelli,Da cartolina,1,Tempio del Divo Romolo / Tempio dei Dioscuri / Tempio di Venere e Roma / ...
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Pigna,Da cartolina,1,Pantheon / Tempio delle Ninfe / tempio di Minerva Calcidica / ...
-gen-tipi-tempio-romano,Una zona con un tempio romano,si,Ripa,Da cartolina,1,Tempio di Giunone Regina / Tempio di Ercole Vincitore / Tempio di Portuno / ...
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Colonna,Ce sta,2,Tempio del Sole / Tempio di Adriano
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Monti,Ce sta,2,Tempio di Marte Ultore / Tempio della Gens Flavia / Tempio di Tellure / ...
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Celio,Da romano de Roma,3,Tempio del Divo Claudio
@@ -1532,9 +1532,9 @@ gen-tipi-tempio-romano,Una zona con un tempio romano,si,Regola,Chicca,5,Tempio d
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Trevi,Chicca,5,santuario di Semo Sancus Dius Fidius / Tempio di Serapide / Tempio della Salus / ...
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,San Saba,Da Mino,8,Tempio di Onore e Virtù / tempio della Fortuna Muliebre
 gen-tipi-tempio-romano,Una zona con un tempio romano,si,Sant'Eustachio,Da Mino,8,Tempio della Fortuna equestre
+gen-tipi-tempio,Una zona con un tempio antico,si,Aventino,Da cartolina,1,Tempio di Fauno / Tempio di Giunone Regina / Tempio di Ercole Vincitore / ...
 gen-tipi-tempio,Una zona con un tempio antico,si,Campitelli,Da cartolina,1,Tempio del Divo Romolo / Tempio dei Dioscuri / Tempio di Venere e Roma / ...
 gen-tipi-tempio,Una zona con un tempio antico,si,Pigna,Da cartolina,1,Pantheon / Tempio delle Ninfe / Tempio di Iside al Campo Marzio / ...
-gen-tipi-tempio,Una zona con un tempio antico,si,Ripa,Da cartolina,1,Tempio di Fauno / Tempio di Giunone Regina / Tempio di Ercole Vincitore / ...
 gen-tipi-tempio,Una zona con un tempio antico,si,Colonna,Ce sta,2,Tempio del Sole / Tempio di Adriano / Tempio di Matidia
 gen-tipi-tempio,Una zona con un tempio antico,si,Monti,Ce sta,2,Tempio di Marte Ultore / Tempio della Gens Flavia / Tempio di Tellure / ...
 gen-tipi-tempio,Una zona con un tempio antico,si,Sant'Angelo,Ce sta,2,"tempio di Ercole delle Muse / Tempio della Pietà / Tempio di Spes, Foro Olitorio / ..."
@@ -1572,13 +1572,13 @@ gen-tipi-tomba,Una zona con una tomba antica,si,San Saba,Da Mino,8,sepolcro ipog
 gen-tipi-tomba,Una zona con una tomba antica,si,Tor Fiscale,Da Mino,8,Sepolcro dei Pancrazi / tomba dei Valerii / sepolcro a dado al iii miglio della Via Latina / ...
 gen-tipi-tomba,Una zona con una tomba antica,si,Tor di Valle,Da Mino,8,sepolcro di Marco Antonio Anzio Lupo
 gen-tipi-tomba,Una zona con una tomba antica,si,Torre Maura,Da Mino,8,tomba romana presso Villa Allegretti
+gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Aventino,Da cartolina,1,Circo Massimo / Acquedotto Appio / Terme Deciane / ...
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Campitelli,Da cartolina,1,Arco di Settimio Severo / Foro Romano / Tempio del Divo Romolo / ...
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Campo Marzio,Da cartolina,1,Ara Pacis / Mausoleo di Augusto / Villa di Lucullo
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Celio,Da cartolina,1,Tempio del Divo Claudio / Arco di Druso / Meta Sudans / ...
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Miani,Da cartolina,1,Mura aureliane
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Monti,Da cartolina,1,Colonna Traiana / Foro di Traiano / Mercati di Traiano / ...
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Pigna,Da cartolina,1,Pantheon / Saepta Iulia / Terme di Agrippa / ...
-gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Ripa,Da cartolina,1,Circo Massimo / Acquedotto Appio / Terme Deciane / ...
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,San Saba,Da cartolina,1,Terme di Caracalla / Mura aureliane / Arco di Druso
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Castro Pretorio,Ce sta,2,Porta Pia / Aqua Tepula / Terme di Diocleziano / ...
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Esquilino,Ce sta,2,mura serviane / Anfiteatro castrense / Aqua Iulia / ...
@@ -1617,9 +1617,9 @@ gen-tipi-rovine,Una zona con delle rovine antiche,si,Celio,Da cartolina,1,Tempio
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Monti,Da cartolina,1,Mercati di Traiano / Foro romano e Palatino
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Colonna,Ce sta,2,Tempio di Adriano
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Sant'Angelo,Ce sta,2,Tempio di Bellona
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Aventino,Da romano de Roma,3,Arco degli Argentari
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Nomentano,Da romano de Roma,3,Sepolcro di Elio Callisto
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Pigna,Da romano de Roma,3,Tempio delle Ninfe / Tempio di Iside al Campo Marzio
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Ripa,Da romano de Roma,3,Arco degli Argentari
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Appia Antica,Chicca,5,castello Caetani
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Balduina,Chicca,5,Villa del Pigneto
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Tor Fiscale,Da Mino,8,casale rampa o vaccheria Tor Fiscale
@@ -1645,10 +1645,10 @@ gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Monti,Da ca
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Pigna,Da cartolina,1,Pantheon / Villa publica / tempio di Minerva Calcidica / ...
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Ponte Milvio,Da cartolina,1,Ponte Milvio
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,San Saba,Da cartolina,1,Terme di Caracalla / Tempio della Bona Dea / tempio della Fortuna Muliebre
+gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Aventino,Ce sta,2,Tempio di Fauno / Ponte Fabricio / Tempio di Giunone Regina / ...
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Colonna,Ce sta,2,Tempio di Adriano / Anfiteatro di Caligola
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Flaminio,Ce sta,2,Ponte Milvio
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Italia,Ce sta,2,Castra Praetoria
-gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Ripa,Ce sta,2,Tempio di Fauno / Ponte Fabricio / Tempio di Giunone Regina / ...
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Trevi,Ce sta,2,via Salaria / Ateneo di Adriano / via Lata / ...
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Villaggio Olimpico,Ce sta,2,Ponte Milvio / La fattoria e la villa dell'Auditorium
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Appia Antica,Da romano de Roma,3,Villa dei Quintili / Capo di Bove / Villa di Massenzio
@@ -1671,7 +1671,7 @@ gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,San Giovann
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Tor Fiscale,Da Mino,8,statio al III miglio della Via Latina
 gen-tipi-arco-trionfale,Una zona con un arco antico,si,Campitelli,Da cartolina,1,Arco di Settimio Severo / Arco di Tito / Arco di Augusto / ...
 gen-tipi-arco-trionfale,Una zona con un arco antico,si,Celio,Da cartolina,1,Arco di Druso / Arco di Costantino
-gen-tipi-arco-trionfale,Una zona con un arco antico,si,Ripa,Ce sta,2,Arco degli Argentari / Arco di Tito e Vespasiano / Arco di Lentulo e Crispino
+gen-tipi-arco-trionfale,Una zona con un arco antico,si,Aventino,Ce sta,2,Arco degli Argentari / Arco di Tito e Vespasiano / Arco di Lentulo e Crispino
 gen-tipi-arco-trionfale,Una zona con un arco antico,si,San Saba,Ce sta,2,Arco di Druso
 gen-tipi-arco-trionfale,Una zona con un arco antico,si,Esquilino,Da romano de Roma,3,Arco di Gallieno / Arco di Sisto V
 gen-tipi-arco-trionfale,Una zona con un arco antico,si,Trevi,Da romano de Roma,3,Arcus Novus / Arco di Claudio
@@ -1685,9 +1685,9 @@ gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Esquilino,Da carto
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Nomentano,Da cartolina,1,Porta Pia / Porta Praetoriana
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Pigneto,Da cartolina,1,Porta Maggiore
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,San Saba,Da cartolina,1,Porta Raudusculana / Porta Capena / Porta Ardeatina / ...
+gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Aventino,Ce sta,2,Porta Trigemina / Porta Flumentana / Porta Lavernalis
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Campo Marzio,Ce sta,2,Porta Pinciana / Porta del Popolo
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Flaminio,Ce sta,2,Porta del Popolo
-gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Ripa,Ce sta,2,Porta Trigemina / Porta Flumentana / Porta Lavernalis
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,San Lorenzo,Ce sta,2,Porta Tiburtina
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Villa Borghese,Ce sta,2,Porta del Popolo
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Celio,Da romano de Roma,3,Porta Caelimontana e Porta Querquetulana / Porta Latina / Porta Metronia / ...
@@ -1743,9 +1743,9 @@ gen-tipi-torre,Una zona con una torre,si,Appia Antica,Da cartolina,1,Almone / To
 gen-tipi-torre,Una zona con una torre,si,Eur,Da cartolina,1,Palazzo ENI / palazzo INAIL / Torre piezometrica dell'Eur / ...
 gen-tipi-torre,Una zona con una torre,si,Monti,Da cartolina,1,Torre dei Conti / Torre delle Milizie / torre dei Capocci / ...
 gen-tipi-torre,Una zona con una torre,si,Ponte,Da cartolina,1,Tor Sanguigna / Torre della Scimmia
+gen-tipi-torre,Una zona con una torre,si,Aventino,Ce sta,2,Torre della Moletta / Torre Caetani
 gen-tipi-torre,Una zona con una torre,si,Campitelli,Ce sta,2,Torre di Paolo III
 gen-tipi-torre,Una zona con una torre,si,Pigna,Ce sta,2,Torre del Papito
-gen-tipi-torre,Una zona con una torre,si,Ripa,Ce sta,2,Torre della Moletta / Torre Caetani
 gen-tipi-torre,Una zona con una torre,si,Balduina,Da romano de Roma,3,Centro trasmittente di Monte Mario
 gen-tipi-torre,Una zona con una torre,si,Cinecittà,Da romano de Roma,3,Torre di Centocelle
 gen-tipi-torre,Una zona con una torre,si,Quadraro,Da romano de Roma,3,Torre del Quadraro
@@ -1764,9 +1764,9 @@ gen-tipi-basilica,Una zona con una basilica,si,Pigna,Da cartolina,1,Pantheon / b
 gen-tipi-basilica,Una zona con una basilica,si,San Paolo,Da cartolina,1,basilica di San Paolo fuori le mura / basilica di Santa Maria Regina degli Apostoli alla Montagnola
 gen-tipi-basilica,Una zona con una basilica,si,Verano,Da cartolina,1,Basilica di San Lorenzo fuori le mura
 gen-tipi-basilica,Una zona con una basilica,si,Appia Antica,Ce sta,2,basilica di San Sebastiano fuori le mura
+gen-tipi-basilica,Una zona con una basilica,si,Aventino,Ce sta,2,basilica di Santa Sabina / basilica di Santa Maria in Cosmedin / basilica dei Santi Bonifacio e Alessio / ...
 gen-tipi-basilica,Una zona con una basilica,si,Castro Pretorio,Ce sta,2,basilica del Sacro Cuore di Gesù / basilica di Santa Maria degli Angeli e dei Martiri
 gen-tipi-basilica,Una zona con una basilica,si,Ponte,Ce sta,2,basilica di San Giovanni Battista dei Fiorentini / chiesa dei Santi Celso e Giuliano / basilica di Sant'Apollinare
-gen-tipi-basilica,Una zona con una basilica,si,Ripa,Ce sta,2,basilica di Santa Sabina / basilica di Santa Maria in Cosmedin / basilica dei Santi Bonifacio e Alessio / ...
 gen-tipi-basilica,Una zona con una basilica,si,Sant'Eustachio,Ce sta,2,basilica di Sant'Eustachio / basilica di Sant'Agostino in Campo Marzio / basilica di Sant'Andrea della Valle
 gen-tipi-basilica,Una zona con una basilica,si,Trastevere,Ce sta,2,Basilica di Santa Maria in Trastevere / basilica di Santa Cecilia in Trastevere / basilica di San Crisogono
 gen-tipi-basilica,Una zona con una basilica,si,Trieste,Ce sta,2,basilica di Sant'Agnese fuori le mura
@@ -1790,9 +1790,9 @@ gen-tipi-basilica,Una zona con una basilica,si,Eur,Da Mino,8,basilica dei Santi 
 gen-tipi-basilica,Una zona con una basilica,si,Tor Fiscale,Da Mino,8,Basilica di Santo Stefano in via Latina
 gen-tipi-basilica,Una zona con una basilica,si,Trionfale,Da Mino,8,basilica di San Giuseppe al Trionfale
 gen-tipi-basilica,Una zona con una basilica,si,Villa Gordiani,Da Mino,8,Basilica paleocristiana di Villa Gordiani
+gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Aventino,Da cartolina,1,basilica di Santa Maria in Cosmedin / chiesa di San Giovanni Decollato / chiesa di Santa Maria del Priorato / ...
 gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Campo Marzio,Da cartolina,1,chiesa di Sant'Atanasio / chiesa di Sant'Antonio in Campo Marzio / chiesa della Trinità dei Monti / ...
 gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Ponte,Da cartolina,1,basilica di San Giovanni Battista dei Fiorentini / chiesa di Santa Maria dell'Anima / basilica di Sant'Apollinare / ...
-gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Ripa,Da cartolina,1,basilica di Santa Maria in Cosmedin / chiesa di San Giovanni Decollato / chiesa di Santa Maria del Priorato / ...
 gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Sant'Eustachio,Da cartolina,1,chiesa di San Luigi dei Francesi / chiesa di Sant'Antonio in Campo Marzio / chiesa di San Giuliano dei Fiamminghi / ...
 gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Monti,Ce sta,2,basilica di Santo Stefano Rotondo al Celio / chiesa di San Francesco di Paola / cattedrale dei Santi Sergio e Bacco degli Ucraini
 gen-tipi-chiesa-nazionale,Una zona con la chiesa nazionale di un paese straniero,si,Pigna,Ce sta,2,basilica di San Marco Evangelista al Campidoglio / chiesa dei Santi Benedetto e Scolastica all'Argentina
@@ -1821,11 +1821,11 @@ gen-tipi-palazzo,Una zona con un palazzo storico,si,Ponte,Ce sta,2,Palazzo Sacch
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Prati,Ce sta,2,Palazzo di Giustizia / Soprintendenza dei Beni Archeologici del Lazio / palazzo di Giustizia
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Sant'Eustachio,Ce sta,2,Palazzo Giustiniani / Palazzetto di Tizio da Spoleto / Palazzo Vidoni Caffarelli / ...
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Appia Antica,Da romano de Roma,3,Villa di Massenzio
+gen-tipi-palazzo,Una zona con un palazzo storico,si,Aventino,Da romano de Roma,3,Villa del Priorato di Malta / Palazzo dell'Anagrafe
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Borgo,Da romano de Roma,3,Palazzo Branconio dell'Aquila / palazzo del Commendatore / Palazzo Caprini / ...
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Castro Pretorio,Da romano de Roma,3,Palazzo delle Finanze / Palazzo Massimo alle Terme / palazzo del Ministero economia e delle finanze / ...
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Esquilino,Da romano de Roma,3,Villa Wolkonsky / Acquario Romano / Palazzo Brancaccio / ...
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Foro Italico,Da romano de Roma,3,palazzo della Farnesina
-gen-tipi-palazzo,Una zona con un palazzo storico,si,Ripa,Da romano de Roma,3,Villa del Priorato di Malta / Palazzo dell'Anagrafe
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Villa Borghese,Da romano de Roma,3,Villa Borghese Pinciana / Casina di Raffaello / Palazzo delle Belle Arti
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Flaminio,Chicca,5,Palazzo Marina / Palazzo Borromeo / Tribunale Amministrativo Regionale del Lazio
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Italia,Chicca,5,Palazzo Aeronautica di Roma
@@ -1841,11 +1841,11 @@ gen-tipi-palazzo,Una zona con un palazzo storico,si,Montespaccato,Da Mino,8,Vill
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Nomentano,Da Mino,8,Casino Nobile / casino dei Principi / Serra moresca / ...
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Parioli,Da Mino,8,Villa Monticello
 gen-tipi-palazzo,Una zona con un palazzo storico,si,Porta Portese,Da Mino,8,Palazzo Leonori
+gen-tipi-piazza,Una zona con una piazza famosa,si,Aventino,Da cartolina,1,Foro Boario / piazza dei Cavalieri di Malta / piazza della Bocca della Verità / ...
 gen-tipi-piazza,Una zona con una piazza famosa,si,Campitelli,Da cartolina,1,Foro Romano / Foro di Cesare / Foro di Nerva / ...
 gen-tipi-piazza,Una zona con una piazza famosa,si,Campo Marzio,Da cartolina,1,piazza del Popolo / Piazza Augusto Imperatore / piazza di Spagna / ...
 gen-tipi-piazza,Una zona con una piazza famosa,si,Monti,Da cartolina,1,Foro di Traiano / piazza Giovanni Paolo II / Largo Magnanapoli / ...
 gen-tipi-piazza,Una zona con una piazza famosa,si,Parione,Da cartolina,1,Piazza Navona / Piazza della Chiesa Nuova / Piazza di Pasquino / ...
-gen-tipi-piazza,Una zona con una piazza famosa,si,Ripa,Da cartolina,1,Foro Boario / piazza dei Cavalieri di Malta / piazza della Bocca della Verità / ...
 gen-tipi-piazza,Una zona con una piazza famosa,si,Trevi,Da cartolina,1,piazza Venezia / Piazza Barberini / piazza di Trevi / ...
 gen-tipi-piazza,Una zona con una piazza famosa,si,Castro Pretorio,Ce sta,2,piazza della Repubblica / Piazza Indipendenza
 gen-tipi-piazza,Una zona con una piazza famosa,si,Colonna,Ce sta,2,piazza Sant'Ignazio / piazza di Monte Citorio / piazza di San Silvestro / ...
@@ -1883,10 +1883,10 @@ gen-tipi-monumento,Una zona con un monumento,si,Monte del Marmo,Ce sta,2,Monumen
 gen-tipi-monumento,Una zona con un monumento,si,Nomentano,Ce sta,2,Monumento al Bersagliere / Sepolcro di Elio Callisto / Monumento al Finanziere
 gen-tipi-monumento,Una zona con un monumento,si,Pigna,Ce sta,2,Palazzo Cenci-Bolognetti / Area archeologica di via delle Botteghe Oscure / tomba di Raffaello
 gen-tipi-monumento,Una zona con un monumento,si,Ponte,Ce sta,2,Sepolcro di Ferdinand Van den Eynde
+gen-tipi-monumento,Una zona con un monumento,si,Aventino,Da romano de Roma,3,Monumento a Giuseppe Mazzini
 gen-tipi-monumento,Una zona con un monumento,si,Parco degli Acquedotti,Da romano de Roma,3,Sepolcro di Via Bisignano
 gen-tipi-monumento,Una zona con un monumento,si,Parione,Da romano de Roma,3,Monumento a Pietro Metastasio / Fontana in Campo de' Fiori / Monumento a Cola di Rienzo
 gen-tipi-monumento,Una zona con un monumento,si,Prenestino Labicano,Da romano de Roma,3,sepolcro di largo Preneste
-gen-tipi-monumento,Una zona con un monumento,si,Ripa,Da romano de Roma,3,Monumento a Giuseppe Mazzini
 gen-tipi-monumento,Una zona con un monumento,si,San Godenzo,Da romano de Roma,3,Tomba di Publio Vibio Mariano
 gen-tipi-monumento,Una zona con un monumento,si,San Saba,Da romano de Roma,3,monumento a Scanderbeg
 gen-tipi-monumento,Una zona con un monumento,si,Villa Troili,Da romano de Roma,3,Fontanile di via Aurelia Nuova
@@ -2018,21 +2018,21 @@ gen-tipi-museo,Una zona con un museo famoso,si,Sallustiano,Chicca,5,Museo Boncom
 gen-tipi-museo,Una zona con un museo famoso,si,San Godenzo,Chicca,5,Museo Venanzo Crocetti
 gen-tipi-museo,Una zona con un museo famoso,si,Sant'Angelo,Chicca,5,Museo Ebraico di Roma / Crypta Balbi
 gen-tipi-museo,Una zona con un museo famoso,si,Tor Fiscale,Chicca,5,parco archeologico delle Tombe di via Latina
+gen-tipi-museo,Una zona con un museo famoso,si,Aventino,Da Mino,8,mitreo di Santa Prisca
 gen-tipi-museo,Una zona con un museo famoso,si,Cecchignola,Da Mino,8,Museo storico della motorizzazione militare / Museo delle carrozze d'epoca
 gen-tipi-museo,Una zona con un museo famoso,si,Della Vittoria,Da Mino,8,Museo del videogioco di Roma
 gen-tipi-museo,Una zona con un museo famoso,si,Italia,Da Mino,8,Museo di storia della medicina
 gen-tipi-museo,Una zona con un museo famoso,si,Nomentano,Da Mino,8,Museo Casina delle Civette
 gen-tipi-museo,Una zona con un museo famoso,si,Prati,Da Mino,8,Museo storico dell'arma dei carabinieri
-gen-tipi-museo,Una zona con un museo famoso,si,Ripa,Da Mino,8,mitreo di Santa Prisca
 gen-tipi-museo,Una zona con un museo famoso,si,Villaggio Olimpico,Da Mino,8,Museo degli strumenti musicali dell'Accademia nazionale di Santa Cecilia
 gen-tipi-ponte,Una zona con un ponte,si,Borgo,Da cartolina,1,Ponte Sant’Angelo / Ponte Neroniano / Ponte Principe Amedeo Savoia Aosta
 gen-tipi-ponte,Una zona con un ponte,si,Flaminio,Da cartolina,1,ponte Pietro Nenni / Ponte Milvio / ponte Giacomo Matteotti
 gen-tipi-ponte,Una zona con un ponte,si,Foro Italico,Da cartolina,1,Ponte Duca d'Aosta / Ponte Milvio / Ponte della Musica
 gen-tipi-ponte,Una zona con un ponte,si,Ponte,Da cartolina,1,Ponte Vittorio Emanuele II / Ponte Sant’Angelo / Ponte Neroniano / ...
 gen-tipi-ponte,Una zona con un ponte,si,Ponte Milvio,Da cartolina,1,Ponte Milvio / Ponte Flaminio
+gen-tipi-ponte,Una zona con un ponte,si,Aventino,Ce sta,2,Ponte Cestio / Ponte Fabricio / Ponte Sublicio
 gen-tipi-ponte,Una zona con un ponte,si,Prati,Ce sta,2,ponte Pietro Nenni / Ponte Cavour / ponte Regina Margherita
 gen-tipi-ponte,Una zona con un ponte,si,Regola,Ce sta,2,Ponte Sisto / ponte Garibaldi / Ponte Aurelio / ...
-gen-tipi-ponte,Una zona con un ponte,si,Ripa,Ce sta,2,Ponte Cestio / Ponte Fabricio / Ponte Sublicio
 gen-tipi-ponte,Una zona con un ponte,si,Trastevere,Ce sta,2,Ponte Cestio / Ponte Sublicio / Ponte Giuseppe Mazzini / ...
 gen-tipi-ponte,Una zona con un ponte,si,Villaggio Olimpico,Ce sta,2,Ponte Milvio
 gen-tipi-ponte,Una zona con un ponte,si,Campo Marzio,Da romano de Roma,3,Ponte Cavour / ponte Regina Margherita
@@ -2072,18 +2072,18 @@ gen-tipi-terme,Una zona con delle terme antiche,si,San Saba,Da cartolina,1,Terme
 gen-tipi-terme,Una zona con delle terme antiche,si,Monti,Ce sta,2,Terme di Tito / Terme di Costantino / Terme di Traiano
 gen-tipi-terme,Una zona con delle terme antiche,si,Pigna,Ce sta,2,Terme di Agrippa
 gen-tipi-terme,Una zona con delle terme antiche,si,Sant'Eustachio,Da romano de Roma,3,Terme di Nerone
+gen-tipi-terme,Una zona con delle terme antiche,si,Aventino,Chicca,5,Terme Deciane / Terme Surane
 gen-tipi-terme,Una zona con delle terme antiche,si,Esquilino,Chicca,5,Terme Eleniane
-gen-tipi-terme,Una zona con delle terme antiche,si,Ripa,Chicca,5,Terme Deciane / Terme Surane
 gen-tipi-terme,Una zona con delle terme antiche,si,Campitelli,Da Mino,8,Terme di Massenzio / Terme Severiane
 gen-tipi-circo,Una zona con un circo romano,si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore / basilica di San Giovanni in Laterano
 gen-tipi-circo,Una zona con un circo romano,si,San Paolo,Da cartolina,1,basilica di San Paolo fuori le mura
-gen-tipi-circo,Una zona con un circo romano,si,Ripa,Ce sta,2,Circo Massimo
+gen-tipi-circo,Una zona con un circo romano,si,Aventino,Ce sta,2,Circo Massimo
 gen-tipi-circo,Una zona con un circo romano,si,Appia Antica,Da romano de Roma,3,circo di Massenzio
 gen-tipi-circo,Una zona con un circo romano,si,Sant'Angelo,Da romano de Roma,3,Circo Flaminio
 gen-tipi-circo,Una zona con un circo romano,si,San Giovanni,Chicca,5,circo Variano
 gen-tipi-circo,Una zona con un circo romano,si,Campitelli,Da Mino,8,circondario di Roma
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Aventino,Da cartolina,1,Acquedotto Appio
 gen-tipi-acquedotto,Una zona con un acquedotto,si,Parco degli Acquedotti,Da cartolina,1,aquedotto Anio novus / acquedotto Claudio / Acqua Marcia
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Ripa,Da cartolina,1,Acquedotto Appio
 gen-tipi-acquedotto,Una zona con un acquedotto,si,San Lorenzo,Ce sta,2,Aqua Iulia / Aqua Tepula
 gen-tipi-acquedotto,Una zona con un acquedotto,si,Trastevere,Ce sta,2,Aqua Alsietina / Acquedotto Traiano
 gen-tipi-acquedotto,Una zona con un acquedotto,si,Esquilino,Da romano de Roma,3,Aqua Iulia / Acqua Pia Antica Marcia / Acquedotto Anio vetus
@@ -2113,9 +2113,9 @@ gen-tipi-fontana,Una zona con una fontana,si,Ponte,Chicca,5,Fontana di piazza Sa
 gen-tipi-fontana,Una zona con una fontana,si,Villa Borghese,Chicca,5,Fontane delle tartarughe / Fonte Gaia
 gen-tipi-fontana,Una zona con una fontana,si,Villa Pamphili,Chicca,5,Fontana del Cupido
 gen-tipi-fontana,Una zona con una fontana,si,Villaggio Olimpico,Chicca,5,Fontana dell'Acqua Acetosa
+gen-tipi-fontana,Una zona con una fontana,si,Aventino,Da Mino,8,Fontana di Lungotevere Aventino
 gen-tipi-fontana,Una zona con una fontana,si,Borgo,Da Mino,8,Fontana delle Tiare / Fontana delle Palle di Cannone
 gen-tipi-fontana,Una zona con una fontana,si,Flaminio,Da Mino,8,Fontana di Papa Giulio III
-gen-tipi-fontana,Una zona con una fontana,si,Ripa,Da Mino,8,Fontana di Lungotevere Aventino
 gen-tipi-fontana,Una zona con una fontana,si,Tor Fiscale,Da Mino,8,Fontana di Clemente XII
 gen-tipi-fontana,Una zona con una fontana,si,Valle Aurelia,Da Mino,8,fontanella / Fontana
 gen-tipi-colle,Una zona con uno dei colli di Roma,si,Campo Marzio,Da cartolina,1,Pontificio collegio croato di San Girolamo / Pontificio Collegio Greco di Sant’Atanasio
@@ -2142,8 +2142,8 @@ gen-tipi-colle,Una zona con uno dei colli di Roma,si,Campitelli,Da Mino,8,Colleg
 gen-tipi-colle,Una zona con uno dei colli di Roma,si,Colli Aniene,Da Mino,8,La scuola e il college internazionali europei
 gen-tipi-colle,Una zona con uno dei colli di Roma,si,Ponte Mammolo,Da Mino,8,La scuola e il college internazionali europei
 gen-tipi-colle,Una zona con uno dei colli di Roma,si,Villa Troili,Da Mino,8,Pontificio Collegio Coreano
+gen-tipi-collina,Una zona con una collina,si,Aventino,Da cartolina,1,Aventino
 gen-tipi-collina,Una zona con una collina,si,Campitelli,Da cartolina,1,Palatino / Velia / Campidoglio
-gen-tipi-collina,Una zona con una collina,si,Ripa,Da cartolina,1,Aventino
 gen-tipi-collina,Una zona con una collina,si,Trevi,Da cartolina,1,Quirinale
 gen-tipi-collina,Una zona con una collina,si,Celio,Ce sta,2,Celio
 gen-tipi-collina,Una zona con una collina,si,Monti,Ce sta,2,Esquilino / Viminale / Fagutale / ...
@@ -2202,10 +2202,10 @@ gen-tipi-chiesa,Una zona con una chiesa famosa,si,Sallustiano,Da cartolina,1,chi
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,San Paolo,Da cartolina,1,basilica di San Paolo fuori le mura
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Verano,Da cartolina,1,Basilica di San Lorenzo fuori le mura
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Appia Antica,Ce sta,2,chiesa del Domine quo vadis / basilica di San Sebastiano fuori le mura
+gen-tipi-chiesa,Una zona con una chiesa famosa,si,Aventino,Ce sta,2,chiesa di San Giorgio in Velabro / basilica di Santa Maria in Cosmedin / basilica dei Santi Bonifacio e Alessio / ...
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Castro Pretorio,Ce sta,2,chiesa di San Bernardo alle Terme / basilica del Sacro Cuore di Gesù / basilica di Santa Maria degli Angeli e dei Martiri
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Parione,Ce sta,2,chiesa di Sant'Agnese in Agone / chiesa di Nostra Signora del Sacro Cuore / basilica di San Lorenzo in Damaso / ...
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Ponte,Ce sta,2,chiesa di Santa Maria della Pace / basilica di San Giovanni Battista dei Fiorentini / chiesa dei Santi Celso e Giuliano / ...
-gen-tipi-chiesa,Una zona con una chiesa famosa,si,Ripa,Ce sta,2,chiesa di San Giorgio in Velabro / basilica di Santa Maria in Cosmedin / basilica dei Santi Bonifacio e Alessio / ...
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Sant'Eustachio,Ce sta,2,chiesa di San Luigi dei Francesi / chiesa di Sant'Antonio in Campo Marzio / basilica di Sant'Eustachio / ...
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Trastevere,Ce sta,2,chiesa di San Callisto / chiesa di Santa Dorotea / chiesa di San Francesco a Ripa / ...
 gen-tipi-chiesa,Una zona con una chiesa famosa,si,Trieste,Ce sta,2,basilica di Sant'Agnese fuori le mura / chiesa di Santa Maria Addolorata a piazza Buenos Aires / mausoleo di Santa Costanza
@@ -2239,10 +2239,10 @@ gen-tipi-edificio,Una zona con un edificio storico famoso,si,Monti,Da cartolina,
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Pigna,Da cartolina,1,Pantheon / Arcus Novus / chiesa di San Nicola dei Cesarini / ...
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Ponte Milvio,Da cartolina,1,Ponte Milvio
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,San Saba,Da cartolina,1,Terme di Caracalla / Tempio della Bona Dea / Tempio di Onore e Virtù / ...
+gen-tipi-edificio,Una zona con un edificio storico famoso,si,Aventino,Ce sta,2,Tempio di Fauno / Ponte Fabricio / Ponte Sublicio / ...
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Italia,Ce sta,2,Castra Praetoria
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Ostiense,Ce sta,2,piramide Cestia
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Parione,Ce sta,2,Teatro di Pompeo / chiesa di Santo Stefano in Piscinula / Palazzo Orsini Pio Righetti / ...
-gen-tipi-edificio,Una zona con un edificio storico famoso,si,Ripa,Ce sta,2,Tempio di Fauno / Ponte Fabricio / Ponte Sublicio / ...
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Testaccio,Ce sta,2,piramide Cestia / Ex mattatoio di Roma
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Trastevere,Ce sta,2,Ponte Sublicio / carcere di Regina Coeli / Palazzo della Manifattura Pontificia dei Tabacchi / ...
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Trevi,Ce sta,2,Palazzo Barberini / Arcus Novus / chiesa dei Santi Angeli Custodi al Tritone / ...
@@ -2269,9 +2269,9 @@ gen-tipi-edificio,Una zona con un edificio storico famoso,si,Corviale,Da Mino,8,
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Della Vittoria,Da Mino,8,palazzo della Radio
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Miani,Da Mino,8,Museo delle mura
 gen-tipi-edificio,Una zona con un edificio storico famoso,si,Prati,Da Mino,8,chiesa evangelica valdese in Prati / Villa Altoviti (Roma) / Porta Angelica / ...
+gen-tipi-scultura,Una zona con una scultura all'aperto,si,Aventino,Da cartolina,1,Bocca della Verità / Fontana dei Tritoni
 gen-tipi-scultura,Una zona con una scultura all'aperto,si,Campitelli,Da cartolina,1,Lupa Capitolina / Statua equestre di Domiziano / Statua equestre di Vittorio Emanuele II del Vittoriano / ...
 gen-tipi-scultura,Una zona con una scultura all'aperto,si,Monti,Da cartolina,1,Gruppo del Laocoonte / Mosè / Fontana della Navicella / ...
-gen-tipi-scultura,Una zona con una scultura all'aperto,si,Ripa,Da cartolina,1,Bocca della Verità / Fontana dei Tritoni
 gen-tipi-scultura,Una zona con una scultura all'aperto,si,Sallustiano,Da cartolina,1,Estasi di santa Teresa d'Avila
 gen-tipi-scultura,Una zona con una scultura all'aperto,si,Trevi,Da cartolina,1,Fontana di Trevi / Busto di Antonio Barberini / Santa Susanna (Duquesnoy) / ...
 gen-tipi-scultura,Una zona con una scultura all'aperto,si,Campo Marzio,Ce sta,2,Colonna di Antonino Pio / Babuino / Sepolcro dei Domizi
@@ -2312,9 +2312,9 @@ gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Esquilino,Da c
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,San Saba,Da cartolina,1,Terme di Caracalla
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Cinecittà,Ce sta,2,Villa dei Sette Bassi
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Tor Fiscale,Ce sta,2,parco archeologico delle Tombe di via Latina / parco di Torre del Fiscale
+gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Aventino,Da romano de Roma,3,mitreo di Santa Prisca / Casa Bellezza
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Castro Pretorio,Da romano de Roma,3,Museo delle Terme di Diocleziano
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Celio,Da romano de Roma,3,Case romane del Celio / Parco archeologico del Celio
-gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Ripa,Da romano de Roma,3,mitreo di Santa Prisca / Casa Bellezza
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Monti,Chicca,5,parco di Colle Oppio / Museo dei Fori Imperiali / Foro romano e Palatino
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Rebibbia,Chicca,5,Museo di Casal de' Pazzi
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Campitelli,Da Mino,8,Parco archeologico del Colosseo / Foro romano e Palatino
@@ -2401,11 +2401,11 @@ gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Colonna,Ce sta
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Esquilino,Ce sta,2,basilica di Santa Croce in Gerusalemme / oratorio di San Silvestro in Palatio
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Sant'Eustachio,Ce sta,2,chiesa di Sant'Antonio in Campo Marzio / basilica di Sant'Eustachio / chiesa di San Giuliano dei Fiamminghi / ...
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Trastevere,Ce sta,2,chiesa di San Callisto / chiesa di Santa Dorotea / chiesa di San Francesco a Ripa / ...
+gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Aventino,Da romano de Roma,3,chiesa di San Bonaventura al Palatino / chiesa di San Giovanni Decollato / chiesa di Santa Prisca / ...
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Campitelli,Da romano de Roma,3,chiesa di San Bonaventura al Palatino / chiesa di San Sebastiano al Palatino / chiesa di Santa Maria della Consolazione / ...
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Celio,Da romano de Roma,3,chiesa di San Gregorio al Celio / chiesa dei Santi Andrea e Bartolomeo / basilica dei Santi Giovanni e Paolo
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Ponte,Da romano de Roma,3,basilica di San Giovanni Battista dei Fiorentini / chiesa di San Nicola dei Lorenesi / chiesa di San Salvatore in Lauro / ...
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Regola,Da romano de Roma,3,Palazzo Spada / chiesa di San Girolamo della Carità / chiesa della Santissima Trinità dei Pellegrini / ...
-gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Ripa,Da romano de Roma,3,chiesa di San Bonaventura al Palatino / chiesa di San Giovanni Decollato / chiesa di Santa Prisca / ...
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Sant'Angelo,Da romano de Roma,3,chiesa di Santa Maria in Portico in Campitelli / chiesa di Santa Maria in Publicolis / chiesa di Santo Stanislao dei Polacchi / ...
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Borgo,Chicca,5,chiesa di Santa Maria Annunziata in Borgo / Oratorio della Dottrina Cristiana / chiesa dei Santi Michele e Magno
 gen-stili-un-edificio-barocco,Una zona con un edificio barocco,si,Cavalleggeri - San Pietro,Chicca,5,chiesa di Santa Maria delle Grazie alle Fornaci
@@ -2429,10 +2429,10 @@ gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Nomentano,Ce sta,2,Porta Pia
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Ponte,Ce sta,2,chiesa di Santa Maria della Pace / chiesa di Santa Maria dell'Anima / basilica di Sant'Apollinare / ...
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Sant'Eustachio,Ce sta,2,chiesa di San Luigi dei Francesi / basilica di Sant'Agostino in Campo Marzio / Palazzo Vidoni Caffarelli / ...
+gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Aventino,Da romano de Roma,3,basilica dei Santi Bonifacio e Alessio
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Campitelli,Da romano de Roma,3,Palazzo Senatorio / basilica di Sant'Anastasia al Palatino / Palazzo Albertoni Spinola / ...
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Della Vittoria,Da romano de Roma,3,Villa Madama
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Parione,Da romano de Roma,3,Palazzo Massimo alle Colonne / Palazzo della Cancelleria / Palazzo Sora
-gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Ripa,Da romano de Roma,3,basilica dei Santi Bonifacio e Alessio
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Borgo,Chicca,5,chiesa di Santo Spirito in Sassia / Palazzo Branconio dell'Aquila / chiesa di San Giacomo a Scossacavalli / ...
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Flaminio,Chicca,5,chiesa di Sant'Andrea del Vignola
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,San Giovanni,Chicca,5,Porta San Giovanni
@@ -2442,8 +2442,8 @@ gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Esquilino,Da Mino,8,Arco di Sisto V
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Giuliano Dalmata,Da Mino,8,chiesa di San Paolo alle Tre Fontane
 gen-stili-un-edificio-del-rinascimento,Una zona con un edificio del Rinascimento,si,Parioli,Da Mino,8,Villino Titta Ruffo
+gen-stili-un-edificio-romanico,Una zona con un edificio romanico,si,Aventino,Da cartolina,1,basilica di Santa Maria in Cosmedin
 gen-stili-un-edificio-romanico,Una zona con un edificio romanico,si,Campitelli,Da cartolina,1,basilica di Santa Maria in Aracoeli / basilica di Santa Francesca Romana / chiesa di San Biagio de Mercato / ...
-gen-stili-un-edificio-romanico,Una zona con un edificio romanico,si,Ripa,Da cartolina,1,basilica di Santa Maria in Cosmedin
 gen-stili-un-edificio-romanico,Una zona con un edificio romanico,si,Trastevere,Da cartolina,1,Basilica di Santa Maria in Trastevere / basilica di San Crisogono / chiesa di Santa Maria della Luce / ...
 gen-stili-un-edificio-romanico,Una zona con un edificio romanico,si,Celio,Ce sta,2,basilica dei Santi Giovanni e Paolo
 gen-stili-un-edificio-romanico,Una zona con un edificio romanico,si,Monti,Ce sta,2,basilica di San Clemente al Laterano
@@ -2475,8 +2475,8 @@ gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Campo Marz
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Esquilino,Da cartolina,1,chiesa di Sant'Alfonso all'Esquilino / cappella di Sant'Elena / chiesa di Santa Maria Immacolata all'Esquilino
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Prati,Ce sta,2,chiesa di Santa Maria del Rosario in Prati / chiesa del Sacro Cuore del Suffragio / chiesa di Santa Maria Immacolata dell'Istituto Scolastico Nazareth
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,San Lorenzo,Ce sta,2,chiesa di San Tommaso Moro
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Aventino,Da romano de Roma,3,chiesa di San Vincenzo de Paoli all'Aventino
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Nomentano,Da romano de Roma,3,chiesa del Corpus Domini
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Ripa,Da romano de Roma,3,chiesa di San Vincenzo de Paoli all'Aventino
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Sallustiano,Chicca,5,chiesa del Sacro Cuore di Gesù
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Trastevere,Chicca,5,chiesa del Sacro Cuore di Gesù a Villa Lante
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Ludovisi,Da Mino,8,chiesa del Santissimo Redentore e Santa Francesca Saverio Cabrini
@@ -2492,7 +2492,7 @@ gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Pinciano,Chicc
 gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Sant'Angelo,Chicca,5,Villino Astengo
 gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Cinecittà,Da Mino,8,Ex sede dell'Istituto Nazionale Luce
 gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Salario,Da Mino,8,ex stabilimento Birra Peroni
-gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Ripa,Da cartolina,1,chiesa di San Giorgio in Velabro / basilica di Santa Sabina
+gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Aventino,Da cartolina,1,chiesa di San Giorgio in Velabro / basilica di Santa Sabina
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,San Paolo,Da cartolina,1,basilica di San Paolo fuori le mura / Catacomba di Santa Tecla
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Campitelli,Ce sta,2,basilica dei Santi Cosma e Damiano
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Monti,Ce sta,2,basilica di Santa Prassede / basilica di Santo Stefano Rotondo al Celio / battistero lateranense / ...
@@ -2501,12 +2501,12 @@ gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Tr
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Celio,Chicca,5,basilica dei Santi Giovanni e Paolo / basilica di Santa Maria in Domnica
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Tor Pignattara,Chicca,5,Catacombe dei Santi Marcellino e Pietro
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Alberone,Da Mino,8,Ipogeo di Trebio Giusto
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Aventino,Da cartolina,1,basilica di Santa Maria in Cosmedin / chiesa di Santa Maria del Priorato / chiesa di Santa Maria del Sole
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Campitelli,Da cartolina,1,chiesa di Santa Maria Antiqua / basilica di Santa Maria in Aracoeli / chiesa di Santa Maria Annunziata a Tor de' Specchi / ...
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Campo Marzio,Da cartolina,1,basilica di Santa Maria del Popolo / basilica di Santa Maria in Montesanto / chiesa di Santa Maria della Concezione in Campo Marzio / ...
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore / chiesa di Santa Maria ai Monti / Cappella Paolina / ...
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Parione,Da cartolina,1,chiesa di Santa Maria in Vallicella / chiesa di Santa Maria in Grottapinta
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Pigna,Da cartolina,1,Pantheon / basilica di Santa Maria sopra Minerva / basilica di Santa Maria in Via Lata
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ripa,Da cartolina,1,basilica di Santa Maria in Cosmedin / chiesa di Santa Maria del Priorato / chiesa di Santa Maria del Sole
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Trastevere,Da cartolina,1,Basilica di Santa Maria in Trastevere / chiesa di Santa Maria dei Sette Dolori / chiesa di Santa Maria dell'Orto / ...
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Celio,Ce sta,2,basilica di Santa Maria in Domnica / chiesa di Santa Maria della Pietà al Colosseo / chiesa di Santa Maria in Tempulo
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ludovisi,Ce sta,2,chiesa di Santa Maria Immacolata a via Veneto
@@ -2551,8 +2551,8 @@ gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con un
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Pigna,Da cartolina,1,Pantheon / basilica di Santa Maria in Via Lata
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,San Paolo,Da cartolina,1,basilica di San Paolo fuori le mura
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Verano,Da cartolina,1,Basilica di San Lorenzo fuori le mura
+gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Aventino,Ce sta,2,chiesa di San Giorgio in Velabro / basilica di Santa Sabina / basilica di Santa Maria in Cosmedin / ...
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Campitelli,Ce sta,2,chiesa di Santa Maria Antiqua / basilica di Massenzio / basilica Emilia / ...
-gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Ripa,Ce sta,2,chiesa di San Giorgio in Velabro / basilica di Santa Sabina / basilica di Santa Maria in Cosmedin / ...
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Trastevere,Ce sta,2,basilica di Santa Cecilia in Trastevere / basilica di San Crisogono / chiesa di San Cosimato
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Trieste,Ce sta,2,basilica di Sant'Agnese fuori le mura
 gen-epoche-chiesa-paleocristiana-o-altomedievale-prima-del-mille,Una zona con una chiesa paleocristiana o altomedievale (prima del Mille),si,Celio,Da romano de Roma,3,chiesa di San Giovanni a Porta Latina / chiesa di San Gregorio al Celio / chiesa di San Giovanni in Oleo / ...
@@ -2588,7 +2588,7 @@ gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,T
 gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Sant'Eustachio,Ce sta,2,basilica di Sant'Agostino in Campo Marzio
 gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Esquilino,Da romano de Roma,3,chiesa di Sant'Antonio Abate all'Esquilino / chiesa di Santa Maria del Buon Aiuto nell'Anfiteatro Castrense
 gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Parione,Da romano de Roma,3,chiesa di Nostra Signora del Sacro Cuore / basilica di San Lorenzo in Damaso
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Ripa,Chicca,5,chiesa di Sant'Omobono
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Aventino,Chicca,5,chiesa di Sant'Omobono
 gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Campitelli,Da Mino,8,Santi Venanzio e Ansovino dei Camerinesi
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Campo Marzio,Da cartolina,1,chiesa di Sant'Atanasio / chiesa della Trinità dei Monti / chiesa di San Girolamo dei Croati / ...
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Monti,Da cartolina,1,chiesa dei Santi Gioacchino e Anna ai Monti / chiesa di Sant'Andrea al Quirinale / chiesa di Santa Maria ai Monti / ...
@@ -2601,9 +2601,9 @@ gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Tra
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Flaminio,Da romano de Roma,3,chiesa di Sant'Andrea del Vignola
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Regola,Da romano de Roma,3,chiesa di Sant'Eligio degli Orefici / chiesa della Santissima Trinità dei Pellegrini / chiesa di Santa Maria in Monserrato degli Spagnoli / ...
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Trevi,Da romano de Roma,3,chiesa di Santa Maria di Loreto / chiesa di San Nicola da Tolentino / oratorio del Crocifisso / ...
+gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Aventino,Chicca,5,chiesa di San Giovanni Calibita / chiesa di San Giovanni Decollato
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Colonna,Chicca,5,chiesa di Santa Maria Odigitria
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Giuliano Dalmata,Chicca,5,chiesa di Santa Maria Scala Coeli
-gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Ripa,Chicca,5,chiesa di San Giovanni Calibita / chiesa di San Giovanni Decollato
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Sant'Angelo,Chicca,5,chiesa di Santa Caterina dei Funari / chiesa di Santo Stanislao dei Polacchi
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Borgo,Da Mino,8,chiesa di San Giacomo a Scossacavalli
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Campitelli,Da Mino,8,Collegio degli Armeni
@@ -2637,10 +2637,10 @@ gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Ludovisi,
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Regola,Da romano de Roma,3,chiesa di San Girolamo della Carità / chiesa di San Filippo Neri / chiesa di San Salvatore in Campo / ...
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Sant'Angelo,Da romano de Roma,3,chiesa di Santa Maria in Portico in Campitelli / chiesa di Santa Maria in Publicolis / ex chiesa di Santa Rita da Cascia in Campitelli / ...
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Trastevere,Da romano de Roma,3,chiesa di San Callisto / chiesa di Santa Maria dei Sette Dolori / chiesa di Sant'Egidio / ...
+gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Aventino,Chicca,5,chiesa di San Bonaventura al Palatino
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Balduina,Chicca,5,chiesa della Madonna del Rosario
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Celio,Chicca,5,chiesa dei Santi Andrea e Bartolomeo / chiesa di San Tommaso in Formis
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Ponte,Chicca,5,chiesa di Santa Maria del Suffragio / chiesa di San Nicola dei Lorenesi / chiesa di San Simeone Profeta
-gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Ripa,Chicca,5,chiesa di San Bonaventura al Palatino
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Castro Pretorio,Da Mino,8,chiesa di San Caio / chiesa di Santa Teresa alle Quattro Fontane
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,Esquilino,Da Mino,8,oratorio di Santa Maria Immacolata della Concezione
 gen-epoche-chiesa-del-seicento,Una zona con una chiesa del Seicento,si,San Godenzo,Da Mino,8,chiesa di Sant'Andrea apostolo
@@ -2669,8 +2669,8 @@ gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Sant'
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Borgo,Da romano de Roma,3,chiesa di Santa Maria Annunziata in Borgo
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Ponte,Da romano de Roma,3,chiesa dei Santi Celso e Giuliano / chiesa di San Biagio della Fossa
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Trastevere,Da romano de Roma,3,chiesa di San Giuseppe alla Lungara / chiesa di San Giovanni Battista dei Genovesi / chiesa di Sant'Agata in Trastevere / ...
+gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Aventino,Chicca,5,chiesa di San Gregorio della Divina Pietà
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Campo Marzio,Chicca,5,chiesa della Santissima Trinità degli Spagnoli / chiesa dei Santi Cecilia e Biagio
-gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Ripa,Chicca,5,chiesa di San Gregorio della Divina Pietà
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Sant'Angelo,Chicca,5,cappella di Santa Maria del Carmine e del Monte Libano / chiesa di San Gregorio della Divina Pietà
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Castro Pretorio,Da Mino,8,chiesa di Sant'Isidoro alle Terme
 gen-epoche-chiesa-del-settecento,Una zona con una chiesa del Settecento,si,Longoni - Maggiolino,Da Mino,8,chiesa di Sant'Anna a Tor Tre Teste
@@ -2685,9 +2685,9 @@ gen-epoche-palazzo-del-settecento,Una zona con un palazzo del Settecento,si,Sall
 gen-epoche-palazzo-del-settecento,Una zona con un palazzo del Settecento,si,Vescovio,Chicca,5,Villa Chigi
 gen-epoche-palazzo-del-settecento,Una zona con un palazzo del Settecento,si,Colonna,Da Mino,8,Palazzo Raggi
 gen-epoche-palazzo-del-settecento,Una zona con un palazzo del Settecento,si,Nomentano,Da Mino,8,Villa Ricotti
+gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Aventino,Da cartolina,1,basilica dei Santi Bonifacio e Alessio / chiesa di Sant'Anselmo all'Aventino / chiesa di San Vincenzo de Paoli all'Aventino
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Castro Pretorio,Da cartolina,1,basilica del Sacro Cuore di Gesù / chiesa di San Paolo dentro le Mura / chiesa del Santissimo Rosario di Pompei / ...
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Esquilino,Da cartolina,1,chiesa di Sant'Alfonso all'Esquilino / chiesa di Sant'Antonio da Padova all'Esquilino
-gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Ripa,Da cartolina,1,basilica dei Santi Bonifacio e Alessio / chiesa di Sant'Anselmo all'Aventino / chiesa di San Vincenzo de Paoli all'Aventino
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Campo Marzio,Ce sta,2,chiesa di Sant'Ivo dei Bretoni / chiesa dei Santi Giorgio e Martiri inglesi / chiesa della Resurrezione di Nostro Signore Gesù Cristo / ...
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Prati,Ce sta,2,chiesa di San Gioacchino in Prati
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Trevi,Ce sta,2,chiesa di San Giovanni della Ficozza / chiesa evangelica metodista in Castro Pretorio / chiesa evangelica valdese in Trevi / ...
@@ -2749,12 +2749,12 @@ gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo 
 gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Appio Latino,Da Mino,8,Palazzina Mancioli / Palazzina Mancioli II
 gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,San Giovanni,Da Mino,8,Mercato coperto di via Magna Grecia
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Appia Antica,Da cartolina,1,via Appia / catacombe di San Callisto / Altorilievo con figura maschile
+gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Aventino,Da cartolina,1,Età regia di Roma / Circo Massimo / Acquedotto Appio / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Campitelli,Da cartolina,1,Arco di Settimio Severo / Foro Romano / chiesa di Santa Maria Antiqua / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Castro Pretorio,Da cartolina,1,Porta Nomentana / Porta Collina / Obelisco di Dogali / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Celio,Da cartolina,1,Tempio del Divo Claudio / chiesa di San Giovanni a Porta Latina / Porta Caelimontana e Porta Querquetulana / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore / Colonna Traiana / Foro di Traiano / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Pigna,Da cartolina,1,Pantheon / Saepta Iulia / obelisco della Minerva / ...
-gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Ripa,Da cartolina,1,Età regia di Roma / Circo Massimo / Acquedotto Appio / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Borgo,Ce sta,2,Castel Sant'Angelo / Teatro di Nerone
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Campo Marzio,Ce sta,2,Obelisco Flaminio / Colonna di Antonino Pio / Ara Pacis / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Colonna,Ce sta,2,Colonna di Marco Aurelio / Obelisco di Montecitorio / Tempio del Sole
@@ -2823,9 +2823,9 @@ gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Trastevere,Da
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Colonna,Chicca,5,Angelo con il titolo della croce
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Esquilino,Chicca,5,Santa Bibiana
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Monteverde,Chicca,5,Mura gianicolensi
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Aventino,Da Mino,8,Fontana di Lungotevere Aventino
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Campitelli,Da Mino,8,Palazzo Clementino
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Ponte,Da Mino,8,Palazzo dei Tribunali
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Ripa,Da Mino,8,Fontana di Lungotevere Aventino
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Monti,Da cartolina,1,basilica di San Giovanni in Laterano / palazzo del Laterano
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Parione,Ce sta,2,Palazzo della Cancelleria
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Trastevere,Da romano de Roma,3,Palazzo di San Callisto
@@ -2869,9 +2869,9 @@ gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Foro Italico,D
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Monti,Da romano de Roma,3,Palazzo Pallavicini Rospigliosi / basilica di Santa Maria Maggiore / chiesa di Sant'Andrea al Quirinale / ...
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Parione,Da romano de Roma,3,chiesa di Santa Maria in Vallicella / Museo di Roma a palazzo Braschi / Palazzo Braschi / ...
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,San Paolo,Da romano de Roma,3,basilica di San Paolo fuori le mura
+gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Aventino,Chicca,5,chiesa di San Giovanni Decollato / chiesa di San Bonaventura al Palatino / basilica di Santa Sabina
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Castro Pretorio,Chicca,5,Museo delle Terme di Diocleziano / Palazzo Massimo alle Terme / Museo Nazionale Romano
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Ponte,Chicca,5,Museo napoleonico di Roma / chiesa di Santa Maria dell'Anima / Museo Mario Praz / ...
-gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Ripa,Chicca,5,chiesa di San Giovanni Decollato / chiesa di San Bonaventura al Palatino / basilica di Santa Sabina
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Sallustiano,Chicca,5,"Ministero delle Politiche Agricole, Alimentari e Forestali / chiesa di Santa Maria della Vittoria / Museo Boncompagni Ludovisi per le arti decorative"
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Sant'Angelo,Chicca,5,chiesa di Santa Caterina dei Funari / Palazzo Costaguti
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Colonna,Da Mino,8,Galleria comunale d'arte moderna e contemporanea / Palazzo Montecitorio / chiesa di San Silvestro in Capite / ...
@@ -2892,7 +2892,7 @@ gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama S
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Celio,Chicca,5,Salita di San Gregorio
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Monte del Gallo,Chicca,5,Salita di Monte del Gallo
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Tuscolano,Chicca,5,Salita del Mandrione
-gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Ripa,Da Mino,8,Salita delle Pendici dell'Aventino
+gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Aventino,Da Mino,8,Salita delle Pendici dell'Aventino
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Sant'Eustachio,Da Mino,8,Salita de' Crescenzi
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Tor di Quinto,Da Mino,8,Salita di Castel Giubileo
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Eur,Da cartolina,1,Scalinata Ernesto Lapadula / Scalea Carlo Mosca
@@ -2994,10 +2994,10 @@ gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di un
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Tor Fiscale,Chicca,5,Vicolo di Porta Furba / Via di Porta Furba
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Trionfale,Chicca,5,Via di Porta Pertusa
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Tuscolano,Chicca,5,Via di Porta Furba
+gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Aventino,Da Mino,8,Piazza di Porta Capena / Via di Porta Lavernale
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Boccea Cornelia,Da Mino,8,Via Ugo da Porta Ravegnana
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Ludovisi,Da Mino,8,Porta Pinciana / Via di Porta Pinciana
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Pinciano,Da Mino,8,Porta Pinciana
-gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,Ripa,Da Mino,8,Piazza di Porta Capena / Via di Porta Lavernale
 gen-nomi-una-strada-col-nome-di-una-porta,Una zona con una strada col nome di una porta,si,San Saba,Da Mino,8,Piazza di Porta San Paolo / Via di Porta San Sebastiano / Piazza di Porta Capena / ...
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Eur,Da cartolina,1,Ponte della Magliana / Ponte Hashi
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Foro Italico,Da cartolina,1,Ponte Duca d'Aosta / Ponte Milvio / Ponte della Musica Armando Trovajoli
@@ -3029,11 +3029,11 @@ gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un 
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Tor di Quinto,Chicca,5,Ponte di Tor di Quinto / Via del Ponte di Castel Giubileo / Ponte Salario / ...
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Tor di Valle,Chicca,5,Ponte della Magliana / Pista ciclabile raccordo - Ponte Galeria / Pista ciclabile GRA - Ponte Galeria
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Valco San Paolo,Chicca,5,Ponte Guglielmo Marconi
+gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Aventino,Da Mino,8,Ponte Fabricio / Ponte di Quattro Capi / Ponte Palatino / ...
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Casetta Mattei,Da Mino,8,Via del Ponte Pisano
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Colli Aniene,Da Mino,8,Ponte Mammolo
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Ponte,Da Mino,8,Piazza di Ponte Sant'Angelo / Ponte Vittorio Emanuele Secondo / Ponte Sant'Angelo / ...
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Regola,Da Mino,8,Ponte Giuseppe Mazzini / Ponte Sisto / Ponte Garibaldi
-gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Ripa,Da Mino,8,Ponte Fabricio / Ponte di Quattro Capi / Ponte Palatino / ...
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Sant'Angelo,Da Mino,8,Ponte Fabricio / Ponte di Quattro Capi
 gen-nomi-una-strada-col-nome-di-un-ponte,Una zona con una strada col nome di un ponte,si,Tenuta dei Massimi,Da Mino,8,Via del Ponte Pisano
 gen-nomi-una-strada-col-nome-di-un-acqua-una-sorgente,Una zona con una strada col nome di un'acqua (una sorgente),si,Monte Mario,Da cartolina,1,Via dell'Acqua Traversa
@@ -3074,10 +3074,10 @@ gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Muratella,Chicca,5,Via Luigi Olivi
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Ponte,Chicca,5,Piazza del Fico / Vicolo del Fico
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Villa Bonelli,Chicca,5,Largo Oliviero Zuccarini / Via Castagneto Carducci
+gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Aventino,Da Mino,8,Viale Manlio Gelsomini
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Palmarola,Da Mino,8,Via Casale del Fico
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Parione,Da Mino,8,Piazza del Fico
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Regola,Da Mino,8,Piazza della Quercia
-gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Ripa,Da Mino,8,Viale Manlio Gelsomini
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,San Saba,Da Mino,8,Viale Manlio Gelsomini / Largo Manlio Gelsomini
 gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Campo Marzio,Da cartolina,1,Via di Campo Marzio / Piazza in Campo Marzio
 gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Monti,Da cartolina,1,Via Campo Carleo
@@ -3125,10 +3125,10 @@ gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Sant'Angelo,Chicca,5,Piazza delle Cinque Scole / Ponte di Quattro Capi / Via delle Cinque Scole
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Villa Troili,Chicca,5,Via delle Cinque Terre
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Appia Antica,Da Mino,8,Vicolo delle Sette Chiese / Via Tre Taberne
+gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Aventino,Da Mino,8,Ponte di Quattro Capi / Via di Ponte Quattro Capi
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Longoni - Maggiolino,Da Mino,8,Via Tor Tre Teste
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Parione,Da Mino,8,Piazza delle Cinque Lune / Passetto delle Cinque Lune
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Regola,Da Mino,8,Piazza delle Cinque Scole / Via delle Cinque Scole
-gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Ripa,Da Mino,8,Ponte di Quattro Capi / Via di Ponte Quattro Capi
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Esquilino,Da cartolina,1,Via Conte Verde / Via Principe Umberto / Via Principe Eugenio / ...
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Foro Italico,Da cartolina,1,Ponte Duca d'Aosta
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Pigneto,Da cartolina,1,Via Conte di Carmagnola
@@ -3161,13 +3161,13 @@ gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona co
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Talenti,Chicca,5,Via Regina dei Gigli
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trullo,Chicca,5,Via del Fosso di Papa Leone / Vicolo di Papa Leone / Vicolo del Fosso di Papa Leone
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Tuscolano,Chicca,5,Viale Luciano Re Cecconi
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Aventino,Da Mino,8,Piazza Giunone Regina
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Boccea Cornelia,Da Mino,8,Via San Zeffirino Papa / Via Cardinale Oreglia / Via Cardinale Caprara
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Bravetta,Da Mino,8,Vicolo del Conte
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Della Vittoria,Da Mino,8,Via Achille Papa
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Montespaccato,Da Mino,8,Largo Re Ina
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Ponte,Da Mino,8,Ponte Principe Amedeo Savoia Aosta
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Prenestino Labicano,Da Mino,8,Via Conte di Carmagnola
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Ripa,Da Mino,8,Piazza Giunone Regina
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Villa Bonelli,Da Mino,8,Vicolo di Papa Leone
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Centocelle,Da cartolina,1,Via Isola Liri
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Eur,Da cartolina,1,Via del Mare
@@ -3185,8 +3185,8 @@ gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Tor
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Torrevecchia,Chicca,5,Via Monterosso al Mare
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Torrino,Chicca,5,Via del Mare
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Tufello,Chicca,5,Via delle Isole Curzolane
+gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Aventino,Da Mino,8,Piazza di San Bartolomeo all'Isola
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Capannelle,Da Mino,8,Via Melito di Porto Salvo
-gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Ripa,Da Mino,8,Piazza di San Bartolomeo all'Isola
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Valco San Paolo,Da Mino,8,Via del Mare
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Villa Gordiani,Da Mino,8,Via Isola d'Istria
 gen-locali-un-forno,Una zona con un forno,si,Centocelle,Da cartolina,1,Forno Castelli Romani / Forno Più
@@ -3265,7 +3265,7 @@ gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o de
 gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trionfale,Da romano de Roma,3,"Grattacheccaro ""Sora Maria"""
 gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Boccea Cornelia,Chicca,5,Sora Pia
 gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Regola,Chicca,5,Sora Margherita
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Ripa,Da Mino,8,Sora Lella / Trattoria Sora Lella
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Aventino,Da Mino,8,Sora Lella / Trattoria Sora Lella
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Esquilino,Da cartolina,1,Gelateria Fassi
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Monti,Da cartolina,1,Ai Tre Scalini
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Testaccio,Da cartolina,1,Gelateria Giolitti a Testaccio
@@ -3348,11 +3348,11 @@ gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Mont
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Pietralata,Da romano de Roma,3,chiesa di Sant'Atanasio a Via Tiburtina
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Pineta Sacchetti,Da romano de Roma,3,chiesa di Gesù Divino Maestro
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Tufello,Da romano de Roma,3,chiesa del Santissimo Redentore a Val Melaina
+gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Aventino,Chicca,5,Palazzo dell'Anagrafe
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Baldo degli Ubaldi,Chicca,5,chiesa di Sant'Ambrogio
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Casaletto - Colli Portuensi,Chicca,5,chiesa di Nostra Signora di Coromoto
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Miani,Chicca,5,chiesa di Santa Marcella
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Primavalle,Chicca,5,chiesa di Santa Maria Assunta e San Giuseppe a Primavalle / chiesa di Santa Maria della Salute a Primavalle
-gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Ripa,Chicca,5,Palazzo dell'Anagrafe
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Salario,Chicca,5,chiesa di Santa Maria della Mercede e Sant'Adriano
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Tor Pignattara,Chicca,5,chiesa di San Giuseppe Cafasso / chiesa di San Barnaba / chiesa di Santa Giulia Billiart
 gen-stili-un-edificio-razionalista,Una zona con un edificio razionalista,no,Trastevere,Chicca,5,Palazzo degli Esami
@@ -3500,7 +3500,7 @@ gen-epoche-fontana-del-seicento,Una zona con una fontana del Seicento,no,Campo M
 gen-epoche-fontana-del-seicento,Una zona con una fontana del Seicento,no,Ludovisi,Da romano de Roma,3,Fontana delle Api
 gen-epoche-fontana-del-seicento,Una zona con una fontana del Seicento,no,Trastevere,Chicca,5,Fontana dell'Acqua Paola
 gen-epoche-fontana-del-settecento,Una zona con una fontana del Settecento,no,Trevi,Da cartolina,1,Fontana di Trevi
-gen-epoche-fontana-del-settecento,Una zona con una fontana del Settecento,no,Ripa,Da romano de Roma,3,Fontana di Lungotevere Aventino
+gen-epoche-fontana-del-settecento,Una zona con una fontana del Settecento,no,Aventino,Da romano de Roma,3,Fontana di Lungotevere Aventino
 gen-epoche-fontana-dell-ottocento,Una zona con una fontana dell'Ottocento,no,Campo Marzio,Da cartolina,1,Fontana della Dea di Roma / Fontana del Nettuno
 gen-epoche-fontana-dell-ottocento,Una zona con una fontana dell'Ottocento,no,Celio,Da romano de Roma,3,Acqua di Mercurio
 gen-epoche-fontana-del-primo-novecento,Una zona con una fontana del primo Novecento,si,Monti,Da cartolina,1,Fontana della Navicella
@@ -3533,12 +3533,12 @@ gen-epoche-villa-moderna-dopo-la-guerra,Una zona con una villa moderna (dopo la 
 gen-epoche-villa-moderna-dopo-la-guerra,Una zona con una villa moderna (dopo la guerra),no,Celio,Ce sta,2,Gay street di Roma
 gen-epoche-villa-moderna-dopo-la-guerra,Una zona con una villa moderna (dopo la guerra),no,Villaggio Olimpico,Chicca,5,Villaggio Olimpico
 gen-epoche-torre-medievale,Una zona con una torre medievale,no,Monti,Da cartolina,1,Torre dei Conti
-gen-epoche-torre-medievale,Una zona con una torre medievale,no,Ripa,Da romano de Roma,3,Torre della Moletta
+gen-epoche-torre-medievale,Una zona con una torre medievale,no,Aventino,Da romano de Roma,3,Torre della Moletta
 gen-epoche-torre-del-cinquecento,Una zona con una torre del Cinquecento,no,Campitelli,Da cartolina,1,Torre di Paolo III
 gen-epoche-torre-del-primo-novecento,Una zona con una torre del primo Novecento,no,Balduina,Da cartolina,1,Centro trasmittente di Monte Mario
 gen-epoche-torre-moderna-dopo-la-guerra,Una zona con una torre moderna (dopo la guerra),no,Eur,Da cartolina,1,Palazzo ENI / palazzo INAIL / Torre piezometrica dell'Eur
 gen-epoche-torre-moderna-dopo-la-guerra,Una zona con una torre moderna (dopo la guerra),no,Fonte Meravigliosa,Da romano de Roma,3,Centro idrico Eur
-gen-epoche-ponte-paleocristiana-o-altomedievale-prima-del-mille,Una zona con un ponte paleocristiana o altomedievale (prima del Mille),no,Ripa,Da cartolina,1,Ponte Cestio / Ponte Fabricio / Ponte Sublicio
+gen-epoche-ponte-paleocristiana-o-altomedievale-prima-del-mille,Una zona con un ponte paleocristiana o altomedievale (prima del Mille),no,Aventino,Da cartolina,1,Ponte Cestio / Ponte Fabricio / Ponte Sublicio
 gen-epoche-ponte-paleocristiana-o-altomedievale-prima-del-mille,Una zona con un ponte paleocristiana o altomedievale (prima del Mille),no,Trastevere,Da romano de Roma,3,Ponte Cestio / Ponte Sublicio
 gen-epoche-ponte-del-quattrocento,Una zona con un ponte del Quattrocento,no,Regola,Da cartolina,1,Ponte Sisto
 gen-epoche-ponte-dell-ottocento,Una zona con un ponte dell'Ottocento,no,Prati,Da cartolina,1,Ponte Cavour
@@ -3553,7 +3553,7 @@ gen-epoche-ponte-del-primo-novecento,Una zona con un ponte del primo Novecento,s
 gen-epoche-ponte-del-primo-novecento,Una zona con un ponte del primo Novecento,si,Tor di Valle,Da romano de Roma,3,Ponte della Magliana
 gen-epoche-ponte-del-primo-novecento,Una zona con un ponte del primo Novecento,si,Porta Portese,Chicca,5,Ponte Sublicio
 gen-epoche-ponte-del-primo-novecento,Una zona con un ponte del primo Novecento,si,Testaccio,Chicca,5,Ponte Sublicio
-gen-epoche-ponte-del-primo-novecento,Una zona con un ponte del primo Novecento,si,Ripa,Da Mino,8,Ponte Sublicio
+gen-epoche-ponte-del-primo-novecento,Una zona con un ponte del primo Novecento,si,Aventino,Da Mino,8,Ponte Sublicio
 gen-epoche-ponte-moderno-dopo-la-guerra,Una zona con un ponte moderno (dopo la guerra),no,Prati,Da cartolina,1,ponte Pietro Nenni
 gen-epoche-ponte-moderno-dopo-la-guerra,Una zona con un ponte moderno (dopo la guerra),no,Flaminio,Ce sta,2,ponte Pietro Nenni
 gen-epoche-ponte-moderno-dopo-la-guerra,Una zona con un ponte moderno (dopo la guerra),no,San Paolo,Da romano de Roma,3,ponte Guglielmo Marconi
@@ -3604,9 +3604,9 @@ gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Parione,Ce sta,2,chi
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Ponte,Ce sta,2,basilica di San Giovanni Battista dei Fiorentini / chiesa di San Nicola dei Lorenesi / chiesa di San Salvatore in Lauro / ...
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Sant'Eustachio,Ce sta,2,chiesa di Sant'Antonio in Campo Marzio / basilica di Sant'Eustachio / chiesa di San Giuliano dei Fiamminghi / ...
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Trastevere,Ce sta,2,chiesa di San Callisto / chiesa di Santa Dorotea / chiesa di San Francesco a Ripa / ...
+gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Aventino,Da romano de Roma,3,chiesa di San Bonaventura al Palatino / chiesa di San Giovanni Decollato / chiesa di Santa Prisca / ...
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Campo Marzio,Da romano de Roma,3,chiesa della Santissima Trinità degli Spagnoli / chiesa di Sant'Antonio in Campo Marzio / chiesa di Santa Maria dei Miracoli / ...
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Celio,Da romano de Roma,3,chiesa di San Gregorio al Celio / chiesa dei Santi Andrea e Bartolomeo / basilica dei Santi Giovanni e Paolo
-gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Ripa,Da romano de Roma,3,chiesa di San Bonaventura al Palatino / chiesa di San Giovanni Decollato / chiesa di Santa Prisca / ...
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Trevi,Da romano de Roma,3,chiesa di San Nicola da Tolentino / chiesa dei Santi Claudio e Andrea dei Borgognoni / oratorio del Crocifisso / ...
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Borgo,Chicca,5,chiesa di Santa Maria Annunziata in Borgo / chiesa dei Santi Michele e Magno
 gen-stili-chiesa-barocca,Una zona con una chiesa barocca,si,Campitelli,Chicca,5,chiesa di San Bonaventura al Palatino / chiesa di San Sebastiano al Palatino / chiesa di Santa Maria della Consolazione / ...
@@ -3621,7 +3621,7 @@ gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Colonna,Da cartolin
 gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Trevi,Da cartolina,1,Palazzo Barberini / Palazzo Chigi-Odescalchi
 gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Parione,Ce sta,2,Palazzo Pamphilj
 gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Regola,Ce sta,2,Palazzo Spada / Palazzo Falconieri
-gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Ripa,Da romano de Roma,3,Villa del Priorato di Malta
+gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Aventino,Da romano de Roma,3,Villa del Priorato di Malta
 gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Trastevere,Da romano de Roma,3,complesso monumentale di San Michele a Ripa Grande / Palazzo di San Callisto
 gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Campo Marzio,Chicca,5,Palazzetto Zuccari
 gen-stili-palazzo-barocco,Una zona con un palazzo barocco,si,Monti,Chicca,5,palazzo della Consulta
@@ -3639,8 +3639,8 @@ gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Campo 
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore / basilica di San Pietro in Vincoli / chiesa di San Lorenzo in Panisperna
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Pigna,Da cartolina,1,chiesa del Gesù / basilica di San Marco Evangelista al Campidoglio
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Sant'Eustachio,Da cartolina,1,chiesa di San Luigi dei Francesi / basilica di Sant'Agostino in Campo Marzio / basilica di Sant'Andrea della Valle
+gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Aventino,Ce sta,2,basilica dei Santi Bonifacio e Alessio
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Ponte,Ce sta,2,chiesa di Santa Maria della Pace / chiesa di Santa Maria dell'Anima / basilica di Sant'Apollinare / ...
-gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Ripa,Ce sta,2,basilica dei Santi Bonifacio e Alessio
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Trastevere,Ce sta,2,complesso di Sant'Onofrio al Gianicolo / chiesa di Santa Maria dell'Orto / tempietto di San Pietro in Montorio
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Borgo,Da romano de Roma,3,chiesa di Santo Spirito in Sassia / chiesa di San Giacomo a Scossacavalli / chiesa di Santa Maria in Transpontina / ...
 gen-stili-chiesa-rinascimentale,Una zona con una chiesa rinascimentale,si,Campitelli,Da romano de Roma,3,basilica di Sant'Anastasia al Palatino
@@ -3725,7 +3725,7 @@ gen-stili-chiesa-razionalista,Una zona con una chiesa razionalista,si,Talenti,Da
 gen-stili-chiesa-razionalista,Una zona con una chiesa razionalista,si,Tiburtino III,Da Mino,8,chiesa di Santa Maria della Visitazione
 gen-stili-palazzo-razionalista,Una zona con un palazzo razionalista,no,Eur,Da cartolina,1,Palazzo della Civiltà Italiana / Palazzi dell'INA e dell'INPS
 gen-stili-palazzo-razionalista,Una zona con un palazzo razionalista,no,Trastevere,Ce sta,2,Palazzo degli Esami
-gen-stili-palazzo-razionalista,Una zona con un palazzo razionalista,no,Ripa,Da romano de Roma,3,Palazzo dell'Anagrafe
+gen-stili-palazzo-razionalista,Una zona con un palazzo razionalista,no,Aventino,Da romano de Roma,3,Palazzo dell'Anagrafe
 gen-stili-palazzo-razionalista,Una zona con un palazzo razionalista,no,Castro Pretorio,Chicca,5,Palazzo dei Marescialli
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Borgo,Da cartolina,1,Radio Vaticana / via della Conciliazione / Libera Università Maria Santissima Assunta / ...
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Campitelli,Da cartolina,1,via dei Fori Imperiali / via del Teatro di Marcello
@@ -3768,6 +3768,7 @@ gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito dura
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Tor di Valle,Da romano de Roma,3,Ponte della Magliana
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Trastevere,Da romano de Roma,3,Istituto Italiano di Studi Germanici / Cencio la Parolaccia / Institutum Romanum Finlandiae / ...
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Villa Borghese,Da romano de Roma,3,Academia Belgica / Biblioteca centrale della Facoltà di architettura. Università degli studi di Roma La Sapienza / Cinema dei Piccoli / ...
+gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Aventino,Chicca,5,Roseto di Roma Capitale / Accademia Nazionale di Danza / Mascioni opus 494
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Campo Marzio,Chicca,5,Piazza Augusto Imperatore / Mascioni opus 535
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Casaletto - Colli Portuensi,Chicca,5,chiesa di Santa Maria del Carmine e San Giuseppe al Casaletto
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Casetta Mattei,Chicca,5,Gianicolense
@@ -3780,7 +3781,6 @@ gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito dura
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Pineta Sacchetti,Chicca,5,chiesa di San Filippo Neri alla Pineta Sacchetti
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Prati,Chicca,5,chiesa della Beata Vergine Maria del Carmine / Museo storico dell'arma dei carabinieri / piazza dei Quiriti
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Primavalle,Chicca,5,chiesa di Santa Maria Assunta e San Giuseppe a Primavalle
-gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Ripa,Chicca,5,Roseto di Roma Capitale / Accademia Nazionale di Danza / Mascioni opus 494
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Trevi,Chicca,5,Mascioni opus 369 / Mascioni opus 569 / Palazzo INAIL
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Appia Antica,Da Mino,8,chiesa di San Tarcisio
 gen-epoche-costruito-durante-il-fascismo,Una zona con un edificio costruito durante il fascismo,no,Balduina,Da Mino,8,Centro trasmittente di Monte Mario
