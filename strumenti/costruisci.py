@@ -468,6 +468,8 @@ def main():
         if did not in per_id:
             errore(f'correzioni-fasce.json: domanda "{did}" non esiste')
         for zid, livello in zone_corr.items():
+            if zid.startswith('_'):
+                continue
             if zid not in per_id[did]['catalogo']:
                 errore(f'correzioni-fasce.json: "{zid}" non e una risposta giusta di "{did}"')
             if livello not in range(5):

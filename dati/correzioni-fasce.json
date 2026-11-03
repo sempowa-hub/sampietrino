@@ -1,0 +1,4 @@
+{
+ "_nota": "Fasce a mano (0 Da cartolina, 1 Ce sta, 2 Da romano de Roma, 3 Chicca, 4 Da Mino), applicate da costruisci.py dopo il calcolo.",
+ "gen-tipi-stadio": {"_perche": "uscita il 2/11: Eur (Tre Fontane) prende il posto di Tor di Valle, Aurelio resta com'era", "eur": 3, "aurelio": 2}
+}

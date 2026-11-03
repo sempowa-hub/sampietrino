@@ -30,6 +30,10 @@ RADICE = Path(__file__).resolve().parent.parent
 FONTI = RADICE / 'dati' / 'fonti'
 USCITA = RADICE / 'dati' / 'domande-generate.json'
 # Temi gia coperti dalle 25 di categoria: niente doppioni.
+# Luoghi che su Wikidata ci sono ma a Roma non esistono (progetti mai realizzati): via da tutte le domande.
+MAI_COSTRUITI = {'Stadio della AS Roma'}
+# Luoghi che il tipo Wikidata non prende ma la gente conta: tipo cercato -> nomi in piu (richiesta di Simone e Mino).
+IN_PIU = {'stadio': {'stadio Tre Fontane'}}
 GIA_FATTI = {'Gian Lorenzo Bernini', 'Francesco Borromini', 'Caravaggio', 'Michelangelo Merisi da Caravaggio'}
 
 
@@ -463,7 +467,7 @@ def ha(testo, parole):
 def main():
     wd = json.loads((FONTI / 'wikidata-roma.json').read_text())
     # Luoghi generici (Roma, Europa, Italia...): le loro coordinate cadono a caso nel centro, via.
-    generico = lambda x: x.get('nome') in GENERICI
+    generico = lambda x: x.get('nome') in GENERICI or x.get('nome') in MAI_COSTRUITI
     for k in ('luoghi', 'opere', 'sepolture', 'set', 'cast', 'committenti'):
         wd[k] = [x for x in wd.get(k, []) if not generico(x)]
     luoghi, opere, sepolture, film = wd['luoghi'], wd['opere'], wd['sepolture'], wd['set']
@@ -471,7 +475,7 @@ def main():
 
     # tipi
     for cerca, testo, manca in TIPI:
-        els = [el(x['nome'], x['sl'], geo(x)) for x in luoghi if any(cerca.lower() in t.lower() for t in parti(x.get('tipi')))]
+        els = [el(x['nome'], x['sl'], geo(x)) for x in luoghi if any(cerca.lower() in t.lower() for t in parti(x.get('tipi'))) or x['nome'] in IN_PIU.get(cerca, ())]
         aggiungi('tipi', slug(cerca), f'Una zona con {testo}', manca, els, cerca, famoso=f'Una zona con {famosa(testo)}' if famosa(testo) else None)
 
     # architetti
