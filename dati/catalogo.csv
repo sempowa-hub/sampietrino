@@ -2835,10 +2835,16 @@ gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sed
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Campo Marzio,Chicca,5,Palazzo di Propaganda Fide
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Pigna,Chicca,5,Palazzo Maffei Marescotti (palazzo della Pigna)
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Borgo,Da Mino,8,Palazzo del Sant'Uffizio / Palazzo dei Convertendi / Palazzo dei Propilei / Palazzo Pio
-gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Campo Marzio,Da cartolina,1,chiesa della Trinità dei Monti / cappella Cerasi
-gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Pigna,Ce sta,2,chiesa di Sant'Ignazio di Loyola in Campo Marzio / antica chiesa della Santissima Annunziata
-gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Ponte,Da romano de Roma,3,chiesa di Santa Maria dell'Anima / Palazzo Sacchetti
-gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Regola,Chicca,5,Palazzo Farnese
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Campo Marzio,Da cartolina,1,"Santa Maria del Popolo (cappella Cerasi, cappella del Presepio, coro) / chiesa della Trinità dei Monti"
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Pigna,Ce sta,2,Santa Maria sopra Minerva (cappella Carafa) / chiesa del Gesù (Trionfo del nome di Gesù) / chiesa di Sant'Ignazio
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Trastevere,Ce sta,2,"Villa Farnesina (Loggia di Psiche, Trionfo di Galatea)"
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Trevi,Ce sta,2,"Palazzo Barberini (Trionfo della Divina Provvidenza, Divina Sapienza)"
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Campitelli,Da romano de Roma,3,Santa Maria in Ara Coeli (cappella Bufalini) / Palatino (Aula Isiaca)
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Ponte,Da romano de Roma,3,"Santa Maria della Pace (Sibille di Raffaello, cappella Cesi) / chiesa di Santa Maria dell'Anima"
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Castro Pretorio,Chicca,5,Palazzo Massimo (affreschi della villa di Livia)
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Regola,Chicca,5,Palazzo Farnese (Galleria e Camerino Farnese)
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Villa Borghese,Chicca,5,Villa Giulia (affreschi del porticato)
+gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Ludovisi,Da Mino,8,Casino dell'Aurora (Caravaggio e Guercino)
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Sant'Eustachio,Da Mino,8,Palazzetto di Tizio da Spoleto
 gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Monti,Da cartolina,1,basilica di San Pietro in Vincoli
 gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Sallustiano,Da cartolina,1,cappella Cornaro

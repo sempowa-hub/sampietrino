@@ -11,5 +11,16 @@
   "pigna": {"fascia": 3, "perche": ["Palazzo Maffei Marescotti (palazzo della Pigna)"]},
   "campo-marzio": {"fascia": 3, "perche": ["Palazzo di Propaganda Fide"]},
   "borgo": {"fascia": 4, "perche": ["Palazzo del Sant'Uffizio", "Palazzo dei Convertendi", "Palazzo dei Propilei", "Palazzo Pio"]}},
+ "gen-artisti-opera-affresco": {"_perche": "4/11, Mino: Wikidata ne conosce pochi. Aggiunti i cicli di it.wikipedia Categoria:Cicli di affreschi di Roma (quelli in Vaticano no: non e una zona). Fasce delle zone gia uscite invariate",
+  "campo-marzio": {"fascia": 0, "perche": ["Santa Maria del Popolo (cappella Cerasi, cappella del Presepio, coro)", "chiesa della Trinità dei Monti"]},
+  "pigna": {"fascia": 1, "perche": ["Santa Maria sopra Minerva (cappella Carafa)", "chiesa del Gesù (Trionfo del nome di Gesù)", "chiesa di Sant'Ignazio"]},
+  "ponte": {"fascia": 2, "perche": ["Santa Maria della Pace (Sibille di Raffaello, cappella Cesi)", "chiesa di Santa Maria dell'Anima"]},
+  "regola": {"fascia": 3, "perche": ["Palazzo Farnese (Galleria e Camerino Farnese)"]},
+  "trastevere": {"fascia": 1, "perche": ["Villa Farnesina (Loggia di Psiche, Trionfo di Galatea)"]},
+  "trevi": {"fascia": 1, "perche": ["Palazzo Barberini (Trionfo della Divina Provvidenza, Divina Sapienza)"]},
+  "campitelli": {"fascia": 2, "perche": ["Santa Maria in Ara Coeli (cappella Bufalini)", "Palatino (Aula Isiaca)"]},
+  "castro-pretorio": {"fascia": 3, "perche": ["Palazzo Massimo (affreschi della villa di Livia)"]},
+  "villa-borghese": {"fascia": 3, "perche": ["Villa Giulia (affreschi del porticato)"]},
+  "ludovisi": {"fascia": 4, "perche": ["Casino dell'Aurora (Caravaggio e Guercino)"]}},
  "gen-architetti-giuseppe-valadier": {"_perche": "4/11, Mino: la Casina Valadier vale per Villa Borghese, non per Campo Marzio", "campo-marzio": null, "villa-borghese": {"fascia": 1, "perche": ["Casina Valadier"]}}
 }
