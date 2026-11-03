@@ -6,6 +6,7 @@
       ".firebaserc",
       "**/.*",
       "**/node_modules/**",
+      ".venv/**",
       "strumenti/**",
       "test/**",
       "docs/**",

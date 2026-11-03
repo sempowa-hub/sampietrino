@@ -462,19 +462,34 @@ def main():
     f_corr = RADICE / 'dati' / 'correzioni-fasce.json'
     correzioni = json.loads(f_corr.read_text()) if f_corr.exists() else {}
     per_id = {d['id']: d for d in domande}
+    id_zone = {ids[n] for n in nomi}
     for did, zone_corr in correzioni.items():
         if did.startswith('_'):
             continue
         if did not in per_id:
             errore(f'correzioni-fasce.json: domanda "{did}" non esiste')
+        d = per_id[did]
         for zid, livello in zone_corr.items():
             if zid.startswith('_'):
                 continue
-            if zid not in per_id[did]['catalogo']:
+            # null toglie la zona (luogo messo nella zona sbagliata dalle fonti).
+            if livello is None:
+                if zid not in d['catalogo']:
+                    errore(f'correzioni-fasce.json: "{zid}" da togliere non e una risposta di "{did}"')
+                del d['catalogo'][zid]
+                d.get('perche', {}).pop(zid, None)
+                continue
+            # {"fascia": n, "perche": [...]} aggiunge una zona che le fonti non trovano (Roma Ostiense non e in OSM).
+            if isinstance(livello, dict):
+                if zid not in id_zone:
+                    errore(f'correzioni-fasce.json: zona "{zid}" non in gioco ("{did}")')
+                d.setdefault('perche', {})[zid] = livello['perche']
+                livello = livello['fascia']
+            elif zid not in d['catalogo']:
                 errore(f'correzioni-fasce.json: "{zid}" non e una risposta giusta di "{did}"')
             if livello not in range(5):
                 errore(f'correzioni-fasce.json: fascia {livello} fuori scala per "{zid}" in "{did}"')
-            per_id[did]['catalogo'][zid] = livello
+            d['catalogo'][zid] = livello
 
     # Giocabile: abbastanza risposte, non troppe, e almeno una zona per ogni fascia (il massimo si puo fare).
     giocabili = [d for d in domande if MIN_RISPOSTE <= len(d['catalogo']) <= MAX_RISPOSTE and set(d['catalogo'].values()) == set(range(5))]

@@ -1016,6 +1016,7 @@ stazione-fs,Una zona con una stazione dei treni,si,Sacco Pastore,Ce sta,2,Roma N
 stazione-fs,Una zona con una stazione dei treni,si,Baldo degli Ubaldi,Da romano de Roma,3,Valle Aurelia
 stazione-fs,Una zona con una stazione dei treni,si,Casal Bertone,Da romano de Roma,3,Roma Prenestina
 stazione-fs,Una zona con una stazione dei treni,si,Conca d'Oro,Da romano de Roma,3,Val d’Ala
+stazione-fs,Una zona con una stazione dei treni,si,Ostiense,Da romano de Roma,3,Roma Ostiense
 stazione-fs,Una zona con una stazione dei treni,si,Pineta Sacchetti,Da romano de Roma,3,Gemelli
 stazione-fs,Una zona con una stazione dei treni,si,Valle Aurelia,Da romano de Roma,3,Valle Aurelia
 stazione-fs,Una zona con una stazione dei treni,si,Vigna Clara,Da romano de Roma,3,Vigna Clara
@@ -2328,8 +2329,8 @@ gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Monti,Da romano de 
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Ostiense,Chicca,5,Mancata difesa di Roma
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Trastevere,Chicca,5,battaglia del Gianicolo
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Nuovo Salario,Da Mino,8,battaglia di Fidene
+gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Flaminio,Da cartolina,1,stadio Flaminio
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Foro Italico,Da cartolina,1,Stadio Olimpico
-gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Villaggio Olimpico,Da cartolina,1,stadio Flaminio
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Eur,Ce sta,2,stadio Tre Fontane
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Testaccio,Ce sta,2,campo Testaccio
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Alberone,Da romano de Roma,3,Motovelodromo Appio
@@ -2378,7 +2379,7 @@ gen-architetti-giacomo-della-porta,Una zona con un edificio di Giacomo Della Por
 gen-architetti-giacomo-della-porta,Una zona con un edificio di Giacomo Della Porta,si,Trevi,Da Mino,8,oratorio del Crocifisso
 gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Parione,Da cartolina,1,chiesa di San Pantaleo e San Giuseppe Calasanzio
 gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Verano,Da cartolina,1,cimitero del Verano
-gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Campo Marzio,Ce sta,2,Casina Valadier
+gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Villa Borghese,Ce sta,2,Casina Valadier
 gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Trevi,Da romano de Roma,3,Palazzo della Calcografia
 gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Ponte,Chicca,5,chiesa di Sant'Angelo de Miccinellis
 gen-architetti-giuseppe-valadier,Una zona con un edificio di Giuseppe Valadier,si,Nomentano,Da Mino,8,Casino Nobile
@@ -2826,11 +2827,14 @@ gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Monteverde,Ch
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Aventino,Da Mino,8,Fontana di Lungotevere Aventino
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Campitelli,Da Mino,8,Palazzo Clementino
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Ponte,Da Mino,8,Palazzo dei Tribunali
-gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Monti,Da cartolina,1,basilica di San Giovanni in Laterano / palazzo del Laterano
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,San Giovanni,Da cartolina,1,basilica di San Giovanni in Laterano / Palazzo del Laterano / Scala Santa
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Parione,Ce sta,2,Palazzo della Cancelleria
-gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Trastevere,Da romano de Roma,3,Palazzo di San Callisto
-gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Pigna,Chicca,5,Palazzo Maffei Marescotti / palazzo Severoli
-gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Borgo,Da Mino,8,Auditorium Conciliazione / Palazzo Serristori / Palazzo dei Convertendi
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,San Paolo,Ce sta,2,basilica di San Paolo fuori le Mura
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Trastevere,Da romano de Roma,3,Palazzo di San Callisto / immobili sul Gianicolo
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Campo Marzio,Chicca,5,Palazzo di Propaganda Fide
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Pigna,Chicca,5,Palazzo Maffei Marescotti (palazzo della Pigna)
+gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Borgo,Da Mino,8,Palazzo del Sant'Uffizio / Palazzo dei Convertendi / Palazzo dei Propilei / Palazzo Pio
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Campo Marzio,Da cartolina,1,chiesa della Trinità dei Monti / cappella Cerasi
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Pigna,Ce sta,2,chiesa di Sant'Ignazio di Loyola in Campo Marzio / antica chiesa della Santissima Annunziata
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Ponte,Da romano de Roma,3,chiesa di Santa Maria dell'Anima / Palazzo Sacchetti

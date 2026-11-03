@@ -1,4 +1,15 @@
 {
- "_nota": "Fasce a mano (0 Da cartolina, 1 Ce sta, 2 Da romano de Roma, 3 Chicca, 4 Da Mino), applicate da costruisci.py dopo il calcolo.",
- "gen-tipi-stadio": {"_perche": "uscita il 2/11: Eur (Tre Fontane) prende il posto di Tor di Valle, Aurelio resta com'era", "eur": 3, "aurelio": 2}
+ "_nota": "Fasce a mano (0 Da cartolina, 1 Ce sta, 2 Da romano de Roma, 3 Chicca, 4 Da Mino), applicate da costruisci.py dopo il calcolo. Un numero cambia la fascia, null toglie la zona, {\"fascia\": n, \"perche\": [...]} aggiunge una zona che le fonti non trovano.",
+ "gen-tipi-stadio": {"_perche": "uscita il 2/11: Eur (Tre Fontane) prende il posto di Tor di Valle, Aurelio resta com'era", "eur": 3, "aurelio": 2},
+ "stazione-fs": {"_perche": "4/11, Mino: Roma Ostiense manca in OpenStreetMap", "ostiense": {"fascia": 2, "perche": ["Roma Ostiense"]}},
+ "gen-tipi-impianto-di-calcio": {"_perche": "4/11, Mino: lo stadio Flaminio vale per Flaminio, non per Villaggio Olimpico", "villaggio-olimpico": null, "flaminio": {"fascia": 0, "perche": ["stadio Flaminio"]}},
+ "gen-committenti-proprieta-santa-sede": {"_perche": "4/11, Mino: Wikidata ne conosce poche. Elenco degli immobili della Santa Sede dei Patti Lateranensi; il Laterano conta per San Giovanni, non per Monti. Fasce delle zone gia uscite invariate",
+  "monti": {"fascia": 0, "perche": ["basilica di Santa Maria Maggiore"]},
+  "san-giovanni": {"fascia": 0, "perche": ["basilica di San Giovanni in Laterano", "Palazzo del Laterano", "Scala Santa"]},
+  "san-paolo": {"fascia": 1, "perche": ["basilica di San Paolo fuori le Mura"]},
+  "trastevere": {"fascia": 2, "perche": ["Palazzo di San Callisto", "immobili sul Gianicolo"]},
+  "pigna": {"fascia": 3, "perche": ["Palazzo Maffei Marescotti (palazzo della Pigna)"]},
+  "campo-marzio": {"fascia": 3, "perche": ["Palazzo di Propaganda Fide"]},
+  "borgo": {"fascia": 4, "perche": ["Palazzo del Sant'Uffizio", "Palazzo dei Convertendi", "Palazzo dei Propilei", "Palazzo Pio"]}},
+ "gen-architetti-giuseppe-valadier": {"_perche": "4/11, Mino: la Casina Valadier vale per Villa Borghese, non per Campo Marzio", "campo-marzio": null, "villa-borghese": {"fascia": 1, "perche": ["Casina Valadier"]}}
 }
