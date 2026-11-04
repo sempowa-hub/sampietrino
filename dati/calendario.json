@@ -173,14 +173,14 @@
    "gen-tipi-sito-archeologico",
    "gen-epoche-palazzo-del-seicento",
    "gen-tipi-tempio-romano",
-   "gen-tipi-edificio",
+   "gen-tipi-palazzo",
    "gen-epoche-chiesa-del-cinquecento"
   ]
  },
  "avanzano": [
   "gen-tipi-tempio",
   "gen-tipi-edificio-romano",
-  "gen-tipi-palazzo",
-  "gen-tipi-museo-archeologico"
+  "gen-tipi-museo-archeologico",
+  "gen-tipi-edificio"
  ]
 }

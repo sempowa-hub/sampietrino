@@ -1457,11 +1457,22 @@ street-art,Una zona famosa per i murales,si,Tor Marancia,Chicca,5,Museo condomin
 street-art,Una zona famosa per i murales,si,Trullo,Chicca,5,"Trullo, murales e Poeti der Trullo"
 street-art,Una zona famosa per i murales,si,Quadraro,Da Mino,8,"Quadraro, il M.U.Ro."
 novecento,Una zona con un gioiello del Novecento,si,Eur,Da cartolina,1,Laghetto e quartiere dell'Eur
+novecento,Una zona con un gioiello del Novecento,si,Esquilino,Ce sta,2,Stazione Termini (il dinosauro)
+novecento,Una zona con un gioiello del Novecento,si,Foro Italico,Ce sta,2,Stadio dei Marmi / Casa delle Armi di Luigi Moretti
 novecento,Una zona con un gioiello del Novecento,si,Trieste,Ce sta,2,Quartiere Coppedè
+novecento,Una zona con un gioiello del Novecento,si,Villaggio Olimpico,Ce sta,2,Palazzetto dello Sport di Nervi e Vitellozzi / Villaggio Olimpico
+novecento,Una zona con un gioiello del Novecento,si,Corviale,Da romano de Roma,3,il Serpentone di Mario Fiorentino
+novecento,Una zona con un gioiello del Novecento,si,Della Vittoria,Da romano de Roma,3,Palazzo RAI col Cavallo morente di Messina / Ponte Risorgimento
 novecento,Una zona con un gioiello del Novecento,si,Ostiense,Da romano de Roma,3,Gazometro
+novecento,Una zona con un gioiello del Novecento,si,Parioli,Da romano de Roma,3,Casa del Girasole di Moretti / Moschea di Paolo Portoghesi
+novecento,Una zona con un gioiello del Novecento,si,Villa Borghese,Da romano de Roma,3,Galleria Nazionale d'Arte Moderna di Cesare Bazzani
 novecento,Una zona con un gioiello del Novecento,si,Garbatella,Chicca,5,Fontana della Carlotta alla Garbatella
+novecento,Una zona con un gioiello del Novecento,si,Monte Sacro,Chicca,5,Città Giardino Aniene
 novecento,Una zona con un gioiello del Novecento,si,Nomentano,Chicca,5,Casina delle Civette
+novecento,Una zona con un gioiello del Novecento,si,Prati,Chicca,5,Casa Madre dei Mutilati di Piacentini
 novecento,Una zona con un gioiello del Novecento,si,Colle del Sole,Da Mino,8,Borgata razionalista del Trullo
+novecento,Una zona con un gioiello del Novecento,si,Pietralata,Da Mino,8,quartiere INA-Casa Tiburtino di Quaroni e Ridolfi
+novecento,Una zona con un gioiello del Novecento,si,Porta Portese,Da Mino,8,ex GIL di Luigi Moretti
 novecento,Una zona con un gioiello del Novecento,si,Tor Marancia,Da Mino,8,Case popolari di Tor Marancia
 novecento,Una zona con un gioiello del Novecento,si,Trullo,Da Mino,8,Borgata razionalista del Trullo
 estero,Una zona dove c'è un pezzetto di estero,si,Campo Marzio,Da cartolina,1,"Trinità dei Monti, chiesa dei francesi"
@@ -2298,16 +2309,25 @@ gen-tipi-santuario,Una zona con un santuario,si,Campitelli,Ce sta,2,Lapis niger 
 gen-tipi-santuario,Una zona con un santuario,si,San Paolo,Da romano de Roma,3,basilica di Santa Maria Regina degli Apostoli alla Montagnola
 gen-tipi-santuario,Una zona con un santuario,si,Trevi,Chicca,5,santuario di Semo Sancus Dius Fidius
 gen-tipi-santuario,Una zona con un santuario,si,Pietralata,Da Mino,8,Tempio di Ercole
-gen-tipi-giardino,Una zona con un giardino storico,si,Sallustiano,Da cartolina,1,Horti Sallustiani
-gen-tipi-giardino,Una zona con un giardino storico,si,Villa Borghese,Da cartolina,1,bioparco di Roma / Horti Aciliorum / Villa Strohl Fern
-gen-tipi-giardino,Una zona con un giardino storico,si,Campitelli,Ce sta,2,Giardini Farnese
-gen-tipi-giardino,Una zona con un giardino storico,si,Villa Gordiani,Ce sta,2,Villa Gordiani
-gen-tipi-giardino,Una zona con un giardino storico,si,Parioli,Da romano de Roma,3,Villa Balestra
-gen-tipi-giardino,Una zona con un giardino storico,si,Prati,Da romano de Roma,3,piazza Cavour
-gen-tipi-giardino,Una zona con un giardino storico,si,Campo Marzio,Chicca,5,giardini della Villa Medici
-gen-tipi-giardino,Una zona con un giardino storico,si,Trevi,Chicca,5,Giardini del Palazzo del Quirinale
-gen-tipi-giardino,Una zona con un giardino storico,si,Casaletto - Colli Portuensi,Da Mino,8,Villa Flora
-gen-tipi-giardino,Una zona con un giardino storico,si,Conca d'Oro,Da Mino,8,Città-giardino Aniene
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Aventino,Da cartolina,1,Giardino degli Aranci / Roseto Comunale
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Sallustiano,Da cartolina,1,Horti Sallustiani
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Villa Borghese,Da cartolina,1,bioparco di Roma / Horti Aciliorum / Villa Strohl Fern
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Villa Pamphili,Da cartolina,1,Villa Doria Pamphilj
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Campitelli,Ce sta,2,Giardini Farnese / Orti Farnesiani
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Campo Marzio,Ce sta,2,Pincio / giardini della Villa Medici
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Nomentano,Ce sta,2,Villa Torlonia
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Trastevere,Ce sta,2,Orto Botanico / Bosco Parrasio / Villa Sciarra
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Villa Ada,Ce sta,2,Villa Ada
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Villa Gordiani,Ce sta,2,Villa Gordiani
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Celio,Da romano de Roma,3,Villa Celimontana
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Parioli,Da romano de Roma,3,Villa Balestra
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Prati,Da romano de Roma,3,piazza Cavour
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Testaccio,Da romano de Roma,3,Cimitero Acattolico
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Trevi,Chicca,5,Giardini del Palazzo del Quirinale
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Trieste,Chicca,5,Villa Paganini
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Casaletto - Colli Portuensi,Da Mino,8,Villa Flora
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Conca d'Oro,Da Mino,8,Città-giardino Aniene
+gen-tipi-giardino,"Una zona con un giardino storico (una villa, un orto o un parco d'epoca)",si,Monti,Da Mino,8,Villa Aldobrandini
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Appia Antica,Da cartolina,1,Villa dei Quintili / mausoleo di Cecilia Metella / Capo di Bove / ...
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Esquilino,Da cartolina,1,tempio di Minerva Medica
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,San Saba,Da cartolina,1,Terme di Caracalla
@@ -2788,14 +2808,18 @@ gen-epoche-costruito-per-le-olimpiadi-del-1960,Una zona con un edificio costruit
 gen-epoche-costruito-per-le-olimpiadi-del-1960,Una zona con un edificio costruito per le Olimpiadi del 1960,si,Fonte Meravigliosa,Da romano de Roma,3,Peano (Roma)
 gen-epoche-costruito-per-le-olimpiadi-del-1960,Una zona con un edificio costruito per le Olimpiadi del 1960,si,Foro Italico,Chicca,5,Sfera grande
 gen-epoche-costruito-per-le-olimpiadi-del-1960,Una zona con un edificio costruito per le Olimpiadi del 1960,si,Appia Antica,Da Mino,8,Fondazione Santa Lucia
+gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Foro Italico,Da cartolina,1,Stadio Olimpico (ricostruito e coperto)
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Garbatella,Da cartolina,1,Garbatella / Fondazione Telethon
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Giuliano Dalmata,Da cartolina,1,Laurentina
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Castro Pretorio,Ce sta,2,Castro Pretorio
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Ponte Mammolo,Ce sta,2,Rebibbia
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Italia,Da romano de Roma,3,Castro Pretorio / Policlinico / Tiburtina
+gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Ostiense,Da romano de Roma,3,Air Terminal Ostiense (oggi Eataly)
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Pietralata,Da romano de Roma,3,Santa Maria del Soccorso / Pietralata
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Monti di Creta,Chicca,5,Istituto Dermopatico dell'Immacolata
+gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Vigna Clara,Chicca,5,stazione Vigna Clara
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Villa Ada,Chicca,5,Raggruppamento operativo speciale
+gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Camilluccia,Da Mino,8,stazione Farneto (Olimpico-Farnesina)
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Trastevere,Da Mino,8,Giardino giapponese del Museo dell’Orto Botanico di Roma
 gen-epoche-costruito-per-i-mondiali-del-1990,Una zona con un edificio costruito per i Mondiali del 1990,si,Vignaccia - Quaroni,Da Mino,8,chiesa di San Bruno
 gen-sepolture-papa,Una zona dove è sepolto un papa,si,Monti,Da cartolina,1,papa Martino V (basilica di San Giovanni in Laterano) / papa Clemente VIII (basilica di Santa Maria Maggiore) / papa Callisto II (basilica di San Giovanni in Laterano) / ...
@@ -3230,10 +3254,17 @@ gen-locali-un-forno,Una zona con un forno,si,Sant'Eustachio,Da Mino,8,Forno Cera
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Cinecittà,Da cartolina,1,Cornetto Notte
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Esquilino,Da cartolina,1,Caffè e Cornetto Roma
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Monti,Da cartolina,1,L'antica Cornetteria
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Balduina,Ce sta,2,il Pangocciolaio di via Elio Donato
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Castro Pretorio,Ce sta,2,Sorchetta doppio schizzo
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Flaminio,Ce sta,2,Cornetto Imperiale
-gen-locali-una-cornetteria,Una zona con una cornetteria,si,Ostiense,Ce sta,2,Bar Cornetteria
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Ostiense,Ce sta,2,Bar Cornetteria / Il Pangocciolaio (ex Dolce Notte)
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Porta Portese,Ce sta,2,Il Maritozzaro
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,San Lorenzo,Ce sta,2,Cornetteria San Lorenzo
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Centocelle,Da romano de Roma,3,Lo Zozzone
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Marconi,Da romano de Roma,3,Il Cornettone
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Salario,Da romano de Roma,3,Zio Rocco
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Talenti,Da romano de Roma,3,White Cafè Cornetteria / Il Regno del Cornetto
+gen-locali-una-cornetteria,Una zona con una cornetteria,si,Vescovio,Da romano de Roma,3,Romoli
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Alberone,Chicca,5,Cornetto Notte / Cornetto mania
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Don Bosco,Chicca,5,Bar Cornetteria
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Colli Aniene,Da Mino,8,Joker Cornetteria

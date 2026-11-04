@@ -8,9 +8,11 @@ Regole:
 Scrive dati/calendario.json e lo copia dentro dati/gioco.json ("calendario": {data: [id, ...]}).
 
 Uso: python3 strumenti/calendario.py   (dopo strumenti/costruisci.py)
+     python3 strumenti/calendario.py --fermi-fino-a 2026-11-11   (tiene fermi anche i giorni gia rivisti in anteprima)
 """
 import json
 import random
+import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -99,6 +101,9 @@ def main():
     vecchio = json.loads(CALENDARIO.read_text())['giorni'] if CALENDARIO.exists() else {}
     # Fermi: i giorni fino a domani (ora di Roma). Gli altri si rifanno con le domande non ancora usate.
     domani = (datetime.now(ZoneInfo('Europe/Rome')) + timedelta(days=1)).date()
+    # Ogni correzione alle zone rimescola i giorni dopo: chi sta correggendo la settimana in anteprima la tiene ferma.
+    if '--fermi-fino-a' in sys.argv:
+        domani = max(domani, date.fromisoformat(sys.argv[sys.argv.index('--fermi-fino-a') + 1]))
     fermi = {k: v for k, v in vecchio.items() if date.fromisoformat(k) <= domani and all(i in per_id for i in v)}
     fermi.update(FISSI)
     usate = {i for v in fermi.values() for i in v}
