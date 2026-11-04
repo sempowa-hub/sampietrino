@@ -6,7 +6,7 @@ import {
 import { creaMappa, COLORI_FASCE } from './mappa.js';
 import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
-import { oggi, giocabile, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite, PRIMO_GIORNO, gradoDi } from './storico.js';
+import { oggi, giocabile, sposta, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite, PRIMO_GIORNO, gradoDi } from './storico.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, pubblicaSettimana, aggiornaNomeInClassifica, classifica } from './conto.js';
 import { aggiornaSouvenir } from './souvenir.js';
@@ -113,10 +113,33 @@ function sincronizzaConto() {
       }
       taccuino.aggiornaSegno();
       pubblicaOggi();
+      pubblicaIeri();
       aggiornaNomeInClassifica(oggi);
     } catch (e) { console.warn('Sincronizzazione non riuscita:', e?.code || e?.message); } finally { sincronizzando = null; }
   })();
   return sincronizzando;
+}
+
+// Ieri finita nel suo giorno ma rimasta fuori dalla classifica (login arrivato dopo, scrittura persa):
+// le regole la accettano ancora per un giorno, va su in silenzio.
+async function pubblicaIeri() {
+  const ieri = sposta(oggi, -1);
+  const g = leggi().giorni[ieri];
+  const u = utente();
+  if (!g?.finita || g.recupero || !g.livelli || !u || u.anonimo) return;
+  try {
+    if (g.pubblicato !== u.uid) {
+      if (!(await pubblicaPunteggio(ieri, { tot: g.tot, livelli: g.livelli }))) return;
+      const s = leggi();
+      s.giorni[ieri].pubblicato = u.uid;
+      scrivi(s);
+    }
+    if (leggi().giorni[ieri].settimana !== u.uid && (await pubblicaSettimana(ieri, g.tot))) {
+      const s = leggi();
+      s.giorni[ieri].settimana = u.uid;
+      scrivi(s);
+    }
+  } catch (e) { console.warn('Classifica di ieri non raggiunta:', e?.code || e?.message); }
 }
 
 // Punteggio di oggi in classifica, una volta sola, e la riga "meglio del X%" nel diario.

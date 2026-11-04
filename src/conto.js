@@ -90,6 +90,8 @@ export async function entraConGoogle() {
       await au.signInWithCredential(auth, cred);
     } else throw e;
   }
+  // Collegando un anonimo il token puo restare quello anonimo, e le regole della classifica vogliono Google: si rinnova.
+  await auth.currentUser.getIdToken(true).catch(() => {});
   io = auth.currentUser;
   profilo = await leggiProfilo(io.uid);
   // Primo login: nickname proposto dal nome Google, la foto si mostra.
@@ -174,6 +176,24 @@ export function salvaStorico(storico) {
 
 // --- Classifica ---
 
+// Scrittura in classifica rifiutata: un secondo tentativo col token rinnovato (dopo il collegamento a Google il
+// token puo dire ancora "anonimo"). Se fallisce di nuovo, l'errore resta sul profilo per capire cosa e successo.
+async function conRiprova(data, fn) {
+  try { return await fn(); } catch (e) {
+    if (e?.code !== 'permission-denied') throw e;
+    await io.getIdToken(true).catch(() => {});
+    try { return await fn(); } catch (e2) { await segnalaErrore(data, e2); throw e2; }
+  }
+}
+
+async function segnalaErrore(data, e) {
+  try {
+    const { fs, db } = fb;
+    const provider = (await io.getIdTokenResult().catch(() => null))?.signInProvider || '';
+    await fs.setDoc(fs.doc(db, 'giocatori', io.uid), { erroreClassifica: { data, codice: String(e?.code || e?.message || e).slice(0, 80), provider, quando: fs.serverTimestamp() } }, { merge: true });
+  } catch { /* senza rete non si registra niente */ }
+}
+
 const colPunteggi = (data) => fb.fs.collection(fb.db, 'partite', data, 'punteggi');
 
 // Il punteggio di oggi, una volta sola. Se poi entri con Google, al punteggio si aggiungono nome e foto.
@@ -186,7 +206,7 @@ export async function pubblicaPunteggio(data, { tot, livelli }) {
   const esiste = (await fs.getDoc(rif)).exists();
   if (esiste) { await aggiornaNomeInClassifica(data); return true; }
   const me = utente();
-  await fs.setDoc(rif, { tot, livelli, ora: fs.serverTimestamp(), pubblico: !!me.nome, nome: me.nome || '', foto: me.foto || '' });
+  await conRiprova(data, () => fs.setDoc(rif, { tot, livelli, ora: fs.serverTimestamp(), pubblico: !!me.nome, nome: me.nome || '', foto: me.foto || '' }));
   return true;
 }
 
@@ -225,13 +245,13 @@ export async function pubblicaSettimana(data, tot) {
   const chi = { pubblico: !me.anonimo && !!me.nome, nome: me.anonimo ? '' : me.nome, foto: me.anonimo ? '' : me.foto };
   const prima = await fs.getDoc(rif);
   if (!prima.exists()) {
-    await fs.setDoc(rif, { giorni: { [data]: tot }, tot, n: 1, ultimo: data, ora: fs.serverTimestamp(), ...chi });
+    await conRiprova(data, () => fs.setDoc(rif, { giorni: { [data]: tot }, tot, n: 1, ultimo: data, ora: fs.serverTimestamp(), ...chi }));
     return true;
   }
   const v = prima.data();
   if (data in (v.giorni || {})) return true;
-  await fs.updateDoc(rif, new fs.FieldPath('giorni', data), tot, 'tot', v.tot + tot, 'n', v.n + 1, 'ultimo', data,
-    'ora', fs.serverTimestamp(), 'pubblico', chi.pubblico, 'nome', chi.nome, 'foto', chi.foto);
+  await conRiprova(data, () => fs.updateDoc(rif, new fs.FieldPath('giorni', data), tot, 'tot', v.tot + tot, 'n', v.n + 1, 'ultimo', data,
+    'ora', fs.serverTimestamp(), 'pubblico', chi.pubblico, 'nome', chi.nome, 'foto', chi.foto));
   return true;
 }
 
