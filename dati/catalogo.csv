@@ -924,7 +924,8 @@ metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Da Mino
 metro-c,Una zona con una fermata della Metro C,si,Monti,Da cartolina,1,Colosseo – Fori Imperiali
 metro-c,Una zona con una fermata della Metro C,si,Pigneto,Da cartolina,1,Pigneto
 metro-c,Una zona con una fermata della Metro C,si,Centocelle,Ce sta,2,Gardenie / Mirti / Parco di Centocelle
-metro-c,Una zona con una fermata della Metro C,si,San Giovanni,Ce sta,2,Lodi / Porta Metronia / San Giovanni
+metro-c,Una zona con una fermata della Metro C,si,San Giovanni,Ce sta,2,Lodi / San Giovanni
+metro-c,Una zona con una fermata della Metro C,si,Celio,Da romano de Roma,3,Porta Metronia
 metro-c,Una zona con una fermata della Metro C,si,Cinecittà,Da romano de Roma,3,Alessandrino / Torre Spaccata
 metro-c,Una zona con una fermata della Metro C,si,Tor Pignattara,Da romano de Roma,3,Teano
 metro-c,Una zona con una fermata della Metro C,si,Quarticciolo,Chicca,5,Alessandrino / Torre Spaccata
@@ -2094,14 +2095,21 @@ gen-tipi-circo,Una zona con un circo romano,si,Appia Antica,Da romano de Roma,3,
 gen-tipi-circo,Una zona con un circo romano,si,Sant'Angelo,Da romano de Roma,3,Circo Flaminio
 gen-tipi-circo,Una zona con un circo romano,si,San Giovanni,Chicca,5,circo Variano
 gen-tipi-circo,Una zona con un circo romano,si,Campitelli,Da Mino,8,circondario di Roma
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Aventino,Da cartolina,1,Acquedotto Appio
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Parco degli Acquedotti,Da cartolina,1,aquedotto Anio novus / acquedotto Claudio / Acqua Marcia
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Parco degli Acquedotti,Da cartolina,1,acquedotto Claudio / aquedotto Anio novus / Acqua Marcia / acquedotto Felice
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Trevi,Da cartolina,1,"Aqua Virgo (Fontana di Trevi, arco in via del Nazareno)"
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Celio,Ce sta,2,"Arcus Neroniani (via di San Gregorio, clivo di Scauro)"
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Esquilino,Ce sta,2,Porta Maggiore (Aqua Claudia e Anio Novus) / Trofei di Mario a piazza Vittorio (Aqua Iulia) / Acqua Pia Antica Marcia
 gen-tipi-acquedotto,Una zona con un acquedotto,si,San Lorenzo,Ce sta,2,Aqua Iulia / Aqua Tepula
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Trastevere,Ce sta,2,Aqua Alsietina / Acquedotto Traiano
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Esquilino,Da romano de Roma,3,Aqua Iulia / Acqua Pia Antica Marcia / Acquedotto Anio vetus
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Trastevere,Ce sta,2,Fontanone dell'Acqua Paola / Aqua Alsietina / Acquedotto Traiano
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Tor Pignattara,Da romano de Roma,3,via del Mandrione (archi del Felice e del Claudio)
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Tuscolano,Da romano de Roma,3,Porta Furba (acquedotto Felice)
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Villa Pamphili,Da romano de Roma,3,archi dell'Acqua Paola
 gen-tipi-acquedotto,Una zona con un acquedotto,si,Castro Pretorio,Chicca,5,acquedotto Felice / Aqua Tepula
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Tor Pignattara,Chicca,5,Acquedotto dell'Acqua Paola
-gen-tipi-acquedotto,Una zona con un acquedotto,si,Appia Antica,Da Mino,8,acquedotto dei Quintili / Acquedotto dei Quintili
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Tor Fiscale,Chicca,5,Campo Barbarico (il Claudio e la Marcia si incrociano)
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Appia Antica,Da Mino,8,acquedotto dei Quintili
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Aventino,Da Mino,8,Acquedotto Appio (quasi tutto sotterraneo)
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Centocelle,Da Mino,8,Acquedotto Alessandrino
+gen-tipi-acquedotto,Una zona con un acquedotto,si,Quarticciolo,Da Mino,8,Acquedotto Alessandrino (Parco Alessandrino)
 gen-tipi-fontana,Una zona con una fontana,si,Campo Marzio,Da cartolina,1,Babuino / fontana della Barcaccia / Fontana della Dea di Roma / ...
 gen-tipi-fontana,Una zona con una fontana,si,Castro Pretorio,Da cartolina,1,Fontana dell'Acqua Felice / Quattro Fontane / Fontana delle Naiadi
 gen-tipi-fontana,Una zona con una fontana,si,Monti,Da cartolina,1,Fontana della Navicella / Quattro Fontane / Fontana dell'obelisco Lateranense / ...
@@ -2382,10 +2390,12 @@ gen-architetti-michelangelo-buonarroti,Una zona con un edificio di Michelangelo 
 gen-architetti-michelangelo-buonarroti,Una zona con un edificio di Michelangelo Buonarroti,si,Nomentano,Da romano de Roma,3,Porta Pia
 gen-architetti-michelangelo-buonarroti,Una zona con un edificio di Michelangelo Buonarroti,si,Castro Pretorio,Chicca,5,Porta Pia
 gen-architetti-michelangelo-buonarroti,Una zona con un edificio di Michelangelo Buonarroti,si,Villa Borghese,Da Mino,8,Villa Giulia
-gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Della Vittoria,Da cartolina,1,Villa Madama
-gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Campo Marzio,Ce sta,2,cappella Chigi
-gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Regola,Da romano de Roma,3,chiesa di Sant'Eligio degli Orefici
-gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Borgo,Chicca,5,Palazzo Branconio dell'Aquila / Palazzo Jacopo da Brescia
+gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Campo Marzio,Da cartolina,1,cappella Chigi in Santa Maria del Popolo
+gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Borgo,Ce sta,2,Palazzo Jacopo da Brescia (rimontato negli anni '30)
+gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Ponte,Da romano de Roma,3,Palazzo Alberini
+gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Trastevere,Da romano de Roma,3,Scuderie Chigi alla Farnesina (ne restano pochi resti)
+gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Monte Mario,Chicca,5,Villa Madama
+gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Regola,Chicca,5,chiesa di Sant'Eligio degli Orefici
 gen-architetti-raffaello-sanzio,Una zona con un edificio di Raffaello Sanzio,si,Sant'Eustachio,Da Mino,8,Palazzo Vidoni Caffarelli
 gen-architetti-giacomo-della-porta,Una zona con un edificio di Giacomo Della Porta,si,Pigna,Da cartolina,1,chiesa del Gesù / Palazzo Grazioli / fontana di piazza della Rotonda / ...
 gen-architetti-giacomo-della-porta,Una zona con un edificio di Giacomo Della Porta,si,Regola,Da cartolina,1,Palazzo Farnese
