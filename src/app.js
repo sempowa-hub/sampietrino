@@ -8,7 +8,7 @@ import { suoni, sblocca, eMuto, cambiaMuto, audioAttivo } from './suoni.js';
 import { creaStoria } from './storia.js';
 import { oggi, giocabile, sposta, dataIt, leggi, scrivi, serie, contesto, partita, partiteLocali, ripristinaPartite, PRIMO_GIORNO, gradoDi } from './storico.js';
 import { disegnaMiniMappa } from './minimappa.js';
-import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, pubblicaSettimana, aggiornaNomeInClassifica, classifica } from './conto.js';
+import { avviaConto, quandoCambia, utente, sincronizza, salvaStorico, pubblicaPunteggio, pubblicaSettimana, aggiornaNomeInClassifica, classifica, conta } from './conto.js';
 import { aggiornaSouvenir } from './souvenir.js';
 import { creaTaccuino } from './taccuino.js';
 
@@ -779,6 +779,10 @@ function registra() {
     ...(prima?.pubblicato ? { pubblicato: prima.pubblicato } : {}),
     ...(prima?.settimana ? { settimana: prima.settimana } : {}),
   };
+  // Contatore: solo il passaggio (prima tappa timbrata, partita finita), non ogni volta che si riapre il diario.
+  const ora = s.giorni[giorno];
+  if (!recupero && !prima?.livelli?.some((l) => l !== null) && ora.livelli.some((l) => l !== null)) conta(oggi, 'iniziate');
+  if (!prima?.finita && ora.finita) conta(oggi, recupero ? 'arretrati' : 'finite');
   aggiornaSouvenir(s, contesto(s, dati.zone), oggi);
   scrivi(s);
   salvaStorico({ ...s, partite: partiteLocali(s) });

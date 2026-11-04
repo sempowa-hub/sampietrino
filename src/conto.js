@@ -194,6 +194,17 @@ async function segnalaErrore(data, e) {
   } catch { /* senza rete non si registra niente */ }
 }
 
+// --- Contatore: quante partite si giocano davvero, anche da anonimi (la classifica vede solo chi entra con Google) ---
+// contatori/{giorno in cui si gioca}: iniziate e finite (partita del giorno), arretrati (giorni passati finiti).
+export async function conta(giornoDiGioco, campo) {
+  try {
+    const u = await avviaConto();
+    if (!u) return;
+    const { fs, db } = fb;
+    await fs.setDoc(fs.doc(db, 'contatori', giornoDiGioco), { [campo]: fs.increment(1) }, { merge: true });
+  } catch { /* un conteggio perso non ferma il gioco */ }
+}
+
 const colPunteggi = (data) => fb.fs.collection(fb.db, 'partite', data, 'punteggi');
 
 // Il punteggio di oggi, una volta sola. Se poi entri con Google, al punteggio si aggiungono nome e foto.
