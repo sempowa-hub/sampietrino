@@ -2349,13 +2349,15 @@ gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Rebibbia,Chicc
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Campitelli,Da Mino,8,Parco archeologico del Colosseo / Foro romano e Palatino
 gen-tipi-parco-archeologico,Una zona con un parco archeologico,si,Trevi,Da Mino,8,Domus Romane di Palazzo Valentini
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Foro Italico,Da cartolina,1,battaglia di Ponte Milvio
+gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Nomentano,Da cartolina,1,Breccia di Porta Pia
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Ponte Milvio,Da cartolina,1,battaglia di Ponte Milvio
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Flaminio,Ce sta,2,battaglia di Ponte Milvio
+gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Ostiense,Ce sta,2,battaglia di Porta San Paolo
+gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Trastevere,Ce sta,2,battaglia del Gianicolo
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Villaggio Olimpico,Ce sta,2,battaglia di Ponte Milvio
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Castro Pretorio,Da romano de Roma,3,battaglia di Porta Collina
-gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Monti,Da romano de Roma,3,assedio di Roma
-gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Ostiense,Chicca,5,Mancata difesa di Roma
-gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Trastevere,Chicca,5,battaglia del Gianicolo
+gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Monteverde,Da romano de Roma,3,"Villa Pamphilj e Vascello, 1849"
+gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Monti,Chicca,5,assedio di Roma
 gen-tipi-battaglia,Una zona con il luogo di una battaglia,si,Nuovo Salario,Da Mino,8,battaglia di Fidene
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Flaminio,Da cartolina,1,stadio Flaminio
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Foro Italico,Da cartolina,1,Stadio Olimpico
@@ -2378,12 +2380,14 @@ gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Campo 
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Monti,Da romano de Roma,3,chiesa di Santa Caterina a Magnanapoli / chiesa di Santa Lucia in Selci / Colonna della Pace / ...
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Sant'Angelo,Chicca,5,Palazzo Mattei di Giove
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Regola,Da Mino,8,Collegio Ghislieri / Monte di Pietà (Roma)
-gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Monti,Da cartolina,1,cappella Sistina in Santa Maria Maggiore
+gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Borgo,Da cartolina,1,Obelisco Vaticano / Palazzo Rusticucci-Accoramboni
+gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Campo Marzio,Da cartolina,1,Obelisco Flaminio a piazza del Popolo
+gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Monti,Da cartolina,1,Obelisco Esquilino / cappella Sistina in Santa Maria Maggiore
 gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,San Giovanni,Da cartolina,1,Obelisco Lateranense / palazzo del Laterano
-gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Trevi,Da cartolina,1,palazzo del Quirinale / Palazzo Mattei-Albani-Del Drago
-gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Sant'Eustachio,Ce sta,2,chiesa di San Luigi dei Francesi
+gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Trevi,Ce sta,2,palazzo del Quirinale / Palazzo Mattei-Albani-Del Drago
 gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Castro Pretorio,Da romano de Roma,3,Fontana dell'Acqua Felice / Villa Montalto Peretti Massimo
-gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Borgo,Chicca,5,Palazzo Rusticucci-Accoramboni
+gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Colonna,Chicca,5,San Paolo sulla Colonna di Marco Aurelio
+gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Sant'Eustachio,Chicca,5,chiesa di San Luigi dei Francesi
 gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Regola,Da Mino,8,chiesa di San Francesco d'Assisi a Ponte Sisto
 gen-architetti-michelangelo-buonarroti,Una zona con un edificio di Michelangelo Buonarroti,si,Campitelli,Da cartolina,1,Musei Capitolini / Palazzo Senatorio / cordonata capitolina / ...
 gen-architetti-michelangelo-buonarroti,Una zona con un edificio di Michelangelo Buonarroti,si,Pigna,Da cartolina,1,chiesa del Gesù
@@ -3282,12 +3286,14 @@ gen-locali-una-cornetteria,Una zona con una cornetteria,si,Colli Aniene,Da Mino,
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Montespaccato,Da Mino,8,Pasticceria del Buon Cornetto
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Esquilino,Da cartolina,1,Pizza a taglio – Friggitoria
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Trastevere,Da cartolina,1,I Supplì / Suppli Roma
-gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Alberone,Ce sta,2,La casa del supplì
+gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Alberone,Ce sta,2,"La Casa del Supplì, piazza Re di Roma"
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Salario,Ce sta,2,La casa del supplì
+gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Trionfale,Ce sta,2,Pizzarium
+gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Nomentano,Da romano de Roma,3,"La Casa del Supplì, viale Regina Margherita"
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Pineta Sacchetti,Da romano de Roma,3,"Pizza, Supplì, Pane"
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Parione,Chicca,5,Supplizio
-gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Ponte,Chicca,5,i Suppli dei Coronari
-gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Regola,Da Mino,8,Supplizio
+gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Ponte,Chicca,5,Supplizio / i Suppli dei Coronari
+gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Regola,Da Mino,8,Dar Filettaro a Santa Barbara
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Esquilino,Da cartolina,1,L'antico Chiosco di San Giovanni
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Ponte Milvio,Da cartolina,1,L' Altro Chiosco
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trastevere,Da cartolina,1,"Grattacheccaro ""Alla Fonte d'Oro"""
