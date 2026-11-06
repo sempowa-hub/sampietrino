@@ -85,5 +85,8 @@
   "ripa": {"fascia": 4, "perche": ["Acquedotto Appio (quasi tutto sotterraneo)"]},
   "quarticciolo": {"fascia": 4, "perche": ["Acquedotto Alessandrino (Parco Alessandrino)"]},
   "centocelle": {"fascia": 4, "perche": ["Acquedotto Alessandrino"]},
-  "appia-antica": {"fascia": 4, "perche": ["acquedotto dei Quintili"]}}
+  "appia-antica": {"fascia": 4, "perche": ["acquedotto dei Quintili"]}},
+ "gen-architetti-domenico-fontana": {"_perche": "7/11, Mino: il Laterano conta per San Giovanni, non per Monti. Monti resta con la cappella Sistina di Santa Maria Maggiore (Fontana, 1585), cosi chi l'ha gia giocata non perde punti",
+  "monti": {"fascia": 0, "perche": ["cappella Sistina in Santa Maria Maggiore"]},
+  "san-giovanni": {"fascia": 0, "perche": ["Obelisco Lateranense", "palazzo del Laterano"]}}
 }
