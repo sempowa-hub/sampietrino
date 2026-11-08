@@ -1432,14 +1432,15 @@ borromini,Una zona con un'opera di Borromini,si,Trevi,Da romano de Roma,3,San Ca
 borromini,Una zona con un'opera di Borromini,si,Colonna,Chicca,5,Sant'Andrea delle Fratte
 borromini,Una zona con un'opera di Borromini,si,Campo Marzio,Da Mino,8,Palazzo di Propaganda Fide
 borromini,Una zona con un'opera di Borromini,si,Regola,Da Mino,8,Prospettiva di Palazzo Spada
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Sant'Eustachio,Da cartolina,1,San Luigi dei Francesi / Sant'Agostino
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campo Marzio,Ce sta,2,Santa Maria del Popolo
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Villa Borghese,Ce sta,2,Galleria Borghese
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trevi,Da romano de Roma,3,Palazzo Barberini
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campitelli,Chicca,5,Musei Capitolini
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pigna,Chicca,5,Galleria Doria Pamphilj
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ludovisi,Da Mino,8,Casino dell'Aurora (soffitto)
-caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trastevere,Da Mino,8,Galleria Corsini
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ponte,Da cartolina,1,"Sant'Agostino (Madonna dei Pellegrini), al confine con Sant'Eustachio"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Sant'Eustachio,Da cartolina,1,"San Luigi dei Francesi (Vocazione, Martirio e San Matteo e l'angelo) / Sant'Agostino (Madonna dei Pellegrini)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campo Marzio,Ce sta,2,"Santa Maria del Popolo (Conversione di San Paolo, Crocifissione di San Pietro)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Villa Borghese,Ce sta,2,"Galleria Borghese (Bacchino malato, Fanciullo con canestro di frutta, Madonna dei Palafrenieri, San Girolamo, San Giovanni Battista, Davide con la testa di Golia)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trevi,Da romano de Roma,3,"Palazzo Barberini (Giuditta e Oloferne, Narciso, San Francesco in meditazione) / Palazzo Odescalchi (Conversione di Saulo, collezione privata)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campitelli,Chicca,5,"Musei Capitolini (La Buona Ventura, San Giovanni Battista)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pigna,Chicca,5,"Galleria Doria Pamphilj (Riposo durante la fuga in Egitto, Maddalena penitente, San Giovanni Battista)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ludovisi,Da Mino,8,"Casino dell'Aurora (Giove, Nettuno e Plutone, soffitto)"
+caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trastevere,Da Mino,8,Galleria Corsini (San Giovanni Battista)
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigna,Da cartolina,1,Area sacra di Largo Argentina
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Miani,Ce sta,2,Piramide Cestia
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Monti,Ce sta,2,Domus Aurea
@@ -2063,11 +2064,14 @@ gen-tipi-ponte,Una zona con un ponte,si,Monti di Pietralata,Da Mino,8,Ponte del 
 gen-tipi-ponte,Una zona con un ponte,si,Ponte Mammolo,Da Mino,8,Ponte Mammolo
 gen-tipi-ponte,Una zona con un ponte,si,San Paolo,Da Mino,8,ponte Guglielmo Marconi
 gen-tipi-ponte,Una zona con un ponte,si,Tor di Valle,Da Mino,8,Ponte della Magliana / viadotto Ansa del Tevere / Ponte Romano di Parco deii Medici / ...
-gen-tipi-cimitero,Una zona con un cimitero,si,Appia Antica,Da cartolina,1,catacombe di San Callisto
-gen-tipi-cimitero,Una zona con un cimitero,si,Testaccio,Ce sta,2,cimitero acattolico di Roma / Rome War Cemetery
-gen-tipi-cimitero,Una zona con un cimitero,si,Verano,Da romano de Roma,3,cimitero del Verano
-gen-tipi-cimitero,Una zona con un cimitero,si,Trieste,Chicca,5,catacombe di Priscilla
-gen-tipi-cimitero,Una zona con un cimitero,si,Casaletto - Colli Portuensi,Da Mino,8,cimitero di Santa Maria del Carmine - Parrocchietta
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Ostiense,Da cartolina,1,Rome War Cemetery / Cimitero acattolico (al confine con Testaccio)
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Testaccio,Da cartolina,1,Cimitero acattolico / Rome War Cemetery
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Verano,Ce sta,2,Cimitero del Verano
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Colonna,Da romano de Roma,3,Cripta dei Cappuccini (sul confine)
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Ludovisi,Da romano de Roma,3,Cripta dei Cappuccini
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Trevi,Da romano de Roma,3,"Cripta dei Cappuccini (a piazza Barberini, sul confine)"
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Monte Mario,Chicca,5,Cimitero militare francese
+gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Casaletto - Colli Portuensi,Da Mino,8,Cimitero della Parrocchietta
 gen-tipi-stadio,Una zona con uno stadio,si,Celio,Da cartolina,1,Colosseo
 gen-tipi-stadio,Una zona con uno stadio,si,Foro Italico,Ce sta,2,stadio dei Marmi / Stadio Olimpico
 gen-tipi-stadio,Una zona con uno stadio,si,Aurelio,Da romano de Roma,3,Campo Pio XI
@@ -2771,19 +2775,36 @@ gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecen
 gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecento,si,Monte Sacro,Da Mino,8,Palazzo Pubblico (Roma)
 gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecento,si,Montespaccato,Da Mino,8,Villa Giovanelli Fogaccia
 gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecento,si,Ponte Mammolo,Da Mino,8,Villa Farinacci
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Campitelli,Da cartolina,1,Vittoriano / Museo centrale del Risorgimento / esedra di Marco Aurelio
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Castro Pretorio,Da cartolina,1,Palazzo Massimo alle Terme
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Foro Italico,Da cartolina,1,palazzo della Farnesina
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Campo Marzio,Ce sta,2,Museo dell'Ara Pacis
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Sallustiano,Ce sta,2,Museo Boncompagni Ludovisi per le arti decorative
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Torrino,Ce sta,2,Torre Eurosky
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Monti,Da romano de Roma,3,Gay street di Roma
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,San Saba,Da romano de Roma,3,Palazzo FAO
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Celio,Chicca,5,Gay street di Roma
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Eur,Chicca,5,Palazzo Sturzo
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Villaggio Olimpico,Chicca,5,Villaggio Olimpico
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,Appio Latino,Da Mino,8,Palazzina Mancioli / Palazzina Mancioli II
-gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un palazzo moderno (dopo la guerra),si,San Giovanni,Da Mino,8,Mercato coperto di via Magna Grecia
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Campo Marzio,Da cartolina,1,Museo dell'Ara Pacis
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Castro Pretorio,Da cartolina,1,Stazione Termini (il lato di via Marsala)
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Esquilino,Da cartolina,1,Stazione Termini
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Eur,Da cartolina,1,Palazzo dello Sport / Palazzo ENI / La Nuvola / Palazzo Sturzo
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Flaminio,Da cartolina,1,Stadio Flaminio / MAXXI / Ponte della Musica / viadotto di Corso Francia
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Foro Italico,Da cartolina,1,Stadio Olimpico (completato dopo la guerra) / Palazzo della Farnesina
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Della Vittoria,Ce sta,2,Palazzo RAI di viale Mazzini
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Garbatella,Ce sta,2,Ponte Settimia Spizzichino (arriva alla Garbatella)
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Ostiense,Ce sta,2,Air Terminal Ostiense / Ponte Settimia Spizzichino
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Parioli,Ce sta,2,Casa del Girasole / Moschea di Roma
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Pineta Sacchetti,Ce sta,2,Policlinico Gemelli
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Tor di Quinto,Ce sta,2,Moschea di Roma (al confine con Parioli)
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Torrino,Ce sta,2,Torre Eurosky
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Villaggio Olimpico,Ce sta,2,Villaggio Olimpico / Palazzetto dello Sport / Auditorium Parco della Musica
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Balduina,Da romano de Roma,3,Hotel Cavalieri Hilton (al confine con Monte Mario)
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Campitelli,Da romano de Roma,3,Esedra di Marco Aurelio ai Capitolini
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Casetta Mattei,Da romano de Roma,3,il Serpentone di Corviale
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Corviale,Da romano de Roma,3,il Serpentone
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Italia,Da romano de Roma,3,Stazione Tiburtina nuova
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Monte Mario,Da romano de Roma,3,Hotel Cavalieri Hilton
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Monti di Pietralata,Da romano de Roma,3,Stazione Tiburtina nuova (il lato di Pietralata)
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Salario,Da romano de Roma,3,"Rinascente di piazza Fiume di Franco Albini / MACRO, l'ala di Odile Decq"
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Trieste,Da romano de Roma,3,"MACRO, l'ala di Odile Decq (al confine con Salario)"
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Vigna Clara,Da romano de Roma,3,Stazione Vigna Clara
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Pietralata,Chicca,5,quartiere INA-Casa Tiburtino
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Quarticciolo,Chicca,5,chiesa di Dio Padre Misericordioso di Richard Meier
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,San Giovanni,Chicca,5,Mercato Metronio di Riccardo Morandi
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,San Saba,Chicca,5,Palazzo FAO
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Appio Latino,Da Mino,8,Palazzine Mancioli
+gen-epoche-palazzo-moderno-dopo-la-guerra,Una zona con un edificio costruito dopo la Seconda guerra mondiale,si,Nomentano,Da Mino,8,Torri INA di viale Etiopia di Mario Ridolfi
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Appia Antica,Da cartolina,1,via Appia / catacombe di San Callisto / Altorilievo con figura maschile
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Aventino,Da cartolina,1,Età regia di Roma / Circo Massimo / Acquedotto Appio / ...
 gen-epoche-antica-roma,Una zona con un monumento dell'antica Roma (prima del 476),si,Campitelli,Da cartolina,1,Arco di Settimio Severo / Foro Romano / chiesa di Santa Maria Antiqua / ...
@@ -3336,23 +3357,20 @@ gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una 
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Parione,Chicca,5,Tre Scalini / Il vero Tre Scalini dal 1946
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Regola,Da Mino,8,Alberto Pica
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Sant'Eustachio,Da Mino,8,Gelateria di san crispino
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Monti,Da cartolina,1,Antico Forno ai Serpenti / Castroni
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Prati,Da cartolina,1,Dolce Maniera / Castroni
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Testaccio,Da cartolina,1,Volpetti Più / Antico Forno a Testaccio / Volpetti Taverna / ...
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Trastevere,Da cartolina,1,Biscottificio Artigiano Innocenti
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Esquilino,Ce sta,2,Sangio' - L'Antico Forno / Panella / Pasticceria Regoli / ...
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Monte Mario,Ce sta,2,Antico forno
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Ostiense,Ce sta,2,Pasticceria Andreotti / Andreotti
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Monteverde,Da romano de Roma,3,Antico Forno Cotugno / Cristalli di Zucchero
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Pietralata,Da romano de Roma,3,Pizzeria Boccione / Antico Forno Rivelli
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Trevi,Da romano de Roma,3,L'antico forno di Piazza Trevi
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Trionfale,Da romano de Roma,3,Bonci Pizzarium
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Della Vittoria,Chicca,5,Panificio Bonci
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Sant'Angelo,Chicca,5,Forno Boccione / Il Boccione / Antico Forno Urbani
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Tor Marancia,Chicca,5,Andreotti
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Parione,Da Mino,8,Forno Roscioli / Forno Campo de Fiori
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Regola,Da Mino,8,Salumeria Roscioli / Rimessa Roscioli / Roscioli Caffe Pasticceria / ...
-gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Sant'Eustachio,Da Mino,8,Forno Roscioli / Antico Forno Roscioli
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Esquilino,Da cartolina,1,Pasticceria Regoli / Panella
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Regola,Da cartolina,1,Salumeria Roscioli / Roscioli Caffè
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Sant'Angelo,Da cartolina,1,Pasticceria Boccione / Antico Forno Urbani
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Parione,Ce sta,2,Forno Campo de' Fiori
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Sant'Eustachio,Ce sta,2,Antico Forno Roscioli
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Trastevere,Ce sta,2,"Biscottificio Innocenti / Pasticceria Valzani, dal 1925 / Forno La Renella, dal 1870"
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Monti,Da romano de Roma,3,Antico Forno ai Serpenti
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Ostiense,Da romano de Roma,3,Pasticceria Andreotti
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Testaccio,Da romano de Roma,3,Pasticceria Linari
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Della Vittoria,Chicca,5,"Bar Faggiani, bottega storica"
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Porta Portese,Chicca,5,Il Maritozzaro
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Trevi,Chicca,5,Antico Forno di Piazza Trevi
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Nomentano,Da Mino,8,Pasticceria Romoli (al confine con Vescovio)
+gen-storici-un-forno-o-una-pasticceria-storica-roscioli-regoli-boccione,"Una zona con un forno o una pasticceria storica (Roscioli, Regoli, Boccione...)",si,Vescovio,Da Mino,8,Pasticceria Romoli
 gen-tipi-abbazia,Una zona con un'abbazia,no,San Paolo,Da cartolina,1,basilica di San Paolo fuori le mura
 gen-tipi-abbazia,Una zona con un'abbazia,no,Aurelio,Ce sta,2,abbazia pontificia di San Girolamo in Urbe
 gen-tipi-abbazia,Una zona con un'abbazia,no,Giuliano Dalmata,Chicca,5,chiesa dei Santi Vincenzo e Anastasio alle Tre Fontane
