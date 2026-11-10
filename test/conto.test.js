@@ -33,8 +33,8 @@ test('correzioneGiorno: si aggiorna solo se totale o fasce sono cambiati', () =>
   assert.deepEqual(correzioneGiorno(pubblicato, { tot: 18, livelli: [4, 2, -1, 3, 1] }), { tot: 18, livelli: [4, 2, -1, 3, 1] });
   // Stesso totale con fasce diverse (Ce sta + buca = buca + Ce sta): le fasce in classifica vanno allineate lo stesso.
   assert.deepEqual(correzioneGiorno(pubblicato, { tot: 16, livelli: [4, -1, 2, 3, -1] }).livelli, [4, -1, 2, 3, -1]);
-  // Fasce ridistribuite a giornata in corso: chi ha gia giocato non scende.
-  assert.equal(correzioneGiorno(pubblicato, { tot: 9, livelli: [1, 2, -1, 3, -1] }), null);
+  // Fasce ridistribuite a giornata in corso: vale anche in giu.
+  assert.deepEqual(correzioneGiorno(pubblicato, { tot: 9, livelli: [1, 2, -1, 3, -1] }), { tot: 9, livelli: [1, 2, -1, 3, -1] });
 });
 
 test('correzioneSettimana: cambia solo il giorno corretto e il totale della differenza', () => {
@@ -42,7 +42,6 @@ test('correzioneSettimana: cambia solo il giorno corretto e il totale della diff
   assert.equal(correzioneSettimana(v, '2026-11-10', 14), null);
   assert.equal(correzioneSettimana(v, '2026-11-11', 20), null); // giorno non ancora in settimana: lo aggiunge pubblicaSettimana
   assert.deepEqual(correzioneSettimana(v, '2026-11-10', 16), { giorni: { '2026-11-09': 10, '2026-11-10': 16 }, tot: 26, corretto: '2026-11-10' });
-  assert.equal(correzioneSettimana(v, '2026-11-09', 7), null); // mai in giu
-  assert.equal(correzioneSettimana(v, '2026-11-09', 12).tot, 26);
+  assert.equal(correzioneSettimana(v, '2026-11-09', 7).tot, 21);
   assert.equal(correzioneSettimana(null, '2026-11-10', 16), null);
 });

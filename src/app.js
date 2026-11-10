@@ -130,18 +130,19 @@ async function pubblicaIeri() {
   try { await pubblicaGiorno(ieri, u); } catch (e) { console.warn('Classifica di ieri non raggiunta:', e?.code || e?.message); }
 }
 
-// Punteggio di un giorno in classifica e nella settimana. Si ricorda per quale account e con quale totale:
+// Punteggio di un giorno in classifica e nella settimana. Si ricorda per quale account e con quale totale
+// (pubblicatoPunti e settimanaPunti: nomi nuovi dal 10/11, cosi chi aveva il segno della versione solo-in-su ricontrolla):
 // se le domande vengono corrette a giornata in corso, il totale ricalcolato da ripristina() e diverso e si
 // aggiorna quello pubblicato (sul server non c'e la zona scelta per ogni tappa, il ricalcolo lo fa solo il telefono).
 async function pubblicaGiorno(data, u) {
   const g = leggi().giorni[data];
   const segna = (campi) => { const s = leggi(); Object.assign(s.giorni[data], campi); scrivi(s); };
-  if (g.pubblicato !== u.uid || g.pubblicatoTot !== g.tot) {
+  if (g.pubblicato !== u.uid || g.pubblicatoPunti !== g.tot) {
     if (!(await pubblicaPunteggio(data, { tot: g.tot, livelli: g.livelli }))) return false;
-    segna({ pubblicato: u.uid, pubblicatoTot: g.tot });
+    segna({ pubblicato: u.uid, pubblicatoPunti: g.tot });
   }
-  if ((g.settimana !== u.uid || g.settimanaTot !== g.tot) && (await pubblicaSettimana(data, g.tot))) {
-    segna({ settimana: u.uid, settimanaTot: g.tot });
+  if ((g.settimana !== u.uid || g.settimanaPunti !== g.tot) && (await pubblicaSettimana(data, g.tot))) {
+    segna({ settimana: u.uid, settimanaPunti: g.tot });
   }
   return true;
 }
@@ -771,7 +772,7 @@ function registra() {
     tot: totale(stati), finita: stati.every((x) => x.pin),
     livelli: stati.map((x) => (x.pin ? (x.pin.fascia ? livelloDi(x.pin.fascia) : -1) : null)),
     ...(recupero ? { recupero: true } : {}),
-    ...Object.fromEntries(['pubblicato', 'pubblicatoTot', 'settimana', 'settimanaTot'].filter((k) => prima?.[k] !== undefined).map((k) => [k, prima[k]])),
+    ...Object.fromEntries(['pubblicato', 'pubblicatoPunti', 'settimana', 'settimanaPunti'].filter((k) => prima?.[k] !== undefined).map((k) => [k, prima[k]])),
   };
   // Contatore: solo il passaggio (prima tappa timbrata, partita finita), non ogni volta che si riapre il diario.
   const ora = s.giorni[giorno];
