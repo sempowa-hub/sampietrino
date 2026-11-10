@@ -1208,37 +1208,38 @@ universita,Una zona con un'università,no,Pigna,Da Mino,8,Mediateca Università 
 universita,Una zona con un'università,no,Ponte,Da Mino,8,Pontificia Università della Santa Croce
 universita,Una zona con un'università,no,Valco San Paolo,Da Mino,8,Il Giovedì di Progetto / Università Roma Tre - Corsi di laurea in Fisica / Università Roma Tre - Dipartimenti di Ingegneria / ...
 universita,Una zona con un'università,no,Villa Troili,Da Mino,8,Ateneo Pontificio Regina Apostolorum / Università Europea di Roma
-cinema,Una zona con un cinema,si,Eur,Da cartolina,1,EUR Cine
+cinema,Una zona con un cinema,si,Eur,Da cartolina,1,Eurcine
 cinema,Una zona con un cinema,si,Garbatella,Da cartolina,1,Arena di Garbatella
-cinema,Una zona con un cinema,si,Monti,Da cartolina,1,Cineclub Detour / Quattro Fontane
-cinema,Una zona con un cinema,si,Prati,Da cartolina,1,Azzurro Scipioni / Cinema Adriano / Eden / ...
+cinema,Una zona con un cinema,si,Monti,Da cartolina,1,Quattro Fontane / Cineclub Detour
+cinema,Una zona con un cinema,si,Prati,Da cartolina,1,Adriano / Eden / Azzurro Scipioni / Giulio Cesare
 cinema,Una zona con un cinema,si,San Lorenzo,Da cartolina,1,Tibur
 cinema,Una zona con un cinema,si,Testaccio,Da cartolina,1,Greenwich
-cinema,Una zona con un cinema,si,Trastevere,Da cartolina,1,Alcazar / Cinema Intrastevere / Cinema Troisi / ...
-cinema,Una zona con un cinema,si,Villa Borghese,Da cartolina,1,Casa del Cinema / Cinema dei Piccoli / Teatro all'aperto Ettore Scola
+cinema,Una zona con un cinema,si,Trastevere,Da cartolina,1,Nuovo Sacher / Intrastevere / Troisi / Alcazar / Filmstudio
+cinema,Una zona con un cinema,si,Villa Borghese,Da cartolina,1,Casa del Cinema / Cinema dei Piccoli
+cinema,Una zona con un cinema,si,Castro Pretorio,Ce sta,2,The Space Moderno / Quattro Fontane
 cinema,Una zona con un cinema,si,Centocelle,Ce sta,2,Broadway
-cinema,Una zona con un cinema,si,Cinecittà,Ce sta,2,Cinecittà
-cinema,Una zona con un cinema,si,Esquilino,Ce sta,2,Royal
-cinema,Una zona con un cinema,si,Flaminio,Ce sta,2,Cinema Tiziano
-cinema,Una zona con un cinema,si,Monte Sacro,Ce sta,2,Cinema Antares
-cinema,Una zona con un cinema,si,Pigneto,Ce sta,2,Cineclub Alphaville / Nuovo Cinema Aquila
-cinema,Una zona con un cinema,si,Ponte Milvio,Ce sta,2,Palomar Produzione Cnematografica
+cinema,Una zona con un cinema,si,Flaminio,Ce sta,2,Tiziano / Politecnico
+cinema,Una zona con un cinema,si,Monte Sacro,Ce sta,2,Antares
+cinema,Una zona con un cinema,si,Pigneto,Ce sta,2,Nuovo Cinema Aquila / Cineclub Alphaville
 cinema,Una zona con un cinema,si,San Paolo,Ce sta,2,Madison
+cinema,Una zona con un cinema,si,Trevi,Ce sta,2,Barberini / Cineteca Nazionale (Cinema Trevi)
 cinema,Una zona con un cinema,si,Appio Latino,Da romano de Roma,3,The Cineclub
+cinema,Una zona con un cinema,si,Don Bosco,Da romano de Roma,3,Atlantic
+cinema,Una zona con un cinema,si,Esquilino,Da romano de Roma,3,Royal
 cinema,Una zona con un cinema,si,Parco degli Acquedotti,Da romano de Roma,3,Cinecittà / Multisala Atlantic
 cinema,Una zona con un cinema,si,Primavalle,Da romano de Roma,3,Andromeda / Galaxy
-cinema,Una zona con un cinema,si,Rebibbia,Da romano de Roma,3,CineClub Podere Rosa
-cinema,Una zona con un cinema,si,Salario,Da romano de Roma,3,Cinema Europa / Savoy Cityplex
-cinema,Una zona con un cinema,si,Trevi,Da romano de Roma,3,Cinema Barberini / Fiamma / Time Elevator
-cinema,Una zona con un cinema,si,Trieste,Da romano de Roma,3,Multisala Lux
+cinema,Una zona con un cinema,si,Salario,Da romano de Roma,3,Europa / Savoy / Mignon
+cinema,Una zona con un cinema,si,Trieste,Da romano de Roma,3,Lux / Admiral / King
 cinema,Una zona con un cinema,si,Trionfale,Da romano de Roma,3,Doria
+cinema,Una zona con un cinema,si,Tuscolano,Da romano de Roma,3,Atlantic
 cinema,Una zona con un cinema,si,Alberone,Chicca,5,Trianon
+cinema,Una zona con un cinema,si,Aurelio,Chicca,5,Gregory
 cinema,Una zona con un cinema,si,Boccea Cornelia,Chicca,5,Alhambra
-cinema,Una zona con un cinema,si,Castro Pretorio,Chicca,5,Ambasciatori / Quattro Fontane / The Space Cinema - Moderno Roma
-cinema,Una zona con un cinema,si,Don Bosco,Chicca,5,Cinema Teatro Don Bosco / Multisala Atlantic
 cinema,Una zona con un cinema,si,Italia,Chicca,5,Multisala Jolly / Sala delle Provincie d'Essai
-cinema,Una zona con un cinema,si,Laurentino Fonte Ostiense,Chicca,5,UCI Luxe
-cinema,Una zona con un cinema,si,Porta di Roma,Chicca,5,UCI Cinemas
+cinema,Una zona con un cinema,si,Laurentino Fonte Ostiense,Chicca,5,UCI Luxe Maximo
+cinema,Una zona con un cinema,si,Nomentano,Chicca,5,Jolly / Sala delle Province
+cinema,Una zona con un cinema,si,Porta di Roma,Chicca,5,UCI
+cinema,Una zona con un cinema,si,Rebibbia,Chicca,5,CineClub Podere Rosa
 cinema,Una zona con un cinema,si,Torrino,Chicca,5,Stardust Village
 cinema,Una zona con un cinema,si,Colonna,Da Mino,8,Nuovo Olimpia
 cinema,Una zona con un cinema,si,Ottavia,Da Mino,8,Starplex
@@ -1246,7 +1247,7 @@ cinema,Una zona con un cinema,si,Parione,Da Mino,8,Farnese
 cinema,Una zona con un cinema,si,Regola,Da Mino,8,Farnese
 cinema,Una zona con un cinema,si,Sallustiano,Da Mino,8,Fiamma
 cinema,Una zona con un cinema,si,San Godenzo,Da Mino,8,Cinestar Cassia
-cinema,Una zona con un cinema,si,Tor di Valle,Da Mino,8,The Space Cinema
+cinema,Una zona con un cinema,si,Tor di Valle,Da Mino,8,The Space Parco dei Medici
 teatro,Una zona con un teatro,no,Cinecittà,Da cartolina,1,Teatro Giovanni Paolo II Attore
 teatro,Una zona con un teatro,no,Esquilino,Da cartolina,1,Teatro Ambra Jovinelli / Teatro Basilica / Teatro Brancaccio
 teatro,Una zona con un teatro,no,Foro Italico,Da cartolina,1,Teatro Eduardo De Filippo
@@ -2054,31 +2055,32 @@ gen-tipi-museo,Una zona con un museo famoso,si,Italia,Da Mino,8,Museo di storia 
 gen-tipi-museo,Una zona con un museo famoso,si,Nomentano,Da Mino,8,Museo Casina delle Civette
 gen-tipi-museo,Una zona con un museo famoso,si,Prati,Da Mino,8,Museo storico dell'arma dei carabinieri
 gen-tipi-museo,Una zona con un museo famoso,si,Villaggio Olimpico,Da Mino,8,Museo degli strumenti musicali dell'Accademia nazionale di Santa Cecilia
-gen-tipi-ponte,Una zona con un ponte,si,Borgo,Da cartolina,1,Ponte Sant’Angelo / Ponte Neroniano / Ponte Principe Amedeo Savoia Aosta
-gen-tipi-ponte,Una zona con un ponte,si,Flaminio,Da cartolina,1,ponte Pietro Nenni / Ponte Milvio / ponte Giacomo Matteotti
-gen-tipi-ponte,Una zona con un ponte,si,Foro Italico,Da cartolina,1,Ponte Duca d'Aosta / Ponte Milvio / Ponte della Musica
-gen-tipi-ponte,Una zona con un ponte,si,Ponte,Da cartolina,1,Ponte Vittorio Emanuele II / Ponte Sant’Angelo / Ponte Neroniano / ...
-gen-tipi-ponte,Una zona con un ponte,si,Ponte Milvio,Da cartolina,1,Ponte Milvio / Ponte Flaminio
-gen-tipi-ponte,Una zona con un ponte,si,Aventino,Ce sta,2,Ponte Cestio / Ponte Fabricio / Ponte Sublicio
-gen-tipi-ponte,Una zona con un ponte,si,Prati,Ce sta,2,ponte Pietro Nenni / Ponte Cavour / ponte Regina Margherita
-gen-tipi-ponte,Una zona con un ponte,si,Regola,Ce sta,2,Ponte Sisto / ponte Garibaldi / Ponte Aurelio / ...
-gen-tipi-ponte,Una zona con un ponte,si,Trastevere,Ce sta,2,Ponte Cestio / Ponte Sublicio / Ponte Giuseppe Mazzini / ...
-gen-tipi-ponte,Una zona con un ponte,si,Villaggio Olimpico,Ce sta,2,Ponte Milvio
-gen-tipi-ponte,Una zona con un ponte,si,Campo Marzio,Da romano de Roma,3,Ponte Cavour / ponte Regina Margherita
+gen-tipi-ponte,Una zona con un ponte,si,Aventino,Da cartolina,1,Ponte Fabricio / Ponte Cestio / Ponte Rotto / Ponte Palatino
+gen-tipi-ponte,Una zona con un ponte,si,Borgo,Da cartolina,1,Ponte Sant'Angelo / Ponte Vittorio Emanuele II / Ponte Neroniano / Ponte Principe Amedeo
+gen-tipi-ponte,Una zona con un ponte,si,Flaminio,Da cartolina,1,Ponte Milvio / Ponte Nenni / Ponte Matteotti / Ponte della Musica / Ponte del Risorgimento / Ponte Flaminio / Ponte Duca d'Aosta
+gen-tipi-ponte,Una zona con un ponte,si,Ponte,Da cartolina,1,Ponte Sant'Angelo / Ponte Vittorio Emanuele II / Ponte Neroniano / Ponte Umberto I
+gen-tipi-ponte,Una zona con un ponte,si,Ponte Milvio,Da cartolina,1,Ponte Milvio
+gen-tipi-ponte,Una zona con un ponte,si,Regola,Da cartolina,1,Ponte Sisto / Ponte Garibaldi / Ponte Mazzini
+gen-tipi-ponte,Una zona con un ponte,si,Trastevere,Da cartolina,1,Ponte Cestio / Ponte Palatino / Ponte Sisto / Ponte Garibaldi / Ponte Mazzini / Ponte Principe Amedeo / Ponte Sublicio
+gen-tipi-ponte,Una zona con un ponte,si,Campo Marzio,Ce sta,2,Ponte Cavour / Ponte Regina Margherita
+gen-tipi-ponte,Una zona con un ponte,si,Prati,Ce sta,2,Ponte Umberto I / Ponte Cavour / Ponte Regina Margherita / Ponte Nenni / Ponte Matteotti
+gen-tipi-ponte,Una zona con un ponte,si,Testaccio,Ce sta,2,Ponte Sublicio / Ponte Testaccio
+gen-tipi-ponte,Una zona con un ponte,si,Della Vittoria,Da romano de Roma,3,Ponte della Musica / Ponte del Risorgimento
+gen-tipi-ponte,Una zona con un ponte,si,Foro Italico,Da romano de Roma,3,Ponte Duca d'Aosta
+gen-tipi-ponte,Una zona con un ponte,si,Marconi,Da romano de Roma,3,Ponte dell'Industria / Ponte della Scienza / Ponte Settimia Spizzichino / Ponte Marconi
 gen-tipi-ponte,Una zona con un ponte,si,Monte Sacro,Da romano de Roma,3,Ponte Nomentano
 gen-tipi-ponte,Una zona con un ponte,si,Ostiense,Da romano de Roma,3,Ponte dell'Industria / Ponte della Scienza / Ponte Settimia Spizzichino
-gen-tipi-ponte,Una zona con un ponte,si,Sacco Pastore,Da romano de Roma,3,Ponte Nomentano / Ponte Tazio / Ponte di via delle Valli
-gen-tipi-ponte,Una zona con un ponte,si,Tor di Quinto,Da romano de Roma,3,Ponte Tor di Quinto / Ponte Salario / ponte Ugo Forno / ...
-gen-tipi-ponte,Una zona con un ponte,si,Della Vittoria,Chicca,5,Ponte del Risorgimento / Ponte della Musica
+gen-tipi-ponte,Una zona con un ponte,si,Villaggio Olimpico,Da romano de Roma,3,Ponte Flaminio
 gen-tipi-ponte,Una zona con un ponte,si,Magliana,Chicca,5,Ponte della Magliana
-gen-tipi-ponte,Una zona con un ponte,si,Marconi,Chicca,5,Ponte dell'Industria / Ponte della Scienza
 gen-tipi-ponte,Una zona con un ponte,si,Porta Portese,Chicca,5,Ponte Sublicio / Ponte di Probo / ponte san Paolo / ...
-gen-tipi-ponte,Una zona con un ponte,si,Testaccio,Chicca,5,Ponte Sublicio / ponte san Paolo / Ponte Testaccio
-gen-tipi-ponte,Una zona con un ponte,si,Conca d'Oro,Da Mino,8,ponte Ugo Forno
+gen-tipi-ponte,Una zona con un ponte,si,Portuense,Chicca,5,Ponte Testaccio
+gen-tipi-ponte,Una zona con un ponte,si,Sacco Pastore,Chicca,5,Ponte Tazio / Ponte Salario
+gen-tipi-ponte,Una zona con un ponte,si,San Paolo,Chicca,5,Ponte Marconi
+gen-tipi-ponte,Una zona con un ponte,si,Tor di Quinto,Chicca,5,Ponte Tor di Quinto
+gen-tipi-ponte,Una zona con un ponte,si,Conca d'Oro,Da Mino,8,Ponte Ugo Forno
 gen-tipi-ponte,Una zona con un ponte,si,Monti di Pietralata,Da Mino,8,Ponte del fosso della Maranella
 gen-tipi-ponte,Una zona con un ponte,si,Ponte Mammolo,Da Mino,8,Ponte Mammolo
-gen-tipi-ponte,Una zona con un ponte,si,San Paolo,Da Mino,8,ponte Guglielmo Marconi
-gen-tipi-ponte,Una zona con un ponte,si,Tor di Valle,Da Mino,8,Ponte della Magliana / viadotto Ansa del Tevere / Ponte Romano di Parco deii Medici / ...
+gen-tipi-ponte,Una zona con un ponte,si,Tor di Valle,Da Mino,8,viadotto Ansa del Tevere
 gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Ostiense,Da cartolina,1,Rome War Cemetery / Cimitero acattolico (al confine con Testaccio)
 gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Testaccio,Da cartolina,1,Cimitero acattolico / Rome War Cemetery
 gen-tipi-cimitero,Una zona con un cimitero (niente catacombe),si,Verano,Ce sta,2,Cimitero del Verano
@@ -2527,15 +2529,18 @@ gen-stili-un-edificio-neoclassico,Una zona con un edificio neoclassico,si,Trevi,
 gen-stili-un-edificio-neoclassico,Una zona con un edificio neoclassico,si,Italia,Da Mino,8,Caserma Piave
 gen-stili-un-edificio-neoclassico,Una zona con un edificio neoclassico,si,Ludovisi,Da Mino,8,Hotel Majestic
 gen-stili-un-edificio-neoclassico,Una zona con un edificio neoclassico,si,Pinciano,Da Mino,8,Villa Giorgina
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Campo Marzio,Da cartolina,1,chiesa di Ognissanti
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Esquilino,Da cartolina,1,chiesa di Sant'Alfonso all'Esquilino / cappella di Sant'Elena / chiesa di Santa Maria Immacolata all'Esquilino
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Prati,Ce sta,2,chiesa di Santa Maria del Rosario in Prati / chiesa del Sacro Cuore del Suffragio / chiesa di Santa Maria Immacolata dell'Istituto Scolastico Nazareth
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,San Lorenzo,Ce sta,2,chiesa di San Tommaso Moro
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Aventino,Da romano de Roma,3,chiesa di San Vincenzo de Paoli all'Aventino
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Nomentano,Da romano de Roma,3,chiesa del Corpus Domini
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Campo Marzio,Da cartolina,1,Ognissanti
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Castro Pretorio,Da cartolina,1,San Paolo entro le Mura
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Esquilino,Da cartolina,1,Sant'Alfonso all'Esquilino / Cappella di Sant'Elena / Immacolata all'Esquilino
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Monti,Da cartolina,1,San Paolo entro le Mura
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Prati,Ce sta,2,Sacro Cuore del Suffragio / Santa Maria del Rosario / Istituto Nazareth
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Trieste,Ce sta,2,Quartiere Coppedè
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Aventino,Da romano de Roma,3,San Vincenzo de Paoli
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Nomentano,Da romano de Roma,3,Casina delle Civette / Corpus Domini
 gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Sallustiano,Chicca,5,chiesa del Sacro Cuore di Gesù
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Trastevere,Chicca,5,chiesa del Sacro Cuore di Gesù a Villa Lante
-gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Ludovisi,Da Mino,8,chiesa del Santissimo Redentore e Santa Francesca Saverio Cabrini
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,San Lorenzo,Chicca,5,San Tommaso Moro
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Trastevere,Chicca,5,Sacro Cuore a Villa Lante
+gen-stili-un-edificio-neogotico,Una zona con un edificio neogotico,si,Ludovisi,Da Mino,8,Redentore e Cabrini
 gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Colonna,Da cartolina,1,Galleria Alberto Sordi
 gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Sallustiano,Da cartolina,1,Museo Boncompagni Ludovisi per le arti decorative / Palazzo Canevari
 gen-stili-un-edificio-liberty,Una zona con un edificio liberty,si,Trevi,Da cartolina,1,Galleria Sciarra
@@ -2639,13 +2644,17 @@ gen-epoche-palazzo-medievale,Una zona con un palazzo medievale,si,Ponte,Ce sta,2
 gen-epoche-palazzo-medievale,Una zona con un palazzo medievale,si,Parione,Da romano de Roma,3,chiesa di Santo Stefano in Piscinula
 gen-epoche-palazzo-medievale,Una zona con un palazzo medievale,si,Pigna,Chicca,5,chiesa di Santa Maria della Strada
 gen-epoche-palazzo-medievale,Una zona con un palazzo medievale,si,Regola,Da Mino,8,Ospizio dei Pellegrini Boemi
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Ponte,Da cartolina,1,chiesa di Santa Maria della Pace
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Trastevere,Da cartolina,1,chiesa di Santa Dorotea / chiesa di San Pietro in Montorio / complesso di Sant'Onofrio al Gianicolo
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Sant'Eustachio,Ce sta,2,basilica di Sant'Agostino in Campo Marzio
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Esquilino,Da romano de Roma,3,chiesa di Sant'Antonio Abate all'Esquilino / chiesa di Santa Maria del Buon Aiuto nell'Anfiteatro Castrense
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Parione,Da romano de Roma,3,chiesa di Nostra Signora del Sacro Cuore / basilica di San Lorenzo in Damaso
-gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Aventino,Chicca,5,chiesa di Sant'Omobono
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Campo Marzio,Da cartolina,1,Santa Maria del Popolo
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Ponte,Da cartolina,1,Santa Maria della Pace
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Trastevere,Da cartolina,1,San Pietro in Montorio / Sant'Onofrio al Gianicolo / San Cosimato
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Pigna,Ce sta,2,San Marco
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Sant'Eustachio,Ce sta,2,Sant'Agostino
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Esquilino,Da romano de Roma,3,Santa Maria del Buon Aiuto
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Parione,Da romano de Roma,3,Nostra Signora del Sacro Cuore / San Lorenzo in Damaso
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Aventino,Chicca,5,Sant'Omobono
 gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Campitelli,Da Mino,8,Santi Venanzio e Ansovino dei Camerinesi
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,Monti,Da Mino,8,San Vitale
+gen-epoche-chiesa-del-quattrocento,Una zona con una chiesa del Quattrocento,si,San Saba,Da Mino,8,Santi Nereo e Achilleo
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Campo Marzio,Da cartolina,1,chiesa di Sant'Atanasio / chiesa della Trinità dei Monti / chiesa di San Girolamo dei Croati / ...
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Monti,Da cartolina,1,chiesa dei Santi Gioacchino e Anna ai Monti / chiesa di Sant'Andrea al Quirinale / chiesa di Santa Maria ai Monti / ...
 gen-epoche-chiesa-del-cinquecento,Una zona con una chiesa del Cinquecento,si,Pigna,Da cartolina,1,chiesa del Gesù / chiesa di Santa Marta al Collegio Romano
@@ -2922,24 +2931,27 @@ gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Regola,Chicca,5,Pal
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Villa Borghese,Chicca,5,Villa Giulia (affreschi del porticato)
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Ludovisi,Da Mino,8,Casino dell'Aurora (Caravaggio e Guercino)
 gen-artisti-opera-affresco,Una zona dove vedi un affresco,si,Sant'Eustachio,Da Mino,8,Palazzetto di Tizio da Spoleto
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Monti,Da cartolina,1,basilica di San Pietro in Vincoli
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Sallustiano,Da cartolina,1,cappella Cornaro
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Trevi,Da cartolina,1,piazza di Trevi / Piazza Barberini / Palazzo Barberini / ...
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Aventino,Da cartolina,1,Bocca della Verità
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Campitelli,Da cartolina,1,Lupa Capitolina / Marco Aurelio / Spinario / Galata morente ai Musei Capitolini / Santo Bambino all'Aracoeli
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Monti,Da cartolina,1,Mosè in San Pietro in Vincoli
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Parione,Da cartolina,1,Fontana dei Quattro Fiumi / Pasquino / Giordano Bruno a Campo de' Fiori
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Trevi,Da cartolina,1,Fontana di Trevi / Tritone di piazza Barberini
 gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Trionfale,Da cartolina,1,Museo Pio-Clementino
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Castro Pretorio,Ce sta,2,Museo nazionale romano di palazzo Massimo / Museo Nazionale Romano
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Pigna,Ce sta,2,basilica di Santa Maria sopra Minerva / Museo nazionale del Palazzo di Venezia / piazza della Minerva / ...
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Trastevere,Ce sta,2,chiesa di San Francesco a Ripa / terrazza del Gianicolo / chiesa di San Giacomo alla Lungara / ...
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Villa Borghese,Ce sta,2,Galleria Nazionale d'Arte Moderna e Contemporanea / Galleria Borghese / Villa Borghese
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Appia Antica,Da romano de Roma,3,basilica di San Sebastiano fuori le mura
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Campo Marzio,Da romano de Roma,3,Palazzo di Spagna / basilica di Santa Maria del Popolo / cappella Chigi / ...
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Colonna,Da romano de Roma,3,Palazzi Bernini / chiesa dei Santi Ildefonso e Tommaso da Villanova / basilica di Sant'Andrea delle Fratte / ...
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Esquilino,Chicca,5,chiesa di Santa Bibiana
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Parione,Chicca,5,basilica di San Lorenzo in Damaso / chiesa di Sant'Agnese in Agone
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Ponte,Chicca,5,chiesa di Santa Maria dell'Anima / Palazzo Altemps
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Regola,Chicca,5,chiesa di Santa Maria in Monserrato degli Spagnoli
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Campitelli,Da Mino,8,basilica di Santa Maria in Aracoeli / Musei Capitolini / chiesa dei Santi Luca e Martina
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,San Saba,Da Mino,8,piazza Albania
-gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Sant'Eustachio,Da Mino,8,basilica di Sant'Agostino in Campo Marzio
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Villa Borghese,Da cartolina,1,Apollo e Dafne / Ratto di Proserpina / Paolina Borghese
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Borgo,Ce sta,2,Angeli di Ponte Sant'Angelo
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Castro Pretorio,Ce sta,2,Estasi di Santa Teresa in Santa Maria della Vittoria / Fontana del Mosè / Pugile in riposo e Discobolo a Palazzo Massimo / Fontana delle Naiadi
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Pigna,Ce sta,2,Cristo della Minerva / Elefantino della Minerva / Madama Lucrezia
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Ponte,Ce sta,2,Angeli di Ponte Sant'Angelo / Galata suicida e Trono Ludovisi a Palazzo Altemps
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Sallustiano,Ce sta,2,Estasi di Santa Teresa in Santa Maria della Vittoria / Fontana del Mosè
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Sant'Angelo,Ce sta,2,Fontana delle Tartarughe
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Campo Marzio,Da romano de Roma,3,Barcaccia / statue di Bernini nella Cappella Chigi / il Babuino
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Colonna,Da romano de Roma,3,angeli di Bernini a Sant'Andrea delle Fratte / Colonna di Marco Aurelio / il Facchino
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Trastevere,Da romano de Roma,3,Beata Ludovica Albertoni a San Francesco a Ripa / Santa Cecilia di Maderno / Garibaldi al Gianicolo
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Appia Antica,Chicca,5,Salvator Mundi di Bernini a San Sebastiano
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Esquilino,Chicca,5,Santa Bibiana di Bernini
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Regola,Chicca,5,busto Montoya in Santa Maria di Monserrato
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,Sant'Eustachio,Chicca,5,Madonna del Parto in Sant'Agostino / Abate Luigi
+gen-artisti-opera-scultura,Una zona dove vedi una scultura famosa,si,San Saba,Da Mino,8,Skanderbeg a piazza Albania
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Campo Marzio,Da cartolina,1,cappella Cerasi / Palazzo Magistrale / basilica dei Santi Ambrogio e Carlo al Corso / ...
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Pigna,Da cartolina,1,Museo nazionale del Palazzo di Venezia / Galleria Doria Pamphilj / basilica di Santa Maria sopra Minerva / ...
 gen-artisti-opera-dipinto,Una zona dove vedi un dipinto famoso,si,Sant'Eustachio,Da cartolina,1,Palazzo Madama / cappella Contarelli / basilica di Sant'Agostino in Campo Marzio / ...
