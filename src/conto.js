@@ -205,17 +205,37 @@ export async function conta(giornoDiGioco, campo) {
   } catch { /* un conteggio perso non ferma il gioco */ }
 }
 
+// Cosa cambiare nel punteggio del giorno gia pubblicato, o null se e gia giusto.
+export function correzioneGiorno(pubblicato, { tot, livelli }) {
+  const uguali = pubblicato?.tot === tot && JSON.stringify(pubblicato?.livelli) === JSON.stringify(livelli);
+  return uguali ? null : { tot, livelli };
+}
+
+// Cosa cambiare nella settimana se il giorno c'e gia con un totale diverso, o null. "corretto" dice alle regole
+// quale giorno si sta correggendo: devono controllare che valga quanto il punteggio del giorno.
+export function correzioneSettimana(v, data, tot) {
+  const vecchio = v?.giorni?.[data];
+  if (vecchio === undefined || vecchio === tot) return null;
+  return { giorni: { ...v.giorni, [data]: tot }, tot: v.tot - vecchio + tot, corretto: data };
+}
+
 const colPunteggi = (data) => fb.fs.collection(fb.db, 'partite', data, 'punteggi');
 
-// Il punteggio di oggi, una volta sola. Se poi entri con Google, al punteggio si aggiungono nome e foto.
+// Il punteggio di oggi: si crea una volta, poi cambia solo se le domande vengono corrette. Se poi entri con Google, al punteggio si aggiungono nome e foto.
 // In classifica va solo chi e entrato con Google: gli anonimi non pubblicano niente (lo fanno quando entrano).
 export async function pubblicaPunteggio(data, { tot, livelli }) {
   const u = await avviaConto();
   if (!u || u.anonimo) return false;
   const { fs } = fb;
   const rif = fs.doc(colPunteggi(data), io.uid);
-  const esiste = (await fs.getDoc(rif)).exists();
-  if (esiste) { await aggiornaNomeInClassifica(data); return true; }
+  const prima = await fs.getDoc(rif);
+  if (prima.exists()) {
+    // Domande corrette a giornata in corso: il totale ricalcolato sul telefono prende il posto di quello vecchio.
+    const nuovo = correzioneGiorno(prima.data(), { tot, livelli });
+    if (nuovo) await conRiprova(data, () => fs.updateDoc(rif, nuovo));
+    await aggiornaNomeInClassifica(data);
+    return true;
+  }
   const me = utente();
   await conRiprova(data, () => fs.setDoc(rif, { tot, livelli, ora: fs.serverTimestamp(), pubblico: !!me.nome, nome: me.nome || '', foto: me.foto || '' }));
   return true;
@@ -247,6 +267,7 @@ export function settimanaDi(data) {
 const colSettimana = (lunedi) => fb.fs.collection(fb.db, 'settimane', lunedi, 'punteggi');
 
 // Aggiunge il punteggio di un giorno alla settimana, una volta sola (le regole controllano che sia quello vero).
+// Se il giorno c'e gia con un totale diverso (domande corrette), lo corregge.
 export async function pubblicaSettimana(data, tot) {
   const u = await avviaConto();
   if (!u || u.anonimo) return false;
@@ -260,7 +281,11 @@ export async function pubblicaSettimana(data, tot) {
     return true;
   }
   const v = prima.data();
-  if (data in (v.giorni || {})) return true;
+  if (data in (v.giorni || {})) {
+    const c = correzioneSettimana(v, data, tot);
+    if (c) await conRiprova(data, () => fs.updateDoc(rif, new fs.FieldPath('giorni', data), tot, 'tot', c.tot, 'corretto', data));
+    return true;
+  }
   await conRiprova(data, () => fs.updateDoc(rif, new fs.FieldPath('giorni', data), tot, 'tot', v.tot + tot, 'n', v.n + 1, 'ultimo', data,
     'ora', fs.serverTimestamp(), 'pubblico', chi.pubblico, 'nome', chi.nome, 'foto', chi.foto));
   return true;

@@ -121,28 +121,32 @@ function sincronizzaConto() {
 }
 
 // Ieri finita nel suo giorno ma rimasta fuori dalla classifica (login arrivato dopo, scrittura persa):
-// le regole la accettano ancora per un giorno, va su in silenzio.
+// le regole la accettano ancora per un giorno, va su in silenzio. Lo stesso se le domande di ieri sono state corrette.
 async function pubblicaIeri() {
   const ieri = sposta(oggi, -1);
   const g = leggi().giorni[ieri];
   const u = utente();
   if (!g?.finita || g.recupero || !g.livelli || !u || u.anonimo) return;
-  try {
-    if (g.pubblicato !== u.uid) {
-      if (!(await pubblicaPunteggio(ieri, { tot: g.tot, livelli: g.livelli }))) return;
-      const s = leggi();
-      s.giorni[ieri].pubblicato = u.uid;
-      scrivi(s);
-    }
-    if (leggi().giorni[ieri].settimana !== u.uid && (await pubblicaSettimana(ieri, g.tot))) {
-      const s = leggi();
-      s.giorni[ieri].settimana = u.uid;
-      scrivi(s);
-    }
-  } catch (e) { console.warn('Classifica di ieri non raggiunta:', e?.code || e?.message); }
+  try { await pubblicaGiorno(ieri, u); } catch (e) { console.warn('Classifica di ieri non raggiunta:', e?.code || e?.message); }
 }
 
-// Punteggio di oggi in classifica, una volta sola, e la riga "meglio del X%" nel diario.
+// Punteggio di un giorno in classifica e nella settimana. Si ricorda per quale account e con quale totale:
+// se le domande vengono corrette a giornata in corso, il totale ricalcolato da ripristina() e diverso e si
+// aggiorna quello pubblicato (sul server non c'e la zona scelta per ogni tappa, il ricalcolo lo fa solo il telefono).
+async function pubblicaGiorno(data, u) {
+  const g = leggi().giorni[data];
+  const segna = (campi) => { const s = leggi(); Object.assign(s.giorni[data], campi); scrivi(s); };
+  if (g.pubblicato !== u.uid || g.pubblicatoTot !== g.tot) {
+    if (!(await pubblicaPunteggio(data, { tot: g.tot, livelli: g.livelli }))) return false;
+    segna({ pubblicato: u.uid, pubblicatoTot: g.tot });
+  }
+  if ((g.settimana !== u.uid || g.settimanaTot !== g.tot) && (await pubblicaSettimana(data, g.tot))) {
+    segna({ settimana: u.uid, settimanaTot: g.tot });
+  }
+  return true;
+}
+
+// Punteggio di oggi in classifica, e la riga "meglio del X%" nel diario.
 // Si ricorda per quale account e stato pubblicato: chi esce e rientra con un altro account (anonimo -> Google)
 // ritrova il punteggio di oggi sul nuovo, col suo nome.
 async function pubblicaOggi() {
@@ -161,17 +165,7 @@ async function pubblicaOggi() {
       return;
     }
     $('meglio').dataset.apri = 'classifica';
-    if (g.pubblicato !== u.uid) {
-      if (!(await pubblicaPunteggio(oggi, { tot: g.tot, livelli: g.livelli }))) return;
-      const s = leggi();
-      s.giorni[oggi].pubblicato = u.uid;
-      scrivi(s);
-    }
-    if (leggi().giorni[oggi].settimana !== u.uid && (await pubblicaSettimana(oggi, g.tot))) {
-      const s = leggi();
-      s.giorni[oggi].settimana = u.uid;
-      scrivi(s);
-    }
+    if (!(await pubblicaGiorno(oggi, u))) return;
     if (giorno !== oggi || $('pagina-diario').hidden) return;
     const c = await classifica(oggi, 1);
     if (!c?.mio || giorno !== oggi) return;
@@ -652,6 +646,7 @@ function mostraFine(anima) {
   $('nota-domani').hidden = arretrato;
   $('meglio').hidden = true;
   if (!arretrato) pubblicaOggi();
+  else if (giorno === sposta(oggi, -1)) pubblicaIeri(); // il diario di ieri riaperto dopo una correzione
   $('torna-oggi').hidden = !arretrato;
   // Souvenir nuovi: i pacchetti arrivano dopo che il diario si e acceso.
   if (anima) programma(() => { if (!document.querySelector('dialog[open]')) taccuino.scartaNuovi(); }, dopo(2200));
@@ -776,8 +771,7 @@ function registra() {
     tot: totale(stati), finita: stati.every((x) => x.pin),
     livelli: stati.map((x) => (x.pin ? (x.pin.fascia ? livelloDi(x.pin.fascia) : -1) : null)),
     ...(recupero ? { recupero: true } : {}),
-    ...(prima?.pubblicato ? { pubblicato: prima.pubblicato } : {}),
-    ...(prima?.settimana ? { settimana: prima.settimana } : {}),
+    ...Object.fromEntries(['pubblicato', 'pubblicatoTot', 'settimana', 'settimanaTot'].filter((k) => prima?.[k] !== undefined).map((k) => [k, prima[k]])),
   };
   // Contatore: solo il passaggio (prima tappa timbrata, partita finita), non ogni volta che si riapre il diario.
   const ora = s.giorni[giorno];

@@ -56,26 +56,33 @@ service cloud.firestore {
         && request.resource.data.stato in ['approvata', 'scartata', 'nuova'] && testo(request.resource.data.get('nota', ''), 0, 300);
     }
 
+    // Punteggio del giorno: 5 fasce valide e il totale che torna con le fasce.
+    function punteggioOk(d) {
+      return d.livelli is list && d.livelli.size() == 5
+        && livello(d.livelli[0]) && livello(d.livelli[1]) && livello(d.livelli[2]) && livello(d.livelli[3]) && livello(d.livelli[4])
+        && d.tot == punti(d.livelli[0]) + punti(d.livelli[1]) + punti(d.livelli[2]) + punti(d.livelli[3]) + punti(d.livelli[4]);
+    }
     match /partite/{data}/punteggi/{uid} {
       allow read: if true;
       allow create: if mio(uid) && conGoogle() && vicino(data)
         && request.resource.data.keys().hasOnly(['tot', 'livelli', 'ora', 'pubblico', 'nome', 'foto'])
-        && request.resource.data.livelli is list && request.resource.data.livelli.size() == 5
-        && livello(request.resource.data.livelli[0]) && livello(request.resource.data.livelli[1])
-        && livello(request.resource.data.livelli[2]) && livello(request.resource.data.livelli[3])
-        && livello(request.resource.data.livelli[4])
-        && request.resource.data.tot == punti(request.resource.data.livelli[0]) + punti(request.resource.data.livelli[1])
-          + punti(request.resource.data.livelli[2]) + punti(request.resource.data.livelli[3]) + punti(request.resource.data.livelli[4])
+        && punteggioOk(request.resource.data)
         && request.resource.data.ora == request.time
         && nomeOk(request.resource.data);
-      // Dopo il login si aggiungono nome e foto; il punteggio non si tocca.
-      allow update: if mio(uid)
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto'])
-        && nomeOk(request.resource.data);
+      allow update: if mio(uid) && (
+        // Dopo il login si aggiungono nome e foto.
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto'])
+          && nomeOk(request.resource.data))
+        // Domande corrette a giornata in corso: il telefono ricalcola le fasce e aggiorna il punteggio, con gli
+        // stessi controlli della creazione. L'ora resta quella della prima partita.
+        || (conGoogle() && vicino(data)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['tot', 'livelli', 'pubblico', 'nome', 'foto'])
+          && punteggioOk(request.resource.data)
+          && nomeOk(request.resource.data)));
     }
 
-    // Settimana (da lunedi): la somma dei punteggi del giorno. Ogni giorno si aggiunge una volta sola e deve
-    // valere esattamente quanto il punteggio di quel giorno gia salvato in partite/{data}/punteggi/{uid}.
+    // Settimana (da lunedi): la somma dei punteggi del giorno. Ogni giorno si aggiunge una volta sola (poi si puo solo
+    // correggere) e deve valere esattamente quanto il punteggio di quel giorno gia salvato in partite/{data}/punteggi/{uid}.
     function delGiorno(d, uid) { return get(/databases/$(database)/documents/partite/$(d)/punteggi/$(uid)).data.tot; }
     function settimanaOk(d, settimana) { return d >= settimana && vicino(d); }
     match /settimane/{settimana}/punteggi/{uid} {
@@ -99,6 +106,17 @@ service cloud.firestore {
           && request.resource.data.tot == resource.data.tot + request.resource.data.giorni[request.resource.data.ultimo]
           && request.resource.data.n == resource.data.n + 1 && request.resource.data.ora == request.time
           && nomeOk(request.resource.data)
+        )
+        // Correzione di un giorno gia nella settimana (domande corrette): "corretto" dice quale, deve valere quanto
+        // il punteggio del giorno e il totale cambia della differenza. Numero di partite, ultimo giorno e ora restano.
+        || (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['tot', 'giorni', 'corretto'])
+          && settimanaOk(request.resource.data.corretto, settimana)
+          && request.resource.data.corretto in resource.data.giorni
+          && request.resource.data.giorni.diff(resource.data.giorni).affectedKeys().hasOnly([request.resource.data.corretto])
+          && request.resource.data.giorni[request.resource.data.corretto] == delGiorno(request.resource.data.corretto, uid)
+          && request.resource.data.tot == resource.data.tot - resource.data.giorni[request.resource.data.corretto]
+            + request.resource.data.giorni[request.resource.data.corretto]
         ));
     }
   }
