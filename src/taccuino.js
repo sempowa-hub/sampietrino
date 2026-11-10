@@ -6,7 +6,7 @@ import { pixel } from './pixel.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { SOUVENIR, GRUPPI } from './souvenir.js';
 import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO, PRIMO_GIORNO } from './storico.js';
-import { avviaConto, utente, quandoCambia, fotoSicura, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi, sonoAdmin, proponi, mieProposte, proposteDaDecidere, decidiProposta } from './conto.js';
+import { avviaConto, utente, quandoCambia, fotoSicura, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi, sonoAdmin, proponi, mieProposte, proposteDaDecidere, decidiProposta, punteggiAlti, nascondiRiga, bloccaGiocatore, SOGLIA_ALTI } from './conto.js';
 
 const $ = (id) => document.getElementById(id);
 const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV'];
@@ -112,7 +112,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       const n = (await proposteDaDecidere('nuova')).length;
       $('t-mod-nuove').hidden = !n;
       $('t-mod-nuove').textContent = n;
-      $('t-moderazione').textContent = n ? `${plurale(n, 'proposta nuova', 'proposte nuove')}` : 'Niente di nuovo';
+      $('t-moderazione').textContent = n ? `${plurale(n, 'proposta nuova', 'proposte nuove')}` : 'Proposte e classifica';
     } catch { /* riprova alla prossima apertura */ }
   }
 
@@ -245,7 +245,9 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     }
     const mio = $('cl-mio');
     mio.replaceChildren();
-    if (c.mio) {
+    if (c.mio?.nascosto) {
+      mio.append(el('p', 'cl-nota', 'Il tuo punteggio è in verifica: per ora non compare in classifica.'));
+    } else if (c.mio) {
       const riga = el('p', 'cl-pos');
       riga.innerHTML = `<b>${c.posizione}°</b> ${chiesta === 'oggi' ? 'oggi' : 'questa settimana'}`;
       mio.append(riga);
@@ -268,9 +270,11 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
         const b = el('button', 'primario piccolo', 'Entra con Google');
         b.addEventListener('click', () => apri('account', { da: daTaccuino }));
         mio.append(b);
+      } else if (u.bloccato) {
+        mio.append(el('p', 'cl-nota', 'Questo account per ora non pubblica in classifica. Se pensi sia un errore scrivi a Themino.'));
       } else mio.append(el('p', 'cl-nota', g?.finita && g.recupero ? 'Oggi hai giocato solo partite arretrate: la classifica è per la partita del giorno.'
         : chiesta === 'oggi' ? 'Finisci la partita di oggi per entrare in classifica.' : 'Finisci la partita di oggi per entrare nella classifica della settimana.'));
-      if (!g?.finita) {
+      if (!g?.finita && !u?.bloccato) {
         const b = el('button', 'primario piccolo', 'Gioca oggi');
         b.addEventListener('click', () => { chiudiTutti(); gioca(oggi); });
         mio.append(b);
@@ -414,6 +418,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   async function preparaModerazione() {
     for (const b of $('mod-schede').querySelectorAll('button')) b.setAttribute('aria-selected', String(b.dataset.stato === statoMod));
     const ol = $('mod-elenco');
+    if (statoMod === 'classifica') { preparaSospetti(); return; }
     ol.replaceChildren(el('li', 'cl-carico', 'Carico le proposte…'));
     let lista = [];
     const chiesto = statoMod;
@@ -451,6 +456,68 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       li.append(nota, tasti, sbaglio);
       return li;
     }) : [el('li', 'vuoto', statoMod === 'nuova' ? 'Nessuna proposta da vedere. Tutto letto!' : 'Nessuna proposta qui.')]));
+  }
+
+  // Moderazione della classifica: i punteggi alti di oggi e di ieri, coi sospetti in evidenza. Nascondere toglie la
+  // riga da giorno e settimana (resta salvata, si puo rimettere); bloccare ferma anche i punteggi dei giorni dopo.
+  async function preparaSospetti() {
+    const ol = $('mod-elenco');
+    ol.replaceChildren(el('li', 'cl-carico', 'Carico i punteggi alti…'));
+    const giorni = [oggi, sposta(oggi, -1)];
+    let liste;
+    try { liste = await Promise.all(giorni.map((d) => punteggiAlti(d))); } catch {
+      if (statoMod === 'classifica') ol.replaceChildren(el('li', 'vuoto', 'Non riesco a leggere la classifica: riprova tra poco.'));
+      return;
+    }
+    if (statoMod !== 'classifica') return;
+    const voci = [];
+    giorni.forEach((d, k) => {
+      voci.push(el('li', 'mod-giorno', `${k ? 'Ieri' : 'Oggi'}, ${dataIt(d, { day: 'numeric', month: 'long' })}`));
+      if (!liste[k].length) voci.push(el('li', 'vuoto', `Nessun punteggio da ${SOGLIA_ALTI} in su: niente da controllare.`));
+      for (const r of liste[k]) voci.push(voceSospetto(d, r));
+    });
+    ol.replaceChildren(...voci);
+  }
+
+  function voceSospetto(d, r) {
+    const li = el('li', `mod-voce mod-riga${r.nascosto ? ' nascosta' : ''}`);
+    const testa = el('div', 'mod-testa');
+    testa.append(el('b', null, r.nome || 'Senza nome'), el('span', 'mod-zona', plurale(r.tot, 'punto', 'punti')));
+    const segni = el('div', 'mod-segni');
+    if (r.sospetto) segni.append(el('span', 'mod-segno sospetto', 'Sospetto'));
+    if (r.nascosto) segni.append(el('span', 'mod-segno', 'Nascosta'));
+    if (r.bloccato) segni.append(el('span', 'mod-segno', 'Bloccato'));
+    const tappe = el('span', 'cl-tappe');
+    for (const l of r.livelli || []) {
+      const i = el('i');
+      i.style.setProperty('--colore', coloreLiv(l));
+      if (l == null || l < 0) i.classList.add('buca');
+      tappe.append(i);
+    }
+    const daMino = (r.livelli || []).filter((l) => l === SCALA.length - 1).length;
+    const quando = r.ora?.toDate ? r.ora.toDate().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome' }) : '';
+    const chi = el('p', 'mod-chi', [quando && `Pubblicata alle ${quando}`, `${daMino} Da Mino su ${DOMANDE_AL_GIORNO}`].filter(Boolean).join(' · '));
+    const sbaglio = el('p', 'acc-errore', 'Non salvato: controlla la connessione e riprova.');
+    sbaglio.setAttribute('role', 'alert');
+    sbaglio.hidden = true;
+    const tasti = el('div', 'mod-tasti');
+    const tasto = (testo, classe, fai) => {
+      const b = el('button', classe, testo);
+      b.addEventListener('click', async () => {
+        const tutti = [...tasti.querySelectorAll('button')];
+        tutti.forEach((x) => { x.disabled = true; });
+        sbaglio.hidden = true;
+        try { await fai(); suoni.scegli(); li.classList.add('decisa'); setTimeout(preparaSospetti, 300); }
+        catch { tutti.forEach((x) => { x.disabled = false; }); sbaglio.hidden = false; }
+      });
+      tasti.append(b);
+    };
+    if (r.nascosto) tasto('Rimetti in classifica', 'si', () => nascondiRiga(d, r, false));
+    else tasto('Nascondi', 'no', () => nascondiRiga(d, r, true));
+    if (r.bloccato) tasto('Sblocca', 'si', () => bloccaGiocatore(r, false));
+    else tasto('Blocca giocatore', 'no', async () => { await bloccaGiocatore(r, true); if (!r.nascosto) await nascondiRiga(d, r, true); });
+    li.append(testa, segni, tappe, chi, tasti, sbaglio);
+    return li;
   }
 
   // --- Diario di bordo: calendario, archivio, statistiche ---

@@ -15,7 +15,7 @@ const CONFIG = {
 };
 const SDK = 'https://www.gstatic.com/firebasejs/10.14.1';
 
-let fb = null, pronto = null, io = null, profilo = null;
+let fb = null, pronto = null, io = null, profilo = null, blocco = false;
 const ascoltatori = new Set();
 
 // In locale (npm run gioca) l'account resta spento: le prove non creano utenti e non sporcano contatori e
@@ -43,6 +43,7 @@ export const utente = () => (io ? {
   uid: io.uid, anonimo: io.isAnonymous,
   nome: profilo?.nome || '', foto: profilo?.mostraFoto !== false ? (profilo?.foto || fotoGoogle(io)) : '', fotoGoogle: fotoGoogle(io),
   mostraFoto: profilo?.mostraFoto !== false,
+  bloccato: blocco,
 } : null);
 export const quandoCambia = (fn) => { ascoltatori.add(fn); return () => ascoltatori.delete(fn); };
 const avvisa = () => ascoltatori.forEach((fn) => { try { fn(utente()); } catch (e) { console.warn('Ascoltatore del conto:', e?.message); } });
@@ -60,6 +61,7 @@ export function avviaConto() {
         }
         io = u;
         profilo = u.isAnonymous ? null : await leggiProfilo(u.uid);
+        blocco = u.isAnonymous ? false : await leggiBlocco(u.uid);
         // Profili nati senza nome o foto di Google (account anonimo collegato): si sistemano da soli.
         // Se dal nome Google non esce niente di scrivibile (solo simboli) resta il nickname che c'e.
         const daGoogle = pulisciNome(nomeGoogle(u).split(' ')[0]);
@@ -80,6 +82,13 @@ export function avviaConto() {
     return null;
   });
   return pronto;
+}
+
+// Bloccato dalla moderazione: il suo documento bloccati/{uid} esiste. Le regole rifiutano comunque le scritture,
+// qui serve solo a non provarci a vuoto.
+async function leggiBlocco(uid) {
+  const { fs, db } = fb;
+  try { return (await fs.getDoc(fs.doc(db, 'bloccati', uid))).exists(); } catch { return false; }
 }
 
 async function leggiProfilo(uid) {
@@ -109,6 +118,7 @@ export async function entraConGoogle() {
   await auth.currentUser.getIdToken(true).catch(() => {});
   io = auth.currentUser;
   profilo = await leggiProfilo(io.uid) ?? await leggiProfilo(io.uid);
+  blocco = await leggiBlocco(io.uid);
   // Profilo non leggibile (rete che salta): si e dentro, ma non si scrive niente sopra nickname e scelta della foto.
   if (!profilo) { avvisa(); return utente(); }
   // Primo login: nickname proposto dal nome Google, la foto si mostra.
@@ -128,6 +138,7 @@ export async function esci() {
   if (!fb) throw new Error('account non raggiungibile');
   const { au, auth } = fb;
   profilo = null;
+  blocco = false;
   await au.signOut(auth); // onAuthStateChanged rientra in anonimo da solo
 }
 
@@ -259,6 +270,8 @@ export async function pubblicaPunteggio(data, { tot, livelli }) {
   const { fs } = fb;
   const rif = fs.doc(colPunteggi(data), io.uid);
   const prima = await fs.getDoc(rif);
+  if (prima.exists() && prima.data().nascosto) return true; // riga nascosta dalla moderazione: resta com'e
+  if (!prima.exists() && blocco) return false;
   if (prima.exists()) {
     // Domande corrette a giornata in corso: il totale ricalcolato sul telefono prende il posto di quello vecchio.
     const nuovo = correzioneGiorno(prima.data(), { tot, livelli });
@@ -281,7 +294,7 @@ export async function aggiornaNomeInClassifica(data) {
       const c = await fs.getDoc(rif);
       if (!c.exists()) continue;
       const v = c.data();
-      if (v.pubblico === true && v.nome === me.nome && (v.foto || '') === (me.foto || '')) continue;
+      if (v.nascosto || (v.pubblico === true && v.nome === me.nome && (v.foto || '') === (me.foto || ''))) continue;
       await fs.updateDoc(rif, { pubblico: true, nome: me.nome, foto: me.foto || '' });
       fatto = true;
     } catch { /* la prossima volta */ }
@@ -310,10 +323,12 @@ export async function pubblicaSettimana(data, tot) {
   const chi = { pubblico: !me.anonimo && !!me.nome, nome: me.anonimo ? '' : me.nome, foto: me.anonimo ? '' : me.foto };
   const prima = await fs.getDoc(rif);
   if (!prima.exists()) {
+    if (blocco) return false;
     await conRiprova(data, () => fs.setDoc(rif, { giorni: { [data]: tot }, tot, n: 1, ultimo: data, ora: fs.serverTimestamp(), ...chi }));
     return true;
   }
   const v = prima.data();
+  if (v.nascosto) return true; // riga nascosta dalla moderazione: resta com'e
   if (data in (v.giorni || {})) {
     const c = correzioneSettimana(v, data, tot);
     if (c) await conRiprova(data, () => fs.updateDoc(rif, new fs.FieldPath('giorni', data), tot, 'tot', c.tot, 'corretto', data));
@@ -330,14 +345,24 @@ export async function classificaSettimana(data, n = 50) {
   if (!u) return null;
   const { fs } = fb;
   const col = colSettimana(settimanaDi(data));
-  const [primi, mio, tutti] = await Promise.all([
+  const [primi, mio, tutti, nascosti] = await Promise.all([
     fs.getDocs(fs.query(col, fs.where('pubblico', '==', true), fs.orderBy('tot', 'desc'), fs.orderBy('ora', 'asc'), fs.limit(n))),
     fs.getDoc(fs.doc(col, io.uid)),
     fs.getCountFromServer(col),
+    totNascosti(col),
   ]);
   let posizione = null;
-  if (mio.exists()) posizione = (await fs.getCountFromServer(fs.query(col, fs.where('tot', '>', mio.data().tot)))).data().count + 1;
-  return { lunedi: settimanaDi(data), righe: primi.docs.map((d) => ({ uid: d.id, ...d.data() })), mio: mio.exists() ? { uid: io.uid, ...mio.data() } : null, posizione, totale: tutti.data().count };
+  if (mio.exists() && !mio.data().nascosto) {
+    const m = mio.data();
+    posizione = (await fs.getCountFromServer(fs.query(col, fs.where('tot', '>', m.tot)))).data().count + 1 - nascosti.filter((t) => t > m.tot).length;
+  }
+  return { lunedi: settimanaDi(data), righe: primi.docs.map((d) => ({ uid: d.id, ...d.data() })), mio: mio.exists() ? { uid: io.uid, ...mio.data() } : null, posizione, totale: tutti.data().count - nascosti.length };
+}
+
+// I totali delle righe nascoste dalla moderazione (poche o nessuna): si tolgono dai conteggi della classifica.
+async function totNascosti(col) {
+  const { fs } = fb;
+  try { return (await fs.getDocs(fs.query(col, fs.where('nascosto', '==', true)))).docs.map((d) => d.data().tot); } catch { return []; }
 }
 
 // Primi n della classifica pubblica del giorno, piu la tua riga e quanti hanno giocato.
@@ -346,23 +371,24 @@ export async function classifica(data, n = 50) {
   if (!u) return null;
   const { fs } = fb;
   const col = colPunteggi(data);
-  const [primi, mio, tutti] = await Promise.all([
+  const [primi, mio, tutti, nascosti] = await Promise.all([
     fs.getDocs(fs.query(col, fs.where('pubblico', '==', true), fs.orderBy('tot', 'desc'), fs.orderBy('ora', 'asc'), fs.limit(n))),
     fs.getDoc(fs.doc(col, io.uid)),
     fs.getCountFromServer(col),
+    totNascosti(col),
   ]);
   const righe = primi.docs.map((d) => ({ uid: d.id, ...d.data() }));
   let posizione = null, meglio = null;
-  if (mio.exists()) {
+  if (mio.exists() && !mio.data().nascosto) {
     const m = mio.data();
     const [sopra, sotto] = await Promise.all([
       fs.getCountFromServer(fs.query(col, fs.where('tot', '>', m.tot))),
       fs.getCountFromServer(fs.query(col, fs.where('tot', '<', m.tot))),
     ]);
-    posizione = sopra.data().count + 1;
-    meglio = { sotto: sotto.data().count };
+    posizione = sopra.data().count + 1 - nascosti.filter((t) => t > m.tot).length;
+    meglio = { sotto: sotto.data().count - nascosti.filter((t) => t < m.tot).length };
   }
-  const totale = tutti.data().count;
+  const totale = tutti.data().count - nascosti.length;
   return { righe, mio: mio.exists() ? { uid: io.uid, ...mio.data() } : null, posizione, totale, percento: meglio && totale > 1 ? Math.round((meglio.sotto / (totale - 1)) * 100) : null };
 }
 
@@ -402,4 +428,45 @@ export async function proposteDaDecidere(stato = 'nuova') {
 export async function decidiProposta(id, stato, nota = '') {
   const { fs, db } = fb;
   await fs.updateDoc(fs.doc(db, 'proposte', id), { stato, nota: nota.slice(0, 300), decisa: fs.serverTimestamp() });
+}
+
+// --- Moderazione della classifica (solo amministratori) ---
+
+// Sospetto: quasi tutte risposte Da Mino, o un totale da record. Non e una prova: lo decide chi modera.
+export const SOGLIA_ALTI = 24;
+export const sospetto = (r) => (r.livelli || []).filter((l) => l === 4).length >= 4 || r.tot >= 32;
+
+// I punteggi alti di un giorno (dal piu alto), piu le righe gia nascoste, e chi e bloccato.
+export async function punteggiAlti(data) {
+  const { fs, db } = fb;
+  const col = colPunteggi(data);
+  const [alti, nascosti, bloccati] = await Promise.all([
+    fs.getDocs(fs.query(col, fs.where('tot', '>=', SOGLIA_ALTI), fs.orderBy('tot', 'desc'), fs.limit(40))),
+    fs.getDocs(fs.query(col, fs.where('nascosto', '==', true))),
+    fs.getDocs(fs.collection(db, 'bloccati')).catch(() => ({ docs: [] })), // senza l'elenco dei bloccati le righe si vedono lo stesso
+  ]);
+  const perUid = new Map();
+  for (const d of [...alti.docs, ...nascosti.docs]) perUid.set(d.id, { uid: d.id, ...d.data() });
+  const fuori = new Set(bloccati.docs.map((d) => d.id));
+  return [...perUid.values()].sort((a, b) => b.tot - a.tot).map((r) => ({ ...r, bloccato: fuori.has(r.uid), sospetto: sospetto(r) }));
+}
+
+// Nasconde (o rimette) la riga di un giocatore: quella del giorno e quella della sua settimana.
+export async function nascondiRiga(data, riga, nascosto) {
+  const { fs } = fb;
+  const campi = { nascosto, pubblico: nascosto ? false : !!riga.nome };
+  await fs.updateDoc(fs.doc(colPunteggi(data), riga.uid), campi);
+  // La settimana puo non esserci (punteggio mai arrivato li): non e un errore.
+  try {
+    const rif = fs.doc(colSettimana(settimanaDi(data)), riga.uid);
+    if ((await fs.getDoc(rif)).exists()) await fs.updateDoc(rif, campi);
+  } catch (e) { console.warn('Settimana non aggiornata:', e?.code || e?.message); }
+}
+
+// Blocca (o sblocca) un giocatore: da bloccato non pubblica piu punteggi, ne del giorno ne della settimana.
+export async function bloccaGiocatore(riga, bloccato) {
+  const { fs, db } = fb;
+  const rif = fs.doc(db, 'bloccati', riga.uid);
+  if (bloccato) await fs.setDoc(rif, { nome: (riga.nome || '').slice(0, 20), quando: fs.serverTimestamp() });
+  else await fs.deleteDoc(rif);
 }

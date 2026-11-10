@@ -158,7 +158,7 @@
     <button class="oggetto o-classifica" data-apri="classifica"><span class="o-icona" data-icona="coppa"></span><b>Classifica</b><small id="t-classifica">Chi ha fatto meglio oggi</small></button>
     <button class="oggetto o-account" data-apri="account"><img class="o-icona faccia" id="t-account-foto" src="img/mino-neutro.png" alt="" referrerpolicy="no-referrer"><b id="t-account-nome">Il tuo account</b><small id="t-account">Entra con Google</small></button>
     <button class="oggetto o-proponi" data-apri="proponi"><span class="o-icona" data-icona="cartolina"></span><span class="o-testo"><b>Proponi una chicca</b><small>Un posto che a Roma sanno in pochi? Finisce nel gioco col tuo nome</small></span></button>
-    <button class="oggetto o-moderazione" data-apri="moderazione" hidden><span class="o-icona" data-icona="scatola"></span><b>Proposte da approvare</b><small id="t-moderazione">Solo per te e Themino</small><i class="bollo" id="t-mod-nuove" hidden></i></button>
+    <button class="oggetto o-moderazione" data-apri="moderazione" hidden><span class="o-icona" data-icona="scatola"></span><b>Moderazione</b><small id="t-moderazione">Proposte e classifica</small><i class="bollo" id="t-mod-nuove" hidden></i></button>
   </div>
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
@@ -285,12 +285,13 @@
   <button class="secondario largo" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="moderazione" class="quaderno moderazione" aria-label="Proposte da approvare">
-  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Proposte da approvare</p></div>
+<dialog id="moderazione" class="quaderno moderazione" aria-label="Moderazione">
+  <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Moderazione</p></div>
   <div class="schede" id="mod-schede" role="tablist">
     <button data-stato="nuova" role="tab">Da vedere</button>
     <button data-stato="approvata" role="tab">Approvate</button>
     <button data-stato="scartata" role="tab">Scartate</button>
+    <button data-stato="classifica" role="tab">Classifica</button>
   </div>
   <ol class="mod-elenco" id="mod-elenco"></ol>
   <button class="primario" data-chiudi>Chiudi</button>

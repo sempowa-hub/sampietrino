@@ -22,13 +22,17 @@ const anonimo = (uid = 'u1') => ({ uid, token: { firebase: { sign_in_provider: '
 const chi = { pubblico: true, nome: 'Mino', foto: '' };
 
 // Un caso: chi scrive, dove, il documento prima e dopo, e (per la settimana) quanto vale il giorno in partite/.
-function caso(nome, attesa, { auth = google(), path, method = 'update', prima, dopo, time = ORA, delGiorno }) {
+// esiste: cosa risponde exists() nelle regole (documento admin/{uid} o bloccati/{uid}): false = ne admin ne bloccato.
+function caso(nome, attesa, { auth = google(), path, method = 'update', prima, dopo, time = ORA, delGiorno, esiste = false }) {
   return {
     nome,
     expectation: attesa,
-    request: { auth, path: `${DOC}/${path}`, method, time, resource: { data: dopo } },
+    request: { auth, path: `${DOC}/${path}`, method, time, ...(dopo ? { resource: { data: dopo } } : {}) },
     ...(prima ? { resource: { data: prima } } : {}),
-    functionMocks: delGiorno === undefined ? [] : [{ function: 'get', args: [{ anyValue: {} }], result: { value: { data: { tot: delGiorno } } } }],
+    functionMocks: [
+      { function: 'exists', args: [{ anyValue: {} }], result: { value: esiste } },
+      ...(delGiorno === undefined ? [] : [{ function: 'get', args: [{ anyValue: {} }], result: { value: { data: { tot: delGiorno } } } }]),
+    ],
   };
 }
 
@@ -82,6 +86,23 @@ const CASI = [
   caso('contatore: piu due', 'DENY', { auth: anonimo(), path: `contatori/${OGGI}`, prima: { iniziate: 4 }, dopo: { iniziate: 6 } }),
   caso('contatore: due campi insieme', 'DENY', { auth: anonimo(), path: `contatori/${OGGI}`, prima: { iniziate: 4, finite: 2 }, dopo: { iniziate: 5, finite: 3 } }),
   caso('admin: nessuno si fa amministratore', 'DENY', { method: 'create', path: 'admin/u1', dopo: { ok: true } }),
+  // Moderazione: righe nascoste e giocatori bloccati
+  caso('moderazione: un amministratore nasconde una riga del giorno', 'ALLOW', { auth: google('adm'), esiste: true, path: punteggio(), prima: giornoPrima, dopo: { ...giornoPrima, nascosto: true, pubblico: false } }),
+  caso('moderazione: un amministratore la rimette', 'ALLOW', { auth: google('adm'), esiste: true, path: punteggio(), prima: { ...giornoPrima, nascosto: true, pubblico: false }, dopo: { ...giornoPrima, nascosto: false, pubblico: true } }),
+  caso('moderazione: un amministratore non tocca il punteggio', 'DENY', { auth: google('adm'), esiste: true, path: punteggio(), prima: giornoPrima, dopo: { ...giornoPrima, tot: 0, nascosto: true, pubblico: false } }),
+  caso('moderazione: chi non e amministratore non nasconde le righe degli altri', 'DENY', { auth: google('u2'), path: punteggio(), prima: giornoPrima, dopo: { ...giornoPrima, nascosto: true, pubblico: false } }),
+  caso('moderazione: chi e nascosto non si rimette pubblico', 'DENY', { path: punteggio(), prima: { ...giornoPrima, nascosto: true, pubblico: false }, dopo: { ...giornoPrima, nascosto: true, pubblico: true } }),
+  caso('moderazione: chi e nascosto non si toglie il segno', 'DENY', { path: punteggio(), prima: { ...giornoPrima, nascosto: true, pubblico: false }, dopo: { ...giornoPrima, nascosto: false, pubblico: false } }),
+  caso('moderazione: chi e nascosto non corregge il punteggio', 'DENY', { path: punteggio(), prima: { ...giornoPrima, nascosto: true, pubblico: false }, dopo: { ...giornoGiusto, nascosto: true, pubblico: false } }),
+  caso('moderazione: nessuno si nasconde da solo il segno al contrario', 'DENY', { path: punteggio(), prima: giornoPrima, dopo: { ...giornoPrima, nascosto: false } }),
+  caso('moderazione: un bloccato non crea il punteggio', 'DENY', { esiste: true, method: 'create', path: punteggio(), dopo: { ...giornoGiusto, ora: ORA } }),
+  caso('moderazione: un bloccato non entra nella settimana', 'DENY', { esiste: true, method: 'create', path: settimana(), dopo: { giorni: { [OGGI]: 14 }, tot: 14, n: 1, ultimo: OGGI, ora: ORA, ...chi }, delGiorno: 14 }),
+  caso('moderazione: un amministratore nasconde una riga della settimana', 'ALLOW', { auth: google('adm'), esiste: true, path: settimana(), prima: settimanaPrima, dopo: { ...settimanaPrima, nascosto: true, pubblico: false } }),
+  caso('moderazione: chi e nascosto non aggiunge giorni alla settimana', 'DENY', { path: settimana(), time: '2026-11-11T12:00:00Z', prima: { ...settimanaPrima, nascosto: true, pubblico: false }, dopo: { ...settimanaPrima, nascosto: true, pubblico: false, giorni: { ...settimanaPrima.giorni, '2026-11-11': 9 }, tot: 33, n: 3, ultimo: '2026-11-11', ora: '2026-11-11T12:00:00Z' }, delGiorno: 9 }),
+  caso('moderazione: un amministratore blocca un giocatore', 'ALLOW', { auth: google('adm'), esiste: true, method: 'create', path: 'bloccati/u1', dopo: { nome: 'Furbetto', quando: ORA } }),
+  caso('moderazione: un amministratore sblocca', 'ALLOW', { auth: google('adm'), esiste: true, method: 'delete', path: 'bloccati/u1', prima: { nome: 'Furbetto', quando: ORA } }),
+  caso('moderazione: nessun altro blocca', 'DENY', { method: 'create', path: 'bloccati/u2', dopo: { nome: 'Rivale', quando: ORA } }),
+  caso('moderazione: un bloccato non si sblocca da solo', 'DENY', { method: 'delete', path: 'bloccati/u1', prima: { nome: 'Furbetto', quando: ORA } }),
 ];
 
 test('regole: correzione del punteggio del giorno e della settimana', { skip: salta }, async () => {

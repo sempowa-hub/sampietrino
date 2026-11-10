@@ -59,6 +59,9 @@ In locale l'account e spento: le prove non creano utenti e non toccano contatori
 - `giocatori/{uid}`: storico sincronizzato (si fonde col telefono: il telefono puo rimandare su i dati cancellati).
 - `proposte`: chicche proposte dai giocatori.
 - `admin/{uid}`: chi modera. Gli admin sono documenti per uid, mai email nelle regole.
+- `bloccati/{uid}`: giocatori che non pubblicano piu in classifica. Li crea e li toglie un admin dal gioco (Taccuino, Moderazione, scheda Classifica).
+- Riga nascosta dalla moderazione: `nascosto: true` e `pubblico: false` sul punteggio del giorno e della settimana. Resta salvata, esce dalla classifica e dai conteggi, chi l'ha scritta non la puo piu toccare.
+- Le risposte stanno in `dati/gioco.json`, quindi un punteggio perfetto si puo copiare: non si impedisce, si modera.
 - Dopo ogni modifica a `firestore.rules`: `npm test` (le prova con l'API di test, serve gcloud) e poi `firebase deploy --only firestore:rules --project sampietrino-roma`.
 - In classifica la foto e solo quella di Google (`lh3.googleusercontent.com`), lo controllano le regole e `fotoSicura` in `src/conto.js`.
 - **Cancellazioni definitive**: le fa una persona dalla console Firebase, non Claude.

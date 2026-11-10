@@ -27,6 +27,21 @@ service cloud.firestore {
       allow read, write: if mio(uid);
     }
 
+    // Moderazione della classifica (Simone, Themino). Una riga nascosta resta dov'e ma esce dalla classifica, e chi
+    // l'ha scritta non puo piu toccarla. Un giocatore bloccato non pubblica piu punteggi finche non lo si sblocca.
+    function bloccato(uid) { return exists(/databases/$(database)/documents/bloccati/$(uid)); }
+    function nonNascosto() { return !resource.data.get('nascosto', false); }
+    function nascondeOk() {
+      return admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nascosto', 'pubblico'])
+        && request.resource.data.nascosto is bool && request.resource.data.pubblico is bool;
+    }
+    match /bloccati/{uid} {
+      allow read: if mio(uid) || admin();
+      allow create, update: if admin() && request.resource.data.keys().hasOnly(['nome', 'quando'])
+        && testo(request.resource.data.get('nome', ''), 0, 20);
+      allow delete: if admin();
+    }
+
     // Contatore delle partite (anche anonime): ogni scrittura aggiunge 1 a un campo solo, nel giorno di oggi a Roma.
     function piuUno(k) { return request.resource.data[k] == resource.data.get(k, 0) + 1; }
     match /contatori/{data} {
@@ -70,8 +85,9 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['tot', 'livelli', 'ora', 'pubblico', 'nome', 'foto'])
         && punteggioOk(request.resource.data)
         && request.resource.data.ora == request.time
-        && nomeOk(request.resource.data);
-      allow update: if mio(uid) && (
+        && nomeOk(request.resource.data)
+        && !bloccato(uid);
+      allow update: if nascondeOk() || mio(uid) && nonNascosto() && (
         // Dopo il login si aggiungono nome e foto.
         (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto'])
           && nomeOk(request.resource.data))
@@ -101,8 +117,9 @@ service cloud.firestore {
         && request.resource.data.giorni[request.resource.data.ultimo] == delGiorno(request.resource.data.ultimo, uid)
         && request.resource.data.tot == request.resource.data.giorni[request.resource.data.ultimo]
         && request.resource.data.n == 1 && request.resource.data.ora == request.time
-        && nomeOk(request.resource.data);
-      allow update: if mio(uid) && conGoogle() && (
+        && nomeOk(request.resource.data)
+        && !bloccato(uid);
+      allow update: if nascondeOk() || mio(uid) && conGoogle() && nonNascosto() && (
         (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pubblico', 'nome', 'foto']) && nomeOk(request.resource.data))
         || (
           request.resource.data.diff(resource.data).affectedKeys().hasOnly(['tot', 'giorni', 'n', 'ultimo', 'ora', 'pubblico', 'nome', 'foto'])

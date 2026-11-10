@@ -929,6 +929,19 @@ body.con-splash { overflow: hidden; }
 .mod-chi { font-size: 13px; color: var(--inchiostro-2); }
 .mod-nota { width: 100%; padding: 8px 10px; border: none; background: #fffaf0; color: var(--inchiostro); font-family: var(--font-testo); font-size: 15px; box-shadow: inset 0 0 0 1px var(--matita); }
 .mod-tasti { justify-content: flex-end; }
+/* Moderazione della classifica: giorno, segni (sospetto, nascosta, bloccato), tasti. */
+.mod-giorno { margin: 8px 0 0; font-size: 13px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rosso); }
+.mod-riga .cl-tappe i { width: 22px; height: 10px; }
+.mod-riga.nascosta { background: var(--carta-2); }
+.mod-riga.nascosta .mod-testa b { text-decoration: line-through; text-decoration-thickness: 2px; }
+.mod-segni { display: flex; flex-wrap: wrap; gap: 6px; }
+.mod-segni:empty { display: none; }
+.mod-segno { padding: 2px 8px 1px; font-size: 12px; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--inchiostro-2); box-shadow: inset 0 0 0 1px var(--matita); }
+.mod-segno.sospetto { background: var(--rosso); color: var(--scheda); box-shadow: none; }
+.mod-riga .mod-tasti { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.mod-riga .mod-tasti button.no { background: var(--scheda); }
+.mod-riga .mod-tasti button.si { background: var(--f1); color: var(--scheda); }
+.mod-tasti button:disabled { opacity: 0.5; cursor: default; }
 .mod-tasti button { min-width: 64px; padding: 8px 12px; border: none; background: var(--carta); font-family: var(--font-titolo); font-size: 14px; box-shadow: 0 0 0 1px var(--inchiostro), 0 3px 0 1px var(--inchiostro); }
 .mod-tasti button[aria-pressed='true'].si { background: var(--f1); color: var(--scheda); }
 .mod-tasti button[aria-pressed='true'].no { background: var(--rosso); color: var(--scheda); }
