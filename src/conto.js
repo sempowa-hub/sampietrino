@@ -18,7 +18,13 @@ const SDK = 'https://www.gstatic.com/firebasejs/10.14.1';
 let fb = null, pronto = null, io = null, profilo = null;
 const ascoltatori = new Set();
 
+// In locale (npm run gioca) l'account resta spento: le prove non creano utenti e non sporcano contatori e
+// classifica veri. Per provare login e classifica: http://localhost:8080/?conto
+const IN_LOCALE = ['localhost', '127.0.0.1', '[::1]'].includes(globalThis.location?.hostname);
+const SPENTO = IN_LOCALE && !new URLSearchParams(globalThis.location.search).has('conto');
+
 async function carica() {
+  if (SPENTO) throw new Error('account spento in locale (apri con ?conto per accenderlo)');
   const [a, au, fs] = await Promise.all([
     import(`${SDK}/firebase-app.js`), import(`${SDK}/firebase-auth.js`), import(`${SDK}/firebase-firestore.js`),
   ]);
@@ -28,7 +34,8 @@ async function carica() {
 
 // Nome e foto di Google: collegando un account anonimo restano nei dati del provider, non sull'utente.
 const google = (u) => u?.providerData?.find((p) => p.providerId === 'google.com') || {};
-const fotoGoogle = (u) => u?.photoURL || google(u).photoURL || '';
+export const fotoSicura = (url) => (/^https:\/\/lh[0-9]\.googleusercontent\.com\//.test(url || '') ? url : '');
+const fotoGoogle = (u) => fotoSicura(u?.photoURL || google(u).photoURL || '');
 const nomeGoogle = (u) => u?.displayName || google(u).displayName || '';
 
 // Chi sta giocando: null finche Firebase non risponde.
@@ -38,7 +45,7 @@ export const utente = () => (io ? {
   mostraFoto: profilo?.mostraFoto !== false,
 } : null);
 export const quandoCambia = (fn) => { ascoltatori.add(fn); return () => ascoltatori.delete(fn); };
-const avvisa = () => ascoltatori.forEach((fn) => fn(utente()));
+const avvisa = () => ascoltatori.forEach((fn) => { try { fn(utente()); } catch (e) { console.warn('Ascoltatore del conto:', e?.message); } });
 
 // Avvio: carica Firebase, aspetta l'utente (entra in anonimo se nessuno). Promessa unica, la si puo attendere ovunque.
 export function avviaConto() {
@@ -48,14 +55,16 @@ export function avviaConto() {
     await new Promise((fatto) => {
       au.onAuthStateChanged(auth, async (u) => {
         if (!u) {
-          try { await au.signInAnonymously(auth); } catch { io = null; fatto(); }
+          try { await au.signInAnonymously(auth); } catch { io = null; profilo = null; avvisa(); fatto(); }
           return;
         }
         io = u;
         profilo = u.isAnonymous ? null : await leggiProfilo(u.uid);
         // Profili nati senza nome o foto di Google (account anonimo collegato): si sistemano da soli.
-        if (profilo && /^Romano\d{3}$/.test(profilo.nome || '') && nomeGoogle(u)) {
-          await salvaProfilo({ nome: pulisciNome(nomeGoogle(u).split(' ')[0]) }).catch(() => {});
+        // Se dal nome Google non esce niente di scrivibile (solo simboli) resta il nickname che c'e.
+        const daGoogle = pulisciNome(nomeGoogle(u).split(' ')[0]);
+        if (profilo && /^Romano\d{3}$/.test(profilo.nome || '') && daGoogle.length >= 3) {
+          await salvaProfilo({ nome: daGoogle }).catch(() => {});
         } else if (profilo && !profilo.foto && fotoGoogle(u)) {
           await salvaProfilo({}).catch(() => {});
         }
@@ -64,19 +73,25 @@ export function avviaConto() {
       });
     });
     return utente();
-  })().catch((e) => { console.warn('Account non disponibile:', e?.code || e?.message); return null; });
+  })().catch((e) => {
+    console.warn('Account non disponibile:', e?.code || e?.message);
+    // Firebase non caricato (rete assente all'avvio): la prossima chiamata ci riprova. In locale resta spento.
+    if (!fb && !SPENTO) pronto = null;
+    return null;
+  });
   return pronto;
 }
 
 async function leggiProfilo(uid) {
   const { fs, db } = fb;
-  try { return (await fs.getDoc(fs.doc(db, 'giocatori', uid))).data() || {}; } catch { return {}; }
+  try { return (await fs.getDoc(fs.doc(db, 'giocatori', uid))).data() || {}; } catch { return null; }
 }
 
 // Entra con Google. Da anonimo si collega l'account (le partite restano); se quel Google ha gia un account
 // (altro dispositivo), si entra in quello e lo storico del browser si fonde col suo.
 export async function entraConGoogle() {
   await avviaConto();
+  if (!fb) throw new Error('account non raggiungibile');
   const { au, auth } = fb;
   const google = new au.GoogleAuthProvider();
   google.setCustomParameters({ prompt: 'select_account' });
@@ -93,7 +108,9 @@ export async function entraConGoogle() {
   // Collegando un anonimo il token puo restare quello anonimo, e le regole della classifica vogliono Google: si rinnova.
   await auth.currentUser.getIdToken(true).catch(() => {});
   io = auth.currentUser;
-  profilo = await leggiProfilo(io.uid);
+  profilo = await leggiProfilo(io.uid) ?? await leggiProfilo(io.uid);
+  // Profilo non leggibile (rete che salta): si e dentro, ma non si scrive niente sopra nickname e scelta della foto.
+  if (!profilo) { avvisa(); return utente(); }
   // Primo login: nickname proposto dal nome Google, la foto si mostra.
   // Primo login, o profilo nato senza nome Google (Romano123): nickname dal nome Google.
   if (!profilo.nome || (/^Romano\d{3}$/.test(profilo.nome) && nomeGoogle(io))) {
@@ -108,6 +125,7 @@ export async function entraConGoogle() {
 
 export async function esci() {
   await avviaConto();
+  if (!fb) throw new Error('account non raggiungibile');
   const { au, auth } = fb;
   profilo = null;
   await au.signOut(auth); // onAuthStateChanged rientra in anonimo da solo
@@ -117,6 +135,7 @@ export const pulisciNome = (n) => (n || '').normalize('NFC').replace(/[^\p{L}\p{
 export const nomeValido = (n) => pulisciNome(n).length >= 3 && pulisciNome(n) === n.trim();
 
 export async function salvaProfilo({ nome, mostraFoto }) {
+  if (!fb || !io) throw new Error('account non raggiungibile');
   const { fs, db } = fb;
   const dati = { aggiornato: fs.serverTimestamp() };
   if (nome != null) dati.nome = pulisciNome(nome);
@@ -164,15 +183,25 @@ export async function sincronizza(locale) {
   return unito;
 }
 
-let attesaSalva = null;
+let attesaSalva = null, daSalvare = null;
+function scriviStorico() {
+  clearTimeout(attesaSalva);
+  const x = daSalvare;
+  daSalvare = null;
+  // Uscito o cambiato account nel frattempo: quello storico non va sull'account nuovo.
+  if (!x || !fb || io?.uid !== x.uid) return;
+  const { fs, db } = fb;
+  fs.setDoc(fs.doc(db, 'giocatori', x.uid), { storico: x.storico, aggiornato: fs.serverTimestamp() }, { merge: true }).catch(() => {});
+}
 export function salvaStorico(storico) {
   if (!io || io.isAnonymous) return;
+  daSalvare = { uid: io.uid, storico };
   clearTimeout(attesaSalva);
-  attesaSalva = setTimeout(() => {
-    const { fs, db } = fb;
-    fs.setDoc(fs.doc(db, 'giocatori', io.uid), { storico, aggiornato: fs.serverTimestamp() }, { merge: true }).catch(() => {});
-  }, 1500);
+  attesaSalva = setTimeout(scriviStorico, 1500);
 }
+// Pagina chiusa o messa in secondo piano prima del secondo e mezzo: lo storico parte subito.
+globalThis.addEventListener?.('pagehide', scriviStorico);
+globalThis.document?.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') scriviStorico(); });
 
 // --- Classifica ---
 
@@ -249,8 +278,11 @@ export async function aggiornaNomeInClassifica(data) {
   let fatto = false;
   for (const rif of [fs.doc(colPunteggi(data), io.uid), fs.doc(colSettimana(settimanaDi(data)), io.uid)]) {
     try {
-      if (!(await fs.getDoc(rif)).exists()) continue;
-      await fs.updateDoc(rif, { pubblico: true, nome: me.nome, foto: me.foto });
+      const c = await fs.getDoc(rif);
+      if (!c.exists()) continue;
+      const v = c.data();
+      if (v.pubblico === true && v.nome === me.nome && (v.foto || '') === (me.foto || '')) continue;
+      await fs.updateDoc(rif, { pubblico: true, nome: me.nome, foto: me.foto || '' });
       fatto = true;
     } catch { /* la prossima volta */ }
   }

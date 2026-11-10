@@ -82,7 +82,7 @@ button:focus-visible { outline: 2px solid var(--rosso); outline-offset: 3px; }
   transition: transform 80ms steps(2), box-shadow 80ms steps(2);
 }
 .zoom button:active { transform: translateY(2px); box-shadow: var(--filo); }
-.attribuzione { position: absolute; right: 0; top: 0; margin: 0; padding: 2px 7px; background: var(--scheda); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; color: var(--inchiostro-2); box-shadow: var(--filo); }
+.attribuzione { position: absolute; right: 0; top: 0; max-width: 100%; margin: 0; padding: 2px 6px 1px; background: rgba(251, 244, 224, 0.9); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 10.5px; line-height: 1.35; color: var(--inchiostro-2); box-shadow: var(--filo); pointer-events: none; }
 
 /* Il foglio di bordo: testata, tappe, la pagina del momento. */
 .foglio { display: contents; }
@@ -211,7 +211,8 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 .cartellino {
   position: absolute; left: 50%; bottom: 18px;
   min-width: 240px; max-width: calc(100% - 32px);
-  padding: 12px 22px 14px;
+  /* A sinistra c'e la faccia di Mino, che entra nel cartellino: il testo le lascia il posto. */
+  padding: 12px 22px 14px 82px;
   text-align: center;
   background: var(--scheda);
   box-shadow: 0 0 0 1px var(--inchiostro), 0 0 0 4px var(--scheda), 0 0 0 5px var(--inchiostro), 0 8px 0 5px rgba(42, 31, 22, 0.18);
@@ -233,7 +234,7 @@ kbd { font-family: var(--font-testo); font-weight: 600; font-size: 12px; padding
 .cartellino.rivelato { animation: sobbalzo 300ms var(--deciso) 120ms; }
 .cartellino.buca.rivelato { animation: scuoti 360ms steps(6) 260ms; }
 .c-tappa { margin: 0; font-size: 12px; color: var(--rosso); }
-.c-zona { margin: 4px 0 10px; font-family: var(--font-titolo); font-size: 26px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; }
+.c-zona { margin: 4px 0 10px; font-family: var(--font-titolo); font-size: 26px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; overflow-wrap: anywhere; text-wrap: balance; }
 .c-riga { display: flex; align-items: center; justify-content: center; gap: 18px; }
 .c-punti { font-family: var(--font-titolo); font-size: 22px; color: var(--colore-t, var(--inchiostro)); }
 
@@ -631,12 +632,22 @@ dialog.esce { animation: esce 200ms ease-in forwards; }
 
 /* Telefono: cartellino e attribuzione compatti, la mappa resta visibile. */
 @media (max-width: 899px) {
-  .cartellino { bottom: 10px; min-width: 200px; padding: 8px 14px 10px; }
+  .cartellino { bottom: 10px; min-width: 220px; padding: 8px 14px 10px 64px; }
+  /* Col cartellino aperto i tasti dello zoom finirebbero sotto Mino: si fanno da parte (resta il pizzico). */
+  .zoom { transition: opacity 160ms var(--esce); }
+  .mappa:has(.cartellino:not([hidden])) .zoom { opacity: 0; pointer-events: none; }
+  /* Il tasto della tappa resta sempre a portata di pollice, anche se la spiegazione e lunga e la pagina scorre. */
+  #pagina-tappa .primario, #pagina-esito .primario {
+    position: sticky; bottom: calc(8px + env(safe-area-inset-bottom)); z-index: 2;
+    box-shadow: 0 0 0 1px var(--inchiostro), 0 4px 0 1px var(--inchiostro), 0 2px 0 9px var(--carta);
+  }
+  #pagina-tappa .primario:active:not(:disabled), #pagina-esito .primario:active:not(:disabled) { box-shadow: 0 0 0 1px var(--inchiostro), 0 1px 0 1px var(--inchiostro), 0 2px 0 9px var(--carta); }
+  #pagina-tappa .primario:disabled { box-shadow: 0 0 0 1px var(--matita), 0 2px 0 9px var(--carta); }
   .c-zona { font-size: 20px; margin: 2px 0 8px; }
   .c-riga { gap: 12px; }
   .c-punti { font-size: 18px; }
   .cartellino .timbro { font-size: 12px; }
-  .attribuzione { font-size: 12px; }
+  .attribuzione { font-size: 10px; white-space: nowrap; }
   .c-faccia { width: 84px; height: 84px; left: -26px; top: -36px; }
   /* Nel diario la lista e lunga: la mappa tiene meta schermo e la pagina scorre. */
   body.in-diario .mappa { flex: none; height: 48vh; }
@@ -804,7 +815,7 @@ body.con-splash { overflow: hidden; }
 .splash-banda {
   position: relative; width: 100%; margin: 0; padding: calc(9px + env(safe-area-inset-top)) 16px 9px; text-align: center;
   background: var(--carta); border-bottom: 1px solid var(--inchiostro);
-  font-weight: 650; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; animation: banda 520ms var(--esce) both;
+  font-weight: 650; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-wrap: balance; animation: banda 520ms var(--esce) both;
 }
 .splash-logo {
   position: relative; margin: 22px 16px 0; max-width: calc(100% - 32px); box-sizing: border-box; padding: 16px clamp(22px, 6vw, 46px) 12px; text-align: center; background: var(--carta);
@@ -830,7 +841,7 @@ body.con-splash { overflow: hidden; }
 .splash-entra { align-self: center; border: none; background: none; padding: 2px 0; font-family: var(--font-titolo); font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; }
 .splash-entra:hover { color: var(--rosso); }
 .splash-entra[hidden] { display: none; }
-.splash-serie { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; font-weight: 650; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rosso); }
+.splash-serie { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; text-wrap: balance; font-weight: 650; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rosso); }
 .splash-daje {
   min-height: 66px; font-size: clamp(18px, 4.6vw, 24px); letter-spacing: 0.16em; background: var(--inchiostro); color: var(--scheda);
   box-shadow: inset 0 0 0 3px var(--inchiostro), inset 0 0 0 4px var(--carta-2), 0 0 0 1px var(--inchiostro), 0 4px 0 1px rgba(42, 31, 22, 0.5);
@@ -881,6 +892,7 @@ body.con-splash { overflow: hidden; }
 .o-moderazione[hidden] { display: none; }
 .pr-fuori, .pr-grazie { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 10px 0 4px; text-align: center; }
 .pr-fuori[hidden], .pr-grazie[hidden], .pr-form[hidden] { display: none; }
+.q-sotto[hidden], .pr-mie[hidden] { display: none; }
 .pr-mino { width: 96px; height: 96px; animation: dondola 1.4s steps(2) infinite; }
 .pr-form { display: flex; flex-direction: column; gap: 12px; }
 .pr-intro { margin: 2px 0 0; font-size: 15px; color: var(--inchiostro-2); }

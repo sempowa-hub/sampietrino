@@ -59,6 +59,10 @@ ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI',
 utm = Transformer.from_crs(4326, 32633, always_xy=True)
 
 
+def senza_trattini(testo):
+    return testo.replace(' \u2013 ', ' - ').replace(' \u2014 ', ' - ').replace('\u2013', '-').replace('\u2014', '-')
+
+
 def in_metri(geom):
     return trasforma(geom, lambda c: np.column_stack(utm.transform(c[:, 0], c[:, 1])))
 
@@ -554,7 +558,8 @@ def main():
     }
     # Le proposte (generate, da approvare) vanno in un file a parte per la pagina di revisione, non nel gioco.
     (RADICE / 'dati' / 'domande-proposte.json').write_text(json.dumps([d for d in giocabili if d.get('proposta')], ensure_ascii=False, separators=(',', ':')))
-    USCITA.write_text(json.dumps(dati, ensure_ascii=False, separators=(',', ':')))
+    # Niente trattini lunghi nei testi del gioco (i nomi di OpenStreetMap a volte li hanno): diventano trattini corti.
+    USCITA.write_text(senza_trattini(json.dumps(dati, ensure_ascii=False, separators=(',', ':'))))
 
     coperta = unary_union(list(zone.values())).area / gra.area
     for a in avvisi:

@@ -1,12 +1,12 @@
 // Il taccuino di bordo: la scrivania con diario di bordo (calendario, archivio degli ultimi 7 giorni,
 // statistiche), passaporto dei quartieri sfogliato per municipio, scatola dei souvenir e il pacchetto da scartare.
 // Tutto dallo storico nel browser (src/storico.js), senza login.
-import { SCALA } from './motore.js';
+import { SCALA, MASSIMO_AL_GIORNO, DOMANDE_AL_GIORNO } from './motore.js';
 import { pixel } from './pixel.js';
 import { disegnaMiniMappa } from './minimappa.js';
 import { SOUVENIR, GRUPPI } from './souvenir.js';
 import { leggi, scrivi, serie, serieMigliore, contesto, partita, giocabile, sposta, oggi, dataIt, GRADI, gradoDi, GIORNI_INDIETRO, PRIMO_GIORNO } from './storico.js';
-import { avviaConto, utente, quandoCambia, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi, sonoAdmin, proponi, mieProposte, proposteDaDecidere, decidiProposta } from './conto.js';
+import { avviaConto, utente, quandoCambia, fotoSicura, entraConGoogle, esci, salvaProfilo, pulisciNome, nomeValido, classifica, classificaSettimana, settimanaDi, sonoAdmin, proponi, mieProposte, proposteDaDecidere, decidiProposta } from './conto.js';
 
 const $ = (id) => document.getElementById(id);
 const ROMANI = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV'];
@@ -69,6 +69,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     const s = leggi();
     const nuovi = nuoviTimbri(s).length + daScartare(s).length;
     $('segno-taccuino').hidden = !nuovi;
+    $('apri-taccuino').setAttribute('aria-label', `Taccuino: diario di bordo, passaporto, souvenir${nuovi ? ` (${plurale(nuovi, 'novità', 'novità')})` : ''}`);
   }
   const nuoviTimbri = (s) => Object.keys(s.timbri).filter((id) => zonePerId[id] && !s.visti.includes(id));
   const daScartare = (s) => SOUVENIR.filter((sv) => s.souvenir[sv.id] && !s.souvenir[sv.id].scartato).map((sv) => sv.id);
@@ -93,7 +94,13 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   // --- Account ---
 
   // Avatar: la foto Google se il giocatore la mostra, altrimenti la faccia di Mino.
-  const avatar = (img, foto, faccia = 'neutro') => { img.src = foto || `img/mino-${faccia}.png`; img.classList.toggle('faccia', !foto); };
+  // Solo foto di Google (in classifica arrivano dai documenti degli altri giocatori); se non si carica, torna Mino.
+  const avatar = (img, foto, faccia = 'neutro') => {
+    const f = fotoSicura(foto);
+    img.onerror = f ? () => { img.onerror = null; img.src = `img/mino-${faccia}.png`; img.classList.add('faccia'); } : null;
+    img.src = f || `img/mino-${faccia}.png`;
+    img.classList.toggle('faccia', !f);
+  };
 
   let admin = false;
   async function aggiornaAdmin() {
@@ -117,7 +124,14 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     $('t-account-nome').textContent = dentro ? u.nome || 'Il tuo account' : 'Il tuo account';
     $('t-account').textContent = dentro ? 'Nickname, foto, partite salvate' : 'Entra con Google';
   }
-  quandoCambia(() => { aggiornaConto(); if ($('account').open) preparaAccount(); });
+  let salvando = false, chiEra = null;
+  quandoCambia((u) => {
+    aggiornaConto();
+    const chi = u && !u.anonimo ? u.uid : null;
+    const cambiato = chi !== chiEra;
+    chiEra = chi;
+    if ($('account').open && (cambiato || (!salvando && document.activeElement !== $('acc-nome')))) preparaAccount();
+  });
 
   let mostraFoto = true;
   function preparaAccount() {
@@ -141,7 +155,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     const ok = nomeValido(v);
     $('acc-aiuto').classList.toggle('no', !ok && v.length > 0);
     $('acc-aiuto').textContent = ok || !v ? 'Da 3 a 20 caratteri: lettere, numeri, spazi.' : pulisciNome(v).length < 3 ? 'Almeno 3 caratteri.' : 'Solo lettere, numeri, spazi e . _ \' -';
-    $('acc-salva').disabled = !ok;
+    $('acc-salva').disabled = !ok || salvando;
   }
   $('acc-nome').addEventListener('input', controllaNome);
   $('acc-nome').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !$('acc-salva').disabled) $('acc-salva').click(); });
@@ -153,18 +167,24 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   });
   $('acc-salva').addEventListener('click', async () => {
     const b = $('acc-salva');
+    if (salvando) return;
+    salvando = true;
     b.disabled = true;
     b.textContent = 'Salvo…';
+    $('acc-errore').hidden = true;
     try {
       await salvaProfilo({ nome: $('acc-nome').value.trim(), mostraFoto });
       dopoLogin?.(); // nome in classifica e partite: in sottofondo, il tasto non aspetta
       suoni.copia();
       b.textContent = 'Salvato';
+      $('acc-nome-vista').textContent = utente()?.nome || '';
       setTimeout(() => { b.textContent = 'Salva'; controllaNome(); }, 1200);
     } catch {
       b.textContent = 'Salva';
-      b.disabled = false;
       errore('Non riesco a salvare: controlla la connessione e riprova.');
+    } finally {
+      salvando = false;
+      controllaNome();
     }
   });
   $('acc-google').addEventListener('click', async () => {
@@ -187,7 +207,11 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       b.querySelector('span').textContent = 'Entra con Google';
     }
   });
-  $('acc-esci').addEventListener('click', async () => { await esci(); suoni.annulla(); preparaAccount(); });
+  $('acc-esci').addEventListener('click', async () => {
+    const b = $('acc-esci');
+    b.disabled = true;
+    try { await esci(); suoni.annulla(); preparaAccount(); } catch { errore('Non riesco a uscire: controlla la connessione e riprova.'); } finally { b.disabled = false; }
+  });
 
   // --- Classifica: oggi e settimana (da lunedi a domenica) ---
 
@@ -230,7 +254,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
         else if (c.percento === 0) mio.append(el('p', 'cl-meglio', 'Oggi è andata così: domani se riparte'));
         else mio.append(el('p', 'cl-meglio', 'Sei tra i primi a giocare oggi'));
       } else {
-        mio.append(el('p', 'cl-meglio', `${c.mio.tot} sampietrini in ${plurale(c.mio.n, 'partita', 'partite')}: ogni giorno che giochi conta`));
+        mio.append(el('p', 'cl-meglio', `${plurale(c.mio.tot, 'sampietrino', 'sampietrini')} in ${plurale(c.mio.n, 'partita', 'partite')}: ogni giorno che giochi conta`));
       }
       if (u?.anonimo || !c.mio.pubblico) {
         mio.append(el('p', 'cl-nota', 'In classifica compari col tuo nome se entri con Google.'));
@@ -271,7 +295,6 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       img.loading = 'lazy';
       const media = chiesta === 'oggi' ? r.tot : Math.round(r.tot / Math.max(1, r.n));
       avatar(img, r.foto, gradoDi(media).faccia);
-      img.addEventListener('error', () => avatar(img, '', gradoDi(media).faccia), { once: true });
       li.append(img);
       const nome = el('span', 'cl-nome');
       nome.append(el('b', null, r.nome || 'Anonimo'));
@@ -314,8 +337,9 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     $('pr-form').hidden = !dentro;
     $('pr-grazie').hidden = true;
     $('pr-errore').hidden = true;
+    for (const e of [$('pr-mie-titolo'), $('pr-mie')]) if (e) e.hidden = !dentro;
     disegnaZone();
-    mostraMie();
+    if (dentro) mostraMie();
   }
   function scegliZona(z) {
     zonaScelta = z;
@@ -372,7 +396,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   async function mostraMie() {
     const ol = $('pr-mie');
     let mie = [];
-    try { mie = await mieProposte(); } catch { /* niente */ }
+    try { mie = await mieProposte(); } catch { ol.replaceChildren(el('li', 'vuoto', 'Non riesco a leggere le tue proposte: riprova tra poco.')); return; }
     ol.replaceChildren(...(mie.length ? mie.map((m) => {
       const li = el('li', `pr-mia stato-${m.stato}`);
       li.append(el('b', null, m.luogo), el('span', 'pr-mia-zona', m.zona), el('span', 'pr-stato', STATI[m.stato] || m.stato));
@@ -392,7 +416,9 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     const ol = $('mod-elenco');
     ol.replaceChildren(el('li', 'cl-carico', 'Carico le proposte…'));
     let lista = [];
-    try { lista = await proposteDaDecidere(statoMod); } catch { ol.replaceChildren(el('li', 'vuoto', 'Non riesco a leggere le proposte: riprova tra poco.')); return; }
+    const chiesto = statoMod;
+    try { lista = await proposteDaDecidere(chiesto); } catch { if (chiesto === statoMod) ol.replaceChildren(el('li', 'vuoto', 'Non riesco a leggere le proposte: riprova tra poco.')); return; }
+    if (chiesto !== statoMod) return;
     ol.replaceChildren(...(lista.length ? lista.map((p) => {
       const li = el('li', 'mod-voce');
       const testa = el('div', 'mod-testa');
@@ -411,13 +437,18 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
         const b = el('button', stato === 'approvata' ? 'si' : 'no', t);
         b.setAttribute('aria-pressed', String(p.stato === stato));
         b.addEventListener('click', async () => {
-          b.disabled = true;
+          const tutti = [...tasti.querySelectorAll('button')];
+          tutti.forEach((x) => { x.disabled = true; });
+          sbaglio.hidden = true;
           try { await decidiProposta(p.id, stato, nota.value); suoni.scegli(); li.classList.add('decisa'); setTimeout(() => { preparaModerazione(); aggiornaAdmin(); }, 350); }
-          catch { b.disabled = false; nota.placeholder = 'Non salvato: riprova'; }
+          catch { tutti.forEach((x) => { x.disabled = false; }); sbaglio.hidden = false; }
         });
         tasti.append(b);
       }
-      li.append(nota, tasti);
+      const sbaglio = el('p', 'acc-errore', 'Non salvato: controlla la connessione e riprova.');
+      sbaglio.setAttribute('role', 'alert');
+      sbaglio.hidden = true;
+      li.append(nota, tasti, sbaglio);
       return li;
     }) : [el('li', 'vuoto', statoMod === 'nuova' ? 'Nessuna proposta da vedere. Tutto letto!' : 'Nessuna proposta qui.')]));
   }
@@ -452,7 +483,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     const livelli = Object.values(s.giorni).flatMap((g) => g.livelli || []);
     barre($('barre-risposte'), [
       ...[...SCALA].map((f, i) => ({ nome: f.nome, colore: colori[i], n: livelli.filter((l) => l === i).length })).reverse(),
-      { nome: 'Buca', colore: ROSSO, n: livelli.filter((l) => l === -1 || l === null).length, buca: true },
+      { nome: 'Buca', colore: ROSSO, n: livelli.filter((l) => l === -1).length, buca: true },
     ]);
   }
 
@@ -509,7 +540,8 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       if (d > oggi) b.classList.add('futuro');
       if (d === oggi) b.classList.add('oggi');
       if (d === scelto) b.classList.add('scelto');
-      b.addEventListener('click', () => { scelto = d; suoni.scegli(); disegnaCalendario(false); });
+      // Il calendario si ridisegna: il fuoco torna sul giorno scelto, sennò da tastiera si riparte da capo.
+      b.addEventListener('click', () => { scelto = d; suoni.scegli(); disegnaCalendario(false); $('calendario').querySelector(`[data-data="${d}"]`)?.focus({ preventScroll: true }); });
       if (anima) li.style.animationDelay = `${(vuoti + i) * 12}ms`;
       else li.style.animation = 'none';
       li.append(b);
@@ -535,7 +567,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       const riga = el('div', 'cs-riga');
       const t = el('span', 'timbro', gr.nome);
       t.style.setProperty('--colore-t', gr.livello < 0 ? 'var(--rosso)' : `var(--f${gr.livello}-t)`);
-      riga.append(Object.assign(el('span', 'cs-tot'), { innerHTML: `${g.tot}<small>/40</small>` }), t);
+      riga.append(Object.assign(el('span', 'cs-tot'), { innerHTML: `${Number(g.tot) || 0}<small>/${MASSIMO_AL_GIORNO}</small>` }), t);
       box.append(riga);
       if (g.livelli) {
         const ol = el('ol', 'cs-tappe');
@@ -550,7 +582,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       testo = g.recupero ? 'Giocata in recupero: non conta per la serie.' : '';
       azione = ['Rivedi il diario', () => gioca(d)];
     } else if (fatte && giocabile(d)) {
-      testo = `Partita a metà: ${fatte} di 5 tappe.`;
+      testo = `Partita a metà: ${fatte} di ${DOMANDE_AL_GIORNO} tappe.`;
       azione = ['Continua', () => gioca(d)];
     } else if (giocabile(d)) {
       testo = d === oggi ? 'La partita di oggi ti aspetta.' : 'Giorno arretrato: si gioca uguale, ma non conta per la serie.';
@@ -660,7 +692,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
   for (const b of $('pass-schede').querySelectorAll('button')) {
     b.addEventListener('click', () => { filtro = b.dataset.filtro; if (filtro === 'mancanti') fascia = null; suoni.scegli(); disegnaMunicipio(); });
   }
-  const sfoglia = (n) => { mun = (mun + n + municipi.length) % municipi.length; suoni.pagina(); disegnaMunicipio(true); };
+  const sfoglia = (n) => { mun = (mun + n + municipi.length) % municipi.length; fascia = null; suoni.pagina(); disegnaMunicipio(true); };
   $('mun-prima').addEventListener('click', () => sfoglia(-1));
   $('mun-dopo').addEventListener('click', () => sfoglia(1));
   // Chiudendo il passaporto i timbri nuovi diventano visti.
@@ -686,7 +718,8 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       SOUVENIR.filter((sv) => sv.gruppo === gi).forEach((sv, k) => {
         const mio = s.souvenir[sv.id];
         const b = el('button', `souv${mio ? ' preso' : ''}${mio && !mio.scartato ? ' nuovo' : ''}`);
-        b.style.animationDelay = `${(gi * 3 + k) * 30}ms`;
+        if (apertoId) b.style.animation = 'none'; else b.style.animationDelay = `${(gi * 3 + k) * 30}ms`;
+        b.dataset.id = sv.id;
         b.innerHTML = `<span class="souv-icona">${mio && mio.scartato ? pixel(sv.icona) : mio ? pixel('scatola') : pixel(sv.icona, { buio: true })}</span>`;
         b.append(el('span', 'souv-nome', mio && !mio.scartato ? 'Da scartare' : sv.nome));
         b.setAttribute('aria-pressed', String(apertoId === sv.id));
@@ -701,6 +734,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
       return sez;
     }));
     schedaSouvenir(apertoId, s, c);
+    if (apertoId) $('souv-gruppi').querySelector(`[data-id="${apertoId}"]`)?.focus({ preventScroll: true });
     // Quasi fatto: i tre souvenir mancanti piu vicini.
     const quasi = SOUVENIR.filter((sv) => !s.souvenir[sv.id])
       .map((sv) => { const [a, b] = sv.avanzamento(c); return { sv, a: Math.min(a, b), b }; })
@@ -730,7 +764,7 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     icona.innerHTML = pixel(sv.icona, { buio: !mio });
     const testa = el('div', 'ss-testa');
     testa.append(el('p', 'etichetta', GRUPPI[sv.gruppo]), el('h3', 'ss-nome', sv.nome));
-    if (mio) testa.append(el('p', 'ss-come', `Preso il ${dataIt(mio.data, { day: 'numeric', month: 'long' })}: ${sv.come.charAt(0).toLowerCase()}${sv.come.slice(1)}.`));
+    if (mio) testa.append(el('p', 'ss-come', `${/^\d{4}-\d{2}-\d{2}$/.test(mio.data || '') ? `Preso il ${dataIt(mio.data, { day: 'numeric', month: 'long' })}` : 'Preso'}: ${sv.come.charAt(0).toLowerCase()}${sv.come.slice(1)}.`));
     else {
       const [a, b] = sv.avanzamento(c);
       testa.append(el('p', 'ss-come', `Come si prende: ${sv.come.charAt(0).toLowerCase()}${sv.come.slice(1)}. Sei a ${Math.min(a, b)} di ${b}.`));
@@ -796,10 +830,12 @@ export function creaTaccuino({ dati, colori, suoni, gioca, regole, giorno, dopoL
     if (tornaAScatola) apri('souvenir');
   });
   $('scarta-salta').addEventListener('click', () => {
-    segnaScartato(coda);
     coda = [];
     $('scarta').close();
+    if (tornaAScatola) apri('souvenir');
   });
+  $('scarta').addEventListener('cancel', () => { coda = []; if (tornaAScatola) setTimeout(() => apri('souvenir')); });
+  $('scarta').addEventListener('close', aggiornaSegno);
 
   // Alla fine della partita: se ci sono souvenir nuovi, arrivano i pacchetti. Torna true se si e aperto.
   function scartaNuovi() {

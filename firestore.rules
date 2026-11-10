@@ -19,7 +19,9 @@ service cloud.firestore {
     // Punti per fascia: buca (-1) 0, Da cartolina 1, Ce sta 2, Da romano 3, Chicca 5, Da Mino 8.
     function punti(l) { return [0, 1, 2, 3, 5, 8][l + 1]; }
     function livello(l) { return l == null || (l is int && l >= -1 && l <= 4); }
-    function nomeOk(d) { return d.nome is string && d.nome.size() <= 20 && d.foto is string && d.foto.size() <= 500 && d.pubblico is bool; }
+    // La foto e quella dell'account Google o niente: in classifica la vedono tutti, non puo essere un indirizzo qualsiasi.
+    function fotoOk(f) { return f is string && f.size() <= 500 && (f == '' || f.matches('https://lh[0-9][.]googleusercontent[.]com/.*')); }
+    function nomeOk(d) { return d.nome is string && d.nome.size() <= 20 && fotoOk(d.foto) && d.pubblico is bool; }
 
     match /giocatori/{uid} {
       allow read, write: if mio(uid);
@@ -84,7 +86,12 @@ service cloud.firestore {
     // Settimana (da lunedi): la somma dei punteggi del giorno. Ogni giorno si aggiunge una volta sola (poi si puo solo
     // correggere) e deve valere esattamente quanto il punteggio di quel giorno gia salvato in partite/{data}/punteggi/{uid}.
     function delGiorno(d, uid) { return get(/databases/$(database)/documents/partite/$(d)/punteggi/$(uid)).data.tot; }
-    function settimanaOk(d, settimana) { return d >= settimana && vicino(d); }
+    // Il giorno va nella sua settimana e in nessun'altra: il documento si chiama come il lunedi di quel giorno.
+    function lunediDi(d) {
+      let t = timestamp.date(int(d[0:4]), int(d[5:7]), int(d[8:10]));
+      return giorno(t - duration.value(t.dayOfWeek() - 1, 'd'));
+    }
+    function settimanaOk(d, settimana) { return vicino(d) && settimana == lunediDi(d); }
     match /settimane/{settimana}/punteggi/{uid} {
       allow read: if true;
       allow create: if mio(uid) && conGoogle()

@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Anteprima per i link condivisi (img/og.png, 1200x630) e icona per la schermata Home (img/icona-180.png).
+     Si apre dal server locale e si fotografa: vedi strumenti/anteprima.sh. Con ?icona disegna l'icona. -->
+<html lang="it">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../src/stile.css">
+<style>
+  html, body { margin: 0; height: auto; overflow: hidden; background: #f3e7c9; }
+  .og { position: relative; width: 1200px; height: 630px; overflow: hidden; background-color: var(--carta); }
+  .og canvas { position: absolute; right: -150px; top: -95px; width: 820px; height: 820px; }
+  .og::after { content: ''; position: absolute; inset: 14px; box-shadow: 0 0 0 2px var(--inchiostro), 0 0 0 8px var(--scheda), 0 0 0 10px var(--inchiostro); pointer-events: none; }
+  .og .velo { position: absolute; inset: 0; background: linear-gradient(90deg, var(--carta) 0 40%, rgba(243, 231, 201, 0.86) 52%, rgba(243, 231, 201, 0) 70%); }
+  .og .testi { position: absolute; left: 76px; top: 86px; width: 640px; }
+  .og .sopra { margin: 0 0 18px; font-weight: 650; font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rosso); }
+  .og h1 { margin: 0; font-family: var(--font-titolo); font-weight: 400; font-size: 82px; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; text-shadow: 5px 5px 0 var(--rosso); }
+  .og .sotto { margin: 30px 0 0; font-size: 36px; font-weight: 600; line-height: 1.2; }
+  .og .fasce { display: flex; gap: 12px; margin: 34px 0 0; }
+  .og .fasce i { width: 56px; height: 56px; box-shadow: 0 0 0 2px var(--inchiostro), 0 5px 0 2px var(--inchiostro); }
+  .og .piede { position: absolute; left: 76px; bottom: 62px; display: flex; align-items: center; gap: 18px; }
+  .og .link { padding: 10px 20px 8px; background: var(--inchiostro); color: var(--scheda); font-family: var(--font-titolo); font-size: 30px; letter-spacing: 0.08em; }
+  .og .con { font-size: 22px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--inchiostro-2); }
+  .og .mino { position: absolute; right: 286px; bottom: 26px; width: 208px; height: 208px; image-rendering: pixelated; filter: drop-shadow(0 6px 0 rgba(42, 31, 22, 0.25)); }
+  .icona { width: 180px; height: 180px; display: grid; place-items: center; background: #f3e7c9; }
+  .icona svg { width: 148px; height: 148px; }
+</style>
+<body>
+<div class="og" id="og">
+  <canvas id="mappa" width="1640" height="1640"></canvas>
+  <div class="velo"></div>
+  <div class="testi">
+    <p class="sopra">Il gioco quotidiano di Themino</p>
+    <h1>Sampietrino</h1>
+    <p class="sotto">Cinque tappe dentro il Raccordo. La zona giusta che nessuno nomina vale 8.</p>
+    <div class="fasce"><i style="background:#a9a397"></i><i style="background:#6e9a5a"></i><i style="background:#5b8fb8"></i><i style="background:#d0663f"></i><i style="background:#e8b33a"></i></div>
+  </div>
+  <div class="piede"><span class="link">themino.it</span><span class="con">Ogni giorno a mezzanotte</span></div>
+  <img class="mino" src="../img/mino-occhiolino.png" alt="">
+</div>
+<div class="icona" id="icona" hidden>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <rect x="2" y="3" width="12" height="11" fill="#2a1f16"/><rect x="3" y="4" width="10" height="9" fill="#5d564c"/>
+    <rect x="3" y="4" width="10" height="6" fill="#8f877a"/><rect x="4" y="5" width="3" height="1" fill="#b7af9f"/>
+    <rect x="9" y="5" width="3" height="3" fill="#e8b33a"/>
+  </svg>
+</div>
+<script type="module">
+  import { disegnaMiniMappa } from '../src/minimappa.js';
+  if (new URLSearchParams(location.search).has('icona')) { document.getElementById('og').hidden = true; document.getElementById('icona').hidden = false; }
+  const dati = await (await fetch('../dati/gioco.json')).json();
+  const TINTE = ['#a9a397', '#6e9a5a', '#5b8fb8', '#d0663f', '#e8b33a'];
+  // Una zona su tre colorata, sempre le stesse: come un passaporto gia mezzo timbrato.
+  const colori = {};
+  dati.zone.forEach((z, i) => { const n = [...z.id].reduce((a, c) => (a * 31 + c.charCodeAt(0)) % 997, 7); if (n % 3 === 0) colori[z.id] = TINTE[n % 5]; });
+  const cv = document.getElementById('mappa');
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#c4c4aa';
+  ctx.fillRect(0, 0, cv.width, cv.height);
+  disegnaMiniMappa(ctx, dati, { x: 60, y: 60, w: cv.width - 120, h: cv.height - 120, colori, filo: 2.4, contorno: false });
+  await document.fonts.ready;
+  document.title = 'pronta';
+</script>
+</body>
+</html>

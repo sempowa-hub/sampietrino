@@ -2,16 +2,18 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const RADICE = new URL('..', import.meta.url).pathname;
-const TIPI = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.woff2': 'font/woff2' };
+const RADICE = fileURLToPath(new URL('..', import.meta.url));
+const TIPI = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.mp3': 'audio/mpeg', '.ico': 'image/x-icon' };
 const PORTA = Number(process.env.PORT) || 8080;
 
 createServer(async (req, res) => {
-  const percorso = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');
-  const file = join(RADICE, percorso.endsWith('/') ? `${percorso}index.html` : percorso);
-  if (!file.startsWith(RADICE)) { res.writeHead(403).end(); return; }
   try {
+    // Dentro il try: un indirizzo scritto male (% a meta) risponde 404 invece di fermare il server.
+    const percorso = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');
+    const file = join(RADICE, percorso.endsWith('/') ? `${percorso}index.html` : percorso);
+    if (!file.startsWith(RADICE)) { res.writeHead(403).end(); return; }
     const corpo = await readFile(file);
     res.writeHead(200, { 'Content-Type': TIPI[extname(file)] || 'application/octet-stream' }).end(corpo);
   } catch {

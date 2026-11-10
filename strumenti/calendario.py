@@ -120,7 +120,7 @@ def main():
     CALENDARIO.write_text(json.dumps({'nota': 'Generato da strumenti/calendario.py: 5 domande al giorno, mai ripetute.',
                                       'giorni': giorni, 'avanzano': avanzano}, ensure_ascii=False, indent=1) + '\n')
     g['calendario'] = giorni
-    GIOCO.write_text(json.dumps(g, ensure_ascii=False, separators=(',', ':')))
+    GIOCO.write_text(json.dumps(g, ensure_ascii=False, separators=(',', ':')).replace(' \u2013 ', ' - ').replace('\u2013', '-').replace('\u2014', '-'))
     fine = max(giorni) if giorni else '-'
     print(f'Calendario: {len(giorni)} giorni, dal {min(giorni)} al {fine}. Avanzano {len(avanzano)} domande. Scritto {CALENDARIO.relative_to(RADICE)}')
     for k in list(giorni)[:5]:

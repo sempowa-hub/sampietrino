@@ -86,6 +86,8 @@ function timbro(ctx, t, cx, cy, colore, dim, giro = -0.08) {
 // tappe: [{ livello (0-4 o null), punti }]. colori/testi: palette delle fasce. Torna un Blob PNG.
 // chicca: una curiosita sulle domande di oggi, estratta a caso (ogni storia e diversa).
 export async function creaStoria({ data, totale, massimo, faccia, tappe, colori, serie = 0, timbrati = 0, chicca = '' }) {
+  // I caratteri si chiedono per nome: quelli non ancora usati nella pagina non sono nel "ready".
+  await Promise.all(["40px 'Silkscreen'", "700 32px 'Pixelify Sans'", "600 32px 'Pixelify Sans'"].map((f) => document.fonts?.load(f).catch(() => {})));
   await document.fonts?.ready;
   const c = document.createElement('canvas');
   c.width = L; c.height = H;
@@ -178,8 +180,9 @@ export async function creaStoria({ data, totale, massimo, faccia, tappe, colori,
       const prova = `${righe.at(-1)} ${p}`.trim();
       if (ctx.measureText(prova).width > 800) righe.push(p); else righe[righe.length - 1] = prova;
     }
-    const mostrate = righe.slice(0, 4);
-    if (righe.length > 4) mostrate[3] = `${mostrate[3].replace(/[.,;:]?$/, '')}…`;
+    // Tre righe al massimo: la quarta finirebbe sotto il biglietto "Batti il mio punteggio".
+    const mostrate = righe.slice(0, 3);
+    if (righe.length > 3) mostrate[2] = `${mostrate[2].replace(/[.,;:]?$/, '')}…`;
     const alto = 76 + mostrate.length * 42;
     ctx.fillStyle = 'rgba(243, 231, 201, 0.08)';
     ctx.fillRect(110, 1570, L - 220, alto);
@@ -197,5 +200,5 @@ export async function creaStoria({ data, totale, massimo, faccia, tappe, colori,
   ctx.beginPath(); ctx.arc(L - 110, 1834, 18, Math.PI / 2, Math.PI * 1.5); ctx.fill();
   testo(ctx, 'BATTI IL MIO PUNTEGGIO', L / 2, 1828, { font: "40px 'Silkscreen', monospace", colore: NOTTE, spazio: 2 });
   testo(ctx, 'themino.it', L / 2, 1870, { font: "700 32px 'Pixelify Sans', sans-serif", colore: ROSSO });
-  return new Promise((ok) => c.toBlob(ok, 'image/png'));
+  return new Promise((ok, no) => c.toBlob((b) => (b ? ok(b) : no(new Error('immagine non creata'))), 'image/png'));
 }

@@ -11,6 +11,15 @@
 <meta property="og:description" content="Cinque tappe dentro il Raccordo. La zona giusta che nessuno nomina vale 8.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://themino.it/">
+<meta property="og:site_name" content="Sampietrino">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://themino.it/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sampietrino: il gioco quotidiano sui quartieri di Roma, con Themino">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://themino.it/img/og.png">
+<link rel="apple-touch-icon" href="img/icona-180.png">
 <link rel="canonical" href="https://themino.it/">
 <link rel="preload" href="font/pixelify-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="src/stile.css">
@@ -18,7 +27,7 @@
 <body>
 <main class="gioco">
   <section class="mappa" id="mappa">
-    <canvas id="tela" role="img" aria-label="Mappa delle zone di Roma dentro il Raccordo"></canvas>
+    <canvas id="tela" tabindex="0" role="application" aria-label="Mappa delle zone di Roma dentro il Raccordo. Con le frecce scegli una zona, con Invio timbri."></canvas>
     <div class="zoom">
       <button id="piu" aria-label="Ingrandisci">+</button>
       <button id="meno" aria-label="Rimpicciolisci">−</button>
@@ -60,10 +69,10 @@
       <h2 class="testo" id="testo">Caricamento…</h2>
       <div class="biglietto" id="biglietto">
         <p class="biglietto-etichetta">Biglietto</p>
-        <p class="scelta" id="scelta">Tocca una zona sulla mappa</p>
+        <p class="scelta" id="scelta" aria-live="polite">Tocca una zona sulla mappa</p>
       </div>
       <button class="primario" id="pianta" disabled>Timbra</button>
-      <p class="tasti"><kbd>Invio</kbd> timbra · <kbd>Esc</kbd> annulla · rotella per lo zoom</p>
+      <p class="tasti"><kbd>Frecce</kbd> zona · <kbd>Invio</kbd> timbra · <kbd>Esc</kbd> annulla · rotella per lo zoom</p>
     </section>
 
     <section class="pagina esito" id="pagina-esito" hidden>
@@ -123,7 +132,7 @@
   </div>
 </div>
 
-<dialog id="copertina" class="copertina">
+<dialog id="copertina" class="copertina" aria-label="Come si gioca">
   <img class="faccia copertina-faccia" src="img/mino-occhiolino.png" alt="Mino" width="56" height="56">
   <p class="etichetta">Diario di bordo · <span id="copertina-data"></span></p>
   <p class="copertina-arretrato" id="copertina-arretrato" hidden>Giorno arretrato: si gioca uguale, ma non conta per la serie.</p>
@@ -138,7 +147,7 @@
   <button class="primario daje" id="daje">DAJE!</button>
 </dialog>
 
-<dialog id="taccuino" class="taccuino">
+<dialog id="taccuino" class="taccuino" aria-label="Taccuino di bordo">
   <p class="etichetta">Taccuino di bordo</p>
   <h2 class="titolo">Sampietrino</h2>
   <div class="scrivania">
@@ -147,14 +156,14 @@
     <button class="oggetto o-souvenir" data-apri="souvenir"><span class="o-icona" data-icona="scatola"></span><b>Souvenir</b><small id="t-souvenir"></small><i class="bollo" id="t-souv-nuovi" hidden></i></button>
     <button class="oggetto o-regole" data-apri="regole"><span class="o-icona" data-icona="biglietto"></span><b>Come si gioca</b><small>Il biglietto con le regole</small></button>
     <button class="oggetto o-classifica" data-apri="classifica"><span class="o-icona" data-icona="coppa"></span><b>Classifica</b><small id="t-classifica">Chi ha fatto meglio oggi</small></button>
+    <button class="oggetto o-account" data-apri="account"><img class="o-icona faccia" id="t-account-foto" src="img/mino-neutro.png" alt="" referrerpolicy="no-referrer"><b id="t-account-nome">Il tuo account</b><small id="t-account">Entra con Google</small></button>
     <button class="oggetto o-proponi" data-apri="proponi"><span class="o-icona" data-icona="cartolina"></span><span class="o-testo"><b>Proponi una chicca</b><small>Un posto che a Roma sanno in pochi? Finisce nel gioco col tuo nome</small></span></button>
     <button class="oggetto o-moderazione" data-apri="moderazione" hidden><span class="o-icona" data-icona="scatola"></span><b>Proposte da approvare</b><small id="t-moderazione">Solo per te e Themino</small><i class="bollo" id="t-mod-nuove" hidden></i></button>
-    <button class="oggetto o-account" data-apri="account"><img class="o-icona faccia" id="t-account-foto" src="img/mino-neutro.png" alt="" referrerpolicy="no-referrer"><b id="t-account-nome">Il tuo account</b><small id="t-account">Entra con Google</small></button>
   </div>
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="diario-bordo" class="quaderno">
+<dialog id="diario-bordo" class="quaderno" aria-label="Diario di bordo">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Diario di bordo</p></div>
   <dl class="db-numeri">
     <div><dt>Serie</dt><dd id="db-serie">0</dd></div>
@@ -174,7 +183,7 @@
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="passaporto" class="quaderno passaporto">
+<dialog id="passaporto" class="quaderno passaporto" aria-label="Passaporto dei quartieri">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Passaporto dei quartieri</p></div>
   <p class="pass-conto"><b id="pass-numero">0</b> <span id="pass-totale"></span><span class="timbro pass-nuovi" id="pass-nuovi" hidden></span></p>
   <div class="pass-barra" aria-hidden="true"><i id="pass-riempi"></i></div>
@@ -196,7 +205,7 @@
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="souvenir" class="quaderno">
+<dialog id="souvenir" class="quaderno" aria-label="Scatola dei souvenir">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Scatola dei souvenir</p></div>
   <p class="pass-conto"><b id="souv-numero">0</b> <span id="souv-totale"></span></p>
   <div class="souv-scheda" id="souv-scheda" aria-live="polite" hidden></div>
@@ -206,7 +215,7 @@
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="account" class="quaderno account">
+<dialog id="account" class="quaderno account" aria-label="Il tuo account">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Il tuo account</p></div>
   <div class="acc-fuori" id="acc-fuori">
     <img class="faccia acc-mino" src="img/mino-occhiolino.png" alt="" width="56" height="56">
@@ -228,11 +237,11 @@
     <p class="acc-sync" id="acc-sync">Partite, passaporto e souvenir salvati sull'account</p>
     <button class="secondario largo" id="acc-esci">Esci dall'account</button>
   </div>
-  <p class="acc-errore" id="acc-errore" hidden></p>
+  <p class="acc-errore" id="acc-errore" role="alert" hidden></p>
   <button class="secondario largo" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="classifica" class="quaderno classifica">
+<dialog id="classifica" class="quaderno classifica" aria-label="Classifica">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Classifica</p></div>
   <div class="schede cl-schede" id="cl-schede" role="tablist">
     <button data-cl="oggi" role="tab">Oggi</button>
@@ -244,7 +253,7 @@
   <button class="primario" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="proponi" class="quaderno proponi">
+<dialog id="proponi" class="quaderno proponi" aria-label="Proponi una chicca">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Proponi una chicca</p></div>
   <div class="pr-fuori" id="pr-fuori" hidden>
     <img class="faccia pr-mino" src="img/mino-occhiolino.png" alt="" width="56" height="56">
@@ -263,7 +272,7 @@
     </div>
     <label class="campo" for="pr-perche"><span>Perché è una chicca</span><textarea id="pr-perche" maxlength="500" rows="4" placeholder="Cosa c'è, cosa lo rende speciale, come ci si arriva."></textarea><small class="pr-conta" id="pr-conta">0 / 500</small></label>
     <label class="campo" for="pr-domanda"><span>Che domanda faresti? (se ti va)</span><input id="pr-domanda" maxlength="120" autocomplete="off" placeholder="Es. Una zona con una porta che non porta da nessuna parte"></label>
-    <p class="acc-errore" id="pr-errore" hidden></p>
+    <p class="acc-errore" id="pr-errore" role="alert" hidden></p>
     <button class="primario" id="pr-invia" type="submit">Manda a Mino</button>
   </form>
   <div class="pr-grazie" id="pr-grazie" hidden>
@@ -271,12 +280,12 @@
     <p><b>Ricevuta!</b> Mino la legge. Se entra nel gioco te ne accorgi: c'è il tuo nome.</p>
     <button class="secondario" id="pr-altra" type="button">Proponine un'altra</button>
   </div>
-  <h3 class="q-sotto">Le tue proposte</h3>
+  <h3 class="q-sotto" id="pr-mie-titolo">Le tue proposte</h3>
   <ol class="pr-mie" id="pr-mie"></ol>
   <button class="secondario largo" data-chiudi>Chiudi</button>
 </dialog>
 
-<dialog id="moderazione" class="quaderno moderazione">
+<dialog id="moderazione" class="quaderno moderazione" aria-label="Proposte da approvare">
   <div class="q-testa"><button class="indietro" data-indietro>‹ Taccuino</button><p class="etichetta">Proposte da approvare</p></div>
   <div class="schede" id="mod-schede" role="tablist">
     <button data-stato="nuova" role="tab">Da vedere</button>
@@ -304,7 +313,7 @@
   <button class="primario" id="cd-chiudi">Chiudi</button>
 </dialog>
 
-<dialog id="scarta" class="scarta">
+<dialog id="scarta" class="scarta" aria-label="Pacchetto da scartare">
   <p class="etichetta" id="scarta-conto">Hai un pacchetto da scartare</p>
   <button class="pacco" id="pacco" aria-label="Scarta il pacchetto"><span data-icona="scatola"></span></button>
   <div class="scartato" id="scartato" hidden>

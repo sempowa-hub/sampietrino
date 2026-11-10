@@ -35,6 +35,8 @@ npm run gioca                                          # http://localhost:8080
 
 Per ricostruire i dati usa il python della venv: `.venv/bin/python strumenti/costruisci.py && .venv/bin/python strumenti/calendario.py`.
 
+In locale l'account e spento: le prove non creano utenti e non toccano contatori e classifica veri. Per provare login e classifica apri `http://localhost:8080/?conto` (attenzione: da li si scrive sui dati veri).
+
 ## Dati e domande: le regole che non si rompono
 
 - **Le 9 domande di categoria originali non si toccano.**
@@ -57,6 +59,8 @@ Per ricostruire i dati usa il python della venv: `.venv/bin/python strumenti/cos
 - `giocatori/{uid}`: storico sincronizzato (si fonde col telefono: il telefono puo rimandare su i dati cancellati).
 - `proposte`: chicche proposte dai giocatori.
 - `admin/{uid}`: chi modera. Gli admin sono documenti per uid, mai email nelle regole.
+- Dopo ogni modifica a `firestore.rules`: `npm test` (le prova con l'API di test, serve gcloud) e poi `firebase deploy --only firestore:rules --project sampietrino-roma`.
+- In classifica la foto e solo quella di Google (`lh3.googleusercontent.com`), lo controllano le regole e `fotoSicura` in `src/conto.js`.
 - **Cancellazioni definitive**: le fa una persona dalla console Firebase, non Claude.
 
 ## Debug
@@ -84,4 +88,5 @@ Se sei al secondo tentativo sullo stesso bug, fermati e rileggi i dati invece di
 | Firebase (account, classifica, proposte) | `src/conto.js` |
 | Mappa | `src/mappa.js`, `src/minimappa.js` |
 | Zone e domande | `strumenti/costruisci.py`, `strumenti/genera_domande.py`, `strumenti/calendario.py` |
+| Anteprima dei link e icona Home (`img/og.png`, `img/icona-180.png`) | `strumenti/anteprima.html`, `sh strumenti/anteprima.sh` |
 | Decisioni di Mino e cose da fare | `docs/decisioni-themino.md`, `docs/roadmap.md` |

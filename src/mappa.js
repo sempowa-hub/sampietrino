@@ -409,7 +409,12 @@ export function creaMappa(canvas, dati, { onTocca, onSopra = () => {} }) {
     }
     // Su un confine (le zone semplificate lasciano fessure di pochi metri): la zona piu vicina entro 6 px.
     prova.lineWidth = 12 * px;
-    for (let z = 0; z < N; z++) if (prova.isPointInStroke(forme[z], kx, ky)) return z;
+    const m = 6 * px;
+    for (let z = 0; z < N; z++) {
+      const b = riqZone[z];
+      if (kx < b[0] - m || kx > b[2] + m || ky < b[1] - m || ky > b[3] + m) continue;
+      if (prova.isPointInStroke(forme[z], kx, ky)) return z;
+    }
     return -1;
   }
 
@@ -435,9 +440,12 @@ export function creaMappa(canvas, dati, { onTocca, onSopra = () => {} }) {
   const tocchi = new Map();
   let mosso = false, distanza0 = 0;
   canvas.addEventListener('pointerdown', (e) => {
+    // Solo il tasto principale del mouse: destro e centrale non scelgono zone.
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
     canvas.setPointerCapture(e.pointerId);
     tocchi.set(e.pointerId, { x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY });
-    mosso = false;
+    // Il secondo dito e un pizzico, non una scelta: al rilascio non si timbra niente per sbaglio.
+    mosso = tocchi.size > 1;
     if (tocchi.size === 2) { const [a, b] = [...tocchi.values()]; distanza0 = Math.hypot(a.x - b.x, a.y - b.y); }
   });
   canvas.addEventListener('pointermove', (e) => {
@@ -477,7 +485,9 @@ export function creaMappa(canvas, dati, { onTocca, onSopra = () => {} }) {
   canvas.addEventListener('wheel', (e) => {
     e.preventDefault();
     const [cx, cy] = kmInPunto(e.clientX, e.clientY);
-    zoomA(Math.exp(Math.max(-1, Math.min(1, e.deltaY / 100)) * 0.18), cx, cy);
+    // Firefox col mouse conta in righe (deltaMode 1), non in pixel: senza conversione lo zoom quasi non si muove.
+    const passo = e.deltaMode === 1 ? e.deltaY * 33 : e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY;
+    zoomA(Math.exp(Math.max(-1, Math.min(1, passo / 100)) * 0.18), cx, cy);
   }, { passive: false });
 
   // alza: quota della vista da lasciare libera in basso (il cartellino dell'esito copre quella parte).

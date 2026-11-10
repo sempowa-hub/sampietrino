@@ -21,7 +21,7 @@ export function sblocca() {
     try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch { /* non c'e: pazienza */ }
     ac = new Ctx();
     uscita = ac.createGain();
-    uscita.gain.value = 0.9;
+    uscita.gain.value = muto ? 0 : 0.9;
     uscita.connect(ac.destination);
     caricaVoci();
   }
@@ -70,6 +70,11 @@ export const audioAttivo = () => !!ac && ac.state === 'running';
 export function cambiaMuto() {
   muto = !muto;
   try { localStorage.setItem(CHIAVE, muto ? '1' : '0'); } catch { /* resta per questa sessione */ }
+  // Zittire ferma anche quello che sta gia suonando (voce di Themino, fanfara, tic dell'attesa).
+  if (uscita) {
+    uscita.gain.cancelScheduledValues(ac.currentTime);
+    uscita.gain.setValueAtTime(muto ? 0 : 0.9, ac.currentTime);
+  }
   return muto;
 }
 

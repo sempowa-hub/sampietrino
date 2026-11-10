@@ -51,6 +51,9 @@ function ripristina() {
 }
 
 const nomeZona = (id) => (id ? zonePerId[id].nome : 'tempo scaduto');
+const sampietrini = (n) => (n === 1 ? 'sampietrino' : 'sampietrini');
+// "a Monti", ma "ad Appia Antica": davanti a una A la d ci vuole.
+const aZona = (nome, maiuscola = false) => `${maiuscola ? 'A' : 'a'}${/^a/i.test(nome) ? 'd' : ''} ${nome}`;
 const livelloDi = (nomeFascia) => SCALA.findIndex((f) => f.nome === nomeFascia);
 const coloreT = (liv) => `var(--f${liv}-t)`;
 // La faccia di Mino per ogni esito (strumenti/disegna_mino.py): una per fascia, mano in faccia per la buca,
@@ -228,7 +231,7 @@ function mostraSplash() {
   const fatte = p?.stati?.filter((x) => x.pin).length ?? 0;
   const n = Math.round((Date.parse(`${oggi}T12:00:00Z`) - Date.parse(`${PRIMO_GIORNO}T12:00:00Z`)) / 864e5) + 1;
   $('splash-banda').textContent = `Diario di bordo n° ${n} · ${dataIt(oggi, { day: 'numeric', month: 'long', year: 'numeric' })}`;
-  $('splash-sotto').textContent = g?.finita ? `Oggi: ${g.tot} sampietrini · ${gradoDi(g.tot).nome}` : 'Oggi: 5 tappe dentro il Raccordo';
+  $('splash-sotto').textContent = g?.finita ? `Oggi: ${g.tot} ${sampietrini(g.tot)} · ${gradoDi(g.tot).nome}` : 'Oggi: 5 tappe dentro il Raccordo';
   $('splash-daje').textContent = g?.finita ? 'Guarda il diario di oggi' : fatte ? `Continua: tappa ${Math.min(fatte + 1, 5)} di 5` : 'Daje, si parte!';
   const serieN = serie(s.giorni);
   const mezzanotte = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
@@ -280,6 +283,8 @@ function chiudiSplash() {
 function apriCopertina() {
   $('copertina-data').textContent = dataIt(giorno, { day: 'numeric', month: 'long' });
   $('copertina-arretrato').hidden = giorno === oggi;
+  // A partita gia avviata (regole riaperte dal taccuino) il tasto chiude e basta.
+  $('daje').textContent = corrente === 0 && !stati?.[0]?.pin ? 'DAJE!' : 'Ho capito';
   if (!$('copertina').open) $('copertina').showModal();
 }
 
@@ -513,7 +518,7 @@ function argomenta(s) {
   if (pin.fascia) {
     const liv = livelloDi(pin.fascia);
     const luoghi = perche(d, pin.zona);
-    const prima = luoghi ? `Giusta, a ${nome}: ${luoghi.replace(/ · /g, ', ')}.`
+    const prima = luoghi ? `Giusta, ${aZona(nome)}: ${luoghi.replace(/ · /g, ', ')}.`
       : d.tipo === 'acqua' ? `Giusta: il Tevere passa per ${nome}.`
         : d.tipo === 'confina' ? `Giusta: ${nome} confina con ${zonePerId[d.evidenzia[0]].nome}.`
           : d.tipo === 'municipio' ? `Giusta: ${nome} sta nel ${d.testo.replace('Una zona del ', '')}.`
@@ -526,7 +531,7 @@ function argomenta(s) {
   if (d.luoghi?.length) {
     const [vicino, dist] = d.luoghi.map((l) => [l, distanza(z.centro, [l[1], l[2]])]).sort((a, b) => a[1] - b[1])[0];
     const dove = Object.keys(d.perche || {}).find((id) => d.perche[id].includes(vicino[0]));
-    motivo = `A ${nome} non c'è ${MANCA[d.id] || d.manca || 'nessun luogo giusto'}. Il più vicino è ${vicino[0]}${dove && dove !== pin.zona ? `, a ${zonePerId[dove].nome}` : ''}: circa ${km(dist)} dal centro della zona.`;
+    motivo = `${aZona(nome, true)} non c'è ${MANCA[d.id] || d.manca || 'nessun luogo giusto'}. Il più vicino è ${vicino[0]}${dove && dove !== pin.zona ? `, ${aZona(zonePerId[dove].nome)}` : ''}: circa ${km(dist)} dal centro della zona.`;
   } else if (d.tipo === 'acqua' && dati.tevere) {
     const dist = Math.min(...coppie(dati.tevere).map((p) => distanza(z.centro, p)));
     motivo = `Il Tevere non passa per ${nome}: dal centro della zona il fiume è a circa ${km(dist)}.`;
@@ -788,9 +793,38 @@ const facciaFine = (tot) => (tot >= 32 ? 'stupore' : tot >= 24 ? 'risata' : tot 
 
 // --- Comandi ---
 
+// Da tastiera le frecce spostano la scelta sulla zona piu vicina in quella direzione; la prima freccia parte dal
+// centro di Roma. Cosi si gioca anche senza mouse, e il biglietto annuncia la zona a chi usa lo screen reader.
+const FRECCE = { ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0] };
+function spostaScelta([dx, dy]) {
+  const s = stati?.[corrente];
+  if (!s || s.pin || corrente >= domande.length) return;
+  let meglio = null, costo = Infinity;
+  const [x0, y0] = selezionata ? zonePerId[selezionata].centro
+    : [dati.zone.reduce((a, z) => a + z.centro[0], 0) / dati.zone.length, dati.zone.reduce((a, z) => a + z.centro[1], 0) / dati.zone.length];
+  for (const z of dati.zone) {
+    if (z.id === selezionata) continue;
+    const vx = z.centro[0] - x0, vy = z.centro[1] - y0;
+    const avanti = vx * dx + vy * dy;
+    // Senza scelta vince la zona piu vicina al centro; con una scelta, quella piu avanti e meno di lato.
+    if (selezionata && avanti <= 0) continue;
+    const c = selezionata ? avanti + 2 * Math.abs(vx * dy - vy * dx) : Math.hypot(vx, vy);
+    if (c < costo) { costo = c; meglio = z; }
+  }
+  if (!meglio) return;
+  selezionata = meglio.id;
+  suoni.scegli();
+  aggiornaBiglietto();
+}
+
 document.addEventListener('keydown', (e) => {
   if (document.querySelector('dialog[open]')) return;
   if (splashAperto()) { if (e.key === 'Enter') { e.preventDefault(); chiudiSplash(); } return; }
+  if (FRECCE[e.key] && !$('pagina-tappa').hidden && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || '')) {
+    e.preventDefault();
+    spostaScelta(FRECCE[e.key]);
+    return;
+  }
   if (e.key === 'Enter') {
     if (!$('pagina-esito').hidden) { e.preventDefault(); avanti(); }
     else if (!$('pagina-tappa').hidden && !$('pianta').disabled) { e.preventDefault(); pianta(); }
@@ -821,6 +855,8 @@ $('daje').addEventListener('click', () => {
   c.classList.add('esce');
   setTimeout(() => { c.close(); c.classList.remove('esce'); avviaOrologio(); }, dopo(200));
 });
+// Copertina chiusa con Esc: l'orologio parte lo stesso, sennò la tappa resterebbe ferma senza tempo.
+$('copertina').addEventListener('close', () => { if (!$('copertina').open && !splashAperto() && $('pagina-tappa').hidden === false) avviaOrologio(); });
 $('pianta').addEventListener('click', pianta);
 $('avanti').addEventListener('click', avanti);
 // Storia da condividere: il diario di oggi in formato storia Instagram. Sul telefono si apre la condivisione,
@@ -850,7 +886,7 @@ function scriviTestoCondiviso(extra) {
   testoCondiviso = [
     `Sampietrino n° ${n} · ${dataIt(giorno, { day: 'numeric', month: 'long' })}`,
     stati.map((s) => (s.pin?.fascia ? QUADRATI[livelloDi(s.pin.fascia)] : '⬛')).join(''),
-    `${tot} sampietrini · ${gradoDi(tot).nome}`,
+    `${tot} ${sampietrini(tot)} · ${gradoDi(tot).nome}`,
     ...(extra.length ? [extra.map((e) => `${e.icona} ${e.testo}`).join(' · ')] : []),
     'https://themino.it',
   ].join('\n');
@@ -872,7 +908,7 @@ async function apriCondividi() {
     q.title = s.pin?.fascia || 'Buca';
     return q;
   }));
-  $('cd-punti').innerHTML = `<b>${tot}</b> sampietrini · ${gradoDi(tot).nome}`;
+  $('cd-punti').innerHTML = `<b>${tot}</b> ${sampietrini(tot)} · ${gradoDi(tot).nome}`;
   const extra = [];
   const filo = giorno === oggi ? serie(leggi().giorni) : 0;
   if (filo >= 2) extra.push({ icona: '🔥', testo: `${filo} giorni di fila` });
@@ -963,9 +999,8 @@ $('torna-oggi').addEventListener('click', () => apriGiorno(oggi, true));
 // Suoni: il primo gesto sblocca l'audio; il tasto in testata lo zittisce, e il browser se lo ricorda.
 // Sui telefoni l'audio si sblocca solo con touchend o click (non con pointerdown): si riprova a ogni gesto
 // finche non parte, poi gli ascoltatori se ne vanno.
-for (const ev of ['touchend', 'click', 'keydown']) document.addEventListener(ev, function prova() {
-  sblocca().then(() => { if (audioAttivo()) for (const e of ['touchend', 'click', 'keydown']) document.removeEventListener(e, prova); });
-}, { passive: true });
+// Gli ascoltatori restano: su iPhone dopo una telefonata o il ritorno dallo sfondo l'audio si sospende di nuovo.
+for (const ev of ['touchend', 'click', 'keydown']) document.addEventListener(ev, () => { if (!audioAttivo()) sblocca(); }, { passive: true });
 $('suono').setAttribute('aria-pressed', String(!eMuto()));
 $('suono').addEventListener('click', () => {
   sblocca();
@@ -973,6 +1008,11 @@ $('suono').addEventListener('click', () => {
   $('suono').setAttribute('aria-pressed', String(!muto));
   if (!muto) suoni.scegli();
 });
+
+const oggiARoma = () => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome' }).format(new Date());
+const seCambiatoGiorno = () => { if (document.visibilityState === 'visible' && oggiARoma() !== oggi) location.reload(); };
+document.addEventListener('visibilitychange', seCambiatoGiorno);
+addEventListener('pageshow', seCambiatoGiorno);
 
 avvia().catch((err) => {
   $('testo').textContent = `Errore nel caricare il gioco: ${err.message}`;

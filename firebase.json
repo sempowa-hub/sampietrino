@@ -26,9 +26,38 @@
       "dati/domande-proposte.json",
       "dati/domande-approvate.json",
       "dati/proposte-follower.json",
-      "dati/calendario.json"
+      "dati/calendario.json",
+      "CLAUDE.md",
+      "**/*.md",
+      "dati/proposte/**"
     ],
     "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=()"
+          }
+        ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
       {
         "source": "**/*.@(html|js|css|json)",
         "headers": [

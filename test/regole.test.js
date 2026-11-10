@@ -65,6 +65,23 @@ const CASI = [
   caso('settimana: giorno non piu vicino', 'DENY', { path: settimana(), time: '2026-11-12T12:00:00Z', prima: settimanaPrima, dopo: { ...settimanaPrima, giorni: { [IERI]: 7, [OGGI]: 14 }, tot: 21, corretto: IERI }, delGiorno: 7 }),
   caso('settimana: anonimo', 'DENY', { auth: anonimo(), path: settimana(), prima: settimanaPrima, dopo: settimanaGiusta, delGiorno: 16 }),
   caso('settimana: giorno nuovo aggiunto come prima', 'ALLOW', { path: settimana(), time: '2026-11-11T12:00:00Z', prima: settimanaPrima, dopo: { ...settimanaPrima, giorni: { ...settimanaPrima.giorni, '2026-11-11': 9 }, tot: 33, n: 3, ultimo: '2026-11-11', ora: '2026-11-11T12:00:00Z' }, delGiorno: 9 }),
+  // Il giorno va solo nella sua settimana (documento = lunedi di quel giorno)
+  caso('settimana: creazione nella settimana giusta', 'ALLOW', { method: 'create', path: settimana(), dopo: { giorni: { [OGGI]: 14 }, tot: 14, n: 1, ultimo: OGGI, ora: ORA, ...chi }, delGiorno: 14 }),
+  caso('settimana: creazione di domenica nella settimana del lunedi prima', 'ALLOW', { method: 'create', path: settimana(), time: '2026-11-15T12:00:00Z', dopo: { giorni: { '2026-11-15': 14 }, tot: 14, n: 1, ultimo: '2026-11-15', ora: '2026-11-15T12:00:00Z', ...chi }, delGiorno: 14 }),
+  caso('settimana: punteggio di oggi dentro la settimana scorsa', 'DENY', { method: 'create', path: 'settimane/2026-11-02/punteggi/u1', dopo: { giorni: { [OGGI]: 14 }, tot: 14, n: 1, ultimo: OGGI, ora: ORA, ...chi }, delGiorno: 14 }),
+  caso('settimana: documento che non e un lunedi', 'DENY', { method: 'create', path: 'settimane/2026-11-10/punteggi/u1', dopo: { giorni: { [OGGI]: 14 }, tot: 14, n: 1, ultimo: OGGI, ora: ORA, ...chi }, delGiorno: 14 }),
+  caso('settimana: giorno nuovo dentro una settimana vecchia', 'DENY', { path: 'settimane/2026-11-02/punteggi/u1', prima: { giorni: { '2026-11-03': 10 }, tot: 10, n: 1, ultimo: '2026-11-03', ora: '2026-11-03T09:00:00Z', ...chi }, dopo: { giorni: { '2026-11-03': 10, [OGGI]: 14 }, tot: 24, n: 2, ultimo: OGGI, ora: ORA, ...chi }, delGiorno: 14 }),
+  // Foto: solo quella dell'account Google
+  caso('giorno: creazione con la foto di Google', 'ALLOW', { method: 'create', path: punteggio(), dopo: { ...giornoGiusto, ora: ORA, foto: 'https://lh3.googleusercontent.com/a/ACg8ocJ=s96-c' } }),
+  caso('giorno: creazione con una foto presa altrove', 'DENY', { method: 'create', path: punteggio(), dopo: { ...giornoGiusto, ora: ORA, foto: 'https://esempio.it/foto.png' } }),
+  caso('giorno: nome con una foto presa altrove', 'DENY', { path: punteggio(), prima: giornoPrima, dopo: { ...giornoPrima, foto: 'https://lh3.googleusercontent.com.esempio.it/x.png' } }),
+  caso('settimana: nome con una foto presa altrove', 'DENY', { path: settimana(), prima: settimanaPrima, dopo: { ...settimanaPrima, foto: 'http://lh3.googleusercontent.com/a/x' } }),
+  // Contatore e amministratori
+  caso('contatore: primo conteggio del giorno', 'ALLOW', { auth: anonimo(), method: 'create', path: `contatori/${OGGI}`, dopo: { iniziate: 1 } }),
+  caso('contatore: piu uno', 'ALLOW', { auth: anonimo(), path: `contatori/${OGGI}`, prima: { iniziate: 4, finite: 2 }, dopo: { iniziate: 5, finite: 2 } }),
+  caso('contatore: piu due', 'DENY', { auth: anonimo(), path: `contatori/${OGGI}`, prima: { iniziate: 4 }, dopo: { iniziate: 6 } }),
+  caso('contatore: due campi insieme', 'DENY', { auth: anonimo(), path: `contatori/${OGGI}`, prima: { iniziate: 4, finite: 2 }, dopo: { iniziate: 5, finite: 3 } }),
+  caso('admin: nessuno si fa amministratore', 'DENY', { method: 'create', path: 'admin/u1', dopo: { ok: true } }),
 ];
 
 test('regole: correzione del punteggio del giorno e della settimana', { skip: salta }, async () => {

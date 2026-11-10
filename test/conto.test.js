@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { fondi, pulisciNome, nomeValido, correzioneGiorno, correzioneSettimana } from '../src/conto.js';
+import { fondi, pulisciNome, nomeValido, correzioneGiorno, correzioneSettimana, settimanaDi, fotoSicura } from '../src/conto.js';
 
 test('fondi: vince la partita finita, i timbri tengono la fascia migliore, i souvenir si sommano', () => {
   const browser = { giorni: { '2026-10-30': { tot: 5, finita: false, livelli: [1, 0, null, null, null] } }, timbri: { a: 1, b: 4 }, souvenir: { x: { data: '2026-10-30', scartato: false } }, visti: ['a'] };
@@ -44,4 +44,22 @@ test('correzioneSettimana: cambia solo il giorno corretto e il totale della diff
   assert.deepEqual(correzioneSettimana(v, '2026-11-10', 16), { giorni: { '2026-11-09': 10, '2026-11-10': 16 }, tot: 26, corretto: '2026-11-10' });
   assert.equal(correzioneSettimana(v, '2026-11-09', 7).tot, 21);
   assert.equal(correzioneSettimana(null, '2026-11-10', 16), null);
+});
+
+test('settimanaDi: il lunedi della settimana, anche di domenica e a cavallo dell\'anno', () => {
+  assert.equal(settimanaDi('2026-11-09'), '2026-11-09');
+  assert.equal(settimanaDi('2026-11-10'), '2026-11-09');
+  assert.equal(settimanaDi('2026-11-15'), '2026-11-09');
+  assert.equal(settimanaDi('2026-11-16'), '2026-11-16');
+  assert.equal(settimanaDi('2027-01-01'), '2026-12-28');
+  assert.equal(settimanaDi('2027-03-28'), '2027-03-22'); // domenica del cambio d'ora
+});
+
+test('fotoSicura: in classifica solo le foto di Google', () => {
+  assert.equal(fotoSicura('https://lh3.googleusercontent.com/a/abc=s96-c'), 'https://lh3.googleusercontent.com/a/abc=s96-c');
+  assert.equal(fotoSicura('https://esempio.it/foto.png'), '');
+  assert.equal(fotoSicura('https://lh3.googleusercontent.com.esempio.it/x'), '');
+  assert.equal(fotoSicura('http://lh3.googleusercontent.com/a/abc'), '');
+  assert.equal(fotoSicura(''), '');
+  assert.equal(fotoSicura(undefined), '');
 });

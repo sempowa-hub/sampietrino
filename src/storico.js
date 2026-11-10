@@ -28,7 +28,9 @@ const livelloDi = (nome) => SCALA.findIndex((f) => f.nome === nome);
 export function leggi() {
   let s;
   try { s = JSON.parse(localStorage.getItem(CHIAVE)) || {}; } catch { s = {}; }
-  s = { giorni: {}, timbri: {}, souvenir: {}, ...s };
+  // Un campo arrivato vuoto (storico sincronizzato a meta, chiave rovinata) non deve fermare il gioco.
+  s = { ...s, giorni: s.giorni || {}, timbri: s.timbri || {}, souvenir: s.souvenir || {} };
+  if (!Array.isArray(s.visti)) delete s.visti;
   // Prima versione dello storico: niente zone "viste", tutte quelle gia timbrate contano come viste.
   if (!s.visti) s.visti = Object.keys(s.timbri);
   // Giorni registrati prima delle statistiche: i livelli tappa per tappa si ricostruiscono dalla partita salvata.
