@@ -906,20 +906,25 @@ metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Esquilino,Da car
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Eur,Da cartolina,1,EUR Fermi / EUR Magliana / EUR Palasport
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Garbatella,Da cartolina,1,Garbatella
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti,Da cartolina,1,Cavour / Colosseo
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ostiense,Ce sta,2,Garbatella
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Marconi,Ce sta,2,Marconi
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Nomentano,Ce sta,2,Bologna / Policlinico / Tiburtina
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Paolo,Ce sta,2,Basilica San Paolo / Marconi
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Testaccio,Ce sta,2,Piramide
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Trieste,Ce sta,2,Sant'Agnese/Annibaliano
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Vescovio,Ce sta,2,Libia
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Castro Pretorio,Da romano de Roma,3,Castro Pretorio / Termini
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Celio,Da romano de Roma,3,Colosseo
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Conca d'Oro,Da romano de Roma,3,Conca d'Oro
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Miani,Da romano de Roma,3,Piramide
-metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Nomentano,Da romano de Roma,3,Libia
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Pietralata,Da romano de Roma,3,Monti Tiburtini / Pietralata / Ponte Mammolo / ...
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Italia,Chicca,5,Bologna / Castro Pretorio / Policlinico / ...
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Monti di Pietralata,Chicca,5,Quintiliani
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ponte Mammolo,Chicca,5,Rebibbia
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Tiburtino III,Chicca,5,Santa Maria del Soccorso
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Tufello,Chicca,5,Jonio
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Aventino,Da Mino,8,Circo Massimo
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Giuliano Dalmata,Da Mino,8,Laurentina
+metro-b,Una zona con una fermata della Metro B (B1 compresa),si,Ostiense,Da Mino,8,Garbatella / Piramide
 metro-b,Una zona con una fermata della Metro B (B1 compresa),si,San Saba,Da Mino,8,Circo Massimo
 metro-c,Una zona con una fermata della Metro C,si,Monti,Da cartolina,1,Colosseo – Fori Imperiali
 metro-c,Una zona con una fermata della Metro C,si,Pigneto,Da cartolina,1,Pigneto
@@ -1626,18 +1631,28 @@ gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Monteverd
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,San Paolo,Da Mino,8,Catacomba di Santa Tecla
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Tor Fiscale,Da Mino,8,parco archeologico delle Tombe di via Latina
 gen-tipi-sito-archeologico,Una zona con un sito archeologico famoso,si,Verano,Da Mino,8,Catacomba di San Lorenzo
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Aventino,Da cartolina,1,Circo Massimo / Tempio di Ercole / Tempio di Portuno / Arco degli Argentari
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Campitelli,Da cartolina,1,Arco di Settimio Severo / Foro Romano / Tempio dei Dioscuri / ...
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Celio,Da cartolina,1,Tempio del Divo Claudio / Colosseo
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Celio,Da cartolina,1,Colosseo / Tempio del Divo Claudio / Ludus Magnus / Sepolcro degli Scipioni
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Monti,Da cartolina,1,Mercati di Traiano / Foro romano e Palatino
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Sant'Angelo,Da cartolina,1,Teatro di Marcello / Portico d'Ottavia
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Campo Marzio,Ce sta,2,Mausoleo di Augusto
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Castro Pretorio,Ce sta,2,Terme di Diocleziano
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Colonna,Ce sta,2,Tempio di Adriano
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Sant'Angelo,Ce sta,2,Tempio di Bellona
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Aventino,Da romano de Roma,3,Arco degli Argentari
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Nomentano,Da romano de Roma,3,Sepolcro di Elio Callisto
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Pigna,Da romano de Roma,3,Tempio delle Ninfe / Tempio di Iside al Campo Marzio
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Appia Antica,Chicca,5,castello Caetani
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Pigna,Ce sta,2,Area Sacra di Largo Argentina
+gen-tipi-rovine,Una zona con delle rovine antiche,si,San Saba,Ce sta,2,Terme di Caracalla
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Sant'Eustachio,Ce sta,2,Area Sacra di Largo Argentina
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Appia Antica,Da romano de Roma,3,Tomba di Cecilia Metella / Villa dei Quintili / Circo di Massenzio
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Esquilino,Da romano de Roma,3,Porta Maggiore / Sepolcro di Eurisace / Tempio di Minerva Medica / Auditorium di Mecenate
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Parione,Da romano de Roma,3,Stadio di Domiziano
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Testaccio,Da romano de Roma,3,Piramide Cestia / Porticus Aemilia / Monte Testaccio
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Appio Latino,Chicca,5,Tombe di via Latina
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Balduina,Chicca,5,Villa del Pigneto
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Parco degli Acquedotti,Chicca,5,acquedotti Claudio e Felice
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Tor Pignattara,Chicca,5,Mausoleo di Sant'Elena
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Villa Gordiani,Chicca,5,horreum / Mausoleo di Tor de' Schiavi
+gen-tipi-rovine,Una zona con delle rovine antiche,si,Nomentano,Da Mino,8,Sepolcro di Elio Callisto
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Tor Fiscale,Da Mino,8,casale rampa o vaccheria Tor Fiscale
-gen-tipi-rovine,Una zona con delle rovine antiche,si,Villa Gordiani,Da Mino,8,horreum di Villa Gordiani
 gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Appia Antica,Da cartolina,1,Villa dei Quintili / Capo di Bove / Villa di Massenzio / ...
 gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Cinecittà,Da cartolina,1,Villa dei Sette Bassi / Villa delle Vignacce
 gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Pigna,Da cartolina,1,Villa publica
@@ -2373,10 +2388,11 @@ gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Villa Pam
 gen-tipi-impianto-di-calcio,Una zona con un campo da calcio storico,si,Tor Sapienza,Da Mino,8,Campo Giorgio Castelli
 gen-architetti-bramante,Una zona con un edificio di Bramante,si,Ponte,Da cartolina,1,chiesa di Santa Maria della Pace / chiesa dei Santi Celso e Giuliano / chiesa di Santa Maria dell'Anima / ...
 gen-architetti-bramante,Una zona con un edificio di Bramante,si,Trastevere,Da cartolina,1,chiesa di San Pietro in Montorio / tempietto di San Pietro in Montorio
-gen-architetti-bramante,Una zona con un edificio di Bramante,si,Parione,Ce sta,2,Palazzo della Cancelleria
-gen-architetti-bramante,Una zona con un edificio di Bramante,si,Regola,Da romano de Roma,3,via Giulia
-gen-architetti-bramante,Una zona con un edificio di Bramante,si,Borgo,Chicca,5,Palazzo Caprini / Palazzo dei Convertendi
-gen-architetti-bramante,Una zona con un edificio di Bramante,si,Celio,Da Mino,8,chiesa di San Giovanni in Oleo
+gen-architetti-bramante,Una zona con un edificio di Bramante,si,Campo Marzio,Ce sta,2,abside di Santa Maria del Popolo
+gen-architetti-bramante,Una zona con un edificio di Bramante,si,Regola,Ce sta,2,"via Giulia, resti del Palazzo dei Tribunali"
+gen-architetti-bramante,Una zona con un edificio di Bramante,si,Parione,Da romano de Roma,3,Palazzo della Cancelleria (attribuito)
+gen-architetti-bramante,Una zona con un edificio di Bramante,si,Borgo,Chicca,5,Palazzo Castellesi-Giraud-Torlonia (attribuito)
+gen-architetti-bramante,Una zona con un edificio di Bramante,si,Celio,Da Mino,8,San Giovanni in Oleo (attribuito)
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Pigna,Da cartolina,1,basilica di Santa Maria sopra Minerva / Palazzo Doria-Pamphili
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Trevi,Da cartolina,1,palazzo del Quirinale / Palazzo Barberini / chiesa di Santa Susanna alle Terme di Diocleziano / ...
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Sallustiano,Ce sta,2,chiesa di Santa Maria della Vittoria
@@ -2977,11 +2993,13 @@ gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scali
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Campo Marzio,Chicca,5,Scalinata della Trinità dei Monti / Scalinata di Trinità dei Monti
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Campitelli,Da Mino,8,Scalinata dell'Ara Coeli / Scala dell'Arce Capitolina
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,San Saba,Da Mino,8,Scalea Padre Simpliciano della Natività
+gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Campo Marzio,Da cartolina,1,Passeggiata del Pincio / Passeggiata di Ripetta
 gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Eur,Da cartolina,1,Passeggiata del Giappone
 gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Trastevere,Da cartolina,1,Passeggiata del Gianicolo / Passeggiata di Righetto
-gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Pigneto,Ce sta,2,Passeggiata Tito Bernardini
-gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Campo Marzio,Da romano de Roma,3,Passeggiata di Ripetta
-gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Cavalleggeri - San Pietro,Chicca,5,Passeggiata del Gianicolo / Passeggiata del Gelsomino
+gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Cavalleggeri - San Pietro,Ce sta,2,Passeggiata del Gelsomino
+gen-nomi-una-passeggiata,Una zona con una passeggiata,si,San Saba,Ce sta,2,Passeggiata Archeologica
+gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Pigneto,Da romano de Roma,3,Passeggiata Tito Bernardini
+gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Celio,Chicca,5,Passeggiata Archeologica
 gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Della Vittoria,Da Mino,8,Passeggiata Massimo Cimino / Passeggiata della Geodesia / Passeggiata Elia Millosevich / ...
 gen-nomi-una-circonvallazione,Una zona con una circonvallazione,si,Garbatella,Da cartolina,1,Circonvallazione Ostiense
 gen-nomi-una-circonvallazione,Una zona con una circonvallazione,si,Monteverde,Da cartolina,1,Circonvallazione Gianicolense
@@ -3337,14 +3355,14 @@ gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora,"Una zona con un lo
 gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora,"Una zona con un locale ""da qualcuno"" (da Mario, da Enzo, dalla Sora...)",si,La Pisana,Chicca,5,I Gerani da Peppe
 gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora,"Una zona con un locale ""da qualcuno"" (da Mario, da Enzo, dalla Sora...)",si,Sant'Angelo,Da Mino,8,Da Giggetto
 gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora,"Una zona con un locale ""da qualcuno"" (da Mario, da Enzo, dalla Sora...)",si,Sant'Eustachio,Da Mino,8,osteria da mario
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Ponte Milvio,Da cartolina,1,I fritti de Sora Milvia
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trastevere,Da cartolina,1,Dar sor Olimpio al Drago
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Cavalleggeri - San Pietro,Ce sta,2,"Grattacheccaro ""Sora Lella"""
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trevi,Ce sta,2,Sora Lucía
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trionfale,Da romano de Roma,3,"Grattacheccaro ""Sora Maria"""
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Aventino,Da cartolina,1,Trattoria Sora Lella
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trastevere,Da cartolina,1,Grattachecca Sora Mirella / Dar Sor Olimpio al Drago
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Ponte Milvio,Ce sta,2,I fritti de Sora Milvia
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trionfale,Ce sta,2,Grattachecca Sora Maria
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Regola,Da romano de Roma,3,Sora Margherita
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Trevi,Da romano de Roma,3,Sora Lucia
 gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Boccea Cornelia,Chicca,5,Sora Pia
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Regola,Chicca,5,Sora Margherita
-gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Aventino,Da Mino,8,Sora Lella / Trattoria Sora Lella
+gen-locali-un-locale-della-sora-o-del-sor,Una zona con un locale della Sora o del Sor,si,Cavalleggeri - San Pietro,Da Mino,8,"Grattacheccaro ""Sora Lella"""
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Esquilino,Da cartolina,1,Gelateria Fassi
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Monti,Da cartolina,1,Ai Tre Scalini
 gen-storici-una-gelateria-storica-giolitti-fassi-san-crispino,"Una zona con una gelateria storica (Giolitti, Fassi, San Crispino...)",si,Testaccio,Da cartolina,1,Gelateria Giolitti a Testaccio
