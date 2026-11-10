@@ -205,17 +205,18 @@ export async function conta(giornoDiGioco, campo) {
   } catch { /* un conteggio perso non ferma il gioco */ }
 }
 
-// Cosa cambiare nel punteggio del giorno gia pubblicato, o null se e gia giusto.
+// Cosa cambiare nel punteggio del giorno gia pubblicato, o null se e gia giusto. Solo verso l'alto: chi ha gia
+// giocato prende i punti delle zone aggiunte, ma non perde quelli che aveva se le fasce vengono ridistribuite.
 export function correzioneGiorno(pubblicato, { tot, livelli }) {
   const uguali = pubblicato?.tot === tot && JSON.stringify(pubblicato?.livelli) === JSON.stringify(livelli);
-  return uguali ? null : { tot, livelli };
+  return uguali || tot < (pubblicato?.tot ?? 0) ? null : { tot, livelli };
 }
 
 // Cosa cambiare nella settimana se il giorno c'e gia con un totale diverso, o null. "corretto" dice alle regole
 // quale giorno si sta correggendo: devono controllare che valga quanto il punteggio del giorno.
 export function correzioneSettimana(v, data, tot) {
   const vecchio = v?.giorni?.[data];
-  if (vecchio === undefined || vecchio === tot) return null;
+  if (vecchio === undefined || vecchio === tot || tot < vecchio) return null; // mai in giu, come il giorno
   return { giorni: { ...v.giorni, [data]: tot }, tot: v.tot - vecchio + tot, corretto: data };
 }
 
