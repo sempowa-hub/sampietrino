@@ -1394,10 +1394,13 @@ cupola,Una zona da cui si vede il Cupolone,si,Aurelio,Da Mino,8,Belvedere di via
 cupola,Una zona da cui si vede il Cupolone,si,Balduina,Da Mino,8,Piazzale Socrate
 cupola,Una zona da cui si vede il Cupolone,si,Cavalleggeri - San Pietro,Da Mino,8,Passeggiata del Gelsomino
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aventino,Da cartolina,1,Buco della serratura
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Ce sta,2,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Da romano de Roma,3,Refettorio di Andrea Pozzo a Trinità dei Monti / Effetto acustico di piazza del Popolo
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Monti,Chicca,5,"Cupola di San Carlino, coi cassettoni che rimpiccioliscono"
-illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Trevi,Chicca,5,"Cupola di San Carlino, coi cassettoni che rimpiccioliscono"
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Borgo,Da cartolina,1,Dischi del colonnato di piazza San Pietro
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campitelli,Ce sta,2,Piazza del Campidoglio
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Pigna,Ce sta,2,Finta cupola di Sant'Ignazio / Volta del Baciccio al Gesù / Corridoio di Andrea Pozzo
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Campo Marzio,Da romano de Roma,3,Effetto acustico di piazza del Popolo / chiese gemelle di piazza del Popolo / Refettorio di Andrea Pozzo e anamorfosi di Maignan a Trinità dei Monti
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Trastevere,Da romano de Roma,3,Sala delle Prospettive alla Villa Farnesina
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Monti,Chicca,5,Cupola di San Carlino
+illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Trevi,Chicca,5,Cupola di San Carlino / finestra prospettica di Palazzo Barberini
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Aurelio,Da Mino,8,Cupola che si rimpicciolisce in via Piccolomini
 illusioni,Una zona dove Roma ti inganna gli occhi (o le orecchie),si,Regola,Da Mino,8,Galleria prospettica di Palazzo Spada
 misteri,Una zona con una leggenda nera o un mistero,si,Aventino,Da cartolina,1,Bocca della Verità
@@ -1654,21 +1657,23 @@ gen-tipi-rovine,Una zona con delle rovine antiche,si,Tor Pignattara,Chicca,5,Mau
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Villa Gordiani,Chicca,5,horreum / Mausoleo di Tor de' Schiavi
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Nomentano,Da Mino,8,Sepolcro di Elio Callisto
 gen-tipi-rovine,Una zona con delle rovine antiche,si,Tor Fiscale,Da Mino,8,casale rampa o vaccheria Tor Fiscale
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Appia Antica,Da cartolina,1,Villa dei Quintili / Capo di Bove / Villa di Massenzio / ...
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Cinecittà,Da cartolina,1,Villa dei Sette Bassi / Villa delle Vignacce
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Pigna,Da cartolina,1,Villa publica
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Casal Boccone,Ce sta,2,Villa di Faonte
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Rebibbia,Ce sta,2,villa romana di Podere Anna
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,San Basilio,Ce sta,2,Villa Romana di Via Pollenza
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Caffarella,Da romano de Roma,3,villa romana della Caffarella
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Parco degli Acquedotti,Da romano de Roma,3,villa romana a Via Gaio Menio
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Tor Fiscale,Da romano de Roma,3,villa di Demetriade
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Ponte Mammolo,Chicca,5,villa romana a via Tilli
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Tor Marancia,Chicca,5,villa di Numisia Procula
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Villaggio Olimpico,Chicca,5,La fattoria e la villa dell'Auditorium
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Appia Antica,Da cartolina,1,Villa dei Quintili / Capo di Bove / Villa di Massenzio
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Parco degli Acquedotti,Da cartolina,1,villa di via Gaio Menio
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Villa Gordiani,Da cartolina,1,Villa dei Gordiani
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Cinecittà,Ce sta,2,Villa dei Sette Bassi / Villa delle Vignacce
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Sallustiano,Ce sta,2,Horti Sallustiani
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Caffarella,Da romano de Roma,3,villa della Caffarella
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Tor Fiscale,Da romano de Roma,3,Villa di Demetriade
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Trastevere,Da romano de Roma,3,Villa della Farnesina antica
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Casal Boccone,Chicca,5,"Villa di Faonte, dove si dice sia morto Nerone"
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Rebibbia,Chicca,5,Podere Anna
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,San Basilio,Chicca,5,villa di via Pollenza
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Villaggio Olimpico,Chicca,5,villa dell'Auditorium
 gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Grottarossa,Da Mino,8,Casale Ghella
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Tor di Valle,Da Mino,8,Villa romana del Torcularium
-gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Torre Maura,Da Mino,8,Villa romana di Santa Maria dei Ruderi
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Ponte Mammolo,Da Mino,8,villa di via Tilli
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Tor Marancia,Da Mino,8,villa di Numisia Procula
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Tor di Valle,Da Mino,8,villa del Torcularium
+gen-tipi-villa-romana,Una zona con i resti di una villa romana,si,Torre Maura,Da Mino,8,Santa Maria dei Ruderi
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Campitelli,Da cartolina,1,Tempio del Divo Romolo / Tempio di Venere e Roma / Tempio di Giove Ottimo Massimo / ...
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Foro Italico,Da cartolina,1,Ponte Milvio
 gen-tipi-edificio-romano,Una zona con un edificio di epoca romana,si,Monti,Da cartolina,1,Domus Aurea / Terme di Tito / Terme di Costantino / ...
@@ -2562,41 +2567,45 @@ gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Tr
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Celio,Chicca,5,basilica dei Santi Giovanni e Paolo / basilica di Santa Maria in Domnica
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Tor Pignattara,Chicca,5,Catacombe dei Santi Marcellino e Pietro
 gen-stili-una-chiesa-paleocristiana,Una zona con una chiesa paleocristiana,si,Alberone,Da Mino,8,Ipogeo di Trebio Giusto
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Aventino,Da cartolina,1,basilica di Santa Maria in Cosmedin / chiesa di Santa Maria del Priorato / chiesa di Santa Maria del Sole
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Campitelli,Da cartolina,1,chiesa di Santa Maria Antiqua / basilica di Santa Maria in Aracoeli / chiesa di Santa Maria Annunziata a Tor de' Specchi / ...
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Campo Marzio,Da cartolina,1,basilica di Santa Maria del Popolo / basilica di Santa Maria in Montesanto / chiesa di Santa Maria della Concezione in Campo Marzio / ...
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore / chiesa di Santa Maria ai Monti / Cappella Paolina / ...
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Parione,Da cartolina,1,chiesa di Santa Maria in Vallicella / chiesa di Santa Maria in Grottapinta
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Pigna,Da cartolina,1,Pantheon / basilica di Santa Maria sopra Minerva / basilica di Santa Maria in Via Lata
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Trastevere,Da cartolina,1,Basilica di Santa Maria in Trastevere / chiesa di Santa Maria dei Sette Dolori / chiesa di Santa Maria dell'Orto / ...
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Celio,Ce sta,2,basilica di Santa Maria in Domnica / chiesa di Santa Maria della Pietà al Colosseo / chiesa di Santa Maria in Tempulo
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ludovisi,Ce sta,2,chiesa di Santa Maria Immacolata a via Veneto
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ponte,Ce sta,2,chiesa di Santa Maria del Suffragio / chiesa di Santa Maria dell'Anima / chiesa di Santa Maria in Posterula
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Regola,Ce sta,2,chiesa di Santa Maria in Monserrato degli Spagnoli / chiesa di Santa Maria dell'Orazione e Morte / chiesa di Santa Maria del Pianto / ...
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Sant'Angelo,Ce sta,2,chiesa di Santa Maria in Portico in Campitelli / chiesa di Santa Maria in Publicolis
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Trevi,Ce sta,2,chiesa di Santa Maria in Trivio / chiesa di Santa Maria in Via / chiesa del Santissimo Nome di Maria al Foro Traiano / ...
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Tuscolano,Ce sta,2,basilica di Santa Maria Ausiliatrice
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Colonna,Da romano de Roma,3,chiesa di Santa Maria in Aquiro
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Grottarossa Valle Vescovo,Da romano de Roma,3,Immacolata Concezione di Maria a Grottarossa / chiesa di Santa Maria Immacolata a Grottarossa
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monteverde,Da romano de Roma,3,chiesa di Nostra Signora de La Salette
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Lorenzo,Da romano de Roma,3,chiesa di Santa Maria Immacolata e San Giovanni Berchmans
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Aventino,Da cartolina,1,Santa Maria in Cosmedin / Santa Maria del Sole / Santa Maria del Priorato
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Campitelli,Da cartolina,1,Santa Maria Antiqua / Aracoeli / Santa Maria Nova / Santa Maria della Consolazione / Tor de' Specchi
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Campo Marzio,Da cartolina,1,Santa Maria del Popolo / Santa Maria in Montesanto / Santa Maria dei Miracoli / Santa Maria della Concezione in Campo Marzio
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Castro Pretorio,Da cartolina,1,Santa Maria degli Angeli e dei Martiri / Santa Maria della Vittoria
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monti,Da cartolina,1,Santa Maria Maggiore / Santa Maria ai Monti / Cappella Paolina / Santissimo Nome di Maria / Santa Maria di Loreto
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Pigna,Da cartolina,1,Pantheon / Santa Maria sopra Minerva / Santa Maria in Via Lata
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Trastevere,Da cartolina,1,Santa Maria in Trastevere / Santa Maria della Scala / Sette Dolori / Santa Maria dell'Orto
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Borgo,Ce sta,2,Santa Maria in Traspontina
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Celio,Ce sta,2,Santa Maria in Domnica / Santa Maria della Pietà al Colosseo / Santa Maria in Tempulo
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ludovisi,Ce sta,2,Santa Maria Immacolata a via Veneto
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Parione,Ce sta,2,Santa Maria in Vallicella / Santa Maria in Grottapinta
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ponte,Ce sta,2,Santa Maria della Pace / Santa Maria dell'Anima / Santa Maria del Suffragio
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Regola,Ce sta,2,Santa Maria in Monserrato / Orazione e Morte / Santa Maria del Pianto
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Sallustiano,Ce sta,2,Santa Maria della Vittoria
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Sant'Angelo,Ce sta,2,Santa Maria in Portico in Campitelli / Santa Maria in Publicolis
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Trevi,Ce sta,2,Santa Maria in Trivio / Santa Maria in Via / Santissimo Nome di Maria / Santa Maria di Loreto
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Colonna,Da romano de Roma,3,Santa Maria in Aquiro / Santa Maria della Concezione in Campo Marzio
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Grottarossa Valle Vescovo,Da romano de Roma,3,Immacolata Concezione
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monteverde,Da romano de Roma,3,Nostra Signora de La Salette
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Lorenzo,Da romano de Roma,3,Immacolata e San Giovanni Berchmans
 gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Paolo,Da romano de Roma,3,Regina Apostolorum
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Sant'Eustachio,Da romano de Roma,3,chiesa di Santa Maria in Monterone / chiesa di Santa Maria in Publicolis / chiesa di Santa Maria della Concezione in Campo Marzio
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Testaccio,Da romano de Roma,3,chiesa di Santa Maria Liberatrice
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Aurelio,Chicca,5,chiesa di Santa Maria Mediatrice / chiesa di Santa Maria del Riposo
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Esquilino,Chicca,5,oratorio di Santa Maria Immacolata della Concezione / chiesa di Santa Maria Immacolata all'Esquilino / chiesa di Santa Maria del Buon Aiuto nell'Anfiteatro Castrense
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Giuliano Dalmata,Chicca,5,chiesa di Santa Maria Scala Coeli
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monti di Creta,Chicca,5,chiesa di Santa Maria Immacolata di Lourdes
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Salario,Chicca,5,chiesa di Santa Maria della Mercede e Sant'Adriano
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Giovanni,Chicca,5,chiesa di Santa Maria Immacolata e San Giuseppe Benedetto Labre
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Villa Borghese,Chicca,5,chiesa della Madonna dell'Arco Oscuro / chiesa di Santa Maria Immacolata a Villa Borghese
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Appia Antica,Da Mino,8,chiesa dell'Annunziatella / chiesa della Santissima Annunziata a Via Ardeatina
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Nuovo Salario,Da Mino,8,chiesa di Santa Maria della Speranza
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ponte Mammolo,Da Mino,8,chiesa di Santa Maria Immacolata alla Cervelletta
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Primavalle,Da Mino,8,chiesa di Santa Maria Assunta e San Giuseppe a Primavalle / chiesa di Santa Maria della Salute a Primavalle
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Saba,Da Mino,8,chiesa di Santa Maria in Tempulo
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Torrino,Da Mino,8,chiesa di Santa Maria Mater Ecclesiae
-gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Villa Bonelli,Da Mino,8,chiesa di Nostra Signora di Valme
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Sant'Eustachio,Da romano de Roma,3,Santa Maria in Monterone / Santa Maria della Concezione in Campo Marzio
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Testaccio,Da romano de Roma,3,Santa Maria Liberatrice
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Tor di Quinto,Da romano de Roma,3,Immacolata Concezione a Grottarossa (al confine)
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Tuscolano,Da romano de Roma,3,Santa Maria Ausiliatrice
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Aurelio,Chicca,5,Santa Maria Mediatrice / Santa Maria del Riposo
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Esquilino,Chicca,5,Immacolata all'Esquilino / Santa Maria del Buon Aiuto / oratorio dell'Immacolata
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Giuliano Dalmata,Chicca,5,Santa Maria Scala Coeli
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Monti di Creta,Chicca,5,Immacolata di Lourdes
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Salario,Chicca,5,Santa Maria della Mercede
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Giovanni,Chicca,5,Immacolata e San Benedetto Labre
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Villa Borghese,Chicca,5,Madonna dell'Arco Oscuro / Immacolata a Villa Borghese
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Appia Antica,Da Mino,8,Annunziatella
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Nuovo Salario,Da Mino,8,Santa Maria della Speranza
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Ponte Mammolo,Da Mino,8,Immacolata alla Cervelletta
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Primavalle,Da Mino,8,Santa Maria Assunta / Santa Maria della Salute
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,San Saba,Da Mino,8,Santa Maria in Tempulo
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Torrino,Da Mino,8,Mater Ecclesiae
+gen-dediche-alla-madonna,Una zona con una chiesa dedicata alla Madonna,si,Villa Bonelli,Da Mino,8,Nostra Signora di Valme
 gen-dediche-a-gesu,Una zona con una chiesa dedicata a Gesù,si,Campo Marzio,Da cartolina,1,chiesa di Gesù e Maria
 gen-dediche-a-gesu,Una zona con una chiesa dedicata a Gesù,si,Ludovisi,Da cartolina,1,chiesa di Cristo
 gen-dediche-a-gesu,Una zona con una chiesa dedicata a Gesù,si,Ponte,Da cartolina,1,chiesa di San Salvatore in Lauro / chiesa di San Salvatore in Primicerio
@@ -3179,19 +3188,20 @@ gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Parione,Da Mino,8,Piazza del Fico
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,Regola,Da Mino,8,Piazza della Quercia
 gen-nomi-una-strada-col-nome-di-un-albero,Una zona con una strada col nome di un albero,si,San Saba,Da Mino,8,Viale Manlio Gelsomini / Largo Manlio Gelsomini
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Campo Marzio,Da cartolina,1,Via di Campo Marzio / Piazza in Campo Marzio
 gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Monti,Da cartolina,1,Via Campo Carleo
 gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Ostiense,Da cartolina,1,Viale del Campo Boario
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Alberone,Ce sta,2,Via Campo Cerreto
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Quarticciolo,Ce sta,2,Via del Campo
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Tor Fiscale,Ce sta,2,Via Campo Barbarico
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Colonna,Da romano de Roma,3,Via di Campo Marzio
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Torrevecchia,Da romano de Roma,3,Via Campo Ligure
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Parione,Da cartolina,1,Campo de' Fiori
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Testaccio,Da cartolina,1,Viale del Campo Boario
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Campo Marzio,Ce sta,2,Via di Campo Marzio / Piazza in Campo Marzio
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Colonna,Ce sta,2,Via di Campo Marzio
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Sant'Eustachio,Ce sta,2,Piazza in Campo Marzio
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Regola,Da romano de Roma,3,Via e Piazza di San Salvatore in Campo / Campo de' Fiori
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Tor Fiscale,Da romano de Roma,3,Via Campo Barbarico
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Alberone,Chicca,5,Via Campo Cerreto
 gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Capannelle,Chicca,5,Via Campo Farnia
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Cortina d'Ampezzo,Chicca,5,Via Campo Catino
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Parione,Chicca,5,Campo de' Fiori
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Regola,Da Mino,8,Via di San Salvatore in Campo / Piazza di San Salvatore in Campo / Campo de' Fiori
-gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Sant'Eustachio,Da Mino,8,Piazza in Campo Marzio
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Quarticciolo,Chicca,5,Via del Campo
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Cortina d'Ampezzo,Da Mino,8,Via Campo Catino
+gen-nomi-una-strada-col-nome-di-un-campo,Una zona con una strada col nome di un campo,si,Torrevecchia,Da Mino,8,Via Campo Ligure
 gen-nomi-una-strada-col-nome-di-un-antico-mestiere,Una zona con una strada col nome di un antico mestiere,si,Aurelio,Da cartolina,1,Via delle Fornaci
 gen-nomi-una-strada-col-nome-di-un-antico-mestiere,Una zona con una strada col nome di un antico mestiere,si,Castro Pretorio,Da cartolina,1,Via Pietro Barbieri
 gen-nomi-una-strada-col-nome-di-un-antico-mestiere,Una zona con una strada col nome di un antico mestiere,si,Cavalleggeri - San Pietro,Da cartolina,1,Via di Santa Maria alle Fornaci / Via delle Fornaci / Via Nuova delle Fornaci / ...
@@ -3345,16 +3355,19 @@ gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o u
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Parione,Chicca,5,Supplizio
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Ponte,Chicca,5,Supplizio / i Suppli dei Coronari
 gen-locali-una-friggitoria-o-un-posto-di-suppli,Una zona con una friggitoria o un posto di supplì,si,Regola,Da Mino,8,Dar Filettaro a Santa Barbara
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Esquilino,Da cartolina,1,L'antico Chiosco di San Giovanni
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Ponte Milvio,Da cartolina,1,L' Altro Chiosco
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trastevere,Da cartolina,1,"Grattacheccaro ""Alla Fonte d'Oro"""
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Aventino,Da cartolina,1,Sora Mirella (al confine con Trastevere)
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Della Vittoria,Da cartolina,1,Sora Maria (al confine con Trionfale) / chiosco/bar 15
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trastevere,Da cartolina,1,Sora Mirella / Alla Fonte d'Oro
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trionfale,Da cartolina,1,Sora Maria
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Appio Latino,Ce sta,2,Er Chioschetto
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Foro Italico,Ce sta,2,Grattacheccaro
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,San Giovanni,Ce sta,2,Chiosco Grattachecca
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Ponte Milvio,Ce sta,2,L'Altro Chiosco
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,San Giovanni,Ce sta,2,Er Chioschetto / Chiosco Grattachecca
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Testaccio,Ce sta,2,Chiosco Testaccio
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Cavalleggeri - San Pietro,Da romano de Roma,3,"Grattacheccaro ""Sora Lella"""
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trevi,Da romano de Roma,3,FRUTTERIA (chiosco dal 1955)
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Esquilino,Da romano de Roma,3,L'antico Chiosco di San Giovanni
+gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trevi,Da romano de Roma,3,"Frutteria, chiosco dal 1955"
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Casal Bertone,Chicca,5,Chiosco Bar
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Trionfale,Chicca,5,"Grattacheccaro ""Sora Maria"""
-gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Della Vittoria,Da Mino,8,chiosco/bar 15
 gen-locali-un-chiosco-o-una-grattachecca,Una zona con un chiosco o una grattachecca,si,Italia,Da Mino,8,Chiosco Caffè
 gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora,"Una zona con un locale ""da qualcuno"" (da Mario, da Enzo, dalla Sora...)",si,Prati,Da cartolina,1,Da Enzo Ristorante
 gen-locali-un-locale-da-qualcuno-da-mario-da-enzo-dalla-sora,"Una zona con un locale ""da qualcuno"" (da Mario, da Enzo, dalla Sora...)",si,San Lorenzo,Da cartolina,1,Da Franco Ar Vicoletto
