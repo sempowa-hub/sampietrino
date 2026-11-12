@@ -944,29 +944,29 @@ trapizzino,Una zona con un Trapizzino,si,Esquilino,Da romano de Roma,3,Trapizzin
 trapizzino,Una zona con un Trapizzino,si,Ponte Milvio,Da romano de Roma,3,Trapizzino Ponte Milvio
 trapizzino,Una zona con un Trapizzino,si,Foro Italico,Chicca,5,Trapizzino Ponte Milvio
 trapizzino,Una zona con un Trapizzino,si,Italia,Da Mino,8,Trapizzino
-tevere,Una zona dove passa il Tevere,si,Eur,Da cartolina,1,
-tevere,Una zona dove passa il Tevere,si,Ponte Milvio,Da cartolina,1,
-tevere,Una zona dove passa il Tevere,si,Prati,Da cartolina,1,
-tevere,Una zona dove passa il Tevere,si,Testaccio,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Aventino,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Borgo,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Campo Marzio,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Ponte,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Regola,Da cartolina,1,
+tevere,Una zona dove passa il Tevere,si,Sant'Angelo,Da cartolina,1,
 tevere,Una zona dove passa il Tevere,si,Trastevere,Da cartolina,1,
-tevere,Una zona dove passa il Tevere,si,Borgo,Ce sta,2,
-tevere,Una zona dove passa il Tevere,si,Campo Marzio,Ce sta,2,
-tevere,Una zona dove passa il Tevere,si,Foro Italico,Ce sta,2,
-tevere,Una zona dove passa il Tevere,si,Ostiense,Ce sta,2,
+tevere,Una zona dove passa il Tevere,si,Flaminio,Ce sta,2,
 tevere,Una zona dove passa il Tevere,si,Porta Portese,Ce sta,2,
-tevere,Una zona dove passa il Tevere,si,Flaminio,Da romano de Roma,3,
-tevere,Una zona dove passa il Tevere,si,Magliana,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Prati,Ce sta,2,
+tevere,Una zona dove passa il Tevere,si,Testaccio,Ce sta,2,
+tevere,Una zona dove passa il Tevere,si,Della Vittoria,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Foro Italico,Da romano de Roma,3,
 tevere,Una zona dove passa il Tevere,si,Marconi,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Ostiense,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Ponte Milvio,Da romano de Roma,3,
 tevere,Una zona dove passa il Tevere,si,San Paolo,Da romano de Roma,3,
-tevere,Una zona dove passa il Tevere,si,Della Vittoria,Chicca,5,
-tevere,Una zona dove passa il Tevere,si,Tor di Quinto,Chicca,5,
-tevere,Una zona dove passa il Tevere,si,Tor di Valle,Chicca,5,
-tevere,Una zona dove passa il Tevere,si,Valco San Paolo,Chicca,5,
-tevere,Una zona dove passa il Tevere,si,Villaggio Olimpico,Chicca,5,
-tevere,Una zona dove passa il Tevere,si,Aventino,Da Mino,8,
-tevere,Una zona dove passa il Tevere,si,Ponte,Da Mino,8,
-tevere,Una zona dove passa il Tevere,si,Regola,Da Mino,8,
-tevere,Una zona dove passa il Tevere,si,Sant'Angelo,Da Mino,8,
+tevere,Una zona dove passa il Tevere,si,Valco San Paolo,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Villaggio Olimpico,Da romano de Roma,3,
+tevere,Una zona dove passa il Tevere,si,Eur,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Magliana,Chicca,5,
+tevere,Una zona dove passa il Tevere,si,Tor di Quinto,Da Mino,8,
+tevere,Una zona dove passa il Tevere,si,Tor di Valle,Da Mino,8,
 fontane,Una zona con una fontana famosa,si,Trevi,Da cartolina,1,Fontana di Trevi / Fontana del Tritone / Fontana delle Api / Fontana del Mosè / Fontana del Facchino
 fontane,Una zona con una fontana famosa,si,Campo Marzio,Ce sta,2,Fontana della Barcaccia
 fontane,Una zona con una fontana famosa,si,Parione,Ce sta,2,Fontana dei Quattro Fiumi / Fontana della Terrina
@@ -1741,28 +1741,29 @@ gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Cavalleggeri - San
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Italia,Da Mino,8,Porta Clausa / Porta Praetoriana
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Porta Portese,Da Mino,8,Porta Portuensis
 gen-tipi-porta-cittadina,Una zona con una porta delle mura,si,Trevi,Da Mino,8,Porta Quirinalis / Porta Salutaris
-gen-tipi-catacombe,Una zona con delle catacombe,si,Appia Antica,Da cartolina,1,catacombe di San Callisto / catacombe di San Sebastiano / Catacomba dei Santi Marco e Marcelliano / ...
-gen-tipi-catacombe,Una zona con delle catacombe,si,Ardeatino,Da cartolina,1,Catacombe di Domitilla
-gen-tipi-catacombe,Una zona con delle catacombe,si,Garbatella,Da cartolina,1,catacombe di Commodilla
-gen-tipi-catacombe,Una zona con delle catacombe,si,Tor Pignattara,Da cartolina,1,Catacombe dei Santi Marcellino e Pietro
-gen-tipi-catacombe,Una zona con delle catacombe,si,Trieste,Da cartolina,1,catacombe di Priscilla / Catacomba dei Giordani / Catacomba di Sant'Agnese / ...
-gen-tipi-catacombe,Una zona con delle catacombe,si,Aurelio,Ce sta,2,Catacomba di Calepodio
-gen-tipi-catacombe,Una zona con delle catacombe,si,Monteverde,Ce sta,2,Catacomba di Ponziano
-gen-tipi-catacombe,Una zona con delle catacombe,si,San Paolo,Ce sta,2,Catacomba di Santa Tecla
-gen-tipi-catacombe,Una zona con delle catacombe,si,Verano,Ce sta,2,Catacomba di San Lorenzo
-gen-tipi-catacombe,Una zona con delle catacombe,si,Appio Latino,Da romano de Roma,3,Catacomba dei Santi Gordiano ed Epimaco / Ipogeo di via Dino Compagni
-gen-tipi-catacombe,Una zona con delle catacombe,si,Colle del Sole,Da romano de Roma,3,Catacombe di Generosa
-gen-tipi-catacombe,Una zona con delle catacombe,si,Nomentano,Da romano de Roma,3,Catacomba di San Nicomede / Catacombe di Villa Torlonia
-gen-tipi-catacombe,Una zona con delle catacombe,si,Parioli,Da romano de Roma,3,Catacomba ad clivum Cucumeris / Catacomba di San Valentino / Catacomba di Sant'Ermete
-gen-tipi-catacombe,Una zona con delle catacombe,si,Salario,Da romano de Roma,3,Catacombe di Santa Felicita
-gen-tipi-catacombe,Una zona con delle catacombe,si,Alberone,Chicca,5,Catacomba di Aproniano / Ipogeo di Trebio Giusto / catacombe di Tertullino / ...
+gen-tipi-catacombe,Una zona con delle catacombe,si,Appia Antica,Da cartolina,1,San Callisto / San Sebastiano / Santi Marco e Marcelliano / Domitilla / Pretestato / Vigna Randanini
+gen-tipi-catacombe,Una zona con delle catacombe,si,Ardeatino,Da cartolina,1,Domitilla
+gen-tipi-catacombe,Una zona con delle catacombe,si,Tor Pignattara,Da cartolina,1,Santi Marcellino e Pietro
+gen-tipi-catacombe,Una zona con delle catacombe,si,Trieste,Da cartolina,1,Priscilla / Giordani / Sant'Agnese / Coemeterium Maius / catacomba di via Anapo
+gen-tipi-catacombe,Una zona con delle catacombe,si,Aurelio,Ce sta,2,Calepodio
+gen-tipi-catacombe,Una zona con delle catacombe,si,Garbatella,Ce sta,2,Commodilla
+gen-tipi-catacombe,Una zona con delle catacombe,si,Monteverde,Ce sta,2,Ponziano / San Pancrazio
+gen-tipi-catacombe,Una zona con delle catacombe,si,Nomentano,Ce sta,2,Sant'Agnese / San Nicomede / Villa Torlonia
+gen-tipi-catacombe,Una zona con delle catacombe,si,San Paolo,Ce sta,2,Santa Tecla
+gen-tipi-catacombe,Una zona con delle catacombe,si,Verano,Ce sta,2,San Lorenzo
+gen-tipi-catacombe,Una zona con delle catacombe,si,Appio Latino,Da romano de Roma,3,Santi Gordiano ed Epimaco / Pretestato / Ipogeo di via Dino Compagni
+gen-tipi-catacombe,Una zona con delle catacombe,si,Colle del Sole,Da romano de Roma,3,Generosa
+gen-tipi-catacombe,Una zona con delle catacombe,si,Parioli,Da romano de Roma,3,ad clivum Cucumeris / Sant'Ermete
+gen-tipi-catacombe,Una zona con delle catacombe,si,Salario,Da romano de Roma,3,Santa Felicita / Trasone
+gen-tipi-catacombe,Una zona con delle catacombe,si,Villaggio Olimpico,Da romano de Roma,3,San Valentino (al confine con Parioli)
+gen-tipi-catacombe,Una zona con delle catacombe,si,Alberone,Chicca,5,Aproniano / Trebio Giusto / Tertullino
 gen-tipi-catacombe,Una zona con delle catacombe,si,Esquilino,Chicca,5,Ipogeo degli Aureli
-gen-tipi-catacombe,Una zona con delle catacombe,si,Pinciano,Chicca,5,Catacomba di San Panfilo / Catacomba di Trasone
-gen-tipi-catacombe,Una zona con delle catacombe,si,Tor Marancia,Chicca,5,Catacomba della Nunziatella
-gen-tipi-catacombe,Una zona con delle catacombe,si,Italia,Da Mino,8,Catacomba di Novaziano / Catacomba di Sant'Ippolito
-gen-tipi-catacombe,Una zona con delle catacombe,si,San Giovanni,Da Mino,8,Catacomba di San Castulo
-gen-tipi-catacombe,Una zona con delle catacombe,si,Villa Gordiani,Da Mino,8,catacombe di via Rovigno d'Istria
-gen-tipi-catacombe,Una zona con delle catacombe,si,Villa Pamphili,Da Mino,8,Catacomba dei Santi Processo e Martiniano / Catacomba dei due Felici / Catacomba di San Pancrazio
+gen-tipi-catacombe,Una zona con delle catacombe,si,Pinciano,Chicca,5,San Panfilo / Trasone
+gen-tipi-catacombe,Una zona con delle catacombe,si,Tor Marancia,Chicca,5,Nunziatella
+gen-tipi-catacombe,Una zona con delle catacombe,si,Italia,Da Mino,8,Novaziano / Sant'Ippolito
+gen-tipi-catacombe,Una zona con delle catacombe,si,San Giovanni,Da Mino,8,San Castulo
+gen-tipi-catacombe,Una zona con delle catacombe,si,Villa Gordiani,Da Mino,8,via Rovigno d'Istria
+gen-tipi-catacombe,Una zona con delle catacombe,si,Villa Pamphili,Da Mino,8,Processo e Martiniano / due Felici / San Pancrazio
 gen-tipi-obelisco,Una zona con un obelisco,si,Campo Marzio,Da cartolina,1,Obelisco Flaminio / Obelisco Sallustiano / Obelisco del Pincio
 gen-tipi-obelisco,Una zona con un obelisco,si,Monti,Da cartolina,1,Obelisco Lateranense / Obelisco Esquilino
 gen-tipi-obelisco,Una zona con un obelisco,si,Pigna,Da cartolina,1,obelisco della Minerva / Obelisco del Pantheon
@@ -2773,17 +2774,20 @@ gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Regol
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Trastevere,Chicca,5,chiesa di San Giovanni della Malva in Trastevere / chiesa del Sacro Cuore di Gesù a Villa Lante / chiesa evangelica battista in Trastevere
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Garbatella,Da Mino,8,chiesa dei Santi Isidoro e Eurosia
 gen-epoche-chiesa-dell-ottocento,Una zona con una chiesa dell'Ottocento,si,Nomentano,Da Mino,8,chiesa del Corpus Domini
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Castro Pretorio,Da cartolina,1,Palazzi dell'Esedra / Palazzo delle Finanze / Palazzo Massimo / Teatro dell'Opera / Ministero della Guerra
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Esquilino,Da cartolina,1,portici di piazza Vittorio / Palazzo Brancaccio / Acquario Romano
 gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Ludovisi,Da cartolina,1,Palazzo Margherita
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Parione,Da cartolina,1,Palazzo Braschi
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Monti,Da cartolina,1,Palazzo Koch / Palazzo delle Esposizioni / Palazzo Brancaccio / Palazzo del Gallo di Roccagiovine
 gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Prati,Da cartolina,1,Palazzo di Giustizia
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Monti,Ce sta,2,palazzo Koch / Palazzo del Gallo di Roccagiovine
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Trastevere,Ce sta,2,complesso monumentale di San Michele a Ripa Grande / Palazzo della Manifattura Pontificia dei Tabacchi
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Castro Pretorio,Da romano de Roma,3,Palazzo delle Finanze
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Trevi,Da romano de Roma,3,Palazzo Caprara / Palazzo Bourbon Artom / Palazzo Calabresi
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Sallustiano,Ce sta,2,Palazzo delle Finanze / Ministero della Guerra / Villino Macchi di Cellere
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Trastevere,Ce sta,2,Manifattura Tabacchi / San Michele a Ripa Grande
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Trevi,Ce sta,2,Galleria Sciarra / Palazzo Caprara / Palazzo Bourbon Artom / Palazzo Calabresi
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Colonna,Da romano de Roma,3,Palazzo Marignoli / Palazzo delle Poste di San Silvestro
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Nomentano,Da romano de Roma,3,Casino Nobile di Villa Torlonia
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Parione,Da romano de Roma,3,Palazzo Braschi
 gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Certosa,Chicca,5,Villa La Favorita
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Colonna,Chicca,5,Palazzo Marignoli
+gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Italia,Chicca,5,Policlinico Umberto I
 gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Della Vittoria,Da Mino,8,Liceo Terenzio Mamiani
-gen-epoche-palazzo-dell-ottocento,Una zona con un palazzo dell'Ottocento,si,Sallustiano,Da Mino,8,Villino Macchi di Cellere al Sallustiano
 gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecento,si,Colonna,Da cartolina,1,Galleria Alberto Sordi
 gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecento,si,Eur,Da cartolina,1,Palazzo della Civiltà Italiana / Palazzi dell'INA e dell'INPS / Palazzo dell'Archivio dello Stato / ...
 gen-epoche-palazzo-del-primo-novecento,Una zona con un palazzo del primo Novecento,si,Monti,Da cartolina,1,Palazzo del Viminale
@@ -3002,17 +3006,20 @@ gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama S
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Aventino,Da Mino,8,Salita delle Pendici dell'Aventino
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Sant'Eustachio,Da Mino,8,Salita de' Crescenzi
 gen-nomi-una-strada-che-si-chiama-salita,Una zona con una strada che si chiama Salita,si,Tor di Quinto,Da Mino,8,Salita di Castel Giubileo
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Eur,Da cartolina,1,Scalinata Ernesto Lapadula / Scalea Carlo Mosca
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Trastevere,Da cartolina,1,Scalea del Tamburino / Scala Giovanni Iacobucci
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Villa Borghese,Da cartolina,1,Scalea Bruno Zevi
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Foro Italico,Ce sta,2,Scalea Luca Attanasio
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Monti,Ce sta,2,Scala di Piazza Iside
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Borgo,Da romano de Roma,3,Scala Santi Michele e Magno / Scala Sancta
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Monteverde,Da romano de Roma,3,Scalea Ugo Bassi / Scala Righetto / Scalea Andrea il Moro
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Campitelli,Da cartolina,1,Scalinata dell'Aracoeli / Cordonata Capitolina / Scala dell'Arce Capitolina
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Campo Marzio,Da cartolina,1,Scalinata della Trinità dei Monti
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Trastevere,Da cartolina,1,Scalea del Tamburino / Scala Giovanni Iacobucci / Salita di Sant'Onofrio
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Aventino,Ce sta,2,Clivo di Rocca Savella
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Eur,Ce sta,2,Scalinata Ernesto Lapadula / Scalea Carlo Mosca
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Monti,Ce sta,2,Salita dei Borgia / Via della Cordonata / Scala di Piazza Iside
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Villa Borghese,Ce sta,2,Scalea Bruno Zevi
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Borgo,Da romano de Roma,3,Salita Santi Michele e Magno / Salita di Sant'Onofrio
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Monteverde,Da romano de Roma,3,Scalea Ugo Bassi / Scala Righetto / Scalea Andrea il Moro / Scalea del Tamburino
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Trevi,Da romano de Roma,3,Scalinata della Dataria / Via della Cordonata
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Villa Pamphili,Da romano de Roma,3,Scalea Paolo Ber / Scalea del Casino Algardi
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Balduina,Chicca,5,Scalea Vezio Mezzetti
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Campo Marzio,Chicca,5,Scalinata della Trinità dei Monti / Scalinata di Trinità dei Monti
-gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Campitelli,Da Mino,8,Scalinata dell'Ara Coeli / Scala dell'Arce Capitolina
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Camilluccia,Chicca,5,Scalea Luca Attanasio
+gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,Foro Italico,Chicca,5,Scalea Luca Attanasio
 gen-nomi-una-strada-che-e-una-scalinata,Una zona con una strada che è una scalinata,si,San Saba,Da Mino,8,Scalea Padre Simpliciano della Natività
 gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Campo Marzio,Da cartolina,1,Passeggiata del Pincio / Passeggiata di Ripetta
 gen-nomi-una-passeggiata,Una zona con una passeggiata,si,Eur,Da cartolina,1,Passeggiata del Giappone
@@ -3299,34 +3306,36 @@ gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Ave
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Capannelle,Da Mino,8,Via Melito di Porto Salvo
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Valco San Paolo,Da Mino,8,Via del Mare
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Villa Gordiani,Da Mino,8,Via Isola d'Istria
-gen-locali-un-forno,Una zona con un forno,si,Centocelle,Da cartolina,1,Forno Castelli Romani / Forno Più
-gen-locali-un-forno,Una zona con un forno,si,Garbatella,Da cartolina,1,Forno Bianchi
-gen-locali-un-forno,Una zona con un forno,si,Monti,Da cartolina,1,Forno da Milvio / Antico Forno ai Serpenti / Forno
-gen-locali-un-forno,Una zona con un forno,si,Ostiense,Da cartolina,1,Forno Angeli
-gen-locali-un-forno,Una zona con un forno,si,Prati,Da cartolina,1,Forno Colapicchioni
-gen-locali-un-forno,Una zona con un forno,si,Testaccio,Da cartolina,1,Antico Forno a Testaccio
-gen-locali-un-forno,Una zona con un forno,si,Monte Mario,Ce sta,2,Antico forno
-gen-locali-un-forno,Una zona con un forno,si,Monteverde,Ce sta,2,Forno Maurizi / Forno Marchetti / Antico Forno Cotugno
-gen-locali-un-forno,Una zona con un forno,si,Quadraro,Ce sta,2,Fornocaffè / Forno De' Quintili
-gen-locali-un-forno,Una zona con un forno,si,San Paolo,Ce sta,2,Forno Leandro
-gen-locali-un-forno,Una zona con un forno,si,Tor Pignattara,Ce sta,2,Forno Spiga d‘Oro
-gen-locali-un-forno,Una zona con un forno,si,Trevi,Ce sta,2,Forno Cerulli / Forno Deroma
-gen-locali-un-forno,Una zona con un forno,si,Appio Latino,Da romano de Roma,3,Forno Di Giannantonio
-gen-locali-un-forno,Una zona con un forno,si,Balduina,Da romano de Roma,3,Forno pugliese
-gen-locali-un-forno,Una zona con un forno,si,Certosa,Da romano de Roma,3,Forno Certosa
-gen-locali-un-forno,Una zona con un forno,si,Pietralata,Da romano de Roma,3,Antico Forno Rivelli
-gen-locali-un-forno,Una zona con un forno,si,Sacco Pastore,Da romano de Roma,3,Forno Sacro
+gen-locali-un-forno,Una zona con un forno,si,Monti,Da cartolina,1,Antico Forno ai Serpenti / Forno da Milvio / Forno
+gen-locali-un-forno,Una zona con un forno,si,Parione,Da cartolina,1,Forno Campo de' Fiori / Forno Roscioli / Forno Monteforte
+gen-locali-un-forno,Una zona con un forno,si,Prati,Da cartolina,1,Forno Colapicchioni / Panificio Bonci
+gen-locali-un-forno,Una zona con un forno,si,Sant'Angelo,Da cartolina,1,Forno Boccione / Antico Forno Urbani
+gen-locali-un-forno,Una zona con un forno,si,Sant'Eustachio,Da cartolina,1,Antico Forno Roscioli / Forno Ceralli 1920
+gen-locali-un-forno,Una zona con un forno,si,Trastevere,Da cartolina,1,La Renella / Biscottificio Innocenti
+gen-locali-un-forno,Una zona con un forno,si,Centocelle,Ce sta,2,Forno Castelli Romani / Forno Più
+gen-locali-un-forno,Una zona con un forno,si,Esquilino,Ce sta,2,Panella / Forno Conti
+gen-locali-un-forno,Una zona con un forno,si,Garbatella,Ce sta,2,Forno Bianchi
+gen-locali-un-forno,Una zona con un forno,si,Ostiense,Ce sta,2,Forno Angeli
+gen-locali-un-forno,Una zona con un forno,si,Regola,Ce sta,2,Forno Monteforte / Forno Campo de' Fiori
+gen-locali-un-forno,Una zona con un forno,si,Testaccio,Ce sta,2,Antico Forno a Testaccio
+gen-locali-un-forno,Una zona con un forno,si,Trionfale,Ce sta,2,Panificio Bonci / Forno Feliziani
+gen-locali-un-forno,Una zona con un forno,si,Monte Mario,Da romano de Roma,3,Antico forno
+gen-locali-un-forno,Una zona con un forno,si,Monteverde,Da romano de Roma,3,Forno Maurizi / Forno Marchetti / Antico Forno Cotugno
+gen-locali-un-forno,Una zona con un forno,si,Quadraro,Da romano de Roma,3,Fornocaffè / Forno De' Quintili
+gen-locali-un-forno,Una zona con un forno,si,San Paolo,Da romano de Roma,3,Forno Leandro
+gen-locali-un-forno,Una zona con un forno,si,Tor Pignattara,Da romano de Roma,3,Forno Spiga d'Oro
+gen-locali-un-forno,Una zona con un forno,si,Trevi,Da romano de Roma,3,Forno Cerulli / Forno Deroma
 gen-locali-un-forno,Una zona con un forno,si,Alberone,Chicca,5,Forno a Legna
-gen-locali-un-forno,Una zona con un forno,si,Della Vittoria,Chicca,5,Forno Gieri
-gen-locali-un-forno,Una zona con un forno,si,Italia,Chicca,5,Forno Dolce Forno
-gen-locali-un-forno,Una zona con un forno,si,Porta di Roma,Chicca,5,Forno Aurea
-gen-locali-un-forno,Una zona con un forno,si,Torre Maura,Chicca,5,Forno Cafè / Forno Castelli Romani
-gen-locali-un-forno,Una zona con un forno,si,Trionfale,Chicca,5,Forno Feliziani
+gen-locali-un-forno,Una zona con un forno,si,Appio Latino,Chicca,5,Forno Di Giannantonio
+gen-locali-un-forno,Una zona con un forno,si,Balduina,Chicca,5,Forno pugliese
+gen-locali-un-forno,Una zona con un forno,si,Certosa,Chicca,5,Forno Certosa
+gen-locali-un-forno,Una zona con un forno,si,Della Vittoria,Chicca,5,Forno Gieri / Faggiani
+gen-locali-un-forno,Una zona con un forno,si,Pietralata,Chicca,5,Antico Forno Rivelli
+gen-locali-un-forno,Una zona con un forno,si,Sacco Pastore,Chicca,5,Forno Sacro
+gen-locali-un-forno,Una zona con un forno,si,Italia,Da Mino,8,Forno Dolce Forno
 gen-locali-un-forno,Una zona con un forno,si,Longoni - Maggiolino,Da Mino,8,Forno
-gen-locali-un-forno,Una zona con un forno,si,Parione,Da Mino,8,Forno Monteforte / Forno Roscioli / Forno Campo de Fiori
-gen-locali-un-forno,Una zona con un forno,si,Regola,Da Mino,8,Forno Monteforte / Forno Campo de Fiori
-gen-locali-un-forno,Una zona con un forno,si,Sant'Angelo,Da Mino,8,Forno Boccione / Antico Forno Urbani
-gen-locali-un-forno,Una zona con un forno,si,Sant'Eustachio,Da Mino,8,Forno Ceralli 1920 / Forno Roscioli / Antico Forno Roscioli
+gen-locali-un-forno,Una zona con un forno,si,Porta di Roma,Da Mino,8,Forno Aurea
+gen-locali-un-forno,Una zona con un forno,si,Torre Maura,Da Mino,8,Forno Cafè / Forno Castelli Romani
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Cinecittà,Da cartolina,1,Cornetto Notte
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Esquilino,Da cartolina,1,Caffè e Cornetto Roma
 gen-locali-una-cornetteria,Una zona con una cornetteria,si,Monti,Da cartolina,1,L'antica Cornetteria
