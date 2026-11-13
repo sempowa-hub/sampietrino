@@ -1450,15 +1450,21 @@ caravaggio,Una zona dove puoi vedere un Caravaggio,si,Campitelli,Chicca,5,"Musei
 caravaggio,Una zona dove puoi vedere un Caravaggio,si,Pigna,Chicca,5,"Galleria Doria Pamphilj (Riposo durante la fuga in Egitto, Maddalena penitente, San Giovanni Battista)"
 caravaggio,Una zona dove puoi vedere un Caravaggio,si,Ludovisi,Da Mino,8,"Casino dell'Aurora (Giove, Nettuno e Plutone, soffitto)"
 caravaggio,Una zona dove puoi vedere un Caravaggio,si,Trastevere,Da Mino,8,Galleria Corsini (San Giovanni Battista)
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigna,Da cartolina,1,Area sacra di Largo Argentina
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Miani,Ce sta,2,Piramide Cestia
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Monti,Ce sta,2,Domus Aurea
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Testaccio,Ce sta,2,Monte dei Cocci / Piramide Cestia
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Parione,Da romano de Roma,3,Stadio di Domiziano
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Celio,Chicca,5,Case romane del Celio
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trevi,Chicca,5,Città dell'acqua (Vicus Caprarius)
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigna,Da cartolina,1,Largo Argentina
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Sant'Eustachio,Da cartolina,1,Largo Argentina
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trevi,Da cartolina,1,Domus Romane di Palazzo Valentini / Vicus Caprarius
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Miani,Ce sta,2,Piramide
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Monti,Ce sta,2,Domus Aurea / sotterranei di San Clemente
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Testaccio,Ce sta,2,Piramide / Monte dei Cocci
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Campitelli,Da romano de Roma,3,Insula dell'Aracoeli
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Parione,Da romano de Roma,3,Stadio di Domiziano / Teatro di Pompeo
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Trastevere,Da romano de Roma,3,domus di Santa Cecilia / sotterranei di San Crisogono
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Celio,Chicca,5,Case romane
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Esquilino,Chicca,5,Auditorium di Mecenate / Ipogeo degli Aureli / Basilica di Porta Maggiore
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Regola,Chicca,5,Insula di San Paolo alla Regola
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Aventino,Da Mino,8,Mitreo del Circo Massimo
-roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Esquilino,Da Mino,8,Ipogeo degli Aureli
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Pigneto,Da Mino,8,"Basilica di Porta Maggiore (sulla mappa e qui, al confine con l'Esquilino)"
+roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,San Saba,Da Mino,8,Colombario di Pomponio Hylas
 roma-sotto,Una zona con un pezzo di Roma antica nascosto in città,si,Sant'Angelo,Da Mino,8,Crypta Balbi
 street-art,Una zona famosa per i murales,si,Ostiense,Da cartolina,1,Via del Porto Fluviale
 street-art,Una zona famosa per i murales,si,Pigneto,Ce sta,2,Pigneto e i murales per Pasolini
@@ -2006,24 +2012,32 @@ gen-tipi-casa-museo,Una zona con una casa museo,si,Esquilino,Chicca,5,Museo stor
 gen-tipi-casa-museo,Una zona con una casa museo,si,Eur,Chicca,5,Museo storico della comunicazione / Museo nazionale delle arti e tradizioni popolari Lamberto Loria
 gen-tipi-casa-museo,Una zona con una casa museo,si,Italia,Da Mino,8,"Museo di antropologia ""Giuseppe Sergi"" / museo di merceologia / Museo di Geologia"
 gen-tipi-casa-museo,Una zona con una casa museo,si,Nomentano,Da Mino,8,Istituto di Studi Pirandelliani e sul Teatro Contemporaneo
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Castro Pretorio,Da cartolina,1,"Museo della Scuola e dell'Educazione ""Mauro Laeng"" / Palazzo Massimo alle Terme / Museo storico dei bersaglieri / ..."
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Esquilino,Da cartolina,1,Museo storico della fanteria / Museo storico dei Granatieri di Sardegna / Museo storico della Liberazione
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Ponte,Da cartolina,1,Palazzo Altemps / Museo criminologico MUCRI / Museo napoleonico di Roma
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Sant'Angelo,Da cartolina,1,Museo Ebraico di Roma / Crypta Balbi
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Campo Marzio,Ce sta,2,Keats-Shelley Memorial House
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Prati,Ce sta,2,Museo storico dell'arma dei carabinieri
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Trastevere,Ce sta,2,Museo della Repubblica Romana e della memoria garibaldina
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Castro Pretorio,Da cartolina,1,Palazzo Massimo / Museo dei Bersaglieri
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Esquilino,Da cartolina,1,Museo della Fanteria / Museo dei Granatieri / Museo della Liberazione
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Parione,Da cartolina,1,Museo di Roma
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Ponte,Da cartolina,1,Palazzo Altemps / Museo napoleonico
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Sant'Angelo,Da cartolina,1,Museo Ebraico
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Campo Marzio,Ce sta,2,Keats-Shelley House
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Eur,Ce sta,2,Museo delle Civiltà / Museo della Comunicazione
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Prati,Ce sta,2,Museo dei Carabinieri
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Trastevere,Ce sta,2,Museo della Repubblica Romana / Museo di Roma in Trastevere
 gen-tipi-museo-storico,Una zona con un museo di storia,si,Villa Borghese,Ce sta,2,Museo Canonica
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Cecchignola,Da romano de Roma,3,Museo storico della motorizzazione militare / Museo delle carrozze d'epoca
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Eur,Da romano de Roma,3,Biblioteca e museo teatrale del Burcardo / Museo storico della comunicazione
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Italia,Da romano de Roma,3,Museo di storia della medicina / Museo storico della Guardia di finanza
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Campitelli,Chicca,5,Museo centrale del Risorgimento
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Della Vittoria,Chicca,5,Istituto storico e di cultura dell'Arma del genio
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Nomentano,Chicca,5,Museo storico della Guardia di finanza
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Tor di Quinto,Chicca,5,Museo della Zecca Italiana
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Cecchignola,Da romano de Roma,3,Museo della Motorizzazione
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Italia,Da romano de Roma,3,Museo di Storia della medicina / Museo della Guardia di finanza
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Monteverde,Da romano de Roma,3,Museo della Repubblica Romana
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Nomentano,Da romano de Roma,3,Museo dei Bersaglieri / Museo della Guardia di finanza
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Regola,Da romano de Roma,3,Museo criminologico
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Appio Latino,Chicca,5,Museo delle Mura (al confine con San Saba)
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Borgo,Chicca,5,Museo di Storia dell'arte sanitaria
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Campitelli,Chicca,5,Museo del Risorgimento
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Celio,Chicca,5,Museo delle Mura (al confine con San Saba)
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Della Vittoria,Chicca,5,Museo dell'Arma del genio
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Miani,Chicca,5,Museo delle Mura (al confine con San Saba)
+gen-tipi-museo-storico,Una zona con un museo di storia,si,San Saba,Chicca,5,Museo delle Mura
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Tor di Quinto,Chicca,5,Museo della Zecca
 gen-tipi-museo-storico,Una zona con un museo di storia,si,Giuliano Dalmata,Da Mino,8,Società di studi fiumani
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Palmarola,Da Mino,8,Museo laboratorio della mente
-gen-tipi-museo-storico,Una zona con un museo di storia,si,Sant'Eustachio,Da Mino,8,Museo del Teatro Argentina
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Palmarola,Da Mino,8,Museo della mente
+gen-tipi-museo-storico,Una zona con un museo di storia,si,Sant'Eustachio,Da Mino,8,Museo del Teatro Argentina / Burcardo
 gen-tipi-museo,Una zona con un museo famoso,si,Borgo,Da cartolina,1,Castel Sant'Angelo / Museo delle anime del Purgatorio / Museo storico nazionale dell'arte sanitaria
 gen-tipi-museo,Una zona con un museo famoso,si,Campitelli,Da cartolina,1,Musei Capitolini / Vittoriano / Sacrario delle bandiere / ...
 gen-tipi-museo,Una zona con un museo famoso,si,Campo Marzio,Da cartolina,1,Casa museo di Giorgio de Chirico / Ara Pacis / Keats-Shelley Memorial House / ...
@@ -2401,13 +2415,16 @@ gen-architetti-bramante,Una zona con un edificio di Bramante,si,Regola,Ce sta,2,
 gen-architetti-bramante,Una zona con un edificio di Bramante,si,Parione,Da romano de Roma,3,Palazzo della Cancelleria (attribuito)
 gen-architetti-bramante,Una zona con un edificio di Bramante,si,Borgo,Chicca,5,Palazzo Castellesi-Giraud-Torlonia (attribuito)
 gen-architetti-bramante,Una zona con un edificio di Bramante,si,Celio,Da Mino,8,San Giovanni in Oleo (attribuito)
-gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Pigna,Da cartolina,1,basilica di Santa Maria sopra Minerva / Palazzo Doria-Pamphili
-gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Trevi,Da cartolina,1,palazzo del Quirinale / Palazzo Barberini / chiesa di Santa Susanna alle Terme di Diocleziano / ...
-gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Sallustiano,Ce sta,2,chiesa di Santa Maria della Vittoria
-gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Campo Marzio,Da romano de Roma,3,chiesa della Trinità dei Monti / chiesa di San Giacomo in Augusta / cappella Cerasi / ...
-gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Monti,Da romano de Roma,3,chiesa di Santa Caterina a Magnanapoli / chiesa di Santa Lucia in Selci / Colonna della Pace / ...
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Parione,Da cartolina,1,Sant'Andrea della Valle (al confine con Sant'Eustachio)
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Pigna,Da cartolina,1,Santa Maria sopra Minerva / Palazzo Doria Pamphilj
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Sant'Eustachio,Da cartolina,1,Sant'Andrea della Valle
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Trevi,Da cartolina,1,Quirinale / Palazzo Barberini / Santa Susanna / Palazzo Odescalchi
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Sallustiano,Ce sta,2,Santa Maria della Vittoria / Santa Susanna
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Campo Marzio,Da romano de Roma,3,San Giacomo in Augusta / Cappella Cerasi / Trinità dei Monti
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Monti,Da romano de Roma,3,Santa Lucia in Selci / Santa Caterina a Magnanapoli
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Ponte,Da romano de Roma,3,San Giovanni dei Fiorentini
 gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Sant'Angelo,Chicca,5,Palazzo Mattei di Giove
-gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Regola,Da Mino,8,Collegio Ghislieri / Monte di Pietà (Roma)
+gen-architetti-carlo-maderno,Una zona con un edificio di Carlo Maderno,si,Regola,Da Mino,8,Monte di Pietà / Collegio Ghislieri
 gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Borgo,Da cartolina,1,Obelisco Vaticano / Palazzo Rusticucci-Accoramboni
 gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Campo Marzio,Da cartolina,1,Obelisco Flaminio a piazza del Popolo
 gen-architetti-domenico-fontana,Una zona con un edificio di Domenico Fontana,si,Monti,Da cartolina,1,Obelisco Esquilino / cappella Sistina in Santa Maria Maggiore
@@ -2910,21 +2927,28 @@ gen-sepolture-papa,Una zona dove è sepolto un papa,si,Trastevere,Chicca,5,papa 
 gen-sepolture-papa,Una zona dove è sepolto un papa,si,Trevi,Chicca,5,papa Clemente XIV (basilica dei Santi XII Apostoli)
 gen-sepolture-papa,Una zona dove è sepolto un papa,si,Campitelli,Da Mino,8,papa Gregorio XI (basilica di Santa Francesca Romana) / papa Onorio IV (basilica di Santa Maria in Aracoeli)
 gen-sepolture-papa,Una zona dove è sepolto un papa,si,Monteverde,Da Mino,8,papa Anastasio I (Catacomba di Ponziano)
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Pigna,Da cartolina,1,Palazzo Venezia / Palazzetto Venezia
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Regola,Da cartolina,1,Palazzo Farnese / Ponte Sisto / Carceri Nuove (Roma)
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Trevi,Da cartolina,1,palazzo del Quirinale / Palazzina del Segretario della Cifra / Villa d'Este al Quirinale
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Borgo,Ce sta,2,Ospedale di San Carlo / Passetto di Borgo
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Castro Pretorio,Ce sta,2,Fontana dell'Acqua Felice
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Borgo,Da cartolina,1,Castel Sant'Angelo / Passetto / Ospedale di Santo Spirito
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Parione,Da cartolina,1,Fontana dei Quattro Fiumi / Palazzo Pamphilj
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Pigna,Da cartolina,1,Palazzo Venezia
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Regola,Da cartolina,1,Palazzo Farnese / Ponte Sisto / Carceri Nuove / Via Giulia
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Trevi,Da cartolina,1,Quirinale / Fontana di Trevi / Consulta
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Campitelli,Ce sta,2,Musei Capitolini
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Campo Marzio,Ce sta,2,obelisco di piazza del Popolo
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Castro Pretorio,Ce sta,2,Acqua Felice / Porta Pia
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Monti,Ce sta,2,Cappella Sistina di Santa Maria Maggiore / Consulta
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Salario,Ce sta,2,Porta Pia (al confine)
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Sallustiano,Ce sta,2,Acqua Felice
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,San Giovanni,Ce sta,2,Scala Santa
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Villa Borghese,Ce sta,2,Villa Giulia
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Della Vittoria,Da romano de Roma,3,Villa Madama
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Monti,Da romano de Roma,3,palazzo della Consulta
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Trastevere,Da romano de Roma,3,Mura gianicolensi
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Monte Mario,Da romano de Roma,3,Villa Madama
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Nomentano,Da romano de Roma,3,Porta Pia
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Trastevere,Da romano de Roma,3,Mura gianicolensi / Fontanone dell'Acqua Paola / Ponte Sisto
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Colonna,Chicca,5,Angelo con il titolo della croce
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Esquilino,Chicca,5,Santa Bibiana
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Esquilino,Chicca,5,Santa Bibiana / Scala Santa (sulla mappa e qui)
 gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Monteverde,Chicca,5,Mura gianicolensi
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Aventino,Da Mino,8,Fontana di Lungotevere Aventino
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Campitelli,Da Mino,8,Palazzo Clementino
-gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Ponte,Da Mino,8,Palazzo dei Tribunali
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Aventino,Da Mino,8,Fontana dei Tritoni a Bocca della Verità
+gen-committenti-un-papa,Una zona con un luogo voluto da un papa,si,Ponte,Da Mino,8,Palazzo dei Tribunali / Via Giulia
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Monti,Da cartolina,1,basilica di Santa Maria Maggiore
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,San Giovanni,Da cartolina,1,basilica di San Giovanni in Laterano / Palazzo del Laterano / Scala Santa
 gen-committenti-proprieta-santa-sede,Una zona con una proprietà della Santa Sede,si,Parione,Ce sta,2,Palazzo della Cancelleria
@@ -3246,46 +3270,44 @@ gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Longoni - Maggiolino,Da Mino,8,Via Tor Tre Teste
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Parione,Da Mino,8,Piazza delle Cinque Lune / Passetto delle Cinque Lune
 gen-nomi-una-strada-con-un-numero-nel-nome,Una zona con una strada con un numero nel nome,si,Regola,Da Mino,8,Piazza delle Cinque Scole / Via delle Cinque Scole
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Esquilino,Da cartolina,1,Via Conte Verde / Via Principe Umberto / Via Principe Eugenio / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Foro Italico,Da cartolina,1,Ponte Duca d'Aosta
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Esquilino,Da cartolina,1,Via Principe Amedeo / Via Principe Eugenio / Via Principe Umberto / Via Principe Aimone / Via Conte Verde / Via Conte Rosso
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Pigneto,Da cartolina,1,Via Conte di Carmagnola
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Prati,Da cartolina,1,Ponte Regina Margherita
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,San Giovanni,Da cartolina,1,Piazza dei Re di Roma
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trastevere,Da cartolina,1,Ponte Principe Amedeo Savoia Aosta / Sottopasso Principe Amedeo Savoia Aosta / Via Cardinale Marmaggi / ...
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trastevere,Da cartolina,1,Ponte Principe Amedeo Savoia Aosta / Via Cardinale Merry del Val / Via Cardinale Marmaggi
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Villa Ada,Da cartolina,1,Viale Regina Maria Josè
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Villa Borghese,Da cartolina,1,Viale Conte Folke Bernadotte
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Aurelio,Ce sta,2,Via Cardinale Silj / Largo Cardinale Agostino Galamini / Via Sant'Agatone Papa / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Borgo,Ce sta,2,Ponte Principe Amedeo Savoia Aosta / Galleria Principe Amedeo Savoia Aosta / Sottopasso Principe Amedeo Savoia Aosta / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Campo Marzio,Ce sta,2,Ponte Regina Margherita / Via Principessa Clotilde
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Flaminio,Ce sta,2,Ponte Duca d'Aosta
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Monte Sacro,Ce sta,2,Via Nicola Marchese
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Quadraro,Ce sta,2,Via Filippo Re
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Appio Latino,Ce sta,2,Piazza Re di Roma
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Borgo,Ce sta,2,Ponte e Galleria Principe Amedeo Savoia Aosta
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Campo Marzio,Ce sta,2,Ponte Regina Margherita
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Flaminio,Ce sta,2,Via Principessa Clotilde / Ponte Duca d'Aosta / Via Cardinal De Luca / Piazzale Cardinal Consalvi
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Italia,Ce sta,2,Via Re Tancredi / Via Contessa di Bertinoro / Via Irene Imperatrice d'Oriente / Viale Regina Elena
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,San Paolo,Ce sta,2,Via del Santuario Regina degli Apostoli
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trieste,Ce sta,2,Viale Regina Margherita / Piazza Regina Margherita / V.le Regina Margherita/Nizza
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Appio Latino,Da romano de Roma,3,Piazza dei Re di Roma
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Cavalleggeri - San Pietro,Da romano de Roma,3,Via Cardinale Lualdi / Galleria Principe Amedeo Savoia - Aosta
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Celio,Da romano de Roma,3,Viale Cardinale Francesco Spellman
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Marconi,Da romano de Roma,3,Via dei Prati dei Papa / Via di Pietra Papa / Lungotevere di Pietra Papa / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Monte del Gallo,Da romano de Roma,3,Piazza Francesco Borgongini Duca
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Nomentano,Da romano de Roma,3,Viale Regina Margherita / Regina Margherita/Galeno / V.le Regina Margherita/Morgagni / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Primavalle,Da romano de Roma,3,Via Sant'Igino Papa / Via San Melchiade Papa / Via Cardinale Mercati / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Salario,Da romano de Roma,3,Viale Regina Margherita / Piazza Regina Margherita / V.le Regina Margherita/Nizza
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Alberone,Chicca,5,Piazza Camillo Re / Via Rocca di Papa
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Castro Pretorio,Chicca,5,Via Principe Amedeo / Galleria Regina Margherita
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Italia,Chicca,5,Viale Regina Elena / Regina Elena/V.le Università / Via Re Tancredi
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Aurelio,Da romano de Roma,3,Largo Cardinale Galamini / Via Cardinale Silj / Via Cardinale Tripepi / Largo Cardinal Micara / Via Cardinal Ferrata / Piazza Cardinal Ferrari / Via Cardinal Pacca
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Castro Pretorio,Da romano de Roma,3,Galleria Regina Margherita
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Cavalleggeri - San Pietro,Da romano de Roma,3,Galleria Principe Amedeo / Via Cardinal Agliardi / Via Cardinale Lualdi / Via Cardinal Cassetta
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Celio,Da romano de Roma,3,Viale Cardinale Spellman
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Foro Italico,Da romano de Roma,3,Ponte Duca d'Aosta
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Nomentano,Da romano de Roma,3,Viale Regina Margherita / Via Irene Imperatrice d'Oriente
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Salario,Da romano de Roma,3,Piazza e Viale Regina Margherita
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Boccea Cornelia,Chicca,5,Via Cardinale Massimi / Via Cardinale Caprara / Via Cardinale Oreglia / Via Cardinal Passionei / Via Cardinal Pompilj
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Monteverde,Chicca,5,Via Duchessa di Galliera
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Pineta Sacchetti,Chicca,5,Via San Lino Papa / Via Cardinale Garampi / Via San Melchiade Papa / ...
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Ponte Mammolo,Chicca,5,Via Giacomo del Duca
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Talenti,Chicca,5,Via Regina dei Gigli
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trullo,Chicca,5,Via del Fosso di Papa Leone / Vicolo di Papa Leone / Vicolo del Fosso di Papa Leone
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Tuscolano,Chicca,5,Viale Luciano Re Cecconi
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Prenestino Labicano,Chicca,5,Via Conte di Carmagnola
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Primavalle,Chicca,5,Via Cardinale Mercati / Via Cardinale Garampi / Via Cardinale Celso Costantini / Via Cardinal D'Avanzo / Via Cardinal Salotti
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trieste,Chicca,5,Viale Regina Maria José
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Verano,Chicca,5,Viale Regina Elena
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Aventino,Da Mino,8,Piazza Giunone Regina
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Boccea Cornelia,Da Mino,8,Via San Zeffirino Papa / Via Cardinale Oreglia / Via Cardinale Caprara
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Bravetta,Da Mino,8,Vicolo del Conte
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Della Vittoria,Da Mino,8,Via Achille Papa
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Montespaccato,Da Mino,8,Largo Re Ina
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Ponte,Da Mino,8,Ponte Principe Amedeo Savoia Aosta
-gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Prenestino Labicano,Da Mino,8,Via Conte di Carmagnola
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,San Basilio,Da Mino,8,Via Cardinal La Fontaine / Via Marchesa di Barolo
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Talenti,Da Mino,8,Via Regina dei Gigli
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Torrevecchia,Da Mino,8,Via Cardinal Domenico Capranica
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Trullo,Da Mino,8,Vicolo di Papa Leone
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Vigna Clara,Da Mino,8,Via dei Duchi di Castro
 gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Villa Bonelli,Da Mino,8,Vicolo di Papa Leone
+gen-nomi-una-strada-col-titolo-di-un-nobile-re-duca-conte-cardinale,"Una zona con una strada col titolo di un nobile (re, duca, conte, cardinale...)",si,Villa Troili,Da Mino,8,Via Cardinal di York
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Centocelle,Da cartolina,1,Via Isola Liri
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Eur,Da cartolina,1,Via del Mare
 gen-nomi-una-strada-che-sa-di-mare,Una zona con una strada che sa di mare,si,Ponte Milvio,Da cartolina,1,Via Castelnuovo di Porto
